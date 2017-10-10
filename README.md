@@ -10,7 +10,9 @@ Relevant references:
    - https://kotlinlang.org/docs/reference/java-interop.html
 
 3) Akka persistence: Provides stateful actors that persist internal state so that it can be recovered upon migration or when an actor is restarted after a crash. 
+   - https://groups.google.com/forum/#!topic/akka-user/iGf9XJ1k204
    - https://doc.akka.io/docs/akka/current/scala/persistence.html
+   - https://martinfowler.com/eaaDev/EventSourcing.html
 
 4) ReactiveMongo: Reactive Scala driver for MongoDB, a fully asynchronous and non-blocking IO for scalability using Futures
    - http://reactivemongo.org/
@@ -19,7 +21,8 @@ Relevant references:
    - https://mongodb.github.io/casbah/
    
 6) Akka-persistence-Casbah: Akka persistence backed by MongoDB Casbah
-   - https://github.com/ironfish/akka-persistence-mongo
+   - https://github.com/scullxbones/akka-persistence-mongo
+   - https://github.com/ironfish/akka-persistence-mongo (deprecated)
    
 7) Building a REST service in Scala with Akka HTTP, Akka Streams and reactive mongo
    - http://www.smartjava.org/content/building-rest-service-scala-akka-http-akka-streams-and-reactive-mongo
@@ -32,3 +35,4 @@ Relevant references:
   
 10) Play framework
    - https://www.playframework.com/documentation/2.6.x/JavaAkka
+   - https://www.playframework.com/documentation/2.6.x/ScalaAkka

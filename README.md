@@ -36,3 +36,6 @@ Relevant references:
 10) Play framework
    - https://www.playframework.com/documentation/2.6.x/JavaAkka
    - https://www.playframework.com/documentation/2.6.x/ScalaAkka
+
+11) Sunny.js
+   - https://github.com/aleksandarmilicevic/sunny.js/tree/master/examples

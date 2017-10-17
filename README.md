@@ -39,3 +39,7 @@ Relevant references:
 
 11) Sunny.js
    - https://github.com/aleksandarmilicevic/sunny.js/tree/master/examples
+
+# Meeting minutes
+1) [10-17-2017](Meeting_10_17_17.md)
+

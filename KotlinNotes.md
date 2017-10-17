@@ -1,9 +1,9 @@
-Summary: 
+# Summary 
 1) Kotlin can be compiled to Java, JS and native.
-2) Look at co-routines in Kotlin. Used for long-running operations such as network IO/file IO/CPU-GPU intensive work. 
-2) Jack and Jill toolchain like approach where Jill compiler has the SALSA based translation (?). Need to think more. 
+2) For server-side, look at co-routines in Kotlin. Used for long-running operations such as network IO/file IO/CPU-GPU intensive work. 
+3) Jack and Jill toolchain like approach where Jill compiler has the SALSA based translation (?). Need to think more. 
 
-Build system in Android:
+# Build system in Android
 1) Java converted by javac and then by dx (transcoded from bytecode to bytecode) to dex bytecode, gets executed on Android-> creates the APK
 2) Java Android Compiler Kit or JACK -> compiles JAVA source to dex bytecode directly. JILL converts the libraries in java bytecode separately for JACK to process.
 3) Kotlin/Scala are JVM compatible and need to be processed as JAVA bytecode so handled by JILL
@@ -13,7 +13,7 @@ Build system in Android:
 7) ART is newer one: takes dex and compiles to machine code. Comes with JIT for optimizing using runtime characteristics. Dex is stored as machine code instead of bytecode for performance.
 8) Android NDK: include headers associated with libraries to use. Tell build system that the native module needs to link against libraries at load time. Uses JNI. Accesses sensors, etc.
 
-Javascript on Android:
+# Javascript on Android
 1) React native app: build mobile app using only javascript.
    - Can run native code if needed for performance. Partly in ReactNative and partly in Java.
    - JS communicates with native using "bridge". Lacks performance. 
@@ -29,7 +29,7 @@ Javascript on Android:
      ReactNAtive compiles to native code for performance. 
      Web apps on mobile aren not powerful enough, can act as icon and loader for web page. It does not feel the same as native app and does not work without network connection. Also needed functionality that what web page can do like access camera.
       
-Kotlin: 
+# Kotlin
 1) Server-side web applications: Has coroutines for server side scalability with number of clients. 
    Like write HelloWorld and run in tomcat server.
 2) Different bytecode on android than Java, but similar. As fast as Java (has inline functions so may run faster). Can use existing libraries in Java with Kotlin app.

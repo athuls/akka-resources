@@ -1,0 +1,16 @@
+//module examples.helloworld;
+
+behavior HelloWorld {
+    /*void hello(){
+        standardOutput <- print("Hello ");
+    }
+    void world(){
+        standardOutput <- println("World!");
+    }*/
+
+    void act(String arguments[]){
+        standardOutput <- println("Printing from SALSA:");
+	standardOutput <- println("The number I got from Kotlin code: " + arguments[0]);
+    }
+}
+

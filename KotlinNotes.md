@@ -1,7 +1,11 @@
 # Summary 
 1) Kotlin can be compiled to Java, JS and native.
-2) For server-side, look at co-routines in Kotlin. Used for long-running operations such as network IO/file IO/CPU-GPU intensive work. 
-3) Jack and Jill toolchain like approach where Jill compiler has the SALSA based translation (?). Need to think more. 
+2) Javascript can be called from Java when run within Rhino (https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino)
+3) Chat applications in Kotlin: 
+   - https://objectpartners.com/2017/09/06/real-time-chat-application-with-kotlin-and-firebase/
+   - https://github.com/FrangSierra/KotlinFirechat
+3) For server-side, look at co-routines in Kotlin. Used for long-running operations such as network IO/file IO/CPU-GPU intensive work. 
+4) Jack and Jill toolchain like approach where Jill compiler has the SALSA based translation (?). Need to think more. 
 
 # Build system in Android
 1) Java converted by javac and then by dx (transcoded from bytecode to bytecode) to dex bytecode, gets executed on Android-> creates the APK

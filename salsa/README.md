@@ -7,4 +7,4 @@
 sdk install kotlin
 
 # Execute
-Run "sh runChat.sh"
+Run runChat.sh

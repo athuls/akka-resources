@@ -1,11 +1,11 @@
 WWCNamingServer listening on port: 3030
-Bind \nameserverid1 to rmsp://127.0.1.1:38349/UAL/1511894277632/1, from /127.0.0.1:37618
-Bind \nameserverid2 to rmsp://127.0.1.1:34885/UAL/1511894278624/1, from /127.0.0.1:37620
-Query \nameserverid1 Get rmsp://127.0.1.1:38349/UAL/1511894277632/1, from /127.0.0.1:37622
-Query \nameserverid2 Get rmsp://127.0.1.1:34885/UAL/1511894278624/1, from /127.0.0.1:37622
-Query \nameserverid1 Get rmsp://127.0.1.1:38349/UAL/1511894277632/1, from /127.0.0.1:37622
-Query \nameserverid1 Get rmsp://127.0.1.1:38349/UAL/1511894277632/1, from /127.0.0.1:37622
-Query \nameserverid2 Get rmsp://127.0.1.1:34885/UAL/1511894278624/1, from /127.0.0.1:37622
-Query \nameserverid2 Get rmsp://127.0.1.1:34885/UAL/1511894278624/1, from /127.0.0.1:37622
-Query \nameserverid2 Get rmsp://127.0.1.1:34885/UAL/1511894278624/1, from /127.0.0.1:37618
-Query \nameserverid2 Get rmsp://127.0.1.1:34885/UAL/1511894278624/1, from /127.0.0.1:37618
+Bind \nameserverid1 to rmsp://127.0.1.1:41613/UAL/1511898388445/1, from /127.0.0.1:37894
+Bind \nameserverid2 to rmsp://127.0.1.1:44387/UAL/1511898389433/1, from /127.0.0.1:37896
+Query \nameserverid1 Get rmsp://127.0.1.1:41613/UAL/1511898388445/1, from /127.0.0.1:37898
+Query \nameserverid2 Get rmsp://127.0.1.1:44387/UAL/1511898389433/1, from /127.0.0.1:37898
+Query \nameserverid1 Get rmsp://127.0.1.1:41613/UAL/1511898388445/1, from /127.0.0.1:37898
+Query \nameserverid1 Get rmsp://127.0.1.1:41613/UAL/1511898388445/1, from /127.0.0.1:37898
+Query \nameserverid2 Get rmsp://127.0.1.1:44387/UAL/1511898389433/1, from /127.0.0.1:37898
+Query \nameserverid2 Get rmsp://127.0.1.1:44387/UAL/1511898389433/1, from /127.0.0.1:37898
+Query \nameserverid2 Get rmsp://127.0.1.1:44387/UAL/1511898389433/1, from /127.0.0.1:37894
+Query \nameserverid2 Get rmsp://127.0.1.1:44387/UAL/1511898389433/1, from /127.0.0.1:37894

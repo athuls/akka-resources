@@ -265,36 +265,35 @@ public class Chat extends UniversalActor  {
 		}
 
 		public void chatSession(Speaker s1, Speaker s2) {
-			for (int i = 0; i<6; i++){
+			{
+				Token token_2_0 = new Token();
+				Token token_2_1 = new Token();
+				Token token_2_2 = new Token();
+				// s1<-whoAmI()
 				{
-					Token token_3_0 = new Token();
-					Token token_3_1 = new Token();
-					Token token_3_2 = new Token();
-					// s1<-whoAmI()
-					{
-						Object _arguments[] = {  };
-						Message message = new Message( self, s1, "whoAmI", _arguments, null, token_3_0 );
-						__messages.add( message );
-					}
-					// s1<-talk(((Chat)self), token, ":Hello what's up?  ")
-					{
-						Object _arguments[] = { ((Chat)self), token_3_0, ":Hello what's up?  " };
-						Message message = new Message( self, s1, "talk", _arguments, token_3_0, token_3_1 );
-						__messages.add( message );
-					}
-					// s2<-whoAmI()
-					{
-						Object _arguments[] = {  };
-						Message message = new Message( self, s2, "whoAmI", _arguments, token_3_1, token_3_2 );
-						__messages.add( message );
-					}
-					// s2<-talk(((Chat)self), token, ":Hello, I am ok thanks!  ")
-					{
-						Object _arguments[] = { ((Chat)self), token_3_2, ":Hello, I am ok thanks!  " };
-						Message message = new Message( self, s2, "talk", _arguments, token_3_2, null );
-						__messages.add( message );
-					}
+					Object _arguments[] = {  };
+					Message message = new Message( self, s1, "whoAmI", _arguments, null, token_2_0 );
+					__messages.add( message );
 				}
+				// s1<-talk(((Chat)self), token, ":Hello what's up?  ")
+				{
+					Object _arguments[] = { ((Chat)self), token_2_0, ":Hello what's up?  " };
+					Message message = new Message( self, s1, "talk", _arguments, token_2_0, token_2_1 );
+					__messages.add( message );
+				}
+				// s2<-whoAmI()
+				{
+					Object _arguments[] = {  };
+					Message message = new Message( self, s2, "whoAmI", _arguments, token_2_1, token_2_2 );
+					__messages.add( message );
+				}
+				// s2<-talk(((Chat)self), token, ":Hello, I am ok thanks!  ")
+				{
+					Object _arguments[] = { ((Chat)self), token_2_2, ":Hello, I am ok thanks!  " };
+					Message message = new Message( self, s2, "talk", _arguments, token_2_2, currentMessage.getContinuationToken() );
+					__messages.add( message );
+				}
+				throw new CurrentContinuationException();
 			}
 		}
 		public void reply(String replyMsg) {
@@ -323,10 +322,17 @@ public class Chat extends UniversalActor  {
 				Speaker speaker1 = (Speaker)Speaker.getReferenceByName(args[0]);
 				Speaker speaker2 = (Speaker)Speaker.getReferenceByName(args[1]);
 				{
+					Token token_3_0 = new Token();
 					// chatSession(speaker1, speaker2)
 					{
 						Object _arguments[] = { speaker1, speaker2 };
-						Message message = new Message( self, self, "chatSession", _arguments, null, null );
+						Message message = new Message( self, self, "chatSession", _arguments, null, token_3_0 );
+						__messages.add( message );
+					}
+					// standardOutput<-println("Done with chat conversation")
+					{
+						Object _arguments[] = { "Done with chat conversation" };
+						Message message = new Message( self, standardOutput, "println", _arguments, token_3_0, null );
 						__messages.add( message );
 					}
 				}

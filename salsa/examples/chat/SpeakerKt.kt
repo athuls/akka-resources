@@ -10,14 +10,13 @@ class SpeakerKt {
 	companion object SpeakerFactory {
 		fun a(name: String) : String {
 			SpeakerInterface.create(name)
-			return "John Jack";
+			return name;
 		}		
 	}
 	
 }
 
 fun main(args: Array<String>) {
-    //SpeakerInterface.create()
     println("Received name for speaker: ${args[0]}")
     SpeakerKt.a(args[0])
 }

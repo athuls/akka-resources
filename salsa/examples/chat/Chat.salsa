@@ -7,9 +7,9 @@ behavior Chat{
 		//for (int i=0;i<6; i++)
 		//{
 			s1<-whoAmI() @ 
-			s1<-talk(self,token, ":Hello what's up?  ") @
+			s1<-talk(self,token, ":How are you doing?  ") @
 			s2<-whoAmI() @
-			s2<-talk(self, token, ":Hello, I am ok thanks!  ") @
+			s2<-talk(self, token, ":I am doing good, thanks!  ") @
 			currentContinuation;
 		//}
 

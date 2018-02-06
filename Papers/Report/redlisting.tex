@@ -1,0 +1,68 @@
+%\definecolor{RedCommentColor}{rgb}{0.247, 0.498, 0.273}
+\definecolor{RedCommentColor}{HTML}{669966}
+\definecolor{RedStringColor}{rgb}{1, 0, 0}
+%\definecolor{RedKeywordColor}{rgb}{0, 0, 0.6}
+\definecolor{RedKeywordColor}{HTML}{990033}
+%\definecolor{RedBkgColor}{rgb}{0.98, 0.98, 0.98}
+\definecolor{RedBkgColor}{HTML}{FFFF00}
+\definecolor{RedTypeColor}{HTML}{336699}
+%\def\myemphstyle{\color{blue!40!black}\bfseries}
+\def\myemphstyle{\color[HTML]{336699}\bfseries}
+
+% \definecolor{RedCommentColor}{rgb}{0, 0, 0}
+% \definecolor{RedStringColor}{rgb}{0, 0, 0}
+% \definecolor{RedKeywordColor}{rgb}{0, 0, 0}
+% \definecolor{RedBkgColor}{rgb}{1, 1, 1}
+% \def\myemphstyle{}
+
+% \newcommand{\Hilight}{\makebox[0pt][l]{\color{gray}\rule[-3pt]{0.80\linewidth}{9pt}}}
+% \lstdefinelanguage{pseudo}{
+%   morekeywords={if,else,return,true,false,public,static,void},
+%   keywordstyle=\bfseries,
+%   lineskip=-0.1em,
+%   numbers=none,
+%   numberstyle=\jnumberstyle,
+%   numbersep=4pt,
+%   basicstyle=\scriptsize,
+%   basicstyle=\jbasicstyle,
+%   breaklines=true,
+%   breakautoindent=true,
+%   tabsize=2,
+%   columns=fullflexible,
+%   morecomment=*[l][\textsl]{//},
+%   mathescape=true,
+% }
+% \newcommand{\code}[1]{{\ifmmode{\mathtt{#1}}\else$\mathtt{#1}$\fi}}
+
+
+\lstdefinelanguage{redlisting}{
+  keywords={%
+     abstract_record, abstract_machine, record, machine, do, end, event, data, set, seq, let, entity, message, some, all, one, lone, no, requires, ensures, new, class, in, from, to, case, response, params, send, receive, if, then, else, when, unless, fail, def, policy, principal, restrict, reject, refs, owns, fields, super},
+  sensitive=true,  % case sensitive
+  emph={Client,User,Server,AuthUser,AuthServer,AuthClient,Msg,ChatRoom,String,CreateRoom,JoinRoom,SendMsg,HideUserPrivateData,FilterChatRoomMembers,SignIn,SignOut,Register,Unregister,WebClient,WebServer,Text,UpdateTables,ActiveRecord,Base,Red,Model,Record,Migration},
+  emphstyle={\myemphstyle},
+  morecomment=[l]{\#},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  showstringspaces=false, 
+  numbers=none,
+  firstnumber=0,
+  numberstyle=\tiny,
+  % backgroundcolor=\color[HTML]{FFFF00},
+  stepnumber=5,
+  basicstyle=\tiny\ttfamily,
+  commentstyle=\itshape\color{RedCommentColor},
+  keywordstyle=\bfseries\color{RedKeywordColor},
+  stringstyle=\itshape\color{RedStringColor},
+  ndkeywordstyle=\bfseries,
+  frame=single,
+}
+
+\lstnewenvironment{redLines}[1][]{%
+  \lstset{language=redlisting,
+    floatplacement={tbp},captionpos=b,
+    frame=lines,xleftmargin=2pt,xrightmargin=2pt,#1}}{}
+\lstnewenvironment{redlisting}[1][]{%
+  \lstset{language=redlisting,
+    floatplacement={tbp},captionpos=b,
+    xleftmargin=2pt,xrightmargin=2pt,#1}}{}

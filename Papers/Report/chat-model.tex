@@ -1,0 +1,191 @@
+\begin{figure*}[t!]
+\setcounter{sbfgcnt}{0}
+\begin{minipage}[t]{.60\linewidth}
+\vspace{-5pt}
+\begin{minipage}[t]{.45\linewidth}
+\vskip0pt
+
+\begin{redlisting}
+record User < AuthUser do
+  # inherited fields
+  #   name: String, 
+  #   email: String, 
+  #   pswd_hash: String,
+  refs status: String
+end
+\end{redlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.50\linewidth}
+\vskip0pt
+\begin{redlisting}
+record Msg do
+  refs text: Text, 
+       sender: User
+end
+
+
+
+\end{redlisting}
+%\end{minipage}
+%\hfill
+%\begin{minipage}[t]{.36\linewidth}
+\vskip0pt
+\begin{redlisting}
+record ChatRoom do
+  refs name: String, 
+       members: (set User)
+  owns messages: (seq Msg)
+end
+ 
+
+\end{redlisting}
+\end{minipage}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.3\linewidth}
+\sbfg{network model\label{sbfg:entities}}
+\vspace{-5pt}
+\begin{redlisting}
+machine Client < AuthClient
+  refs user: User
+end
+
+machine Server < AuthServer
+  owns rooms: (set ChatRoom)
+end
+\end{redlisting}
+\end{minipage}
+\vspace{-5pt}
+\vskip5pt
+\sbfg{event model\label{sbfg:ircevents}}
+\vspace{-5pt}
+\begin{minipage}[t]{.34\linewidth}
+\vskip0pt
+\begin{redlisting}
+event CreateRoom do
+  from client: Client 
+  to   serv: Server
+  
+  params roomName: String
+  
+  requires {
+    client.user    && 
+    roomName       && 
+    roomName != "" &&
+    !serv.rooms.
+      find_by_name(roomName)
+  }
+  
+  ensures {
+    room = ChatRoom.create
+    room.name = roomName
+    room.members = [client.user]
+    serv.rooms << room
+  }
+end
+\end{redlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.34\linewidth}
+\vskip0pt
+\begin{redlisting}
+event JoinRoom do
+  from client: Client
+  to   serv: Server
+  
+  params room: ChatRoom
+  
+  requires {
+    u = client.user
+    client.user &&
+    !room.members.include?(u)
+  }
+  
+  ensures {
+    room.members << client.user
+  }
+end
+
+
+
+
+\end{redlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.30\linewidth}
+\vskip0pt
+\begin{redlisting}
+event SendMsg do
+  from client: Client
+  to   serv: Server
+  
+  params room: ChatRoom, 
+         msgText: String
+  
+  requires {
+    client.user &&
+    room.members.include?
+      (client.user)
+  }
+  
+  ensures {
+    msg = Msg.create
+    msg.text = msgText
+    msg.sender = client.user
+    room.messages << msg
+  }
+end
+
+\end{redlisting}
+\end{minipage}
+\vspace{-5pt}
+\vskip5pt
+\sbfg{security model\label{sbfg:ircpoly}}
+\vspace{-5pt}
+\begin{minipage}[t]{.45\linewidth}
+\vskip0pt
+\begin{redlisting}
+policy HideUserPrivateData do
+  principal client: Client
+  
+  # restrict access to passwords
+  # except for owning user
+  restrict User.pswd_hash.unless do |user|
+    client.user == user
+  end
+
+  # restrict access to status messages to
+  # users who share at least one chat room
+  # with the owner of that status message
+  restrict User.status.when do |user| 
+    client.user != user &&
+    ChatRoom.none? { |room| 
+      room.members.include?(client.user) &&
+      room.members.include?(user)
+    }
+  end
+end
+\end{redlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.54\linewidth}
+\vskip0pt
+\begin{redlisting}
+policy FilterChatRoomMembers do
+  principal client: Client
+
+  # filter out anonymous users (those who have not 
+  # sent anything) from the 'members' field
+  restrict ChatRoom.members.reject do |room, member|
+    !room.messages.sender.include?(member) &&
+    client.user != member
+  end
+end
+
+\end{redlisting}
+\end{minipage}
+\caption{A model of a simple chat room application, written in 
+our prototype modeling notation.}
+\label{fig:spec}
+\end{figure*}

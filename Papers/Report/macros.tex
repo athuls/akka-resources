@@ -1,0 +1,56 @@
+\newcommand{\CenterCell}[1]{\multicolumn{1}{|c|}{#1}}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage{url}
+\usepackage{cite}
+%\usepackage{boxit}
+\usepackage{alltt}
+\usepackage{booktabs}
+\usepackage{xspace}
+%%%
+%%%% From projects/papers/splash13-red/{main,macros}.tex
+%\usepackage{sbfig}
+\newcounter{sbfgcnt}
+
+\renewcommand{\thesbfgcnt}{(\alph{sbfgcnt})}
+
+\def\sbfg#1{%
+\refstepcounter{sbfgcnt}
+\begin{flushleft}
+  \footnotesize
+  \hrule
+  \vskip2pt
+  \hspace{2pt}\thesbfgcnt\xspace #1
+  \vskip2pt
+  \hrule\hrule
+\end{flushleft}
+% \vskip-10pt
+}
+
+\def\sbtbl#1{%
+\refstepcounter{sbfgcnt}
+\thesbfgcnt\xspace #1
+
+}
+\newcommand{\CodeIn}[1]{\begin{footnotesize}\texttt{#1}\end{footnotesize}}
+\newcommand{\figref}[1]{Figure~\ref{#1}}     % for use in text
+\newcommand{\subfigref}[2]{Figure~\ref{#1}\ref{#2}}
+\newcommand{\Figref}[1]{Figure~\ref{#1}}   % for start of sentence
+
+%\definecolor{RedCommentColor}{rgb}{0.247, 0.498, 0.273}
+\definecolor{RedCommentColor}{HTML}{669966}
+\definecolor{RedStringColor}{rgb}{1, 0, 0}
+%\definecolor{RedKeywordColor}{rgb}{0, 0, 0.6}
+\definecolor{RedKeywordColor}{HTML}{990033}
+%\definecolor{RedBkgColor}{rgb}{0.98, 0.98, 0.98}
+\definecolor{RedBkgColor}{HTML}{FFFF00}
+\definecolor{RedTypeColor}{HTML}{336699}
+%\def\myemphstyle{\color{blue!40!black}\bfseries}
+\def\myemphstyle{\color[HTML]{336699}\bfseries}
+
+% \definecolor{RedCommentColor}{rgb}{0, 0, 0}
+% \definecolor{RedStringColor}{rgb}{0, 0, 0}
+% \definecolor{RedKeywordColor}{rgb}{0, 0, 0}
+% \definecolor{RedBkgColor}{rgb}{1, 1, 1}
+% \def\myemphstyle{}
+	

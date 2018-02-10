@@ -275,9 +275,9 @@ public class Chat extends UniversalActor  {
 					Message message = new Message( self, s1, "whoAmI", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s1<-talk(((Chat)self), token, ":Hello what's up?  ")
+				// s1<-talk(((Chat)self), token, ":How are you doing?  ")
 				{
-					Object _arguments[] = { ((Chat)self), token_2_0, ":Hello what's up?  " };
+					Object _arguments[] = { ((Chat)self), token_2_0, ":How are you doing?  " };
 					Message message = new Message( self, s1, "talk", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
@@ -287,9 +287,9 @@ public class Chat extends UniversalActor  {
 					Message message = new Message( self, s2, "whoAmI", _arguments, token_2_1, token_2_2 );
 					__messages.add( message );
 				}
-				// s2<-talk(((Chat)self), token, ":Hello, I am ok thanks!  ")
+				// s2<-talk(((Chat)self), token, ":I am doing good, thanks!  ")
 				{
-					Object _arguments[] = { ((Chat)self), token_2_2, ":Hello, I am ok thanks!  " };
+					Object _arguments[] = { ((Chat)self), token_2_2, ":I am doing good, thanks!  " };
 					Message message = new Message( self, s2, "talk", _arguments, token_2_2, currentMessage.getContinuationToken() );
 					__messages.add( message );
 				}

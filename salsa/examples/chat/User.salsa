@@ -8,11 +8,6 @@ behavior User implements ActorService{
 	  myName=name;
 	}	
 
-	void talk(Chat remoteChat, String remoteName, String myMessage) {
-		standardOutput<-println(remoteName+": " + myMessage);
-		remoteChat<-reply(remoteName + "'s message received");
-	}
-
 	String whoAmI() {
 	  return myName;
 	}

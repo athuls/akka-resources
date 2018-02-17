@@ -1,26 +1,14 @@
 module examples.chat;
-//Two Speakers chat in a chat session initialized by the actor Chat
 
 
 behavior Client{
-	private User user_ref;
-	void chatSession(Speaker s1, Speaker s2) {
-		//for (int i=0;i<6; i++)
-		//{
-			s1<-whoAmI() @ 
-			s1<-talk(self,token, ":How are you doing?  ") @
-			s2<-whoAmI() @
-			s2<-talk(self, token, ":I am doing good, thanks!  ") @
-			currentContinuation;
-		//}
+	User user_ref;
+	Server server_ref;
 
-		//currentContinuation;	
+	Client(User userref){	
+		user_ref = userref;
 	}
 
-	void reply(String replyMsg) {
-		standardOutput<-println(replyMsg);
-	
-	}
 	
 	void act(String args[]) {
 		if(args.length != 2 ){
@@ -31,6 +19,9 @@ behavior Client{
 		try {
 		
 		  User user1 =(User) User.getReferenceByName(args[0]) ;
+		  server_ref = new Server();
+		  Room dummyRoom = new Room();
+		  server_ref<-sendMessage(user_ref, dummyRoom, "Hello");
 		} catch (Exception e) {			
 		  standardOutput<-println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2>");
 		  return;

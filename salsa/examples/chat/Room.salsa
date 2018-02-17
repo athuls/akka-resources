@@ -1,43 +1,29 @@
 module examples.chat;
-//Two Speakers chat in a chat session initialized by the actor Chat
 
+import java.util.List;
+import java.util.ArrayList;
 
 behavior Room{
 	private List<User> user_refs;
 	private String roomName;
 	private List<String> messages;
+	private Server server_ref;
 
-	void chatSession(Speaker s1, Speaker s2) {
-		//for (int i=0;i<6; i++)
-		//{
-			s1<-whoAmI() @ 
-			s1<-talk(self,token, ":How are you doing?  ") @
-			s2<-whoAmI() @
-			s2<-talk(self, token, ":I am doing good, thanks!  ") @
-			currentContinuation;
-		//}
-
-		//currentContinuation;	
-	}
-
-	void reply(String replyMsg) {
-		standardOutput<-println(replyMsg);
-	
+	Room(Server serverref) {
+		user_refs = new ArrayList<User>();
+		messages = new ArrayList<String>();
+		server_ref = serverref;
 	}
 	
-	void act(String args[]) {
-		if(args.length != 2 ){
-			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>");
-			return;
-		}
-		
-		try {
-		
-		  User user1 =(User) User.getReferenceByName(args[0]) ;
-		} catch (Exception e) {			
-		  standardOutput<-println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2>");
-		  return;
-		}
+	boolean checkUser(User user) {
+		if(user_refs.contains(user)) {
+			return true;
+		}	
+	}	
+	
+	String addMsg(Message msg) {
+		msg<-display();
+		messages.add(msg);
 	}
+
 }
-

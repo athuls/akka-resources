@@ -3,7 +3,8 @@ module examples.chat;
 
 behavior Speaker implements ActorService{
 	private String myName="";	
-
+	Server server_ref;
+	
 	Speaker(String name) {
 	  myName=name;
 	}	
@@ -12,6 +13,16 @@ behavior Speaker implements ActorService{
 		standardOutput<-println(remoteName+": " + myMessage);
 		remoteChat<-reply(remoteName + "'s message received");
 	}
+
+	void broadcastSend(String msg) {
+		standardOutput<-println("[local] " + myName + ": " + msg);
+		//server_ref<-broadcast(getUAN().toString(), msg);
+		server_ref<-broadcast(myName, msg);
+	}	
+
+	void broadcastReceive(String speakerName, String msg) {
+		standardOutput<-println(speakerName + ": " + msg);
+	}	
 
 	String whoAmI() {
 	  return myName;
@@ -22,13 +33,15 @@ behavior Speaker implements ActorService{
 	}	
 
 	void act(String args[]){
-		if(args.length != 1){
+		if(args.length != 3){
 			standardOutput<-println("Usage: java -Duan=uan://hostname/place examples.chat.Sender <myName>");
 			return;
 		}
 		
-		if(args.length == 1) {
-			myName=args[0];
+		server_ref = (Server) Server.getReferenceByName(args[0]);
+		if(args.length == 3) {
+			myName=args[1];
+			myName=args[2];
 			whereAmI();
 		}
 	}	

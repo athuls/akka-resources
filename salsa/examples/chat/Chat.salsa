@@ -3,6 +3,7 @@ module examples.chat;
 
 
 behavior Chat{
+	/*
 	void chatSession(Speaker s1, Speaker s2) {
 		//for (int i=0;i<6; i++)
 		//{
@@ -10,6 +11,19 @@ behavior Chat{
 			s1<-talk(self,token, ":How are you doing?  ") @
 			s2<-whoAmI() @
 			s2<-talk(self, token, ":I am doing good, thanks!  ") @
+			currentContinuation;
+		//}
+
+		//currentContinuation;	
+	}*/
+
+	void chatSession(Speaker s1, Speaker s2, Speaker s3) {
+		//for (int i=0;i<6; i++)
+		//{
+			s1<-broadcastSend("Dummy1") @
+			//s1<-talk(self,token, ":How are you doing?  ") @
+			s2<-broadcastSend("Dummy2") @
+			//s2<-talk(self, token, ":I am doing good, thanks!  ") @
 			currentContinuation;
 		//}
 
@@ -22,7 +36,7 @@ behavior Chat{
 	}
 	
 	void act(String args[]) {
-		if(args.length != 2 ){
+		if(args.length != 3 ){
 			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>");
 			return;
 		}
@@ -31,7 +45,8 @@ behavior Chat{
 		
 		  Speaker speaker1 =(Speaker) Speaker.getReferenceByName(args[0]) ;
 		  Speaker speaker2 =(Speaker) Speaker.getReferenceByName(args[1]) ;
-		  chatSession(speaker1, speaker2) @ standardOutput<-println("Done with chat conversation");
+		  Speaker speaker3 =(Speaker) Speaker.getReferenceByName(args[2]) ;
+		  chatSession(speaker1, speaker2, speaker3) @ standardOutput<-println("Done with chat conversation");
 		} catch (Exception e) {			
 		  standardOutput<-println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2>");
 		  return;

@@ -187,6 +187,7 @@ public class Speaker extends UniversalActor  implements ActorService {
 		}
 
 		String myName = "";
+		Server server_ref;
 		void construct(String name){
 			myName = name;
 		}
@@ -208,6 +209,34 @@ public class Speaker extends UniversalActor  implements ActorService {
 				}
 			}
 		}
+		public void broadcastSend(String msg) {
+			{
+				// standardOutput<-println("[local] "+myName+": "+msg)
+				{
+					Object _arguments[] = { "[local] "+myName+": "+msg };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// server_ref<-broadcast(myName, msg)
+				{
+					Object _arguments[] = { myName, msg };
+					Message message = new Message( self, server_ref, "broadcast", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+		}
+		public void broadcastReceive(String speakerName, String msg) {
+			{
+				// standardOutput<-println(speakerName+": "+msg)
+				{
+					Object _arguments[] = { speakerName+": "+msg };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+		}
 		public String whoAmI() {
 			return myName;
 		}
@@ -222,7 +251,7 @@ public class Speaker extends UniversalActor  implements ActorService {
 			}
 		}
 		public void act(String args[]) {
-			if (args.length!=1) {{
+			if (args.length!=3) {{
 				{
 					// standardOutput<-println("Usage: java -Duan=uan://hostname/place examples.chat.Sender <myName>")
 					{
@@ -233,8 +262,10 @@ public class Speaker extends UniversalActor  implements ActorService {
 				}
 				return;
 			}
-}			if (args.length==1) {{
-				myName = args[0];
+}			server_ref = (Server)Server.getReferenceByName(args[0]);
+			if (args.length==3) {{
+				myName = args[1];
+				myName = args[2];
 				{
 					// whereAmI()
 					{

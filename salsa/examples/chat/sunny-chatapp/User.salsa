@@ -1,0 +1,31 @@
+module examples.chat;
+
+
+behavior User implements ActorService{
+	private String myName="";	
+
+	User(String name) {
+	  myName=name;
+	}	
+
+	String whoAmI() {
+	  return myName;
+	}
+
+	void whereAmI() {
+		standardOutput<-println("Speaker started with uan: "+ getUAN().toString());
+	}	
+
+	void act(String args[]){
+		if(args.length != 1){
+			standardOutput<-println("Usage: java -Duan=uan://hostname/place examples.chat.Sender <myName>");
+			return;
+		}
+		
+		if(args.length == 1) {
+			myName=args[0];
+			whereAmI();
+		}
+	}	
+}
+

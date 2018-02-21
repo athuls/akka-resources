@@ -1,23 +1,53 @@
 module examples.chat;
 //Two Speakers chat in a chat session initialized by the actor Chat
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 behavior Server implements ActorService{
-	List<Room> chat_rooms;
 	
-	Server() {
-		Room dummyRoom = new Room();
-		chat_rooms=new ArrayList();
-		chat_rooms.add(dummyRoom);
-	}
+	List registeredUsers;
 
-	void sendMessage(User user, Room chatRoom, String msgText) {
-		if(chat_rooms.contains(chatRoom) && chatRoom<-checkUser(user))	{
-			Message msg = new Message(msgText, user);
-			chatRoom<-addMsg(msg);
+	Server() {
+		registeredUsers = new ArrayList();
+	}	
+
+	void broadcast(String speakerName, String msg) {
+		standardOutput<-println("Speaker name from server is " + speakerName);
+		for(int i = 0; i < registeredUsers.size(); i++) {
+			if(!registeredUsers.get(i).equals(speakerName)) {
+				Speaker speakerRef = (Speaker) Speaker.getReferenceByName((String)registeredUsers.get(i));
+				speakerRef<-broadcastReceive(speakerName, msg);
+			}
 		}	
+  	}
+
+	void reply(String replyMsg) {
+		standardOutput<-println(replyMsg);
+	
 	}
 	
+	void act(String args[]) {
+		if(args.length != 3 ){
+			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>");
+			return;
+		}
+		
+		try {
+		
+		  for(int i = 0; i < args.length; i++) {
+			registeredUsers.add(args[i]);
+	          }
+
+		  //Speaker speaker1 =(Speaker) Speaker.getReferenceByName(args[0]) ;
+		  //Speaker speaker2 =(Speaker) Speaker.getReferenceByName(args[1]) ;
+		  //registeredUsers.add(speaker1);
+		  //registeredUsers.add(speaker2);
+		  //chatSession(speaker1, speaker2) @ standardOutput<-println("Done with chat conversation");
+		} catch (Exception e) {			
+		  standardOutput<-println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2>");
+		  return;
+		}
+	}
 }
 

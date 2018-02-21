@@ -1,0 +1,29 @@
+module examples.chat;
+
+import java.util.List;
+import java.util.ArrayList;
+
+behavior Room{
+	private List user_refs;
+	private String roomName;
+	private List messages;
+	private Server server_ref;
+
+	Room(Server serverref) {
+		user_refs = new ArrayList();
+		messages = new ArrayList();
+		server_ref = serverref;
+	}
+	
+	boolean checkUser(User user) {
+		if(user_refs.contains(user)) {
+			return true;
+		}	
+	}	
+	
+	String addMsg(Message msg) {
+		msg<-display();
+		messages.add(msg);
+	}
+
+}

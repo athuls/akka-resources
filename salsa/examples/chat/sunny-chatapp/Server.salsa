@@ -1,0 +1,23 @@
+module examples.chat;
+//Two Speakers chat in a chat session initialized by the actor Chat
+
+import java.util.*;
+
+behavior Server implements ActorService{
+	List chat_rooms;
+	
+	Server() {
+		Room dummyRoom = new Room();
+		chat_rooms=new ArrayList();
+		chat_rooms.add(dummyRoom);
+	}
+
+	void sendMessage(User user, Room chatRoom, String msgText) {
+		if(chat_rooms.contains(chatRoom) && chatRoom<-checkUser(user))	{
+			Message msg = new Message(msgText, user);
+			chatRoom<-addMsg(msg);
+		}	
+	}
+	
+}
+

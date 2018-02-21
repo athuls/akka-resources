@@ -42,7 +42,6 @@ behavior Chat{
 		}
 		
 		try {
-		
 		  Speaker speaker1 =(Speaker) Speaker.getReferenceByName(args[0]) ;
 		  Speaker speaker2 =(Speaker) Speaker.getReferenceByName(args[1]) ;
 		  Speaker speaker3 =(Speaker) Speaker.getReferenceByName(args[2]) ;

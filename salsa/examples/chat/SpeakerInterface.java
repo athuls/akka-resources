@@ -11,7 +11,7 @@ public class SpeakerInterface {
 			//}
 	//}
 
-	public static void create(String speakerName) {
-		Speaker.main(new String[] {speakerName});
+	public static void create(String serverName, String speakerName) {
+		Speaker.main(new String[] {serverName, speakerName});
 	}
 }

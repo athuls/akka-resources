@@ -2,7 +2,11 @@ LIBS=./libs
 VERSION=1.1.5
 LOGS=./logs
 NAMESERVERLOGS=nameserver.txt
-SPEAKERLOGS=speaker.txt
+SERVERLOGS=server.txt
+SPEAKER1LOGS=speaker1.txt
+SPEAKER2LOGS=speaker2.txt
+SPEAKER3LOGS=speaker3.txt
+CHATLOGS=chat.txt
 
 # Colors for output
 RED='\033[0;31m'
@@ -38,11 +42,13 @@ cp salsa$VERSION.jar $LIBS/
 echo "${BLUE}##################### Converting SALSA to java code #####################${NC}"
 java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/Speaker.salsa
 java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/Chat.salsa
+java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/Server.salsa
 echo "${BLUE}##################### DONE #####################${NC}"
 
 echo "${BLUE}##################### Compiling SALSA code, that was previously converted to java #####################${NC}"
 javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/SpeakerInterface.java examples/chat/Speaker.java
 javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/ChatInterface.java examples/chat/Chat.java
+javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/ServerInterface.java examples/chat/Server.java
 echo "${BLUE}##################### DONE #####################${NC}"
 
 
@@ -69,6 +75,10 @@ fi
 #echo $! >> $NAMESERVER
 #java -cp salsa1.1.5.jar:Foo.jar:. JavaClass
 
+javac examples/chat/ServerInterface.java
+kotlinc -cp .:./examples/chat examples/chat/ServerKt.kt
+echo "${BLUE}Compiled server code in kotlin${NC}"
+
 javac examples/chat/SpeakerInterface.java
 kotlinc -cp .:./examples/chat examples/chat/SpeakerKt.kt
 echo "${BLUE}Compiled speaker code in kotlin${NC}"
@@ -77,8 +87,22 @@ javac examples/chat/ChatInterface.java
 kotlinc -cp .:./examples/chat examples/chat/ChatKt.kt
 echo "${BLUE}Compiled chat code in kotlin${NC}"
 
+echo "${BLUE}##################### Launching Kotlin code for Server actor with ids of all speakers #####################${NC}"
+java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id1 examples.chat.ServerKtKt uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 > $LOGS/$SERVERLOGS 2>&1 & 
+#while read -r line; do
+#	if [[ $line == *"Speaker started"* ]]; then
+#		break
+#	fi
+#done
+sleep 1
+
+echo "${BLUE}Launched 2 speakers with names John and Jack${NC}"
+echo ""
+echo ""
+
+
 echo "${BLUE}##################### Launching Kotlin code for Speaker actor with name John #####################${NC}"
-java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=uan:\\nameserver\id1 examples.chat.SpeakerKtKt John & 
+java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id2 examples.chat.SpeakerKtKt uan:\\localhost:3030\id1 uan:\\localhost:3030\id2 > $LOGS/$SPEAKER1LOGS 2>&1 & 
 #while read -r line; do
 #	if [[ $line == *"Speaker started"* ]]; then
 #		break
@@ -87,7 +111,16 @@ java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=ua
 sleep 1
 
 echo "${BLUE}##################### Launching Kotlin code for Speaker actor with name Jack #####################${NC}"
-java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=uan:\\nameserver\id2 examples.chat.SpeakerKtKt Jack &
+java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id3 examples.chat.SpeakerKtKt uan:\\localhost:3030\id1 uan:\\localhost:3030\id3 > $LOGS/$SPEAKER2LOGS 2>&1 & 
+#while read -r line; do
+#	if [[ $line == *"Speaker started"* ]]; then
+#		break
+#	fi
+#done
+sleep 1
+
+echo "${BLUE}##################### Launching Kotlin code for Speaker actor with name Michael #####################${NC}"
+java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id4 examples.chat.SpeakerKtKt uan:\\localhost:3030\id1 uan:\\localhost:3030\id4 > $LOGS/$SPEAKER3LOGS 2>&1 &
 #while read -r line
 #do
 #	if [[ $line == *"Speaker started"* ]]; then
@@ -95,22 +128,22 @@ java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=ua
 #	fi
 #done
 
-sleep 1
+sleep 5
 
-echo "${BLUE}Launched 2 speakers with names John and Jack${NC}"
+echo "${BLUE}Launched 3 speakers with names John, Jack${NC}"
 
 echo ""
 echo ""
 
 echo "${BLUE}##################### Initiating conversation by running Kotlin code for Chat actor  ##########################${NC}"
-java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Dnodie examples.chat.ChatKtKt uan:\\nameserver\id1 uan:\\nameserver\id2 &
+java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Dnodie examples.chat.ChatKtKt uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 > $LOGS/$CHATLOGS 2>&1 &
 #while read -r line; do
 #	echo $line
 #	if [[ $line == *"Done with"* ]]; then
 #		break
 #	fi
 #done
-sleep 2
+sleep 5
 
 #echo "${BLUE}##################### Killing any existing Chat and Speaker services #####################${NC}"
 #ps -ef | grep Chat | grep -v grep | awk '{print $2}' | xargs kill -9

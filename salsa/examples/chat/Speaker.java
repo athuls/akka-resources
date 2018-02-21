@@ -251,7 +251,7 @@ public class Speaker extends UniversalActor  implements ActorService {
 			}
 		}
 		public void act(String args[]) {
-			if (args.length!=3) {{
+			if (args.length!=2) {{
 				{
 					// standardOutput<-println("Usage: java -Duan=uan://hostname/place examples.chat.Sender <myName>")
 					{
@@ -263,9 +263,8 @@ public class Speaker extends UniversalActor  implements ActorService {
 				return;
 			}
 }			server_ref = (Server)Server.getReferenceByName(args[0]);
-			if (args.length==3) {{
+			if (args.length==2) {{
 				myName = args[1];
-				myName = args[2];
 				{
 					// whereAmI()
 					{

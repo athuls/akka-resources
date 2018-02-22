@@ -88,7 +88,8 @@ kotlinc -cp .:./examples/chat examples/chat/ChatKt.kt
 echo "${BLUE}Compiled chat code in kotlin${NC}"
 
 echo "${BLUE}##################### Launching Kotlin code for Server actor with ids of all speakers #####################${NC}"
-java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id1 examples.chat.ServerKtKt uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 > $LOGS/$SERVERLOGS 2>&1 & 
+#java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id1 examples.chat.ServerKtKt uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 > $LOGS/$SERVERLOGS 2>&1 & 
+java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id1 examples.chat.ServerKtKt > $LOGS/$SERVERLOGS 2>&1 & 
 #while read -r line; do
 #	if [[ $line == *"Speaker started"* ]]; then
 #		break

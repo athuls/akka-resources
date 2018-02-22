@@ -217,21 +217,19 @@ public class Server extends UniversalActor  implements ActorService {
 				}
 			}
 		}
+		public boolean registerUser(String userId) {
+			registeredUsers.add(userId);
+			return true;
+		}
 		public void act(String args[]) {
-			if (args.length!=3) {{
+			try {
 				{
-					// standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>")
+					// standardOutput<-println("Server started")
 					{
-						Object _arguments[] = { "Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>" };
+						Object _arguments[] = { "Server started" };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 						__messages.add( message );
 					}
-				}
-				return;
-			}
-}			try {
-				for (int i = 0; i<args.length; i++){
-					registeredUsers.add(args[i]);
 				}
 			}
 			catch (Exception e) {

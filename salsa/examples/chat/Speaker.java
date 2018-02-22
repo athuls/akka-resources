@@ -262,8 +262,7 @@ public class Speaker extends UniversalActor  implements ActorService {
 				}
 				return;
 			}
-}			server_ref = (Server)Server.getReferenceByName(args[0]);
-			if (args.length==2) {{
+}			if (args.length==2) {{
 				myName = args[1];
 				{
 					// whereAmI()
@@ -274,6 +273,29 @@ public class Speaker extends UniversalActor  implements ActorService {
 					}
 				}
 			}
-}		}
+}			server_ref = (Server)Server.getReferenceByName(args[0]);
+			{
+				Token token_2_0 = new Token();
+				Token token_2_1 = new Token();
+				// server_ref<-registerUser(args[1])
+				{
+					Object _arguments[] = { args[1] };
+					Message message = new Message( self, server_ref, "registerUser", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
+				// standardOutput<-print(token)
+				{
+					Object _arguments[] = { token_2_0 };
+					Message message = new Message( self, standardOutput, "print", _arguments, token_2_0, token_2_1 );
+					__messages.add( message );
+				}
+				// standardOutput<-println(" returned by server for registration")
+				{
+					Object _arguments[] = { " returned by server for registration" };
+					Message message = new Message( self, standardOutput, "println", _arguments, token_2_1, null );
+					__messages.add( message );
+				}
+			}
+		}
 	}
 }

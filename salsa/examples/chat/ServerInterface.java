@@ -10,7 +10,11 @@ public class ServerInterface {
                         */
                                          
                                                                 
+	/*
         public static void create(String id1, String id2, String id3) {          
                 Server.main(new String[] {id1, id2, id3});
-        }                                                      
+        }*/                                                     
+        public static void create() {          
+                Server.main(null);
+        }
 } 

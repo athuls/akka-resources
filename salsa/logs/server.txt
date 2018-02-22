@@ -1,3 +1,3 @@
-Received ids for chat: uan:\localhost:3030id2 and uan:\localhost:3030id3 and uan:\localhost:3030id4
+Server started
 Speaker name from server is uan:\localhost:3030id2
 Speaker name from server is uan:\localhost:3030id3

@@ -26,18 +26,26 @@ behavior Server implements ActorService{
 		standardOutput<-println(replyMsg);
 	
 	}
+
+	boolean registerUser(String userId) {
+		// Check any condition for registration if required
+		registeredUsers.add(userId);
+		return true;
+		
+	}
 	
 	void act(String args[]) {
-		if(args.length != 3 ){
+		/*if(args.length != 3 ){
 			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>");
 			return;
-		}
+		}*/
 		
 		try {
 		
-		  for(int i = 0; i < args.length; i++) {
+		  standardOutput<-println("Server started");
+		  /*for(int i = 0; i < args.length; i++) {
 			registeredUsers.add(args[i]);
-	          }
+	          }*/
 
 		  //Speaker speaker1 =(Speaker) Speaker.getReferenceByName(args[0]) ;
 		  //Speaker speaker2 =(Speaker) Speaker.getReferenceByName(args[1]) ;

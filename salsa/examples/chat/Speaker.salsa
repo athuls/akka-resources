@@ -38,10 +38,12 @@ behavior Speaker implements ActorService{
 			return;
 		}
 		
-		server_ref = (Server) Server.getReferenceByName(args[0]);
 		if(args.length == 2) {
 			myName=args[1];
 			whereAmI();
 		}
+
+		server_ref = (Server) Server.getReferenceByName(args[0]);
+		server_ref<-registerUser(args[1]) @ standardOutput<-print(token) @ standardOutput<-println(" returned by server for registration");
 	}	
 }

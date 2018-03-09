@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "985043760539",
+    "firebase_url": "https://groupchat-5d1d3.firebaseio.com",
+    "project_id": "groupchat-5d1d3",
+    "storage_bucket": "groupchat-5d1d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985043760539:android:b8f1240e2e14b488",
+        "android_client_info": {
+          "package_name": "chinmayasharma.com.groupchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985043760539-ebhdetgpqhvkohbh1702ltialc4gqjl8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "chinmayasharma.com.groupchat",
+            "certificate_hash": "a814c3fb0f17c07030793897ecbacde081d91a7b"
+          }
+        },
+        {
+          "client_id": "985043760539-op0t4rdtpog2unjl6lp16h6fu3v556fa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3_IpVm4CJv5hsQs1Kl8uz7SvsOZVEv6A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985043760539-op0t4rdtpog2unjl6lp16h6fu3v556fa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

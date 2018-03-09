@@ -15,5 +15,6 @@ class ServerKt {
 fun main(args: Array<String>) {
     //println("Received ids for chat: ${args[0]} and ${args[1]} and ${args[2]}")
     //ServerKt.a(args[0], args[1], args[2])
+    println("Started server1")
     ServerKt.a()
 }

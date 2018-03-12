@@ -6,7 +6,7 @@
 2) In new window: sdk install kotlin
 
 # Build
-1) cd akka-resources/salsa
+1) cd akka-resources/src
 2) sh preBuild.sh
 3) mvn clean package
 

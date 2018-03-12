@@ -1,5 +1,0 @@
-Received name for speaker: uan:\localhost:3030id3 with server uan:\localhost:3030id1
-Speaker started with uan: uan://:3030\localhost:3030id3
-true returned by server for registration
-uan:\localhost:3030id2: Dummy1
-[local] uan:\localhost:3030id3: Dummy2

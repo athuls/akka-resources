@@ -1,4 +1,3 @@
 Received speaker: uan:\localhost:3030id3 to register with server uan:\localhost:3030id1
 Speaker started with uan: uan://:3030\localhost:3030id3
-[Speaker Remote] uan:\localhost:3030id2: Sample message form speaker 1
 [Speaker Local] uan:\localhost:3030id3: Sample message from speaker 2

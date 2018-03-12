@@ -11,7 +11,9 @@
 3) mvn clean package
 
 # Execute 
-1) ./runOnlyChat.sh
+1) Run the individual commands in runOnlyChat.sh
+2) Note that the entire script could be run as below, but could cause timing issues in creating actor services and exchanging messages between them. 
+   ./runOnlyChat.sh
 
 # View output
 Log files with output from server, speakers (chat clients), etc. available at target/classes/logs 

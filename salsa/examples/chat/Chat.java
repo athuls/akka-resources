@@ -267,15 +267,15 @@ public class Chat extends UniversalActor  {
 		public void chatSession(Speaker s1, Speaker s2, Speaker s3) {
 			{
 				Token token_2_0 = new Token();
-				// s1<-broadcastSend("Dummy1")
+				// s1<-broadcastSend("Sample message form speaker 1")
 				{
-					Object _arguments[] = { "Dummy1" };
+					Object _arguments[] = { "Sample message form speaker 1" };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend("Dummy2")
+				// s2<-broadcastSend("Sample message from speaker 2")
 				{
-					Object _arguments[] = { "Dummy2" };
+					Object _arguments[] = { "Sample message from speaker 2" };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_0, currentMessage.getContinuationToken() );
 					__messages.add( message );
 				}
@@ -326,9 +326,9 @@ public class Chat extends UniversalActor  {
 			}
 			catch (Exception e) {
 				{
-					// standardOutput<-println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2>")
+					// standardOutput<-println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>")
 					{
-						Object _arguments[] = { "Usage: java examples.chat.Chat <friendUAN1> <friendUAN2>" };
+						Object _arguments[] = { "Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>" };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 						__messages.add( message );
 					}

@@ -1,1 +1,0 @@
-java -cp .:./libs/kotlin-runtime-1.2.20-dev-331.jar:./libs/salsa1.1.5.jar:./libs/salsa-chat-1.0-SNAPSHOT.jar -Duan=uan:\\localhost:3030\id1 examples.chat.ServerKtKt

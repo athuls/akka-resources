@@ -186,9 +186,9 @@ public class Server extends UniversalActor  implements ActorService {
 		}
 		public void broadcast(String speakerName, String msg) {
 			{
-				// standardOutput<-println("Speaker name from server is "+speakerName)
+				// standardOutput<-println("Speaker name for message is "+speakerName)
 				{
-					Object _arguments[] = { "Speaker name from server is "+speakerName };
+					Object _arguments[] = { "Speaker name for message is "+speakerName };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 					__messages.add( message );
 				}
@@ -207,43 +207,38 @@ public class Server extends UniversalActor  implements ActorService {
 				}
 }			}
 		}
-		public void reply(String replyMsg) {
+		public boolean registerUser(String userId) {
 			{
-				// standardOutput<-println(replyMsg)
+				// standardOutput<-println("Registering speaker "+userId)
 				{
-					Object _arguments[] = { replyMsg };
+					Object _arguments[] = { "Registering speaker "+userId };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
-		}
-		public boolean registerUser(String userId) {
 			registeredUsers.add(userId);
 			return true;
 		}
 		public void act(String args[]) {
-			try {
+			if (args!=null) {{
 				{
-					// standardOutput<-println("Server started")
+					// standardOutput<-println("Usage: java -Duan=myuan examples.chat.Server")
 					{
-						Object _arguments[] = { "Server started" };
-						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-						__messages.add( message );
-					}
-				}
-			}
-			catch (Exception e) {
-				{
-					// standardOutput<-println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2>")
-					{
-						Object _arguments[] = { "Usage: java examples.chat.Chat <friendUAN1> <friendUAN2>" };
+						Object _arguments[] = { "Usage: java -Duan=myuan examples.chat.Server" };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 						__messages.add( message );
 					}
 				}
 				return;
 			}
-
+}			{
+				// standardOutput<-println("Server started")
+				{
+					Object _arguments[] = { "Server started" };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 		}
 	}
 }

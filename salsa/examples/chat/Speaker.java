@@ -96,12 +96,6 @@ public class Speaker extends UniversalActor  implements ActorService {
 		}
 	}
 
-	public UniversalActor construct (String name) {
-		Object[] __arguments = { name };
-		this.send( new Message(this, this, "construct", __arguments, null, null) );
-		return this;
-	}
-
 	public UniversalActor construct() {
 		Object[] __arguments = { };
 		this.send( new Message(this, this, "construct", __arguments, null, null) );
@@ -188,32 +182,11 @@ public class Speaker extends UniversalActor  implements ActorService {
 
 		String myName = "";
 		Server server_ref;
-		void construct(String name){
-			myName = name;
-		}
-		public void talk(Chat remoteChat, String remoteName, String myMessage) {
-			{
-				// standardOutput<-println(remoteName+": "+myMessage)
-				{
-					Object _arguments[] = { remoteName+": "+myMessage };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// remoteChat<-reply(remoteName+"'s message received")
-				{
-					Object _arguments[] = { remoteName+"'s message received" };
-					Message message = new Message( self, remoteChat, "reply", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-		}
 		public void broadcastSend(String msg) {
 			{
-				// standardOutput<-println("[local] "+myName+": "+msg)
+				// standardOutput<-println("[Speaker Local] "+myName+": "+msg)
 				{
-					Object _arguments[] = { "[local] "+myName+": "+msg };
+					Object _arguments[] = { "[Speaker Local] "+myName+": "+msg };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 					__messages.add( message );
 				}
@@ -229,16 +202,13 @@ public class Speaker extends UniversalActor  implements ActorService {
 		}
 		public void broadcastReceive(String speakerName, String msg) {
 			{
-				// standardOutput<-println(speakerName+": "+msg)
+				// standardOutput<-println("[Speaker Remote] "+speakerName+": "+msg)
 				{
-					Object _arguments[] = { speakerName+": "+msg };
+					Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+msg };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
-		}
-		public String whoAmI() {
-			return myName;
 		}
 		public void whereAmI() {
 			{
@@ -253,46 +223,30 @@ public class Speaker extends UniversalActor  implements ActorService {
 		public void act(String args[]) {
 			if (args.length!=2) {{
 				{
-					// standardOutput<-println("Usage: java -Duan=uan://hostname/place examples.chat.Sender <myName>")
+					// standardOutput<-println("Usage: java -Duan=uan://hostname/place examples.chat.Speaker <serverName> <myName>")
 					{
-						Object _arguments[] = { "Usage: java -Duan=uan://hostname/place examples.chat.Sender <myName>" };
+						Object _arguments[] = { "Usage: java -Duan=uan://hostname/place examples.chat.Speaker <serverName> <myName>" };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 						__messages.add( message );
 					}
 				}
 				return;
 			}
-}			if (args.length==2) {{
-				myName = args[1];
+}			myName = args[1];
+			{
+				// whereAmI()
 				{
-					// whereAmI()
-					{
-						Object _arguments[] = {  };
-						Message message = new Message( self, self, "whereAmI", _arguments, null, null );
-						__messages.add( message );
-					}
+					Object _arguments[] = {  };
+					Message message = new Message( self, self, "whereAmI", _arguments, null, null );
+					__messages.add( message );
 				}
 			}
-}			server_ref = (Server)Server.getReferenceByName(args[0]);
+			server_ref = (Server)Server.getReferenceByName(args[0]);
 			{
-				Token token_2_0 = new Token();
-				Token token_2_1 = new Token();
-				// server_ref<-registerUser(args[1])
+				// server_ref<-registerUser(myName)
 				{
-					Object _arguments[] = { args[1] };
-					Message message = new Message( self, server_ref, "registerUser", _arguments, null, token_2_0 );
-					__messages.add( message );
-				}
-				// standardOutput<-print(token)
-				{
-					Object _arguments[] = { token_2_0 };
-					Message message = new Message( self, standardOutput, "print", _arguments, token_2_0, token_2_1 );
-					__messages.add( message );
-				}
-				// standardOutput<-println(" returned by server for registration")
-				{
-					Object _arguments[] = { " returned by server for registration" };
-					Message message = new Message( self, standardOutput, "println", _arguments, token_2_1, null );
+					Object _arguments[] = { myName };
+					Message message = new Message( self, server_ref, "registerUser", _arguments, null, null );
 					__messages.add( message );
 				}
 			}

@@ -5,28 +5,14 @@ behavior Speaker implements ActorService{
 	private String myName="";	
 	Server server_ref;
 	
-	Speaker(String name) {
-	  myName=name;
-	}	
-
-	void talk(Chat remoteChat, String remoteName, String myMessage) {
-		standardOutput<-println(remoteName+": " + myMessage);
-		remoteChat<-reply(remoteName + "'s message received");
-	}
-
 	void broadcastSend(String msg) {
-		standardOutput<-println("[local] " + myName + ": " + msg);
-		//server_ref<-broadcast(getUAN().toString(), msg);
+		standardOutput<-println("[Speaker Local] " + myName + ": " + msg);
 		server_ref<-broadcast(myName, msg);
 	}	
 
 	void broadcastReceive(String speakerName, String msg) {
-		standardOutput<-println(speakerName + ": " + msg);
+		standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg);
 	}	
-
-	String whoAmI() {
-	  return myName;
-	}
 
 	void whereAmI() {
 		standardOutput<-println("Speaker started with uan: "+ getUAN().toString());
@@ -34,16 +20,14 @@ behavior Speaker implements ActorService{
 
 	void act(String args[]){
 		if(args.length != 2){
-			standardOutput<-println("Usage: java -Duan=uan://hostname/place examples.chat.Sender <myName>");
+			standardOutput<-println("Usage: java -Duan=uan://hostname/place examples.chat.Speaker <serverName> <myName>");
 			return;
 		}
 		
-		if(args.length == 2) {
-			myName=args[1];
-			whereAmI();
-		}
+		myName=args[1];
+		whereAmI();
 
 		server_ref = (Server) Server.getReferenceByName(args[0]);
-		server_ref<-registerUser(args[1]) @ standardOutput<-print(token) @ standardOutput<-println(" returned by server for registration");
+		server_ref<-registerUser(myName);
 	}	
 }

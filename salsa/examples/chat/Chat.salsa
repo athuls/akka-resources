@@ -1,33 +1,13 @@
 module examples.chat;
-//Two Speakers chat in a chat session initialized by the actor Chat
+//Three speakers chat in a chat session initialized by the actor Chat
 
 
 behavior Chat{
-	/*
-	void chatSession(Speaker s1, Speaker s2) {
-		//for (int i=0;i<6; i++)
-		//{
-			s1<-whoAmI() @ 
-			s1<-talk(self,token, ":How are you doing?  ") @
-			s2<-whoAmI() @
-			s2<-talk(self, token, ":I am doing good, thanks!  ") @
-			currentContinuation;
-		//}
-
-		//currentContinuation;	
-	}*/
 
 	void chatSession(Speaker s1, Speaker s2, Speaker s3) {
-		//for (int i=0;i<6; i++)
-		//{
-			s1<-broadcastSend("Dummy1") @
-			//s1<-talk(self,token, ":How are you doing?  ") @
-			s2<-broadcastSend("Dummy2") @
-			//s2<-talk(self, token, ":I am doing good, thanks!  ") @
-			currentContinuation;
-		//}
-
-		//currentContinuation;	
+		s1<-broadcastSend("Sample message form speaker 1") @
+		s2<-broadcastSend("Sample message from speaker 2") @
+		currentContinuation;
 	}
 
 	void reply(String replyMsg) {
@@ -47,7 +27,7 @@ behavior Chat{
 		  Speaker speaker3 =(Speaker) Speaker.getReferenceByName(args[2]) ;
 		  chatSession(speaker1, speaker2, speaker3) @ standardOutput<-println("Done with chat conversation");
 		} catch (Exception e) {			
-		  standardOutput<-println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2>");
+		  standardOutput<-println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>");
 		  return;
 		}
 	}

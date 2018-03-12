@@ -1,0 +1,4 @@
+Started server1
+Server started
+Speaker name from server is uan:\localhost:3030id2
+Speaker name from server is uan:\localhost:3030id3

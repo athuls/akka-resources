@@ -36,8 +36,8 @@ echo "${BLUE}##################### DONE #####################${NC}"
 echo "Copying SALSA jar to libs folder"
 cp salsa$VERSION.jar $LIBS/
 
-kotlinc examples/chat/SpeakerKt.kt -d $LIBS/SpeakerKt.jar
-kotlinc examples/chat/ChatKt.kt -d $LIBS/ChatKt.jar
+#kotlinc examples/chat/SpeakerKt.kt -d $LIBS/SpeakerKt.jar
+#kotlinc examples/chat/ChatKt.kt -d $LIBS/ChatKt.jar
 
 echo "${BLUE}##################### Converting SALSA to java code #####################${NC}"
 java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/Speaker.salsa

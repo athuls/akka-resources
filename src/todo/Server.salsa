@@ -1,0 +1,96 @@
+module todo;
+//Server backend for the chat application
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
+
+
+behavior Server implements ActorService{
+	
+	List registeredUsers;
+	List specifiedTasks;
+	Task taskRef;
+    List taskLists;
+
+
+	Server() {
+		registeredUsers = new ArrayList();
+		specifiedTasks = new ArrayList();
+		taskLists=new ArrayList();
+	}
+
+	 void broadcast(String taskId,String msg){
+
+	   for(int i = 0; i < registeredUsers.size(); i++) {
+        User userRef = (User) User.getReferenceByName(((User)registeredUsers.get(i)).getUAN());
+        userRef<-broadcastReceive(taskId, msg);
+       		}
+	 }
+
+	boolean registerUser(String userId) {
+		// Check any condition for registration if required
+		standardOutput<-println("Registering User " + userId);
+		registeredUsers.add(userId);
+		return true;
+		
+	}
+	
+	boolean addTask(Task taskToAdd) {
+		taskRef = (Task)Task.getReferenceByName(taskToAdd.getUAN());
+		//standardOutput<-println("Registering task with id " + taskRef <- getId());
+		specifiedTasks.add(taskToAdd);
+		return true;
+	}
+	
+    boolean addTaskToList(TaskList taskList,String taskId,String text,User creator){
+        standardOutput<-println(" calling inside server.addTaskToList");
+        standardOutput<-println(taskId);
+        Task task = (Task)Task.getReferenceByName(taskId);
+        if (task == null) {
+            standardOutput<-println("Task is null");
+        }
+        if (creator == null) {
+            standardOutput<-println("creator is null");
+        }
+        TaskList taskListRef = (TaskList) TaskList.getReferenceByName(taskList.getUAN());
+        taskListRef<-addTask(creator, task);
+        standardOutput<-println("after taskListRef");
+        registeredUsers.add(creator);
+        taskLists.add(taskList);
+		broadcast(taskId, text);
+        return true;
+    }
+
+    boolean updateTask(String taskId,String text,User creator){
+
+            standardOutput<-println("before taskListRef.update");
+            for(int i = 0; i < taskLists.size(); i++) {
+
+            standardOutput<-println("tasklist UAN"+((TaskList)taskLists.get(i)).getUAN());
+            TaskList taskListRef = (TaskList) TaskList.getReferenceByName(((TaskList)taskLists.get(i)).getUAN());
+            taskListRef<-updateTask(taskId, text);
+
+            }
+            standardOutput<-println("after taskListRef.update");
+			broadcast(taskId, text);
+            return true;
+        }
+	
+	boolean createTaskList(String name,User user) {
+	    standardOutput<-println(" calling inside server.createTaskList");
+	    TaskList taskList = new TaskList(name);
+	    return true;
+	}
+
+	void act(String args[]) {
+		if(args.length != 0 ){
+		    standardOutput<-println(args.length);
+			standardOutput<-println("Usage: java -Duan=myuan todo.Server");
+			return;
+		}
+		
+		standardOutput<-println("Server started");
+	}
+}

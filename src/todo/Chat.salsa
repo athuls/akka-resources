@@ -1,0 +1,46 @@
+module todo;
+//Three speakers chat in a chat session initialized by the actor Chat
+
+
+behavior Chat{
+
+	void chatSession(User user1, User user2, TaskList taskList,String taskId1,String taskId2,String taskListName ) {
+
+	    user1<-createTaskList(taskListName) @
+        user2<-createTaskList(taskListName) @
+		user1<-addTaskToList(taskList,taskId1,"task for user1") @
+		user2<-addTaskToList(taskList,taskId2,"task for user2") @
+		user1<-updateTask(taskId1,"taskupdate for user1") @
+        user2<-updateTask(taskId2,"taskupdate for user2") @
+		currentContinuation;
+	}
+
+	void reply(String replyMsg) {
+		standardOutput<-println(replyMsg);
+	
+	}
+	
+	void act(String args[]) {
+		if(args.length != 6 ){
+
+			standardOutput<-println("Usage: java -Duan=myuan todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>");
+			return;
+		}
+		
+		try {
+		  User user1 =(User) User.getReferenceByName(args[0]) ;
+		  User user2 =(User) User.getReferenceByName(args[1]) ;
+		  TaskList taskList =(TaskList) TaskList.getReferenceByName(args[2]) ;
+		  String taskid1 =args[3] ;
+		  String taskid2 =args[4] ;
+		  String taskListName=args[5] ;
+		  chatSession(user1, user2, taskList,taskid1,taskid2,taskListName) @ standardOutput<-println("Done with User conversation");
+		  standardOutput<-println("After Chat Session");
+		} catch (Exception e) {
+		  standardOutput<-println(e.getMessage());
+		  standardOutput<-println("Usage: java  todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>");
+		  return;
+		}
+	}
+}
+

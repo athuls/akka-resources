@@ -1,0 +1,71 @@
+module todo;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
+
+// basically done
+behavior TaskList implements ActorService{
+        String name;
+        Set users= new HashSet();
+        List tasks= new ArrayList();
+        Server server_ref;
+
+        TaskList(String name) {
+         name=name;
+        }
+
+        boolean addTask(User user,Task task) {
+            standardOutput<-println(" calling inside taskToList.addTask");
+            if (task == null) {
+                standardOutput<-println("Task is null");
+            }
+            if (user == null) {
+                standardOutput<-println("user is null");
+            }
+            standardOutput<-println(user);
+            standardOutput<-println(task);
+            User userRef = (User) User.getReferenceByName(user.getUAN());
+            Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
+            users.add(userRef);
+            tasks.add(taskRef);
+            standardOutput<-println("after addTask");
+            return true;
+        }
+
+        List  getTasks() {
+        return tasks;
+        }
+
+        Set  getUsers() {
+        return users;
+        }
+
+        void whereAmI() {
+        		standardOutput<-println("TaskList started with uan: "+ getUAN().toString());
+        	}
+
+        boolean updateTask(String taskId,String text)
+        {
+            standardOutput<-println(" calling inside taskToList.updateTask");
+            for(int i = 0; i < tasks.size(); i++) {
+
+                standardOutput<-println(" taskId inside taskToList.updateTask"+taskId);
+                Task taskRef = (Task) Task.getReferenceByName(((Task)tasks.get(i)).getUAN());
+                taskRef<-update(taskId,text);
+                }
+                return true;
+
+        }
+
+        void act(String args[]) {
+        		if(args.length != 0 ){
+        		    standardOutput<-println(args.length);
+        			standardOutput<-println("Usage: java -Duan=myuan todo.TaskList");
+        			return;
+        		}
+
+        		whereAmI();
+        	}
+}

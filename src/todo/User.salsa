@@ -1,0 +1,62 @@
+module todo;
+
+import java.util.Set;
+import java.util.HashSet;
+
+behavior User implements ActorService{
+	private String myName="";
+	private String emailId="";
+	private String status="";
+	Server server_ref;
+	private Set taskIds=new HashSet();
+	
+	// name this to something better
+	void broadcastSend(String msg) {
+		standardOutput<-println("[Speaker Local] " + myName + ": " + msg);
+		server_ref<-broadcast(myName, msg);
+	}	
+
+	void broadcastReceive(String taskId, String msg) {
+		standardOutput<-println("[Task Id] " + taskId + ": " + msg);
+		if (!taskIds.contains(taskId)){
+		    taskIds.add(taskId);
+		    }
+	}
+
+	 String getUserName() {
+	    return myName;
+	}
+
+	boolean createTaskList(String name){
+	    standardOutput<-println(" calling inside user.createTaskList");
+        server_ref<-createTaskList(name,self);
+        return true;
+	}
+
+    void whereAmI() {
+		standardOutput<-println("User started with uan: "+ getUAN().toString());
+	}
+	boolean addTaskToList(TaskList taskList,String taskId,String text){
+	    server_ref<-addTaskToList(taskList, taskId, text,self);
+	    return true;
+	}
+
+	boolean updateTask(String taskId,String text){
+	    server_ref<-updateTask( taskId, text,self);
+	    return true;
+	    }
+
+
+	void act(String args[]){
+		if(args.length != 2){
+			standardOutput<-println("Usage: java -Duan=uan://hostname/place todo.User <serverName> <myName>");
+			return;
+		}
+		
+		myName=args[1];
+		whereAmI();
+
+		server_ref = (Server) Server.getReferenceByName(args[0]);
+		//server_ref<-registerUser(myName);
+	}	
+}

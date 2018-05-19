@@ -1,0 +1,38 @@
+module todo;
+
+
+behavior Task implements ActorService{
+	private String taskId = "";
+	private String taskText = "";
+	Server server_ref;
+	private String creator;
+	private String id="";
+
+
+	Task(String text,String id,String creator) {
+	    taskId=id;
+	    text=text;
+	    creator=creator;
+	}
+
+	boolean update(String theTaskId,String text){
+	    if (theTaskId.equals(taskId)) {
+	    taskText=text;
+		return true;
+	    }
+	    return false;
+	}
+	void whereAmI() {
+        standardOutput<-println("Task started with uan: "+ getUAN().toString());
+    }
+
+	void act(String args[]) {
+        if(args.length != 0 ){
+            standardOutput<-println(args.length);
+            standardOutput<-println("Usage: java -Duan=myuan todo.Task");
+            return;
+        }
+
+        whereAmI();
+    }
+}

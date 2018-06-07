@@ -8,13 +8,22 @@ behavior Task implements ActorService{
 	private String creator;
 	private String id="";
 
-
 	Task(String text,String id,String creator) {
 	    taskId=id;
 	    text=text;
 	    creator=creator;
 	}
 
+	String getCreator()
+	{
+		return creator;
+	}
+	
+	String getTaskId()
+	{
+		return taskId;
+	}
+	
 	boolean update(String theTaskId,String text){
 	    if (theTaskId.equals(taskId)) {
 	    taskText=text;
@@ -23,7 +32,7 @@ behavior Task implements ActorService{
 	    return false;
 	}
 	void whereAmI() {
-        standardOutput<-println("Task started with uan: "+ getUAN().toString());
+        standardOutput <- println("Task started with uan: "+ getUAN().toString());
     }
 
 	void act(String args[]) {

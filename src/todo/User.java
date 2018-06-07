@@ -98,6 +98,12 @@ public class User extends UniversalActor  implements ActorService {
 		}
 	}
 
+	public UniversalActor construct (String id, String email, String status) {
+		Object[] __arguments = { id, email, status };
+		this.send( new Message(this, this, "construct", __arguments, null, null) );
+		return this;
+	}
+
 	public UniversalActor construct() {
 		Object[] __arguments = { };
 		this.send( new Message(this, this, "construct", __arguments, null, null) );
@@ -187,23 +193,10 @@ public class User extends UniversalActor  implements ActorService {
 		String status = "";
 		Server server_ref;
 		Set taskIds = new HashSet();
-		public void broadcastSend(String msg) {
-			{
-				// standardOutput<-println("[Speaker Local] "+myName+": "+msg)
-				{
-					Object _arguments[] = { "[Speaker Local] "+myName+": "+msg };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// server_ref<-broadcast(myName, msg)
-				{
-					Object _arguments[] = { myName, msg };
-					Message message = new Message( self, server_ref, "broadcast", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
+		void construct(String id, String email, String status){
+			myName = id;
+			emailId = email;
+			status = status;
 		}
 		public void broadcastReceive(String taskId, String msg) {
 			{
@@ -217,7 +210,13 @@ public class User extends UniversalActor  implements ActorService {
 			if (!taskIds.contains(taskId)) {{
 				taskIds.add(taskId);
 			}
+}			else {{
+				taskIds.remove(taskId);
+				taskIds.add(taskId);
+			}
 }		}
+		public void viewTaskList() {
+		}
 		public String getUserName() {
 			return myName;
 		}

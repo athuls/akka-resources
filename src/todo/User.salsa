@@ -10,21 +10,36 @@ behavior User implements ActorService{
 	Server server_ref;
 	private Set taskIds=new HashSet();
 	
-	// name this to something better
-	void broadcastSend(String msg) {
-		standardOutput<-println("[Speaker Local] " + myName + ": " + msg);
-		server_ref<-broadcast(myName, msg);
-	}	
+	User(String id, String email, String status)
+	{
+		myName = id;
+		emailId = email;
+		status = status;
+	}
 
+	// handle update case as well
+	// make a distinction between tasks the user owns vs the tasks the user is viewing
 	void broadcastReceive(String taskId, String msg) {
 		standardOutput<-println("[Task Id] " + taskId + ": " + msg);
 		if (!taskIds.contains(taskId)){
 		    taskIds.add(taskId);
 		    }
+		else
+		{
+			// update case
+			taskIds.remove(taskId);
+			taskIds.add(taskId);
+		}
 	}
 
-	 String getUserName() {
-	    return myName;
+	// add a function here for viewing task list
+	void viewTaskList()
+	{
+		
+	}
+	
+	String getUserName() {
+		return myName;
 	}
 
 	boolean createTaskList(String name){
@@ -37,13 +52,15 @@ behavior User implements ActorService{
 		standardOutput<-println("User started with uan: "+ getUAN().toString());
 	}
 	boolean addTaskToList(TaskList taskList,String taskId,String text){
+		// first view tasklist here
+		
 	    server_ref<-addTaskToList(taskList, taskId, text,self);
 	    return true;
 	}
 
 	boolean updateTask(String taskId,String text){
-	    server_ref<-updateTask( taskId, text,self);
-	    return true;
+		server_ref<-updateTask( taskId, text,self);
+		return true;
 	    }
 
 

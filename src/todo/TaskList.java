@@ -193,11 +193,12 @@ public class TaskList extends UniversalActor  implements ActorService {
 		String name;
 		Set users = new HashSet();
 		List tasks = new ArrayList();
+		List taskids = new ArrayList();
 		Server server_ref;
 		void construct(String name){
 			name = name;
 		}
-		public boolean addTask(User user, Task task) {
+		public boolean addTask(String user, Task task, String taskId) {
 			{
 				// standardOutput<-println(" calling inside taskToList.addTask")
 				{
@@ -246,6 +247,7 @@ public class TaskList extends UniversalActor  implements ActorService {
 			Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
 			users.add(userRef);
 			tasks.add(taskRef);
+			taskids.add(taskId);
 			{
 				// standardOutput<-println("after addTask")
 				{
@@ -272,7 +274,9 @@ public class TaskList extends UniversalActor  implements ActorService {
 				}
 			}
 		}
-		public boolean updateTask(String taskId, String text) {
+		public boolean updateTask(String taskId, String text, String creator) {
+			User mainUser = (User)User.getReferenceByName(((String)creator).getUAN());
+			boolean update = false;
 			{
 				// standardOutput<-println(" calling inside taskToList.updateTask")
 				{
@@ -291,16 +295,23 @@ public class TaskList extends UniversalActor  implements ActorService {
 					}
 				}
 				Task taskRef = (Task)Task.getReferenceByName(((Task)tasks.get(i)).getUAN());
-				{
-					// taskRef<-update(taskId, text)
-					{
-						Object _arguments[] = { taskId, text };
-						Message message = new Message( self, taskRef, "update", _arguments, null, null );
-						__messages.add( message );
+				String currentTaskId = (String)taskIds.get(i);
+				String taskCreator = taskRef.getCreator();
+				if ((currentTaskId).equals(taskId)) {{
+					if (taskCreator.equals(creator)) {{
+						{
+							// taskRef<-update(currentTaskId, text)
+							{
+								Object _arguments[] = { currentTaskId, text };
+								Message message = new Message( self, taskRef, "update", _arguments, null, null );
+								__messages.add( message );
+							}
+						}
+						update = true;
 					}
-				}
-			}
-			return true;
+}				}
+}			}
+			return update;
 		}
 		public void act(String args[]) {
 			if (args.length!=0) {{

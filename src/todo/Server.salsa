@@ -21,15 +21,19 @@ behavior Server implements ActorService{
 		taskLists=new ArrayList();
 	}
 
-	 void broadcast(String taskId,String msg){
-
+	 void broadcast(String taskId,String msg, String creatorName){
+		User mainUser = (User) User.getReferenceByName(((String)creatorName).getUAN());
 	   for(int i = 0; i < registeredUsers.size(); i++) {
-        User userRef = (User) User.getReferenceByName(((User)registeredUsers.get(i)).getUAN());
-        userRef<-broadcastReceive(taskId, msg);
-       		}
+        User userRef = (User) User.getReferenceByName(((String)registeredUsers.get(i)).getUAN());
+		String userRefName = (String)registeredUsers.get(i);
+		if(!userRefName.equals(creatorName))
+		{
+			userRef<-broadcastReceive(taskId, msg);
+		}
+	 }
 	 }
 
-	boolean registerUser(String userId) {
+	boolean registerUser(String userId, String email, String status) {
 		// Check any condition for registration if required
 		standardOutput<-println("Registering User " + userId);
 		registeredUsers.add(userId);
@@ -37,17 +41,11 @@ behavior Server implements ActorService{
 		
 	}
 	
-	boolean addTask(Task taskToAdd) {
-		taskRef = (Task)Task.getReferenceByName(taskToAdd.getUAN());
-		//standardOutput<-println("Registering task with id " + taskRef <- getId());
-		specifiedTasks.add(taskToAdd);
-		return true;
-	}
-	
-    boolean addTaskToList(TaskList taskList,String taskId,String text,User creator){
+    boolean addTaskToList(TaskList taskList,String taskId,String text,String creator){
         standardOutput<-println(" calling inside server.addTaskToList");
         standardOutput<-println(taskId);
-        Task task = (Task)Task.getReferenceByName(taskId);
+		User mainUser = (User) User.getReferenceByName(((User)creator).getUAN());
+        Task task = new Task(text, taskId, mainUser.getUserName());
         if (task == null) {
             standardOutput<-println("Task is null");
         }
@@ -55,30 +53,29 @@ behavior Server implements ActorService{
             standardOutput<-println("creator is null");
         }
         TaskList taskListRef = (TaskList) TaskList.getReferenceByName(taskList.getUAN());
-        taskListRef<-addTask(creator, task);
+        taskListRef<-addTask(creator, task, taskId);
         standardOutput<-println("after taskListRef");
         registeredUsers.add(creator);
         taskLists.add(taskList);
-		broadcast(taskId, text);
+		broadcast(taskId, text, creator);
         return true;
     }
 
-    boolean updateTask(String taskId,String text,User creator){
+    boolean updateTask(String taskId,String text,String creator){
 
             standardOutput<-println("before taskListRef.update");
             for(int i = 0; i < taskLists.size(); i++) {
 
             standardOutput<-println("tasklist UAN"+((TaskList)taskLists.get(i)).getUAN());
-            TaskList taskListRef = (TaskList) TaskList.getReferenceByName(((TaskList)taskLists.get(i)).getUAN());
-            taskListRef<-updateTask(taskId, text);
-
+            TaskList taskListRef = (TaskList) TaskList.getReferenceByName(((TaskList)taskLists.get(i)).getUAN());			
+            taskListRef<-updateTask(taskId, text, creator);
             }
             standardOutput<-println("after taskListRef.update");
-			broadcast(taskId, text);
+			broadcast(taskId, text, creator);
             return true;
         }
 	
-	boolean createTaskList(String name,User user) {
+	boolean createTaskList(String name) {
 	    standardOutput<-println(" calling inside server.createTaskList");
 	    TaskList taskList = new TaskList(name);
 	    return true;

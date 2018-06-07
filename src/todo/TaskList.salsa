@@ -10,13 +10,14 @@ behavior TaskList implements ActorService{
         String name;
         Set users= new HashSet();
         List tasks= new ArrayList();
+		List taskids = new ArrayList();
         Server server_ref;
 
         TaskList(String name) {
          name=name;
         }
 
-        boolean addTask(User user,Task task) {
+        boolean addTask(String user,Task task, String taskId) {
             standardOutput<-println(" calling inside taskToList.addTask");
             if (task == null) {
                 standardOutput<-println("Task is null");
@@ -30,6 +31,7 @@ behavior TaskList implements ActorService{
             Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
             users.add(userRef);
             tasks.add(taskRef);
+			taskids.add(taskId);
             standardOutput<-println("after addTask");
             return true;
         }
@@ -46,17 +48,27 @@ behavior TaskList implements ActorService{
         		standardOutput<-println("TaskList started with uan: "+ getUAN().toString());
         	}
 
-        boolean updateTask(String taskId,String text)
+        boolean updateTask(String taskId,String text, String creator)
         {
+			User mainUser = (User) User.getReferenceByName(((String)creator).getUAN());
+			boolean update = false;
             standardOutput<-println(" calling inside taskToList.updateTask");
             for(int i = 0; i < tasks.size(); i++) {
 
                 standardOutput<-println(" taskId inside taskToList.updateTask"+taskId);
                 Task taskRef = (Task) Task.getReferenceByName(((Task)tasks.get(i)).getUAN());
-                taskRef<-update(taskId,text);
-                }
-                return true;
-
+				String currentTaskId = (String)taskIds.get(i);
+				String taskCreator = taskRef.getCreator();
+				if((currentTaskId).equals(taskId))
+				{
+					if(taskCreator.equals(creator))
+					{
+						taskRef<-update(currentTaskId,text);
+						update = true;
+					}
+				}
+			}
+			return update;
         }
 
         void act(String args[]) {

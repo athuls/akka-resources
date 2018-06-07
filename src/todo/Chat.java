@@ -264,22 +264,22 @@ public class Chat extends UniversalActor  {
 			}
 		}
 
-		public void chatSession(User user1, User user2, TaskList taskList, String taskId1, String taskId2, String taskListName) {
+		public void chatSession(User user1, User user2, TaskList taskList, String taskId1, String taskId2, String taskListOne, String taskListTwo) {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
 				Token token_2_2 = new Token();
 				Token token_2_3 = new Token();
 				Token token_2_4 = new Token();
-				// user1<-createTaskList(taskListName)
+				// user1<-createTaskList(taskListOne)
 				{
-					Object _arguments[] = { taskListName };
+					Object _arguments[] = { taskListOne };
 					Message message = new Message( self, user1, "createTaskList", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// user2<-createTaskList(taskListName)
+				// user2<-createTaskList(taskListTwo)
 				{
-					Object _arguments[] = { taskListName };
+					Object _arguments[] = { taskListTwo };
 					Message message = new Message( self, user2, "createTaskList", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}

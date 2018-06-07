@@ -4,14 +4,15 @@ module todo;
 
 behavior Chat{
 
-	void chatSession(User user1, User user2, TaskList taskList,String taskId1,String taskId2,String taskListName ) {
+	void chatSession(User user1, User user2, TaskList taskList,String taskId1,String taskId2,String taskListOne, String taskListTwo ) {
 
-	    user1<-createTaskList(taskListName) @
-        user2<-createTaskList(taskListName) @
-		user1<-addTaskToList(taskList,taskId1,"task for user1") @
-		user2<-addTaskToList(taskList,taskId2,"task for user2") @
-		user1<-updateTask(taskId1,"taskupdate for user1") @
-        user2<-updateTask(taskId2,"taskupdate for user2") @
+		// create different tasklist for user2
+	    user1<-createTaskList(taskListOne) @
+        user2<-createTaskList(taskListTwo) @
+		user1<-addTaskToList(taskList,taskId1,"task for user1", "Bob") @
+		user2<-addTaskToList(taskList,taskId2,"task for user2", "John") @
+		user1<-updateTask(taskId1,"taskupdate for user1", "Bob") @
+        user2<-updateTask(taskId2,"taskupdate for user2", "John") @
 		currentContinuation;
 	}
 

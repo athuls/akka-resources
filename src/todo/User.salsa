@@ -8,7 +8,12 @@ behavior User implements ActorService{
 	private String emailId="";
 	private String status="";
 	Server server_ref;
+	
+	// these are the tasks the user owns
 	private Set taskIds=new HashSet();
+	
+	// tasks that the user is viewing - newly added
+	private Set tasksViewed = new HashSet();
 	
 	User(String id, String email, String status)
 	{
@@ -17,8 +22,11 @@ behavior User implements ActorService{
 		status = status;
 	}
 
-	// handle update case as well
 	// make a distinction between tasks the user owns vs the tasks the user is viewing
+	// need to maintain a structure to know what tasks the user can actually update
+	// add one more list for tasks the user is viewing
+	// check to see if the user owns the task which is being updated
+	// broadcastReceive needs to be fixed (only change the view of the tasklist based on the updated conditions)
 	void broadcastReceive(String taskId, String msg) {
 		standardOutput<-println("[Task Id] " + taskId + ": " + msg);
 		if (!taskIds.contains(taskId)){
@@ -35,17 +43,11 @@ behavior User implements ActorService{
 	// add a function here for viewing task list
 	void viewTaskList()
 	{
-		
+		// the tasklist has to add the user to the list of vierwers
 	}
 	
 	String getUserName() {
 		return myName;
-	}
-
-	boolean createTaskList(String name){
-	    standardOutput<-println(" calling inside user.createTaskList");
-        server_ref<-createTaskList(name,self);
-        return true;
 	}
 
     void whereAmI() {
@@ -61,7 +63,7 @@ behavior User implements ActorService{
 	boolean updateTask(String taskId,String text){
 		server_ref<-updateTask( taskId, text,self);
 		return true;
-	    }
+	}
 
 
 	void act(String args[]){

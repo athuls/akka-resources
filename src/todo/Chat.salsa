@@ -4,11 +4,9 @@ module todo;
 
 behavior Chat{
 
-	void chatSession(User user1, User user2, TaskList taskList,String taskId1,String taskId2,String taskListOne, String taskListTwo ) {
-
-		// create different tasklist for user2
-	    user1<-createTaskList(taskListOne) @
-        user2<-createTaskList(taskListTwo) @
+	void chatSession(User user1, User user2, TaskList taskList,String taskId1,String taskId2) 
+	{
+		// these tasks are created in server..
 		user1<-addTaskToList(taskList,taskId1,"task for user1", "Bob") @
 		user2<-addTaskToList(taskList,taskId2,"task for user2", "John") @
 		user1<-updateTask(taskId1,"taskupdate for user1", "Bob") @
@@ -24,18 +22,19 @@ behavior Chat{
 	void act(String args[]) {
 		if(args.length != 6 ){
 
-			standardOutput<-println("Usage: java -Duan=myuan todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>");
+			standardOutput<-println("Usage: java -Duan=myuan todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5> <taskUAN6>");
 			return;
 		}
 		
 		try {
-		  User user1 =(User) User.getReferenceByName(args[0]) ;
-		  User user2 =(User) User.getReferenceByName(args[1]) ;
-		  TaskList taskList =(TaskList) TaskList.getReferenceByName(args[2]) ;
-		  String taskid1 =args[3] ;
-		  String taskid2 =args[4] ;
-		  String taskListName=args[5] ;
-		  chatSession(user1, user2, taskList,taskid1,taskid2,taskListName) @ standardOutput<-println("Done with User conversation");
+		  User user1 =(User) User.getReferenceByName(args[0]);
+		  User user2 =(User) User.getReferenceByName(args[1]);
+		  TaskList taskList =(TaskList) TaskList.getReferenceByName(args[2]);
+		  String taskid1 =args[3];
+		  String taskid2 =args[4];
+		  //String taskListName=args[5];
+		  //String taskListNameTwo = args[6];
+		  chatSession(user1, user2, taskList,taskid1,taskid2) @ standardOutput<-println("Done with User conversation");
 		  standardOutput<-println("After Chat Session");
 		} catch (Exception e) {
 		  standardOutput<-println(e.getMessage());

@@ -7,6 +7,9 @@ import java.util.HashSet;
 
 // basically done
 behavior TaskList implements ActorService{
+		// add a list of users that is viewing the current tasklist
+		Set usersViewing = new HashSet();
+		
         String name;
         Set users= new HashSet();
         List tasks= new ArrayList();
@@ -17,18 +20,22 @@ behavior TaskList implements ActorService{
          name=name;
         }
 
+		// broadcast send to all users here who are viewing the task list
         boolean addTask(String user,Task task, String taskId) {
             standardOutput<-println(" calling inside taskToList.addTask");
             if (task == null) {
                 standardOutput<-println("Task is null");
+				return false;
             }
             if (user == null) {
                 standardOutput<-println("user is null");
+				return false;
             }
             standardOutput<-println(user);
             standardOutput<-println(task);
             User userRef = (User) User.getReferenceByName(user.getUAN());
             Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
+			// add user only if its registered
             users.add(userRef);
             tasks.add(taskRef);
 			taskids.add(taskId);
@@ -37,17 +44,18 @@ behavior TaskList implements ActorService{
         }
 
         List  getTasks() {
-        return tasks;
+			return tasks;
         }
 
         Set  getUsers() {
-        return users;
+			return users;
         }
 
         void whereAmI() {
         		standardOutput<-println("TaskList started with uan: "+ getUAN().toString());
         	}
 
+		// do a broadcast send to all other users
         boolean updateTask(String taskId,String text, String creator)
         {
 			User mainUser = (User) User.getReferenceByName(((String)creator).getUAN());

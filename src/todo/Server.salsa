@@ -6,19 +6,18 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 
-
+// remove set of task lists here
 behavior Server implements ActorService{
 	
 	List registeredUsers;
 	List specifiedTasks;
 	Task taskRef;
-    List taskLists;
+    TaskList mainList;
 
 
 	Server() {
 		registeredUsers = new ArrayList();
 		specifiedTasks = new ArrayList();
-		taskLists=new ArrayList();
 	}
 
 	 void broadcast(String taskId,String msg, String creatorName){
@@ -42,21 +41,22 @@ behavior Server implements ActorService{
 	}
 	
     boolean addTaskToList(TaskList taskList,String taskId,String text,String creator){
+		if (creator == null) {
+            standardOutput<-println("creator is null");
+			return false;
+        }
         standardOutput<-println(" calling inside server.addTaskToList");
         standardOutput<-println(taskId);
 		User mainUser = (User) User.getReferenceByName(((User)creator).getUAN());
         Task task = new Task(text, taskId, mainUser.getUserName());
         if (task == null) {
             standardOutput<-println("Task is null");
+			return false;
         }
-        if (creator == null) {
-            standardOutput<-println("creator is null");
-        }
+        
         TaskList taskListRef = (TaskList) TaskList.getReferenceByName(taskList.getUAN());
         taskListRef<-addTask(creator, task, taskId);
         standardOutput<-println("after taskListRef");
-        registeredUsers.add(creator);
-        taskLists.add(taskList);
 		broadcast(taskId, text, creator);
         return true;
     }
@@ -74,12 +74,6 @@ behavior Server implements ActorService{
 			broadcast(taskId, text, creator);
             return true;
         }
-	
-	boolean createTaskList(String name) {
-	    standardOutput<-println(" calling inside server.createTaskList");
-	    TaskList taskList = new TaskList(name);
-	    return true;
-	}
 
 	void act(String args[]) {
 		if(args.length != 0 ){

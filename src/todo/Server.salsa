@@ -21,9 +21,9 @@ behavior Server implements ActorService{
 	}
 
 	 void broadcast(String taskId,String msg, String creatorName){
-		User mainUser = (User) User.getReferenceByName(((String)creatorName).getUAN());
+	   User mainUser = (User) User.getReferenceByName((String)creatorName);
 	   for(int i = 0; i < registeredUsers.size(); i++) {
-        User userRef = (User) User.getReferenceByName(((String)registeredUsers.get(i)).getUAN());
+        User userRef = (User) User.getReferenceByName(((User)registeredUsers.get(i)).getUAN());
 		String userRefName = (String)registeredUsers.get(i);
 		if(!userRefName.equals(creatorName))
 		{
@@ -47,8 +47,8 @@ behavior Server implements ActorService{
         }
         standardOutput<-println(" calling inside server.addTaskToList");
         standardOutput<-println(taskId);
-		User mainUser = (User) User.getReferenceByName(((User)creator).getUAN());
-        Task task = new Task(text, taskId, mainUser.getUserName());
+		User mainUser = (User) User.getReferenceByName(creator);
+        Task task = new Task(text, taskId, creator);
         if (task == null) {
             standardOutput<-println("Task is null");
 			return false;
@@ -57,6 +57,7 @@ behavior Server implements ActorService{
         TaskList taskListRef = (TaskList) TaskList.getReferenceByName(taskList.getUAN());
         taskListRef<-addTask(creator, task, taskId);
         standardOutput<-println("after taskListRef");
+        mainList=taskList;
 		broadcast(taskId, text, creator);
         return true;
     }
@@ -64,12 +65,8 @@ behavior Server implements ActorService{
     boolean updateTask(String taskId,String text,String creator){
 
             standardOutput<-println("before taskListRef.update");
-            for(int i = 0; i < taskLists.size(); i++) {
-
-            standardOutput<-println("tasklist UAN"+((TaskList)taskLists.get(i)).getUAN());
-            TaskList taskListRef = (TaskList) TaskList.getReferenceByName(((TaskList)taskLists.get(i)).getUAN());			
+            TaskList taskListRef = (TaskList) TaskList.getReferenceByName((mainList).getUAN());
             taskListRef<-updateTask(taskId, text, creator);
-            }
             standardOutput<-println("after taskListRef.update");
 			broadcast(taskId, text, creator);
             return true;

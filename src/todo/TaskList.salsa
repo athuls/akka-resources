@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.HashMap;
 
 // basically done
 behavior TaskList implements ActorService{
@@ -14,6 +16,7 @@ behavior TaskList implements ActorService{
         Set users= new HashSet();
         List tasks= new ArrayList();
 		List taskids = new ArrayList();
+		Map userIdTaskIdMap = new HashMap();
         Server server_ref;
 
         TaskList(String name) {
@@ -33,12 +36,13 @@ behavior TaskList implements ActorService{
             }
             standardOutput<-println(user);
             standardOutput<-println(task);
-            User userRef = (User) User.getReferenceByName(user.getUAN());
+            User userRef = (User) User.getReferenceByName(user);
             Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
 			// add user only if its registered
             users.add(userRef);
             tasks.add(taskRef);
 			taskids.add(taskId);
+			userIdTaskIdMap.put(taskId,user);
             standardOutput<-println("after addTask");
             return true;
         }
@@ -58,15 +62,15 @@ behavior TaskList implements ActorService{
 		// do a broadcast send to all other users
         boolean updateTask(String taskId,String text, String creator)
         {
-			User mainUser = (User) User.getReferenceByName(((String)creator).getUAN());
+			User mainUser = (User) User.getReferenceByName(((String)creator));
 			boolean update = false;
             standardOutput<-println(" calling inside taskToList.updateTask");
             for(int i = 0; i < tasks.size(); i++) {
 
                 standardOutput<-println(" taskId inside taskToList.updateTask"+taskId);
                 Task taskRef = (Task) Task.getReferenceByName(((Task)tasks.get(i)).getUAN());
-				String currentTaskId = (String)taskIds.get(i);
-				String taskCreator = taskRef.getCreator();
+				String currentTaskId = (String)taskids.get(i);
+				String taskCreator = (String)userIdTaskIdMap.get(currentTaskId);
 				if((currentTaskId).equals(taskId))
 				{
 					if(taskCreator.equals(creator))

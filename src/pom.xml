@@ -43,7 +43,7 @@
 
     <build>
 
-        <sourceDirectory>${project.basedir}/examples/chat</sourceDirectory>
+        <sourceDirectory>${project.basedir}</sourceDirectory>
 
         <plugins>
             <plugin>
@@ -65,9 +65,12 @@
                     <classpathScope>runtime</classpathScope>
                     <sourceRoot>${project.build.sourceDirectory}</sourceRoot>
                     <arguments>
-                        <argument>${project.build.sourceDirectory}/Speaker.salsa</argument>
-                        <argument>${project.build.sourceDirectory}/Chat.salsa</argument>
-                        <argument>${project.build.sourceDirectory}/Server.salsa</argument>
+                        <argument>${project.build.sourceDirectory}/todo/Speaker.salsa</argument>
+                        <argument>${project.build.sourceDirectory}/todo/Chat.salsa</argument>
+                        <argument>${project.build.sourceDirectory}/todo/Server.salsa</argument>
+                        <argument>${project.build.sourceDirectory}/todo/Task.salsa</argument>
+                        <argument>${project.build.sourceDirectory}/todo/TaskList.salsa</argument>
+                        <argument>${project.build.sourceDirectory}/todo/User.salsa</argument>
                     </arguments>
                 </configuration>
             </plugin>

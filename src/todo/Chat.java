@@ -264,47 +264,33 @@ public class Chat extends UniversalActor  {
 			}
 		}
 
-		public void chatSession(User user1, User user2, TaskList taskList, String taskId1, String taskId2, String taskListOne, String taskListTwo) {
+		public void chatSession(User user1, User user2, TaskList taskList, String taskId1, String taskId2) {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
 				Token token_2_2 = new Token();
-				Token token_2_3 = new Token();
-				Token token_2_4 = new Token();
-				// user1<-createTaskList(taskListOne)
-				{
-					Object _arguments[] = { taskListOne };
-					Message message = new Message( self, user1, "createTaskList", _arguments, null, token_2_0 );
-					__messages.add( message );
-				}
-				// user2<-createTaskList(taskListTwo)
-				{
-					Object _arguments[] = { taskListTwo };
-					Message message = new Message( self, user2, "createTaskList", _arguments, token_2_0, token_2_1 );
-					__messages.add( message );
-				}
 				// user1<-addTaskToList(taskList, taskId1, "task for user1")
 				{
 					Object _arguments[] = { taskList, taskId1, "task for user1" };
-					Message message = new Message( self, user1, "addTaskToList", _arguments, token_2_1, token_2_2 );
+					Message message = new Message( self, user1, "addTaskToList", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
 				// user2<-addTaskToList(taskList, taskId2, "task for user2")
 				{
 					Object _arguments[] = { taskList, taskId2, "task for user2" };
-					Message message = new Message( self, user2, "addTaskToList", _arguments, token_2_2, token_2_3 );
+					Message message = new Message( self, user2, "addTaskToList", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
 				// user1<-updateTask(taskId1, "taskupdate for user1")
 				{
 					Object _arguments[] = { taskId1, "taskupdate for user1" };
-					Message message = new Message( self, user1, "updateTask", _arguments, token_2_3, token_2_4 );
+					Message message = new Message( self, user1, "updateTask", _arguments, token_2_1, token_2_2 );
 					__messages.add( message );
 				}
 				// user2<-updateTask(taskId2, "taskupdate for user2")
 				{
 					Object _arguments[] = { taskId2, "taskupdate for user2" };
-					Message message = new Message( self, user2, "updateTask", _arguments, token_2_4, currentMessage.getContinuationToken() );
+					Message message = new Message( self, user2, "updateTask", _arguments, token_2_2, currentMessage.getContinuationToken() );
 					__messages.add( message );
 				}
 				throw new CurrentContinuationException();
@@ -321,11 +307,11 @@ public class Chat extends UniversalActor  {
 			}
 		}
 		public void act(String args[]) {
-			if (args.length!=6) {{
+			if (args.length!=5) {{
 				{
-					// standardOutput<-println("Usage: java -Duan=myuan todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>")
+					// standardOutput<-println("Usage: java -Duan=myuan todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5> <taskUAN6>")
 					{
-						Object _arguments[] = { "Usage: java -Duan=myuan todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>" };
+						Object _arguments[] = { "Usage: java -Duan=myuan todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5> <taskUAN6>" };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 						__messages.add( message );
 					}
@@ -338,12 +324,11 @@ public class Chat extends UniversalActor  {
 				TaskList taskList = (TaskList)TaskList.getReferenceByName(args[2]);
 				String taskid1 = args[3];
 				String taskid2 = args[4];
-				String taskListName = args[5];
 				{
 					Token token_3_0 = new Token();
-					// chatSession(user1, user2, taskList, taskid1, taskid2, taskListName)
+					// chatSession(user1, user2, taskList, taskid1, taskid2)
 					{
-						Object _arguments[] = { user1, user2, taskList, taskid1, taskid2, taskListName };
+						Object _arguments[] = { user1, user2, taskList, taskid1, taskid2 };
 						Message message = new Message( self, self, "chatSession", _arguments, null, token_3_0 );
 						__messages.add( message );
 					}
@@ -364,14 +349,6 @@ public class Chat extends UniversalActor  {
 				}
 			}
 			catch (Exception e) {
-				{
-					// standardOutput<-println(e.getMessage())
-					{
-						Object _arguments[] = { e.getMessage() };
-						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-						__messages.add( message );
-					}
-				}
 				{
 					// standardOutput<-println("Usage: java  todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>")
 					{

@@ -193,6 +193,7 @@ public class User extends UniversalActor  implements ActorService {
 		String status = "";
 		Server server_ref;
 		Set taskIds = new HashSet();
+		Set tasksViewed = new HashSet();
 		void construct(String id, String email, String status){
 			myName = id;
 			emailId = email;
@@ -207,6 +208,7 @@ public class User extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
+			tasksViewed.add(taskId);
 			if (!taskIds.contains(taskId)) {{
 				taskIds.add(taskId);
 			}
@@ -219,25 +221,6 @@ public class User extends UniversalActor  implements ActorService {
 		}
 		public String getUserName() {
 			return myName;
-		}
-		public boolean createTaskList(String name) {
-			{
-				// standardOutput<-println(" calling inside user.createTaskList")
-				{
-					Object _arguments[] = { " calling inside user.createTaskList" };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// server_ref<-createTaskList(name, ((User)self))
-				{
-					Object _arguments[] = { name, ((User)self) };
-					Message message = new Message( self, server_ref, "createTaskList", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			return true;
 		}
 		public void whereAmI() {
 			{
@@ -293,6 +276,14 @@ public class User extends UniversalActor  implements ActorService {
 				}
 			}
 			server_ref = (Server)Server.getReferenceByName(args[0]);
+			{
+				// server_ref<-registerUser(myName, emailId, status, ((User)self))
+				{
+					Object _arguments[] = { myName, emailId, status, ((User)self) };
+					Message message = new Message( self, server_ref, "registerUser", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 		}
 	}
 }

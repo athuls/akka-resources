@@ -29,6 +29,7 @@ behavior User implements ActorService{
 	// broadcastReceive needs to be fixed (only change the view of the tasklist based on the updated conditions)
 	void broadcastReceive(String taskId, String msg) {
 		standardOutput<-println("[Task Id] " + taskId + ": " + msg);
+		tasksViewed.add(taskId);
 		if (!taskIds.contains(taskId)){
 		    taskIds.add(taskId);
 		    }
@@ -76,6 +77,6 @@ behavior User implements ActorService{
 		whereAmI();
 
 		server_ref = (Server) Server.getReferenceByName(args[0]);
-		//server_ref<-registerUser(myName);
+		server_ref<-registerUser(myName, emailId, status, self);
 	}	
 }

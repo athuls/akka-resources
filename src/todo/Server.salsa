@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.HashMap;
 
 // remove set of task lists here
 behavior Server implements ActorService{
@@ -13,41 +15,50 @@ behavior Server implements ActorService{
 	List specifiedTasks;
 	Task taskRef;
     TaskList mainList;
+    Map userIdUANMap;
 
 
 	Server() {
 		registeredUsers = new ArrayList();
 		specifiedTasks = new ArrayList();
+		userIdUANMap = new HashMap();
 	}
 
 	 void broadcast(String taskId,String msg, String creatorName){
-	   User mainUser = (User) User.getReferenceByName((String)creatorName);
+
 	   for(int i = 0; i < registeredUsers.size(); i++) {
-        User userRef = (User) User.getReferenceByName(((User)registeredUsers.get(i)).getUAN());
 		String userRefName = (String)registeredUsers.get(i);
 		if(!userRefName.equals(creatorName))
 		{
-			userRef<-broadcastReceive(taskId, msg);
+			User user = (User) userIdUANMap.get(userRefName);
+			if ( user != null)
+			{
+                User userRef = (User) User.getReferenceByName( user.getUAN());
+                userRef<-broadcastReceive(taskId, msg);
+            }
 		}
 	 }
 	 }
 
-	boolean registerUser(String userId, String email, String status) {
+	boolean registerUser(String userId, String email, String status,User user) {
 		// Check any condition for registration if required
-		standardOutput<-println("Registering User " + userId);
+		standardOutput<-println("Registering User " + userId +"user" + user);
 		registeredUsers.add(userId);
+		userIdUANMap.put(userId,user);
 		return true;
 		
 	}
 	
     boolean addTaskToList(TaskList taskList,String taskId,String text,String creator){
+
+        Task taskRef = (Task) Task.getReferenceByName( taskId);
+        standardOutput<-println("taskref "+taskRef);
 		if (creator == null) {
             standardOutput<-println("creator is null");
 			return false;
         }
         standardOutput<-println(" calling inside server.addTaskToList");
         standardOutput<-println(taskId);
-		User mainUser = (User) User.getReferenceByName(creator);
         Task task = new Task(text, taskId, creator);
         if (task == null) {
             standardOutput<-println("Task is null");
@@ -55,7 +66,7 @@ behavior Server implements ActorService{
         }
         
         TaskList taskListRef = (TaskList) TaskList.getReferenceByName(taskList.getUAN());
-        taskListRef<-addTask(creator, task, taskId);
+        taskListRef<-addTask(creator, taskRef, taskId);
         standardOutput<-println("after taskListRef");
         mainList=taskList;
 		broadcast(taskId, text, creator);

@@ -35,6 +35,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Server extends UniversalActor  implements ActorService {
 	public static void main(String args[]) {
@@ -185,43 +187,67 @@ public class Server extends UniversalActor  implements ActorService {
 		List registeredUsers;
 		List specifiedTasks;
 		Task taskRef;
-		List taskLists;
+		TaskList mainList;
+		Map userIdUANMap;
 		void construct(){
 			registeredUsers = new ArrayList();
 			specifiedTasks = new ArrayList();
-			taskLists = new ArrayList();
+			userIdUANMap = new HashMap();
 		}
 		public void broadcast(String taskId, String msg, String creatorName) {
-			User mainUser = (User)User.getReferenceByName(((String)creatorName).getUAN());
 			for (int i = 0; i<registeredUsers.size(); i++){
-				User userRef = (User)User.getReferenceByName(((String)registeredUsers.get(i)).getUAN());
 				String userRefName = (String)registeredUsers.get(i);
 				if (!userRefName.equals(creatorName)) {{
-					{
-						// userRef<-broadcastReceive(taskId, msg)
+					User user = (User)userIdUANMap.get(userRefName);
+					if (user!=null) {{
+						User userRef = (User)User.getReferenceByName(user.getUAN());
 						{
-							Object _arguments[] = { taskId, msg };
-							Message message = new Message( self, userRef, "broadcastReceive", _arguments, null, null );
-							__messages.add( message );
+							// userRef<-broadcastReceive(taskId, msg)
+							{
+								Object _arguments[] = { taskId, msg };
+								Message message = new Message( self, userRef, "broadcastReceive", _arguments, null, null );
+								__messages.add( message );
+							}
 						}
 					}
-				}
+}				}
 }			}
 		}
-		public boolean registerUser(String userId, String email, String status) {
+		public boolean registerUser(String userId, String email, String status, User user) {
 			{
-				// standardOutput<-println("Registering User "+userId)
+				// standardOutput<-println("Registering User "+userId+"user"+user)
 				{
-					Object _arguments[] = { "Registering User "+userId };
+					Object _arguments[] = { "Registering User "+userId+"user"+user };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			registeredUsers.add(userId);
+			userIdUANMap.put(userId, user);
 			return true;
 		}
 		public boolean addTaskToList(TaskList taskList, String taskId, String text, String creator) {
+			Task taskRef = (Task)Task.getReferenceByName(taskId);
 			{
+				// standardOutput<-println("taskref "+taskRef)
+				{
+					Object _arguments[] = { "taskref "+taskRef };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			if (creator==null) {{
+				{
+					// standardOutput<-println("creator is null")
+					{
+						Object _arguments[] = { "creator is null" };
+						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+				return false;
+			}
+}			{
 				// standardOutput<-println(" calling inside server.addTaskToList")
 				{
 					Object _arguments[] = { " calling inside server.addTaskToList" };
@@ -237,8 +263,7 @@ public class Server extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
-			User mainUser = (User)User.getReferenceByName(((User)creator).getUAN());
-			Task task = ((Task)new Task(this).construct(text, taskId, mainUser.getUserName()));
+			Task task = ((Task)new Task(this).construct(text, taskId, creator));
 			if (task==null) {{
 				{
 					// standardOutput<-println("Task is null")
@@ -248,22 +273,13 @@ public class Server extends UniversalActor  implements ActorService {
 						__messages.add( message );
 					}
 				}
-			}
-}			if (creator==null) {{
-				{
-					// standardOutput<-println("creator is null")
-					{
-						Object _arguments[] = { "creator is null" };
-						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-						__messages.add( message );
-					}
-				}
+				return false;
 			}
 }			TaskList taskListRef = (TaskList)TaskList.getReferenceByName(taskList.getUAN());
 			{
-				// taskListRef<-addTask(creator, task)
+				// taskListRef<-addTask(creator, taskRef, taskId)
 				{
-					Object _arguments[] = { creator, task };
+					Object _arguments[] = { creator, taskRef, taskId };
 					Message message = new Message( self, taskListRef, "addTask", _arguments, null, null );
 					__messages.add( message );
 				}
@@ -276,8 +292,7 @@ public class Server extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
-			registeredUsers.add(creator);
-			taskLists.add(taskList);
+			mainList = taskList;
 			{
 				// broadcast(taskId, text, creator)
 				{
@@ -297,23 +312,13 @@ public class Server extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
-			for (int i = 0; i<taskLists.size(); i++){
+			TaskList taskListRef = (TaskList)TaskList.getReferenceByName((mainList).getUAN());
+			{
+				// taskListRef<-updateTask(taskId, text, creator)
 				{
-					// standardOutput<-println("tasklist UAN"+((TaskList)taskLists.get(i)).getUAN())
-					{
-						Object _arguments[] = { "tasklist UAN"+((TaskList)taskLists.get(i)).getUAN() };
-						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-						__messages.add( message );
-					}
-				}
-				TaskList taskListRef = (TaskList)TaskList.getReferenceByName(((TaskList)taskLists.get(i)).getUAN());
-				{
-					// taskListRef<-updateTask(taskId, text, creator)
-					{
-						Object _arguments[] = { taskId, text, creator };
-						Message message = new Message( self, taskListRef, "updateTask", _arguments, null, null );
-						__messages.add( message );
-					}
+					Object _arguments[] = { taskId, text, creator };
+					Message message = new Message( self, taskListRef, "updateTask", _arguments, null, null );
+					__messages.add( message );
 				}
 			}
 			{
@@ -332,18 +337,6 @@ public class Server extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
-			return true;
-		}
-		public boolean createTaskList(String name) {
-			{
-				// standardOutput<-println(" calling inside server.createTaskList")
-				{
-					Object _arguments[] = { " calling inside server.createTaskList" };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			TaskList taskList = ((TaskList)new TaskList(this).construct(name));
 			return true;
 		}
 		public void act(String args[]) {

@@ -36,10 +36,10 @@ behavior TaskList implements ActorService{
             }
             standardOutput<-println(user);
             standardOutput<-println(task);
-            User userRef = (User) User.getReferenceByName(user);
+
             Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
 			// add user only if its registered
-            users.add(userRef);
+
             tasks.add(taskRef);
 			taskids.add(taskId);
 			userIdTaskIdMap.put(taskId,user);
@@ -62,7 +62,6 @@ behavior TaskList implements ActorService{
 		// do a broadcast send to all other users
         boolean updateTask(String taskId,String text, String creator)
         {
-			User mainUser = (User) User.getReferenceByName(((String)creator));
 			boolean update = false;
             standardOutput<-println(" calling inside taskToList.updateTask");
             for(int i = 0; i < tasks.size(); i++) {

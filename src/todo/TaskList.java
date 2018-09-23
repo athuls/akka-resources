@@ -35,6 +35,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.HashMap;
 
 public class TaskList extends UniversalActor  implements ActorService {
 	public static void main(String args[]) {
@@ -190,10 +192,12 @@ public class TaskList extends UniversalActor  implements ActorService {
 			}
 		}
 
+		Set usersViewing = new HashSet();
 		String name;
 		Set users = new HashSet();
 		List tasks = new ArrayList();
 		List taskids = new ArrayList();
+		Map userIdTaskIdMap = new HashMap();
 		Server server_ref;
 		void construct(String name){
 			name = name;
@@ -216,6 +220,7 @@ public class TaskList extends UniversalActor  implements ActorService {
 						__messages.add( message );
 					}
 				}
+				return false;
 			}
 }			if (user==null) {{
 				{
@@ -226,6 +231,7 @@ public class TaskList extends UniversalActor  implements ActorService {
 						__messages.add( message );
 					}
 				}
+				return false;
 			}
 }			{
 				// standardOutput<-println(user)
@@ -243,11 +249,10 @@ public class TaskList extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
-			User userRef = (User)User.getReferenceByName(user.getUAN());
 			Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
-			users.add(userRef);
 			tasks.add(taskRef);
 			taskids.add(taskId);
+			userIdTaskIdMap.put(taskId, user);
 			{
 				// standardOutput<-println("after addTask")
 				{
@@ -275,7 +280,6 @@ public class TaskList extends UniversalActor  implements ActorService {
 			}
 		}
 		public boolean updateTask(String taskId, String text, String creator) {
-			User mainUser = (User)User.getReferenceByName(((String)creator).getUAN());
 			boolean update = false;
 			{
 				// standardOutput<-println(" calling inside taskToList.updateTask")
@@ -295,8 +299,8 @@ public class TaskList extends UniversalActor  implements ActorService {
 					}
 				}
 				Task taskRef = (Task)Task.getReferenceByName(((Task)tasks.get(i)).getUAN());
-				String currentTaskId = (String)taskIds.get(i);
-				String taskCreator = taskRef.getCreator();
+				String currentTaskId = (String)taskids.get(i);
+				String taskCreator = (String)userIdTaskIdMap.get(currentTaskId);
 				if ((currentTaskId).equals(taskId)) {{
 					if (taskCreator.equals(creator)) {{
 						{

@@ -5,10 +5,10 @@ java 1.8
 java -cp salsa1.1.5.jar;. wwc.naming.WWCNamingServer -p 3030
 java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id1 todo.Server
 java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id2 todo.User uan:\\localhost:3030\id1 Jason
-java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNSHOT.jar;. -Duan=uan:\\localhost:3030\id4 todo.User  uan:\\localhost:3030\id1 Dan
+java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id4 todo.User  uan:\\localhost:3030\id1 Dan
 java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id6 todo.TaskList
-java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNSHOT.jar;. -Duan=uan:\\localhost:3030\id7 todo.Task
-java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNSHOT.jar;. -Duan=uan:\\localhost:3030\id8 todo.Task
+java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id7 todo.Task
+java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id8 todo.Task
 java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. todo.Chat uan:\\localhost:3030\id2 uan:\\localhost:3030\id4 uan:\\localhost:3030\id6 uan:\\localhost:3030\id7 uan:\\localhost:3030\id8
 
 

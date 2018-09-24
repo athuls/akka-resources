@@ -277,10 +277,26 @@ public class User extends UniversalActor  implements ActorService {
 			}
 			server_ref = (Server)Server.getReferenceByName(args[0]);
 			{
+				// standardOutput<-println("Before calling registerUser")
+				{
+					Object _arguments[] = { "Before calling registerUser" };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
 				// server_ref<-registerUser(myName, emailId, status, ((User)self))
 				{
 					Object _arguments[] = { myName, emailId, status, ((User)self) };
 					Message message = new Message( self, server_ref, "registerUser", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// standardOutput<-println("After calling registerUser")
+				{
+					Object _arguments[] = { "After calling registerUser" };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 					__messages.add( message );
 				}
 			}

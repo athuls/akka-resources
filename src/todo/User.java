@@ -234,9 +234,25 @@ public class User extends UniversalActor  implements ActorService {
 		}
 		public boolean addTaskToList(TaskList taskList, String taskId, String text) {
 			{
-				// server_ref<-addTaskToList(taskList, taskId, text, ((User)self))
+				// standardOutput<-println("user inside addTaskToList")
 				{
-					Object _arguments[] = { taskList, taskId, text, ((User)self) };
+					Object _arguments[] = { "user inside addTaskToList" };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// standardOutput<-println(myName)
+				{
+					Object _arguments[] = { myName };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// server_ref<-addTaskToList(taskList, taskId, text, myName)
+				{
+					Object _arguments[] = { taskList, taskId, text, myName };
 					Message message = new Message( self, server_ref, "addTaskToList", _arguments, null, null );
 					__messages.add( message );
 				}
@@ -245,9 +261,9 @@ public class User extends UniversalActor  implements ActorService {
 		}
 		public boolean updateTask(String taskId, String text) {
 			{
-				// server_ref<-updateTask(taskId, text, ((User)self))
+				// server_ref<-updateTask(taskId, text, myName)
 				{
-					Object _arguments[] = { taskId, text, ((User)self) };
+					Object _arguments[] = { taskId, text, myName };
 					Message message = new Message( self, server_ref, "updateTask", _arguments, null, null );
 					__messages.add( message );
 				}

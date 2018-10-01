@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Iterator;
 
 // basically done
 behavior TaskList implements ActorService{
@@ -15,7 +16,7 @@ behavior TaskList implements ActorService{
         String name;
         Set users= new HashSet();
         List tasks= new ArrayList();
-		List taskids = new ArrayList();
+		Map taskids = new HashMap();
 		Map userIdTaskIdMap = new HashMap();
         Server server_ref;
 
@@ -24,7 +25,7 @@ behavior TaskList implements ActorService{
         }
 
 		// broadcast send to all users here who are viewing the task list
-        boolean addTask(String user,Task task, String taskId) {
+        boolean addTask(String user,Task task, String taskId,String text) {
             standardOutput<-println(" calling inside taskToList.addTask");
             if (task == null) {
                 standardOutput<-println("Task is null");
@@ -41,9 +42,18 @@ behavior TaskList implements ActorService{
 			// add user only if its registered
 
             tasks.add(taskRef);
-			taskids.add(taskId);
+			taskids.put(taskId,text);
+
 			userIdTaskIdMap.put(taskId,user);
             standardOutput<-println("after addTask");
+            standardOutput<-println(" ==== printing taskids in tasklist");
+            Set keySet =taskids.keySet();
+            Iterator keySetIterator = keySet.iterator();
+            while (keySetIterator.hasNext()){
+                String key = (String) keySetIterator.next();
+                standardOutput<-println("taskId :"+key+" : text  " +(String) taskids.get(key));
+            }
+
             return true;
         }
 
@@ -63,22 +73,26 @@ behavior TaskList implements ActorService{
         boolean updateTask(String taskId,String text, String creator)
         {
 			boolean update = false;
+			int i =0;
             standardOutput<-println(" calling inside taskToList.updateTask");
-            for(int i = 0; i < tasks.size(); i++) {
-
+            Set keySet =taskids.keySet();
+            Iterator keySetIterator = keySet.iterator();
+             while (keySetIterator.hasNext()){
+                String currentTaskId = (String) keySetIterator.next();
+                String taskCreator = (String)userIdTaskIdMap.get(currentTaskId);
                 standardOutput<-println(" taskId inside taskToList.updateTask"+taskId);
                 Task taskRef = (Task) Task.getReferenceByName(((Task)tasks.get(i)).getUAN());
-				String currentTaskId = (String)taskids.get(i);
-				String taskCreator = (String)userIdTaskIdMap.get(currentTaskId);
-				if((currentTaskId).equals(taskId))
-				{
-					if(taskCreator.equals(creator))
-					{
-						taskRef<-update(currentTaskId,text);
-						update = true;
-					}
-				}
-			}
+                    if((currentTaskId).equals(taskId)){
+                        if(taskCreator.equals(creator))
+                        {
+                            taskRef<-update(currentTaskId,text);
+                            update = true;
+                        }
+                    }
+                    i++;
+                }
+
+
 			return update;
         }
 

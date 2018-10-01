@@ -66,7 +66,7 @@ behavior Server implements ActorService{
         }
         
         TaskList taskListRef = (TaskList) TaskList.getReferenceByName(taskList.getUAN());
-        taskListRef<-addTask(creator, taskRef, taskId);
+        taskListRef<-addTask(creator, taskRef, taskId,text);
         standardOutput<-println("after taskListRef");
         mainList=taskList;
 		broadcast(taskId, text, creator);

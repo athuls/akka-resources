@@ -23,9 +23,18 @@ behavior Task implements ActorService{
 	{
 		return taskId;
 	}
-	
+
+	void printTaskText()
+	{
+	    standardOutput <- println("task text: "+taskText);
+	}
+
 	boolean update(String theTaskId,String text){
+
+	    standardOutput <- println("update task text: "+text);
+	    standardOutput <- println("update task id: "+theTaskId);
 	    if (theTaskId.equals(taskId)) {
+        standardOutput <- println("updating task text  from: "+taskText +" to: "+text);
 	    taskText=text;
 		return true;
 	    }
@@ -36,12 +45,14 @@ behavior Task implements ActorService{
     }
 
 	void act(String args[]) {
-        if(args.length != 0 ){
+        if(args.length != 2 ){
             standardOutput<-println(args.length);
             standardOutput<-println("Usage: java -Duan=myuan todo.Task");
             return;
         }
 
         whereAmI();
+        taskId=args[0];
+        taskText=args[1];
     }
 }

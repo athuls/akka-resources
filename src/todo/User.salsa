@@ -29,9 +29,9 @@ behavior User implements ActorService{
 	// broadcastReceive needs to be fixed (only change the view of the tasklist based on the updated conditions)
 	void broadcastReceive(String taskId, String msg) {
 		standardOutput<-println("[Task Id] " + taskId + ": " + msg);
-		tasksViewed.add(taskId);
 		if (!taskIds.contains(taskId)){
 		    taskIds.add(taskId);
+		    tasksViewed.add(taskId);
 		    }
 		else
 		{
@@ -56,13 +56,15 @@ behavior User implements ActorService{
 	}
 	boolean addTaskToList(TaskList taskList,String taskId,String text){
 		// first view tasklist here
-		
-	    server_ref<-addTaskToList(taskList, taskId, text,self);
+
+		standardOutput<-println("user inside addTaskToList");
+		standardOutput<-println(myName);
+	    server_ref<-addTaskToList(taskList, taskId, text,myName);
 	    return true;
 	}
 
 	boolean updateTask(String taskId,String text){
-		server_ref<-updateTask( taskId, text,self);
+		server_ref<-updateTask( taskId, text,myName);
 		return true;
 	}
 
@@ -75,10 +77,8 @@ behavior User implements ActorService{
 		
 		myName=args[1];
 		whereAmI();
-		
+
 		server_ref = (Server) Server.getReferenceByName(args[0]);
-		standardOutput<-println("Before calling registerUser");
-		server_ref<-registerUser(myName, emailId, status, self);
-		standardOutput<-println("After calling registerUser");
+		server_ref<-registerUser(myName,emailId,status,self);
 	}	
 }

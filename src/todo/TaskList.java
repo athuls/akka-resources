@@ -261,6 +261,42 @@ public class TaskList extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
+			{
+				// standardOutput<-println(" ==== printing taskids in tasklist")
+				{
+					Object _arguments[] = { " ==== printing taskids in tasklist" };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			for (int i = 0; i<taskids.size(); i++){
+				{
+					// standardOutput<-println("taskId :"+(String)taskids.get(i))
+					{
+						Object _arguments[] = { "taskId :"+(String)taskids.get(i) };
+						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+			}
+			for (int i = 0; i<tasks.size(); i++){
+				Task currentTask = (Task)Task.getReferenceByName((Task)(tasks.get(i)).getUAN());
+				{
+					Token token_3_0 = new Token();
+					// currentTask<-getText()
+					{
+						Object _arguments[] = {  };
+						Message message = new Message( self, currentTask, "getText", _arguments, null, token_3_0 );
+						__messages.add( message );
+					}
+					// standardOutput<-println(token)
+					{
+						Object _arguments[] = { token_3_0 };
+						Message message = new Message( self, standardOutput, "println", _arguments, token_3_0, null );
+						__messages.add( message );
+					}
+				}
+			}
 			return true;
 		}
 		public List getTasks() {

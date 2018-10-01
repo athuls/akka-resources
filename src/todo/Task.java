@@ -202,6 +202,9 @@ public class Task extends UniversalActor  implements ActorService {
 		public String getTaskId() {
 			return taskId;
 		}
+		public String getText() {
+			return text;
+		}
 		public boolean update(String theTaskId, String text) {
 			if (theTaskId.equals(taskId)) {{
 				taskText = text;

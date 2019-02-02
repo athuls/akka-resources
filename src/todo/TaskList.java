@@ -37,6 +37,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class TaskList extends UniversalActor  implements ActorService {
 	public static void main(String args[]) {
@@ -196,13 +197,13 @@ public class TaskList extends UniversalActor  implements ActorService {
 		String name;
 		Set users = new HashSet();
 		List tasks = new ArrayList();
-		List taskids = new ArrayList();
+		Map taskids = new HashMap();
 		Map userIdTaskIdMap = new HashMap();
 		Server server_ref;
 		void construct(String name){
 			name = name;
 		}
-		public boolean addTask(String user, Task task, String taskId) {
+		public boolean addTask(String user, Task task, String taskId, String text) {
 			{
 				// standardOutput<-println(" calling inside taskToList.addTask")
 				{
@@ -251,7 +252,7 @@ public class TaskList extends UniversalActor  implements ActorService {
 			}
 			Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
 			tasks.add(taskRef);
-			taskids.add(taskId);
+			taskids.put(taskId, text);
 			userIdTaskIdMap.put(taskId, user);
 			{
 				// standardOutput<-println("after addTask")
@@ -269,30 +270,15 @@ public class TaskList extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
-			for (int i = 0; i<taskids.size(); i++){
+			Set keySet = taskids.keySet();
+			Iterator keySetIterator = keySet.iterator();
+			while (keySetIterator.hasNext()) {
+				String key = (String)keySetIterator.next();
 				{
-					// standardOutput<-println("taskId :"+(String)taskids.get(i))
+					// standardOutput<-println("taskId :"+key+" : text  "+(String)taskids.get(key))
 					{
-						Object _arguments[] = { "taskId :"+(String)taskids.get(i) };
+						Object _arguments[] = { "taskId :"+key+" : text  "+(String)taskids.get(key) };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-						__messages.add( message );
-					}
-				}
-			}
-			for (int i = 0; i<tasks.size(); i++){
-				Task currentTask = (Task)Task.getReferenceByName((Task)(tasks.get(i)).getUAN());
-				{
-					Token token_3_0 = new Token();
-					// currentTask<-getText()
-					{
-						Object _arguments[] = {  };
-						Message message = new Message( self, currentTask, "getText", _arguments, null, token_3_0 );
-						__messages.add( message );
-					}
-					// standardOutput<-println(token)
-					{
-						Object _arguments[] = { token_3_0 };
-						Message message = new Message( self, standardOutput, "println", _arguments, token_3_0, null );
 						__messages.add( message );
 					}
 				}
@@ -317,6 +303,7 @@ public class TaskList extends UniversalActor  implements ActorService {
 		}
 		public boolean updateTask(String taskId, String text, String creator) {
 			boolean update = false;
+			int i = 0;
 			{
 				// standardOutput<-println(" calling inside taskToList.updateTask")
 				{
@@ -325,7 +312,11 @@ public class TaskList extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
-			for (int i = 0; i<tasks.size(); i++){
+			Set keySet = taskids.keySet();
+			Iterator keySetIterator = keySet.iterator();
+			while (keySetIterator.hasNext()) {
+				String currentTaskId = (String)keySetIterator.next();
+				String taskCreator = (String)userIdTaskIdMap.get(currentTaskId);
 				{
 					// standardOutput<-println(" taskId inside taskToList.updateTask"+taskId)
 					{
@@ -335,8 +326,6 @@ public class TaskList extends UniversalActor  implements ActorService {
 					}
 				}
 				Task taskRef = (Task)Task.getReferenceByName(((Task)tasks.get(i)).getUAN());
-				String currentTaskId = (String)taskids.get(i);
-				String taskCreator = (String)userIdTaskIdMap.get(currentTaskId);
 				if ((currentTaskId).equals(taskId)) {{
 					if (taskCreator.equals(creator)) {{
 						{
@@ -350,7 +339,8 @@ public class TaskList extends UniversalActor  implements ActorService {
 						update = true;
 					}
 }				}
-}			}
+}				i++;
+			}
 			return update;
 		}
 		public void act(String args[]) {

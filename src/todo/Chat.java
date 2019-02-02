@@ -31,6 +31,10 @@ import salsa.resources.ActorService;
 
 // End SALSA compiler generated import delcarations.
 
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
 
 public class Chat extends UniversalActor  {
 	public static void main(String args[]) {
@@ -269,28 +273,28 @@ public class Chat extends UniversalActor  {
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
 				Token token_2_2 = new Token();
-				// user1<-addTaskToList(taskList, taskId1, "task for user1")
-				{
-					Object _arguments[] = { taskList, taskId1, "task for user1" };
-					Message message = new Message( self, user1, "addTaskToList", _arguments, null, token_2_0 );
-					__messages.add( message );
-				}
 				// user2<-addTaskToList(taskList, taskId2, "task for user2")
 				{
 					Object _arguments[] = { taskList, taskId2, "task for user2" };
-					Message message = new Message( self, user2, "addTaskToList", _arguments, token_2_0, token_2_1 );
+					Message message = new Message( self, user2, "addTaskToList", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// user1<-updateTask(taskId1, "taskupdate for user1")
+				// user1<-addTaskToList(taskList, taskId1, "task for user1")
 				{
-					Object _arguments[] = { taskId1, "taskupdate for user1" };
-					Message message = new Message( self, user1, "updateTask", _arguments, token_2_1, token_2_2 );
+					Object _arguments[] = { taskList, taskId1, "task for user1" };
+					Message message = new Message( self, user1, "addTaskToList", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
 				// user2<-updateTask(taskId2, "taskupdate for user2")
 				{
 					Object _arguments[] = { taskId2, "taskupdate for user2" };
-					Message message = new Message( self, user2, "updateTask", _arguments, token_2_2, currentMessage.getContinuationToken() );
+					Message message = new Message( self, user2, "updateTask", _arguments, token_2_1, token_2_2 );
+					__messages.add( message );
+				}
+				// user1<-updateTask(taskId1, "taskupdate for user1")
+				{
+					Object _arguments[] = { taskId1, "taskupdate for user1" };
+					Message message = new Message( self, user1, "updateTask", _arguments, token_2_2, currentMessage.getContinuationToken() );
 					__messages.add( message );
 				}
 				throw new CurrentContinuationException();
@@ -324,35 +328,46 @@ public class Chat extends UniversalActor  {
 				TaskList taskList = (TaskList)TaskList.getReferenceByName(args[2]);
 				String taskid1 = args[3];
 				String taskid2 = args[4];
+				Date first = new Date();
+				Timestamp start = new Timestamp(first.getTime());
+				{
+					// standardOutput<-println("Starting time: "+start)
+					{
+						Object _arguments[] = { "Starting time: "+start };
+						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+				Instant begin = Instant.now();
 				{
 					Token token_3_0 = new Token();
+					Token token_3_1 = new Token();
 					// chatSession(user1, user2, taskList, taskid1, taskid2)
 					{
 						Object _arguments[] = { user1, user2, taskList, taskid1, taskid2 };
 						Message message = new Message( self, self, "chatSession", _arguments, null, token_3_0 );
 						__messages.add( message );
 					}
-					// standardOutput<-println("Done with User conversation")
+					// trackEndingTime(begin)
 					{
-						Object _arguments[] = { "Done with User conversation" };
-						Message message = new Message( self, standardOutput, "println", _arguments, token_3_0, null );
+						Object _arguments[] = { begin };
+						Message message = new Message( self, self, "trackEndingTime", _arguments, token_3_0, token_3_1 );
+						__messages.add( message );
+					}
+					// standardOutput<-println("Done with user conversation")
+					{
+						Object _arguments[] = { "Done with user conversation" };
+						Message message = new Message( self, standardOutput, "println", _arguments, token_3_1, null );
 						__messages.add( message );
 					}
 				}
-				{
-					// standardOutput<-println("After Chat Session")
-					{
-						Object _arguments[] = { "After Chat Session" };
-						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-						__messages.add( message );
-					}
-				}
+				Thread.sleep(2000);
 			}
 			catch (Exception e) {
 				{
-					// standardOutput<-println("Usage: java  todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>")
+					// standardOutput<-println("Usage: java todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>")
 					{
-						Object _arguments[] = { "Usage: java  todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>" };
+						Object _arguments[] = { "Usage: java todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>" };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 						__messages.add( message );
 					}
@@ -360,6 +375,29 @@ public class Chat extends UniversalActor  {
 				return;
 			}
 
+		}
+		public void trackEndingTime(Instant begin) {
+			Date second = new Date();
+			Timestamp end = new Timestamp(second.getTime());
+			Instant endTime = Instant.now();
+			Duration timeDifference = Duration.between(begin, endTime);
+			long timeTaken = timeDifference.toMillis();
+			{
+				// standardOutput<-println("Time taken to run this in milliseconds: "+timeTaken)
+				{
+					Object _arguments[] = { "Time taken to run this in milliseconds: "+timeTaken };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// standardOutput<-println("Ending time: "+end)
+				{
+					Object _arguments[] = { "Ending time: "+end };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 		}
 	}
 }

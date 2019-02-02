@@ -277,9 +277,9 @@ public class Server extends UniversalActor  implements ActorService {
 			}
 }			TaskList taskListRef = (TaskList)TaskList.getReferenceByName(taskList.getUAN());
 			{
-				// taskListRef<-addTask(creator, taskRef, taskId)
+				// taskListRef<-addTask(creator, taskRef, taskId, text)
 				{
-					Object _arguments[] = { creator, taskRef, taskId };
+					Object _arguments[] = { creator, taskRef, taskId, text };
 					Message message = new Message( self, taskListRef, "addTask", _arguments, null, null );
 					__messages.add( message );
 				}

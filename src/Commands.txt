@@ -2,18 +2,22 @@ Prerequisites:
 Maven version 3.5.4
 java 1.8
 
-build steps: 
-apache-maven-3.5.4/bin/mvn install:install-file -Dfile=./salsa1.1.5.jar -DgroupId=salsa  -DartifactId=salsa.actor -Dversion=1.1.5 -Dpackaging=jar
+build steps:
+on kasivis2 ews: 
+apache-maven-3.6.0/bin/mvn install:install-file -Dfile=./salsa1.1.5.jar -DgroupId=salsa  -DartifactId=salsa.actor -Dversion=1.1.5 -Dpackaging=jar
 Set JAVA_HOME=(java path)
-apache-maven-3.5.4/bin/mvn clean package
+apache-maven-3.6.0/bin/mvn clean package
+
+on osl server:
+
 
 java -cp salsa1.1.5.jar;. wwc.naming.WWCNamingServer -p 3030
 java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id1 todo.Server
 java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id2 todo.User uan:\\localhost:3030\id1 Jason
 java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id4 todo.User  uan:\\localhost:3030\id1 Dan
 java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id6 todo.TaskList
-java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id7 todo.Task
-java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id8 todo.Task
+java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id7 todo.Task uan:\\localhost:3030\id7 task7
+java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. -Duan=uan:\\localhost:3030\id8 todo.Task uan:\\localhost:3030\id8 task8
 java -cp libs/salsa1.1.5.jar;libs/salsa-chat-1.0-SNAPSHOT.jar;. todo.Chat uan:\\localhost:3030\id2 uan:\\localhost:3030\id4 uan:\\localhost:3030\id6 uan:\\localhost:3030\id7 uan:\\localhost:3030\id8
 
 

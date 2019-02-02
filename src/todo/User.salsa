@@ -2,6 +2,8 @@ module todo;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Date;
+import java.sql.Timestamp;
 
 behavior User implements ActorService{
 	private String myName="";
@@ -39,6 +41,9 @@ behavior User implements ActorService{
 			taskIds.remove(taskId);
 			taskIds.add(taskId);
 		}
+        Date date = new Date();
+        Timestamp current = new Timestamp(date.getTime());
+        standardOutput<-println(current);
 	}
 
 	// add a function here for viewing task list

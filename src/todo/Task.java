@@ -202,11 +202,42 @@ public class Task extends UniversalActor  implements ActorService {
 		public String getTaskId() {
 			return taskId;
 		}
-		public String getText() {
-			return text;
+		public void printTaskText() {
+			{
+				// standardOutput<-println("task text: "+taskText)
+				{
+					Object _arguments[] = { "task text: "+taskText };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 		}
 		public boolean update(String theTaskId, String text) {
+			{
+				// standardOutput<-println("update task text: "+text)
+				{
+					Object _arguments[] = { "update task text: "+text };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// standardOutput<-println("update task id: "+theTaskId)
+				{
+					Object _arguments[] = { "update task id: "+theTaskId };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 			if (theTaskId.equals(taskId)) {{
+				{
+					// standardOutput<-println("updating task text  from: "+taskText+" to: "+text)
+					{
+						Object _arguments[] = { "updating task text  from: "+taskText+" to: "+text };
+						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
 				taskText = text;
 				return true;
 			}
@@ -223,7 +254,7 @@ public class Task extends UniversalActor  implements ActorService {
 			}
 		}
 		public void act(String args[]) {
-			if (args.length!=0) {{
+			if (args.length!=2) {{
 				{
 					// standardOutput<-println(args.length)
 					{
@@ -250,6 +281,8 @@ public class Task extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
+			taskId = args[0];
+			taskText = args[1];
 		}
 	}
 }

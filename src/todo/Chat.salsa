@@ -1,18 +1,20 @@
 module todo;
 //Three speakers chat in a chat session initialized by the actor Chat
-
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
 
 behavior Chat{
 
 	void chatSession(User user1, User user2, TaskList taskList,String taskId1,String taskId2)
 	{
 		// these tasks are created in server..
-
-		user1<-addTaskToList(taskList,taskId1,"task for user1") @
 		user2<-addTaskToList(taskList,taskId2,"task for user2") @
-		user1<-updateTask(taskId1,"taskupdate for user1") @
+		user1<-addTaskToList(taskList,taskId1,"task for user1") @
         user2<-updateTask(taskId2,"taskupdate for user2") @
-		currentContinuation;
+		user1<-updateTask(taskId1,"taskupdate for user1") @
+        currentContinuation;
 	}
 
 	void reply(String replyMsg) {
@@ -33,17 +35,51 @@ behavior Chat{
 		  User user1 =(User) User.getReferenceByName(args[0]);
 		  User user2 =(User) User.getReferenceByName(args[1]);
 		  TaskList taskList =(TaskList) TaskList.getReferenceByName(args[2]);
-
+          
 		  String taskid1 =args[3];
 		  String taskid2 =args[4];
-		  //String taskListName=args[5];
-		  //String taskListNameTwo = args[6];
-		  chatSession(user1, user2, taskList,taskid1,taskid2) @ standardOutput<-println("Done with User conversation");
-		  standardOutput<-println("After Chat Session");
-		} catch (Exception e) {
-		  standardOutput<-println("Usage: java  todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>");
-		  return;
-		}
+		  
+          // keep track of starting time here
+          Date first = new Date();
+          Timestamp start = new Timestamp(first.getTime());
+          standardOutput<-println("Starting time: " + start);
+
+          // use this to calculate time elapsed
+          Instant begin = Instant.now();
+		  chatSession(user1, user2, taskList,taskid1,taskid2) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
+          // keep track of ending time here
+          Thread.sleep(2000);
+          /*
+          Date second = new Date();
+          Timestamp end = new Timestamp(second.getTime());
+          standardOutput<-println("Ending time: " + end);
+
+          // calculate time elapsed
+          Instant endTime = Instant.now();
+          Duration timeDifference = Duration.between(begin, endTime);
+          long timeTaken = timeDifference.toMillis();
+          standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+          //currentContinuation;
+          */
+		  }
+          catch (Exception e) {
+            standardOutput<-println("Usage: java todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>");
+            return;
+        } 
+    }
+    
+    void trackEndingTime(Instant begin)
+    {
+          // keep track of ending time here
+          Date second = new Date();
+          Timestamp end = new Timestamp(second.getTime());
+
+          // calculate time elapsed
+          Instant endTime = Instant.now();
+          Duration timeDifference = Duration.between(begin, endTime);
+          long timeTaken = timeDifference.toMillis();
+          standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+          standardOutput<-println("Ending time: " + end);
 	}
 }
 

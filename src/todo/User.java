@@ -33,6 +33,8 @@ import salsa.resources.ActorService;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Date;
+import java.sql.Timestamp;
 
 public class User extends UniversalActor  implements ActorService {
 	public static void main(String args[]) {
@@ -208,15 +210,25 @@ public class User extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
-			tasksViewed.add(taskId);
 			if (!taskIds.contains(taskId)) {{
 				taskIds.add(taskId);
+				tasksViewed.add(taskId);
 			}
 }			else {{
 				taskIds.remove(taskId);
 				taskIds.add(taskId);
 			}
-}		}
+}			Date date = new Date();
+			Timestamp current = new Timestamp(date.getTime());
+			{
+				// standardOutput<-println(current)
+				{
+					Object _arguments[] = { current };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+		}
 		public void viewTaskList() {
 		}
 		public String getUserName() {
@@ -293,26 +305,10 @@ public class User extends UniversalActor  implements ActorService {
 			}
 			server_ref = (Server)Server.getReferenceByName(args[0]);
 			{
-				// standardOutput<-println("Before calling registerUser")
-				{
-					Object _arguments[] = { "Before calling registerUser" };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
 				// server_ref<-registerUser(myName, emailId, status, ((User)self))
 				{
 					Object _arguments[] = { myName, emailId, status, ((User)self) };
 					Message message = new Message( self, server_ref, "registerUser", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// standardOutput<-println("After calling registerUser")
-				{
-					Object _arguments[] = { "After calling registerUser" };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 					__messages.add( message );
 				}
 			}

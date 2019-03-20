@@ -1,0 +1,3 @@
+primary link - https://gist.github.com/TomFreudenberg/994f107a029d152049eb
+seconday link - https://github.com/yauh/caspermeetsmeteor
+main casperjs post - https://forums.meteor.com/t/how-to-simulate-meteor-clients/4261/21

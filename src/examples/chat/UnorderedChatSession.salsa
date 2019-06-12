@@ -6,12 +6,12 @@ import java.sql.Timestamp;
 //Three speakers chat in a chat session initialized by the actor Chat
 
 
-behavior Chat{
+behavior UnorderedChatSession{
 
-	void chatSession(Speaker s1, Speaker s2, Speaker s3) {
-		s1<-broadcastSend("Sample message form speaker 1")@
-		s2<-broadcastSend("Sample message from speaker 2")@
-		currentContinuation;
+	void chatSession(ChatSession s1, ChatSession s2, ChatSession s3) {
+		s1<-broadcastSend("Sample message form ChatSession 1");
+		s2<-broadcastSend("Sample message from ChatSession 2");
+		//currentContinuation;
 	}
 
 	void reply(String replyMsg) {
@@ -27,9 +27,9 @@ behavior Chat{
 		}
 		
 		try {
-		  Speaker speaker1 =(Speaker) Speaker.getReferenceByName(args[0]) ;
-		  Speaker speaker2 =(Speaker) Speaker.getReferenceByName(args[1]) ;
-		  Speaker speaker3 =(Speaker) Speaker.getReferenceByName(args[2]) ;
+		  ChatSession speaker1 =(ChatSession) ChatSession.getReferenceByName(args[0]) ;
+		  ChatSession speaker2 =(ChatSession) ChatSession.getReferenceByName(args[1]) ;
+		  ChatSession speaker3 =(ChatSession) ChatSession.getReferenceByName(args[2]) ;
 		  Date first = new Date();
           Timestamp start = new Timestamp(first.getTime());
           standardOutput<-println("Starting time: " + start);

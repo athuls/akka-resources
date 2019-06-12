@@ -6,12 +6,12 @@ import java.sql.Timestamp;
 //Three speakers chat in a chat session initialized by the actor Chat
 
 
-behavior Chat{
+behavior UnorderedChat{
 
 	void chatSession(Speaker s1, Speaker s2, Speaker s3) {
-		s1<-broadcastSend("Sample message form speaker 1")@
-		s2<-broadcastSend("Sample message from speaker 2")@
-		currentContinuation;
+		s1<-broadcastSend("Sample message form speaker 1");
+		s2<-broadcastSend("Sample message from speaker 2");
+		//currentContinuation;
 	}
 
 	void reply(String replyMsg) {

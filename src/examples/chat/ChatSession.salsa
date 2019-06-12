@@ -1,0 +1,32 @@
+module examples.chat;
+
+
+behavior ChatSession implements ActorService{
+	private String myName="";	
+	Speaker speaker;
+	
+	void broadcastSend(String msg) {
+		standardOutput<-println("[ChatSession Local] " + myName + ": " + msg);
+		speaker<-broadcast(msg);
+	}	
+
+	void broadcastReceive(String speakerName, String msg) {
+		standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg);
+	}	
+
+	void whereAmI() {
+		standardOutput<-println("ChatSession started with uan: "+ getUAN().toString());
+	}	
+
+	void act(String args[]){
+		if(args.length != 2){
+			standardOutput<-println("Usage: java -Duan=uan://hostname/place examples.chat.ChatSession <speakername>");
+			return;
+		}
+		speaker =(Speaker) Speaker.getReferenceByName(args[0]) ;
+		
+		myName=args[1];
+		whereAmI();
+
+	}	
+}

@@ -1,0 +1,37 @@
+module examples.chat;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+
+//Three speakers chat in a chat session initialized by the actor Chat
+
+
+behavior OrderedChatSessionRunner{
+
+
+	void act(String args[]) {
+
+		if(args.length != 3 ){
+			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>");
+			return;
+		}
+		
+		try {
+
+		  String chatSession1 = args[0];
+		  String chatSession2 = args[1];
+		  String chatSession3 = args[2];
+
+
+		  OrderedChatSession.main(new String[] {chatSession3, chatSession2, chatSession3});
+		  OrderedChatSession.main(new String[] {chatSession2, chatSession3, chatSession3});
+		  OrderedChatSession.main(new String[] {chatSession3, chatSession2, chatSession1});
+		} catch (Exception e) {
+		  standardOutput<-println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>");
+		  return;
+		}
+	}
+
+}
+

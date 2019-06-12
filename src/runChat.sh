@@ -7,6 +7,13 @@ SPEAKER1LOGS=speaker1.txt
 SPEAKER2LOGS=speaker2.txt
 SPEAKER3LOGS=speaker3.txt
 CHATLOGS=chat.txt
+CHATORDEREDLOGS=orderedchat.txt
+CHATORDEREDSESSIONLOGS=orderedchatsession.txt
+CHATUNORDEREDLOGS=unorderedchat.txt
+CHATSESSION1LOGS=chatsession1.txt
+CHATSESSION2LOGS=chatsession2.txt
+CHATSESSION3LOGS=chatsession3.txt
+CHATORDEREDSESSIONRUNNERLOGS=chatsessionrunner.txt
 
 # Colors for output
 RED='\033[0;31m'
@@ -42,12 +49,23 @@ cp salsa$VERSION.jar $LIBS/
 echo "${BLUE}##################### Converting SALSA to java code #####################${NC}"
 java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/Speaker.salsa
 java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/Chat.salsa
+java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/ChatSession.salsa
+java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/OrderedChat.salsa
+java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/OrderedChatSession.salsa
+java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/OrderedChatSessionRunner.salsa
+java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/UnorderedChatSession.salsa
 java -cp $LIBS/salsa1.1.5.jar:. salsac.SalsaCompiler examples/chat/Server.salsa
 echo "${BLUE}##################### DONE #####################${NC}"
 
 echo "${BLUE}##################### Compiling SALSA code, that was previously converted to java #####################${NC}"
 javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/SpeakerInterface.java examples/chat/Speaker.java
 javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/ChatInterface.java examples/chat/Chat.java
+javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/ChatInterface.java examples/chat/ChatSession.java
+javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/ChatInterface.java examples/chat/OrderedChat.java
+javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/ChatInterface.java examples/chat/OrderedChatSession.java
+javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/ChatInterface.java examples/chat/OrderedChatSessionRunner.java
+javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/ChatInterface.java examples/chat/UnorderedChat.java
+javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/ChatInterface.java examples/chat/UnorderedChatSession.java
 javac -cp $LIBS/SpeakerKt.jar:$LIBS/ChatKt.jar:$LIBS/salsa$VERSION.jar:examples/chat:. examples/chat/ServerInterface.java examples/chat/Server.java
 echo "${BLUE}##################### DONE #####################${NC}"
 
@@ -122,6 +140,9 @@ sleep 1
 
 echo "${BLUE}##################### Launching Kotlin code for Speaker actor with name Michael #####################${NC}"
 java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id4 examples.chat.SpeakerKtKt uan:\\localhost:3030\id1 uan:\\localhost:3030\id4 > $LOGS/$SPEAKER3LOGS 2>&1 &
+java -cp .:$LIBS/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id5 examples.chat.ChatSession uan:\\localhost:3030\id2 uan:\\localhost:3030\id5 > $LOGS/$CHATSESSION1LOGS 2>&1 &
+java -cp .:$LIBS/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id6 examples.chat.ChatSession uan:\\localhost:3030\id3 uan:\\localhost:3030\id6 > $LOGS/$CHATSESSION2LOGS 2>&1 &
+java -cp .:$LIBS/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id7 examples.chat.ChatSession uan:\\localhost:3030\id4 uan:\\localhost:3030\id7 > $LOGS/$CHATSESSION3LOGS 2>&1 &
 #while read -r line
 #do
 #	if [[ $line == *"Speaker started"* ]]; then
@@ -138,6 +159,10 @@ echo ""
 
 echo "${BLUE}##################### Initiating conversation by running Kotlin code for Chat actor  ##########################${NC}"
 java -cp .:$LIBS/kotlin-runtime-1.2.20-dev-331.jar:$LIBS/salsa1.1.5.jar -Dnodie examples.chat.ChatKtKt uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 > $LOGS/$CHATLOGS 2>&1 &
+java -cp .:$LIBS/salsa1.1.5.jar examples.chat.OrderedChat uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 > $LOGS/$CHATORDEREDLOGS 2>&1 &
+java -cp .:$LIBS/salsa1.1.5.jar examples.chat.UnorderedChat uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 > $LOGS/$CHATUNORDEREDLOGS 2>&1 &
+java -cp .:$LIBS/salsa1.1.5.jar examples.chat.OrderedChatSession uan:\\localhost:3030\id5 uan:\\localhost:3030\id6 uan:\\localhost:3030\id7 > $LOGS/$CHATORDEREDSESSIONLOGS 2>&1 &
+java -cp .:$LIBS/salsa1.1.5.jar examples.chat.OrderedChatSessionRunner uan:\\localhost:3030\id5 uan:\\localhost:3030\id6 uan:\\localhost:3030\id7 > $LOGS/$CHATORDEREDSESSIONRUNNERLOGS 2>&1 &
 #while read -r line; do
 #	echo $line
 #	if [[ $line == *"Done with"* ]]; then

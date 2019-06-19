@@ -67,6 +67,7 @@
                     <arguments>
                         <argument>${project.build.sourceDirectory}/todo/Speaker.salsa</argument>
                         <argument>${project.build.sourceDirectory}/todo/Chat.salsa</argument>
+                        <argument>${project.build.sourceDirectory}/todo/UnorderedChat.salsa</argument>
                         <argument>${project.build.sourceDirectory}/todo/Server.salsa</argument>
                         <argument>${project.build.sourceDirectory}/todo/Task.salsa</argument>
                         <argument>${project.build.sourceDirectory}/todo/TaskList.salsa</argument>
@@ -101,6 +102,10 @@
                         <goals> <goal>testCompile</goal> </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>

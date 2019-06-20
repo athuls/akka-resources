@@ -81,9 +81,10 @@ behavior User implements ActorService{
 		}
 		
 		myName=args[1];
-		whereAmI();
-
 		server_ref = (Server) Server.getReferenceByName(args[0]);
-		server_ref<-registerUser(myName,emailId,status,self);
+		whereAmI() @
+		standardOutput<-println("Messaging server") @
+		server_ref<-registerUser(myName,emailId,status,self) @
+		standardOutput<-println("Finished registering");
 	}	
 }

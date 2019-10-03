@@ -24,21 +24,22 @@ behavior Server implements ActorService{
 		userIdUANMap = new HashMap();
 	}
 
-	 void broadcast(String taskId,String msg, String creatorName){
-
-	   for(int i = 0; i < registeredUsers.size(); i++) {
-		String userRefName = (String)registeredUsers.get(i);
-		if(!userRefName.equals(creatorName))
+	void broadcast(String taskId,String msg, String creatorName)
+	{
+		for(int i = 0; i < registeredUsers.size(); i++) 
 		{
-			User user = (User) userIdUANMap.get(userRefName);
-			if ( user != null)
+			String userRefName = (String)registeredUsers.get(i);
+			if(!userRefName.equals(creatorName))
 			{
-                User userRef = (User) User.getReferenceByName( user.getUAN());
-                userRef<-broadcastReceive(taskId, msg);
-            }
-		}
-	 }
-	 }
+				User user = (User) userIdUANMap.get(userRefName);
+				if ( user != null)
+				{
+               				User userRef = (User) User.getReferenceByName( user.getUAN());
+                			userRef<-broadcastReceive(taskId, msg);
+            			}
+			}
+	 	}
+	}
 
 	boolean registerUser(String userId, String email, String status,User user) {
 		// Check any condition for registration if required
@@ -53,7 +54,7 @@ behavior Server implements ActorService{
 
         Task taskRef = (Task) Task.getReferenceByName( taskId);
         standardOutput<-println("taskref "+taskRef);
-		if (creator == null) {
+	if (creator == null) {
             standardOutput<-println("creator is null");
 			return false;
         }
@@ -66,22 +67,21 @@ behavior Server implements ActorService{
         }
         
         TaskList taskListRef = (TaskList) TaskList.getReferenceByName(taskList.getUAN());
-        taskListRef<-addTask(creator, taskRef, taskId,text);
-        standardOutput<-println("after taskListRef");
-        mainList=taskList;
-		broadcast(taskId, text, creator);
+	mainList = taskList;
+        taskListRef<-addTask(creator, taskRef, taskId,text) @
+        standardOutput<-println("after taskListRef") @
+	broadcast(taskId, text, creator);
         return true;
     }
 
     boolean updateTask(String taskId,String text,String creator){
-
             standardOutput<-println("before taskListRef.update");
             TaskList taskListRef = (TaskList) TaskList.getReferenceByName((mainList).getUAN());
-            taskListRef<-updateTask(taskId, text, creator);
-            standardOutput<-println("after taskListRef.update");
-			broadcast(taskId, text, creator);
+            taskListRef<-updateTask(taskId, text, creator) @
+            standardOutput<-println("after taskListRef.update") @
+	    broadcast(taskId, text, creator);
             return true;
-        }
+	}
 
 	void act(String args[]) {
 		if(args.length != 0 ){

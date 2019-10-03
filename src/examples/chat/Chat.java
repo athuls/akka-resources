@@ -31,6 +31,10 @@ import salsa.resources.ActorService;
 
 // End SALSA compiler generated import delcarations.
 
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
 
 public class Chat extends UniversalActor  {
 	public static void main(String args[]) {
@@ -308,18 +312,36 @@ public class Chat extends UniversalActor  {
 				Speaker speaker1 = (Speaker)Speaker.getReferenceByName(args[0]);
 				Speaker speaker2 = (Speaker)Speaker.getReferenceByName(args[1]);
 				Speaker speaker3 = (Speaker)Speaker.getReferenceByName(args[2]);
+				Date first = new Date();
+				Timestamp start = new Timestamp(first.getTime());
+				{
+					// standardOutput<-println("Starting time: "+start)
+					{
+						Object _arguments[] = { "Starting time: "+start };
+						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+				Instant begin = Instant.now();
 				{
 					Token token_3_0 = new Token();
+					Token token_3_1 = new Token();
 					// chatSession(speaker1, speaker2, speaker3)
 					{
 						Object _arguments[] = { speaker1, speaker2, speaker3 };
 						Message message = new Message( self, self, "chatSession", _arguments, null, token_3_0 );
 						__messages.add( message );
 					}
+					// trackEndingTime(begin)
+					{
+						Object _arguments[] = { begin };
+						Message message = new Message( self, self, "trackEndingTime", _arguments, token_3_0, token_3_1 );
+						__messages.add( message );
+					}
 					// standardOutput<-println("Done with chat conversation")
 					{
 						Object _arguments[] = { "Done with chat conversation" };
-						Message message = new Message( self, standardOutput, "println", _arguments, token_3_0, null );
+						Message message = new Message( self, standardOutput, "println", _arguments, token_3_1, null );
 						__messages.add( message );
 					}
 				}
@@ -336,6 +358,29 @@ public class Chat extends UniversalActor  {
 				return;
 			}
 
+		}
+		public void trackEndingTime(Instant begin) {
+			Date second = new Date();
+			Timestamp end = new Timestamp(second.getTime());
+			Instant endTime = Instant.now();
+			Duration timeDifference = Duration.between(begin, endTime);
+			long timeTaken = timeDifference.toMillis();
+			{
+				// standardOutput<-println("Time taken to run this in milliseconds: "+timeTaken)
+				{
+					Object _arguments[] = { "Time taken to run this in milliseconds: "+timeTaken };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// standardOutput<-println("Ending time: "+end)
+				{
+					Object _arguments[] = { "Ending time: "+end };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 		}
 	}
 }

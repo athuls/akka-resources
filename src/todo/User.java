@@ -203,9 +203,9 @@ public class User extends UniversalActor  implements ActorService {
 		}
 		public void broadcastReceive(String taskId, String msg) {
 			{
-				// standardOutput<-println("[Task Id] "+taskId+": "+msg)
+				// standardOutput<-println("Received; [Task Id] "+taskId+": "+msg)
 				{
-					Object _arguments[] = { "[Task Id] "+taskId+": "+msg };
+					Object _arguments[] = { "Received; [Task Id] "+taskId+": "+msg };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 					__messages.add( message );
 				}
@@ -262,6 +262,24 @@ public class User extends UniversalActor  implements ActorService {
 				}
 			}
 			{
+				// standardOutput<-println("Initial add request: [Task Id] "+taskId+": "+text)
+				{
+					Object _arguments[] = { "Initial add request: [Task Id] "+taskId+": "+text };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			Date date = new Date();
+			Timestamp current = new Timestamp(date.getTime());
+			{
+				// standardOutput<-println(current)
+				{
+					Object _arguments[] = { current };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
 				// server_ref<-addTaskToList(taskList, taskId, text, myName)
 				{
 					Object _arguments[] = { taskList, taskId, text, myName };
@@ -272,6 +290,32 @@ public class User extends UniversalActor  implements ActorService {
 			return true;
 		}
 		public boolean updateTask(String taskId, String text) {
+			{
+				// standardOutput<-println("inside updateTask")
+				{
+					Object _arguments[] = { "inside updateTask" };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// standardOutput<-println("Initial update request; [Task Id] "+taskId+": "+text)
+				{
+					Object _arguments[] = { "Initial update request; [Task Id] "+taskId+": "+text };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			Date date = new Date();
+			Timestamp current = new Timestamp(date.getTime());
+			{
+				// standardOutput<-println(current)
+				{
+					Object _arguments[] = { current };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 			{
 				// server_ref<-updateTask(taskId, text, myName)
 				{
@@ -295,20 +339,34 @@ public class User extends UniversalActor  implements ActorService {
 				return;
 			}
 }			myName = args[1];
+			server_ref = (Server)Server.getReferenceByName(args[0]);
 			{
+				Token token_2_0 = new Token();
 				// whereAmI()
 				{
 					Object _arguments[] = {  };
-					Message message = new Message( self, self, "whereAmI", _arguments, null, null );
+					Message message = new Message( self, self, "whereAmI", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
+				// standardOutput<-println("Messaging server")
+				{
+					Object _arguments[] = { "Messaging server" };
+					Message message = new Message( self, standardOutput, "println", _arguments, token_2_0, null );
 					__messages.add( message );
 				}
 			}
-			server_ref = (Server)Server.getReferenceByName(args[0]);
 			{
+				Token token_2_0 = new Token();
 				// server_ref<-registerUser(myName, emailId, status, ((User)self))
 				{
 					Object _arguments[] = { myName, emailId, status, ((User)self) };
-					Message message = new Message( self, server_ref, "registerUser", _arguments, null, null );
+					Message message = new Message( self, server_ref, "registerUser", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
+				// standardOutput<-println("Finished registering")
+				{
+					Object _arguments[] = { "Finished registering" };
+					Message message = new Message( self, standardOutput, "println", _arguments, token_2_0, null );
 					__messages.add( message );
 				}
 			}

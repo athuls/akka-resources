@@ -1,0 +1,23 @@
+Received speaker: uan:\localhost:3030id4 to register with server uan:\localhost:3030id1
+Speaker started with uan: uan://:3030\localhost:3030id4
+[Speaker Local] uan:\localhost:3030id4: ANSWER: User three: Answer one.; Timestamp: 2019-10-03 09:12:57.154
+[Speaker Local] uan:\localhost:3030id4: ANSWER: User three: Answer two.; Timestamp: 2019-10-03 09:12:59.403
+[Speaker Local] uan:\localhost:3030id4: ANSWER: User three: Answer three.; Timestamp: 2019-10-03 09:13:01.467
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User one: Question one.; Timestamp: 2019-10-03 09:13:06.019
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User one: Question two.; Timestamp: 2019-10-03 09:13:09.185
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User one: Question three.; Timestamp: 2019-10-03 09:13:09.888
+Multiple elems
+Answer queue size: 3
+[Speaker Remote] uan:\localhost:3030id6: ANSWER: User five: Answer one.; Timestamp: 2019-10-03 09:13:10.013
+[Speaker Remote] uan:\localhost:3030id6: ANSWER: User five: Answer one.; Timestamp: 2019-10-03 09:13:10.013
+[Speaker Remote] uan:\localhost:3030id6: ANSWER: User five: Answer one.; Timestamp: 2019-10-03 09:13:10.013
+[Speaker Remote] uan:\localhost:3030id5: ANSWER : User four: Answer one.
+2019-10-03 09:13:10.33
+[Speaker Remote] uan:\localhost:3030id6: ANSWER : User five: Answer two.
+2019-10-03 09:13:10.897
+[Speaker Remote] uan:\localhost:3030id5: ANSWER : User four: Answer two.
+2019-10-03 09:13:11.563
+[Speaker Remote] uan:\localhost:3030id5: ANSWER : User four: Answer three.
+2019-10-03 09:13:11.793
+[Speaker Remote] uan:\localhost:3030id6: ANSWER : User five: Answer three.
+2019-10-03 09:13:13.591

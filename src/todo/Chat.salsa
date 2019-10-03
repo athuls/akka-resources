@@ -12,7 +12,7 @@ behavior Chat{
 		// these tasks are created in server..
 		user2<-addTaskToList(taskList,taskId2,"task for user2") @
 		user1<-addTaskToList(taskList,taskId1,"task for user1") @
-        user2<-updateTask(taskId2,"taskupdate for user2") @
+        	user2<-updateTask(taskId2,"taskupdate for user2") @
 		user1<-updateTask(taskId1,"taskupdate for user1") @
         currentContinuation;
 	}

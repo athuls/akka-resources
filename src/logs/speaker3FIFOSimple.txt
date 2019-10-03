@@ -1,0 +1,31 @@
+Received speaker: uan:\localhost:3030id4 to register with server uan:\localhost:3030id1
+Speaker started with uan: uan://:3030\localhost:3030id4
+[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Ordered message 1.; Timestamp: 2019-10-03 06:38:29.932
+[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Ordered message 2.; Timestamp: 2019-10-03 06:38:30.83
+[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Ordered message 3.; Timestamp: 2019-10-03 06:38:31.26
+[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Ordered message 1.; Timestamp: 2019-10-03 06:38:32.474
+[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Ordered message 1.; Timestamp: 2019-10-03 06:38:32.859
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 1.; Timestamp: 2019-10-03 06:38:33.159
+[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Ordered message 1.; Timestamp: 2019-10-03 06:38:33.362
+[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Ordered message 2.; Timestamp: 2019-10-03 06:38:33.562
+[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Ordered message 3.; Timestamp: 2019-10-03 06:38:33.764
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 2.; Timestamp: 2019-10-03 06:38:34.082
+[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Ordered message 2.; Timestamp: 2019-10-03 06:38:34.341
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 3.; Timestamp: 2019-10-03 06:38:34.602
+[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Ordered message 2.; Timestamp: 2019-10-03 06:38:34.884
+[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Ordered message 3.; Timestamp: 2019-10-03 06:38:35.136
+[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Ordered message 3.; Timestamp: 2019-10-03 06:38:35.973
+
+Printing the final message list here: 
+User 2: Ordered message 1.
+User 5: Ordered message 1.
+User 1: Ordered message 1.
+User 4: Ordered message 1.
+User 5: Ordered message 2.
+User 5: Ordered message 3.
+User 1: Ordered message 2.
+User 2: Ordered message 2.
+User 1: Ordered message 3.
+User 4: Ordered message 2.
+User 2: Ordered message 3.
+User 4: Ordered message 3.

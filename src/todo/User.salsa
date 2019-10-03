@@ -30,7 +30,7 @@ behavior User implements ActorService{
 	// check to see if the user owns the task which is being updated
 	// broadcastReceive needs to be fixed (only change the view of the tasklist based on the updated conditions)
 	void broadcastReceive(String taskId, String msg) {
-		standardOutput<-println("[Task Id] " + taskId + ": " + msg);
+		standardOutput<-println("Received; [Task Id] " + taskId + ": " + msg);
 		if (!taskIds.contains(taskId)){
 		    taskIds.add(taskId);
 		    tasksViewed.add(taskId);
@@ -60,15 +60,23 @@ behavior User implements ActorService{
 		standardOutput<-println("User started with uan: "+ getUAN().toString());
 	}
 	boolean addTaskToList(TaskList taskList,String taskId,String text){
-		// first view tasklist here
-
+		// get first timestamp here
 		standardOutput<-println("user inside addTaskToList");
 		standardOutput<-println(myName);
+		standardOutput<-println("Initial add request: [Task Id] " + taskId + ": " + text);
+		Date date = new Date();
+		Timestamp current = new Timestamp(date.getTime());
+		standardOutput<-println(current);
 	    server_ref<-addTaskToList(taskList, taskId, text,myName);
 	    return true;
 	}
 
 	boolean updateTask(String taskId,String text){
+		standardOutput<-println("inside updateTask");
+		standardOutput<-println("Initial update request; [Task Id] " + taskId + ": " + text);
+		Date date = new Date();
+		Timestamp current = new Timestamp(date.getTime());
+		standardOutput<-println(current);
 		server_ref<-updateTask( taskId, text,myName);
 		return true;
 	}
@@ -83,7 +91,7 @@ behavior User implements ActorService{
 		myName=args[1];
 		server_ref = (Server) Server.getReferenceByName(args[0]);
 		whereAmI() @
-		standardOutput<-println("Messaging server") @
+		standardOutput<-println("Messaging server");
 		server_ref<-registerUser(myName,emailId,status,self) @
 		standardOutput<-println("Finished registering");
 	}	

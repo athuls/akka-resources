@@ -1,25 +1,204 @@
 module examples.chat;
+import java.util.Date;
+import java.sql.Timestamp;
+import java.util.Map;
+import java.util.HashMap;
+import examples.chat.ChatMessage.MessageType;
+import java.util.Iterator;
+import java.util.Queue;
+import java.util.LinkedList;
+import java.util.ArrayList;
 
-
-behavior Speaker implements ActorService{
+// simple user class - this maintains an overall user implementation
+behavior Speaker implements ActorService
+{
 	private String myName="";	
 	Server server_ref;
-	
-	void broadcastSend(String msg) {
-		standardOutput<-println("[Speaker Local] " + myName + ": " + msg);
-		server_ref<-broadcast(myName, msg);
+	Map questionTimeStamp = new HashMap();
+	Queue answerQueue = new LinkedList();
+	ArrayList messages = new ArrayList();
+	Queue messageQueue = new LinkedList();
+	boolean isQuestion = false;
+
+	// function used to set the identity of this user as someone questioning
+	void setQuestionIdentity()
+	{
+		isQuestion = true;
+	}
+
+	// simple processing of the message by calling server's broadcast
+	// this also prints out the timestamp at the beginning
+	void broadcastSend(ChatMessage msg, int number_of_questions, int total_messages) 
+	{
+		Date date = new Date();
+		Timestamp current = new Timestamp(date.getTime());
+		standardOutput<-println("[Speaker Local] " + myName + ": " + msg.getMsgType() +": "+ msg.getMsg() + "; Timestamp: " + current) @ 
+		server_ref<-broadcast(myName, msg, number_of_questions, total_messages);
 	}	
 
-	void broadcastReceive(String speakerName, String msg) {
-		standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg);
-	}	
+	// this function handles messages accordingly by their type and adds them to the user's own chat message list - non single glitch
+	void broadcastReceive(String speakerName, ChatMessage msg, int number_of_questions, int total_messages) throws InterruptedException
+	{
+		switch (msg.getMsgType())
+		{
+			case QUESTION:				
+				// add the question to the user's list
+				messages.add(msg.getMsg());
 
-	void whereAmI() {
+				// next mark the timestamp
+				Date date_one = new Date();
+				Timestamp current_one = new Timestamp(date_one.getTime());
+				standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg.getMsgType() +": "+ msg.getMsg() + "; Timestamp: " + current_one);
+
+				// put the question in the question map
+				questionTimeStamp.put(msg.getMsg(),current_one);
+				break;
+			case ANSWER:
+				// check if there has been a question already placed
+				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
+				{
+					if(answerQueue.size() > 0)
+					{
+						standardOutput<-println("Multiple elems");
+
+						// empty out queue
+						standardOutput<-println("Answer queue size: " + answerQueue.size());
+						while(answerQueue.size() > 0)
+						{
+							ChatMessage chatMessage = (ChatMessage) answerQueue.remove();
+
+							// add the message to the list and print timestamp
+							messages.add(chatMessage.getMsg());
+							Date date_two = new Date();
+							Timestamp current_two = new Timestamp(date_two.getTime());
+							standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg.getMsgType() +": "+ msg.getMsg() + "; Timestamp: " + current_two);
+						}
+						/*
+						// go through message queue
+						Iterator itr = answerQueue.iterator();
+
+						while (itr.hasNext())
+						{
+							
+						}
+						*/						
+					}
+					else
+					{
+						// simply add the message to the list
+						messages.add(msg.getMsg());
+
+						// get the time next
+						standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg.getMsgType() +" : "+ msg.getMsg());
+						Date date_three = new Date();
+						Timestamp current_three = new Timestamp(date_three.getTime());
+						standardOutput<-println(current_three);	
+					}
+				}
+				else
+				{
+					// store the message for later processing
+					answerQueue.add(msg);
+				}
+				break;
+			default:
+				// first add the statement to the overall message list
+				messages.add(msg.getMsg());
+				Thread.sleep(200);
+
+				// next mark the timestamp
+				Date date_four = new Date();
+				Timestamp current_four = new Timestamp(date_four.getTime());
+				standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg.getMsgType() +": "+ msg.getMsg() + "; Timestamp: " + current_four);
+				break;
+		}
+
+		// checks to see if program execution is completed
+		if(messages.size() == total_messages)
+		{
+			standardOutput<-println("\nPrinting the final message list here: ");
+			for(int i = 0; i < messages.size(); i++)
+			{
+				standardOutput<-println(messages.get(i));
+			}
+		}
+	}
+
+	// this function handles messages by their type and takes into account levels after causal consistency
+	void broadcastReceiveAdvanced(String speakerName, ChatMessage msg, int number_of_questions, int total_messages)
+	{
+		switch (msg.getMsgType())
+		{
+			case QUESTION:
+				// add the question to the overall message list
+				messageQueue.add(msg);
+
+				// put the question in the question map
+				Date date = new Date();
+				Timestamp current = new Timestamp(date.getTime());
+				questionTimeStamp.put(msg.getMsg(), current);
+				break;
+			case ANSWER:
+				// check if there has been a question already placed
+				if (questionTimeStamp.values().size() == number_of_questions)
+				{
+					if(answerQueue.size() > 0)
+					{
+						// go through the queue messages
+						Iterator itr = answerQueue.iterator();
+
+						while (itr.hasNext())
+						{
+							ChatMessage chatMessage = (ChatMessage) itr.next();
+
+							// add the message to the overall message queue
+							messageQueue.add(chatMessage.getMsg());
+
+							// removes the element from the queue
+							itr.remove();
+						}
+					}
+					else
+					{
+						// simply add the message to the list
+						messageQueue.add(msg.getMsg());
+					}
+				}
+				else
+				{
+					// store the message for later processing
+					answerQueue.add(msg.getMsg());
+				}
+				break;
+			case STATEMENT:
+				// add the statement to the overall message queue
+				messageQueue.add(msg.getMsg());
+				break;
+		}
+
+		// checks if all of the messages have arrived
+		if(messageQueue.size() == total_messages)
+		{
+			Iterator messageItr = messageQueue.iterator();
+			while(messageItr.hasNext())
+			{
+				ChatMessage chatMessage = (ChatMessage) messageItr.next();
+				messages.add(chatMessage.getMsg());
+			}
+		}
+	}
+
+	// print function to indicate a user is starting
+	void whereAmI() 
+	{
 		standardOutput<-println("Speaker started with uan: "+ getUAN().toString());
 	}	
 
-	void act(String args[]){
-		if(args.length != 2){
+	// sample starting function - does not serve much use
+	void act(String args[])
+	{
+		if(args.length != 2)
+		{
 			standardOutput<-println("Usage: java -Duan=uan://hostname/place examples.chat.Speaker <serverName> <myName>");
 			return;
 		}

@@ -1,0 +1,31 @@
+Received speaker: uan:\localhost:3030id5 to register with server uan:\localhost:3030id1
+Speaker started with uan: uan://:3030\localhost:3030id5
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random statement 1.; Timestamp: 2019-10-03 03:44:43.198
+[Speaker Local] uan:\localhost:3030id5: STATEMENT: User 4: Random statement 1.; Timestamp: 2019-10-03 03:44:43.611
+[Speaker Local] uan:\localhost:3030id5: STATEMENT: User 4: Random statement 2.; Timestamp: 2019-10-03 03:44:43.613
+[Speaker Local] uan:\localhost:3030id5: STATEMENT: User 4: Random statement 3.; Timestamp: 2019-10-03 03:44:43.998
+[Speaker Remote] uan:\localhost:3030id4: STATEMENT: User 3: Random statement 1.; Timestamp: 2019-10-03 03:44:44.201
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random statement 2.; Timestamp: 2019-10-03 03:44:44.417
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random statement 3.; Timestamp: 2019-10-03 03:44:44.626
+[Speaker Remote] uan:\localhost:3030id4: STATEMENT: User 3: Random statement 2.; Timestamp: 2019-10-03 03:44:44.843
+[Speaker Remote] uan:\localhost:3030id4: STATEMENT: User 3: Random statement 3.; Timestamp: 2019-10-03 03:44:45.076
+[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random statement 1.; Timestamp: 2019-10-03 03:44:45.299
+[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random statement 2.; Timestamp: 2019-10-03 03:44:45.551
+[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random statement 3.; Timestamp: 2019-10-03 03:44:45.796
+[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random statement 1.; Timestamp: 2019-10-03 03:44:46.009
+[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random statement 2.; Timestamp: 2019-10-03 03:44:46.231
+[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random statement 3.; Timestamp: 2019-10-03 03:44:46.452
+
+Printing the final message list here: 
+User 1: Random statement 1.
+User 3: Random statement 1.
+User 1: Random statement 2.
+User 1: Random statement 3.
+User 3: Random statement 2.
+User 3: Random statement 3.
+User 2: Random statement 1.
+User 2: Random statement 2.
+User 2: Random statement 3.
+User 5: Random statement 1.
+User 5: Random statement 2.
+User 5: Random statement 3.

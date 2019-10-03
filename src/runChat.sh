@@ -102,7 +102,7 @@ kotlinc -cp .:./examples/chat examples/chat/SpeakerKt.kt
 echo "${BLUE}Compiled speaker code in kotlin${NC}"
 
 javac examples/chat/ChatInterface.java
-kotlinc -cp .:./examples/chat examples/chat/ChatKt.kt
+kotlinc -cp .:./examples/chat examples/chat/UnorderedChatKt.kt
 echo "${BLUE}Compiled chat code in kotlin${NC}"
 
 echo "${BLUE}##################### Launching Kotlin code for Server actor with ids of all speakers #####################${NC}"

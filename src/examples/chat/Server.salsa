@@ -1,41 +1,52 @@
 module examples.chat;
-//Server backend for the chat application
 
 import java.util.List;
 import java.util.ArrayList;
+import examples.chat.ChatMessage.MessageType;
 
-behavior Server implements ActorService{
-	
+//Server backend for the chat application
+behavior Server implements ActorService
+{	
 	List registeredUsers;
 
-	Server() {
+	// we just instantiate the users who are registered - this is used for broadcasting
+	Server() 
+	{
 		registeredUsers = new ArrayList();
 	}	
 
-	void broadcast(String speakerName, String msg) {
+	// this function is used to broadcast changes to the remaining users, so that they can add messages to their chatlist version
+	void broadcast(String speakerName, ChatMessage msg, int number_of_questions, int total_messages) 
+	{
 		standardOutput<-println("Speaker name for message is " + speakerName);
-		for(int i = 0; i < registeredUsers.size(); i++) {
-			if(!registeredUsers.get(i).equals(speakerName)) {
+		// for now, we do not enforce ordering of how users are broadcasted (only implement until single glitch)
+		// as a result, only basic code to send the update to each user is necessary
+		for(int i = 0; i < registeredUsers.size(); i++) 
+		{
+			if(!registeredUsers.get(i).equals(speakerName)) 
+			{
 				Speaker speakerRef = (Speaker) Speaker.getReferenceByName((String)registeredUsers.get(i));
-				speakerRef<-broadcastReceive(speakerName, msg);
+				speakerRef<-broadcastReceive(speakerName, msg, number_of_questions, total_messages);
 			}
 		}	
   	}
 
-	boolean registerUser(String userId) {
-		// Check any condition for registration if required
+	// this function serves to add users to the overall list of users maintained
+	boolean registerUser(String userId) 
+	{
 		standardOutput<-println("Registering speaker " + userId);
 		registeredUsers.add(userId);
 		return true;
-		
 	}
-	
-	void act(String args[]) {
-		if(args != null ){
+
+	// this function is just a sample starting function (not really much use)
+	void act(String args[])
+	{
+		if(args != null)
+		{
 			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Server");
 			return;
 		}
-		
 		standardOutput<-println("Server started");
 	}
 }

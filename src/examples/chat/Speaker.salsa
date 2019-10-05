@@ -143,7 +143,7 @@ behavior Speaker implements ActorService
 				else
 				{
 					// store the message for later processing
-					answerQueue.add(msg.getMsg());
+					answerQueue.add(msg);
 				}
 				break;
 			case STATEMENT:
@@ -152,7 +152,6 @@ behavior Speaker implements ActorService
 				break;
 		}
 
-		standardOutput<-println(messageQueue.size());
 		// checks if all of the messages have arrived
 		if(messageQueue.size() == total_messages)
 		{

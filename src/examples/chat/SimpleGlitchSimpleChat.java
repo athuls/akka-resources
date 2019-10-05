@@ -273,43 +273,50 @@ public class SimpleGlitchSimpleChat extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Poll question one."), 3, 12)
+				Token token_2_2 = new Token();
+				// s1<-setQuestionIdentity()
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User one: Poll question one."), new Integer(3), new Integer(12) };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, token_2_0 );
+					Object _arguments[] = {  };
+					Message message = new Message( self, s1, "setQuestionIdentity", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Poll question two."), 3, 12)
+				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User 1: Poll question 1."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User one: Poll question two."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User 1: Poll question 1."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Poll question three."), 3, 12)
+				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User 1: Poll question 2."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User one: Poll question three."), new Integer(3), new Integer(12) };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_1, null );
+					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User 1: Poll question 2."), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_1, token_2_2 );
+					__messages.add( message );
+				}
+				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User 1: Poll question 3."), 3, 12)
+				{
+					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User 1: Poll question 3."), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_2, null );
 					__messages.add( message );
 				}
 			}
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Poll response one."), 3, 12)
+				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 2: Poll response 1."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User two: Poll response one."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 2: Poll response 1."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Poll response two."), 3, 12)
+				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 2: Poll response 2."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User two: Poll response two."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 2: Poll response 2."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Poll response three."), 3, 12)
+				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 2: Poll response 3."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User two: Poll response three."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 2: Poll response 3."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
@@ -317,21 +324,21 @@ public class SimpleGlitchSimpleChat extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Poll response one."), 3, 12)
+				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 3: Poll response 1."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User three: Poll response one."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 3: Poll response 1."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Poll response two."), 3, 12)
+				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 3: Poll response 2."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User three: Poll response two."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 3: Poll response 2."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Poll response three."), 3, 12)
+				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 3: Poll response 3."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User three: Poll response three."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 3: Poll response 3."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
@@ -339,21 +346,21 @@ public class SimpleGlitchSimpleChat extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Poll response one."), 3, 12)
+				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 4: Poll response 1."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User four: Poll response one."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 4: Poll response 1."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Poll response two."), 3, 12)
+				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 4: Poll response 2."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User four: Poll response two."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 4: Poll response 2."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Poll response three."), 3, 12)
+				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 4: Poll response 3."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User four: Poll response three."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 4: Poll response 3."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
@@ -361,21 +368,21 @@ public class SimpleGlitchSimpleChat extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Poll response one."), 3, 12)
+				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 5: Poll response 1."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User five: Poll response one."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 5: Poll response 1."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Poll response two."), 3, 12)
+				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 5: Poll response 2."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User five: Poll response two."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 5: Poll response 2."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Poll response three."), 3, 12)
+				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 5: Poll response 3."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User five: Poll response three."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 5: Poll response 3."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_1, null );
 					__messages.add( message );
 				}

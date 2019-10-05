@@ -198,10 +198,10 @@ public class Server extends UniversalActor  implements ActorService {
 				if (!registeredUsers.get(i).equals(speakerName)) {{
 					Speaker speakerRef = (Speaker)Speaker.getReferenceByName((String)registeredUsers.get(i));
 					{
-						// speakerRef<-broadcastReceiveAdvanced(speakerName, msg, number_of_questions, total_messages)
+						// speakerRef<-broadcastReceive(speakerName, msg, number_of_questions, total_messages)
 						{
 							Object _arguments[] = { speakerName, msg, number_of_questions, total_messages };
-							Message message = new Message( self, speakerRef, "broadcastReceiveAdvanced", _arguments, null, null );
+							Message message = new Message( self, speakerRef, "broadcastReceive", _arguments, null, null );
 							__messages.add( message );
 						}
 					}

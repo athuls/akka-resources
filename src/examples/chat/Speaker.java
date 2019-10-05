@@ -297,18 +297,10 @@ break;			case ANSWER: if (questionTimeStamp.values().size()==number_of_questions
 }				messageQueue.add(msg.getMsg());
 			}
 }			else {{
-				answerQueue.add(msg.getMsg());
+				answerQueue.add(msg);
 			}
-}break;			case STATEMENT: messageQueue.add(msg);
+}break;			case STATEMENT: messageQueue.add(msg.getMsg());
 break;			}
-			{
-				// standardOutput<-println(messageQueue.size())
-				{
-					Object _arguments[] = { messageQueue.size() };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
 			if (messageQueue.size()==total_messages) {{
 				while (messageQueue.size()>0) {
 					messages.add(messageQueue.remove());

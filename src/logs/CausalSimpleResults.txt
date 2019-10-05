@@ -1,3 +1,5 @@
+Round One - 5 users with 3 questions for one user and 3 answers for the other four: (poor results)
+===================================================================================================
 Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 110; overall latency: 457.2
 Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 755; overall latency: 2099.8
 Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 782; overall latency: 2074.8
@@ -48,3 +50,6 @@ Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 329; o
 Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 625; overall latency: 1905.4
 Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 627; overall latency: 2436.2
 Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 532; overall latency: 2962.8
+
+Round Two - 5 users with 3 questions for one user and 3 answers for the other four: (better results)
+====================================================================================================

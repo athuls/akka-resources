@@ -1,3 +1,5 @@
+Round 1: No consistency with 5 users and 3 statements each (poor run)
+======================================================================
 Is this ordered: Yes; overall runtime: 1054; overall latency: 1841.0
 Is this ordered: Yes; overall runtime: 2734; overall latency: 2449.8
 Is this ordered: Yes; overall runtime: 995; overall latency: 3538.4
@@ -48,3 +50,59 @@ Is this ordered: Yes; overall runtime: 2566; overall latency: 6252.6
 Is this ordered: Yes; overall runtime: 2008; overall latency: 3292.4
 Is this ordered: Yes; overall runtime: 2335; overall latency: 3375.0
 Is this ordered: Yes; overall runtime: 3259; overall latency: 3458.6
+
+Average latency: 
+Overall runtime: 
+
+Round 2: No consistency with 5 users and 3 statements each (better run with revisions)
+======================================================================================
+Is this ordered: Yes; overall runtime: 87; overall latency: 1948.0
+Is this ordered: Yes; overall runtime: 309; overall latency: 1972.6
+Is this ordered: Yes; overall runtime: 272; overall latency: 2021.8
+Is this ordered: Yes; overall runtime: 313; overall latency: 1902.6
+Is this ordered: Yes; overall runtime: 289; overall latency: 1950.8
+Is this ordered: Yes; overall runtime: 292; overall latency: 1954.4
+Is this ordered: Yes; overall runtime: 250; overall latency: 1866.0
+Is this ordered: Yes; overall runtime: 257; overall latency: 1830.6
+Is this ordered: Yes; overall runtime: 187; overall latency: 1873.2
+Is this ordered: Yes; overall runtime: 198; overall latency: 1907.2
+Is this ordered: Yes; overall runtime: 188; overall latency: 1913.6
+Is this ordered: Yes; overall runtime: 232; overall latency: 1866.4
+Is this ordered: Yes; overall runtime: 218; overall latency: 2018.2
+Is this ordered: Yes; overall runtime: 201; overall latency: 1906.4
+Is this ordered: Yes; overall runtime: 174; overall latency: 1863.8
+Is this ordered: Yes; overall runtime: 158; overall latency: 2004.8
+Is this ordered: Yes; overall runtime: 219; overall latency: 1907.2
+Is this ordered: Yes; overall runtime: 235; overall latency: 1845.0
+Is this ordered: Yes; overall runtime: 317; overall latency: 1963.4
+Is this ordered: Yes; overall runtime: 99; overall latency: 2102.8
+Is this ordered: Yes; overall runtime: 271; overall latency: 1867.8
+Is this ordered: Yes; overall runtime: 219; overall latency: 1932.6
+Is this ordered: Yes; overall runtime: 231; overall latency: 1868.6
+Is this ordered: Yes; overall runtime: 227; overall latency: 1836.6
+Is this ordered: Yes; overall runtime: 223; overall latency: 1873.2
+Is this ordered: Yes; overall runtime: 173; overall latency: 1892.6
+Is this ordered: Yes; overall runtime: 234; overall latency: 1867.2
+Is this ordered: Yes; overall runtime: 158; overall latency: 1914.6
+Is this ordered: Yes; overall runtime: 253; overall latency: 1879.0
+Is this ordered: Yes; overall runtime: 184; overall latency: 2012.6
+Is this ordered: Yes; overall runtime: 211; overall latency: 1911.2
+Is this ordered: Yes; overall runtime: 181; overall latency: 1805.8
+Is this ordered: Yes; overall runtime: 179; overall latency: 1901.4
+Is this ordered: Yes; overall runtime: 184; overall latency: 1805.0
+Is this ordered: Yes; overall runtime: 167; overall latency: 1138.2
+Is this ordered: Yes; overall runtime: 177; overall latency: 1826.0
+Is this ordered: Yes; overall runtime: 231; overall latency: 1939.0
+Is this ordered: Yes; overall runtime: 214; overall latency: 1916.8
+Is this ordered: Yes; overall runtime: 227; overall latency: 1894.0
+Is this ordered: Yes; overall runtime: 157; overall latency: 1944.4
+Is this ordered: Yes; overall runtime: 171; overall latency: 1918.6
+Is this ordered: Yes; overall runtime: 214; overall latency: 1818.6
+Is this ordered: Yes; overall runtime: 199; overall latency: 1819.4
+Is this ordered: Yes; overall runtime: 194; overall latency: 1879.8
+Is this ordered: Yes; overall runtime: 167; overall latency: 1929.6
+Is this ordered: Yes; overall runtime: 181; overall latency: 1849.2
+Is this ordered: Yes; overall runtime: 198; overall latency: 1866.6
+Is this ordered: Yes; overall runtime: 175; overall latency: 1843.8
+Is this ordered: Yes; overall runtime: 215; overall latency: 1894.0
+Is this ordered: Yes; overall runtime: 188; overall latency: 1840.4

@@ -1,0 +1,17 @@
+Received speaker: uan:\localhost:3030id2 to register with server uan:\localhost:3030id1
+Speaker started with uan: uan://:3030\localhost:3030id2
+[Speaker Local] uan:\localhost:3030id2: QUESTION: User one: Poll question one.; Timestamp: 2019-10-05 01:11:56.173
+[Speaker Local] uan:\localhost:3030id2: QUESTION: User one: Poll question two.; Timestamp: 2019-10-05 01:11:56.528
+[Speaker Local] uan:\localhost:3030id2: QUESTION: User one: Poll question three.; Timestamp: 2019-10-05 01:11:56.531
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0

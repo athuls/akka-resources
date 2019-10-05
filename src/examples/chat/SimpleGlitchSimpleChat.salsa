@@ -11,21 +11,22 @@ behavior SimpleGlitchSimpleChat
 {
 	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5) 
 	{
-		s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Poll question one."), 0, 15) @
-		s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Poll question two."), 0, 15) @
-		s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Poll question three."), 0, 15);
-		s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Poll response one."), 0, 15) @
-		s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Poll response two."), 0, 15) @
-		s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Poll response three."), 0, 15);
-		s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Poll response one."), 0, 15) @
-		s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Poll response two."), 0, 15) @
-		s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Poll response three."), 0, 15);
-		s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Poll response one."), 0, 15) @
-		s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Poll response two."), 0, 15) @
-		s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Poll response three."), 0, 15);
-		s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Poll response one."), 0, 15) @
-		s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Poll response two."), 0, 15) @
-		s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Poll response three."), 0, 15);
+		s1<-setQuestionIdentity() @
+		s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Poll question one."), 3, 12) @
+		s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Poll question two."), 3, 12) @
+		s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Poll question three."), 3, 12);
+		s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Poll response one."), 3, 12) @
+		s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Poll response two."), 3, 12) @
+		s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Poll response three."), 3, 12);
+		s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Poll response one."), 3, 12) @
+		s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Poll response two."), 3, 12) @
+		s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Poll response three."), 3, 12);
+		s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Poll response one."), 3, 12) @
+		s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Poll response two."), 3, 12) @
+		s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Poll response three."), 3, 12);
+		s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Poll response one."), 3, 12) @
+		s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Poll response two."), 3, 12) @
+		s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Poll response three."), 3, 12);
 	}
 
 	void reply(String replyMsg) 

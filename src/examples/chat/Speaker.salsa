@@ -44,6 +44,7 @@ behavior Speaker implements ActorService
 			case QUESTION:				
 				// add the question to the user's list
 				messages.add(msg.getMsg());
+				Thread.sleep(200);
 
 				// next mark the timestamp
 				Date date_one = new Date();
@@ -59,41 +60,25 @@ behavior Speaker implements ActorService
 				{
 					if(answerQueue.size() > 0)
 					{
-						standardOutput<-println("Multiple elems");
-
 						// empty out queue
-						standardOutput<-println("Answer queue size: " + answerQueue.size());
 						while(answerQueue.size() > 0)
 						{
 							ChatMessage chatMessage = (ChatMessage) answerQueue.remove();
 
 							// add the message to the list and print timestamp
 							messages.add(chatMessage.getMsg());
+							Thread.sleep(200);
 							Date date_two = new Date();
 							Timestamp current_two = new Timestamp(date_two.getTime());
-							standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg.getMsgType() +": "+ msg.getMsg() + "; Timestamp: " + current_two);
-						}
-						/*
-						// go through message queue
-						Iterator itr = answerQueue.iterator();
-
-						while (itr.hasNext())
-						{
-							
-						}
-						*/						
+							standardOutput<-println("[Speaker Remote] " + speakerName + ": " + chatMessage.getMsgType() +": "+ chatMessage.getMsg() + "; Timestamp: " + current_two);
+						}						
 					}
-					else
-					{
-						// simply add the message to the list
-						messages.add(msg.getMsg());
-
-						// get the time next
-						standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg.getMsgType() +" : "+ msg.getMsg());
-						Date date_three = new Date();
-						Timestamp current_three = new Timestamp(date_three.getTime());
-						standardOutput<-println(current_three);	
-					}
+					messages.add(msg.getMsg());
+					Thread.sleep(200);
+					// get the time next
+					Date date_three = new Date();
+					Timestamp current_three = new Timestamp(date_three.getTime());
+					standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg.getMsgType() +": "+ msg.getMsg() + "; Timestamp: " + current_three);
 				}
 				else
 				{
@@ -114,6 +99,7 @@ behavior Speaker implements ActorService
 		}
 
 		// checks to see if program execution is completed
+		/*
 		if(messages.size() == total_messages)
 		{
 			standardOutput<-println("\nPrinting the final message list here: ");
@@ -122,16 +108,17 @@ behavior Speaker implements ActorService
 				standardOutput<-println(messages.get(i));
 			}
 		}
+		*/
 	}
 
 	// this function handles messages by their type and takes into account levels after causal consistency
-	void broadcastReceiveAdvanced(String speakerName, ChatMessage msg, int number_of_questions, int total_messages)
+	void broadcastReceiveAdvanced(String speakerName, ChatMessage msg, int number_of_questions, int total_messages) throws InterruptedException
 	{
 		switch (msg.getMsgType())
 		{
 			case QUESTION:
 				// add the question to the overall message list
-				messageQueue.add(msg);
+				messageQueue.add(msg.getMsg());
 
 				// put the question in the question map
 				Date date = new Date();
@@ -140,29 +127,18 @@ behavior Speaker implements ActorService
 				break;
 			case ANSWER:
 				// check if there has been a question already placed
-				if (questionTimeStamp.values().size() == number_of_questions)
+				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
 				{
 					if(answerQueue.size() > 0)
 					{
-						// go through the queue messages
-						Iterator itr = answerQueue.iterator();
-
-						while (itr.hasNext())
+						// empty out queue
+						while(answerQueue.size() > 0)
 						{
-							ChatMessage chatMessage = (ChatMessage) itr.next();
-
-							// add the message to the overall message queue
+							ChatMessage chatMessage = (ChatMessage) answerQueue.remove();
 							messageQueue.add(chatMessage.getMsg());
-
-							// removes the element from the queue
-							itr.remove();
-						}
+						}						
 					}
-					else
-					{
-						// simply add the message to the list
-						messageQueue.add(msg.getMsg());
-					}
+					messageQueue.add(msg.getMsg());
 				}
 				else
 				{
@@ -176,14 +152,21 @@ behavior Speaker implements ActorService
 				break;
 		}
 
+		standardOutput<-println(messageQueue.size());
 		// checks if all of the messages have arrived
 		if(messageQueue.size() == total_messages)
 		{
-			Iterator messageItr = messageQueue.iterator();
-			while(messageItr.hasNext())
+			while(messageQueue.size() > 0)
 			{
-				ChatMessage chatMessage = (ChatMessage) messageItr.next();
-				messages.add(chatMessage.getMsg());
+				messages.add(messageQueue.remove());
+				Thread.sleep(200);
+			}
+			Date date = new Date();
+			Timestamp current = new Timestamp(date.getTime());
+			standardOutput<-println("Overall Timestamp: " + current);
+			for(int i = 0; i < messages.size(); i++)
+			{
+				standardOutput<-println(messages.get(i));
 			}
 		}
 	}

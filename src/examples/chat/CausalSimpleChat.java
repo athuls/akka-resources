@@ -280,21 +280,21 @@ public class CausalSimpleChat extends UniversalActor  {
 					Message message = new Message( self, s1, "setQuestionIdentity", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Question one."), 3, 12)
+				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User 1: Question 1."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User one: Question one."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User 1: Question 1."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Question two."), 3, 12)
+				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User 1: Question 2."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User one: Question two."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User 1: Question 2."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_1, token_2_2 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User one: Question three."), 3, 12)
+				// s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User 1: Question 3."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User one: Question three."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.QUESTION, "User 1: Question 3."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_2, null );
 					__messages.add( message );
 				}
@@ -302,21 +302,21 @@ public class CausalSimpleChat extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Answer one."), 3, 12)
+				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 2: Answer 1."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User two: Answer one."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 2: Answer 1."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Answer two."), 3, 12)
+				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 2: Answer 2."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User two: Answer two."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 2: Answer 2."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User two: Answer three."), 3, 12)
+				// s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 2: Answer 3."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User two: Answer three."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 2: Answer 3."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
@@ -324,21 +324,21 @@ public class CausalSimpleChat extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Answer one."), 3, 12)
+				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 3: Answer 1."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User three: Answer one."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 3: Answer 1."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Answer two."), 3, 12)
+				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 3: Answer 2."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User three: Answer two."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 3: Answer 2."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User three: Answer three."), 3, 12)
+				// s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 3: Answer 3."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User three: Answer three."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 3: Answer 3."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
@@ -346,21 +346,21 @@ public class CausalSimpleChat extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Answer one."), 3, 12)
+				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 4: Answer 1."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User four: Answer one."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 4: Answer 1."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Answer two."), 3, 12)
+				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 4: Answer 2."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User four: Answer two."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 4: Answer 2."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User four: Answer three."), 3, 12)
+				// s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 4: Answer 3."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User four: Answer three."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 4: Answer 3."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
@@ -368,21 +368,21 @@ public class CausalSimpleChat extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Answer one."), 3, 12)
+				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 5: Answer 1."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User five: Answer one."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 5: Answer 1."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Answer two."), 3, 12)
+				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 5: Answer 2."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User five: Answer two."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 5: Answer 2."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User five: Answer three."), 3, 12)
+				// s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 5: Answer 3."), 3, 12)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User five: Answer three."), new Integer(3), new Integer(12) };
+					Object _arguments[] = { new ChatMessage(MessageType.ANSWER, "User 5: Answer 3."), new Integer(3), new Integer(12) };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_1, null );
 					__messages.add( message );
 				}

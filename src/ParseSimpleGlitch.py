@@ -96,7 +96,7 @@ def get_overall_latency():
     curr_file.close()
     file_name_list = ["logs/speaker1SimpleGlitchSimple.txt", "logs/speaker2SimpleGlitchSimple.txt", "logs/speaker3SimpleGlitchSimple.txt", 
     "logs/speaker4SimpleGlitchSimple.txt", "logs/speaker5SimpleGlitchSimple.txt"]
-    max_latency = 0
+    total_latency = 0
     for file in file_name_list:
         parse_file = open(file, "r")
         for line in parse_file:
@@ -113,9 +113,9 @@ def get_overall_latency():
                     number_two = int(second)
                 total_val = number_one * 1000 + number_two
                 current = total_val - starting_time
-                if current > max_latency:
-                    max_latency = current
-    return max_latency
+                total_latency += current
+    avg_latency = float(total_latency) / 5.0
+    return avg_latency
 
 # code to test functionality
 is_ordered = "No"

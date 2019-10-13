@@ -4,19 +4,25 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Date;
 import java.sql.Timestamp;
+import java.util.Iterator;
+import java.util.Queue;
+import java.util.LinkedList;
+import java.util.ArrayList;
 
-behavior User implements ActorService{
+behavior User implements ActorService
+{
 	private String myName="";
 	private String emailId="";
 	private String status="";
 	Server server_ref;
-	
+	boolean isLeader = false;
+	ArrayList initialList = new ArrayList();
+	Queue waitQueue = new LinkedList();
+	Queue messageQueue = new LinkedList();
+
 	// these are the tasks the user owns
-	private Set taskIds=new HashSet();
-	
-	// tasks that the user is viewing - newly added
-	private Set tasksViewed = new HashSet();
-	
+	ArrayList tasks = new ArrayList();
+
 	User(String id, String email, String status)
 	{
 		myName = id;
@@ -24,70 +30,188 @@ behavior User implements ActorService{
 		status = status;
 	}
 
-	// make a distinction between tasks the user owns vs the tasks the user is viewing
-	// need to maintain a structure to know what tasks the user can actually update
-	// add one more list for tasks the user is viewing
-	// check to see if the user owns the task which is being updated
-	// broadcastReceive needs to be fixed (only change the view of the tasklist based on the updated conditions)
-	void broadcastReceive(String taskId, String msg) {
-		standardOutput<-println("Received; [Task Id] " + taskId + ": " + msg);
-		if (!taskIds.contains(taskId)){
-		    taskIds.add(taskId);
-		    tasksViewed.add(taskId);
-		    }
-		else
-		{
-			// update case
-			taskIds.remove(taskId);
-			taskIds.add(taskId);
-		}
-        Date date = new Date();
-        Timestamp current = new Timestamp(date.getTime());
-        standardOutput<-println(current);
+	void setIsLeader()
+	{
+		isLeader = true;		
 	}
 
-	// add a function here for viewing task list
-	void viewTaskList()
+	void broadcastReceive(Task task, boolean update, int number_of_initials, int total_updates) throws InterruptedException
 	{
-		// the tasklist has to add the user to the list of vierwers
+		if(update)
+		{
+			// update case
+			for(int i = 0; i < tasks.size(); i++)
+			{
+				if(task<-getTaskName().equals(tasks(i)<-getTaskName()))
+				{
+					tasks(i)<-updateTask(task<-getTaskText());
+					String follow_up = "";
+					if(task<-getFollowtype())
+						follow_up = "Initial Task";
+					else
+						follow_up = "Follow Up Task";
+					Thread.sleep(200);
+					Date date = new Date();
+					Timestamp current = new Timestamp(date.getTime());
+					standardOutput<-println("[Speaker Remote] " + myName + ": " + "Update Message: " + "Task name: " + task<-getTaskName() + "Task type: " + follow_up + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current);
+					break;
+				}
+			}
+		}
+		else
+		{
+			if(number_of_initials == 0)
+			{
+				tasks.add(task);
+				String follow_up = "";
+				if(task<-getFollowtype())
+					follow_up = "Initial Task";
+				else
+					follow_up = "Follow Up Task";
+				Thread.sleep(200);
+				Date date = new Date();
+				Timestamp current = new Timestamp(date.getTime());
+				standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + task<-getTaskName() + "Task type: " + follow_up + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current);
+			}
+			else
+			{
+				if(task<-getFollowtype())
+				{
+					// handles follow up case
+					if(initialList.size() == number_of_initials || isLeader)
+					{
+						if(waitQueue.size() > 0)
+						{
+							while(waitQueue.size() > 0)
+							{
+								Task currentTask = (Task) waitQueue.remove();
+								tasks.add(currentTask);
+								String follow_up_two = "";
+								if(currentTask<-getFollowtype())
+									follow_up_two = "Initial Task";
+								else
+									follow_up_two = "Follow Up Task";
+								Thread.sleep(200);
+								Date date = new Date();
+								Timestamp current = new Timestamp(date.getTime());
+								standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + currentTask<-getTaskName() + "Task type: " + follow_up_two + "; Task text: " + currentTask<-getTaskText() + "; Timestamp: " + current);
+							}
+						}
+						tasks.add(task);
+						String follow_up = "";
+						if(task<-getFollowtype())
+							follow_up = "Initial Task";
+						else
+							follow_up = "Follow Up Task";
+						Thread.sleep(200);
+						Date date_two = new Date();
+						Timestamp current_two = new Timestamp(date_two.getTime());
+						standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + task<-getTaskName() + "Task type: " + follow_up + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current_two);
+					}
+					else
+					{
+						waitQueue.add(task);
+					}
+				}
+				else
+				{
+					// handles initial case
+					tasks.add(task);
+					initialList.add(task);
+					String follow_up = "";
+					if(task<-getFollowtype())
+						follow_up = "Initial Task";
+					else
+						follow_up = "Follow Up Task";
+					Thread.sleep(200);
+					Date date = new Date();
+					Timestamp current = new Timestamp(date.getTime());
+					standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + task<-getTaskName() + "Task type: " + follow_up + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current);
+				}
+			}
+		}
 	}
 	
-	String getUserName() {
+	void broadcastReceiveAdvanced(Task task, boolean update, int number_of_initials, int total_updates) throws InterruptedException
+	{
+		// ignore update case for simplicity here since that is not tested anyways
+		if(number_of_initials == 0)
+		{
+			// no waiting involved here
+			messageQueue.add(task);
+		}
+		else
+		{
+			if(task<-getFollowtype())
+			{
+				// handles follow up case
+				if(initialList.size() == number_of_initials || isLeader)
+				{
+					if(waitQueue.size() > 0)
+					{
+						while(waitQueue.size() > 0)
+						{
+							Task currentTask = (Task) waitQueue.remove();
+							messageQueue.add(currentTask);
+						}
+					}
+					messageQueue.add(task);
+				}
+				else
+				{
+					waitQueue.add(task);
+				}
+			}
+			else
+			{
+				// handles initial case
+				initialList.add(task);
+				messageQueue.add(task);
+			}
+		}
+	}
+	
+	String getUserName()
+	{
 		return myName;
 	}
 
-    void whereAmI() {
+    void whereAmI()
+	{
 		standardOutput<-println("User started with uan: "+ getUAN().toString());
 	}
-	boolean addTaskToList(TaskList taskList,String taskId,String text){
+
+	boolean addTaskToList(TaskList taskList, Task task, int number_of_initials, int total_updates)
+	{
 		// get first timestamp here
-		standardOutput<-println("user inside addTaskToList");
-		standardOutput<-println(myName);
-		standardOutput<-println("Initial add request: [Task Id] " + taskId + ": " + text);
 		Date date = new Date();
 		Timestamp current = new Timestamp(date.getTime());
-		standardOutput<-println(current);
-	    server_ref<-addTaskToList(taskList, taskId, text,myName);
+		String follow_up = "";
+		if(task<-getFollowtype())
+			follow_up = "Initial Task";
+		else
+			follow_up = "Follow Up Task";
+		standardOutput<-println("[Speaker Local] " + myName + ": " + "Initial add request " + "Task name: " + task<-getTaskName() + "Task type: " + follow_up + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current) @
+	    server_ref<-addTaskToList(taskList, task, myName, total_updates, number_of_initials);
 	    return true;
 	}
 
-	boolean updateTask(String taskId,String text){
-		standardOutput<-println("inside updateTask");
-		standardOutput<-println("Initial update request; [Task Id] " + taskId + ": " + text);
+	boolean updateTask(Task task, String text, number_of_initials, total_updates)
+	{
 		Date date = new Date();
 		Timestamp current = new Timestamp(date.getTime());
-		standardOutput<-println(current);
-		server_ref<-updateTask( taskId, text,myName);
+		standardOutput<-println("[Speaker Local] " + myName + ": " + "Initial update request " + "Task name: " + task<-getTaskName() + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current) @
+		server_ref<-updateTask(task, myName, total_updates, number_of_initials);
 		return true;
 	}
 
-
-	void act(String args[]){
-		if(args.length != 2){
+	void act(String args[])
+	{
+		if(args.length != 2)
+		{
 			standardOutput<-println("Usage: java -Duan=uan://hostname/place todo.User <serverName> <myName>");
 			return;
 		}
-		
 		myName=args[1];
 		server_ref = (Server) Server.getReferenceByName(args[0]);
 		whereAmI() @

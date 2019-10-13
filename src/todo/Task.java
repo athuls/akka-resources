@@ -96,8 +96,8 @@ public class Task extends UniversalActor  implements ActorService {
 		}
 	}
 
-	public UniversalActor construct (String text, String id, String creator) {
-		Object[] __arguments = { text, id, creator };
+	public UniversalActor construct (String text, String creator, String name, boolean isFollowup) {
+		Object[] __arguments = { text, creator, name, new Boolean(isFollowup) };
 		this.send( new Message(this, this, "construct", __arguments, null, null) );
 		return this;
 	}
@@ -186,21 +186,29 @@ public class Task extends UniversalActor  implements ActorService {
 			}
 		}
 
-		String taskId = "";
 		String taskText = "";
 		Server server_ref;
-		String creator;
+		String taskCreator;
 		String id = "";
-		void construct(String text, String id, String creator){
-			taskId = id;
-			text = text;
-			creator = creator;
+		String taskName = "";
+		boolean followUpType;
+		void construct(String text, String creator, String name, boolean isFollowup){
+			taskText = text;
+			taskCreator = creator;
+			taskName = name;
+			followUpType = isFollowup;
 		}
 		public String getCreator() {
-			return creator;
+			return taskCreator;
 		}
-		public String getTaskId() {
-			return taskId;
+		public String getTaskName() {
+			return taskName;
+		}
+		public String getTaskText() {
+			return taskText;
+		}
+		public boolean getFollowType() {
+			return followUpType;
 		}
 		public void printTaskText() {
 			{
@@ -212,36 +220,17 @@ public class Task extends UniversalActor  implements ActorService {
 				}
 			}
 		}
-		public boolean update(String theTaskId, String text) {
+		public boolean update(String text) {
 			{
-				// standardOutput<-println("update task text: "+text)
+				// standardOutput<-println("updating task text  from: "+taskText+" to: "+text)
 				{
-					Object _arguments[] = { "update task text: "+text };
+					Object _arguments[] = { "updating task text  from: "+taskText+" to: "+text };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
-			{
-				// standardOutput<-println("update task id: "+theTaskId)
-				{
-					Object _arguments[] = { "update task id: "+theTaskId };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			if (theTaskId.equals(taskId)) {{
-				{
-					// standardOutput<-println("updating task text  from: "+taskText+" to: "+text)
-					{
-						Object _arguments[] = { "updating task text  from: "+taskText+" to: "+text };
-						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-						__messages.add( message );
-					}
-				}
-				taskText = text;
-				return true;
-			}
-}			return false;
+			taskText = text;
+			return true;
 		}
 		public void whereAmI() {
 			{
@@ -254,7 +243,7 @@ public class Task extends UniversalActor  implements ActorService {
 			}
 		}
 		public void act(String args[]) {
-			if (args.length!=2) {{
+			if (args.length!=1) {{
 				{
 					// standardOutput<-println(args.length)
 					{

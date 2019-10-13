@@ -1,0 +1,78 @@
+module examples.chat;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+import examples.chat.ChatMessage.MessageType;
+
+//Three speakers chat in a chat session initialized by the actor Chat
+
+behavior CausalSimpleEndChat
+{
+	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5) 
+	{
+		s1<-setQuestionIdentity() @
+		s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 2: Answer 1."), 3, 12) @
+		s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 2: Answer 2."), 3, 12) @
+		s2<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 2: Answer 3."), 3, 12);
+		s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 3: Answer 1."), 3, 12) @
+		s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 3: Answer 2."), 3, 12) @
+		s3<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 3: Answer 3."), 3, 12);
+		s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 4: Answer 1."), 3, 12) @
+		s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 4: Answer 2."), 3, 12) @
+		s4<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 4: Answer 3."), 3, 12);
+		s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 5: Answer 1."), 3, 12) @
+		s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 5: Answer 2."), 3, 12) @
+		s5<-broadcastSend(new ChatMessage(MessageType.ANSWER, "User 5: Answer 3."), 3, 12);
+		s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User 1: Question 1."), 3, 12) @
+		s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User 1: Question 2."), 3, 12) @
+		s1<-broadcastSend(new ChatMessage(MessageType.QUESTION, "User 1: Question 3."), 3, 12);
+	}
+
+	void reply(String replyMsg) 
+	{
+		standardOutput<-println(replyMsg);
+	}
+	
+	void act(String args[])
+	{
+		if(args.length != 5)
+		{
+			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>");
+			return;
+		}
+
+		try
+		{
+			Speaker speaker1 = (Speaker) Speaker.getReferenceByName(args[0]);
+			Speaker speaker2 = (Speaker) Speaker.getReferenceByName(args[1]);
+			Speaker speaker3 = (Speaker) Speaker.getReferenceByName(args[2]);
+			Speaker speaker4 = (Speaker) Speaker.getReferenceByName(args[3]);
+			Speaker speaker5 = (Speaker) Speaker.getReferenceByName(args[4]);
+			Date first = new Date();
+			Timestamp start = new Timestamp(first.getTime());
+			standardOutput <- println("Starting time: " + start);
+			Instant begin = Instant.now();
+			chatSession(speaker1, speaker2, speaker3, speaker4, speaker5) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
+		}
+		catch (Exception e)
+		{
+			standardOutput <- println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>");
+			return;
+		}
+	}
+
+	void trackEndingTime(Instant begin)
+	{
+		// keep track of ending time here
+		Date second = new Date();
+		Timestamp end = new Timestamp(second.getTime());
+
+		// calculate time elapsed
+		Instant endTime = Instant.now();
+		Duration timeDifference = Duration.between(begin, endTime);
+		long timeTaken = timeDifference.toMillis();
+		standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+		standardOutput<-println("Ending time: " + end);
+	}
+}

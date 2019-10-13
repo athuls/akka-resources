@@ -70,7 +70,7 @@ def get_overall_runtime():
             return res[0]
 
 # this function returns the maximum time it takes for a message to be received by another user for a given file
-def get_max_file_latency(file_name):
+def get_total_latency(file_name):
     file_times = dict()
     curr_file = open(file_name, "r")
     for line in curr_file:
@@ -125,11 +125,11 @@ def get_max_file_latency(file_name):
 
 # this function is used to get the overall latency
 def get_overall_latency():
-    one = get_max_file_latency("logs/speaker1CausalSimple.txt")
-    two = get_max_file_latency("logs/speaker2CausalSimple.txt")
-    three = get_max_file_latency("logs/speaker3CausalSimple.txt")
-    four = get_max_file_latency("logs/speaker4CausalSimple.txt")
-    five = get_max_file_latency("logs/speaker5CausalSimple.txt")
+    one = get_total_latency("logs/speaker1CausalSimple.txt")
+    two = get_total_latency("logs/speaker2CausalSimple.txt")
+    three = get_total_latency("logs/speaker3CausalSimple.txt")
+    four = get_total_latency("logs/speaker4CausalSimple.txt")
+    five = get_total_latency("logs/speaker5CausalSimple.txt")
     return float(one + two + three + four + five) / 5.0
 
 # code to test functionality

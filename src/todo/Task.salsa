@@ -1,27 +1,40 @@
 module todo;
 
-
-behavior Task implements ActorService{
-	private String taskId = "";
+behavior Task implements ActorService
+{
 	private String taskText = "";
 	Server server_ref;
-	private String creator;
+	private String taskCreator;
 	private String id="";
+	private String taskName = "";
+	private boolean followUpType;
 
-	Task(String text,String id,String creator) {
-	    taskId=id;
-	    text=text;
-	    creator=creator;
+	Task(String text, String creator, String name, boolean isFollowup)
+	{
+	    taskText = text;
+	    taskCreator = creator;
+		taskName = name;
+		followUpType = isFollowup;
 	}
 
 	String getCreator()
 	{
-		return creator;
+		return taskCreator;
 	}
-	
-	String getTaskId()
+
+	String getTaskName()
 	{
-		return taskId;
+		return taskName;
+	}
+
+	String getTaskText()
+	{
+		return taskText;
+	}
+
+	boolean getFollowType()
+	{
+		return followUpType;
 	}
 
 	void printTaskText()
@@ -29,28 +42,26 @@ behavior Task implements ActorService{
 	    standardOutput <- println("task text: "+taskText);
 	}
 
-	boolean update(String theTaskId,String text){
-
-	    standardOutput <- println("update task text: "+text);
-	    standardOutput <- println("update task id: "+theTaskId);
-	    if (theTaskId.equals(taskId)) {
-        standardOutput <- println("updating task text  from: "+taskText +" to: "+text);
-	    taskText=text;
+	boolean update(String text)
+	{
+		standardOutput <- println("updating task text  from: "+taskText +" to: "+text);
+		taskText=text;
 		return true;
-	    }
-	    return false;
 	}
-	void whereAmI() {
+
+	void whereAmI()
+	{
         standardOutput <- println("Task started with uan: "+ getUAN().toString());
     }
 
-	void act(String args[]) {
-        if(args.length != 2 ){
+	void act(String args[])
+	{
+        if(args.length != 1)
+		{
             standardOutput<-println(args.length);
             standardOutput<-println("Usage: java -Duan=myuan todo.Task");
             return;
         }
-
         whereAmI();
         taskId=args[0];
         taskText=args[1];

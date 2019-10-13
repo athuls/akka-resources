@@ -1,0 +1,89 @@
+module todo;
+//Three speakers chat in a chat session initialized by the actor Chat
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+
+behavior FIFOSimpleTodo
+{
+	void chatSession(User s1, User s2, User s3, User s4, User s5, TaskList taskList)
+	{
+		// these tasks are created in server..
+		String s1Name = s1.getUserName();
+		String s2Name = s2.getUserName();
+		String s3Name = s3.getUserName();
+		String s4Name = s4.getUserName();
+		String s5Name = s5.getUserName();
+		Task s1t1 = new Task("User 1: Ordered Task 1", s1Name, "u1t1", false);
+		Task s2t1 = new Task("User 2: Ordered Task 1", s2Name, "u2t1", false);
+		Task s3t1 = new Task("User 3: Ordered Task 1", s3Name, "u3t1", false);
+		Task s4t1 = new Task("User 4: Ordered Task 1", s4Name, "u4t1", false);
+		Task s5t1 = new Task("User 5: Ordered Task 1", s5Name, "u5t1", false);
+		s1<-addTaskToList(taskList, , 0, 12) @
+		s1<-addTaskToList(taskList, new Task("User 1: Ordered Task 2", s1Name, "u1t2", false), 0, 12) @
+		s1<-updateTask(taskList, new Task("User 1: Update Task 1", s1Name, "u1u1", false), 0, 12);
+		s2<-addTaskToList(taskList, , 0, 12) @
+		s2<-addTaskToList(taskList, new Task("User 2: Ordered Task 2", s2Name, "u2t2", false), 0, 12) @
+		s2<-addTaskToList(taskList, new Task("User 2: Update Task 1", s2Name, "u2u1", false), 0, 12);
+		s3<-addTaskToList(taskList, , 0, 12) @
+		s3<-addTaskToList(taskList, new Task("User 3: Ordered Task 2", s3Name, "u3t2", false), 0, 12) @
+		s3<-addTaskToList(taskList, new Task("User 3: Update Task 1", s3Name, "u3u1", false), 0, 12);
+		s4<-addTaskToList(taskList, , 0, 12) @
+		s4<-addTaskToList(taskList, new Task("User 4: Ordered Task 2", s4Name, "u4t2", false), 0, 12) @
+		s4<-addTaskToList(taskList, new Task("User 4: Update Task 1", s4Name, "u4u1", false), 0, 12);
+		s5<-addTaskToList(taskList, , 0, 12) @
+		s5<-addTaskToList(taskList, new Task("User 5: Ordered Task 2", s5Name, "u5t2", false), 0, 12) @
+		s5<-addTaskToList(taskList, new Task("User 5: Update Task 1", s5Name, "u5u1", false), 0, 12);
+	}
+
+	void reply(String replyMsg)
+	{
+		standardOutput<-println(replyMsg);
+	}
+
+	void act(String args[])
+	{
+		if(args.length != 3 )
+		{
+			standardOutput<-println("Usage: java -Duan=myuan todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5> <taskUAN6>");
+			return;
+		}
+
+		try 
+		{
+			User user1 =(User) User.getReferenceByName(args[0]);
+			User user2 =(User) User.getReferenceByName(args[1]);
+			TaskList taskList =(TaskList) TaskList.getReferenceByName(args[2]);
+
+			// keep track of starting time here
+			Date first = new Date();
+			Timestamp start = new Timestamp(first.getTime());
+			standardOutput<-println("Starting time: " + start);
+
+			// use this to calculate time elapsed
+			Instant begin = Instant.now();
+			chatSession(user1, user2, taskList,taskid1,taskid2) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
+		}
+		catch (Exception e)
+		{
+			standardOutput<-println("Usage: java todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>");
+			return;
+		} 
+	}
+
+    void trackEndingTime(Instant begin)
+    {
+        // keep track of ending time here
+        Date second = new Date();
+        Timestamp end = new Timestamp(second.getTime());
+
+        // calculate time elapsed
+        Instant endTime = Instant.now();
+        Duration timeDifference = Duration.between(begin, endTime);
+        long timeTaken = timeDifference.toMillis();
+        standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+        standardOutput<-println("Ending time: " + end);
+	}
+}
+

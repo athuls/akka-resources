@@ -1,9 +1,9 @@
 Received speaker: uan:\localhost:3030id5 to register with server uan:\localhost:3030id1
 Speaker started with uan: uan://:3030\localhost:3030id5
-[Speaker Local] uan:\localhost:3030id5: ANSWER: User 4: Poll response 1.; Timestamp: 2019-10-05 02:10:08.906
-[Speaker Local] uan:\localhost:3030id5: ANSWER: User 4: Poll response 2.; Timestamp: 2019-10-05 02:10:09.35
-[Speaker Local] uan:\localhost:3030id5: ANSWER: User 4: Poll response 3.; Timestamp: 2019-10-05 02:10:09.626
-Overall Timestamp: 2019-10-05 02:10:13.162
+[Speaker Local] uan:\localhost:3030id5: ANSWER: User 4: Poll response 1.; Timestamp: 2019-10-12 19:07:34.751
+[Speaker Local] uan:\localhost:3030id5: ANSWER: User 4: Poll response 2.; Timestamp: 2019-10-12 19:07:35.011
+[Speaker Local] uan:\localhost:3030id5: ANSWER: User 4: Poll response 3.; Timestamp: 2019-10-12 19:07:35.013
+Overall Timestamp: 2019-10-12 19:07:37.688
 User 1: Poll question 1.
 User 1: Poll question 2.
 User 1: Poll question 3.

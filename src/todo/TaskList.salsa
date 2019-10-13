@@ -9,100 +9,109 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 // basically done
-behavior TaskList implements ActorService{
-		// add a list of users that is viewing the current tasklist
-		Set usersViewing = new HashSet();
-		
-        String name;
-        Set users= new HashSet();
-        List tasks= new ArrayList();
-		Map taskids = new HashMap();
-		Map userIdTaskIdMap = new HashMap();
-        Server server_ref;
+behavior TaskList implements ActorService
+{
+	// add a list of users that is viewing the current tasklist
+	Set usersViewing = new HashSet();
+	
+    String name;
+    Set users= new HashSet();
+    List tasks= new ArrayList();
+	Map taskids = new HashMap();
+	Map userIdTaskIdMap = new HashMap();
+    Server server_ref;
 
-        TaskList(String name) {
-         name=name;
+    TaskList(String name)
+	{
+		name=name;
+    }
+
+	// broadcast send to all users here who are viewing the task list
+    boolean addTask(String user,Task task, String taskId,String text)
+	{
+        standardOutput<-println(" calling inside taskToList.addTask");
+        if(task == null)
+		{
+            standardOutput<-println("Task is null");
+			return false;
         }
-
-		// broadcast send to all users here who are viewing the task list
-        boolean addTask(String user,Task task, String taskId,String text) {
-            standardOutput<-println(" calling inside taskToList.addTask");
-            if (task == null) {
-                standardOutput<-println("Task is null");
-				return false;
-            }
-            if (user == null) {
-                standardOutput<-println("user is null");
-				return false;
-            }
-            standardOutput<-println(user);
-            standardOutput<-println(task);
-
-            Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
-			// add user only if its registered
-
-            tasks.add(taskRef);
-			taskids.put(taskId,text);
-
-			userIdTaskIdMap.put(taskId,user);
-            standardOutput<-println("after addTask");
-            standardOutput<-println(" ==== printing taskids in tasklist");
-            Set keySet =taskids.keySet();
-            Iterator keySetIterator = keySet.iterator();
-            while (keySetIterator.hasNext()){
-                String key = (String) keySetIterator.next();
-                standardOutput<-println("taskId :"+key+" : text  " +(String) taskids.get(key));
-            }
-
-            return true;
+        if(user == null)
+		{
+            standardOutput<-println("user is null");
+			return false;
         }
+        standardOutput<-println(user);
+        standardOutput<-println(task);
 
-        List  getTasks() {
-			return tasks;
+        Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
+		// add user only if its registered
+
+        tasks.add(taskRef);
+		taskids.put(taskId,text);
+
+		userIdTaskIdMap.put(taskId,user);
+        standardOutput<-println("after addTask");
+        standardOutput<-println(" ==== printing taskids in tasklist");
+        Set keySet =taskids.keySet();
+        Iterator keySetIterator = keySet.iterator();
+        while (keySetIterator.hasNext())
+		{
+            String key = (String) keySetIterator.next();
+            standardOutput<-println("taskId :"+key+" : text  " +(String) taskids.get(key));
         }
+        return true;
+    }
 
-        Set  getUsers() {
-			return users;
-        }
+    List getTasks()
+	{
+		return tasks;
+    }
 
-        void whereAmI() {
-        		standardOutput<-println("TaskList started with uan: "+ getUAN().toString());
-        	}
+    Set getUsers()
+	{
+		return users;
+    }
 
-		// do a broadcast send to all other users
-        boolean updateTask(String taskId,String text, String creator)
-        {
-			boolean update = false;
-			int i =0;
-            standardOutput<-println(" calling inside taskToList.updateTask");
-            Set keySet =taskids.keySet();
-            Iterator keySetIterator = keySet.iterator();
-             while (keySetIterator.hasNext()){
-                String currentTaskId = (String) keySetIterator.next();
-                String taskCreator = (String)userIdTaskIdMap.get(currentTaskId);
-                standardOutput<-println(" taskId inside taskToList.updateTask"+taskId);
-                Task taskRef = (Task) Task.getReferenceByName(((Task)tasks.get(i)).getUAN());
-                    if((currentTaskId).equals(taskId)){
-                        if(taskCreator.equals(creator))
-                        {
-                            taskRef<-update(currentTaskId,text);
-                            update = true;
-                        }
-                    }
-                    i++;
+    void whereAmI()
+	{
+        standardOutput<-println("TaskList started with uan: "+ getUAN().toString());
+    }
+
+	// do a broadcast send to all other users
+    boolean updateTask(String taskId,String text, String creator)
+    {
+		boolean update = false;
+		int i =0;
+        standardOutput<-println(" calling inside taskToList.updateTask");
+        Set keySet =taskids.keySet();
+        Iterator keySetIterator = keySet.iterator();
+        while (keySetIterator.hasNext())
+		{
+            String currentTaskId = (String) keySetIterator.next();
+            String taskCreator = (String)userIdTaskIdMap.get(currentTaskId);
+            standardOutput<-println(" taskId inside taskToList.updateTask"+taskId);
+            Task taskRef = (Task) Task.getReferenceByName(((Task)tasks.get(i)).getUAN());
+            if((currentTaskId).equals(taskId))
+			{
+                if(taskCreator.equals(creator))
+                {
+                    taskRef<-update(currentTaskId,text);
+                    update = true;
                 }
-
-
-			return update;
+            }
+            i++;
         }
+		return update;
+    }
 
-        void act(String args[]) {
-        		if(args.length != 0 ){
-        		    standardOutput<-println(args.length);
-        			standardOutput<-println("Usage: java -Duan=myuan todo.TaskList");
-        			return;
-        		}
-
-        		whereAmI();
-        	}
+    void act(String args[])
+	{
+    	if(args.length != 0 )
+		{
+            standardOutput<-println(args.length);
+        	standardOutput<-println("Usage: java -Duan=myuan todo.TaskList");
+        	return;
+        }
+        whereAmI();
+    }
 }

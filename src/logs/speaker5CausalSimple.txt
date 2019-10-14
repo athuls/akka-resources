@@ -1,2 +1,17 @@
 Received speaker: uan:\localhost:3030id6 to register with server uan:\localhost:3030id1
 Speaker started with uan: uan://:3030\localhost:3030id6
+[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Answer 1.; Timestamp: 2019-10-13 19:35:32.147
+[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Answer 2.; Timestamp: 2019-10-13 19:35:32.577
+[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Answer 3.; Timestamp: 2019-10-13 19:35:32.682
+Adding to answer queue
+Adding to answer queue
+Adding to answer queue
+Adding to answer queue
+Adding to answer queue
+Adding to answer queue
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 1.; Timestamp: 2019-10-13 19:35:33.96
+Adding to answer queue
+Adding to answer queue
+Adding to answer queue
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 2.; Timestamp: 2019-10-13 19:35:34.163
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 3.; Timestamp: 2019-10-13 19:35:34.434

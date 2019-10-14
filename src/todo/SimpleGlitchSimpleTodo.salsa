@@ -5,36 +5,26 @@ import java.time.Instant;
 import java.util.Date;
 import java.sql.Timestamp;
 
-behavior FIFOSimpleTodo
+behavior SimpleGlitchSimpleTodo
 {
 	void chatSession(User s1, User s2, User s3, User s4, User s5, TaskList taskList)
 	{
 		// these tasks are created in server..
-		String s1Name = s1.getUserName();
-		String s2Name = s2.getUserName();
-		String s3Name = s3.getUserName();
-		String s4Name = s4.getUserName();
-		String s5Name = s5.getUserName();
-		Task s1t1 = new Task("User 1: Ordered Task 1", s1Name, "u1t1", false);
-		Task s2t1 = new Task("User 2: Ordered Task 1", s2Name, "u2t1", false);
-		Task s3t1 = new Task("User 3: Ordered Task 1", s3Name, "u3t1", false);
-		Task s4t1 = new Task("User 4: Ordered Task 1", s4Name, "u4t1", false);
-		Task s5t1 = new Task("User 5: Ordered Task 1", s5Name, "u5t1", false);
-		s1<-addTaskToList(taskList, s1t1, 0, 12) @
-		s1<-addTaskToList(taskList, new Task("User 1: Ordered Task 2", s1Name, "u1t2", false), 0, 12) @
-		s1<-updateTask(s1t1, "User 1: Ordered Update 1", 0, 12);
-		s2<-addTaskToList(taskList, s2t1, 0, 12) @
-		s2<-addTaskToList(taskList, new Task("User 2: Ordered Task 2", s2Name, "u2t2", false), 0, 12) @
-		s2<-updateTask(s2t1, "User 2: Ordered Update 1", 0, 12);
-		s3<-addTaskToList(taskList, s3t1, 0, 12) @
-		s3<-addTaskToList(taskList, new Task("User 3: Ordered Task 2", s3Name, "u3t2", false), 0, 12) @
-		s3<-updateTask(s3t1, "User 3: Ordered Update 1", 0, 12);
-		s4<-addTaskToList(taskList, s4t1, 0, 12) @
-		s4<-addTaskToList(taskList, new Task("User 4: Ordered Task 2", s4Name, "u4t2", false), 0, 12) @
-		s4<-updateTask(s4t1, "User 4: Ordered Update 1", 0, 12);
-		s5<-addTaskToList(taskList, s5t1, 0, 12) @
-		s5<-addTaskToList(taskList, new Task("User 5: Ordered Task 2", s5Name, "u5t2", false), 0, 12) @
-		s5<-updateTask(s5t1, "User 5: Ordered Update 1", 0, 12);
+		s1<-addTaskToList(taskList, new Task("User 1: Initial Poll 1", s1.getUserName(), "u1t1", false), 3, 12) @
+		s1<-addTaskToList(taskList, new Task("User 1: Initial Poll 2", s1.getUserName(), "u1t2", false), 3, 12) @
+		s1<-addTaskToList(taskList, new Task("User 1: Initial Poll 3", s1.getUserName(), "u1t3", false), 3, 12);
+		s2<-addTaskToList(taskList, new Task("User 2: Follow Poll 1", s2.getUserName(), "u2t1", true), 3, 12) @
+		s2<-addTaskToList(taskList, new Task("User 2: Follow Poll 2", s2.getUserName(), "u2t2", true), 3, 12) @
+		s2<-addTaskToList(taskList, new Task("User 2: Follow Poll 3", s2.getUserName(), "u2t3", true), 3, 12);
+		s3<-addTaskToList(taskList, new Task("User 3: Follow Poll 1", s3.getUserName(), "u3t1", true), 3, 12) @
+		s3<-addTaskToList(taskList, new Task("User 3: Follow Poll 2", s3.getUserName(), "u3t2", true), 3, 12) @
+		s3<-addTaskToList(taskList, new Task("User 3: Follow Poll 3", s3.getUserName(), "u3t3", true), 3, 12);
+		s4<-addTaskToList(taskList, new Task("User 4: Follow Poll 1", s4.getUserName(), "u4t1", true), 3, 12) @
+		s4<-addTaskToList(taskList, new Task("User 4: Follow Poll 2", s4.getUserName(), "u4t2", true), 3, 12) @
+		s4<-addTaskToList(taskList, new Task("User 4: Follow Poll 3", s4.getUserName(), "u4t3", true), 3, 12);
+		s5<-addTaskToList(taskList, new Task("User 5: Follow Poll 1", s5.getUserName(), "u5t1", true), 3, 12) @
+		s5<-addTaskToList(taskList, new Task("User 5: Follow Poll 2", s5.getUserName(), "u5t2", true), 3, 12) @
+		s5<-addTaskToList(taskList, new Task("User 5: Follow Poll 3", s5.getUserName(), "u5t3", true), 3, 12);
 	}
 
 	void reply(String replyMsg)
@@ -86,4 +76,3 @@ behavior FIFOSimpleTodo
         standardOutput<-println("Ending time: " + end);
 	}
 }
-

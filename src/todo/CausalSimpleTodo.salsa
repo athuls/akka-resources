@@ -10,21 +10,26 @@ behavior CausalSimpleTodo
 	void chatSession(User s1, User s2, User s3, User s4, User s5, TaskList taskList)
 	{
 		// these tasks are created in server..
-		s1<-addTaskToList(taskList, new Task("User 1: Ordered Task 1", s1<-getUserName(), "u1t1", false), 0, 12) @
-		s1<-addTaskToList(taskList, new Task("User 1: Ordered Task 2", s1<-getUserName(), "u1t2", false), 0, 12) @
-		s1<-addTaskToList(taskList, new Task("User 1: Update Task 1", s1<-getUserName(), "u1u1", false), 0, 12);
-		s2<-addTaskToList(taskList, new Task("User 2: Ordered Task 1", s2<-getUserName(), "u2t1", false), 0, 12) @
-		s2<-addTaskToList(taskList, new Task("User 2: Ordered Task 2", s2<-getUserName(), "u2t2", false), 0, 12) @
-		s2<-addTaskToList(taskList, new Task("User 2: Update Task 1", s2<-getUserName(), "u2u1", false), 0, 12);
-		s3<-addTaskToList(taskList, new Task("User 3: Ordered Task 1", s3<-getUserName(), "u3t1", false), 0, 12) @
-		s3<-addTaskToList(taskList, new Task("User 3: Ordered Task 2", s3<-getUserName(), "u3t2", false), 0, 12) @
-		s3<-addTaskToList(taskList, new Task("User 3: Update Task 1", s3<-getUserName(), "u3u1", false), 0, 12);
-		s4<-addTaskToList(taskList, new Task("User 4: Ordered Task 1", s4<-getUserName(), "u4t1", false), 0, 12) @
-		s4<-addTaskToList(taskList, new Task("User 4: Ordered Task 2", s4<-getUserName(), "u4t2", false), 0, 12) @
-		s4<-addTaskToList(taskList, new Task("User 4: Update Task 1", s4<-getUserName(), "u4u1", false), 0, 12);
-		s5<-addTaskToList(taskList, new Task("User 5: Ordered Task 1", s5<-getUserName(), "u5t1", false), 0, 12) @
-		s5<-addTaskToList(taskList, new Task("User 5: Ordered Task 2", s5<-getUserName(), "u5t2", false), 0, 12) @
-		s5<-addTaskToList(taskList, new Task("User 5: Update Task 1", s5<-getUserName(), "u5u1", false), 0, 12);
+		String s1Name = s1.getUserName();
+		String s2Name = s2.getUserName();
+		String s3Name = s3.getUserName();
+		String s4Name = s4.getUserName();
+		String s5Name = s5.getUserName();
+		s1<-addTaskToList(taskList, new Task("User 1: Initial Task 1", s1Name, "u1t1", false), 3, 12) @
+		s1<-addTaskToList(taskList, new Task("User 1: Initial Task 2", s1Name, "u1t2", false), 3, 12) @
+		s1<-addTaskToList(taskList, new Task("User 1: Initial Task 3", s1Name, "u1t3", false), 3, 12);
+		s2<-addTaskToList(taskList, new Task("User 2: Follow Task 1", s2Name, "u2t1", true), 3, 12) @
+		s2<-addTaskToList(taskList, new Task("User 2: Follow Task 2", s2Name, "u2t2", true), 3, 12) @
+		s2<-addTaskToList(taskList, new Task("User 2: Follow Task 3", s2Name, "u2t3", true), 3, 12);
+		s3<-addTaskToList(taskList, new Task("User 3: Follow Task 1", s3Name, "u3t1", true), 3, 12) @
+		s3<-addTaskToList(taskList, new Task("User 3: Follow Task 2", s3Name, "u3t2", true), 3, 12) @
+		s3<-addTaskToList(taskList, new Task("User 3: Follow Task 3", s3Name, "u3t3", true), 3, 12);
+		s4<-addTaskToList(taskList, new Task("User 4: Follow Task 1", s4Name, "u4t1", true), 3, 12) @
+		s4<-addTaskToList(taskList, new Task("User 4: Follow Task 2", s4Name, "u4t2", true), 3, 12) @
+		s4<-addTaskToList(taskList, new Task("User 4: Follow Task 3", s4Name, "u4t3", true), 3, 12);
+		s5<-addTaskToList(taskList, new Task("User 5: Follow Task 1", s5Name, "u5t1", true), 3, 12) @
+		s5<-addTaskToList(taskList, new Task("User 5: Follow Task 2", s5Name, "u5t2", true), 3, 12) @
+		s5<-addTaskToList(taskList, new Task("User 5: Follow Task 3", s5Name, "u5t3", true), 3, 12);
 	}
 
 	void reply(String replyMsg)
@@ -76,4 +81,3 @@ behavior CausalSimpleTodo
         standardOutput<-println("Ending time: " + end);
 	}
 }
-

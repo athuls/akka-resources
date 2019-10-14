@@ -82,6 +82,7 @@ behavior Speaker implements ActorService
 				}
 				else
 				{
+					standardOutput<-println("Adding to answer queue");
 					// store the message for later processing
 					answerQueue.add(msg);
 				}

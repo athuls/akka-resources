@@ -36,7 +36,7 @@ import java.time.Instant;
 import java.util.Date;
 import java.sql.Timestamp;
 
-public class NoConsistencySimpleTodo extends UniversalActor  {
+public class CausalSimpleTodo extends UniversalActor  {
 	public static void main(String args[]) {
 		UAN uan = null;
 		UAL ual = null;
@@ -71,7 +71,7 @@ public class NoConsistencySimpleTodo extends UniversalActor  {
 			ual = new UAL( ServiceFactory.getTheater().getLocation() + System.getProperty("identifier"));
 		}
 		RunTime.receivedMessage();
-		NoConsistencySimpleTodo instance = (NoConsistencySimpleTodo)new NoConsistencySimpleTodo(uan, ual,null).construct();
+		CausalSimpleTodo instance = (CausalSimpleTodo)new CausalSimpleTodo(uan, ual,null).construct();
 		gc.WeakReference instanceRef=new gc.WeakReference(uan,ual);
 		{
 			Object[] _arguments = { args };
@@ -84,18 +84,18 @@ public class NoConsistencySimpleTodo extends UniversalActor  {
 		RunTime.finishedProcessingMessage();
 	}
 
-	public static ActorReference getReferenceByName(UAN uan)	{ return new NoConsistencySimpleTodo(false, uan); }
-	public static ActorReference getReferenceByName(String uan)	{ return NoConsistencySimpleTodo.getReferenceByName(new UAN(uan)); }
-	public static ActorReference getReferenceByLocation(UAL ual)	{ return new NoConsistencySimpleTodo(false, ual); }
+	public static ActorReference getReferenceByName(UAN uan)	{ return new CausalSimpleTodo(false, uan); }
+	public static ActorReference getReferenceByName(String uan)	{ return CausalSimpleTodo.getReferenceByName(new UAN(uan)); }
+	public static ActorReference getReferenceByLocation(UAL ual)	{ return new CausalSimpleTodo(false, ual); }
 
-	public static ActorReference getReferenceByLocation(String ual)	{ return NoConsistencySimpleTodo.getReferenceByLocation(new UAL(ual)); }
-	public NoConsistencySimpleTodo(boolean o, UAN __uan)	{ super(false,__uan); }
-	public NoConsistencySimpleTodo(boolean o, UAL __ual)	{ super(false,__ual); }
-	public NoConsistencySimpleTodo(UAN __uan,UniversalActor.State sourceActor)	{ this(__uan, null, sourceActor); }
-	public NoConsistencySimpleTodo(UAL __ual,UniversalActor.State sourceActor)	{ this(null, __ual, sourceActor); }
-	public NoConsistencySimpleTodo(UniversalActor.State sourceActor)		{ this(null, null, sourceActor);  }
-	public NoConsistencySimpleTodo()		{  }
-	public NoConsistencySimpleTodo(UAN __uan, UAL __ual, Object obj) {
+	public static ActorReference getReferenceByLocation(String ual)	{ return CausalSimpleTodo.getReferenceByLocation(new UAL(ual)); }
+	public CausalSimpleTodo(boolean o, UAN __uan)	{ super(false,__uan); }
+	public CausalSimpleTodo(boolean o, UAL __ual)	{ super(false,__ual); }
+	public CausalSimpleTodo(UAN __uan,UniversalActor.State sourceActor)	{ this(__uan, null, sourceActor); }
+	public CausalSimpleTodo(UAL __ual,UniversalActor.State sourceActor)	{ this(null, __ual, sourceActor); }
+	public CausalSimpleTodo(UniversalActor.State sourceActor)		{ this(null, null, sourceActor);  }
+	public CausalSimpleTodo()		{  }
+	public CausalSimpleTodo(UAN __uan, UAL __ual, Object obj) {
 		//decide the type of sourceActor
 		//if obj is null, the actor must be the startup actor.
 		//if obj is an actorReference, this actor is created by a remote actor
@@ -118,7 +118,7 @@ public class NoConsistencySimpleTodo extends UniversalActor  {
 			      setSource(sourceActor.getUAN(), sourceActor.getUAL());
 			      activateGC();
 			    }
-			    createRemotely(__uan, __ual, "todo.NoConsistencySimpleTodo", sourceRef);
+			    createRemotely(__uan, __ual, "todo.CausalSimpleTodo", sourceRef);
 			  }
 
 			  // local creation
@@ -183,11 +183,11 @@ public class NoConsistencySimpleTodo extends UniversalActor  {
 	}
 
 	public class State extends UniversalActor .State {
-		public NoConsistencySimpleTodo self;
+		public CausalSimpleTodo self;
 		public void updateSelf(ActorReference actorReference) {
-			((NoConsistencySimpleTodo)actorReference).setUAL(getUAL());
-			((NoConsistencySimpleTodo)actorReference).setUAN(getUAN());
-			self = new NoConsistencySimpleTodo(false,getUAL());
+			((CausalSimpleTodo)actorReference).setUAL(getUAL());
+			((CausalSimpleTodo)actorReference).setUAN(getUAN());
+			self = new CausalSimpleTodo(false,getUAL());
 			self.setUAN(getUAN());
 			self.setUAL(getUAL());
 			self.activateGC();
@@ -207,7 +207,7 @@ public class NoConsistencySimpleTodo extends UniversalActor  {
 
 		public State(UAN __uan, UAL __ual) {
 			super(__uan, __ual);
-			addClassName( "todo.NoConsistencySimpleTodo$State" );
+			addClassName( "todo.CausalSimpleTodo$State" );
 			addMethodsForClasses();
 		}
 
@@ -275,122 +275,112 @@ public class NoConsistencySimpleTodo extends UniversalActor  {
 			String s4Name = s4.getUserName();
 			String s5Name = s5.getUserName();
 			{
-				// s1<-addTaskToList(taskList, ((Task)new Task(this).construct("User 1: Random Task 1", s1Name, "u1t1", false)), 0, 12)
+				Token token_2_0 = new Token();
+				Token token_2_1 = new Token();
+				// s1<-addTaskToList(taskList, ((Task)new Task(this).construct("User 1: Initial Task 1", s1Name, "u1t1", false)), 3, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 1: Random Task 1", s1Name, "u1t1", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s1, "addTaskToList", _arguments, null, null );
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 1: Initial Task 1", s1Name, "u1t1", false)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s1, "addTaskToList", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
+				// s1<-addTaskToList(taskList, ((Task)new Task(this).construct("User 1: Initial Task 2", s1Name, "u1t2", false)), 3, 12)
+				{
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 1: Initial Task 2", s1Name, "u1t2", false)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s1, "addTaskToList", _arguments, token_2_0, token_2_1 );
+					__messages.add( message );
+				}
+				// s1<-addTaskToList(taskList, ((Task)new Task(this).construct("User 1: Initial Task 3", s1Name, "u1t3", false)), 3, 12)
+				{
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 1: Initial Task 3", s1Name, "u1t3", false)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s1, "addTaskToList", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-addTaskToList(taskList, ((Task)new Task(this).construct("User 1: Random Task 2", s1Name, "u1t2", false)), 0, 12)
+				Token token_2_0 = new Token();
+				Token token_2_1 = new Token();
+				// s2<-addTaskToList(taskList, ((Task)new Task(this).construct("User 2: Follow Task 1", s2Name, "u2t1", true)), 3, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 1: Random Task 2", s1Name, "u1t2", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s1, "addTaskToList", _arguments, null, null );
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 2: Follow Task 1", s2Name, "u2t1", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s2, "addTaskToList", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
+				// s2<-addTaskToList(taskList, ((Task)new Task(this).construct("User 2: Follow Task 2", s2Name, "u2t2", true)), 3, 12)
+				{
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 2: Follow Task 2", s2Name, "u2t2", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s2, "addTaskToList", _arguments, token_2_0, token_2_1 );
+					__messages.add( message );
+				}
+				// s2<-addTaskToList(taskList, ((Task)new Task(this).construct("User 2: Follow Task 3", s2Name, "u2t3", true)), 3, 12)
+				{
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 2: Follow Task 3", s2Name, "u2t3", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s2, "addTaskToList", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-addTaskToList(taskList, ((Task)new Task(this).construct("User 1: Random Task 3", s1Name, "u1t3", false)), 0, 12)
+				Token token_2_0 = new Token();
+				Token token_2_1 = new Token();
+				// s3<-addTaskToList(taskList, ((Task)new Task(this).construct("User 3: Follow Task 1", s3Name, "u3t1", true)), 3, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 1: Random Task 3", s1Name, "u1t3", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s1, "addTaskToList", _arguments, null, null );
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 3: Follow Task 1", s3Name, "u3t1", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s3, "addTaskToList", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
+				// s3<-addTaskToList(taskList, ((Task)new Task(this).construct("User 3: Follow Task 2", s3Name, "u3t2", true)), 3, 12)
+				{
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 3: Follow Task 2", s3Name, "u3t2", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s3, "addTaskToList", _arguments, token_2_0, token_2_1 );
+					__messages.add( message );
+				}
+				// s3<-addTaskToList(taskList, ((Task)new Task(this).construct("User 3: Follow Task 3", s3Name, "u3t3", true)), 3, 12)
+				{
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 3: Follow Task 3", s3Name, "u3t3", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s3, "addTaskToList", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-addTaskToList(taskList, ((Task)new Task(this).construct("User 2: Random Task 1", s2Name, "u2t1", false)), 0, 12)
+				Token token_2_0 = new Token();
+				Token token_2_1 = new Token();
+				// s4<-addTaskToList(taskList, ((Task)new Task(this).construct("User 4: Follow Task 1", s4Name, "u4t1", true)), 3, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 2: Random Task 1", s2Name, "u2t1", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s2, "addTaskToList", _arguments, null, null );
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 4: Follow Task 1", s4Name, "u4t1", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s4, "addTaskToList", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
+				// s4<-addTaskToList(taskList, ((Task)new Task(this).construct("User 4: Follow Task 2", s4Name, "u4t2", true)), 3, 12)
+				{
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 4: Follow Task 2", s4Name, "u4t2", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s4, "addTaskToList", _arguments, token_2_0, token_2_1 );
+					__messages.add( message );
+				}
+				// s4<-addTaskToList(taskList, ((Task)new Task(this).construct("User 4: Follow Task 3", s4Name, "u4t3", true)), 3, 12)
+				{
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 4: Follow Task 3", s4Name, "u4t3", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s4, "addTaskToList", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-addTaskToList(taskList, ((Task)new Task(this).construct("User 2: Random Task 2", s2Name, "u2t2", false)), 0, 12)
+				Token token_2_0 = new Token();
+				Token token_2_1 = new Token();
+				// s5<-addTaskToList(taskList, ((Task)new Task(this).construct("User 5: Follow Task 1", s5Name, "u5t1", true)), 3, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 2: Random Task 2", s2Name, "u2t2", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s2, "addTaskToList", _arguments, null, null );
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 5: Follow Task 1", s5Name, "u5t1", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s5, "addTaskToList", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-			}
-			{
-				// s2<-addTaskToList(taskList, ((Task)new Task(this).construct("User 2: Random Task 3", s2Name, "u2t3", false)), 0, 12)
+				// s5<-addTaskToList(taskList, ((Task)new Task(this).construct("User 5: Follow Task 2", s5Name, "u5t2", true)), 3, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 2: Random Task 3", s2Name, "u2t3", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s2, "addTaskToList", _arguments, null, null );
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 5: Follow Task 2", s5Name, "u5t2", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s5, "addTaskToList", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-			}
-			{
-				// s3<-addTaskToList(taskList, ((Task)new Task(this).construct("User 3: Random Task 1", s3Name, "u3t1", false)), 0, 12)
+				// s5<-addTaskToList(taskList, ((Task)new Task(this).construct("User 5: Follow Task 3", s5Name, "u5t3", true)), 3, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 3: Random Task 1", s3Name, "u3t1", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s3, "addTaskToList", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s3<-addTaskToList(taskList, ((Task)new Task(this).construct("User 3: Random Task 2", s3Name, "u3t2", false)), 0, 12)
-				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 3: Random Task 2", s3Name, "u3t2", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s3, "addTaskToList", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s3<-addTaskToList(taskList, ((Task)new Task(this).construct("User 3: Random Task 3", s3Name, "u3t3", false)), 0, 12)
-				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 3: Random Task 3", s3Name, "u3t3", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s3, "addTaskToList", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s4<-addTaskToList(taskList, ((Task)new Task(this).construct("User 4: Random Task 1", s4Name, "u4t1", false)), 0, 12)
-				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 4: Random Task 1", s4Name, "u4t1", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s4, "addTaskToList", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s4<-addTaskToList(taskList, ((Task)new Task(this).construct("User 4: Random Task 2", s4Name, "u4t2", false)), 0, 12)
-				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 4: Random Task 2", s4Name, "u4t2", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s4, "addTaskToList", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s4<-addTaskToList(taskList, ((Task)new Task(this).construct("User 4: Random Task 3", s4Name, "u4t3", false)), 0, 12)
-				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 4: Random Task 3", s4Name, "u4t3", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s4, "addTaskToList", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s5<-addTaskToList(taskList, ((Task)new Task(this).construct("User 5: Random Task 1", s5Name, "u5t1", false)), 0, 12)
-				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 5: Random Task 1", s5Name, "u5t1", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s5, "addTaskToList", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s5<-addTaskToList(taskList, ((Task)new Task(this).construct("User 5: Random Task 2", s5Name, "u5t2", false)), 0, 12)
-				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 5: Random Task 2", s5Name, "u5t2", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s5, "addTaskToList", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s5<-addTaskToList(taskList, ((Task)new Task(this).construct("User 5: Random Task 3", s5Name, "u5t3", false)), 0, 12)
-				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 5: Random Task 3", s5Name, "u5t3", false)), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s5, "addTaskToList", _arguments, null, null );
+					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 5: Follow Task 3", s5Name, "u5t3", true)), new Integer(3), new Integer(12) };
+					Message message = new Message( self, s5, "addTaskToList", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
 			}

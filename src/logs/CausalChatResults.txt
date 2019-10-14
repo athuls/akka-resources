@@ -103,3 +103,4 @@ Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: None; 
 Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: None; overall latency: 0.0
 Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: None; overall latency: 0.0
 Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: None; overall latency: 0.0
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 270; overall latency: 1837.6

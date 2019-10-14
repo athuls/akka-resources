@@ -42,18 +42,18 @@ behavior User implements ActorService
 			// update case
 			for(int i = 0; i < tasks.size(); i++)
 			{
-				if(task<-getTaskName().equals(tasks(i)<-getTaskName()))
+				if(task.getTaskName().equals(tasks(i).getTaskName()))
 				{
-					tasks(i)<-updateTask(task<-getTaskText());
+					tasks(i)<-updateTask(task.getTaskText());
 					String follow_up = "";
-					if(task<-getFollowtype())
+					if(task.getFollowtype())
 						follow_up = "Initial Task";
 					else
 						follow_up = "Follow Up Task";
 					Thread.sleep(200);
 					Date date = new Date();
 					Timestamp current = new Timestamp(date.getTime());
-					standardOutput<-println("[Speaker Remote] " + myName + ": " + "Update Message: " + "Task name: " + task<-getTaskName() + "Task type: " + follow_up + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current);
+					standardOutput<-println("[Speaker Remote] " + myName + ": " + "Update Message: " + "Task name: " + task.getTaskName() + "Task type: " + follow_up + "; Task text: " + task.getTaskText() + "; Timestamp: " + current);
 					break;
 				}
 			}
@@ -64,18 +64,18 @@ behavior User implements ActorService
 			{
 				tasks.add(task);
 				String follow_up = "";
-				if(task<-getFollowtype())
+				if(task.getFollowtype())
 					follow_up = "Initial Task";
 				else
 					follow_up = "Follow Up Task";
 				Thread.sleep(200);
 				Date date = new Date();
 				Timestamp current = new Timestamp(date.getTime());
-				standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + task<-getTaskName() + "Task type: " + follow_up + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current);
+				standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + task.getTaskName() + "Task type: " + follow_up + "; Task text: " + task.getTaskText() + "; Timestamp: " + current);
 			}
 			else
 			{
-				if(task<-getFollowtype())
+				if(task.getFollowtype())
 				{
 					// handles follow up case
 					if(initialList.size() == number_of_initials || isLeader)
@@ -87,26 +87,26 @@ behavior User implements ActorService
 								Task currentTask = (Task) waitQueue.remove();
 								tasks.add(currentTask);
 								String follow_up_two = "";
-								if(currentTask<-getFollowtype())
+								if(currentTask.getFollowtype())
 									follow_up_two = "Initial Task";
 								else
 									follow_up_two = "Follow Up Task";
 								Thread.sleep(200);
 								Date date = new Date();
 								Timestamp current = new Timestamp(date.getTime());
-								standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + currentTask<-getTaskName() + "Task type: " + follow_up_two + "; Task text: " + currentTask<-getTaskText() + "; Timestamp: " + current);
+								standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + currentTask.getTaskName() + "Task type: " + follow_up_two + "; Task text: " + currentTask.getTaskText() + "; Timestamp: " + current);
 							}
 						}
 						tasks.add(task);
 						String follow_up = "";
-						if(task<-getFollowtype())
+						if(task.getFollowtype())
 							follow_up = "Initial Task";
 						else
 							follow_up = "Follow Up Task";
 						Thread.sleep(200);
 						Date date_two = new Date();
 						Timestamp current_two = new Timestamp(date_two.getTime());
-						standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + task<-getTaskName() + "Task type: " + follow_up + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current_two);
+						standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + task.getTaskName() + "Task type: " + follow_up + "; Task text: " + task.getTaskText() + "; Timestamp: " + current_two);
 					}
 					else
 					{
@@ -119,14 +119,14 @@ behavior User implements ActorService
 					tasks.add(task);
 					initialList.add(task);
 					String follow_up = "";
-					if(task<-getFollowtype())
+					if(task.getFollowtype())
 						follow_up = "Initial Task";
 					else
 						follow_up = "Follow Up Task";
 					Thread.sleep(200);
 					Date date = new Date();
 					Timestamp current = new Timestamp(date.getTime());
-					standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + task<-getTaskName() + "Task type: " + follow_up + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current);
+					standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + task.getTaskName() + "Task type: " + follow_up + "; Task text: " + task.getTaskText() + "; Timestamp: " + current);
 				}
 			}
 		}
@@ -142,7 +142,7 @@ behavior User implements ActorService
 		}
 		else
 		{
-			if(task<-getFollowtype())
+			if(task.getFollowtype())
 			{
 				// handles follow up case
 				if(initialList.size() == number_of_initials || isLeader)
@@ -187,20 +187,20 @@ behavior User implements ActorService
 		Date date = new Date();
 		Timestamp current = new Timestamp(date.getTime());
 		String follow_up = "";
-		if(task<-getFollowtype())
+		if(task.getFollowtype())
 			follow_up = "Initial Task";
 		else
 			follow_up = "Follow Up Task";
-		standardOutput<-println("[Speaker Local] " + myName + ": " + "Initial add request " + "Task name: " + task<-getTaskName() + "Task type: " + follow_up + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current) @
+		standardOutput<-println("[Speaker Local] " + myName + ": " + "Initial add request " + "Task name: " + task.getTaskName() + "Task type: " + follow_up + "; Task text: " + task.getTaskText() + "; Timestamp: " + current) @
 	    server_ref<-addTaskToList(taskList, task, myName, total_updates, number_of_initials);
 	    return true;
 	}
 
-	boolean updateTask(Task task, String text, number_of_initials, total_updates)
+	boolean updateTask(Task task, String text, int number_of_initials, int total_updates)
 	{
 		Date date = new Date();
 		Timestamp current = new Timestamp(date.getTime());
-		standardOutput<-println("[Speaker Local] " + myName + ": " + "Initial update request " + "Task name: " + task<-getTaskName() + "; Task text: " + task<-getTaskText() + "; Timestamp: " + current) @
+		standardOutput<-println("[Speaker Local] " + myName + ": " + "Initial update request " + "Task name: " + task.getTaskName() + "; Task text: " + task.getTaskText() + "; Timestamp: " + current) @
 		server_ref<-updateTask(task, myName, total_updates, number_of_initials);
 		return true;
 	}

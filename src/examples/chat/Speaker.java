@@ -233,7 +233,26 @@ Timestamp current_one = new Timestamp(date_one.getTime());
 				}
 			}
 questionTimeStamp.put(msg.getMsg(), current_one);
-break;			case ANSWER: if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+				if (answerQueue.size()>0) {{
+					while (answerQueue.size()>0) {
+						ChatMessage chatMessage = (ChatMessage)answerQueue.remove();
+						messages.add(chatMessage.getMsg());
+						Thread.sleep(200);
+						Date date_two = new Date();
+						Timestamp current_two = new Timestamp(date_two.getTime());
+						{
+							// standardOutput<-println("[Speaker Remote] "+speakerName+": "+chatMessage.getMsgType()+": "+chatMessage.getMsg()+"; Timestamp: "+current_two)
+							{
+								Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+chatMessage.getMsgType()+": "+chatMessage.getMsg()+"; Timestamp: "+current_two };
+								Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+								__messages.add( message );
+							}
+						}
+					}
+				}
+}			}
+}break;			case ANSWER: if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
 						ChatMessage chatMessage = (ChatMessage)answerQueue.remove();
@@ -295,7 +314,15 @@ break;			}
 Date date = new Date();
 Timestamp current = new Timestamp(date.getTime());
 questionTimeStamp.put(msg.getMsg(), current);
-break;			case ANSWER: if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+				if (answerQueue.size()>0) {{
+					while (answerQueue.size()>0) {
+						ChatMessage chatMessage = (ChatMessage)answerQueue.remove();
+						messageQueue.add(chatMessage.getMsg());
+					}
+				}
+}			}
+}break;			case ANSWER: if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
 						ChatMessage chatMessage = (ChatMessage)answerQueue.remove();

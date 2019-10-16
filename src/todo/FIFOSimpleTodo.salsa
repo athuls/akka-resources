@@ -7,34 +7,31 @@ import java.sql.Timestamp;
 
 behavior FIFOSimpleTodo
 {
-	void chatSession(User s1, User s2, User s3, User s4, User s5, TaskList taskList)
+	void chatSession(User s1, User s2, User s3, User s4, User s5, String username1,
+                           String username2,String username3, String username4, String username5, TaskList taskList)
 	{
 		// these tasks are created in server..
-		String s1Name = s1.getUserName();
-		String s2Name = s2.getUserName();
-		String s3Name = s3.getUserName();
-		String s4Name = s4.getUserName();
-		String s5Name = s5.getUserName();
-		Task s1t1 = new Task("User 1: Ordered Task 1", s1Name, "u1t1", false);
-		Task s2t1 = new Task("User 2: Ordered Task 1", s2Name, "u2t1", false);
-		Task s3t1 = new Task("User 3: Ordered Task 1", s3Name, "u3t1", false);
-		Task s4t1 = new Task("User 4: Ordered Task 1", s4Name, "u4t1", false);
-		Task s5t1 = new Task("User 5: Ordered Task 1", s5Name, "u5t1", false);
-		s1<-addTaskToList(taskList, s1t1, 0, 12) @
-		s1<-addTaskToList(taskList, new Task("User 1: Ordered Task 2", s1Name, "u1t2", false), 0, 12) @
-		s1<-updateTask(s1t1, "User 1: Ordered Update 1", 0, 12);
-		s2<-addTaskToList(taskList, s2t1, 0, 12) @
-		s2<-addTaskToList(taskList, new Task("User 2: Ordered Task 2", s2Name, "u2t2", false), 0, 12) @
-		s2<-updateTask(s2t1, "User 2: Ordered Update 1", 0, 12);
-		s3<-addTaskToList(taskList, s3t1, 0, 12) @
-		s3<-addTaskToList(taskList, new Task("User 3: Ordered Task 2", s3Name, "u3t2", false), 0, 12) @
-		s3<-updateTask(s3t1, "User 3: Ordered Update 1", 0, 12);
-		s4<-addTaskToList(taskList, s4t1, 0, 12) @
-		s4<-addTaskToList(taskList, new Task("User 4: Ordered Task 2", s4Name, "u4t2", false), 0, 12) @
-		s4<-updateTask(s4t1, "User 4: Ordered Update 1", 0, 12);
-		s5<-addTaskToList(taskList, s5t1, 0, 12) @
-		s5<-addTaskToList(taskList, new Task("User 5: Ordered Task 2", s5Name, "u5t2", false), 0, 12) @
-		s5<-updateTask(s5t1, "User 5: Ordered Update 1", 0, 12);
+
+		Task s1t1 = new Task("User 1: Ordered Task 1", username1, "u1t1", false);
+		Task s2t1 = new Task("User 2: Ordered Task 1", username2, "u2t1", false);
+		Task s3t1 = new Task("User 3: Ordered Task 1", username3, "u3t1", false);
+		Task s4t1 = new Task("User 4: Ordered Task 1", username4, "u4t1", false);
+		Task s5t1 = new Task("User 5: Ordered Task 1", username5, "u5t1", false);
+		s1<-addTaskToList(taskList, "User 1: Ordered Task 1", username1, "u1t1", false, 0, 12) @
+		s1<-addTaskToList(taskList, "User 1: Ordered Task 2", username1, "u1t2", false, 0, 12) @
+		s1<-updateTask(s1t1, "User 1: Ordered Task 3","u1t1", 0, 12);
+		s2<-addTaskToList(taskList, "User 2: Ordered Task 1", username2, "u2t1", false, 0, 12) @
+		s2<-addTaskToList(taskList, "User 2: Ordered Task 2", username2, "u2t2", false, 0, 12) @
+		s2<-updateTask(s2t1, "User 2: Ordered Task 3","u2t1", 0, 12);
+		s3<-addTaskToList(taskList, "User 3: Ordered Task 1", username3, "u3t1", false, 0, 12) @
+		s3<-addTaskToList(taskList, "User 3: Ordered Task 2", username3, "u3t2", false, 0, 12) @
+		s3<-updateTask(s3t1, "User 3: Ordered Task 3","u3t1", 0, 12);
+		s4<-addTaskToList(taskList, "User 4: Ordered Task 1", username4, "u4t1", false, 0, 12) @
+		s4<-addTaskToList(taskList, "User 4: Ordered Task 2", username4, "u4t2", false, 0, 12) @
+		s4<-updateTask(s4t1, "User 4: Ordered Task 3","u4t1", 0, 12);
+		s5<-addTaskToList(taskList, "User 5: Ordered Task 1", username5, "u5t1", false, 0, 12) @
+		s5<-addTaskToList(taskList, "User 5: Ordered Task 2", username5, "u5t2", false, 0, 12) @
+		s5<-updateTask(s5t1, "User 5: Ordered Task 3","u5t1", 0, 12);
 	}
 
 	void reply(String replyMsg)
@@ -44,7 +41,7 @@ behavior FIFOSimpleTodo
 
 	void act(String args[])
 	{
-		if(args.length != 3 )
+		if(args.length < 11 )
 		{
 			standardOutput<-println("Usage: java -Duan=myuan todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5> <taskUAN6>");
 			return;
@@ -53,8 +50,16 @@ behavior FIFOSimpleTodo
 		try 
 		{
 			User user1 =(User) User.getReferenceByName(args[0]);
-			User user2 =(User) User.getReferenceByName(args[1]);
-			TaskList taskList =(TaskList) TaskList.getReferenceByName(args[2]);
+            			User user2 =(User) User.getReferenceByName(args[1]);
+            			User user3 =(User) User.getReferenceByName(args[2]);
+            			User user4 =(User) User.getReferenceByName(args[3]);
+            			User user5 =(User) User.getReferenceByName(args[4]);
+            			String username1 = args[5];
+            			String username2 = args[6];
+            			String username3 = args[7];
+            			String username4 = args[8];
+            			String username5 = args[9];
+            			TaskList taskList =(TaskList) TaskList.getReferenceByName(args[10]);
 
 			// keep track of starting time here
 			Date first = new Date();
@@ -63,7 +68,8 @@ behavior FIFOSimpleTodo
 
 			// use this to calculate time elapsed
 			Instant begin = Instant.now();
-			chatSession(user1, user2, taskList,taskid1,taskid2) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
+			chatSession(user1, user2,user3, user4, user5,username1,
+            			 username2,username3,username4,username5,taskList) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
 		}
 		catch (Exception e)
 		{

@@ -35,25 +35,27 @@ behavior User implements ActorService
 		isLeader = true;		
 	}
 
-	void broadcastReceive(Task task, boolean update, int number_of_initials, int total_updates) throws InterruptedException
+	void broadcastReceive(Task task,String taskName, String text,boolean update, int number_of_initials, int total_updates,boolean isFollowup) throws InterruptedException
 	{
 		if(update)
 		{
 			// update case
 			for(int i = 0; i < tasks.size(); i++)
 			{
-				if(task.getTaskName().equals(tasks(i).getTaskName()))
+
+			    Task storedTask = (Task) tasks.get(i);
+				if(taskName.equals(storedTask.getTaskName()))
 				{
-					tasks(i)<-updateTask(task.getTaskText());
+					storedTask.updateTask(text);
 					String follow_up = "";
-					if(task.getFollowtype())
+					if(!isFollowup)
 						follow_up = "Initial Task";
 					else
 						follow_up = "Follow Up Task";
 					Thread.sleep(200);
 					Date date = new Date();
 					Timestamp current = new Timestamp(date.getTime());
-					standardOutput<-println("[Speaker Remote] " + myName + ": " + "Update Message: " + "Task name: " + task.getTaskName() + "Task type: " + follow_up + "; Task text: " + task.getTaskText() + "; Timestamp: " + current);
+					standardOutput<-println("[Speaker Remote] " + myName + ": " + "Upd Message: " + "Task name: " + taskName + "Task type: " + follow_up + "; Task text: " + text + "; Timestamp: " + current);
 					break;
 				}
 			}
@@ -64,7 +66,7 @@ behavior User implements ActorService
 			{
 				tasks.add(task);
 				String follow_up = "";
-				if(task.getFollowtype())
+				if(!isFollowup)
 					follow_up = "Initial Task";
 				else
 					follow_up = "Follow Up Task";
@@ -75,7 +77,7 @@ behavior User implements ActorService
 			}
 			else
 			{
-				if(task.getFollowtype())
+				if(isFollowup)
 				{
 					// handles follow up case
 					if(initialList.size() == number_of_initials || isLeader)
@@ -99,7 +101,7 @@ behavior User implements ActorService
 						}
 						tasks.add(task);
 						String follow_up = "";
-						if(task.getFollowtype())
+						if(!isFollowup)
 							follow_up = "Initial Task";
 						else
 							follow_up = "Follow Up Task";
@@ -119,7 +121,7 @@ behavior User implements ActorService
 					tasks.add(task);
 					initialList.add(task);
 					String follow_up = "";
-					if(task.getFollowtype())
+					if(!isFollowup)
 						follow_up = "Initial Task";
 					else
 						follow_up = "Follow Up Task";
@@ -132,7 +134,7 @@ behavior User implements ActorService
 		}
 	}
 	
-	void broadcastReceiveAdvanced(Task task, boolean update, int number_of_initials, int total_updates) throws InterruptedException
+	void broadcastReceiveAdvanced(Task task,String taskName, String text,boolean update, int number_of_initials, int total_updates,boolean isFollowup) throws InterruptedException
 	{
 		// ignore update case for simplicity here since that is not tested anyways
 		if(number_of_initials == 0)
@@ -142,7 +144,7 @@ behavior User implements ActorService
 		}
 		else
 		{
-			if(task.getFollowtype())
+			if(isFollowup)
 			{
 				// handles follow up case
 				if(initialList.size() == number_of_initials || isLeader)
@@ -181,27 +183,29 @@ behavior User implements ActorService
 		standardOutput<-println("User started with uan: "+ getUAN().toString());
 	}
 
-	boolean addTaskToList(TaskList taskList, Task task, int number_of_initials, int total_updates)
+	boolean addTaskToList(TaskList taskList, String text, String creator, String name, boolean isFollowup, int number_of_initials, int total_updates)
 	{
 		// get first timestamp here
 		Date date = new Date();
 		Timestamp current = new Timestamp(date.getTime());
 		String follow_up = "";
-		if(task.getFollowtype())
-			follow_up = "Initial Task";
-		else
+		if(isFollowup)
 			follow_up = "Follow Up Task";
-		standardOutput<-println("[Speaker Local] " + myName + ": " + "Initial add request " + "Task name: " + task.getTaskName() + "Task type: " + follow_up + "; Task text: " + task.getTaskText() + "; Timestamp: " + current) @
-	    server_ref<-addTaskToList(taskList, task, myName, total_updates, number_of_initials);
+		else
+			follow_up = "Initial Task";
+		Task task = new Task(text,creator,name,isFollowup);
+		standardOutput<-println("[Speaker Local] " + myName + ": " + "Add message: " + "Task name: " + name + "Task type: " + follow_up + "; Task text: " + task.getTaskText() + "; Timestamp: " + current) @
+	    server_ref<-addTaskToList(taskList, task,name,text, myName, total_updates, number_of_initials, isFollowup);
 	    return true;
 	}
 
-	boolean updateTask(Task task, String text, int number_of_initials, int total_updates)
+	boolean updateTask(Task task, String text, String name,int number_of_initials, int total_updates)
 	{
 		Date date = new Date();
 		Timestamp current = new Timestamp(date.getTime());
-		standardOutput<-println("[Speaker Local] " + myName + ": " + "Initial update request " + "Task name: " + task.getTaskName() + "; Task text: " + task.getTaskText() + "; Timestamp: " + current) @
-		server_ref<-updateTask(task, myName, total_updates, number_of_initials);
+		standardOutput<-println("[Speaker Local] " + myName + ": " + "Upd message: " + "Task name: " + name + "Task type: Initial task" + "; Task text: " + text + "; Timestamp: " + current) @
+		//Task task,String name,String text, String creator, int number_of_updates, int total_initials
+		server_ref<-updateTask(task,name, text, myName, total_updates, number_of_initials);
 		return true;
 	}
 

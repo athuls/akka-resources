@@ -53,6 +53,25 @@ behavior Speaker implements ActorService
 
 				// put the question in the question map
 				questionTimeStamp.put(msg.getMsg(),current_one);
+				
+				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
+				{
+					if(answerQueue.size() > 0)
+					{
+						// empty out queue
+						while(answerQueue.size() > 0)
+						{
+							ChatMessage chatMessage = (ChatMessage) answerQueue.remove();
+
+							// add the message to the list and print timestamp
+							messages.add(chatMessage.getMsg());
+							Thread.sleep(200);
+							Date date_two = new Date();
+							Timestamp current_two = new Timestamp(date_two.getTime());
+							standardOutput<-println("[Speaker Remote] " + speakerName + ": " + chatMessage.getMsgType() +": "+ chatMessage.getMsg() + "; Timestamp: " + current_two);
+						}						
+					}
+				}
 				break;
 			case ANSWER:
 				// check if there has been a question already placed
@@ -125,6 +144,19 @@ behavior Speaker implements ActorService
 				Date date = new Date();
 				Timestamp current = new Timestamp(date.getTime());
 				questionTimeStamp.put(msg.getMsg(), current);
+				
+				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
+				{
+					if(answerQueue.size() > 0)
+					{
+						// empty out queue
+						while(answerQueue.size() > 0)
+						{
+							ChatMessage chatMessage = (ChatMessage) answerQueue.remove();
+							messageQueue.add(chatMessage.getMsg());
+						}						
+					}
+				}
 				break;
 			case ANSWER:
 				// check if there has been a question already placed

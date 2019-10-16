@@ -1,0 +1,6 @@
+Server started
+Registering User Chinkiuser <todo.User:uan://:3030\localhost:3030id5, rmsp://127.0.1.1:49805/UAL/1571152824257/1> 
+Registering User pinkuuser <todo.User:uan://:3030\localhost:3030id6, rmsp://127.0.1.1:49807/UAL/1571152824284/1> 
+Registering User Danuser <todo.User:uan://:3030\localhost:3030id4, rmsp://127.0.1.1:49808/UAL/1571152824311/1> 
+Registering User Masonuser <todo.User:uan://:3030\localhost:3030id3, rmsp://127.0.1.1:49806/UAL/1571152824277/1> 
+Registering User Jasonuser <todo.User:uan://:3030\localhost:3030id2, rmsp://127.0.1.1:49810/UAL/1571152824359/1> 

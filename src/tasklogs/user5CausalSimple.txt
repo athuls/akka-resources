@@ -1,0 +1,18 @@
+User started with uan: uan://:3030\localhost:3030id6
+Messaging server
+Finished registering
+[Speaker Local] pinku: Initial add request Task name: u5t1Task type: Initial Task; Task text: User 5: Follow Task 1; Timestamp: 2019-10-15 15:20:25.578
+[Speaker Local] pinku: Initial add request Task name: u5t2Task type: Initial Task; Task text: User 5: Follow Task 2; Timestamp: 2019-10-15 15:20:25.873
+[Speaker Local] pinku: Initial add request Task name: u5t3Task type: Initial Task; Task text: User 5: Follow Task 3; Timestamp: 2019-10-15 15:20:25.903
+[Speaker Remote] pinku: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Initial Task 1; Timestamp: 2019-10-15 15:20:26.267
+[Speaker Remote] pinku: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Initial Task 2; Timestamp: 2019-10-15 15:20:26.468
+[Speaker Remote] pinku: Add Message: Task name: u1t3Task type: Initial Task; Task text: User 1: Initial Task 3; Timestamp: 2019-10-15 15:20:26.669
+[Speaker Remote] pinku: Add Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Follow Task 1; Timestamp: 2019-10-15 15:20:26.87
+[Speaker Remote] pinku: Add Message: Task name: u2t2Task type: Initial Task; Task text: User 2: Follow Task 2; Timestamp: 2019-10-15 15:20:27.07
+[Speaker Remote] pinku: Add Message: Task name: u2t3Task type: Follow Up Task; Task text: User 2: Follow Task 3; Timestamp: 2019-10-15 15:20:27.272
+[Speaker Remote] pinku: Add Message: Task name: u3t1Task type: Follow Up Task; Task text: User 3: Follow Task 1; Timestamp: 2019-10-15 15:20:27.472
+[Speaker Remote] pinku: Add Message: Task name: u4t1Task type: Follow Up Task; Task text: User 4: Follow Task 1; Timestamp: 2019-10-15 15:20:27.673
+[Speaker Remote] pinku: Add Message: Task name: u4t2Task type: Follow Up Task; Task text: User 4: Follow Task 2; Timestamp: 2019-10-15 15:20:27.874
+[Speaker Remote] pinku: Add Message: Task name: u3t2Task type: Follow Up Task; Task text: User 3: Follow Task 2; Timestamp: 2019-10-15 15:20:28.075
+[Speaker Remote] pinku: Add Message: Task name: u4t3Task type: Follow Up Task; Task text: User 4: Follow Task 3; Timestamp: 2019-10-15 15:20:28.276
+[Speaker Remote] pinku: Add Message: Task name: u3t3Task type: Follow Up Task; Task text: User 3: Follow Task 3; Timestamp: 2019-10-15 15:20:28.478

@@ -27,6 +27,7 @@ behavior TaskList implements ActorService
     }
 
 	// broadcast send to all users here who are viewing the task list
+	//taskListRef<-addTask(creator, task, taskName, text)
     boolean addTask(String user,Task task, String taskId,String text)
 	{
         standardOutput<-println(" calling inside taskToList.addTask");
@@ -43,10 +44,10 @@ behavior TaskList implements ActorService
         standardOutput<-println(user);
         standardOutput<-println(task);
 
-        Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
+
 		// add user only if its registered
 
-        tasks.add(taskRef);
+        tasks.add(task);
 		taskids.put(taskId,text);
 
 		userIdTaskIdMap.put(taskId,user);
@@ -78,6 +79,7 @@ behavior TaskList implements ActorService
     }
 
 	// do a broadcast send to all other users
+	//taskListRef<-updateTask(name, text, creator)
     boolean updateTask(String taskId,String text, String creator)
     {
 		boolean update = false;
@@ -90,12 +92,12 @@ behavior TaskList implements ActorService
             String currentTaskId = (String) keySetIterator.next();
             String taskCreator = (String)userIdTaskIdMap.get(currentTaskId);
             standardOutput<-println(" taskId inside taskToList.updateTask"+taskId);
-            Task taskRef = (Task) Task.getReferenceByName(((Task)tasks.get(i)).getUAN());
+            Task taskRef = (Task)tasks.get(i);
             if((currentTaskId).equals(taskId))
 			{
                 if(taskCreator.equals(creator))
                 {
-                    taskRef<-update(currentTaskId,text);
+                    taskRef.updateTask(text);
                     update = true;
                 }
             }

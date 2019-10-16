@@ -211,28 +211,22 @@ public class User extends UniversalActor  implements ActorService {
 		public void setIsLeader() {
 			isLeader = true;
 		}
-		public void broadcastReceive(Task task, boolean update, int number_of_initials, int total_updates) throws InterruptedException{
+		public void broadcastReceive(Task task, String taskName, String text, boolean update, int number_of_initials, int total_updates, boolean isFollowup) throws InterruptedException{
 			if (update) {{
 				for (int i = 0; i<tasks.size(); i++){
-					if (task.getTaskName().equals(tasks(i).getTaskName())) {{
-						{
-							// tasks(i)<-updateTask(task.getTaskText())
-							{
-								Object _arguments[] = { task.getTaskText() };
-								Message message = new Message( self, tasks(i), "updateTask", _arguments, null, null );
-								__messages.add( message );
-							}
-						}
+					Task storedTask = (Task)tasks.get(i);
+					if (taskName.equals(storedTask.getTaskName())) {{
+						storedTask.updateTask(text);
 						String follow_up = "";
-						if (task.getFollowtype()) {follow_up = "Initial Task";
+						if (!isFollowup) {follow_up = "Initial Task";
 }						else {follow_up = "Follow Up Task";
 }						Thread.sleep(200);
 						Date date = new Date();
 						Timestamp current = new Timestamp(date.getTime());
 						{
-							// standardOutput<-println("[Speaker Remote] "+myName+": "+"Update Message: "+"Task name: "+task.getTaskName()+"Task type: "+follow_up+"; Task text: "+task.getTaskText()+"; Timestamp: "+current)
+							// standardOutput<-println("[Speaker Remote] "+myName+": "+"Upd Message: "+"Task name: "+taskName+"Task type: "+follow_up+"; Task text: "+text+"; Timestamp: "+current)
 							{
-								Object _arguments[] = { "[Speaker Remote] "+myName+": "+"Update Message: "+"Task name: "+task.getTaskName()+"Task type: "+follow_up+"; Task text: "+task.getTaskText()+"; Timestamp: "+current };
+								Object _arguments[] = { "[Speaker Remote] "+myName+": "+"Upd Message: "+"Task name: "+taskName+"Task type: "+follow_up+"; Task text: "+text+"; Timestamp: "+current };
 								Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 								__messages.add( message );
 							}
@@ -244,7 +238,7 @@ break;					}
 				if (number_of_initials==0) {{
 					tasks.add(task);
 					String follow_up = "";
-					if (task.getFollowtype()) {follow_up = "Initial Task";
+					if (!isFollowup) {follow_up = "Initial Task";
 }					else {follow_up = "Follow Up Task";
 }					Thread.sleep(200);
 					Date date = new Date();
@@ -259,7 +253,7 @@ break;					}
 					}
 				}
 }				else {{
-					if (task.getFollowtype()) {{
+					if (isFollowup) {{
 						if (initialList.size()==number_of_initials||isLeader) {{
 							if (waitQueue.size()>0) {{
 								while (waitQueue.size()>0) {
@@ -283,7 +277,7 @@ break;					}
 							}
 }							tasks.add(task);
 							String follow_up = "";
-							if (task.getFollowtype()) {follow_up = "Initial Task";
+							if (!isFollowup) {follow_up = "Initial Task";
 }							else {follow_up = "Follow Up Task";
 }							Thread.sleep(200);
 							Date date_two = new Date();
@@ -305,7 +299,7 @@ break;					}
 						tasks.add(task);
 						initialList.add(task);
 						String follow_up = "";
-						if (task.getFollowtype()) {follow_up = "Initial Task";
+						if (!isFollowup) {follow_up = "Initial Task";
 }						else {follow_up = "Follow Up Task";
 }						Thread.sleep(200);
 						Date date = new Date();
@@ -322,12 +316,12 @@ break;					}
 }				}
 }			}
 }		}
-		public void broadcastReceiveAdvanced(Task task, boolean update, int number_of_initials, int total_updates) throws InterruptedException{
+		public void broadcastReceiveAdvanced(Task task, String taskName, String text, boolean update, int number_of_initials, int total_updates, boolean isFollowup) throws InterruptedException{
 			if (number_of_initials==0) {{
 				messageQueue.add(task);
 			}
 }			else {{
-				if (task.getFollowtype()) {{
+				if (isFollowup) {{
 					if (initialList.size()==number_of_initials||isLeader) {{
 						if (waitQueue.size()>0) {{
 							while (waitQueue.size()>0) {
@@ -360,43 +354,44 @@ break;					}
 				}
 			}
 		}
-		public boolean addTaskToList(TaskList taskList, Task task, int number_of_initials, int total_updates) {
+		public boolean addTaskToList(TaskList taskList, String text, String creator, String name, boolean isFollowup, int number_of_initials, int total_updates) {
 			Date date = new Date();
 			Timestamp current = new Timestamp(date.getTime());
 			String follow_up = "";
-			if (task.getFollowtype()) {follow_up = "Initial Task";
-}			else {follow_up = "Follow Up Task";
-}			{
+			if (isFollowup) {follow_up = "Follow Up Task";
+}			else {follow_up = "Initial Task";
+}			Task task = new Task(text, creator, name, isFollowup);
+			{
 				Token token_2_0 = new Token();
-				// standardOutput<-println("[Speaker Local] "+myName+": "+"Initial add request "+"Task name: "+task.getTaskName()+"Task type: "+follow_up+"; Task text: "+task.getTaskText()+"; Timestamp: "+current)
+				// standardOutput<-println("[Speaker Local] "+myName+": "+"Add message: "+"Task name: "+name+"Task type: "+follow_up+"; Task text: "+task.getTaskText()+"; Timestamp: "+current)
 				{
-					Object _arguments[] = { "[Speaker Local] "+myName+": "+"Initial add request "+"Task name: "+task.getTaskName()+"Task type: "+follow_up+"; Task text: "+task.getTaskText()+"; Timestamp: "+current };
+					Object _arguments[] = { "[Speaker Local] "+myName+": "+"Add message: "+"Task name: "+name+"Task type: "+follow_up+"; Task text: "+task.getTaskText()+"; Timestamp: "+current };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// server_ref<-addTaskToList(taskList, task, myName, total_updates, number_of_initials)
+				// server_ref<-addTaskToList(taskList, task, name, text, myName, total_updates, number_of_initials, isFollowup)
 				{
-					Object _arguments[] = { taskList, task, myName, total_updates, number_of_initials };
+					Object _arguments[] = { taskList, task, name, text, myName, total_updates, number_of_initials, isFollowup };
 					Message message = new Message( self, server_ref, "addTaskToList", _arguments, token_2_0, null );
 					__messages.add( message );
 				}
 			}
 			return true;
 		}
-		public boolean updateTask(Task task, String text, int number_of_initials, int total_updates) {
+		public boolean updateTask(Task task, String text, String name, int number_of_initials, int total_updates) {
 			Date date = new Date();
 			Timestamp current = new Timestamp(date.getTime());
 			{
 				Token token_2_0 = new Token();
-				// standardOutput<-println("[Speaker Local] "+myName+": "+"Initial update request "+"Task name: "+task.getTaskName()+"; Task text: "+task.getTaskText()+"; Timestamp: "+current)
+				// standardOutput<-println("[Speaker Local] "+myName+": "+"Upd message: "+"Task name: "+name+"Task type: Initial task"+"; Task text: "+text+"; Timestamp: "+current)
 				{
-					Object _arguments[] = { "[Speaker Local] "+myName+": "+"Initial update request "+"Task name: "+task.getTaskName()+"; Task text: "+task.getTaskText()+"; Timestamp: "+current };
+					Object _arguments[] = { "[Speaker Local] "+myName+": "+"Upd message: "+"Task name: "+name+"Task type: Initial task"+"; Task text: "+text+"; Timestamp: "+current };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// server_ref<-updateTask(task, myName, total_updates, number_of_initials)
+				// server_ref<-updateTask(task, name, text, myName, total_updates, number_of_initials)
 				{
-					Object _arguments[] = { task, myName, total_updates, number_of_initials };
+					Object _arguments[] = { task, name, text, myName, total_updates, number_of_initials };
 					Message message = new Message( self, server_ref, "updateTask", _arguments, token_2_0, null );
 					__messages.add( message );
 				}

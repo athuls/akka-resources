@@ -268,35 +268,30 @@ public class FIFOSimpleTodo extends UniversalActor  {
 			}
 		}
 
-		public void chatSession(User s1, User s2, User s3, User s4, User s5, TaskList taskList) {
-			String s1Name = s1.getUserName();
-			String s2Name = s2.getUserName();
-			String s3Name = s3.getUserName();
-			String s4Name = s4.getUserName();
-			String s5Name = s5.getUserName();
-			Task s1t1 = ((Task)new Task(this).construct("User 1: Ordered Task 1", s1Name, "u1t1", false));
-			Task s2t1 = ((Task)new Task(this).construct("User 2: Ordered Task 1", s2Name, "u2t1", false));
-			Task s3t1 = ((Task)new Task(this).construct("User 3: Ordered Task 1", s3Name, "u3t1", false));
-			Task s4t1 = ((Task)new Task(this).construct("User 4: Ordered Task 1", s4Name, "u4t1", false));
-			Task s5t1 = ((Task)new Task(this).construct("User 5: Ordered Task 1", s5Name, "u5t1", false));
+		public void chatSession(User s1, User s2, User s3, User s4, User s5, String username1, String username2, String username3, String username4, String username5, TaskList taskList) {
+			Task s1t1 = new Task("User 1: Ordered Task 1", username1, "u1t1", false);
+			Task s2t1 = new Task("User 2: Ordered Task 1", username2, "u2t1", false);
+			Task s3t1 = new Task("User 3: Ordered Task 1", username3, "u3t1", false);
+			Task s4t1 = new Task("User 4: Ordered Task 1", username4, "u4t1", false);
+			Task s5t1 = new Task("User 5: Ordered Task 1", username5, "u5t1", false);
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s1<-addTaskToList(taskList, s1t1, 0, 12)
+				// s1<-addTaskToList(taskList, "User 1: Ordered Task 1", username1, "u1t1", false, 0, 12)
 				{
-					Object _arguments[] = { taskList, s1t1, new Integer(0), new Integer(12) };
+					Object _arguments[] = { taskList, "User 1: Ordered Task 1", username1, "u1t1", false, new Integer(0), new Integer(12) };
 					Message message = new Message( self, s1, "addTaskToList", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s1<-addTaskToList(taskList, ((Task)new Task(this).construct("User 1: Ordered Task 2", s1Name, "u1t2", false)), 0, 12)
+				// s1<-addTaskToList(taskList, "User 1: Ordered Task 2", username1, "u1t2", false, 0, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 1: Ordered Task 2", s1Name, "u1t2", false)), new Integer(0), new Integer(12) };
+					Object _arguments[] = { taskList, "User 1: Ordered Task 2", username1, "u1t2", false, new Integer(0), new Integer(12) };
 					Message message = new Message( self, s1, "addTaskToList", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s1<-updateTask(s1t1, "User 1: Ordered Update 1", 0, 12)
+				// s1<-updateTask(s1t1, "User 1: Ordered Task 3", "u1t1", 0, 12)
 				{
-					Object _arguments[] = { s1t1, "User 1: Ordered Update 1", new Integer(0), new Integer(12) };
+					Object _arguments[] = { s1t1, "User 1: Ordered Task 3", "u1t1", new Integer(0), new Integer(12) };
 					Message message = new Message( self, s1, "updateTask", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
@@ -304,21 +299,21 @@ public class FIFOSimpleTodo extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s2<-addTaskToList(taskList, s2t1, 0, 12)
+				// s2<-addTaskToList(taskList, "User 2: Ordered Task 1", username2, "u2t1", false, 0, 12)
 				{
-					Object _arguments[] = { taskList, s2t1, new Integer(0), new Integer(12) };
+					Object _arguments[] = { taskList, "User 2: Ordered Task 1", username2, "u2t1", false, new Integer(0), new Integer(12) };
 					Message message = new Message( self, s2, "addTaskToList", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s2<-addTaskToList(taskList, ((Task)new Task(this).construct("User 2: Ordered Task 2", s2Name, "u2t2", false)), 0, 12)
+				// s2<-addTaskToList(taskList, "User 2: Ordered Task 2", username2, "u2t2", false, 0, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 2: Ordered Task 2", s2Name, "u2t2", false)), new Integer(0), new Integer(12) };
+					Object _arguments[] = { taskList, "User 2: Ordered Task 2", username2, "u2t2", false, new Integer(0), new Integer(12) };
 					Message message = new Message( self, s2, "addTaskToList", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s2<-updateTask(s2t1, "User 2: Ordered Update 1", 0, 12)
+				// s2<-updateTask(s2t1, "User 2: Ordered Task 3", "u2t1", 0, 12)
 				{
-					Object _arguments[] = { s2t1, "User 2: Ordered Update 1", new Integer(0), new Integer(12) };
+					Object _arguments[] = { s2t1, "User 2: Ordered Task 3", "u2t1", new Integer(0), new Integer(12) };
 					Message message = new Message( self, s2, "updateTask", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
@@ -326,21 +321,21 @@ public class FIFOSimpleTodo extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s3<-addTaskToList(taskList, s3t1, 0, 12)
+				// s3<-addTaskToList(taskList, "User 3: Ordered Task 1", username3, "u3t1", false, 0, 12)
 				{
-					Object _arguments[] = { taskList, s3t1, new Integer(0), new Integer(12) };
+					Object _arguments[] = { taskList, "User 3: Ordered Task 1", username3, "u3t1", false, new Integer(0), new Integer(12) };
 					Message message = new Message( self, s3, "addTaskToList", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s3<-addTaskToList(taskList, ((Task)new Task(this).construct("User 3: Ordered Task 2", s3Name, "u3t2", false)), 0, 12)
+				// s3<-addTaskToList(taskList, "User 3: Ordered Task 2", username3, "u3t2", false, 0, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 3: Ordered Task 2", s3Name, "u3t2", false)), new Integer(0), new Integer(12) };
+					Object _arguments[] = { taskList, "User 3: Ordered Task 2", username3, "u3t2", false, new Integer(0), new Integer(12) };
 					Message message = new Message( self, s3, "addTaskToList", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s3<-updateTask(s3t1, "User 3: Ordered Update 1", 0, 12)
+				// s3<-updateTask(s3t1, "User 3: Ordered Task 3", "u3t1", 0, 12)
 				{
-					Object _arguments[] = { s3t1, "User 3: Ordered Update 1", new Integer(0), new Integer(12) };
+					Object _arguments[] = { s3t1, "User 3: Ordered Task 3", "u3t1", new Integer(0), new Integer(12) };
 					Message message = new Message( self, s3, "updateTask", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
@@ -348,21 +343,21 @@ public class FIFOSimpleTodo extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s4<-addTaskToList(taskList, s4t1, 0, 12)
+				// s4<-addTaskToList(taskList, "User 4: Ordered Task 1", username4, "u4t1", false, 0, 12)
 				{
-					Object _arguments[] = { taskList, s4t1, new Integer(0), new Integer(12) };
+					Object _arguments[] = { taskList, "User 4: Ordered Task 1", username4, "u4t1", false, new Integer(0), new Integer(12) };
 					Message message = new Message( self, s4, "addTaskToList", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s4<-addTaskToList(taskList, ((Task)new Task(this).construct("User 4: Ordered Task 2", s4Name, "u4t2", false)), 0, 12)
+				// s4<-addTaskToList(taskList, "User 4: Ordered Task 2", username4, "u4t2", false, 0, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 4: Ordered Task 2", s4Name, "u4t2", false)), new Integer(0), new Integer(12) };
+					Object _arguments[] = { taskList, "User 4: Ordered Task 2", username4, "u4t2", false, new Integer(0), new Integer(12) };
 					Message message = new Message( self, s4, "addTaskToList", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s4<-updateTask(s4t1, "User 4: Ordered Update 1", 0, 12)
+				// s4<-updateTask(s4t1, "User 4: Ordered Task 3", "u4t1", 0, 12)
 				{
-					Object _arguments[] = { s4t1, "User 4: Ordered Update 1", new Integer(0), new Integer(12) };
+					Object _arguments[] = { s4t1, "User 4: Ordered Task 3", "u4t1", new Integer(0), new Integer(12) };
 					Message message = new Message( self, s4, "updateTask", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
@@ -370,21 +365,21 @@ public class FIFOSimpleTodo extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// s5<-addTaskToList(taskList, s5t1, 0, 12)
+				// s5<-addTaskToList(taskList, "User 5: Ordered Task 1", username5, "u5t1", false, 0, 12)
 				{
-					Object _arguments[] = { taskList, s5t1, new Integer(0), new Integer(12) };
+					Object _arguments[] = { taskList, "User 5: Ordered Task 1", username5, "u5t1", false, new Integer(0), new Integer(12) };
 					Message message = new Message( self, s5, "addTaskToList", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s5<-addTaskToList(taskList, ((Task)new Task(this).construct("User 5: Ordered Task 2", s5Name, "u5t2", false)), 0, 12)
+				// s5<-addTaskToList(taskList, "User 5: Ordered Task 2", username5, "u5t2", false, 0, 12)
 				{
-					Object _arguments[] = { taskList, ((Task)new Task(this).construct("User 5: Ordered Task 2", s5Name, "u5t2", false)), new Integer(0), new Integer(12) };
+					Object _arguments[] = { taskList, "User 5: Ordered Task 2", username5, "u5t2", false, new Integer(0), new Integer(12) };
 					Message message = new Message( self, s5, "addTaskToList", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s5<-updateTask(s5t1, "User 5: Ordered Update 1", 0, 12)
+				// s5<-updateTask(s5t1, "User 5: Ordered Task 3", "u5t1", 0, 12)
 				{
-					Object _arguments[] = { s5t1, "User 5: Ordered Update 1", new Integer(0), new Integer(12) };
+					Object _arguments[] = { s5t1, "User 5: Ordered Task 3", "u5t1", new Integer(0), new Integer(12) };
 					Message message = new Message( self, s5, "updateTask", _arguments, token_2_1, null );
 					__messages.add( message );
 				}
@@ -401,7 +396,7 @@ public class FIFOSimpleTodo extends UniversalActor  {
 			}
 		}
 		public void act(String args[]) {
-			if (args.length!=3) {{
+			if (args.length<11) {{
 				{
 					// standardOutput<-println("Usage: java -Duan=myuan todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5> <taskUAN6>")
 					{
@@ -415,7 +410,15 @@ public class FIFOSimpleTodo extends UniversalActor  {
 }			try {
 				User user1 = (User)User.getReferenceByName(args[0]);
 				User user2 = (User)User.getReferenceByName(args[1]);
-				TaskList taskList = (TaskList)TaskList.getReferenceByName(args[2]);
+				User user3 = (User)User.getReferenceByName(args[2]);
+				User user4 = (User)User.getReferenceByName(args[3]);
+				User user5 = (User)User.getReferenceByName(args[4]);
+				String username1 = args[5];
+				String username2 = args[6];
+				String username3 = args[7];
+				String username4 = args[8];
+				String username5 = args[9];
+				TaskList taskList = (TaskList)TaskList.getReferenceByName(args[10]);
 				Date first = new Date();
 				Timestamp start = new Timestamp(first.getTime());
 				{
@@ -430,9 +433,9 @@ public class FIFOSimpleTodo extends UniversalActor  {
 				{
 					Token token_3_0 = new Token();
 					Token token_3_1 = new Token();
-					// chatSession(user1, user2, taskList, taskid1, taskid2)
+					// chatSession(user1, user2, user3, user4, user5, username1, username2, username3, username4, username5, taskList)
 					{
-						Object _arguments[] = { user1, user2, taskList, taskid1, taskid2 };
+						Object _arguments[] = { user1, user2, user3, user4, user5, username1, username2, username3, username4, username5, taskList };
 						Message message = new Message( self, self, "chatSession", _arguments, null, token_3_0 );
 						__messages.add( message );
 					}

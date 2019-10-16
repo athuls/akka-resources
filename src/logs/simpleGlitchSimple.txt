@@ -1,6 +1,6 @@
-Starting time: 2019-10-12 19:07:34.388
-Time taken to run this in milliseconds: 274
-Ending time: 2019-10-12 19:07:34.821
+Starting time: 2019-10-15 14:57:34.863
+Time taken to run this in milliseconds: 445
+Ending time: 2019-10-15 14:57:35.804
 Done with chat conversation
 salsa.naming.MalformedUANException: Exception from inside salsa.language: Malformed UAN : uan://:3030\localhost:3030id6
 	at salsa.naming.UAN.<init>(UAN.java:32)

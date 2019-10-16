@@ -61,7 +61,7 @@ Is this ordered: Yes; overall runtime: 338; overall latency: 2332.2
 Is this ordered: Yes; overall runtime: 329; overall latency: 6378.8
 Is this ordered: Yes; overall runtime: 261; overall latency: 1734.0
 Is this ordered: Yes; overall runtime: 257; overall latency: 7400.4
-Is this ordered: Yes; overall runtime: 300; overall latency: 585.6
+Is this ordered: Yes; overall runtime: 300; overall latency: 6585.6
 Is this ordered: Yes; overall runtime: 269; overall latency: 6541.8
 Is this ordered: Yes; overall runtime: 307; overall latency: 6113.4
 Is this ordered: Yes; overall runtime: 407; overall latency: 6271.4
@@ -94,9 +94,9 @@ Is this ordered: Yes; overall runtime: 415; overall latency: 4116.8
 Is this ordered: Yes; overall runtime: 332; overall latency: 6554.8
 Is this ordered: Yes; overall runtime: 480; overall latency: 2298.6
 Is this ordered: Yes; overall runtime: 326; overall latency: 6256.0
-Is this ordered: Yes; overall runtime: 490; overall latency: 1224.8
+Is this ordered: Yes; overall runtime: 490; overall latency: 5224.8
 Is this ordered: Yes; overall runtime: 388; overall latency: 6110.0
-Is this ordered: Yes; overall runtime: 271; overall latency: 431.4
+Is this ordered: Yes; overall runtime: 271; overall latency: 6431.4
 Is this ordered: Yes; overall runtime: 572; overall latency: 6799.0
 Is this ordered: Yes; overall runtime: 333; overall latency: 6302.4
 Is this ordered: Yes; overall runtime: 245; overall latency: 6521.2

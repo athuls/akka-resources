@@ -7,29 +7,26 @@ import java.sql.Timestamp;
 
 behavior NoConsistencySimpleTodo
 {
-	void chatSession(User s1, User s2, User s3, User s4, User s5, TaskList taskList)
+	void chatSession(User s1, User s2, User s3, User s4, User s5, String username1,
+                                                String username2,String username3, String username4, String username5, TaskList taskList)
 	{
 		// these tasks are created in server..
-		String s1Name = s1.getUserName();
-		String s2Name = s2.getUserName();
-		String s3Name = s3.getUserName();
-		String s4Name = s4.getUserName();
-		String s5Name = s5.getUserName();
-		s1<-addTaskToList(taskList, new Task("User 1: Random Task 1", s1Name, "u1t1", false), 0, 12);
-		s1<-addTaskToList(taskList, new Task("User 1: Random Task 2", s1Name, "u1t2", false), 0, 12);
-		s1<-addTaskToList(taskList, new Task("User 1: Random Task 3", s1Name, "u1t3", false), 0, 12);
-		s2<-addTaskToList(taskList, new Task("User 2: Random Task 1", s2Name, "u2t1", false), 0, 12);
-		s2<-addTaskToList(taskList, new Task("User 2: Random Task 2", s2Name, "u2t2", false), 0, 12);
-		s2<-addTaskToList(taskList, new Task("User 2: Random Task 3", s2Name, "u2t3", false), 0, 12);
-		s3<-addTaskToList(taskList, new Task("User 3: Random Task 1", s3Name, "u3t1", false), 0, 12);
-		s3<-addTaskToList(taskList, new Task("User 3: Random Task 2", s3Name, "u3t2", false), 0, 12);
-		s3<-addTaskToList(taskList, new Task("User 3: Random Task 3", s3Name, "u3t3", false), 0, 12);
-		s4<-addTaskToList(taskList, new Task("User 4: Random Task 1", s4Name, "u4t1", false), 0, 12);
-		s4<-addTaskToList(taskList, new Task("User 4: Random Task 2", s4Name, "u4t2", false), 0, 12);
-		s4<-addTaskToList(taskList, new Task("User 4: Random Task 3", s4Name, "u4t3", false), 0, 12);
-		s5<-addTaskToList(taskList, new Task("User 5: Random Task 1", s5Name, "u5t1", false), 0, 12);
-		s5<-addTaskToList(taskList, new Task("User 5: Random Task 2", s5Name, "u5t2", false), 0, 12);
-		s5<-addTaskToList(taskList, new Task("User 5: Random Task 3", s5Name, "u5t3", false), 0, 12);
+
+		s1<-addTaskToList(taskList, "User 1: Random Task 1", username1, "u1t1", false, 0, 12);
+		s1<-addTaskToList(taskList, "User 1: Random Task 2", username1, "u1t2", false, 0, 12);
+		s1<-addTaskToList(taskList, "User 1: Random Task 3", username1, "u1t3", false, 0, 12);
+		s2<-addTaskToList(taskList, "User 2: Random Task 1", username2, "u2t1", false, 0, 12);
+		s2<-addTaskToList(taskList, "User 2: Random Task 2", username2, "u2t2", false, 0, 12);
+		s2<-addTaskToList(taskList, "User 2: Random Task 3", username2, "u2t3", false, 0, 12);
+		s3<-addTaskToList(taskList, "User 3: Random Task 1", username3, "u3t1", false, 0, 12);
+		s3<-addTaskToList(taskList, "User 3: Random Task 2", username3, "u3t2", false, 0, 12);
+		s3<-addTaskToList(taskList, "User 3: Random Task 3", username3, "u3t3", false, 0, 12);
+		s4<-addTaskToList(taskList, "User 4: Random Task 1", username4, "u4t1", false, 0, 12);
+		s4<-addTaskToList(taskList, "User 4: Random Task 2", username4, "u4t2", false, 0, 12);
+		s4<-addTaskToList(taskList, "User 4: Random Task 3", username4, "u4t3", false, 0, 12);
+		s5<-addTaskToList(taskList, "User 5: Random Task 1", username5, "u5t1", false, 0, 12);
+		s5<-addTaskToList(taskList, "User 5: Random Task 2", username5, "u5t2", false, 0, 12);
+		s5<-addTaskToList(taskList, "User 5: Random Task 3", username5, "u5t3", false, 0, 12);
 	}
 
 	void reply(String replyMsg)
@@ -39,7 +36,8 @@ behavior NoConsistencySimpleTodo
 
 	void act(String args[])
 	{
-		if(args.length != 3 )
+
+		if(args.length < 11 )
 		{
 			standardOutput<-println("Usage: java -Duan=myuan todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5> <taskUAN6>");
 			return;
@@ -48,8 +46,16 @@ behavior NoConsistencySimpleTodo
 		try 
 		{
 			User user1 =(User) User.getReferenceByName(args[0]);
-			User user2 =(User) User.getReferenceByName(args[1]);
-			TaskList taskList =(TaskList) TaskList.getReferenceByName(args[2]);
+                        			User user2 =(User) User.getReferenceByName(args[1]);
+                        			User user3 =(User) User.getReferenceByName(args[2]);
+                        			User user4 =(User) User.getReferenceByName(args[3]);
+                        			User user5 =(User) User.getReferenceByName(args[4]);
+                        			String username1 = args[5];
+                        			String username2 = args[6];
+                        			String username3 = args[7];
+                        			String username4 = args[8];
+                        			String username5 = args[9];
+                        			TaskList taskList =(TaskList) TaskList.getReferenceByName(args[10]);
 
 			// keep track of starting time here
 			Date first = new Date();
@@ -58,7 +64,8 @@ behavior NoConsistencySimpleTodo
 
 			// use this to calculate time elapsed
 			Instant begin = Instant.now();
-			chatSession(user1, user2, taskList,taskid1,taskid2) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
+			chatSession(user1, user2,user3, user4, user5,username1,
+                                    			 username2,username3,username4,username5,taskList) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
 		}
 		catch (Exception e)
 		{

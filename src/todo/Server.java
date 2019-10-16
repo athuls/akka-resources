@@ -194,17 +194,17 @@ public class Server extends UniversalActor  implements ActorService {
 			specifiedTasks = new ArrayList();
 			userIdUANMap = new HashMap();
 		}
-		public void broadcast(Task task, String creator, int number_of_updates, int total_initials, boolean isUpdate) {
+		public void broadcast(Task task, String taskName, String text, String creator, int number_of_updates, int total_initials, boolean isUpdate, boolean isFollowup) {
 			for (int i = 0; i<registeredUsers.size(); i++){
 				String userRefName = (String)registeredUsers.get(i);
-				if (!userRefName.equals(creatorName)) {{
+				if (!userRefName.equals(creator)) {{
 					User user = (User)userIdUANMap.get(userRefName);
 					if (user!=null) {{
 						User userRef = (User)User.getReferenceByName(user.getUAN());
 						{
-							// userRef<-broadcastReceive(task, isUpdate, total_initials, number_of_updates)
+							// userRef<-broadcastReceive(task, taskName, text, isUpdate, total_initials, number_of_updates, isFollowup)
 							{
-								Object _arguments[] = { task, isUpdate, total_initials, number_of_updates };
+								Object _arguments[] = { task, taskName, text, isUpdate, total_initials, number_of_updates, isFollowup };
 								Message message = new Message( self, userRef, "broadcastReceive", _arguments, null, null );
 								__messages.add( message );
 							}
@@ -226,27 +226,27 @@ public class Server extends UniversalActor  implements ActorService {
 			userIdUANMap.put(userId, user);
 			return true;
 		}
-		public boolean addTaskToList(TaskList taskList, Task task, String creator, int number_of_updates, int total_initials) {
+		public boolean addTaskToList(TaskList taskList, Task task, String taskName, String text, String creator, int number_of_updates, int total_initials, boolean isFollowup) {
 			TaskList taskListRef = (TaskList)TaskList.getReferenceByName(taskList.getUAN());
 			mainList = taskList;
 			{
 				Token token_2_0 = new Token();
-				// taskListRef<-addTask(creator, task, task.getTaskName(), task.getTaskText())
+				// taskListRef<-addTask(creator, task, taskName, text)
 				{
-					Object _arguments[] = { creator, task, task.getTaskName(), task.getTaskText() };
+					Object _arguments[] = { creator, task, taskName, text };
 					Message message = new Message( self, taskListRef, "addTask", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// broadcast(task, creator, number_of_updates, total_initials, false)
+				// broadcast(task, taskName, text, creator, number_of_updates, total_initials, false, isFollowup)
 				{
-					Object _arguments[] = { task, creator, number_of_updates, total_initials, false };
+					Object _arguments[] = { task, taskName, text, creator, number_of_updates, total_initials, false, isFollowup };
 					Message message = new Message( self, self, "broadcast", _arguments, token_2_0, null );
 					__messages.add( message );
 				}
 			}
 			return true;
 		}
-		public boolean updateTask(Task task, String creator, int number_of_updates, int total_initials) {
+		public boolean updateTask(Task task, String name, String text, String creator, int number_of_updates, int total_initials) {
 			{
 				// standardOutput<-println("before taskListRef.update")
 				{
@@ -259,9 +259,9 @@ public class Server extends UniversalActor  implements ActorService {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
-				// taskListRef<-updateTask(task.getTaskName(), task.getTaskText(), creator)
+				// taskListRef<-updateTask(name, text, creator)
 				{
-					Object _arguments[] = { task.getTaskName(), task.getTaskText(), creator };
+					Object _arguments[] = { name, text, creator };
 					Message message = new Message( self, taskListRef, "updateTask", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
@@ -271,9 +271,9 @@ public class Server extends UniversalActor  implements ActorService {
 					Message message = new Message( self, standardOutput, "println", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// broadcast(task, creator, number_of_updates, total_initials, true)
+				// broadcast(task, name, text, creator, number_of_updates, total_initials, true, false)
 				{
-					Object _arguments[] = { task, creator, number_of_updates, total_initials, true };
+					Object _arguments[] = { task, name, text, creator, number_of_updates, total_initials, true, false };
 					Message message = new Message( self, self, "broadcast", _arguments, token_2_1, null );
 					__messages.add( message );
 				}

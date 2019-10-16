@@ -12,11 +12,11 @@ java -cp .:./libs/kotlin-runtime-1.2.20-dev-331.jar:./libs/salsa1.1.5.jar -Duan=
 
 java -cp .:./libs/kotlin-runtime-1.2.20-dev-331.jar:./libs/salsa1.1.5.jar -Duan=uan:\\localhost:3030\id6 examples.chat.SpeakerKtKt uan:\\localhost:3030\id1 uan:\\localhost:3030\id6 > ./logs/speaker5SimpleGlitchSimple.txt 2>&1 &
 
-java -cp .:./libs/kotlin-runtime-1.2.20-dev-331.jar:./libs/salsa1.1.5.jar -Dnodie examples.chat.SimpleGlitchSimpleChat uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 uan:\\localhost:3030\id5 uan:\\localhost:3030\id6 > ./logs/simpleGlitchSimple.txt 2>&1 &
+java -cp .:./libs/kotlin-runtime-1.2.20-dev-331.jar:./libs/salsa1.1.5.jar -Dnodie examples.chat.CausalSimpleEndChat uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 uan:\\localhost:3030\id5 uan:\\localhost:3030\id6 > ./logs/simpleGlitchSimple.txt 2>&1 &
 
 sleep 30s
 
-python ParseSimpleGlitch.py >> logs/SimpleGlitchSimpleResults.txt
+python ParseSimpleGlitch.py >> logs/SimpleGlitchChatResults.txt
 
 ps -ef | grep WWCNamingServer | grep -v grep | awk '{print $2}' | xargs kill -9
 ps -ef | grep Chat | grep -v grep | awk '{print $2}' | xargs kill -9

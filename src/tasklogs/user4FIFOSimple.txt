@@ -1,0 +1,18 @@
+User started with uan: uan://:3030\localhost:3030id5
+Messaging server
+Finished registering
+[Speaker Local] Chinki: Add message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 1; Timestamp: 2019-10-15 17:21:55.22
+[Speaker Local] Chinki: Add message: Task name: u4t2Task type: Initial Task; Task text: User 4: Ordered Task 2; Timestamp: 2019-10-15 17:21:55.671
+[Speaker Local] Chinki: Upd message: Task name: u4t1Task type: Initial task; Task text: User 4: Ordered Task 3; Timestamp: 2019-10-15 17:21:55.679
+[Speaker Remote] Chinki: Add Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 1; Timestamp: 2019-10-15 17:21:56.173
+[Speaker Remote] Chinki: Add Message: Task name: u2t2Task type: Initial Task; Task text: User 2: Ordered Task 2; Timestamp: 2019-10-15 17:21:56.376
+[Speaker Remote] Chinki: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 1; Timestamp: 2019-10-15 17:21:56.578
+[Speaker Remote] Chinki: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Ordered Task 2; Timestamp: 2019-10-15 17:21:56.779
+[Speaker Remote] Chinki: Add Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 1; Timestamp: 2019-10-15 17:21:56.98
+[Speaker Remote] Chinki: Add Message: Task name: u3t2Task type: Initial Task; Task text: User 3: Ordered Task 2; Timestamp: 2019-10-15 17:21:57.181
+[Speaker Remote] Chinki: Upd Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 3; Timestamp: 2019-10-15 17:21:57.382
+[Speaker Remote] Chinki: Upd Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 3; Timestamp: 2019-10-15 17:21:57.584
+[Speaker Remote] Chinki: Upd Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 3; Timestamp: 2019-10-15 17:21:57.786
+[Speaker Remote] Chinki: Add Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 1; Timestamp: 2019-10-15 17:21:57.987
+[Speaker Remote] Chinki: Add Message: Task name: u5t2Task type: Initial Task; Task text: User 5: Ordered Task 2; Timestamp: 2019-10-15 17:21:58.188
+[Speaker Remote] Chinki: Upd Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 3; Timestamp: 2019-10-15 17:21:58.392

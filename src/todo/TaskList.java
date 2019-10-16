@@ -250,8 +250,7 @@ public class TaskList extends UniversalActor  implements ActorService {
 					__messages.add( message );
 				}
 			}
-			Task taskRef = (Task)Task.getReferenceByName(task.getUAN());
-			tasks.add(taskRef);
+			tasks.add(task);
 			taskids.put(taskId, text);
 			userIdTaskIdMap.put(taskId, user);
 			{
@@ -325,17 +324,10 @@ public class TaskList extends UniversalActor  implements ActorService {
 						__messages.add( message );
 					}
 				}
-				Task taskRef = (Task)Task.getReferenceByName(((Task)tasks.get(i)).getUAN());
+				Task taskRef = (Task)tasks.get(i);
 				if ((currentTaskId).equals(taskId)) {{
 					if (taskCreator.equals(creator)) {{
-						{
-							// taskRef<-update(currentTaskId, text)
-							{
-								Object _arguments[] = { currentTaskId, text };
-								Message message = new Message( self, taskRef, "update", _arguments, null, null );
-								__messages.add( message );
-							}
-						}
+						taskRef.updateTask(text);
 						update = true;
 					}
 }				}

@@ -24,18 +24,19 @@ behavior Server implements ActorService
 		userIdUANMap = new HashMap();
 	}
 
-	void broadcast(Task task, String creator, int number_of_updates, int total_initials, boolean isUpdate)
+    // broadcast( todo.Task java.lang.String java.lang.String java.lang.String int int boolean )
+	void broadcast(Task task, String taskName,String text,String creator, int number_of_updates, int total_initials, boolean isUpdate, boolean isFollowup)
 	{
 		for(int i = 0; i < registeredUsers.size(); i++) 
 		{
 			String userRefName = (String)registeredUsers.get(i);
-			if(!userRefName.equals(creatorName))
+			if(!userRefName.equals(creator))
 			{
 				User user = (User) userIdUANMap.get(userRefName);
 				if(user != null)
 				{
                		User userRef = (User) User.getReferenceByName( user.getUAN());
-                	userRef<-broadcastReceive(task, isUpdate, total_initials, number_of_updates);
+                	userRef<-broadcastReceive(task, taskName, text, isUpdate, total_initials, number_of_updates,isFollowup);
             	}
 			}
 	 	}
@@ -50,22 +51,23 @@ behavior Server implements ActorService
 		return true;
 	}
 
-    boolean addTaskToList(TaskList taskList, Task task, String creator, int number_of_updates, int total_initials)
+    boolean addTaskToList(TaskList taskList, Task task,String taskName,String text, String creator, int number_of_updates, int total_initials, boolean isFollowup)
 	{        
         TaskList taskListRef = (TaskList) TaskList.getReferenceByName(taskList.getUAN());
 		mainList = taskList;
-        taskListRef<-addTask(creator, task, task.getTaskName(), task.getTaskText()) @
-		broadcast(task, creator, number_of_updates, total_initials, false);
+        taskListRef<-addTask(creator, task, taskName, text) @
+		broadcast(task,taskName,text, creator, number_of_updates, total_initials, false, isFollowup);
         return true;
     }
 
-    boolean updateTask(Task task, String creator, int number_of_updates, int total_initials)
+    boolean updateTask(Task task,String name,String text, String creator, int number_of_updates, int total_initials)
 	{
         standardOutput<-println("before taskListRef.update");
         TaskList taskListRef = (TaskList) TaskList.getReferenceByName((mainList).getUAN());
-        taskListRef<-updateTask(task.getTaskName(), task.getTaskText(), creator) @
+        taskListRef<-updateTask(name, text, creator) @
         standardOutput<-println("after taskListRef.update") @
-	    broadcast(task, creator, number_of_updates, total_initials, true);
+        // Task task, String taskName,String text,String creator, int number_of_updates, int total_initials, boolean isUpdate
+	    broadcast(task, name,text,creator, number_of_updates, total_initials, true, false);
         return true;
 	}
 

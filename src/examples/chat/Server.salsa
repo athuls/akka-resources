@@ -26,7 +26,7 @@ behavior Server implements ActorService
 			if(!registeredUsers.get(i).equals(speakerName)) 
 			{
 				Speaker speakerRef = (Speaker) Speaker.getReferenceByName((String)registeredUsers.get(i));
-				speakerRef<-broadcastReceive(speakerName, msg, number_of_questions, total_messages);
+				speakerRef<-broadcastReceiveAdvanced(speakerName, msg, number_of_questions, total_messages);
 			}
 		}	
   	}

@@ -1,0 +1,6 @@
+User started with uan: uan://:3030\localhost:3030id2
+Messaging server
+Finished registering
+[Speaker Local] Jason: Initial add request Task name: u1t1Task type: Follow Up Task; Task text: User 1: Initial Task 1; Timestamp: 2019-10-15 15:20:25.407
+[Speaker Local] Jason: Initial add request Task name: u1t2Task type: Follow Up Task; Task text: User 1: Initial Task 2; Timestamp: 2019-10-15 15:20:25.65
+[Speaker Local] Jason: Initial add request Task name: u1t3Task type: Follow Up Task; Task text: User 1: Initial Task 3; Timestamp: 2019-10-15 15:20:25.655

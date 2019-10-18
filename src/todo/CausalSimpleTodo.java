@@ -272,22 +272,29 @@ public class CausalSimpleTodo extends UniversalActor  {
 			{
 				Token token_2_0 = new Token();
 				Token token_2_1 = new Token();
+				Token token_2_2 = new Token();
+				// s1<-setIsLeader()
+				{
+					Object _arguments[] = {  };
+					Message message = new Message( self, s1, "setIsLeader", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
 				// s1<-addTaskToList(taskList, "User 1: Initial Task 1", username1, "u1t1", false, 3, 12)
 				{
 					Object _arguments[] = { taskList, "User 1: Initial Task 1", username1, "u1t1", false, new Integer(3), new Integer(12) };
-					Message message = new Message( self, s1, "addTaskToList", _arguments, null, token_2_0 );
+					Message message = new Message( self, s1, "addTaskToList", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
 				// s1<-addTaskToList(taskList, "User 1: Initial Task 2", username1, "u1t2", false, 3, 12)
 				{
 					Object _arguments[] = { taskList, "User 1: Initial Task 2", username1, "u1t2", false, new Integer(3), new Integer(12) };
-					Message message = new Message( self, s1, "addTaskToList", _arguments, token_2_0, token_2_1 );
+					Message message = new Message( self, s1, "addTaskToList", _arguments, token_2_1, token_2_2 );
 					__messages.add( message );
 				}
 				// s1<-addTaskToList(taskList, "User 1: Initial Task 3", username1, "u1t3", false, 3, 12)
 				{
 					Object _arguments[] = { taskList, "User 1: Initial Task 3", username1, "u1t3", false, new Integer(3), new Integer(12) };
-					Message message = new Message( self, s1, "addTaskToList", _arguments, token_2_1, null );
+					Message message = new Message( self, s1, "addTaskToList", _arguments, token_2_2, null );
 					__messages.add( message );
 				}
 			}

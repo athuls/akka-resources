@@ -11,7 +11,7 @@ behavior CausalSimpleTodo
       String username2,String username3, String username4, String username5, TaskList taskList)
 	{
 		// these tasks are created in server..
-
+		s1<-setIsLeader() @
 		s1<-addTaskToList(taskList, "User 1: Initial Task 1", username1, "u1t1", false, 3, 12) @
 		s1<-addTaskToList(taskList, "User 1: Initial Task 2", username1, "u1t2", false, 3, 12) @
 		s1<-addTaskToList(taskList, "User 1: Initial Task 3", username1, "u1t3", false, 3, 12);
@@ -63,8 +63,7 @@ behavior CausalSimpleTodo
 
 			// use this to calculate time elapsed
 			Instant begin = Instant.now();
-			chatSession(user1, user2,user3, user4, user5,username1,
-			 username2,username3,username4,username5,taskList) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
+			chatSession(user1, user2,user3, user4, user5,username1,username2,username3,username4,username5,taskList) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
 		}
 		catch (Exception e)
 		{

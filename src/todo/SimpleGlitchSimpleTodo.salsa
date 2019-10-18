@@ -8,9 +8,10 @@ import java.sql.Timestamp;
 behavior SimpleGlitchSimpleTodo
 {
 	void chatSession(User s1, User s2, User s3, User s4, User s5, String username1,
-                                                                     String username2,String username3, String username4, String username5, TaskList taskList)
+      String username2,String username3, String username4, String username5, TaskList taskList)
 	{
 		// these tasks are created in server..
+		s1<-setIsLeader() @
 		s1<-addTaskToList(taskList, "User 1: Initial Poll 1", username1, "u1t1", false, 3, 12) @
 		s1<-addTaskToList(taskList, "User 1: Initial Poll 2", username1, "u1t2", false, 3, 12) @
 		s1<-addTaskToList(taskList, "User 1: Initial Poll 3", username1, "u1t3", false, 3, 12);
@@ -44,16 +45,16 @@ behavior SimpleGlitchSimpleTodo
 		try 
 		{
 			User user1 =(User) User.getReferenceByName(args[0]);
-                                    			User user2 =(User) User.getReferenceByName(args[1]);
-                                    			User user3 =(User) User.getReferenceByName(args[2]);
-                                    			User user4 =(User) User.getReferenceByName(args[3]);
-                                    			User user5 =(User) User.getReferenceByName(args[4]);
-                                    			String username1 = args[5];
-                                    			String username2 = args[6];
-                                    			String username3 = args[7];
-                                    			String username4 = args[8];
-                                    			String username5 = args[9];
-                                    			TaskList taskList =(TaskList) TaskList.getReferenceByName(args[10]);
+            User user2 =(User) User.getReferenceByName(args[1]);
+            User user3 =(User) User.getReferenceByName(args[2]);
+            User user4 =(User) User.getReferenceByName(args[3]);
+            User user5 =(User) User.getReferenceByName(args[4]);
+            String username1 = args[5];
+            String username2 = args[6];
+            String username3 = args[7];
+            String username4 = args[8];
+            String username5 = args[9];
+            TaskList taskList =(TaskList) TaskList.getReferenceByName(args[10]);
 
 			// keep track of starting time here
 			Date first = new Date();
@@ -62,8 +63,7 @@ behavior SimpleGlitchSimpleTodo
 
 			// use this to calculate time elapsed
 			Instant begin = Instant.now();
-			chatSession(user1, user2,user3, user4, user5,username1,
-                                    			 username2,username3,username4,username5,taskList) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
+			chatSession(user1, user2,user3, user4, user5,username1,username2,username3,username4,username5,taskList) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
 		}
 		catch (Exception e)
 		{

@@ -260,8 +260,8 @@ break;					}
 									Task currentTask = (Task)waitQueue.remove();
 									tasks.add(currentTask);
 									String follow_up_two = "";
-									if (currentTask.getFollowtype()) {follow_up_two = "Initial Task";
-}									else {follow_up_two = "Follow Up Task";
+									if (currentTask.getFollowtype()) {follow_up_two = "Follow Up Task";
+}									else {follow_up_two = "Initial Task";
 }									Thread.sleep(200);
 									Date date = new Date();
 									Timestamp current = new Timestamp(date.getTime());
@@ -312,7 +312,29 @@ break;					}
 								__messages.add( message );
 							}
 						}
-					}
+						if (initialList.size()==number_of_initials||isLeader) {{
+							if (waitQueue.size()>0) {{
+								while (waitQueue.size()>0) {
+									Task currentTask = (Task)waitQueue.remove();
+									tasks.add(currentTask);
+									String follow_up_two = "";
+									if (currentTask.getFollowtype()) {follow_up_two = "Follow Up Task";
+}									else {follow_up_two = "Initial Task";
+}									Thread.sleep(200);
+									Date date_two = new Date();
+									Timestamp current_two = new Timestamp(date_two.getTime());
+									{
+										// standardOutput<-println("[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+currentTask.getTaskName()+"Task type: "+follow_up_two+"; Task text: "+currentTask.getTaskText()+"; Timestamp: "+current_two)
+										{
+											Object _arguments[] = { "[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+currentTask.getTaskName()+"Task type: "+follow_up_two+"; Task text: "+currentTask.getTaskText()+"; Timestamp: "+current_two };
+											Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+											__messages.add( message );
+										}
+									}
+								}
+							}
+}						}
+}					}
 }				}
 }			}
 }		}
@@ -338,8 +360,46 @@ break;					}
 }				else {{
 					initialList.add(task);
 					messageQueue.add(task);
-				}
+					if (initialList.size()==number_of_initials||isLeader) {{
+						if (waitQueue.size()>0) {{
+							while (waitQueue.size()>0) {
+								Task currentTask = (Task)waitQueue.remove();
+								messageQueue.add(currentTask);
+							}
+						}
+}					}
+}				}
 }			}
+}			if (messageQueue.size()==total_updates) {{
+				while (messageQueue.size()>0) {
+					tasks.add(messageQueue.remove());
+					Thread.sleep(200);
+				}
+				Date date = new Date();
+				Timestamp current = new Timestamp(date.getTime());
+				{
+					// standardOutput<-println("Overall Timestamp: "+current)
+					{
+						Object _arguments[] = { "Overall Timestamp: "+current };
+						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+				for (int i = 0; i<tasks.size(); i++){
+					String follow_up = "";
+					Task currentTask = (Task)tasks.get(i);
+					if (currentTask.getFollowtype()) {follow_up = "Follow Up Task";
+}					else {follow_up = "Initial Task";
+}					{
+						// standardOutput<-println("Task type: "+follow_up+"; Task text: "+currentTask.getTaskText())
+						{
+							Object _arguments[] = { "Task type: "+follow_up+"; Task text: "+currentTask.getTaskText() };
+							Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+							__messages.add( message );
+						}
+					}
+				}
+			}
 }		}
 		public String getUserName() {
 			return myName;

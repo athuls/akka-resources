@@ -1,18 +1,18 @@
 User started with uan: uan://:3030\localhost:3030id3
 Messaging server
 Finished registering
-[Speaker Local] Mason: Add message: Task name: u2t1Task type: Follow Up Task; Task text: User 2: Follow Task 1; Timestamp: 2019-10-17 05:38:11.783
-[Speaker Local] Mason: Add message: Task name: u2t2Task type: Follow Up Task; Task text: User 2: Follow Task 2; Timestamp: 2019-10-17 05:38:12.21
-[Speaker Local] Mason: Add message: Task name: u2t3Task type: Follow Up Task; Task text: User 2: Follow Task 3; Timestamp: 2019-10-17 05:38:12.216
-[Speaker Remote] Mason: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Initial Task 1; Timestamp: 2019-10-17 05:38:12.721
-[Speaker Remote] Mason: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Initial Task 2; Timestamp: 2019-10-17 05:38:12.922
-[Speaker Remote] Mason: Add Message: Task name: u1t3Task type: Initial Task; Task text: User 1: Initial Task 3; Timestamp: 2019-10-17 05:38:13.123
-[Speaker Remote] Mason: Add Message: Task name: u3t1Task type: Follow Up Task; Task text: User 3: Follow Task 1; Timestamp: 2019-10-17 05:38:13.325
-[Speaker Remote] Mason: Add Message: Task name: u4t1Task type: Follow Up Task; Task text: User 4: Follow Task 1; Timestamp: 2019-10-17 05:38:13.564
-[Speaker Remote] Mason: Add Message: Task name: u4t2Task type: Follow Up Task; Task text: User 4: Follow Task 2; Timestamp: 2019-10-17 05:38:13.765
-[Speaker Remote] Mason: Add Message: Task name: u4t3Task type: Follow Up Task; Task text: User 4: Follow Task 3; Timestamp: 2019-10-17 05:38:13.966
-[Speaker Remote] Mason: Add Message: Task name: u5t1Task type: Follow Up Task; Task text: User 5: Follow Task 1; Timestamp: 2019-10-17 05:38:14.168
-[Speaker Remote] Mason: Add Message: Task name: u3t2Task type: Follow Up Task; Task text: User 3: Follow Task 2; Timestamp: 2019-10-17 05:38:14.37
-[Speaker Remote] Mason: Add Message: Task name: u5t2Task type: Follow Up Task; Task text: User 5: Follow Task 2; Timestamp: 2019-10-17 05:38:14.58
-[Speaker Remote] Mason: Add Message: Task name: u3t3Task type: Follow Up Task; Task text: User 3: Follow Task 3; Timestamp: 2019-10-17 05:38:15.037
-[Speaker Remote] Mason: Add Message: Task name: u5t3Task type: Follow Up Task; Task text: User 5: Follow Task 3; Timestamp: 2019-10-17 05:38:15.638
+[Speaker Local] Mason: Add message: Task name: u2t1Task type: Follow Up Task; Task text: User 2: Follow Task 1; Timestamp: 2019-10-19 16:05:50.598
+[Speaker Local] Mason: Add message: Task name: u2t2Task type: Follow Up Task; Task text: User 2: Follow Task 2; Timestamp: 2019-10-19 16:05:50.869
+[Speaker Local] Mason: Add message: Task name: u2t3Task type: Follow Up Task; Task text: User 2: Follow Task 3; Timestamp: 2019-10-19 16:05:50.874
+[Speaker Remote] Mason: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Initial Task 1; Timestamp: 2019-10-19 16:05:51.368
+[Speaker Remote] Mason: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Initial Task 2; Timestamp: 2019-10-19 16:05:51.569
+[Speaker Remote] Mason: Add Message: Task name: u1t3Task type: Initial Task; Task text: User 1: Initial Task 3; Timestamp: 2019-10-19 16:05:51.77
+[Speaker Remote] Mason: Add Message: Task name: u4t1Task type: Follow Up Task; Task text: User 4: Follow Task 1; Timestamp: 2019-10-19 16:05:51.971
+[Speaker Remote] Mason: Add Message: Task name: u4t2Task type: Follow Up Task; Task text: User 4: Follow Task 2; Timestamp: 2019-10-19 16:05:52.172
+[Speaker Remote] Mason: Add Message: Task name: u4t3Task type: Follow Up Task; Task text: User 4: Follow Task 3; Timestamp: 2019-10-19 16:05:52.373
+[Speaker Remote] Mason: Add Message: Task name: u3t1Task type: Follow Up Task; Task text: User 3: Follow Task 1; Timestamp: 2019-10-19 16:05:52.574
+[Speaker Remote] Mason: Add Message: Task name: u3t2Task type: Follow Up Task; Task text: User 3: Follow Task 2; Timestamp: 2019-10-19 16:05:52.775
+[Speaker Remote] Mason: Add Message: Task name: u3t3Task type: Follow Up Task; Task text: User 3: Follow Task 3; Timestamp: 2019-10-19 16:05:52.976
+[Speaker Remote] Mason: Add Message: Task name: u5t1Task type: Follow Up Task; Task text: User 5: Follow Task 1; Timestamp: 2019-10-19 16:05:53.178
+[Speaker Remote] Mason: Add Message: Task name: u5t2Task type: Follow Up Task; Task text: User 5: Follow Task 2; Timestamp: 2019-10-19 16:05:53.379
+[Speaker Remote] Mason: Add Message: Task name: u5t3Task type: Follow Up Task; Task text: User 5: Follow Task 3; Timestamp: 2019-10-19 16:05:53.58

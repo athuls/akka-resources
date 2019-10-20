@@ -1,6 +1,6 @@
 Server started
-Registering User Chinkiuser <todo.User:uan://:3030\localhost:3030id5, rmsp://127.0.1.1:60016/UAL/1571290688290/1> 
-Registering User Masonuser <todo.User:uan://:3030\localhost:3030id3, rmsp://127.0.1.1:60019/UAL/1571290688363/1> 
-Registering User Jasonuser <todo.User:uan://:3030\localhost:3030id2, rmsp://127.0.1.1:60017/UAL/1571290688326/1> 
-Registering User Danuser <todo.User:uan://:3030\localhost:3030id4, rmsp://127.0.1.1:60020/UAL/1571290688479/1> 
-Registering User pinkuuser <todo.User:uan://:3030\localhost:3030id6, rmsp://127.0.1.1:60027/UAL/1571290688626/1> 
+Registering User Jasonuser <todo.User:uan://:3030\localhost:3030id2, rmsp://127.0.1.1:50771/UAL/1571501149303/1> 
+Registering User pinkuuser <todo.User:uan://:3030\localhost:3030id6, rmsp://127.0.1.1:50775/UAL/1571501149439/1> 
+Registering User Masonuser <todo.User:uan://:3030\localhost:3030id3, rmsp://127.0.1.1:50772/UAL/1571501149303/1> 
+Registering User Chinkiuser <todo.User:uan://:3030\localhost:3030id5, rmsp://127.0.1.1:50779/UAL/1571501149462/1> 
+Registering User Danuser <todo.User:uan://:3030\localhost:3030id4, rmsp://127.0.1.1:50774/UAL/1571501149422/1> 

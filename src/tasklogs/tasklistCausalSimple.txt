@@ -1,50 +1,75 @@
 TaskList started with uan: uan://:3030\localhost:3030id7
  calling inside taskToList.addTask
 Jason
-todo.Task@371adbca
+todo.Task@90aab6f
 after addTask
  ==== printing taskids in tasklist
 taskId :u1t1 : text  User 1: Initial Task 1
  calling inside taskToList.addTask
-Jason
-todo.Task@39dd2359
+Chinki
+todo.Task@7cd443e
 after addTask
  ==== printing taskids in tasklist
+taskId :u4t1 : text  User 4: Follow Task 1
+taskId :u1t1 : text  User 1: Initial Task 1
+ calling inside taskToList.addTask
+Chinki
+todo.Task@26dfb14a
+after addTask
+ ==== printing taskids in tasklist
+taskId :u4t1 : text  User 4: Follow Task 1
+taskId :u4t2 : text  User 4: Follow Task 2
+taskId :u1t1 : text  User 1: Initial Task 1
+ calling inside taskToList.addTask
+Jason
+todo.Task@52f5070a
+after addTask
+ ==== printing taskids in tasklist
+taskId :u4t1 : text  User 4: Follow Task 1
+taskId :u4t2 : text  User 4: Follow Task 2
+taskId :u1t1 : text  User 1: Initial Task 1
+taskId :u1t2 : text  User 1: Initial Task 2
+ calling inside taskToList.addTask
+Chinki
+todo.Task@41670369
+after addTask
+ ==== printing taskids in tasklist
+taskId :u4t3 : text  User 4: Follow Task 3
+taskId :u4t1 : text  User 4: Follow Task 1
+taskId :u4t2 : text  User 4: Follow Task 2
 taskId :u1t1 : text  User 1: Initial Task 1
 taskId :u1t2 : text  User 1: Initial Task 2
  calling inside taskToList.addTask
 Jason
-todo.Task@18cfd62d
+todo.Task@799fd0b4
 after addTask
  ==== printing taskids in tasklist
+taskId :u4t3 : text  User 4: Follow Task 3
+taskId :u4t1 : text  User 4: Follow Task 1
+taskId :u4t2 : text  User 4: Follow Task 2
 taskId :u1t1 : text  User 1: Initial Task 1
 taskId :u1t3 : text  User 1: Initial Task 3
 taskId :u1t2 : text  User 1: Initial Task 2
  calling inside taskToList.addTask
 Mason
-todo.Task@2af1588a
+todo.Task@22916b2c
 after addTask
  ==== printing taskids in tasklist
+taskId :u4t3 : text  User 4: Follow Task 3
+taskId :u4t1 : text  User 4: Follow Task 1
+taskId :u4t2 : text  User 4: Follow Task 2
 taskId :u1t1 : text  User 1: Initial Task 1
 taskId :u1t3 : text  User 1: Initial Task 3
 taskId :u1t2 : text  User 1: Initial Task 2
 taskId :u2t1 : text  User 2: Follow Task 1
  calling inside taskToList.addTask
 Mason
-todo.Task@71cd449f
+todo.Task@5826f523
 after addTask
  ==== printing taskids in tasklist
-taskId :u1t1 : text  User 1: Initial Task 1
-taskId :u1t3 : text  User 1: Initial Task 3
-taskId :u2t2 : text  User 2: Follow Task 2
-taskId :u1t2 : text  User 1: Initial Task 2
-taskId :u2t1 : text  User 2: Follow Task 1
- calling inside taskToList.addTask
-Mason
-todo.Task@7a997593
-after addTask
- ==== printing taskids in tasklist
-taskId :u2t3 : text  User 2: Follow Task 3
+taskId :u4t3 : text  User 4: Follow Task 3
+taskId :u4t1 : text  User 4: Follow Task 1
+taskId :u4t2 : text  User 4: Follow Task 2
 taskId :u1t1 : text  User 1: Initial Task 1
 taskId :u1t3 : text  User 1: Initial Task 3
 taskId :u2t2 : text  User 2: Follow Task 2
@@ -52,23 +77,12 @@ taskId :u1t2 : text  User 1: Initial Task 2
 taskId :u2t1 : text  User 2: Follow Task 1
  calling inside taskToList.addTask
 Dan
-todo.Task@1c81aa53
+todo.Task@21a3c905
 after addTask
  ==== printing taskids in tasklist
-taskId :u2t3 : text  User 2: Follow Task 3
-taskId :u1t1 : text  User 1: Initial Task 1
-taskId :u1t3 : text  User 1: Initial Task 3
-taskId :u2t2 : text  User 2: Follow Task 2
-taskId :u3t1 : text  User 3: Follow Task 1
-taskId :u1t2 : text  User 1: Initial Task 2
-taskId :u2t1 : text  User 2: Follow Task 1
- calling inside taskToList.addTask
-Chinki
-todo.Task@3c148441
-after addTask
- ==== printing taskids in tasklist
-taskId :u2t3 : text  User 2: Follow Task 3
+taskId :u4t3 : text  User 4: Follow Task 3
 taskId :u4t1 : text  User 4: Follow Task 1
+taskId :u4t2 : text  User 4: Follow Task 2
 taskId :u1t1 : text  User 1: Initial Task 1
 taskId :u1t3 : text  User 1: Initial Task 3
 taskId :u2t2 : text  User 2: Follow Task 2
@@ -76,10 +90,11 @@ taskId :u3t1 : text  User 3: Follow Task 1
 taskId :u1t2 : text  User 1: Initial Task 2
 taskId :u2t1 : text  User 2: Follow Task 1
  calling inside taskToList.addTask
-Chinki
-todo.Task@2766d6e0
+Mason
+todo.Task@263eb7f5
 after addTask
  ==== printing taskids in tasklist
+taskId :u4t3 : text  User 4: Follow Task 3
 taskId :u2t3 : text  User 2: Follow Task 3
 taskId :u4t1 : text  User 4: Follow Task 1
 taskId :u4t2 : text  User 4: Follow Task 2
@@ -90,12 +105,30 @@ taskId :u3t1 : text  User 3: Follow Task 1
 taskId :u1t2 : text  User 1: Initial Task 2
 taskId :u2t1 : text  User 2: Follow Task 1
  calling inside taskToList.addTask
-Chinki
-todo.Task@16621a72
+Dan
+todo.Task@f5f7015
 after addTask
  ==== printing taskids in tasklist
 taskId :u4t3 : text  User 4: Follow Task 3
 taskId :u2t3 : text  User 2: Follow Task 3
+taskId :u3t2 : text  User 3: Follow Task 2
+taskId :u4t1 : text  User 4: Follow Task 1
+taskId :u4t2 : text  User 4: Follow Task 2
+taskId :u1t1 : text  User 1: Initial Task 1
+taskId :u1t3 : text  User 1: Initial Task 3
+taskId :u2t2 : text  User 2: Follow Task 2
+taskId :u3t1 : text  User 3: Follow Task 1
+taskId :u1t2 : text  User 1: Initial Task 2
+taskId :u2t1 : text  User 2: Follow Task 1
+ calling inside taskToList.addTask
+Dan
+todo.Task@60bf0330
+after addTask
+ ==== printing taskids in tasklist
+taskId :u4t3 : text  User 4: Follow Task 3
+taskId :u3t3 : text  User 3: Follow Task 3
+taskId :u2t3 : text  User 2: Follow Task 3
+taskId :u3t2 : text  User 3: Follow Task 2
 taskId :u4t1 : text  User 4: Follow Task 1
 taskId :u4t2 : text  User 4: Follow Task 2
 taskId :u1t1 : text  User 1: Initial Task 1
@@ -106,62 +139,10 @@ taskId :u1t2 : text  User 1: Initial Task 2
 taskId :u2t1 : text  User 2: Follow Task 1
  calling inside taskToList.addTask
 pinku
-todo.Task@720e9df
+todo.Task@5feb15c3
 after addTask
  ==== printing taskids in tasklist
 taskId :u4t3 : text  User 4: Follow Task 3
-taskId :u2t3 : text  User 2: Follow Task 3
-taskId :u4t1 : text  User 4: Follow Task 1
-taskId :u4t2 : text  User 4: Follow Task 2
-taskId :u5t1 : text  User 5: Follow Task 1
-taskId :u1t1 : text  User 1: Initial Task 1
-taskId :u1t3 : text  User 1: Initial Task 3
-taskId :u2t2 : text  User 2: Follow Task 2
-taskId :u3t1 : text  User 3: Follow Task 1
-taskId :u1t2 : text  User 1: Initial Task 2
-taskId :u2t1 : text  User 2: Follow Task 1
- calling inside taskToList.addTask
-Dan
-todo.Task@1f8e53f6
-after addTask
- ==== printing taskids in tasklist
-taskId :u4t3 : text  User 4: Follow Task 3
-taskId :u2t3 : text  User 2: Follow Task 3
-taskId :u3t2 : text  User 3: Follow Task 2
-taskId :u4t1 : text  User 4: Follow Task 1
-taskId :u4t2 : text  User 4: Follow Task 2
-taskId :u5t1 : text  User 5: Follow Task 1
-taskId :u1t1 : text  User 1: Initial Task 1
-taskId :u1t3 : text  User 1: Initial Task 3
-taskId :u2t2 : text  User 2: Follow Task 2
-taskId :u3t1 : text  User 3: Follow Task 1
-taskId :u1t2 : text  User 1: Initial Task 2
-taskId :u2t1 : text  User 2: Follow Task 1
- calling inside taskToList.addTask
-pinku
-todo.Task@ece4731
-after addTask
- ==== printing taskids in tasklist
-taskId :u4t3 : text  User 4: Follow Task 3
-taskId :u5t2 : text  User 5: Follow Task 2
-taskId :u2t3 : text  User 2: Follow Task 3
-taskId :u3t2 : text  User 3: Follow Task 2
-taskId :u4t1 : text  User 4: Follow Task 1
-taskId :u4t2 : text  User 4: Follow Task 2
-taskId :u5t1 : text  User 5: Follow Task 1
-taskId :u1t1 : text  User 1: Initial Task 1
-taskId :u1t3 : text  User 1: Initial Task 3
-taskId :u2t2 : text  User 2: Follow Task 2
-taskId :u3t1 : text  User 3: Follow Task 1
-taskId :u1t2 : text  User 1: Initial Task 2
-taskId :u2t1 : text  User 2: Follow Task 1
- calling inside taskToList.addTask
-Dan
-todo.Task@8f97d10
-after addTask
- ==== printing taskids in tasklist
-taskId :u4t3 : text  User 4: Follow Task 3
-taskId :u5t2 : text  User 5: Follow Task 2
 taskId :u3t3 : text  User 3: Follow Task 3
 taskId :u2t3 : text  User 2: Follow Task 3
 taskId :u3t2 : text  User 3: Follow Task 2
@@ -176,12 +157,31 @@ taskId :u1t2 : text  User 1: Initial Task 2
 taskId :u2t1 : text  User 2: Follow Task 1
  calling inside taskToList.addTask
 pinku
-todo.Task@89713c1
+todo.Task@cb980d4
 after addTask
  ==== printing taskids in tasklist
 taskId :u4t3 : text  User 4: Follow Task 3
-taskId :u5t2 : text  User 5: Follow Task 2
 taskId :u3t3 : text  User 3: Follow Task 3
+taskId :u5t2 : text  User 5: Follow Task 2
+taskId :u2t3 : text  User 2: Follow Task 3
+taskId :u3t2 : text  User 3: Follow Task 2
+taskId :u4t1 : text  User 4: Follow Task 1
+taskId :u4t2 : text  User 4: Follow Task 2
+taskId :u5t1 : text  User 5: Follow Task 1
+taskId :u1t1 : text  User 1: Initial Task 1
+taskId :u1t3 : text  User 1: Initial Task 3
+taskId :u2t2 : text  User 2: Follow Task 2
+taskId :u3t1 : text  User 3: Follow Task 1
+taskId :u1t2 : text  User 1: Initial Task 2
+taskId :u2t1 : text  User 2: Follow Task 1
+ calling inside taskToList.addTask
+pinku
+todo.Task@7812968e
+after addTask
+ ==== printing taskids in tasklist
+taskId :u4t3 : text  User 4: Follow Task 3
+taskId :u3t3 : text  User 3: Follow Task 3
+taskId :u5t2 : text  User 5: Follow Task 2
 taskId :u2t3 : text  User 2: Follow Task 3
 taskId :u3t2 : text  User 3: Follow Task 2
 taskId :u5t3 : text  User 5: Follow Task 3

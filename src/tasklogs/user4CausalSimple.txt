@@ -1,18 +1,18 @@
 User started with uan: uan://:3030\localhost:3030id5
 Messaging server
 Finished registering
-[Speaker Local] Chinki: Add message: Task name: u4t1Task type: Follow Up Task; Task text: User 4: Follow Task 1; Timestamp: 2019-10-17 05:38:11.932
-[Speaker Local] Chinki: Add message: Task name: u4t2Task type: Follow Up Task; Task text: User 4: Follow Task 2; Timestamp: 2019-10-17 05:38:12.371
-[Speaker Local] Chinki: Add message: Task name: u4t3Task type: Follow Up Task; Task text: User 4: Follow Task 3; Timestamp: 2019-10-17 05:38:12.378
-[Speaker Remote] Chinki: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Initial Task 1; Timestamp: 2019-10-17 05:38:12.813
-[Speaker Remote] Chinki: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Initial Task 2; Timestamp: 2019-10-17 05:38:13.014
-[Speaker Remote] Chinki: Add Message: Task name: u1t3Task type: Initial Task; Task text: User 1: Initial Task 3; Timestamp: 2019-10-17 05:38:13.215
-[Speaker Remote] Chinki: Add Message: Task name: u2t1Task type: Follow Up Task; Task text: User 2: Follow Task 1; Timestamp: 2019-10-17 05:38:13.419
-[Speaker Remote] Chinki: Add Message: Task name: u2t2Task type: Follow Up Task; Task text: User 2: Follow Task 2; Timestamp: 2019-10-17 05:38:13.62
-[Speaker Remote] Chinki: Add Message: Task name: u2t3Task type: Follow Up Task; Task text: User 2: Follow Task 3; Timestamp: 2019-10-17 05:38:13.823
-[Speaker Remote] Chinki: Add Message: Task name: u3t1Task type: Follow Up Task; Task text: User 3: Follow Task 1; Timestamp: 2019-10-17 05:38:14.031
-[Speaker Remote] Chinki: Add Message: Task name: u5t1Task type: Follow Up Task; Task text: User 5: Follow Task 1; Timestamp: 2019-10-17 05:38:14.232
-[Speaker Remote] Chinki: Add Message: Task name: u3t2Task type: Follow Up Task; Task text: User 3: Follow Task 2; Timestamp: 2019-10-17 05:38:14.435
-[Speaker Remote] Chinki: Add Message: Task name: u5t2Task type: Follow Up Task; Task text: User 5: Follow Task 2; Timestamp: 2019-10-17 05:38:14.642
-[Speaker Remote] Chinki: Add Message: Task name: u3t3Task type: Follow Up Task; Task text: User 3: Follow Task 3; Timestamp: 2019-10-17 05:38:15.037
-[Speaker Remote] Chinki: Add Message: Task name: u5t3Task type: Follow Up Task; Task text: User 5: Follow Task 3; Timestamp: 2019-10-17 05:38:15.633
+[Speaker Local] Chinki: Add message: Task name: u4t1Task type: Follow Up Task; Task text: User 4: Follow Task 1; Timestamp: 2019-10-19 16:05:50.65
+[Speaker Local] Chinki: Add message: Task name: u4t2Task type: Follow Up Task; Task text: User 4: Follow Task 2; Timestamp: 2019-10-19 16:05:50.918
+[Speaker Local] Chinki: Add message: Task name: u4t3Task type: Follow Up Task; Task text: User 4: Follow Task 3; Timestamp: 2019-10-19 16:05:50.921
+[Speaker Remote] Chinki: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Initial Task 1; Timestamp: 2019-10-19 16:05:51.368
+[Speaker Remote] Chinki: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Initial Task 2; Timestamp: 2019-10-19 16:05:51.569
+[Speaker Remote] Chinki: Add Message: Task name: u1t3Task type: Initial Task; Task text: User 1: Initial Task 3; Timestamp: 2019-10-19 16:05:51.77
+[Speaker Remote] Chinki: Add Message: Task name: u2t1Task type: Follow Up Task; Task text: User 2: Follow Task 1; Timestamp: 2019-10-19 16:05:51.972
+[Speaker Remote] Chinki: Add Message: Task name: u2t2Task type: Follow Up Task; Task text: User 2: Follow Task 2; Timestamp: 2019-10-19 16:05:52.173
+[Speaker Remote] Chinki: Add Message: Task name: u3t1Task type: Follow Up Task; Task text: User 3: Follow Task 1; Timestamp: 2019-10-19 16:05:52.374
+[Speaker Remote] Chinki: Add Message: Task name: u2t3Task type: Follow Up Task; Task text: User 2: Follow Task 3; Timestamp: 2019-10-19 16:05:52.575
+[Speaker Remote] Chinki: Add Message: Task name: u3t2Task type: Follow Up Task; Task text: User 3: Follow Task 2; Timestamp: 2019-10-19 16:05:52.776
+[Speaker Remote] Chinki: Add Message: Task name: u3t3Task type: Follow Up Task; Task text: User 3: Follow Task 3; Timestamp: 2019-10-19 16:05:52.977
+[Speaker Remote] Chinki: Add Message: Task name: u5t1Task type: Follow Up Task; Task text: User 5: Follow Task 1; Timestamp: 2019-10-19 16:05:53.178
+[Speaker Remote] Chinki: Add Message: Task name: u5t2Task type: Follow Up Task; Task text: User 5: Follow Task 2; Timestamp: 2019-10-19 16:05:53.379
+[Speaker Remote] Chinki: Add Message: Task name: u5t3Task type: Follow Up Task; Task text: User 5: Follow Task 3; Timestamp: 2019-10-19 16:05:53.58

@@ -1,0 +1,19 @@
+User started with uan: uan://:3030\localhost:3030id5
+Messaging server
+Finished registering
+[Speaker Local] Chinki: Add message: Task name: u4t1Task type: Follow Up Task; Task text: User 4: Follow Poll 1; Timestamp: 2019-10-20 00:41:18.46
+[Speaker Local] Chinki: Add message: Task name: u4t2Task type: Follow Up Task; Task text: User 4: Follow Poll 2; Timestamp: 2019-10-20 00:41:18.751
+[Speaker Local] Chinki: Add message: Task name: u4t3Task type: Follow Up Task; Task text: User 4: Follow Poll 3; Timestamp: 2019-10-20 00:41:18.755
+Overall Timestamp: 2019-10-20 00:41:21.675
+Task type: Initial Task; Task text: User 1: Initial Poll 1
+Task type: Initial Task; Task text: User 1: Initial Poll 2
+Task type: Initial Task; Task text: User 1: Initial Poll 3
+Task type: Follow Up Task; Task text: User 3: Follow Poll 1
+Task type: Follow Up Task; Task text: User 2: Follow Poll 1
+Task type: Follow Up Task; Task text: User 2: Follow Poll 2
+Task type: Follow Up Task; Task text: User 2: Follow Poll 3
+Task type: Follow Up Task; Task text: User 3: Follow Poll 2
+Task type: Follow Up Task; Task text: User 3: Follow Poll 3
+Task type: Follow Up Task; Task text: User 5: Follow Poll 1
+Task type: Follow Up Task; Task text: User 5: Follow Poll 2
+Task type: Follow Up Task; Task text: User 5: Follow Poll 3

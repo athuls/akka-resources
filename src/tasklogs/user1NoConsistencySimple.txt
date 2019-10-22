@@ -1,18 +1,18 @@
 User started with uan: uan://:3030\localhost:3030id2
 Messaging server
 Finished registering
-[Speaker Local] Jason: Add message: Task name: u1t1Task type: Initial Task; Task text: User 1: Random Task 1; Timestamp: 2019-10-15 16:33:12.821
-[Speaker Local] Jason: Add message: Task name: u1t2Task type: Initial Task; Task text: User 1: Random Task 2; Timestamp: 2019-10-15 16:33:13.046
-[Speaker Local] Jason: Add message: Task name: u1t3Task type: Initial Task; Task text: User 1: Random Task 3; Timestamp: 2019-10-15 16:33:13.11
-[Speaker Remote] Jason: Add Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Random Task 1; Timestamp: 2019-10-15 16:33:13.768
-[Speaker Remote] Jason: Add Message: Task name: u4t2Task type: Initial Task; Task text: User 4: Random Task 2; Timestamp: 2019-10-15 16:33:13.97
-[Speaker Remote] Jason: Add Message: Task name: u4t3Task type: Initial Task; Task text: User 4: Random Task 3; Timestamp: 2019-10-15 16:33:14.176
-[Speaker Remote] Jason: Add Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Random Task 1; Timestamp: 2019-10-15 16:33:14.377
-[Speaker Remote] Jason: Add Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Random Task 1; Timestamp: 2019-10-15 16:33:14.578
-[Speaker Remote] Jason: Add Message: Task name: u5t2Task type: Initial Task; Task text: User 5: Random Task 2; Timestamp: 2019-10-15 16:33:14.779
-[Speaker Remote] Jason: Add Message: Task name: u5t3Task type: Initial Task; Task text: User 5: Random Task 3; Timestamp: 2019-10-15 16:33:14.98
-[Speaker Remote] Jason: Add Message: Task name: u3t2Task type: Initial Task; Task text: User 3: Random Task 2; Timestamp: 2019-10-15 16:33:15.18
-[Speaker Remote] Jason: Add Message: Task name: u3t3Task type: Initial Task; Task text: User 3: Random Task 3; Timestamp: 2019-10-15 16:33:15.381
-[Speaker Remote] Jason: Add Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Random Task 1; Timestamp: 2019-10-15 16:33:15.583
-[Speaker Remote] Jason: Add Message: Task name: u2t2Task type: Initial Task; Task text: User 2: Random Task 2; Timestamp: 2019-10-15 16:33:15.784
-[Speaker Remote] Jason: Add Message: Task name: u2t3Task type: Initial Task; Task text: User 2: Random Task 3; Timestamp: 2019-10-15 16:33:15.985
+[Speaker Local] Jason: Add message: Task name: u1t1Task type: Initial Task; Task text: User 1: Random Task 1; Timestamp: 2019-10-21 20:25:58.225
+[Speaker Local] Jason: Add message: Task name: u1t2Task type: Initial Task; Task text: User 1: Random Task 2; Timestamp: 2019-10-21 20:25:58.534
+[Speaker Local] Jason: Add message: Task name: u1t3Task type: Initial Task; Task text: User 1: Random Task 3; Timestamp: 2019-10-21 20:25:58.541
+[Speaker Remote] Jason: Add Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Random Task 1; Timestamp: 2019-10-21 20:25:59.23
+[Speaker Remote] Jason: Add Message: Task name: u2t2Task type: Initial Task; Task text: User 2: Random Task 2; Timestamp: 2019-10-21 20:25:59.432
+[Speaker Remote] Jason: Add Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Random Task 1; Timestamp: 2019-10-21 20:25:59.643
+[Speaker Remote] Jason: Add Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Random Task 1; Timestamp: 2019-10-21 20:25:59.844
+[Speaker Remote] Jason: Add Message: Task name: u3t2Task type: Initial Task; Task text: User 3: Random Task 2; Timestamp: 2019-10-21 20:26:00.045
+[Speaker Remote] Jason: Add Message: Task name: u4t2Task type: Initial Task; Task text: User 4: Random Task 2; Timestamp: 2019-10-21 20:26:00.246
+[Speaker Remote] Jason: Add Message: Task name: u3t3Task type: Initial Task; Task text: User 3: Random Task 3; Timestamp: 2019-10-21 20:26:00.446
+[Speaker Remote] Jason: Add Message: Task name: u2t3Task type: Initial Task; Task text: User 2: Random Task 3; Timestamp: 2019-10-21 20:26:00.648
+[Speaker Remote] Jason: Add Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Random Task 1; Timestamp: 2019-10-21 20:26:00.854
+[Speaker Remote] Jason: Add Message: Task name: u5t2Task type: Initial Task; Task text: User 5: Random Task 2; Timestamp: 2019-10-21 20:26:01.055
+[Speaker Remote] Jason: Add Message: Task name: u4t3Task type: Initial Task; Task text: User 4: Random Task 3; Timestamp: 2019-10-21 20:26:01.256
+[Speaker Remote] Jason: Add Message: Task name: u5t3Task type: Initial Task; Task text: User 5: Random Task 3; Timestamp: 2019-10-21 20:26:01.457

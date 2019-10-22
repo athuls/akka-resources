@@ -26,4 +26,4 @@ def graph_results(file_name, title, x_axis, y_axis, out_file, header):
     print(avg)
     print(total)
 
-graph_results("logs/temp", "TODO FIFO", "Run Number", "Latency", "graphs/TodoFIFO.png", "Todo FIFO")
+graph_results("logs/temp", "Double Todo Simple Glitch", "Run Number", "Latency", "graphs/DoubleTodoSimpleGlitch.png", "Double Todo Simple Glitch")

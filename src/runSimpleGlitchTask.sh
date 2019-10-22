@@ -10,7 +10,7 @@ java -cp libs/salsa1.1.5.jar:. todo.SimpleGlitchSimpleTodo uan:\\localhost:3030\
 
 sleep 20s
 
-python ParseSimpleGlitchTodo.py >> taskLogs/SimpleGlitchTaskResults.txt
+#python ParseSimpleGlitchTodo.py >> taskLogs/SimpleGlitchTaskResults.txt
 
 ps -ef | grep WWCNamingServer | grep -v grep | awk '{print $2}' | xargs kill -9
 ps -ef | grep Chat | grep -v grep | awk '{print $2}' | xargs kill -9

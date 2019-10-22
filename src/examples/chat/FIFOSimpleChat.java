@@ -35,7 +35,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Date;
 import java.sql.Timestamp;
-import examples.chat.ChatMessage.MessageType;
+import java.util.*;
 
 public class FIFOSimpleChat extends UniversalActor  {
 	public static void main(String args[]) {
@@ -270,113 +270,132 @@ public class FIFOSimpleChat extends UniversalActor  {
 		}
 
 		public void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5) {
+			ArrayList values = new ArrayList();
+			values.add(1);
+			values.add(2);
+			values.add(3);
+			Collections.shuffle(values);
 			{
-				Token token_2_0 = new Token();
-				Token token_2_1 = new Token();
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 1."), 0, 12)
+				// s1<-broadcastSend("User 1: Ordered message "+values.get(0)+".", true, false, false, 0, 12, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 1."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, token_2_0 );
-					__messages.add( message );
-				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 2."), 0, 12)
-				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 2."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_0, token_2_1 );
-					__messages.add( message );
-				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 3."), 0, 12)
-				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 3."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_1, null );
+					Object _arguments[] = { "User 1: Ordered message "+values.get(0)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				Token token_2_0 = new Token();
-				Token token_2_1 = new Token();
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 1."), 0, 12)
+				// s1<-broadcastSend("User 1: Ordered message "+values.get(1)+".", true, false, false, 0, 12, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 1."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s2, "broadcastSend", _arguments, null, token_2_0 );
-					__messages.add( message );
-				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 2."), 0, 12)
-				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 2."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_0, token_2_1 );
-					__messages.add( message );
-				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 3."), 0, 12)
-				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 3."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_1, null );
+					Object _arguments[] = { "User 1: Ordered message "+values.get(1)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				Token token_2_0 = new Token();
-				Token token_2_1 = new Token();
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 1."), 0, 12)
+				// s1<-broadcastSend("User 1: Ordered message "+values.get(2)+".", true, false, false, 0, 12, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 1."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s3, "broadcastSend", _arguments, null, token_2_0 );
+					Object _arguments[] = { "User 1: Ordered message "+values.get(2)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 2."), 0, 12)
+			}
+			Collections.shuffle(values);
+			{
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(0)+".", true, false, false, 0, 12, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 2."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_0, token_2_1 );
-					__messages.add( message );
-				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 3."), 0, 12)
-				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 3."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_1, null );
+					Object _arguments[] = { "User 2: Ordered message "+values.get(0)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				Token token_2_0 = new Token();
-				Token token_2_1 = new Token();
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 1."), 0, 12)
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(1)+".", true, false, false, 0, 12, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 1."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s4, "broadcastSend", _arguments, null, token_2_0 );
-					__messages.add( message );
-				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 2."), 0, 12)
-				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 2."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_0, token_2_1 );
-					__messages.add( message );
-				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 3."), 0, 12)
-				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 3."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_1, null );
+					Object _arguments[] = { "User 2: Ordered message "+values.get(1)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				Token token_2_0 = new Token();
-				Token token_2_1 = new Token();
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 1."), 0, 12)
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(2)+".", true, false, false, 0, 12, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 1."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s5, "broadcastSend", _arguments, null, token_2_0 );
+					Object _arguments[] = { "User 2: Ordered message "+values.get(2)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 2."), 0, 12)
+			}
+			Collections.shuffle(values);
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(0)+".", true, false, false, 0, 12, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 2."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_0, token_2_1 );
+					Object _arguments[] = { "User 3: Ordered message "+values.get(0)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 3."), 0, 12)
+			}
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(1)+".", true, false, false, 0, 12, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 3."), new Integer(0), new Integer(12) };
-					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_1, null );
+					Object _arguments[] = { "User 3: Ordered message "+values.get(1)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(2)+".", true, false, false, 0, 12, true)
+				{
+					Object _arguments[] = { "User 3: Ordered message "+values.get(2)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			Collections.shuffle(values);
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(0)+".", true, false, false, 0, 12, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(0)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(1)+".", true, false, false, 0, 12, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(1)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(2)+".", true, false, false, 0, 12, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(2)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			Collections.shuffle(values);
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(0)+".", true, false, false, 0, 12, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(0)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(1)+".", true, false, false, 0, 12, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(1)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(2)+".", true, false, false, 0, 12, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(2)+".", true, false, false, new Integer(0), new Integer(12), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}

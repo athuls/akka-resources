@@ -187,7 +187,6 @@ public class Server extends UniversalActor  implements ActorService {
 		List registeredUsers;
 		List specifiedTasks;
 		Task taskRef;
-		TaskList mainList;
 		Map userIdUANMap;
 		void construct(){
 			registeredUsers = new ArrayList();
@@ -227,20 +226,11 @@ public class Server extends UniversalActor  implements ActorService {
 			return true;
 		}
 		public boolean addTaskToList(TaskList taskList, Task task, String taskName, String text, String creator, int number_of_updates, int total_initials, boolean isFollowup) {
-			TaskList taskListRef = (TaskList)TaskList.getReferenceByName(taskList.getUAN());
-			mainList = taskList;
 			{
-				Token token_2_0 = new Token();
-				// taskListRef<-addTask(creator, task, taskName, text)
-				{
-					Object _arguments[] = { creator, task, taskName, text };
-					Message message = new Message( self, taskListRef, "addTask", _arguments, null, token_2_0 );
-					__messages.add( message );
-				}
 				// broadcast(task, taskName, text, creator, number_of_updates, total_initials, false, isFollowup)
 				{
 					Object _arguments[] = { task, taskName, text, creator, number_of_updates, total_initials, false, isFollowup };
-					Message message = new Message( self, self, "broadcast", _arguments, token_2_0, null );
+					Message message = new Message( self, self, "broadcast", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
@@ -248,33 +238,10 @@ public class Server extends UniversalActor  implements ActorService {
 		}
 		public boolean updateTask(Task task, String name, String text, String creator, int number_of_updates, int total_initials) {
 			{
-				// standardOutput<-println("before taskListRef.update")
-				{
-					Object _arguments[] = { "before taskListRef.update" };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			TaskList taskListRef = (TaskList)TaskList.getReferenceByName((mainList).getUAN());
-			{
-				Token token_2_0 = new Token();
-				Token token_2_1 = new Token();
-				// taskListRef<-updateTask(name, text, creator)
-				{
-					Object _arguments[] = { name, text, creator };
-					Message message = new Message( self, taskListRef, "updateTask", _arguments, null, token_2_0 );
-					__messages.add( message );
-				}
-				// standardOutput<-println("after taskListRef.update")
-				{
-					Object _arguments[] = { "after taskListRef.update" };
-					Message message = new Message( self, standardOutput, "println", _arguments, token_2_0, token_2_1 );
-					__messages.add( message );
-				}
 				// broadcast(task, name, text, creator, number_of_updates, total_initials, true, false)
 				{
 					Object _arguments[] = { task, name, text, creator, number_of_updates, total_initials, true, false };
-					Message message = new Message( self, self, "broadcast", _arguments, token_2_1, null );
+					Message message = new Message( self, self, "broadcast", _arguments, null, null );
 					__messages.add( message );
 				}
 			}

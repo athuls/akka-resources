@@ -1,18 +1,18 @@
 User started with uan: uan://:3030\localhost:3030id6
 Messaging server
 Finished registering
-[Speaker Local] pinku: Add message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 1; Timestamp: 2019-10-15 17:21:55.465
-[Speaker Local] pinku: Add message: Task name: u5t2Task type: Initial Task; Task text: User 5: Ordered Task 2; Timestamp: 2019-10-15 17:21:55.848
-[Speaker Local] pinku: Upd message: Task name: u5t1Task type: Initial task; Task text: User 5: Ordered Task 3; Timestamp: 2019-10-15 17:21:55.853
-[Speaker Remote] pinku: Add Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 1; Timestamp: 2019-10-15 17:21:56.177
-[Speaker Remote] pinku: Add Message: Task name: u2t2Task type: Initial Task; Task text: User 2: Ordered Task 2; Timestamp: 2019-10-15 17:21:56.378
-[Speaker Remote] pinku: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 1; Timestamp: 2019-10-15 17:21:56.579
-[Speaker Remote] pinku: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Ordered Task 2; Timestamp: 2019-10-15 17:21:56.78
-[Speaker Remote] pinku: Add Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 1; Timestamp: 2019-10-15 17:21:56.981
-[Speaker Remote] pinku: Add Message: Task name: u3t2Task type: Initial Task; Task text: User 3: Ordered Task 2; Timestamp: 2019-10-15 17:21:57.182
-[Speaker Remote] pinku: Upd Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 3; Timestamp: 2019-10-15 17:21:57.383
-[Speaker Remote] pinku: Upd Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 3; Timestamp: 2019-10-15 17:21:57.584
-[Speaker Remote] pinku: Add Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 1; Timestamp: 2019-10-15 17:21:57.785
-[Speaker Remote] pinku: Add Message: Task name: u4t2Task type: Initial Task; Task text: User 4: Ordered Task 2; Timestamp: 2019-10-15 17:21:57.986
-[Speaker Remote] pinku: Upd Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 3; Timestamp: 2019-10-15 17:21:58.187
-[Speaker Remote] pinku: Upd Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 3; Timestamp: 2019-10-15 17:21:58.391
+[Speaker Local] pinku: Add message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 1; Timestamp: 2019-10-21 20:28:32.215
+[Speaker Remote] pinku: Add Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 1; Timestamp: 2019-10-21 20:28:32.659
+[Speaker Remote] pinku: Add Message: Task name: u2t2Task type: Initial Task; Task text: User 2: Ordered Task 2; Timestamp: 2019-10-21 20:28:32.86
+[Speaker Remote] pinku: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 1; Timestamp: 2019-10-21 20:28:33.062
+[Speaker Remote] pinku: Upd Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 3; Timestamp: 2019-10-21 20:28:33.263
+[Speaker Remote] pinku: Add Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 1; Timestamp: 2019-10-21 20:28:33.477
+[Speaker Remote] pinku: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Ordered Task 2; Timestamp: 2019-10-21 20:28:33.678
+[Speaker Remote] pinku: Upd Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 3; Timestamp: 2019-10-21 20:28:33.879
+[Speaker Remote] pinku: Add Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 1; Timestamp: 2019-10-21 20:28:34.079
+[Speaker Remote] pinku: Add Message: Task name: u3t2Task type: Initial Task; Task text: User 3: Ordered Task 2; Timestamp: 2019-10-21 20:28:34.28
+[Speaker Remote] pinku: Upd Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 3; Timestamp: 2019-10-21 20:28:34.486
+[Speaker Local] pinku: Add message: Task name: u5t2Task type: Initial Task; Task text: User 5: Ordered Task 2; Timestamp: 2019-10-21 20:28:34.486
+[Speaker Remote] pinku: Add Message: Task name: u4t2Task type: Initial Task; Task text: User 4: Ordered Task 2; Timestamp: 2019-10-21 20:28:34.703
+[Speaker Remote] pinku: Upd Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 3; Timestamp: 2019-10-21 20:28:34.903
+[Speaker Local] pinku: Upd message: Task name: u5t1Task type: Initial task; Task text: User 5: Ordered Task 3; Timestamp: 2019-10-21 20:28:34.904

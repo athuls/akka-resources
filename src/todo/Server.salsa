@@ -14,7 +14,6 @@ behavior Server implements ActorService
 	List registeredUsers;
 	List specifiedTasks;
 	Task taskRef;
-    TaskList mainList;
     Map userIdUANMap;
 
 	Server()
@@ -52,20 +51,13 @@ behavior Server implements ActorService
 	}
 
     boolean addTaskToList(TaskList taskList, Task task,String taskName,String text, String creator, int number_of_updates, int total_initials, boolean isFollowup)
-	{        
-        TaskList taskListRef = (TaskList) TaskList.getReferenceByName(taskList.getUAN());
-		mainList = taskList;
-        taskListRef<-addTask(creator, task, taskName, text) @
+	{
 		broadcast(task,taskName,text, creator, number_of_updates, total_initials, false, isFollowup);
         return true;
     }
 
     boolean updateTask(Task task,String name,String text, String creator, int number_of_updates, int total_initials)
 	{
-        standardOutput<-println("before taskListRef.update");
-        TaskList taskListRef = (TaskList) TaskList.getReferenceByName((mainList).getUAN());
-        taskListRef<-updateTask(name, text, creator) @
-        standardOutput<-println("after taskListRef.update") @
         // Task task, String taskName,String text,String creator, int number_of_updates, int total_initials, boolean isUpdate
 	    broadcast(task, name,text,creator, number_of_updates, total_initials, true, false);
         return true;

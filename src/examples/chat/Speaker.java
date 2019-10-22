@@ -196,55 +196,62 @@ public class Speaker extends UniversalActor  implements ActorService {
 		ArrayList messages = new ArrayList();
 		Queue messageQueue = new LinkedList();
 		boolean isQuestion = false;
+		ArrayList fifoValues = new ArrayList();
+		ArrayList fifoMessageValues = new ArrayList();
+		ArrayList valuesAdded = new ArrayList();
 		public void setQuestionIdentity() {
 			isQuestion = true;
 		}
-		public void broadcastSend(ChatMessage msg, int number_of_questions, int total_messages) {
+		public void broadcastSend(String msg, boolean is_statement, boolean is_question, boolean is_answer, int number_of_questions, int total_messages, boolean fifo) {
 			Date date = new Date();
 			Timestamp current = new Timestamp(date.getTime());
-			{
+			String type = "";
+			if (is_statement) {type = "STATEMENT";
+}			else {if (is_question) {type = "QUESTION";
+}			else {if (is_answer) {type = "ANSWER";
+}}}			{
 				Token token_2_0 = new Token();
-				// standardOutput<-println("[Speaker Local] "+myName+": "+msg.getMsgType()+": "+msg.getMsg()+"; Timestamp: "+current)
+				// standardOutput<-println("[Speaker Local] "+myName+": "+type+": "+msg+"; Timestamp: "+current)
 				{
-					Object _arguments[] = { "[Speaker Local] "+myName+": "+msg.getMsgType()+": "+msg.getMsg()+"; Timestamp: "+current };
+					Object _arguments[] = { "[Speaker Local] "+myName+": "+type+": "+msg+"; Timestamp: "+current };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// server_ref<-broadcast(myName, msg, number_of_questions, total_messages)
+				// server_ref<-broadcast(myName, msg, type, number_of_questions, total_messages, fifo)
 				{
-					Object _arguments[] = { myName, msg, number_of_questions, total_messages };
+					Object _arguments[] = { myName, msg, type, number_of_questions, total_messages, fifo };
 					Message message = new Message( self, server_ref, "broadcast", _arguments, token_2_0, null );
 					__messages.add( message );
 				}
 			}
 		}
-		public void broadcastReceive(String speakerName, ChatMessage msg, int number_of_questions, int total_messages) throws InterruptedException{
-			switch (msg.getMsgType()) {
-			case QUESTION: messages.add(msg.getMsg());
+		public void broadcastReceive(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) throws InterruptedException{
+			switch (type) {
+			case "QUESTION": messages.add(msg);
 Thread.sleep(200);
 Date date_one = new Date();
 Timestamp current_one = new Timestamp(date_one.getTime());
 			{
-				// standardOutput<-println("[Speaker Remote] "+speakerName+": "+msg.getMsgType()+": "+msg.getMsg()+"; Timestamp: "+current_one)
+				// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_one)
 				{
-					Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+msg.getMsgType()+": "+msg.getMsg()+"; Timestamp: "+current_one };
+					Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_one };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
-questionTimeStamp.put(msg.getMsg(), current_one);
+questionTimeStamp.put(msg, current_one);
 if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
-						ChatMessage chatMessage = (ChatMessage)answerQueue.remove();
-						messages.add(chatMessage.getMsg());
+						String chatMessage = (String)answerQueue.remove();
+						messages.add(chatMessage);
 						Thread.sleep(200);
 						Date date_two = new Date();
 						Timestamp current_two = new Timestamp(date_two.getTime());
 						{
-							// standardOutput<-println("[Speaker Remote] "+speakerName+": "+chatMessage.getMsgType()+": "+chatMessage.getMsg()+"; Timestamp: "+current_two)
+							// standardOutput<-println("[Speaker Remote] "+speakerName+": "+"ANSWER"+": "+chatMessage+"; Timestamp: "+current_two)
 							{
-								Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+chatMessage.getMsgType()+": "+chatMessage.getMsg()+"; Timestamp: "+current_two };
+								Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+"ANSWER"+": "+chatMessage+"; Timestamp: "+current_two };
 								Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 								__messages.add( message );
 							}
@@ -252,89 +259,145 @@ if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 					}
 				}
 }			}
-}break;			case ANSWER: if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+}break;			case "ANSWER": if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
-						ChatMessage chatMessage = (ChatMessage)answerQueue.remove();
-						messages.add(chatMessage.getMsg());
+						String chatMessage = (String)answerQueue.remove();
+						messages.add(chatMessage);
 						Thread.sleep(200);
 						Date date_two = new Date();
 						Timestamp current_two = new Timestamp(date_two.getTime());
 						{
-							// standardOutput<-println("[Speaker Remote] "+speakerName+": "+chatMessage.getMsgType()+": "+chatMessage.getMsg()+"; Timestamp: "+current_two)
+							// standardOutput<-println("[Speaker Remote] "+speakerName+": "+"ANSWER"+": "+chatMessage+"; Timestamp: "+current_two)
 							{
-								Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+chatMessage.getMsgType()+": "+chatMessage.getMsg()+"; Timestamp: "+current_two };
+								Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+"ANSWER"+": "+chatMessage+"; Timestamp: "+current_two };
 								Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 								__messages.add( message );
 							}
 						}
 					}
 				}
-}				messages.add(msg.getMsg());
+}				messages.add(msg);
 				Thread.sleep(200);
 				Date date_three = new Date();
 				Timestamp current_three = new Timestamp(date_three.getTime());
 				{
-					// standardOutput<-println("[Speaker Remote] "+speakerName+": "+msg.getMsgType()+": "+msg.getMsg()+"; Timestamp: "+current_three)
+					// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_three)
 					{
-						Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+msg.getMsgType()+": "+msg.getMsg()+"; Timestamp: "+current_three };
+						Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_three };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 						__messages.add( message );
 					}
 				}
 			}
 }			else {{
-				{
-					// standardOutput<-println("Adding to answer queue")
+				answerQueue.add(msg);
+			}
+}break;			default: if (fifo) {{
+				Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
+				if (valuesAdded.size()==0||(Integer)valuesAdded.get(valuesAdded.size()-1)==current_value-1) {{
+					valuesAdded.add(current_value);
+					messages.add(msg);
+					Thread.sleep(200);
+					Date date_four = new Date();
+					Timestamp current_four = new Timestamp(date_four.getTime());
 					{
-						Object _arguments[] = { "Adding to answer queue" };
+						// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four)
+						{
+							Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four };
+							Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+							__messages.add( message );
+						}
+					}
+					int i = -1;
+					for (i = 0; i<fifoValues.size(); i++){
+						if ((Integer)fifoValues.get(i)==current_value+1) {{
+							current_value = (Integer)fifoValues.get(i);
+							String current_message = (String)fifoMessageValues.get(i);
+							messages.add(current_message);
+							Thread.sleep(200);
+							Date date_five = new Date();
+							Timestamp current_five = new Timestamp(date_five.getTime());
+							{
+								// standardOutput<-println("[Speaker Remote] "+speakerName+": "+"STATEMENT"+": "+current_message+"; Timestamp: "+current_five)
+								{
+									Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+"STATEMENT"+": "+current_message+"; Timestamp: "+current_five };
+									Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+									__messages.add( message );
+								}
+							}
+						}
+}					}
+					while (i>0) {
+						fifoMessageValues.remove(0);
+						fifoValues.remove(0);
+						i--;
+					}
+				}
+}				else {{
+					if (fifoValues.size()==0) {{
+						fifoValues.add(current_value);
+						fifoMessageValues.add(msg);
+					}
+}					else {{
+						if (current_value<(Integer)fifoValues.get(0)) {{
+							fifoValues.add(0, current_value);
+							fifoMessageValues.add(0, msg);
+						}
+}						else {{
+							for (int i = 0; i<fifoValues.size(); i++){
+								if (current_value>(Integer)fifoValues.get(i)) {{
+									fifoValues.add(i, current_value);
+									fifoMessageValues.add(i, msg);
+break;								}
+}							}
+						}
+}					}
+}				}
+}			}
+}			else {{
+				messages.add(msg);
+				Thread.sleep(200);
+				Date date_four = new Date();
+				Timestamp current_four = new Timestamp(date_four.getTime());
+				{
+					// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four)
+					{
+						Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 						__messages.add( message );
 					}
 				}
-				answerQueue.add(msg);
 			}
-}break;			default: messages.add(msg.getMsg());
-Thread.sleep(200);
-Date date_four = new Date();
-Timestamp current_four = new Timestamp(date_four.getTime());
-			{
-				// standardOutput<-println("[Speaker Remote] "+speakerName+": "+msg.getMsgType()+": "+msg.getMsg()+"; Timestamp: "+current_four)
-				{
-					Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+msg.getMsgType()+": "+msg.getMsg()+"; Timestamp: "+current_four };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-break;			}
+}break;			}
 		}
-		public void broadcastReceiveAdvanced(String speakerName, ChatMessage msg, int number_of_questions, int total_messages) throws InterruptedException{
-			switch (msg.getMsgType()) {
-			case QUESTION: messageQueue.add(msg.getMsg());
+		public void broadcastReceiveAdvanced(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) throws InterruptedException{
+			switch (type) {
+			case "QUESTION": messageQueue.add(msg);
 Date date = new Date();
 Timestamp current = new Timestamp(date.getTime());
-questionTimeStamp.put(msg.getMsg(), current);
+questionTimeStamp.put(msg, current);
 if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
-						ChatMessage chatMessage = (ChatMessage)answerQueue.remove();
-						messageQueue.add(chatMessage.getMsg());
+						String chatMessage = (String)answerQueue.remove();
+						messageQueue.add(chatMessage);
 					}
 				}
 }			}
-}break;			case ANSWER: if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+}break;			case "ANSWER": if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
-						ChatMessage chatMessage = (ChatMessage)answerQueue.remove();
-						messageQueue.add(chatMessage.getMsg());
+						String chatMessage = (String)answerQueue.remove();
+						messageQueue.add(chatMessage);
 					}
 				}
-}				messageQueue.add(msg.getMsg());
+}				messageQueue.add(msg);
 			}
 }			else {{
 				answerQueue.add(msg);
 			}
-}break;			case STATEMENT: messageQueue.add(msg.getMsg());
+}break;			default: messageQueue.add(msg);
 break;			}
 			if (messageQueue.size()==total_messages) {{
 				while (messageQueue.size()>0) {

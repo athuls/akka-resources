@@ -1,18 +1,18 @@
 User started with uan: uan://:3030\localhost:3030id3
 Messaging server
 Finished registering
-[Speaker Local] Mason: Add message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 1; Timestamp: 2019-10-15 17:21:55.128
-[Speaker Local] Mason: Add message: Task name: u2t2Task type: Initial Task; Task text: User 2: Ordered Task 2; Timestamp: 2019-10-15 17:21:55.54
-[Speaker Local] Mason: Upd message: Task name: u2t1Task type: Initial task; Task text: User 2: Ordered Task 3; Timestamp: 2019-10-15 17:21:55.546
-[Speaker Remote] Mason: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 1; Timestamp: 2019-10-15 17:21:56.216
-[Speaker Remote] Mason: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Ordered Task 2; Timestamp: 2019-10-15 17:21:56.417
-[Speaker Remote] Mason: Add Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 1; Timestamp: 2019-10-15 17:21:56.619
-[Speaker Remote] Mason: Add Message: Task name: u3t2Task type: Initial Task; Task text: User 3: Ordered Task 2; Timestamp: 2019-10-15 17:21:56.82
-[Speaker Remote] Mason: Upd Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 3; Timestamp: 2019-10-15 17:21:57.021
-[Speaker Remote] Mason: Add Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 1; Timestamp: 2019-10-15 17:21:57.222
-[Speaker Remote] Mason: Add Message: Task name: u4t2Task type: Initial Task; Task text: User 4: Ordered Task 2; Timestamp: 2019-10-15 17:21:57.423
-[Speaker Remote] Mason: Upd Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 3; Timestamp: 2019-10-15 17:21:57.624
-[Speaker Remote] Mason: Upd Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 3; Timestamp: 2019-10-15 17:21:57.826
-[Speaker Remote] Mason: Add Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 1; Timestamp: 2019-10-15 17:21:58.03
-[Speaker Remote] Mason: Add Message: Task name: u5t2Task type: Initial Task; Task text: User 5: Ordered Task 2; Timestamp: 2019-10-15 17:21:58.231
-[Speaker Remote] Mason: Upd Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 3; Timestamp: 2019-10-15 17:21:58.434
+[Speaker Local] Mason: Add message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 1; Timestamp: 2019-10-21 20:28:31.783
+[Speaker Local] Mason: Add message: Task name: u2t2Task type: Initial Task; Task text: User 2: Ordered Task 2; Timestamp: 2019-10-21 20:28:32.029
+[Speaker Local] Mason: Upd message: Task name: u2t1Task type: Initial task; Task text: User 2: Ordered Task 3; Timestamp: 2019-10-21 20:28:32.034
+[Speaker Remote] Mason: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 1; Timestamp: 2019-10-21 20:28:32.653
+[Speaker Remote] Mason: Add Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 1; Timestamp: 2019-10-21 20:28:32.856
+[Speaker Remote] Mason: Add Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 1; Timestamp: 2019-10-21 20:28:33.059
+[Speaker Remote] Mason: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Ordered Task 2; Timestamp: 2019-10-21 20:28:33.259
+[Speaker Remote] Mason: Upd Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 3; Timestamp: 2019-10-21 20:28:33.476
+[Speaker Remote] Mason: Add Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 1; Timestamp: 2019-10-21 20:28:33.677
+[Speaker Remote] Mason: Add Message: Task name: u3t2Task type: Initial Task; Task text: User 3: Ordered Task 2; Timestamp: 2019-10-21 20:28:33.878
+[Speaker Remote] Mason: Upd Message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 3; Timestamp: 2019-10-21 20:28:34.078
+[Speaker Remote] Mason: Add Message: Task name: u4t2Task type: Initial Task; Task text: User 4: Ordered Task 2; Timestamp: 2019-10-21 20:28:34.279
+[Speaker Remote] Mason: Upd Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 3; Timestamp: 2019-10-21 20:28:34.691
+[Speaker Remote] Mason: Add Message: Task name: u5t2Task type: Initial Task; Task text: User 5: Ordered Task 2; Timestamp: 2019-10-21 20:28:34.892
+[Speaker Remote] Mason: Upd Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 3; Timestamp: 2019-10-21 20:28:35.443

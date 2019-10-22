@@ -19,6 +19,9 @@ behavior Speaker implements ActorService
 	ArrayList messages = new ArrayList();
 	Queue messageQueue = new LinkedList();
 	boolean isQuestion = false;
+	ArrayList fifoValues = new ArrayList();
+	ArrayList fifoMessageValues = new ArrayList();
+	ArrayList valuesAdded = new ArrayList();
 
 	// function used to set the identity of this user as someone questioning
 	void setQuestionIdentity()
@@ -28,31 +31,38 @@ behavior Speaker implements ActorService
 
 	// simple processing of the message by calling server's broadcast
 	// this also prints out the timestamp at the beginning
-	void broadcastSend(ChatMessage msg, int number_of_questions, int total_messages) 
+	void broadcastSend(String msg, boolean is_statement, boolean is_question, boolean is_answer, int number_of_questions, int total_messages, boolean fifo) 
 	{
 		Date date = new Date();
 		Timestamp current = new Timestamp(date.getTime());
-		standardOutput<-println("[Speaker Local] " + myName + ": " + msg.getMsgType() +": "+ msg.getMsg() + "; Timestamp: " + current) @ 
-		server_ref<-broadcast(myName, msg, number_of_questions, total_messages);
+		String type = "";
+		if(is_statement)
+			type = "STATEMENT";
+		else if(is_question)
+			type = "QUESTION";
+		else if(is_answer)
+			type = "ANSWER";
+		standardOutput<-println("[Speaker Local] " + myName + ": " + type +": "+ msg + "; Timestamp: " + current) @ 
+		server_ref<-broadcast(myName, msg, type, number_of_questions, total_messages, fifo);
 	}	
 
 	// this function handles messages accordingly by their type and adds them to the user's own chat message list - non single glitch
-	void broadcastReceive(String speakerName, ChatMessage msg, int number_of_questions, int total_messages) throws InterruptedException
+	void broadcastReceive(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) throws InterruptedException
 	{
-		switch (msg.getMsgType())
+		switch (type)
 		{
-			case QUESTION:				
+			case "QUESTION":				
 				// add the question to the user's list
-				messages.add(msg.getMsg());
+				messages.add(msg);
 				Thread.sleep(200);
 
 				// next mark the timestamp
 				Date date_one = new Date();
 				Timestamp current_one = new Timestamp(date_one.getTime());
-				standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg.getMsgType() +": "+ msg.getMsg() + "; Timestamp: " + current_one);
+				standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_one);
 
 				// put the question in the question map
-				questionTimeStamp.put(msg.getMsg(),current_one);
+				questionTimeStamp.put(msg, current_one);
 				
 				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
 				{
@@ -61,19 +71,19 @@ behavior Speaker implements ActorService
 						// empty out queue
 						while(answerQueue.size() > 0)
 						{
-							ChatMessage chatMessage = (ChatMessage) answerQueue.remove();
+							String chatMessage = (String) answerQueue.remove();
 
 							// add the message to the list and print timestamp
-							messages.add(chatMessage.getMsg());
+							messages.add(chatMessage);
 							Thread.sleep(200);
 							Date date_two = new Date();
 							Timestamp current_two = new Timestamp(date_two.getTime());
-							standardOutput<-println("[Speaker Remote] " + speakerName + ": " + chatMessage.getMsgType() +": "+ chatMessage.getMsg() + "; Timestamp: " + current_two);
+							standardOutput<-println("[Speaker Remote] " + speakerName + ": " + "ANSWER" +": "+ chatMessage + "; Timestamp: " + current_two);
 						}						
 					}
 				}
 				break;
-			case ANSWER:
+			case "ANSWER":
 				// check if there has been a question already placed
 				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
 				{
@@ -82,39 +92,103 @@ behavior Speaker implements ActorService
 						// empty out queue
 						while(answerQueue.size() > 0)
 						{
-							ChatMessage chatMessage = (ChatMessage) answerQueue.remove();
+							String chatMessage = (String) answerQueue.remove();
 
 							// add the message to the list and print timestamp
-							messages.add(chatMessage.getMsg());
+							messages.add(chatMessage);
 							Thread.sleep(200);
 							Date date_two = new Date();
 							Timestamp current_two = new Timestamp(date_two.getTime());
-							standardOutput<-println("[Speaker Remote] " + speakerName + ": " + chatMessage.getMsgType() +": "+ chatMessage.getMsg() + "; Timestamp: " + current_two);
+							standardOutput<-println("[Speaker Remote] " + speakerName + ": " + "ANSWER" +": "+ chatMessage + "; Timestamp: " + current_two);
 						}						
 					}
-					messages.add(msg.getMsg());
+					messages.add(msg);
 					Thread.sleep(200);
 					// get the time next
 					Date date_three = new Date();
 					Timestamp current_three = new Timestamp(date_three.getTime());
-					standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg.getMsgType() +": "+ msg.getMsg() + "; Timestamp: " + current_three);
+					standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_three);
 				}
 				else
 				{
-					standardOutput<-println("Adding to answer queue");
 					// store the message for later processing
 					answerQueue.add(msg);
 				}
 				break;
 			default:
-				// first add the statement to the overall message list
-				messages.add(msg.getMsg());
-				Thread.sleep(200);
+				if(fifo)
+				{
+					Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
+					if(valuesAdded.size() == 0 || (Integer)valuesAdded.get(valuesAdded.size() - 1) == current_value - 1)
+					{
+						valuesAdded.add(current_value);
+						messages.add(msg);
+						Thread.sleep(200);
 
-				// next mark the timestamp
-				Date date_four = new Date();
-				Timestamp current_four = new Timestamp(date_four.getTime());
-				standardOutput<-println("[Speaker Remote] " + speakerName + ": " + msg.getMsgType() +": "+ msg.getMsg() + "; Timestamp: " + current_four);
+						// next mark the timestamp
+						Date date_four = new Date();
+						Timestamp current_four = new Timestamp(date_four.getTime());
+						standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_four);
+						int i = -1;
+						for(i = 0; i < fifoValues.size(); i++)
+						{
+							if((Integer)fifoValues.get(i) == current_value + 1)
+							{
+								current_value = (Integer)fifoValues.get(i);
+								String current_message = (String)fifoMessageValues.get(i);
+								messages.add(current_message);
+								Thread.sleep(200);
+								Date date_five = new Date();
+								Timestamp current_five = new Timestamp(date_five.getTime());
+								standardOutput<-println("[Speaker Remote] " + speakerName + ": " + "STATEMENT" +": "+ current_message + "; Timestamp: " + current_five);
+							}
+						}
+						while(i > 0)
+						{
+							fifoMessageValues.remove(0);
+							fifoValues.remove(0);
+							i--;
+						}
+					}
+					else
+					{
+						if(fifoValues.size() == 0)
+						{
+							fifoValues.add(current_value);
+							fifoMessageValues.add(msg);
+						}
+						else
+						{
+							if(current_value < (Integer)fifoValues.get(0))
+							{
+								fifoValues.add(0, current_value);
+								fifoMessageValues.add(0, msg);
+							}
+							else
+							{
+								for(int i = 0; i < fifoValues.size(); i++)
+								{
+									if(current_value > (Integer)fifoValues.get(i))
+									{
+										fifoValues.add(i, current_value);
+										fifoMessageValues.add(i, msg);
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+				else
+				{
+					messages.add(msg);
+					Thread.sleep(200);
+
+					// next mark the timestamp
+					Date date_four = new Date();
+					Timestamp current_four = new Timestamp(date_four.getTime());
+					standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_four);
+				}
 				break;
 		}
 
@@ -132,18 +206,18 @@ behavior Speaker implements ActorService
 	}
 
 	// this function handles messages by their type and takes into account levels after causal consistency
-	void broadcastReceiveAdvanced(String speakerName, ChatMessage msg, int number_of_questions, int total_messages) throws InterruptedException
+	void broadcastReceiveAdvanced(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) throws InterruptedException
 	{
-		switch (msg.getMsgType())
+		switch (type)
 		{
-			case QUESTION:
+			case "QUESTION":
 				// add the question to the overall message list
-				messageQueue.add(msg.getMsg());
+				messageQueue.add(msg);
 
 				// put the question in the question map
 				Date date = new Date();
 				Timestamp current = new Timestamp(date.getTime());
-				questionTimeStamp.put(msg.getMsg(), current);
+				questionTimeStamp.put(msg, current);
 				
 				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
 				{
@@ -152,13 +226,13 @@ behavior Speaker implements ActorService
 						// empty out queue
 						while(answerQueue.size() > 0)
 						{
-							ChatMessage chatMessage = (ChatMessage) answerQueue.remove();
-							messageQueue.add(chatMessage.getMsg());
+							String chatMessage = (String) answerQueue.remove();
+							messageQueue.add(chatMessage);
 						}						
 					}
 				}
 				break;
-			case ANSWER:
+			case "ANSWER":
 				// check if there has been a question already placed
 				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
 				{
@@ -167,11 +241,11 @@ behavior Speaker implements ActorService
 						// empty out queue
 						while(answerQueue.size() > 0)
 						{
-							ChatMessage chatMessage = (ChatMessage) answerQueue.remove();
-							messageQueue.add(chatMessage.getMsg());
+							String chatMessage = (String) answerQueue.remove();
+							messageQueue.add(chatMessage);
 						}						
 					}
-					messageQueue.add(msg.getMsg());
+					messageQueue.add(msg);
 				}
 				else
 				{
@@ -179,9 +253,9 @@ behavior Speaker implements ActorService
 					answerQueue.add(msg);
 				}
 				break;
-			case STATEMENT:
+			default:
 				// add the statement to the overall message queue
-				messageQueue.add(msg.getMsg());
+				messageQueue.add(msg);
 				break;
 		}
 

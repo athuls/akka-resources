@@ -10,7 +10,7 @@ java -cp libs/salsa1.1.5.jar:. todo.CausalSimpleTodo uan:\\localhost:3030\id2 ua
 
 sleep 20s
 
-python parseCausalTodo.py >> taskLogs/CausalTaskResults.txt
+#python parseCausalTodo.py >> taskLogs/CausalTaskResults.txt
 
 ps -ef | grep WWCNamingServer | grep -v grep | awk '{print $2}' | xargs kill -9
 ps -ef | grep Chat | grep -v grep | awk '{print $2}' | xargs kill -9

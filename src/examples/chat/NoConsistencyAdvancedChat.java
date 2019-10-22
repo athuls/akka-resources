@@ -271,401 +271,401 @@ public class NoConsistencyAdvancedChat extends UniversalActor  {
 
 		public void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5) {
 			{
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 1."), 0, 40)
+				// s1<-broadcastSend("User 1: Random statement 1.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 1."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Random statement 1.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 2."), 0, 40)
+				// s1<-broadcastSend("User 1: Random statement 2.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 2."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Random statement 2.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 3."), 0, 40)
+				// s1<-broadcastSend("User 1: Random statement 3.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 3."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Random statement 3.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 4."), 0, 40)
+				// s1<-broadcastSend("User 1: Random statement 4.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 4."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Random statement 4.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 5."), 0, 40)
+				// s1<-broadcastSend("User 1: Random statement 5.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 5."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Random statement 5.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 6."), 0, 40)
+				// s1<-broadcastSend("User 1: Random statement 6.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 6."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Random statement 6.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 7."), 0, 40)
+				// s1<-broadcastSend("User 1: Random statement 7.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 7."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Random statement 7.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 8."), 0, 40)
+				// s1<-broadcastSend("User 1: Random statement 8.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 8."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Random statement 8.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 9."), 0, 40)
+				// s1<-broadcastSend("User 1: Random statement 9.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 9."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Random statement 9.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 10."), 0, 40)
+				// s1<-broadcastSend("User 1: Random statement 10.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 10."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Random statement 10.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 1."), 0, 40)
+				// s2<-broadcastSend("User 2: Random statement 1.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 1."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Random statement 1.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 2."), 0, 40)
+				// s2<-broadcastSend("User 2: Random statement 2.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 2."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Random statement 2.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 3."), 0, 40)
+				// s2<-broadcastSend("User 2: Random statement 3.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 3."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Random statement 3.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 4."), 0, 40)
+				// s2<-broadcastSend("User 2: Random statement 4.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 4."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Random statement 4.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 5."), 0, 40)
+				// s2<-broadcastSend("User 2: Random statement 5.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 5."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Random statement 5.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 6."), 0, 40)
+				// s2<-broadcastSend("User 2: Random statement 6.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 6."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Random statement 6.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 7."), 0, 40)
+				// s2<-broadcastSend("User 2: Random statement 7.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 7."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Random statement 7.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 8."), 0, 40)
+				// s2<-broadcastSend("User 2: Random statement 8.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 8."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Random statement 8.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 9."), 0, 40)
+				// s2<-broadcastSend("User 2: Random statement 9.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 9."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Random statement 9.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 10."), 0, 40)
+				// s2<-broadcastSend("User 2: Random statement 10.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 10."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Random statement 10.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 1."), 0, 40)
+				// s3<-broadcastSend("User 3: Random statement 1.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 1."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Random statement 1.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 2."), 0, 40)
+				// s3<-broadcastSend("User 3: Random statement 2.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 2."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Random statement 2.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 3."), 0, 40)
+				// s3<-broadcastSend("User 3: Random statement 3.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 3."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Random statement 3.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 4."), 0, 40)
+				// s3<-broadcastSend("User 3: Random statement 4.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 4."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Random statement 4.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 5."), 0, 40)
+				// s3<-broadcastSend("User 3: Random statement 5.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 5."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Random statement 5.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 6."), 0, 40)
+				// s3<-broadcastSend("User 3: Random statement 6.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 6."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Random statement 6.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 7."), 0, 40)
+				// s3<-broadcastSend("User 3: Random statement 7.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 7."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Random statement 7.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 8."), 0, 40)
+				// s3<-broadcastSend("User 3: Random statement 8.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 8."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Random statement 8.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 9."), 0, 40)
+				// s3<-broadcastSend("User 3: Random statement 9.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 9."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Random statement 9.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 10."), 0, 40)
+				// s3<-broadcastSend("User 3: Random statement 10.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 10."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Random statement 10.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 1."), 0, 40)
+				// s4<-broadcastSend("User 4: Random statement 1.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 1."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Random statement 1.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 2."), 0, 40)
+				// s4<-broadcastSend("User 4: Random statement 2.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 2."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Random statement 2.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 3."), 0, 40)
+				// s4<-broadcastSend("User 4: Random statement 3.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 3."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Random statement 3.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 4."), 0, 40)
+				// s4<-broadcastSend("User 4: Random statement 4.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 4."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Random statement 4.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 5."), 0, 40)
+				// s4<-broadcastSend("User 4: Random statement 5.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 5."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Random statement 5.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 6."), 0, 40)
+				// s4<-broadcastSend("User 4: Random statement 6.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 6."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Random statement 6.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 7."), 0, 40)
+				// s4<-broadcastSend("User 4: Random statement 7.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 7."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Random statement 7.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 8."), 0, 40)
+				// s4<-broadcastSend("User 4: Random statement 8.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 8."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Random statement 8.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 9."), 0, 40)
+				// s4<-broadcastSend("User 4: Random statement 9.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 9."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Random statement 9.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 10."), 0, 40)
+				// s4<-broadcastSend("User 4: Random statement 10.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 10."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Random statement 10.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 1."), 0, 40)
+				// s5<-broadcastSend("User 5: Random statement 1.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 1."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Random statement 1.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 2."), 0, 40)
+				// s5<-broadcastSend("User 5: Random statement 2.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 2."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Random statement 2.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 3."), 0, 40)
+				// s5<-broadcastSend("User 5: Random statement 3.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 3."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Random statement 3.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 4."), 0, 40)
+				// s5<-broadcastSend("User 5: Random statement 4.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 4."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Random statement 4.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 5."), 0, 40)
+				// s5<-broadcastSend("User 5: Random statement 5.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 5."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Random statement 5.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 6."), 0, 40)
+				// s5<-broadcastSend("User 5: Random statement 6.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 6."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Random statement 6.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 7."), 0, 40)
+				// s5<-broadcastSend("User 5: Random statement 7.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 7."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Random statement 7.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 8."), 0, 40)
+				// s5<-broadcastSend("User 5: Random statement 8.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 8."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Random statement 8.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 9."), 0, 40)
+				// s5<-broadcastSend("User 5: Random statement 9.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 9."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Random statement 9.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 10."), 0, 40)
+				// s5<-broadcastSend("User 5: Random statement 10.", true, false, false, 0, 40, false)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 10."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Random statement 10.", true, false, false, new Integer(0), new Integer(40), false };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}

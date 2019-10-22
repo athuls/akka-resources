@@ -280,63 +280,63 @@ public class FIFOAdvancedChat extends UniversalActor  {
 				Token token_2_6 = new Token();
 				Token token_2_7 = new Token();
 				Token token_2_8 = new Token();
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 1."), 0, 40)
+				// s1<-broadcastSend("User 1: Ordered message 1.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 1."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Ordered message 1.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 2."), 0, 40)
+				// s1<-broadcastSend("User 1: Ordered message 2.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 2."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Ordered message 2.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 3."), 0, 40)
+				// s1<-broadcastSend("User 1: Ordered message 3.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 3."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Ordered message 3.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_1, token_2_2 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 4."), 0, 40)
+				// s1<-broadcastSend("User 1: Ordered message 4.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 4."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Ordered message 4.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_2, token_2_3 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 5."), 0, 40)
+				// s1<-broadcastSend("User 1: Ordered message 5.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 5."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Ordered message 5.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_3, token_2_4 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 6."), 0, 40)
+				// s1<-broadcastSend("User 1: Ordered message 6.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 6."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Ordered message 6.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_4, token_2_5 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 7."), 0, 40)
+				// s1<-broadcastSend("User 1: Ordered message 7.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 7."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Ordered message 7.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_5, token_2_6 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 8."), 0, 40)
+				// s1<-broadcastSend("User 1: Ordered message 8.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 8."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Ordered message 8.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_6, token_2_7 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 9."), 0, 40)
+				// s1<-broadcastSend("User 1: Ordered message 9.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 9."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Ordered message 9.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_7, token_2_8 );
 					__messages.add( message );
 				}
-				// s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 10."), 0, 40)
+				// s1<-broadcastSend("User 1: Ordered message 10.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 1: Ordered message 10."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 1: Ordered message 10.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, token_2_8, null );
 					__messages.add( message );
 				}
@@ -351,63 +351,63 @@ public class FIFOAdvancedChat extends UniversalActor  {
 				Token token_2_6 = new Token();
 				Token token_2_7 = new Token();
 				Token token_2_8 = new Token();
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 1."), 0, 40)
+				// s2<-broadcastSend("User 2: Ordered message 1.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 1."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Ordered message 1.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 2."), 0, 40)
+				// s2<-broadcastSend("User 2: Ordered message 2.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 2."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Ordered message 2.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 3."), 0, 40)
+				// s2<-broadcastSend("User 2: Ordered message 3.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 3."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Ordered message 3.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_1, token_2_2 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 4."), 0, 40)
+				// s2<-broadcastSend("User 2: Ordered message 4.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 4."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Ordered message 4.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_2, token_2_3 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 5."), 0, 40)
+				// s2<-broadcastSend("User 2: Ordered message 5.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 5."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Ordered message 5.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_3, token_2_4 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 6."), 0, 40)
+				// s2<-broadcastSend("User 2: Ordered message 6.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 6."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Ordered message 6.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_4, token_2_5 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 7."), 0, 40)
+				// s2<-broadcastSend("User 2: Ordered message 7.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 7."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Ordered message 7.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_5, token_2_6 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 8."), 0, 40)
+				// s2<-broadcastSend("User 2: Ordered message 8.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 8."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Ordered message 8.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_6, token_2_7 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 9."), 0, 40)
+				// s2<-broadcastSend("User 2: Ordered message 9.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 9."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Ordered message 9.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_7, token_2_8 );
 					__messages.add( message );
 				}
-				// s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 10."), 0, 40)
+				// s2<-broadcastSend("User 2: Ordered message 10.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 2: Ordered message 10."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 2: Ordered message 10.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, token_2_8, null );
 					__messages.add( message );
 				}
@@ -422,63 +422,63 @@ public class FIFOAdvancedChat extends UniversalActor  {
 				Token token_2_6 = new Token();
 				Token token_2_7 = new Token();
 				Token token_2_8 = new Token();
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 1."), 0, 40)
+				// s3<-broadcastSend("User 3: Ordered message 1.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 1."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Ordered message 1.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 2."), 0, 40)
+				// s3<-broadcastSend("User 3: Ordered message 2.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 2."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Ordered message 2.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 3."), 0, 40)
+				// s3<-broadcastSend("User 3: Ordered message 3.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 3."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Ordered message 3.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_1, token_2_2 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 4."), 0, 40)
+				// s3<-broadcastSend("User 3: Ordered message 4.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 4."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Ordered message 4.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_2, token_2_3 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 5."), 0, 40)
+				// s3<-broadcastSend("User 3: Ordered message 5.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 5."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Ordered message 5.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_3, token_2_4 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 6."), 0, 40)
+				// s3<-broadcastSend("User 3: Ordered message 6.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 6."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Ordered message 6.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_4, token_2_5 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 7."), 0, 40)
+				// s3<-broadcastSend("User 3: Ordered message 7.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 7."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Ordered message 7.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_5, token_2_6 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 8."), 0, 40)
+				// s3<-broadcastSend("User 3: Ordered message 8.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 8."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Ordered message 8.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_6, token_2_7 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 9."), 0, 40)
+				// s3<-broadcastSend("User 3: Ordered message 9.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 9."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Ordered message 9.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_7, token_2_8 );
 					__messages.add( message );
 				}
-				// s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 10."), 0, 40)
+				// s3<-broadcastSend("User 3: Ordered message 10.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 3: Ordered message 10."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 3: Ordered message 10.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, token_2_8, null );
 					__messages.add( message );
 				}
@@ -493,63 +493,63 @@ public class FIFOAdvancedChat extends UniversalActor  {
 				Token token_2_6 = new Token();
 				Token token_2_7 = new Token();
 				Token token_2_8 = new Token();
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 1."), 0, 40)
+				// s4<-broadcastSend("User 4: Ordered message 1.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 1."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Ordered message 1.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 2."), 0, 40)
+				// s4<-broadcastSend("User 4: Ordered message 2.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 2."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Ordered message 2.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 3."), 0, 40)
+				// s4<-broadcastSend("User 4: Ordered message 3.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 3."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Ordered message 3.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_1, token_2_2 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 4."), 0, 40)
+				// s4<-broadcastSend("User 4: Ordered message 4.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 4."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Ordered message 4.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_2, token_2_3 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 5."), 0, 40)
+				// s4<-broadcastSend("User 4: Ordered message 5.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 5."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Ordered message 5.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_3, token_2_4 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 6."), 0, 40)
+				// s4<-broadcastSend("User 4: Ordered message 6.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 6."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Ordered message 6.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_4, token_2_5 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 7."), 0, 40)
+				// s4<-broadcastSend("User 4: Ordered message 7.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 7."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Ordered message 7.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_5, token_2_6 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 8."), 0, 40)
+				// s4<-broadcastSend("User 4: Ordered message 8.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 8."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Ordered message 8.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_6, token_2_7 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 9."), 0, 40)
+				// s4<-broadcastSend("User 4: Ordered message 9.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 9."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Ordered message 9.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_7, token_2_8 );
 					__messages.add( message );
 				}
-				// s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 10."), 0, 40)
+				// s4<-broadcastSend("User 4: Ordered message 10.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 4: Ordered message 10."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 4: Ordered message 10.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, token_2_8, null );
 					__messages.add( message );
 				}
@@ -564,63 +564,63 @@ public class FIFOAdvancedChat extends UniversalActor  {
 				Token token_2_6 = new Token();
 				Token token_2_7 = new Token();
 				Token token_2_8 = new Token();
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 1."), 0, 40)
+				// s5<-broadcastSend("User 5: Ordered message 1.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 1."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Ordered message 1.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 2."), 0, 40)
+				// s5<-broadcastSend("User 5: Ordered message 2.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 2."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Ordered message 2.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 3."), 0, 40)
+				// s5<-broadcastSend("User 5: Ordered message 3.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 3."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Ordered message 3.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_1, token_2_2 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 4."), 0, 40)
+				// s5<-broadcastSend("User 5: Ordered message 4.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 4."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Ordered message 4.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_2, token_2_3 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 5."), 0, 40)
+				// s5<-broadcastSend("User 5: Ordered message 5.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 5."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Ordered message 5.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_3, token_2_4 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 6."), 0, 40)
+				// s5<-broadcastSend("User 5: Ordered message 6.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 6."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Ordered message 6.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_4, token_2_5 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 7."), 0, 40)
+				// s5<-broadcastSend("User 5: Ordered message 7.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 7."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Ordered message 7.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_5, token_2_6 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 8."), 0, 40)
+				// s5<-broadcastSend("User 5: Ordered message 8.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 8."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Ordered message 8.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_6, token_2_7 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 9."), 0, 40)
+				// s5<-broadcastSend("User 5: Ordered message 9.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 9."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Ordered message 9.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_7, token_2_8 );
 					__messages.add( message );
 				}
-				// s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 10."), 0, 40)
+				// s5<-broadcastSend("User 5: Ordered message 10.", true, false, false, 0, 40, true)
 				{
-					Object _arguments[] = { new ChatMessage(MessageType.STATEMENT, "User 5: Ordered message 10."), new Integer(0), new Integer(40) };
+					Object _arguments[] = { "User 5: Ordered message 10.", true, false, false, new Integer(0), new Integer(40), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, token_2_8, null );
 					__messages.add( message );
 				}

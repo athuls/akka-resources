@@ -1,22 +1,22 @@
 Started server
 Server started
-Registering speaker uan:\localhost:3030id6
 Registering speaker uan:\localhost:3030id2
-Registering speaker uan:\localhost:3030id3
 Registering speaker uan:\localhost:3030id4
+Registering speaker uan:\localhost:3030id6
+Registering speaker uan:\localhost:3030id3
 Registering speaker uan:\localhost:3030id5
+Speaker name for message is uan:\localhost:3030id5
 Speaker name for message is uan:\localhost:3030id4
-Speaker name for message is uan:\localhost:3030id3
-Speaker name for message is uan:\localhost:3030id3
-Speaker name for message is uan:\localhost:3030id3
 Speaker name for message is uan:\localhost:3030id4
-Speaker name for message is uan:\localhost:3030id5
-Speaker name for message is uan:\localhost:3030id5
-Speaker name for message is uan:\localhost:3030id5
 Speaker name for message is uan:\localhost:3030id4
 Speaker name for message is uan:\localhost:3030id6
 Speaker name for message is uan:\localhost:3030id6
-Speaker name for message is uan:\localhost:3030id2
 Speaker name for message is uan:\localhost:3030id6
+Speaker name for message is uan:\localhost:3030id5
+Speaker name for message is uan:\localhost:3030id5
 Speaker name for message is uan:\localhost:3030id2
 Speaker name for message is uan:\localhost:3030id2
+Speaker name for message is uan:\localhost:3030id2
+Speaker name for message is uan:\localhost:3030id3
+Speaker name for message is uan:\localhost:3030id3
+Speaker name for message is uan:\localhost:3030id3

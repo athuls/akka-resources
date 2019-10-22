@@ -2,7 +2,6 @@ module examples.chat;
 
 import java.util.List;
 import java.util.ArrayList;
-import examples.chat.ChatMessage.MessageType;
 
 //Server backend for the chat application
 behavior Server implements ActorService
@@ -16,7 +15,7 @@ behavior Server implements ActorService
 	}	
 
 	// this function is used to broadcast changes to the remaining users, so that they can add messages to their chatlist version
-	void broadcast(String speakerName, ChatMessage msg, int number_of_questions, int total_messages) 
+	void broadcast(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) 
 	{
 		standardOutput<-println("Speaker name for message is " + speakerName);
 		// for now, we do not enforce ordering of how users are broadcasted (only implement until single glitch)
@@ -26,7 +25,7 @@ behavior Server implements ActorService
 			if(!registeredUsers.get(i).equals(speakerName)) 
 			{
 				Speaker speakerRef = (Speaker) Speaker.getReferenceByName((String)registeredUsers.get(i));
-				speakerRef<-broadcastReceiveAdvanced(speakerName, msg, number_of_questions, total_messages);
+				speakerRef<-broadcastReceive(speakerName, msg, type, number_of_questions, total_messages, fifo);
 			}
 		}	
   	}

@@ -1,18 +1,18 @@
 User started with uan: uan://:3030\localhost:3030id4
 Messaging server
 Finished registering
-[Speaker Local] Dan: Add message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 1; Timestamp: 2019-10-15 17:21:55.137
-[Speaker Local] Dan: Add message: Task name: u3t2Task type: Initial Task; Task text: User 3: Ordered Task 2; Timestamp: 2019-10-15 17:21:55.564
-[Speaker Local] Dan: Upd message: Task name: u3t1Task type: Initial task; Task text: User 3: Ordered Task 3; Timestamp: 2019-10-15 17:21:55.569
-[Speaker Remote] Dan: Add Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 1; Timestamp: 2019-10-15 17:21:56.179
-[Speaker Remote] Dan: Add Message: Task name: u2t2Task type: Initial Task; Task text: User 2: Ordered Task 2; Timestamp: 2019-10-15 17:21:56.38
-[Speaker Remote] Dan: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 1; Timestamp: 2019-10-15 17:21:56.582
-[Speaker Remote] Dan: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Ordered Task 2; Timestamp: 2019-10-15 17:21:56.783
-[Speaker Remote] Dan: Upd Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 3; Timestamp: 2019-10-15 17:21:56.984
-[Speaker Remote] Dan: Upd Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 3; Timestamp: 2019-10-15 17:21:57.185
-[Speaker Remote] Dan: Add Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 1; Timestamp: 2019-10-15 17:21:57.385
-[Speaker Remote] Dan: Add Message: Task name: u4t2Task type: Initial Task; Task text: User 4: Ordered Task 2; Timestamp: 2019-10-15 17:21:57.587
-[Speaker Remote] Dan: Upd Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 3; Timestamp: 2019-10-15 17:21:57.788
-[Speaker Remote] Dan: Add Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 1; Timestamp: 2019-10-15 17:21:57.994
-[Speaker Remote] Dan: Add Message: Task name: u5t2Task type: Initial Task; Task text: User 5: Ordered Task 2; Timestamp: 2019-10-15 17:21:58.195
-[Speaker Remote] Dan: Upd Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 3; Timestamp: 2019-10-15 17:21:58.4
+[Speaker Local] Dan: Add message: Task name: u3t1Task type: Initial Task; Task text: User 3: Ordered Task 1; Timestamp: 2019-10-21 20:28:31.853
+[Speaker Local] Dan: Add message: Task name: u3t2Task type: Initial Task; Task text: User 3: Ordered Task 2; Timestamp: 2019-10-21 20:28:32.153
+[Speaker Local] Dan: Upd message: Task name: u3t1Task type: Initial task; Task text: User 3: Ordered Task 3; Timestamp: 2019-10-21 20:28:32.157
+[Speaker Remote] Dan: Add Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 1; Timestamp: 2019-10-21 20:28:32.491
+[Speaker Remote] Dan: Add Message: Task name: u2t2Task type: Initial Task; Task text: User 2: Ordered Task 2; Timestamp: 2019-10-21 20:28:32.693
+[Speaker Remote] Dan: Add Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 1; Timestamp: 2019-10-21 20:28:32.896
+[Speaker Remote] Dan: Upd Message: Task name: u2t1Task type: Initial Task; Task text: User 2: Ordered Task 3; Timestamp: 2019-10-21 20:28:33.097
+[Speaker Remote] Dan: Add Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 1; Timestamp: 2019-10-21 20:28:33.297
+[Speaker Remote] Dan: Add Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 1; Timestamp: 2019-10-21 20:28:33.499
+[Speaker Remote] Dan: Add Message: Task name: u1t2Task type: Initial Task; Task text: User 1: Ordered Task 2; Timestamp: 2019-10-21 20:28:33.701
+[Speaker Remote] Dan: Upd Message: Task name: u1t1Task type: Initial Task; Task text: User 1: Ordered Task 3; Timestamp: 2019-10-21 20:28:33.903
+[Speaker Remote] Dan: Add Message: Task name: u4t2Task type: Initial Task; Task text: User 4: Ordered Task 2; Timestamp: 2019-10-21 20:28:34.153
+[Speaker Remote] Dan: Upd Message: Task name: u4t1Task type: Initial Task; Task text: User 4: Ordered Task 3; Timestamp: 2019-10-21 20:28:34.685
+[Speaker Remote] Dan: Add Message: Task name: u5t2Task type: Initial Task; Task text: User 5: Ordered Task 2; Timestamp: 2019-10-21 20:28:34.887
+[Speaker Remote] Dan: Upd Message: Task name: u5t1Task type: Initial Task; Task text: User 5: Ordered Task 3; Timestamp: 2019-10-21 20:28:35.427

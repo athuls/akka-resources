@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.util.Date;
 import java.sql.Timestamp;
 import examples.chat.ChatMessage.MessageType;
+import java.util.*;
 
 //Three speakers chat in a chat session initialized by the actor Chat
 
@@ -11,21 +12,30 @@ behavior NoConsistencySimpleChat
 {
 	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5) 
 	{
-		s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 1."), 0, 12);
-		s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 2."), 0, 12);
-		s1<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 1: Random statement 3."), 0, 12);
-		s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 1."), 0, 12);
-		s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 2."), 0, 12);
-		s2<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 2: Random statement 3."), 0, 12);
-		s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 1."), 0, 12);
-		s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 2."), 0, 12);
-		s3<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 3: Random statement 3."), 0, 12);
-		s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 1."), 0, 12);
-		s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 2."), 0, 12);
-		s4<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 4: Random statement 3."), 0, 12);
-		s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 1."), 0, 12);
-		s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 2."), 0, 12);
-		s5<-broadcastSend(new ChatMessage(MessageType.STATEMENT, "User 5: Random statement 3."), 0, 12);
+		ArrayList values = new ArrayList();
+		values.add(1);
+		values.add(2);
+		values.add(3);
+		Collections.shuffle(values);
+		s1<-broadcastSend("User 1: Random statement " + values.get(0) + ".", true, false, false, 0, 12, false);
+		s1<-broadcastSend("User 1: Random statement " + values.get(1) + ".", true, false, false, 0, 12, false);
+		s1<-broadcastSend("User 1: Random statement " + values.get(2) + ".", true, false, false, 0, 12, false);
+		Collections.shuffle(values);
+		s2<-broadcastSend("User 2: Random statement " + values.get(0) + ".", true, false, false, 0, 12, false);
+		s2<-broadcastSend("User 2: Random statement " + values.get(1) + ".", true, false, false, 0, 12, false);
+		s2<-broadcastSend("User 2: Random statement " + values.get(2) + ".", true, false, false, 0, 12, false);
+		Collections.shuffle(values);
+		s3<-broadcastSend("User 3: Random statement " + values.get(0) + ".", true, false, false, 0, 12, false);
+		s3<-broadcastSend("User 3: Random statement " + values.get(1) + ".", true, false, false, 0, 12, false);
+		s3<-broadcastSend("User 3: Random statement " + values.get(2) + ".", true, false, false, 0, 12, false);
+		Collections.shuffle(values);
+		s4<-broadcastSend("User 4: Random statement " + values.get(0) + ".", true, false, false, 0, 12, false);
+		s4<-broadcastSend("User 4: Random statement " + values.get(1) + ".", true, false, false, 0, 12, false);
+		s4<-broadcastSend("User 4: Random statement " + values.get(2) + ".", true, false, false, 0, 12, false);
+		Collections.shuffle(values);
+		s5<-broadcastSend("User 5: Random statement " + values.get(0) + ".", true, false, false, 0, 12, false);
+		s5<-broadcastSend("User 5: Random statement " + values.get(1) + ".", true, false, false, 0, 12, false);
+		s5<-broadcastSend("User 5: Random statement " + values.get(2) + ".", true, false, false, 0, 12, false);
 	}
 
 	void reply(String replyMsg) 

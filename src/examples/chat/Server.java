@@ -33,7 +33,6 @@ import salsa.resources.ActorService;
 
 import java.util.List;
 import java.util.ArrayList;
-import examples.chat.ChatMessage.MessageType;
 
 public class Server extends UniversalActor  implements ActorService {
 	public static void main(String args[]) {
@@ -185,7 +184,7 @@ public class Server extends UniversalActor  implements ActorService {
 		void construct(){
 			registeredUsers = new ArrayList();
 		}
-		public void broadcast(String speakerName, ChatMessage msg, int number_of_questions, int total_messages) {
+		public void broadcast(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) {
 			{
 				// standardOutput<-println("Speaker name for message is "+speakerName)
 				{
@@ -198,10 +197,10 @@ public class Server extends UniversalActor  implements ActorService {
 				if (!registeredUsers.get(i).equals(speakerName)) {{
 					Speaker speakerRef = (Speaker)Speaker.getReferenceByName((String)registeredUsers.get(i));
 					{
-						// speakerRef<-broadcastReceiveAdvanced(speakerName, msg, number_of_questions, total_messages)
+						// speakerRef<-broadcastReceive(speakerName, msg, type, number_of_questions, total_messages, fifo)
 						{
-							Object _arguments[] = { speakerName, msg, number_of_questions, total_messages };
-							Message message = new Message( self, speakerRef, "broadcastReceiveAdvanced", _arguments, null, null );
+							Object _arguments[] = { speakerName, msg, type, number_of_questions, total_messages, fifo };
+							Message message = new Message( self, speakerRef, "broadcastReceive", _arguments, null, null );
 							__messages.add( message );
 						}
 					}

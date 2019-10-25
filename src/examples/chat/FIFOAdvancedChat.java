@@ -362,6 +362,330 @@ public class FIFOAdvancedChat extends UniversalActor  {
 					__messages.add( message );
 				}
 			}
+			Collections.shuffle(values);
+			{
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(0)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 2: Ordered message "+values.get(0)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(1)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 2: Ordered message "+values.get(1)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(2)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 2: Ordered message "+values.get(2)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(3)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 2: Ordered message "+values.get(3)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(4)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 2: Ordered message "+values.get(4)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(5)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 2: Ordered message "+values.get(5)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(6)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 2: Ordered message "+values.get(6)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(7)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 2: Ordered message "+values.get(7)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(8)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 2: Ordered message "+values.get(8)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s2<-broadcastSend("User 2: Ordered message "+values.get(9)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 2: Ordered message "+values.get(9)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			Collections.shuffle(values);
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(0)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 3: Ordered message "+values.get(0)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(1)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 3: Ordered message "+values.get(1)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(2)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 3: Ordered message "+values.get(2)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(3)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 3: Ordered message "+values.get(3)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(4)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 3: Ordered message "+values.get(4)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(5)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 3: Ordered message "+values.get(5)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(6)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 3: Ordered message "+values.get(6)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(7)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 3: Ordered message "+values.get(7)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(8)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 3: Ordered message "+values.get(8)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s3<-broadcastSend("User 3: Ordered message "+values.get(9)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 3: Ordered message "+values.get(9)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			Collections.shuffle(values);
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(0)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(0)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(1)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(1)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(2)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(2)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(3)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(3)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(4)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(4)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(5)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(5)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(6)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(6)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(7)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(7)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(8)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(8)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s4<-broadcastSend("User 4: Ordered message "+values.get(9)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 4: Ordered message "+values.get(9)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			Collections.shuffle(values);
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(0)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(0)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(1)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(1)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(2)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(2)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(3)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(3)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(4)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(4)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(5)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(5)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(6)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(6)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(7)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(7)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(8)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(8)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// s5<-broadcastSend("User 5: Ordered message "+values.get(9)+".", true, false, false, 0, 40, true)
+				{
+					Object _arguments[] = { "User 5: Ordered message "+values.get(9)+".", true, false, false, new Integer(0), new Integer(40), true };
+					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 		}
 		public void reply(String replyMsg) {
 			{

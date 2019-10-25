@@ -202,9 +202,9 @@ public class Speaker extends UniversalActor  implements ActorService {
 		ArrayList messages = new ArrayList();
 		Queue messageQueue = new LinkedList();
 		boolean isQuestion = false;
-		ArrayList fifoValues = new ArrayList();
-		ArrayList fifoMessageValues = new ArrayList();
-		ArrayList valuesAdded = new ArrayList();
+		Map fifoValues = new HashMap();
+		Map fifoMessageValues = new HashMap();
+		Map valuesAdded = new HashMap();
 		void construct(String name, String serverRef){
 			myName = name;
 			server_ref = (Server)Server.getReferenceByName(serverRef);
@@ -305,8 +305,22 @@ if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 			}
 }break;			default: if (fifo) {{
 				Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
-				if ((valuesAdded.size()==0&&current_value==1)||(valuesAdded.size()>0&&((Integer)valuesAdded.get(valuesAdded.size()-1)==current_value-1))) {{
-					valuesAdded.add(current_value);
+				Integer current_user = Integer.parseInt(msg.substring(0, 10).replaceAll("[\\D]", ""));
+				if (!valuesAdded.containsKey(current_user)) {{
+					ArrayList vals = new ArrayList();
+					valuesAdded.put(current_user, vals);
+				}
+}				if (!fifoValues.containsKey(current_user)) {{
+					ArrayList vals = new ArrayList();
+					ArrayList msgVals = new ArrayList();
+					fifoValues.put(current_user, vals);
+					fifoMessageValues.put(current_user, msgVals);
+				}
+}				ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
+				ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
+				ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
+				if ((currentAdded.size()==0&&current_value==1)||(currentAdded.size()>0&&((Integer)currentAdded.get(currentAdded.size()-1)==current_value-1))) {{
+					currentAdded.add(current_value);
 					messages.add(msg);
 					Thread.sleep(200);
 					Date date_four = new Date();
@@ -320,11 +334,11 @@ if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 						}
 					}
 					int i = -1;
-					for (i = 0; i<fifoValues.size(); i++){
-						if ((Integer)fifoValues.get(i)==current_value+1) {{
-							current_value = (Integer)fifoValues.get(i);
-							String current_message = (String)fifoMessageValues.get(i);
-							valuesAdded.add(current_value);
+					for (i = 0; i<currentFifo.size(); i++){
+						if ((Integer)currentFifo.get(i)==current_value+1) {{
+							current_value = (Integer)currentFifo.get(i);
+							String current_message = (String)currentFifoMessages.get(i);
+							currentAdded.add(current_value);
 							messages.add(current_message);
 							Thread.sleep(200);
 							Date date_five = new Date();
@@ -340,39 +354,42 @@ if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 						}
 }						else {break;}					}
 					while (i>0) {
-						fifoMessageValues.remove(0);
-						fifoValues.remove(0);
+						currentFifoMessages.remove(0);
+						currentFifo.remove(0);
 						i--;
 					}
 				}
 }				else {{
-					if (fifoValues.size()==0) {{
-						fifoValues.add(current_value);
-						fifoMessageValues.add(msg);
+					if (currentFifo.size()==0) {{
+						currentFifo.add(current_value);
+						currentFifoMessages.add(msg);
 					}
 }					else {{
-						if (current_value<(Integer)fifoValues.get(0)) {{
-							fifoValues.add(0, current_value);
-							fifoMessageValues.add(0, msg);
+						if (current_value<(Integer)currentFifo.get(0)) {{
+							currentFifo.add(0, current_value);
+							currentFifoMessages.add(0, msg);
 						}
 }						else {{
 							int i = -1;
 							boolean added = false;
-							for (i = 0; i<fifoValues.size(); i++){
-								if (current_value<(Integer)fifoValues.get(i)) {{
+							for (i = 0; i<currentFifo.size(); i++){
+								if (current_value<(Integer)currentFifo.get(i)) {{
 									added = true;
-									fifoValues.add(i, current_value);
-									fifoMessageValues.add(i, msg);
+									currentFifo.add(i, current_value);
+									currentFifoMessages.add(i, msg);
 break;								}
 }							}
 							if (!added) {{
-								fifoValues.add(i, current_value);
-								fifoMessageValues.add(i, msg);
+								currentFifo.add(i, current_value);
+								currentFifoMessages.add(i, msg);
 							}
 }						}
 }					}
 }				}
-}			}
+}				valuesAdded.put(current_user, currentAdded);
+				fifoValues.put(current_user, currentFifo);
+				fifoMessageValues.put(current_user, currentFifoMessages);
+			}
 }			else {{
 				messages.add(msg);
 				Thread.sleep(200);

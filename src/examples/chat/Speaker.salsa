@@ -23,6 +23,12 @@ behavior Speaker implements ActorService
 	ArrayList fifoMessageValues = new ArrayList();
 	ArrayList valuesAdded = new ArrayList();
 
+	Speaker(String name, String serverRef)
+	{
+		myName = name;
+		server_ref = (Server) Server.getReferenceByName(serverRef);
+	}
+
 	// function used to set the identity of this user as someone questioning
 	void setQuestionIdentity()
 	{
@@ -119,7 +125,7 @@ behavior Speaker implements ActorService
 				if(fifo)
 				{
 					Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
-					if(valuesAdded.size() == 0 || (Integer)valuesAdded.get(valuesAdded.size() - 1) == current_value - 1)
+					if((valuesAdded.size() == 0 && current_value == 1) || (valuesAdded.size() > 0 && ((Integer)valuesAdded.get(valuesAdded.size() - 1) == current_value - 1)))
 					{
 						valuesAdded.add(current_value);
 						messages.add(msg);
@@ -136,12 +142,15 @@ behavior Speaker implements ActorService
 							{
 								current_value = (Integer)fifoValues.get(i);
 								String current_message = (String)fifoMessageValues.get(i);
+								valuesAdded.add(current_value);
 								messages.add(current_message);
 								Thread.sleep(200);
 								Date date_five = new Date();
 								Timestamp current_five = new Timestamp(date_five.getTime());
 								standardOutput<-println("[Speaker Remote] " + speakerName + ": " + "STATEMENT" +": "+ current_message + "; Timestamp: " + current_five);
 							}
+							else
+								break;
 						}
 						while(i > 0)
 						{
@@ -166,14 +175,22 @@ behavior Speaker implements ActorService
 							}
 							else
 							{
-								for(int i = 0; i < fifoValues.size(); i++)
+								int i = -1;
+								boolean added = false;
+								for(i = 0; i < fifoValues.size(); i++)
 								{
-									if(current_value > (Integer)fifoValues.get(i))
+									if(current_value < (Integer)fifoValues.get(i))
 									{
+										added = true;
 										fifoValues.add(i, current_value);
 										fifoMessageValues.add(i, msg);
 										break;
 									}
+								}
+								if(!added)
+								{
+									fifoValues.add(i, current_value);
+									fifoMessageValues.add(i, msg);
 								}
 							}
 						}

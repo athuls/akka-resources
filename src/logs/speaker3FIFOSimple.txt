@@ -1,6 +1,12 @@
 Received speaker: uan:\localhost:3030id4 to register with server uan:\localhost:3030id1
 Speaker started with uan: uan://:3030\localhost:3030id4
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Ordered message 1.; Timestamp: 2019-10-22 17:48:41.344
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Ordered message 2.; Timestamp: 2019-10-22 17:48:41.63
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Ordered message 3.; Timestamp: 2019-10-22 17:48:41.631
-[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 3.; Timestamp: 2019-10-22 17:48:42.021
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 1.; Timestamp: 2019-10-25 02:53:02.612
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 2.; Timestamp: 2019-10-25 02:53:03.029
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 3.; Timestamp: 2019-10-25 02:53:03.233
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 4.; Timestamp: 2019-10-25 02:53:03.435
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 5.; Timestamp: 2019-10-25 02:53:03.638
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 6.; Timestamp: 2019-10-25 02:53:03.84
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 7.; Timestamp: 2019-10-25 02:53:04.041
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 8.; Timestamp: 2019-10-25 02:53:04.243
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 9.; Timestamp: 2019-10-25 02:53:04.447
+[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Ordered message 10.; Timestamp: 2019-10-25 02:53:04.649

@@ -1,0 +1,71 @@
+module examples.chat;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+import examples.chat.ChatMessage.MessageType;
+import java.util.*;
+
+//Three speakers chat in a chat session initialized by the actor Chat
+
+behavior NoConsistencyScalableChat
+{
+	void chatSession(int num_users, int num_messages, String server_ref)
+	{
+		ArrayList values = new ArrayList();
+		for(int i = 1; i <= num_messages; i++)
+			values.add(i);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_users; i++)
+		{
+			String id = "uan://localhost:3030/id"+i;
+			Speaker speaker = new Speaker(id, server_ref) at (new UAN(id));
+			server_ref<-registerUser(id);
+			for(int j = 1; j <= num_messages; j++)
+				speaker<-broadcastSend("User " + i + ": Random statement " + values.get(i - 1) + ".", true, false, false, 0, (num_users - 1) * num_messages, false);
+			Collections.shuffle(values);
+		}
+	}
+
+	void reply(String replyMsg) 
+	{
+		standardOutput<-println(replyMsg);
+	}
+	
+	void act(String args[])
+	{
+		if(args.length != 0)
+		{
+			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>");
+			return;
+		}
+
+		try
+		{
+			Date first = new Date();
+			Timestamp start = new Timestamp(first.getTime());
+			standardOutput <- println("Starting time: " + start);
+			Instant begin = Instant.now();
+			chatSession(5, 3) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
+		}
+		catch (Exception e)
+		{
+			standardOutput <- println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>");
+			return;
+		}
+	}
+
+	void trackEndingTime(Instant begin)
+	{
+		// keep track of ending time here
+		Date second = new Date();
+		Timestamp end = new Timestamp(second.getTime());
+
+		// calculate time elapsed
+		Instant endTime = Instant.now();
+		Duration timeDifference = Duration.between(begin, endTime);
+		long timeTaken = timeDifference.toMillis();
+		standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+		standardOutput<-println("Ending time: " + end);
+	}
+}

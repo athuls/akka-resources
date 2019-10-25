@@ -46,16 +46,16 @@ behavior NoConsistencySimpleTodo
 		try 
 		{
 			User user1 =(User) User.getReferenceByName(args[0]);
-                        			User user2 =(User) User.getReferenceByName(args[1]);
-                        			User user3 =(User) User.getReferenceByName(args[2]);
-                        			User user4 =(User) User.getReferenceByName(args[3]);
-                        			User user5 =(User) User.getReferenceByName(args[4]);
-                        			String username1 = args[5];
-                        			String username2 = args[6];
-                        			String username3 = args[7];
-                        			String username4 = args[8];
-                        			String username5 = args[9];
-                        			TaskList taskList =(TaskList) TaskList.getReferenceByName(args[10]);
+            User user2 =(User) User.getReferenceByName(args[1]);
+            User user3 =(User) User.getReferenceByName(args[2]);
+            User user4 =(User) User.getReferenceByName(args[3]);
+            User user5 =(User) User.getReferenceByName(args[4]);
+            String username1 = args[5];
+            String username2 = args[6];
+            String username3 = args[7];
+            String username4 = args[8];
+            String username5 = args[9];
+            TaskList taskList =(TaskList) TaskList.getReferenceByName(args[10]);
 
 			// keep track of starting time here
 			Date first = new Date();

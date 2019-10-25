@@ -35,9 +35,10 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Date;
 import java.sql.Timestamp;
+import examples.chat.ChatMessage.MessageType;
 import java.util.*;
 
-public class FIFOAdvancedChat extends UniversalActor  {
+public class CausalScalableChat extends UniversalActor  {
 	public static void main(String args[]) {
 		UAN uan = null;
 		UAL ual = null;
@@ -72,7 +73,7 @@ public class FIFOAdvancedChat extends UniversalActor  {
 			ual = new UAL( ServiceFactory.getTheater().getLocation() + System.getProperty("identifier"));
 		}
 		RunTime.receivedMessage();
-		FIFOAdvancedChat instance = (FIFOAdvancedChat)new FIFOAdvancedChat(uan, ual,null).construct();
+		CausalScalableChat instance = (CausalScalableChat)new CausalScalableChat(uan, ual,null).construct();
 		gc.WeakReference instanceRef=new gc.WeakReference(uan,ual);
 		{
 			Object[] _arguments = { args };
@@ -85,18 +86,18 @@ public class FIFOAdvancedChat extends UniversalActor  {
 		RunTime.finishedProcessingMessage();
 	}
 
-	public static ActorReference getReferenceByName(UAN uan)	{ return new FIFOAdvancedChat(false, uan); }
-	public static ActorReference getReferenceByName(String uan)	{ return FIFOAdvancedChat.getReferenceByName(new UAN(uan)); }
-	public static ActorReference getReferenceByLocation(UAL ual)	{ return new FIFOAdvancedChat(false, ual); }
+	public static ActorReference getReferenceByName(UAN uan)	{ return new CausalScalableChat(false, uan); }
+	public static ActorReference getReferenceByName(String uan)	{ return CausalScalableChat.getReferenceByName(new UAN(uan)); }
+	public static ActorReference getReferenceByLocation(UAL ual)	{ return new CausalScalableChat(false, ual); }
 
-	public static ActorReference getReferenceByLocation(String ual)	{ return FIFOAdvancedChat.getReferenceByLocation(new UAL(ual)); }
-	public FIFOAdvancedChat(boolean o, UAN __uan)	{ super(false,__uan); }
-	public FIFOAdvancedChat(boolean o, UAL __ual)	{ super(false,__ual); }
-	public FIFOAdvancedChat(UAN __uan,UniversalActor.State sourceActor)	{ this(__uan, null, sourceActor); }
-	public FIFOAdvancedChat(UAL __ual,UniversalActor.State sourceActor)	{ this(null, __ual, sourceActor); }
-	public FIFOAdvancedChat(UniversalActor.State sourceActor)		{ this(null, null, sourceActor);  }
-	public FIFOAdvancedChat()		{  }
-	public FIFOAdvancedChat(UAN __uan, UAL __ual, Object obj) {
+	public static ActorReference getReferenceByLocation(String ual)	{ return CausalScalableChat.getReferenceByLocation(new UAL(ual)); }
+	public CausalScalableChat(boolean o, UAN __uan)	{ super(false,__uan); }
+	public CausalScalableChat(boolean o, UAL __ual)	{ super(false,__ual); }
+	public CausalScalableChat(UAN __uan,UniversalActor.State sourceActor)	{ this(__uan, null, sourceActor); }
+	public CausalScalableChat(UAL __ual,UniversalActor.State sourceActor)	{ this(null, __ual, sourceActor); }
+	public CausalScalableChat(UniversalActor.State sourceActor)		{ this(null, null, sourceActor);  }
+	public CausalScalableChat()		{  }
+	public CausalScalableChat(UAN __uan, UAL __ual, Object obj) {
 		//decide the type of sourceActor
 		//if obj is null, the actor must be the startup actor.
 		//if obj is an actorReference, this actor is created by a remote actor
@@ -119,7 +120,7 @@ public class FIFOAdvancedChat extends UniversalActor  {
 			      setSource(sourceActor.getUAN(), sourceActor.getUAL());
 			      activateGC();
 			    }
-			    createRemotely(__uan, __ual, "examples.chat.FIFOAdvancedChat", sourceRef);
+			    createRemotely(__uan, __ual, "examples.chat.CausalScalableChat", sourceRef);
 			  }
 
 			  // local creation
@@ -184,11 +185,11 @@ public class FIFOAdvancedChat extends UniversalActor  {
 	}
 
 	public class State extends UniversalActor .State {
-		public FIFOAdvancedChat self;
+		public CausalScalableChat self;
 		public void updateSelf(ActorReference actorReference) {
-			((FIFOAdvancedChat)actorReference).setUAL(getUAL());
-			((FIFOAdvancedChat)actorReference).setUAN(getUAN());
-			self = new FIFOAdvancedChat(false,getUAL());
+			((CausalScalableChat)actorReference).setUAL(getUAL());
+			((CausalScalableChat)actorReference).setUAN(getUAN());
+			self = new CausalScalableChat(false,getUAL());
 			self.setUAN(getUAN());
 			self.setUAL(getUAL());
 			self.activateGC();
@@ -208,7 +209,7 @@ public class FIFOAdvancedChat extends UniversalActor  {
 
 		public State(UAN __uan, UAL __ual) {
 			super(__uan, __ual);
-			addClassName( "examples.chat.FIFOAdvancedChat$State" );
+			addClassName( "examples.chat.CausalScalableChat$State" );
 			addMethodsForClasses();
 		}
 
@@ -269,98 +270,45 @@ public class FIFOAdvancedChat extends UniversalActor  {
 			}
 		}
 
-		public void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5) {
+		public void chatSession(int num_users, int num_messages, boolean end, String server_ref) {
 			ArrayList values = new ArrayList();
-			values.add(1);
-			values.add(2);
-			values.add(3);
-			values.add(4);
-			values.add(5);
-			values.add(6);
-			values.add(7);
-			values.add(8);
-			values.add(9);
-			values.add(10);
+			for (int i = 1; i<=num_messages; i++)values.add(i);
 			Collections.shuffle(values);
-			{
-				// s1<-broadcastSend("User 1: Ordered message "+values.get(0)+".", true, false, false, 0, 40, true)
+			int question = 0;
+			if (end) {question = num_users;
+}			else {question = 1;
+}			for (int i = 1; i<=num_users; i++){
+				String id = "uan://localhost:3030/id"+i;
+				Speaker speaker = ((Speaker)new Speaker(new UAN(id),this).construct(id, server_ref));
 				{
-					Object _arguments[] = { "User 1: Ordered message "+values.get(0)+".", true, false, false, new Integer(0), new Integer(40), true };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
-					__messages.add( message );
+					// server_ref<-registerUser(id)
+					{
+						Object _arguments[] = { id };
+						Message message = new Message( self, server_ref, "registerUser", _arguments, null, null );
+						__messages.add( message );
+					}
 				}
-			}
-			{
-				// s1<-broadcastSend("User 1: Ordered message "+values.get(1)+".", true, false, false, 0, 40, true)
-				{
-					Object _arguments[] = { "User 1: Ordered message "+values.get(1)+".", true, false, false, new Integer(0), new Integer(40), true };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
-					__messages.add( message );
+				if (i==question) {{
+					for (int j = 1; j<=num_messages; j++)					{
+						// speaker<-broadcastSend("User "+i+": Question "+values.get(i-1)+".", false, true, false, num_messages, (num_users-1)*num_messages, true)
+						{
+							Object _arguments[] = { "User "+i+": Question "+values.get(i-1)+".", false, true, false, num_messages, (num_users-1)*num_messages, true };
+							Message message = new Message( self, speaker, "broadcastSend", _arguments, null, null );
+							__messages.add( message );
+						}
+					}
 				}
-			}
-			{
-				// s1<-broadcastSend("User 1: Ordered message "+values.get(2)+".", true, false, false, 0, 40, true)
-				{
-					Object _arguments[] = { "User 1: Ordered message "+values.get(2)+".", true, false, false, new Integer(0), new Integer(40), true };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
-					__messages.add( message );
+}				else {{
+					for (int j = 1; j<=num_messages; j++)					{
+						// speaker<-broadcastSend("User "+i+": Answer "+values.get(i-1)+".", false, false, true, num_messages, (num_users-1)*num_messages, true)
+						{
+							Object _arguments[] = { "User "+i+": Answer "+values.get(i-1)+".", false, false, true, num_messages, (num_users-1)*num_messages, true };
+							Message message = new Message( self, speaker, "broadcastSend", _arguments, null, null );
+							__messages.add( message );
+						}
+					}
 				}
-			}
-			{
-				// s1<-broadcastSend("User 1: Ordered message "+values.get(3)+".", true, false, false, 0, 40, true)
-				{
-					Object _arguments[] = { "User 1: Ordered message "+values.get(3)+".", true, false, false, new Integer(0), new Integer(40), true };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s1<-broadcastSend("User 1: Ordered message "+values.get(4)+".", true, false, false, 0, 40, true)
-				{
-					Object _arguments[] = { "User 1: Ordered message "+values.get(4)+".", true, false, false, new Integer(0), new Integer(40), true };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s1<-broadcastSend("User 1: Ordered message "+values.get(5)+".", true, false, false, 0, 40, true)
-				{
-					Object _arguments[] = { "User 1: Ordered message "+values.get(5)+".", true, false, false, new Integer(0), new Integer(40), true };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s1<-broadcastSend("User 1: Ordered message "+values.get(6)+".", true, false, false, 0, 40, true)
-				{
-					Object _arguments[] = { "User 1: Ordered message "+values.get(6)+".", true, false, false, new Integer(0), new Integer(40), true };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s1<-broadcastSend("User 1: Ordered message "+values.get(7)+".", true, false, false, 0, 40, true)
-				{
-					Object _arguments[] = { "User 1: Ordered message "+values.get(7)+".", true, false, false, new Integer(0), new Integer(40), true };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s1<-broadcastSend("User 1: Ordered message "+values.get(8)+".", true, false, false, 0, 40, true)
-				{
-					Object _arguments[] = { "User 1: Ordered message "+values.get(8)+".", true, false, false, new Integer(0), new Integer(40), true };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// s1<-broadcastSend("User 1: Ordered message "+values.get(9)+".", true, false, false, 0, 40, true)
-				{
-					Object _arguments[] = { "User 1: Ordered message "+values.get(9)+".", true, false, false, new Integer(0), new Integer(40), true };
-					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
-					__messages.add( message );
-				}
+}				Collections.shuffle(values);
 			}
 		}
 		public void reply(String replyMsg) {
@@ -374,7 +322,7 @@ public class FIFOAdvancedChat extends UniversalActor  {
 			}
 		}
 		public void act(String args[]) {
-			if (args.length!=5) {{
+			if (args.length!=0) {{
 				{
 					// standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>")
 					{
@@ -386,11 +334,6 @@ public class FIFOAdvancedChat extends UniversalActor  {
 				return;
 			}
 }			try {
-				Speaker speaker1 = (Speaker)Speaker.getReferenceByName(args[0]);
-				Speaker speaker2 = (Speaker)Speaker.getReferenceByName(args[1]);
-				Speaker speaker3 = (Speaker)Speaker.getReferenceByName(args[2]);
-				Speaker speaker4 = (Speaker)Speaker.getReferenceByName(args[3]);
-				Speaker speaker5 = (Speaker)Speaker.getReferenceByName(args[4]);
 				Date first = new Date();
 				Timestamp start = new Timestamp(first.getTime());
 				{
@@ -405,9 +348,9 @@ public class FIFOAdvancedChat extends UniversalActor  {
 				{
 					Token token_3_0 = new Token();
 					Token token_3_1 = new Token();
-					// chatSession(speaker1, speaker2, speaker3, speaker4, speaker5)
+					// chatSession(5, 3, true)
 					{
-						Object _arguments[] = { speaker1, speaker2, speaker3, speaker4, speaker5 };
+						Object _arguments[] = { new Integer(5), new Integer(3), true };
 						Message message = new Message( self, self, "chatSession", _arguments, null, token_3_0 );
 						__messages.add( message );
 					}

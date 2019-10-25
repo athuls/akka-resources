@@ -105,6 +105,12 @@ public class Speaker extends UniversalActor  implements ActorService {
 		}
 	}
 
+	public UniversalActor construct (String name, String serverRef) {
+		Object[] __arguments = { name, serverRef };
+		this.send( new Message(this, this, "construct", __arguments, null, null) );
+		return this;
+	}
+
 	public UniversalActor construct() {
 		Object[] __arguments = { };
 		this.send( new Message(this, this, "construct", __arguments, null, null) );
@@ -199,6 +205,10 @@ public class Speaker extends UniversalActor  implements ActorService {
 		ArrayList fifoValues = new ArrayList();
 		ArrayList fifoMessageValues = new ArrayList();
 		ArrayList valuesAdded = new ArrayList();
+		void construct(String name, String serverRef){
+			myName = name;
+			server_ref = (Server)Server.getReferenceByName(serverRef);
+		}
 		public void setQuestionIdentity() {
 			isQuestion = true;
 		}
@@ -295,7 +305,7 @@ if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 			}
 }break;			default: if (fifo) {{
 				Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
-				if (valuesAdded.size()==0||(Integer)valuesAdded.get(valuesAdded.size()-1)==current_value-1) {{
+				if ((valuesAdded.size()==0&&current_value==1)||(valuesAdded.size()>0&&((Integer)valuesAdded.get(valuesAdded.size()-1)==current_value-1))) {{
 					valuesAdded.add(current_value);
 					messages.add(msg);
 					Thread.sleep(200);
@@ -314,6 +324,7 @@ if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 						if ((Integer)fifoValues.get(i)==current_value+1) {{
 							current_value = (Integer)fifoValues.get(i);
 							String current_message = (String)fifoMessageValues.get(i);
+							valuesAdded.add(current_value);
 							messages.add(current_message);
 							Thread.sleep(200);
 							Date date_five = new Date();
@@ -327,7 +338,7 @@ if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 								}
 							}
 						}
-}					}
+}						else {break;}					}
 					while (i>0) {
 						fifoMessageValues.remove(0);
 						fifoValues.remove(0);
@@ -345,13 +356,20 @@ if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 							fifoMessageValues.add(0, msg);
 						}
 }						else {{
-							for (int i = 0; i<fifoValues.size(); i++){
-								if (current_value>(Integer)fifoValues.get(i)) {{
+							int i = -1;
+							boolean added = false;
+							for (i = 0; i<fifoValues.size(); i++){
+								if (current_value<(Integer)fifoValues.get(i)) {{
+									added = true;
 									fifoValues.add(i, current_value);
 									fifoMessageValues.add(i, msg);
 break;								}
 }							}
-						}
+							if (!added) {{
+								fifoValues.add(i, current_value);
+								fifoMessageValues.add(i, msg);
+							}
+}						}
 }					}
 }				}
 }			}

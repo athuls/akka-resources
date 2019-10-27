@@ -237,65 +237,40 @@ public class Speaker extends UniversalActor  implements ActorService {
 		}
 		public void broadcastReceive(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) throws InterruptedException{
 			switch (type) {
-			case "QUESTION": messages.add(msg);
-Thread.sleep(200);
-Date date_one = new Date();
-Timestamp current_one = new Timestamp(date_one.getTime());
-			{
-				// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_one)
+			case "QUESTION": 			{
+				Token token_2_0 = new Token();
+				// handleFifoCode(speakerName, msg, type, true)
 				{
-					Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_one };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					Object _arguments[] = { speakerName, msg, type, true };
+					Message message = new Message( self, self, "handleFifoCode", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
+				// handleNormalStall(speakerName, number_of_questions)
+				{
+					Object _arguments[] = { speakerName, number_of_questions };
+					Message message = new Message( self, self, "handleNormalStall", _arguments, token_2_0, null );
 					__messages.add( message );
 				}
 			}
-questionTimeStamp.put(msg, current_one);
-if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+break;			case "ANSWER": if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
 						String chatMessage = (String)answerQueue.remove();
-						messages.add(chatMessage);
-						Thread.sleep(200);
-						Date date_two = new Date();
-						Timestamp current_two = new Timestamp(date_two.getTime());
 						{
-							// standardOutput<-println("[Speaker Remote] "+speakerName+": "+"ANSWER"+": "+chatMessage+"; Timestamp: "+current_two)
+							// handleFifoCode(speakerName, chatMessage, "ANSWER", false)
 							{
-								Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+"ANSWER"+": "+chatMessage+"; Timestamp: "+current_two };
-								Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+								Object _arguments[] = { speakerName, chatMessage, "ANSWER", false };
+								Message message = new Message( self, self, "handleFifoCode", _arguments, null, null );
 								__messages.add( message );
 							}
 						}
 					}
 				}
-}			}
-}break;			case "ANSWER": if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
-				if (answerQueue.size()>0) {{
-					while (answerQueue.size()>0) {
-						String chatMessage = (String)answerQueue.remove();
-						messages.add(chatMessage);
-						Thread.sleep(200);
-						Date date_two = new Date();
-						Timestamp current_two = new Timestamp(date_two.getTime());
-						{
-							// standardOutput<-println("[Speaker Remote] "+speakerName+": "+"ANSWER"+": "+chatMessage+"; Timestamp: "+current_two)
-							{
-								Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+"ANSWER"+": "+chatMessage+"; Timestamp: "+current_two };
-								Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-								__messages.add( message );
-							}
-						}
-					}
-				}
-}				messages.add(msg);
-				Thread.sleep(200);
-				Date date_three = new Date();
-				Timestamp current_three = new Timestamp(date_three.getTime());
-				{
-					// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_three)
+}				{
+					// handleFifoCode(speakerName, msg, "ANSWER", false)
 					{
-						Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_three };
-						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+						Object _arguments[] = { speakerName, msg, "ANSWER", false };
+						Message message = new Message( self, self, "handleFifoCode", _arguments, null, null );
 						__messages.add( message );
 					}
 				}
@@ -304,91 +279,14 @@ if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 				answerQueue.add(msg);
 			}
 }break;			default: if (fifo) {{
-				Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
-				Integer current_user = Integer.parseInt(msg.substring(0, 10).replaceAll("[\\D]", ""));
-				if (!valuesAdded.containsKey(current_user)) {{
-					ArrayList vals = new ArrayList();
-					valuesAdded.put(current_user, vals);
-				}
-}				if (!fifoValues.containsKey(current_user)) {{
-					ArrayList vals = new ArrayList();
-					ArrayList msgVals = new ArrayList();
-					fifoValues.put(current_user, vals);
-					fifoMessageValues.put(current_user, msgVals);
-				}
-}				ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
-				ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
-				ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
-				if ((currentAdded.size()==0&&current_value==1)||(currentAdded.size()>0&&((Integer)currentAdded.get(currentAdded.size()-1)==current_value-1))) {{
-					currentAdded.add(current_value);
-					messages.add(msg);
-					Thread.sleep(200);
-					Date date_four = new Date();
-					Timestamp current_four = new Timestamp(date_four.getTime());
+				{
+					// handleFifoCode(speakerName, msg, type)
 					{
-						// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four)
-						{
-							Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four };
-							Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-							__messages.add( message );
-						}
-					}
-					int i = -1;
-					for (i = 0; i<currentFifo.size(); i++){
-						if ((Integer)currentFifo.get(i)==current_value+1) {{
-							current_value = (Integer)currentFifo.get(i);
-							String current_message = (String)currentFifoMessages.get(i);
-							currentAdded.add(current_value);
-							messages.add(current_message);
-							Thread.sleep(200);
-							Date date_five = new Date();
-							Timestamp current_five = new Timestamp(date_five.getTime());
-							{
-								// standardOutput<-println("[Speaker Remote] "+speakerName+": "+"STATEMENT"+": "+current_message+"; Timestamp: "+current_five)
-								{
-									Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+"STATEMENT"+": "+current_message+"; Timestamp: "+current_five };
-									Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-									__messages.add( message );
-								}
-							}
-						}
-}						else {break;}					}
-					while (i>0) {
-						currentFifoMessages.remove(0);
-						currentFifo.remove(0);
-						i--;
+						Object _arguments[] = { speakerName, msg, type };
+						Message message = new Message( self, self, "handleFifoCode", _arguments, null, null );
+						__messages.add( message );
 					}
 				}
-}				else {{
-					if (currentFifo.size()==0) {{
-						currentFifo.add(current_value);
-						currentFifoMessages.add(msg);
-					}
-}					else {{
-						if (current_value<(Integer)currentFifo.get(0)) {{
-							currentFifo.add(0, current_value);
-							currentFifoMessages.add(0, msg);
-						}
-}						else {{
-							int i = -1;
-							boolean added = false;
-							for (i = 0; i<currentFifo.size(); i++){
-								if (current_value<(Integer)currentFifo.get(i)) {{
-									added = true;
-									currentFifo.add(i, current_value);
-									currentFifoMessages.add(i, msg);
-break;								}
-}							}
-							if (!added) {{
-								currentFifo.add(i, current_value);
-								currentFifoMessages.add(i, msg);
-							}
-}						}
-}					}
-}				}
-}				valuesAdded.put(current_user, currentAdded);
-				fifoValues.put(current_user, currentFifo);
-				fifoMessageValues.put(current_user, currentFifoMessages);
 			}
 }			else {{
 				messages.add(msg);
@@ -405,6 +303,115 @@ break;								}
 				}
 			}
 }break;			}
+		}
+		public void handleNormalStall(String speakerName, int number_of_questions) {
+			if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+				if (answerQueue.size()>0) {{
+					while (answerQueue.size()>0) {
+						String chatMessage = (String)answerQueue.remove();
+						{
+							// handleFifoCode(speakerName, chatMessage, "ANSWER", false)
+							{
+								Object _arguments[] = { speakerName, chatMessage, "ANSWER", false };
+								Message message = new Message( self, self, "handleFifoCode", _arguments, null, null );
+								__messages.add( message );
+							}
+						}
+					}
+				}
+}			}
+}		}
+		public boolean handleFifoCode(String speakerName, String msg, String type, boolean isQuestion) throws InterruptedException{
+			Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
+			Integer current_user = Integer.parseInt(msg.substring(0, 10).replaceAll("[\\D]", ""));
+			if (!valuesAdded.containsKey(current_user)) {{
+				ArrayList vals = new ArrayList();
+				valuesAdded.put(current_user, vals);
+			}
+}			if (!fifoValues.containsKey(current_user)) {{
+				ArrayList vals = new ArrayList();
+				ArrayList msgVals = new ArrayList();
+				fifoValues.put(current_user, vals);
+				fifoMessageValues.put(current_user, msgVals);
+			}
+}			ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
+			ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
+			ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
+			boolean isAdded = false;
+			if ((currentAdded.size()==0&&current_value==1)||(currentAdded.size()>0&&((Integer)currentAdded.get(currentAdded.size()-1)==current_value-1))) {{
+				currentAdded.add(current_value);
+				messages.add(msg);
+				Thread.sleep(200);
+				Date date_four = new Date();
+				Timestamp current_four = new Timestamp(date_four.getTime());
+				if (isQuestion) {questionTimeStamp.put(msg, current_four);
+}				{
+					// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four)
+					{
+						Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four };
+						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+				int i = -1;
+				for (i = 0; i<currentFifo.size(); i++){
+					if ((Integer)currentFifo.get(i)==current_value+1) {{
+						current_value = (Integer)currentFifo.get(i);
+						String current_message = (String)currentFifoMessages.get(i);
+						currentAdded.add(current_value);
+						messages.add(current_message);
+						Thread.sleep(200);
+						Date date_five = new Date();
+						Timestamp current_five = new Timestamp(date_five.getTime());
+						if (isQuestion) {questionTimeStamp.put(current_message, current_five);
+}						{
+							// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+current_message+"; Timestamp: "+current_five)
+							{
+								Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+current_message+"; Timestamp: "+current_five };
+								Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+								__messages.add( message );
+							}
+						}
+					}
+}					else {break;}				}
+				while (i>0) {
+					currentFifoMessages.remove(0);
+					currentFifo.remove(0);
+					i--;
+				}
+				isAdded = true;
+			}
+}			else {{
+				if (currentFifo.size()==0) {{
+					currentFifo.add(current_value);
+					currentFifoMessages.add(msg);
+				}
+}				else {{
+					if (current_value<(Integer)currentFifo.get(0)) {{
+						currentFifo.add(0, current_value);
+						currentFifoMessages.add(0, msg);
+					}
+}					else {{
+						int i = -1;
+						boolean added = false;
+						for (i = 0; i<currentFifo.size(); i++){
+							if (current_value<(Integer)currentFifo.get(i)) {{
+								added = true;
+								currentFifo.add(i, current_value);
+								currentFifoMessages.add(i, msg);
+break;							}
+}						}
+						if (!added) {{
+							currentFifo.add(i, current_value);
+							currentFifoMessages.add(i, msg);
+						}
+}					}
+}				}
+}			}
+}			valuesAdded.put(current_user, currentAdded);
+			fifoValues.put(current_user, currentFifo);
+			fifoMessageValues.put(current_user, currentFifoMessages);
+			return isAdded;
 		}
 		public void broadcastReceiveAdvanced(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) throws InterruptedException{
 			switch (type) {

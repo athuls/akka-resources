@@ -57,37 +57,9 @@ behavior Speaker implements ActorService
 	{
 		switch (type)
 		{
-			case "QUESTION":				
-				// add the question to the user's list
-				messages.add(msg);
-				Thread.sleep(200);
-
-				// next mark the timestamp
-				Date date_one = new Date();
-				Timestamp current_one = new Timestamp(date_one.getTime());
-				standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_one);
-
-				// put the question in the question map
-				questionTimeStamp.put(msg, current_one);
-				
-				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
-				{
-					if(answerQueue.size() > 0)
-					{
-						// empty out queue
-						while(answerQueue.size() > 0)
-						{
-							String chatMessage = (String) answerQueue.remove();
-
-							// add the message to the list and print timestamp
-							messages.add(chatMessage);
-							Thread.sleep(200);
-							Date date_two = new Date();
-							Timestamp current_two = new Timestamp(date_two.getTime());
-							standardOutput<-println("[Speaker Remote] " + speakerName + ": " + "ANSWER" +": "+ chatMessage + "; Timestamp: " + current_two);
-						}						
-					}
-				}
+			case "QUESTION":
+				handleFifoCode(speakerName, msg, type, true) @
+				handleNormalStall(speakerName, number_of_questions);
 				break;
 			case "ANSWER":
 				// check if there has been a question already placed
@@ -101,19 +73,10 @@ behavior Speaker implements ActorService
 							String chatMessage = (String) answerQueue.remove();
 
 							// add the message to the list and print timestamp
-							messages.add(chatMessage);
-							Thread.sleep(200);
-							Date date_two = new Date();
-							Timestamp current_two = new Timestamp(date_two.getTime());
-							standardOutput<-println("[Speaker Remote] " + speakerName + ": " + "ANSWER" +": "+ chatMessage + "; Timestamp: " + current_two);
+							handleFifoCode(speakerName, chatMessage, "ANSWER", false);
 						}						
 					}
-					messages.add(msg);
-					Thread.sleep(200);
-					// get the time next
-					Date date_three = new Date();
-					Timestamp current_three = new Timestamp(date_three.getTime());
-					standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_three);
+					handleFifoCode(speakerName, msg, "ANSWER", false);
 				}
 				else
 				{
@@ -124,96 +87,7 @@ behavior Speaker implements ActorService
 			default:
 				if(fifo)
 				{
-					Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
-					Integer current_user = Integer.parseInt(msg.substring(0, 10).replaceAll("[\\D]", ""));
-					if(!valuesAdded.containsKey(current_user))
-					{
-						ArrayList vals = new ArrayList();
-						valuesAdded.put(current_user, vals);
-					}
-					if(!fifoValues.containsKey(current_user))
-					{
-						ArrayList vals = new ArrayList();
-						ArrayList msgVals = new ArrayList();
-						fifoValues.put(current_user, vals);
-						fifoMessageValues.put(current_user, msgVals);
-					}
-					ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
-					ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
-					ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
-					if((currentAdded.size() == 0 && current_value == 1) || (currentAdded.size() > 0 && ((Integer)currentAdded.get(currentAdded.size() - 1) == current_value - 1)))
-					{
-						currentAdded.add(current_value);
-						messages.add(msg);
-						Thread.sleep(200);
-
-						// next mark the timestamp
-						Date date_four = new Date();
-						Timestamp current_four = new Timestamp(date_four.getTime());
-						standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_four);
-						int i = -1;
-						for(i = 0; i < currentFifo.size(); i++)
-						{
-							if((Integer)currentFifo.get(i) == current_value + 1)
-							{
-								current_value = (Integer)currentFifo.get(i);
-								String current_message = (String)currentFifoMessages.get(i);
-								currentAdded.add(current_value);
-								messages.add(current_message);
-								Thread.sleep(200);
-								Date date_five = new Date();
-								Timestamp current_five = new Timestamp(date_five.getTime());
-								standardOutput<-println("[Speaker Remote] " + speakerName + ": " + "STATEMENT" +": "+ current_message + "; Timestamp: " + current_five);
-							}
-							else
-								break;
-						}
-						while(i > 0)
-						{
-							currentFifoMessages.remove(0);
-							currentFifo.remove(0);
-							i--;
-						}
-					}
-					else
-					{
-						if(currentFifo.size() == 0)
-						{
-							currentFifo.add(current_value);
-							currentFifoMessages.add(msg);
-						}
-						else
-						{
-							if(current_value < (Integer)currentFifo.get(0))
-							{
-								currentFifo.add(0, current_value);
-								currentFifoMessages.add(0, msg);
-							}
-							else
-							{
-								int i = -1;
-								boolean added = false;
-								for(i = 0; i < currentFifo.size(); i++)
-								{
-									if(current_value < (Integer)currentFifo.get(i))
-									{
-										added = true;
-										currentFifo.add(i, current_value);
-										currentFifoMessages.add(i, msg);
-										break;
-									}
-								}
-								if(!added)
-								{
-									currentFifo.add(i, current_value);
-									currentFifoMessages.add(i, msg);
-								}
-							}
-						}
-					}
-					valuesAdded.put(current_user, currentAdded);
-					fifoValues.put(current_user, currentFifo);
-					fifoMessageValues.put(current_user, currentFifoMessages);
+					handleFifoCode(speakerName, msg, type);
 				}
 				else
 				{
@@ -227,18 +101,125 @@ behavior Speaker implements ActorService
 				}
 				break;
 		}
-
-		// checks to see if program execution is completed
-		/*
-		if(messages.size() == total_messages)
+	}
+	
+	void handleNormalStall(String speakerName, int number_of_questions)
+	{
+		if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
 		{
-			standardOutput<-println("\nPrinting the final message list here: ");
-			for(int i = 0; i < messages.size(); i++)
+			if(answerQueue.size() > 0)
 			{
-				standardOutput<-println(messages.get(i));
+				// empty out queue
+				while(answerQueue.size() > 0)
+				{
+					String chatMessage = (String) answerQueue.remove();
+
+					// add the message to the list and print timestamp
+					handleFifoCode(speakerName, chatMessage, "ANSWER", false);
+				}						
 			}
 		}
-		*/
+	}
+	
+	boolean handleFifoCode(String speakerName, String msg, String type, boolean isQuestion) throws InterruptedException
+	{
+		Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
+		Integer current_user = Integer.parseInt(msg.substring(0, 10).replaceAll("[\\D]", ""));
+		if(!valuesAdded.containsKey(current_user))
+		{
+			ArrayList vals = new ArrayList();
+			valuesAdded.put(current_user, vals);
+		}
+		if(!fifoValues.containsKey(current_user))
+		{
+			ArrayList vals = new ArrayList();
+			ArrayList msgVals = new ArrayList();
+			fifoValues.put(current_user, vals);
+			fifoMessageValues.put(current_user, msgVals);
+		}
+		ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
+		ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
+		ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
+		boolean isAdded = false;
+		if((currentAdded.size() == 0 && current_value == 1) || (currentAdded.size() > 0 && ((Integer)currentAdded.get(currentAdded.size() - 1) == current_value - 1)))
+		{
+			currentAdded.add(current_value);
+			messages.add(msg);
+			Thread.sleep(200);
+			
+			// next mark the timestamp
+			Date date_four = new Date();
+			Timestamp current_four = new Timestamp(date_four.getTime());
+			if(isQuestion)
+				questionTimeStamp.put(msg, current_four);
+			standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_four);
+			int i = -1;
+			for(i = 0; i < currentFifo.size(); i++)
+			{
+				if((Integer)currentFifo.get(i) == current_value + 1)
+				{
+					current_value = (Integer)currentFifo.get(i);
+					String current_message = (String)currentFifoMessages.get(i);
+					currentAdded.add(current_value);
+					messages.add(current_message);
+					Thread.sleep(200);
+					Date date_five = new Date();
+					Timestamp current_five = new Timestamp(date_five.getTime());
+					if(isQuestion)
+						questionTimeStamp.put(current_message, current_five);
+					standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ current_message + "; Timestamp: " + current_five);
+				}
+				else
+					break;
+			}
+			while(i > 0)
+			{
+				currentFifoMessages.remove(0);
+				currentFifo.remove(0);
+				i--;
+			}
+			isAdded = true;
+		}
+		else
+		{
+			if(currentFifo.size() == 0)
+			{
+				currentFifo.add(current_value);
+				currentFifoMessages.add(msg);
+			}
+			else
+			{
+				if(current_value < (Integer)currentFifo.get(0))
+				{
+					currentFifo.add(0, current_value);
+					currentFifoMessages.add(0, msg);
+				}
+				else
+				{
+					int i = -1;
+					boolean added = false;
+					for(i = 0; i < currentFifo.size(); i++)
+					{
+						if(current_value < (Integer)currentFifo.get(i))
+						{
+							added = true;
+							currentFifo.add(i, current_value);
+							currentFifoMessages.add(i, msg);
+							break;
+						}
+					}
+					if(!added)
+					{
+						currentFifo.add(i, current_value);
+						currentFifoMessages.add(i, msg);
+					}
+				}
+			}
+		}
+		valuesAdded.put(current_user, currentAdded);
+		fifoValues.put(current_user, currentFifo);
+		fifoMessageValues.put(current_user, currentFifoMessages);
+		return isAdded;
 	}
 
 	// this function handles messages by their type and takes into account levels after causal consistency

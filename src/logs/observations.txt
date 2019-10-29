@@ -1,3 +1,5 @@
+Training Runs
+-------------
 Simple Glitch Chat
 2942.0240000000003
 291.53586027108224
@@ -46,3 +48,12 @@ Todo Simple Glitch
 Double Todo Simple Glitch
 14799.324000000006
 11013.455235166844
+
+10x10 Chat Single Machine
+-------------------------
+10x10 No Consistency Chat
+20483.02
+270.1191951713169
+10x10 FIFO Chat
+21099.94
+368.1620518195758

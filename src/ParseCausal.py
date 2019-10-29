@@ -25,7 +25,12 @@ def check_all_questions_ordered():
     two = check_question_ordering("logs/speaker3CausalSimple.txt")
     three = check_question_ordering("logs/speaker4CausalSimple.txt")
     four = check_question_ordering("logs/speaker5CausalSimple.txt")
-    return one and two and three and four
+    five = check_question_ordering("logs/speaker6CausalSimple.txt")
+    six = check_question_ordering("logs/speaker7CausalSimple.txt")
+    seven = check_question_ordering("logs/speaker8CausalSimple.txt")
+    eight = check_question_ordering("logs/speaker9CausalSimple.txt")
+    nine = check_question_ordering("logs/speaker10CausalSimple.txt")
+    return one and two and three and four and five and six and seven and eight and nine
 
 # this function is used to check if ordering is maintained or not for a file
 def check_ordering(file_name):
@@ -58,7 +63,12 @@ def conclude_if_ordered():
     three = check_ordering("logs/speaker3CausalSimple.txt")
     four = check_ordering("logs/speaker4CausalSimple.txt")
     five = check_ordering("logs/speaker5CausalSimple.txt")
-    return one and two and three and four and five
+    six = check_ordering("logs/speaker6CausalSimple.txt")
+    seven = check_ordering("logs/speaker7CausalSimple.txt")
+    eight = check_ordering("logs/speaker8CausalSimple.txt")
+    nine = check_ordering("logs/speaker9CausalSimple.txt")
+    ten = check_ordering("logs/speaker10CausalSimple.txt")
+    return one and two and three and four and five and six and seven and eight and nine and ten
 
 # this function pulls out the overall runtime - works
 def get_overall_runtime():
@@ -70,67 +80,64 @@ def get_overall_runtime():
             return res[0]
 
 # this function returns the maximum time it takes for a message to be received by another user for a given file
-def get_total_latency(file_name):
-    file_times = dict()
-    curr_file = open(file_name, "r")
-    for line in curr_file:
-        if len(line) < 50:
-            break
-        if "[Speaker Local]" in line:
-            current_number = line[41:90]
-            temp = re.findall(r'\d+', current_number) 
-            res = list(map(int, temp))
-            timestamp = line.split()[-1]
-            number_one = int(timestamp[6:8])
-            second = timestamp[9:]
-            number_two = 0
-            if len(second) == 1:
-                number_two = int(second) * 100
-            elif len(second) == 2:
-                number_two = int(second) * 10
-            else:
-                number_two = int(second)
-            file_times[tuple(res)] = number_one * 1000 + number_two
+def get_total_latency():
     file_name_list = ["logs/speaker1CausalSimple.txt", "logs/speaker2CausalSimple.txt", "logs/speaker3CausalSimple.txt", 
-	"logs/speaker4CausalSimple.txt", "logs/speaker5CausalSimple.txt"]
+	"logs/speaker4CausalSimple.txt", "logs/speaker5CausalSimple.txt", "logs/speaker6CausalSimple.txt", "logs/speaker7CausalSimple.txt", 
+	"logs/speaker8CausalSimple.txt", "logs/speaker9CausalSimple.txt", "logs/speaker10CausalSimple.txt"]
+    starting_time = 0
+    for file in file_name_list:
+        curr_file = open(file, "r")
+        for line in curr_file:
+            if "[Speaker Local]" in line:
+                current_number = line[41:90]
+                temp = re.findall(r'\d+', current_number) 
+                res = list(map(int, temp))
+                timestamp = line.split()[-1]
+                hour = int(timestamp[0:2])
+                minute = int(timestamp[3:5])
+                number_one = int(timestamp[6:8])
+                second = timestamp[9:]
+                number_two = 0
+                if len(second) == 1:
+                    number_two = int(second) * 100
+                elif len(second) == 2:
+                    number_two = int(second) * 10
+                else:
+                    number_two = int(second)
+                curr_time = 3600000 * hour + 60000 * minute + number_one * 1000 + number_two
+                if starting_time == 0:
+                    starting_time = curr_time
+                else:
+                    if curr_time < starting_time:
+                        starting_time = curr_time
+                break
+        curr_file.close()
+
     max_latency = 0
     for file in file_name_list:
-        if file == file_name:
-            continue
-        else:
-            parse_file = open(file, "r")
-            for line in parse_file:
-                if len(line) < 50:
-                    break
-                if "[Speaker Remote]" in line:
-                    current_number = line[42:91]
-                    temp = re.findall(r'\d+', current_number) 
-                    res = tuple(list(map(int, temp)))
-                    if res in file_times.keys():
-                        timestamp = line.split()[-1]
-                        number_one = int(timestamp[6:8])
-                        second = timestamp[9:]
-                        number_two = 0
-                        if len(second) == 1:
-                            number_two = int(second) * 100
-                        elif len(second) == 2:
-                            number_two = int(second) * 10
-                        else:
-                            number_two = int(second)
-                        total_val = number_one * 1000 + number_two
-                        current = total_val - file_times[res]
-                        if current > max_latency:
-                            max_latency = current
+        parse_file = open(file, "r")
+        for line in parse_file:
+            if "[Speaker Remote]" in line:
+                current_number = line[42:91]
+                temp = re.findall(r'\d+', current_number) 
+                res = tuple(list(map(int, temp)))
+                timestamp = line.split()[-1]
+                hour = int(timestamp[0:2])
+                minute = int(timestamp[3:5])
+                number_one = int(timestamp[6:8])
+                second = timestamp[9:]
+                number_two = 0
+                if len(second) == 1:
+                    number_two = int(second) * 100
+                elif len(second) == 2:
+                    number_two = int(second) * 10
+                else:
+                    number_two = int(second)
+                total_val = 3600000 * hour + 60000 * minute + number_one * 1000 + number_two
+                current = total_val - starting_time
+                if current > max_latency:
+                    max_latency = current
     return max_latency
-
-# this function is used to get the overall latency
-def get_overall_latency():
-    one = get_total_latency("logs/speaker1CausalSimple.txt")
-    two = get_total_latency("logs/speaker2CausalSimple.txt")
-    three = get_total_latency("logs/speaker3CausalSimple.txt")
-    four = get_total_latency("logs/speaker4CausalSimple.txt")
-    five = get_total_latency("logs/speaker5CausalSimple.txt")
-    return float(one + two + three + four + five) / 5.0
 
 # code to test functionality
 is_ordered = "No"
@@ -140,5 +147,5 @@ is_question_ordered = "No"
 if check_all_questions_ordered():
     is_question_ordered = "Yes"
 overall_runtime = get_overall_runtime()
-overall_latency = get_overall_latency()
+overall_latency = get_total_latency()
 print("Are the questions first: " + str(is_question_ordered) + "; Is this FIFO ordered: " + str(is_ordered) + "; overall runtime: " + str(overall_runtime) + "; overall latency: " + str(overall_latency))

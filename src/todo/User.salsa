@@ -225,6 +225,107 @@ behavior User implements ActorService
 		}
 	}
 	
+	boolean handleFifoCode(String speakerName, String msg, String type, boolean isQuestion) throws InterruptedException
+	{
+		Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
+		Integer current_user = Integer.parseInt(msg.substring(0, 10).replaceAll("[\\D]", ""));
+		if(!valuesAdded.containsKey(current_user))
+		{
+			ArrayList vals = new ArrayList();
+			valuesAdded.put(current_user, vals);
+		}
+		if(!fifoValues.containsKey(current_user))
+		{
+			ArrayList vals = new ArrayList();
+			ArrayList msgVals = new ArrayList();
+			fifoValues.put(current_user, vals);
+			fifoMessageValues.put(current_user, msgVals);
+		}
+		ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
+		ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
+		ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
+		boolean isAdded = false;
+		if((currentAdded.size() == 0 && current_value == 1) || (currentAdded.size() > 0 && ((Integer)currentAdded.get(currentAdded.size() - 1) == current_value - 1)))
+		{
+			currentAdded.add(current_value);
+			messages.add(msg);
+			Thread.sleep(200);
+			
+			// next mark the timestamp
+			Date date_four = new Date();
+			Timestamp current_four = new Timestamp(date_four.getTime());
+			if(isQuestion)
+				questionTimeStamp.put(msg, current_four);
+			standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_four);
+			int i = -1;
+			for(i = 0; i < currentFifo.size(); i++)
+			{
+				if((Integer)currentFifo.get(i) == current_value + 1)
+				{
+					current_value = (Integer)currentFifo.get(i);
+					String current_message = (String)currentFifoMessages.get(i);
+					currentAdded.add(current_value);
+					messages.add(current_message);
+					Thread.sleep(200);
+					Date date_five = new Date();
+					Timestamp current_five = new Timestamp(date_five.getTime());
+					if(isQuestion)
+						questionTimeStamp.put(current_message, current_five);
+					standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ current_message + "; Timestamp: " + current_five);
+				}
+				else
+					break;
+			}
+			while(i > 0)
+			{
+				currentFifoMessages.remove(0);
+				currentFifo.remove(0);
+				i--;
+			}
+			isAdded = true;
+		}
+		else
+		{
+			if(currentFifo.size() == 0)
+			{
+				currentFifo.add(current_value);
+				currentFifoMessages.add(msg);
+			}
+			else
+			{
+				if(current_value < (Integer)currentFifo.get(0))
+				{
+					currentFifo.add(0, current_value);
+					currentFifoMessages.add(0, msg);
+				}
+				else
+				{
+					int i = -1;
+					boolean added = false;
+					for(i = 0; i < currentFifo.size(); i++)
+					{
+						if(current_value < (Integer)currentFifo.get(i))
+						{
+							added = true;
+							currentFifo.add(i, current_value);
+							currentFifoMessages.add(i, msg);
+							break;
+						}
+					}
+					if(!added)
+					{
+						currentFifo.add(i, current_value);
+						currentFifoMessages.add(i, msg);
+					}
+				}
+			}
+		}
+		valuesAdded.put(current_user, currentAdded);
+		fifoValues.put(current_user, currentFifo);
+		fifoMessageValues.put(current_user, currentFifoMessages);
+		return isAdded;
+	}
+	
 	String getUserName()
 	{
 		return myName;

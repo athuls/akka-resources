@@ -3,64 +3,135 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Date;
 import java.sql.Timestamp;
-import examples.chat.ChatMessage.MessageType;
+import java.util.*;
 
 //Three speakers chat in a chat session initialized by the actor Chat
 
 behavior NoConsistencyAdvancedChat
 {
-	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5) 
+	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5, Speaker s6, Speaker s7, Speaker s8, Speaker s9, Speaker s10) 
 	{
-		s1<-broadcastSend("User 1: Random statement 1.", true, false, false, 0, 40, false);
-		s1<-broadcastSend("User 1: Random statement 2.", true, false, false, 0, 40, false);
-		s1<-broadcastSend("User 1: Random statement 3.", true, false, false, 0, 40, false);
-		s1<-broadcastSend("User 1: Random statement 4.", true, false, false, 0, 40, false);
-		s1<-broadcastSend("User 1: Random statement 5.", true, false, false, 0, 40, false);
-		s1<-broadcastSend("User 1: Random statement 6.", true, false, false, 0, 40, false);
-		s1<-broadcastSend("User 1: Random statement 7.", true, false, false, 0, 40, false);
-		s1<-broadcastSend("User 1: Random statement 8.", true, false, false, 0, 40, false);
-		s1<-broadcastSend("User 1: Random statement 9.", true, false, false, 0, 40, false);
-		s1<-broadcastSend("User 1: Random statement 10.", true, false, false, 0, 40, false);
-		s2<-broadcastSend("User 2: Random statement 1.", true, false, false, 0, 40, false);
-		s2<-broadcastSend("User 2: Random statement 2.", true, false, false, 0, 40, false);
-		s2<-broadcastSend("User 2: Random statement 3.", true, false, false, 0, 40, false);
-		s2<-broadcastSend("User 2: Random statement 4.", true, false, false, 0, 40, false);
-		s2<-broadcastSend("User 2: Random statement 5.", true, false, false, 0, 40, false);
-		s2<-broadcastSend("User 2: Random statement 6.", true, false, false, 0, 40, false);
-		s2<-broadcastSend("User 2: Random statement 7.", true, false, false, 0, 40, false);
-		s2<-broadcastSend("User 2: Random statement 8.", true, false, false, 0, 40, false);
-		s2<-broadcastSend("User 2: Random statement 9.", true, false, false, 0, 40, false);
-		s2<-broadcastSend("User 2: Random statement 10.", true, false, false, 0, 40, false);	
-		s3<-broadcastSend("User 3: Random statement 1.", true, false, false, 0, 40, false);
-		s3<-broadcastSend("User 3: Random statement 2.", true, false, false, 0, 40, false);
-		s3<-broadcastSend("User 3: Random statement 3.", true, false, false, 0, 40, false);
-		s3<-broadcastSend("User 3: Random statement 4.", true, false, false, 0, 40, false);
-		s3<-broadcastSend("User 3: Random statement 5.", true, false, false, 0, 40, false);
-		s3<-broadcastSend("User 3: Random statement 6.", true, false, false, 0, 40, false);
-		s3<-broadcastSend("User 3: Random statement 7.", true, false, false, 0, 40, false);
-		s3<-broadcastSend("User 3: Random statement 8.", true, false, false, 0, 40, false);
-		s3<-broadcastSend("User 3: Random statement 9.", true, false, false, 0, 40, false);
-		s3<-broadcastSend("User 3: Random statement 10.", true, false, false, 0, 40, false);
-		s4<-broadcastSend("User 4: Random statement 1.", true, false, false, 0, 40, false);
-		s4<-broadcastSend("User 4: Random statement 2.", true, false, false, 0, 40, false);
-		s4<-broadcastSend("User 4: Random statement 3.", true, false, false, 0, 40, false);
-		s4<-broadcastSend("User 4: Random statement 4.", true, false, false, 0, 40, false);
-		s4<-broadcastSend("User 4: Random statement 5.", true, false, false, 0, 40, false);
-		s4<-broadcastSend("User 4: Random statement 6.", true, false, false, 0, 40, false);
-		s4<-broadcastSend("User 4: Random statement 7.", true, false, false, 0, 40, false);
-		s4<-broadcastSend("User 4: Random statement 8.", true, false, false, 0, 40, false);
-		s4<-broadcastSend("User 4: Random statement 9.", true, false, false, 0, 40, false);
-		s4<-broadcastSend("User 4: Random statement 10.", true, false, false, 0, 40, false);
-		s5<-broadcastSend("User 5: Random statement 1.", true, false, false, 0, 40, false);
-		s5<-broadcastSend("User 5: Random statement 2.", true, false, false, 0, 40, false);
-		s5<-broadcastSend("User 5: Random statement 3.", true, false, false, 0, 40, false);
-		s5<-broadcastSend("User 5: Random statement 4.", true, false, false, 0, 40, false);
-		s5<-broadcastSend("User 5: Random statement 5.", true, false, false, 0, 40, false);
-		s5<-broadcastSend("User 5: Random statement 6.", true, false, false, 0, 40, false);
-		s5<-broadcastSend("User 5: Random statement 7.", true, false, false, 0, 40, false);
-		s5<-broadcastSend("User 5: Random statement 8.", true, false, false, 0, 40, false);
-		s5<-broadcastSend("User 5: Random statement 9.", true, false, false, 0, 40, false);
-		s5<-broadcastSend("User 5: Random statement 10.", true, false, false, 0, 40, false);
+		ArrayList values = new ArrayList();
+		values.add(1);
+		values.add(2);
+		values.add(3);
+		values.add(4);
+		values.add(5);
+		values.add(6);
+		values.add(7);
+		values.add(8);
+		values.add(9);
+		values.add(10);
+		Collections.shuffle(values);
+		s1<-broadcastSend("User 1: Random message " + values.get(0) + ".", true, false, false, 0, 90, false);
+		s1<-broadcastSend("User 1: Random message " + values.get(1) + ".", true, false, false, 0, 90, false);
+		s1<-broadcastSend("User 1: Random message " + values.get(2) + ".", true, false, false, 0, 90, false);
+		s1<-broadcastSend("User 1: Random message " + values.get(3) + ".", true, false, false, 0, 90, false);
+		s1<-broadcastSend("User 1: Random message " + values.get(4) + ".", true, false, false, 0, 90, false);
+		s1<-broadcastSend("User 1: Random message " + values.get(5) + ".", true, false, false, 0, 90, false);
+		s1<-broadcastSend("User 1: Random message " + values.get(6) + ".", true, false, false, 0, 90, false);
+		s1<-broadcastSend("User 1: Random message " + values.get(7) + ".", true, false, false, 0, 90, false);
+		s1<-broadcastSend("User 1: Random message " + values.get(8) + ".", true, false, false, 0, 90, false);
+		s1<-broadcastSend("User 1: Random message " + values.get(9) + ".", true, false, false, 0, 90, false);
+		Collections.shuffle(values);
+		s2<-broadcastSend("User 2: Random message " + values.get(0) + ".", true, false, false, 0, 90, false);
+		s2<-broadcastSend("User 2: Random message " + values.get(1) + ".", true, false, false, 0, 90, false);
+		s2<-broadcastSend("User 2: Random message " + values.get(2) + ".", true, false, false, 0, 90, false);
+		s2<-broadcastSend("User 2: Random message " + values.get(3) + ".", true, false, false, 0, 90, false);
+		s2<-broadcastSend("User 2: Random message " + values.get(4) + ".", true, false, false, 0, 90, false);
+		s2<-broadcastSend("User 2: Random message " + values.get(5) + ".", true, false, false, 0, 90, false);
+		s2<-broadcastSend("User 2: Random message " + values.get(6) + ".", true, false, false, 0, 90, false);
+		s2<-broadcastSend("User 2: Random message " + values.get(7) + ".", true, false, false, 0, 90, false);
+		s2<-broadcastSend("User 2: Random message " + values.get(8) + ".", true, false, false, 0, 90, false);
+		s2<-broadcastSend("User 2: Random message " + values.get(9) + ".", true, false, false, 0, 90, false);
+		Collections.shuffle(values);
+		s3<-broadcastSend("User 3: Random message " + values.get(0) + ".", true, false, false, 0, 90, false);
+		s3<-broadcastSend("User 3: Random message " + values.get(1) + ".", true, false, false, 0, 90, false);
+		s3<-broadcastSend("User 3: Random message " + values.get(2) + ".", true, false, false, 0, 90, false);
+		s3<-broadcastSend("User 3: Random message " + values.get(3) + ".", true, false, false, 0, 90, false);
+		s3<-broadcastSend("User 3: Random message " + values.get(4) + ".", true, false, false, 0, 90, false);
+		s3<-broadcastSend("User 3: Random message " + values.get(5) + ".", true, false, false, 0, 90, false);
+		s3<-broadcastSend("User 3: Random message " + values.get(6) + ".", true, false, false, 0, 90, false);
+		s3<-broadcastSend("User 3: Random message " + values.get(7) + ".", true, false, false, 0, 90, false);
+		s3<-broadcastSend("User 3: Random message " + values.get(8) + ".", true, false, false, 0, 90, false);
+		s3<-broadcastSend("User 3: Random message " + values.get(9) + ".", true, false, false, 0, 90, false);
+		Collections.shuffle(values);
+		s4<-broadcastSend("User 4: Random message " + values.get(0) + ".", true, false, false, 0, 90, false);
+		s4<-broadcastSend("User 4: Random message " + values.get(1) + ".", true, false, false, 0, 90, false);
+		s4<-broadcastSend("User 4: Random message " + values.get(2) + ".", true, false, false, 0, 90, false);
+		s4<-broadcastSend("User 4: Random message " + values.get(3) + ".", true, false, false, 0, 90, false);
+		s4<-broadcastSend("User 4: Random message " + values.get(4) + ".", true, false, false, 0, 90, false);
+		s4<-broadcastSend("User 4: Random message " + values.get(5) + ".", true, false, false, 0, 90, false);
+		s4<-broadcastSend("User 4: Random message " + values.get(6) + ".", true, false, false, 0, 90, false);
+		s4<-broadcastSend("User 4: Random message " + values.get(7) + ".", true, false, false, 0, 90, false);
+		s4<-broadcastSend("User 4: Random message " + values.get(8) + ".", true, false, false, 0, 90, false);
+		s4<-broadcastSend("User 4: Random message " + values.get(9) + ".", true, false, false, 0, 90, false);
+		Collections.shuffle(values);
+		s5<-broadcastSend("User 5: Random message " + values.get(0) + ".", true, false, false, 0, 90, false);
+		s5<-broadcastSend("User 5: Random message " + values.get(1) + ".", true, false, false, 0, 90, false);
+		s5<-broadcastSend("User 5: Random message " + values.get(2) + ".", true, false, false, 0, 90, false);
+		s5<-broadcastSend("User 5: Random message " + values.get(3) + ".", true, false, false, 0, 90, false);
+		s5<-broadcastSend("User 5: Random message " + values.get(4) + ".", true, false, false, 0, 90, false);
+		s5<-broadcastSend("User 5: Random message " + values.get(5) + ".", true, false, false, 0, 90, false);
+		s5<-broadcastSend("User 5: Random message " + values.get(6) + ".", true, false, false, 0, 90, false);
+		s5<-broadcastSend("User 5: Random message " + values.get(7) + ".", true, false, false, 0, 90, false);
+		s5<-broadcastSend("User 5: Random message " + values.get(8) + ".", true, false, false, 0, 90, false);
+		s5<-broadcastSend("User 5: Random message " + values.get(9) + ".", true, false, false, 0, 90, false);
+		Collections.shuffle(values);
+		s6<-broadcastSend("User 6: Random message " + values.get(0) + ".", true, false, false, 0, 90, false);
+		s6<-broadcastSend("User 6: Random message " + values.get(1) + ".", true, false, false, 0, 90, false);
+		s6<-broadcastSend("User 6: Random message " + values.get(2) + ".", true, false, false, 0, 90, false);
+		s6<-broadcastSend("User 6: Random message " + values.get(3) + ".", true, false, false, 0, 90, false);
+		s6<-broadcastSend("User 6: Random message " + values.get(4) + ".", true, false, false, 0, 90, false);
+		s6<-broadcastSend("User 6: Random message " + values.get(5) + ".", true, false, false, 0, 90, false);
+		s6<-broadcastSend("User 6: Random message " + values.get(6) + ".", true, false, false, 0, 90, false);
+		s6<-broadcastSend("User 6: Random message " + values.get(7) + ".", true, false, false, 0, 90, false);
+		s6<-broadcastSend("User 6: Random message " + values.get(8) + ".", true, false, false, 0, 90, false);
+		s6<-broadcastSend("User 6: Random message " + values.get(9) + ".", true, false, false, 0, 90, false);
+		Collections.shuffle(values);
+		s7<-broadcastSend("User 7: Random message " + values.get(0) + ".", true, false, false, 0, 90, false);
+		s7<-broadcastSend("User 7: Random message " + values.get(1) + ".", true, false, false, 0, 90, false);
+		s7<-broadcastSend("User 7: Random message " + values.get(2) + ".", true, false, false, 0, 90, false);
+		s7<-broadcastSend("User 7: Random message " + values.get(3) + ".", true, false, false, 0, 90, false);
+		s7<-broadcastSend("User 7: Random message " + values.get(4) + ".", true, false, false, 0, 90, false);
+		s7<-broadcastSend("User 7: Random message " + values.get(5) + ".", true, false, false, 0, 90, false);
+		s7<-broadcastSend("User 7: Random message " + values.get(6) + ".", true, false, false, 0, 90, false);
+		s7<-broadcastSend("User 7: Random message " + values.get(7) + ".", true, false, false, 0, 90, false);
+		s7<-broadcastSend("User 7: Random message " + values.get(8) + ".", true, false, false, 0, 90, false);
+		s7<-broadcastSend("User 7: Random message " + values.get(9) + ".", true, false, false, 0, 90, false);
+		Collections.shuffle(values);
+		s8<-broadcastSend("User 8: Random message " + values.get(0) + ".", true, false, false, 0, 90, false);
+		s8<-broadcastSend("User 8: Random message " + values.get(1) + ".", true, false, false, 0, 90, false);
+		s8<-broadcastSend("User 8: Random message " + values.get(2) + ".", true, false, false, 0, 90, false);
+		s8<-broadcastSend("User 8: Random message " + values.get(3) + ".", true, false, false, 0, 90, false);
+		s8<-broadcastSend("User 8: Random message " + values.get(4) + ".", true, false, false, 0, 90, false);
+		s8<-broadcastSend("User 8: Random message " + values.get(5) + ".", true, false, false, 0, 90, false);
+		s8<-broadcastSend("User 8: Random message " + values.get(6) + ".", true, false, false, 0, 90, false);
+		s8<-broadcastSend("User 8: Random message " + values.get(7) + ".", true, false, false, 0, 90, false);
+		s8<-broadcastSend("User 8: Random message " + values.get(8) + ".", true, false, false, 0, 90, false);
+		s8<-broadcastSend("User 8: Random message " + values.get(9) + ".", true, false, false, 0, 90, false);
+		Collections.shuffle(values);
+		s9<-broadcastSend("User 9: Random message " + values.get(0) + ".", true, false, false, 0, 90, false);
+		s9<-broadcastSend("User 9: Random message " + values.get(1) + ".", true, false, false, 0, 90, false);
+		s9<-broadcastSend("User 9: Random message " + values.get(2) + ".", true, false, false, 0, 90, false);
+		s9<-broadcastSend("User 9: Random message " + values.get(3) + ".", true, false, false, 0, 90, false);
+		s9<-broadcastSend("User 9: Random message " + values.get(4) + ".", true, false, false, 0, 90, false);
+		s9<-broadcastSend("User 9: Random message " + values.get(5) + ".", true, false, false, 0, 90, false);
+		s9<-broadcastSend("User 9: Random message " + values.get(6) + ".", true, false, false, 0, 90, false);
+		s9<-broadcastSend("User 9: Random message " + values.get(7) + ".", true, false, false, 0, 90, false);
+		s9<-broadcastSend("User 9: Random message " + values.get(8) + ".", true, false, false, 0, 90, false);
+		s9<-broadcastSend("User 9: Random message " + values.get(9) + ".", true, false, false, 0, 90, false);
+		Collections.shuffle(values);
+		s10<-broadcastSend("User 10: Random message " + values.get(0) + ".", true, false, false, 0, 90, false);
+		s10<-broadcastSend("User 10: Random message " + values.get(1) + ".", true, false, false, 0, 90, false);
+		s10<-broadcastSend("User 10: Random message " + values.get(2) + ".", true, false, false, 0, 90, false);
+		s10<-broadcastSend("User 10: Random message " + values.get(3) + ".", true, false, false, 0, 90, false);
+		s10<-broadcastSend("User 10: Random message " + values.get(4) + ".", true, false, false, 0, 90, false);
+		s10<-broadcastSend("User 10: Random message " + values.get(5) + ".", true, false, false, 0, 90, false);
+		s10<-broadcastSend("User 10: Random message " + values.get(6) + ".", true, false, false, 0, 90, false);
+		s10<-broadcastSend("User 10: Random message " + values.get(7) + ".", true, false, false, 0, 90, false);
+		s10<-broadcastSend("User 10: Random message " + values.get(8) + ".", true, false, false, 0, 90, false);
+		s10<-broadcastSend("User 10: Random message " + values.get(9) + ".", true, false, false, 0, 90, false);
 	}
 
 	void reply(String replyMsg) 
@@ -70,7 +141,7 @@ behavior NoConsistencyAdvancedChat
 	
 	void act(String args[])
 	{
-		if(args.length != 5)
+		if(args.length != 10)
 		{
 			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>");
 			return;
@@ -83,11 +154,16 @@ behavior NoConsistencyAdvancedChat
 			Speaker speaker3 = (Speaker) Speaker.getReferenceByName(args[2]);
 			Speaker speaker4 = (Speaker) Speaker.getReferenceByName(args[3]);
 			Speaker speaker5 = (Speaker) Speaker.getReferenceByName(args[4]);
+			Speaker speaker6 = (Speaker) Speaker.getReferenceByName(args[5]);
+			Speaker speaker7 = (Speaker) Speaker.getReferenceByName(args[6]);
+			Speaker speaker8 = (Speaker) Speaker.getReferenceByName(args[7]);
+			Speaker speaker9 = (Speaker) Speaker.getReferenceByName(args[8]);
+			Speaker speaker10 = (Speaker) Speaker.getReferenceByName(args[9]);
 			Date first = new Date();
 			Timestamp start = new Timestamp(first.getTime());
 			standardOutput <- println("Starting time: " + start);
 			Instant begin = Instant.now();
-			chatSession(speaker1, speaker2, speaker3, speaker4, speaker5) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
+			chatSession(speaker1, speaker2, speaker3, speaker4, speaker5, speaker6, speaker7, speaker8, speaker9, speaker10) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
 		}
 		catch (Exception e)
 		{

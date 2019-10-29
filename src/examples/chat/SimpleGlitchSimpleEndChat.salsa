@@ -1,0 +1,87 @@
+module examples.chat;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+import java.util.*;
+
+//Three speakers chat in a chat session initialized by the actor Chat
+
+behavior SimpleGlitchSimpleEndChat
+{
+	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5) 
+	{
+		s1<-setQuestionIdentity();
+		ArrayList values = new ArrayList();
+		values.add(1);
+		values.add(2);
+		values.add(3);
+		Collections.shuffle(values);
+		s2<-broadcastSend("User 2: Poll response " + values.get(0) + ".", false, false, true, 3, 12, true);
+		s2<-broadcastSend("User 2: Poll response " + values.get(1) + ".", false, false, true, 3, 12, true);
+		s2<-broadcastSend("User 2: Poll response " + values.get(2) + ".", false, false, true, 3, 12, true);
+		Collections.shuffle(values);
+		s3<-broadcastSend("User 3: Poll response " + values.get(0) + ".", false, false, true, 3, 12, true);
+		s3<-broadcastSend("User 3: Poll response " + values.get(1) + ".", false, false, true, 3, 12, true);
+		s3<-broadcastSend("User 3: Poll response " + values.get(2) + ".", false, false, true, 3, 12, true);
+		Collections.shuffle(values);
+		s4<-broadcastSend("User 4: Poll response " + values.get(0) + ".", false, false, true, 3, 12, true);
+		s4<-broadcastSend("User 4: Poll response " + values.get(1) + ".", false, false, true, 3, 12, true);
+		s4<-broadcastSend("User 4: Poll response " + values.get(2) + ".", false, false, true, 3, 12, true);
+		Collections.shuffle(values);
+		s5<-broadcastSend("User 5: Poll response " + values.get(0) + ".", false, false, true, 3, 12, true);
+		s5<-broadcastSend("User 5: Poll response " + values.get(1) + ".", false, false, true, 3, 12, true);
+		s5<-broadcastSend("User 5: Poll response " + values.get(2) + ".", false, false, true, 3, 12, true);
+		Collections.shuffle(values);
+		s1<-broadcastSend("User 1: Poll question " + values.get(0) + ".", false, true, false, 3, 12, true);
+		s1<-broadcastSend("User 1: Poll question " + values.get(1) + ".", false, true, false, 3, 12, true);
+		s1<-broadcastSend("User 1: Poll question " + values.get(2) + ".", false, true, false, 3, 12, true);
+	}
+
+	void reply(String replyMsg) 
+	{
+		standardOutput<-println(replyMsg);
+	}
+	
+	void act(String args[])
+	{
+		if(args.length != 5)
+		{
+			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>");
+			return;
+		}
+
+		try
+		{
+			Speaker speaker1 = (Speaker) Speaker.getReferenceByName(args[0]);
+			Speaker speaker2 = (Speaker) Speaker.getReferenceByName(args[1]);
+			Speaker speaker3 = (Speaker) Speaker.getReferenceByName(args[2]);
+			Speaker speaker4 = (Speaker) Speaker.getReferenceByName(args[3]);
+			Speaker speaker5 = (Speaker) Speaker.getReferenceByName(args[4]);
+			Date first = new Date();
+			Timestamp start = new Timestamp(first.getTime());
+			standardOutput <- println("Starting time: " + start);
+			Instant begin = Instant.now();
+			chatSession(speaker1, speaker2, speaker3, speaker4, speaker5) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
+		}
+		catch (Exception e)
+		{
+			standardOutput <- println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>");
+			return;
+		}
+	}
+
+	void trackEndingTime(Instant begin)
+	{
+		// keep track of ending time here
+		Date second = new Date();
+		Timestamp end = new Timestamp(second.getTime());
+
+		// calculate time elapsed
+		Instant endTime = Instant.now();
+		Duration timeDifference = Duration.between(begin, endTime);
+		long timeTaken = timeDifference.toMillis();
+		standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+		standardOutput<-println("Ending time: " + end);
+	}
+}

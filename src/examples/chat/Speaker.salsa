@@ -87,7 +87,7 @@ behavior Speaker implements ActorService
 			default:
 				if(fifo)
 				{
-					handleFifoCode(speakerName, msg, type);
+					handleFifoCode(speakerName, msg, type, false);
 				}
 				else
 				{
@@ -221,6 +221,116 @@ behavior Speaker implements ActorService
 		fifoMessageValues.put(current_user, currentFifoMessages);
 		return isAdded;
 	}
+	
+	boolean handleFifoCodeAdvanced(String speakerName, String msg, String type, boolean isQuestion) throws InterruptedException
+	{
+		Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
+		Integer current_user = Integer.parseInt(msg.substring(0, 10).replaceAll("[\\D]", ""));
+		if(!valuesAdded.containsKey(current_user))
+		{
+			ArrayList vals = new ArrayList();
+			valuesAdded.put(current_user, vals);
+		}
+		if(!fifoValues.containsKey(current_user))
+		{
+			ArrayList vals = new ArrayList();
+			ArrayList msgVals = new ArrayList();
+			fifoValues.put(current_user, vals);
+			fifoMessageValues.put(current_user, msgVals);
+		}
+		ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
+		ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
+		ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
+		boolean isAdded = false;
+		if((currentAdded.size() == 0 && current_value == 1) || (currentAdded.size() > 0 && ((Integer)currentAdded.get(currentAdded.size() - 1) == current_value - 1)))
+		{
+			currentAdded.add(current_value);
+			messageQueue.add(msg);
+			if(isQuestion)
+				questionTimeStamp.put(msg, null);
+
+			int i = -1;
+			for(i = 0; i < currentFifo.size(); i++)
+			{
+				if((Integer)currentFifo.get(i) == current_value + 1)
+				{
+					current_value = (Integer)currentFifo.get(i);
+					String current_message = (String)currentFifoMessages.get(i);
+					currentAdded.add(current_value);
+					if(isQuestion)
+						questionTimeStamp.put(current_message, null);
+					messageQueue.add(current_message);
+				}
+				else
+					break;
+			}
+			while(i > 0)
+			{
+				currentFifoMessages.remove(0);
+				currentFifo.remove(0);
+				i--;
+			}
+			isAdded = true;
+		}
+		else
+		{
+			if(currentFifo.size() == 0)
+			{
+				currentFifo.add(current_value);
+				currentFifoMessages.add(msg);
+			}
+			else
+			{
+				if(current_value < (Integer)currentFifo.get(0))
+				{
+					currentFifo.add(0, current_value);
+					currentFifoMessages.add(0, msg);
+				}
+				else
+				{
+					int i = -1;
+					boolean added = false;
+					for(i = 0; i < currentFifo.size(); i++)
+					{
+						if(current_value < (Integer)currentFifo.get(i))
+						{
+							added = true;
+							currentFifo.add(i, current_value);
+							currentFifoMessages.add(i, msg);
+							break;
+						}
+					}
+					if(!added)
+					{
+						currentFifo.add(i, current_value);
+						currentFifoMessages.add(i, msg);
+					}
+				}
+			}
+		}
+		valuesAdded.put(current_user, currentAdded);
+		fifoValues.put(current_user, currentFifo);
+		fifoMessageValues.put(current_user, currentFifoMessages);
+		return isAdded;
+	}
+	
+	void handleAdvancedStall(String speakerName, int number_of_questions)
+	{
+		if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
+		{
+			if(answerQueue.size() > 0)
+			{
+				// empty out queue
+				while(answerQueue.size() > 0)
+				{
+					String chatMessage = (String) answerQueue.remove();
+
+					// add the message to the list and print timestamp
+					handleFifoCodeAdvanced(speakerName, chatMessage, "ANSWER", false);
+				}						
+			}
+		}
+	}
 
 	// this function handles messages by their type and takes into account levels after causal consistency
 	void broadcastReceiveAdvanced(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) throws InterruptedException
@@ -228,54 +338,47 @@ behavior Speaker implements ActorService
 		switch (type)
 		{
 			case "QUESTION":
-				// add the question to the overall message list
-				messageQueue.add(msg);
-
-				// put the question in the question map
-				Date date = new Date();
-				Timestamp current = new Timestamp(date.getTime());
-				questionTimeStamp.put(msg, current);
-				
-				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
-				{
-					if(answerQueue.size() > 0)
-					{
-						// empty out queue
-						while(answerQueue.size() > 0)
-						{
-							String chatMessage = (String) answerQueue.remove();
-							messageQueue.add(chatMessage);
-						}						
-					}
-				}
+				handleFifoCodeAdvanced(speakerName, msg, type, true) @
+				handleAdvancedStall(speakerName, number_of_questions) @
+				printQueueInfo(total_messages);
 				break;
 			case "ANSWER":
 				// check if there has been a question already placed
-				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
-				{
-					if(answerQueue.size() > 0)
-					{
-						// empty out queue
-						while(answerQueue.size() > 0)
-						{
-							String chatMessage = (String) answerQueue.remove();
-							messageQueue.add(chatMessage);
-						}						
-					}
-					messageQueue.add(msg);
-				}
-				else
-				{
-					// store the message for later processing
-					answerQueue.add(msg);
-				}
+				handleAnswerCase(speakerName, msg, number_of_questions) @
+				printQueueInfo(total_messages);
 				break;
 			default:
 				// add the statement to the overall message queue
-				messageQueue.add(msg);
+				handleFifoCodeAdvanced(speakerName, msg, type, false) @
+				printQueueInfo(total_messages);
 				break;
 		}
+	}
 
+	void handleAnswerCase(String speakerName, String msg, int number_of_questions) throws InterruptedException
+	{
+		if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
+		{
+			if(answerQueue.size() > 0)
+			{
+				// empty out queue
+				while(answerQueue.size() > 0)
+				{
+					String chatMessage = (String) answerQueue.remove();
+					handleFifoCodeAdvanced(speakerName, chatMessage, "ANSWER", false);
+				}						
+			}
+			handleFifoCodeAdvanced(speakerName, msg, "ANSWER", false);
+		}
+		else
+		{
+			// store the message for later processing
+			answerQueue.add(msg);
+		}
+	}
+
+	void printQueueInfo(int total_messages) throws InterruptedException
+	{
 		// checks if all of the messages have arrived
 		if(messageQueue.size() == total_messages)
 		{

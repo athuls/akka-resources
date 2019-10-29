@@ -1,0 +1,189 @@
+module examples.chat;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+import java.util.*;
+
+//Three speakers chat in a chat session initialized by the actor Chat
+
+behavior CausalAdvancedChat
+{
+	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5, Speaker s6, Speaker s7, Speaker s8, Speaker s9, Speaker s10) 
+	{
+		s1<-setQuestionIdentity();
+		ArrayList values = new ArrayList();
+		values.add(1);
+		values.add(2);
+		values.add(3);
+		values.add(4);
+		values.add(5);
+		values.add(6);
+		values.add(7);
+		values.add(8);
+		values.add(9);
+		values.add(10);
+		Collections.shuffle(values);
+		s1<-broadcastSend("User 1: Question " + values.get(0) + ".", false, true, false, 10, 90, true);
+		s1<-broadcastSend("User 1: Question " + values.get(1) + ".", false, true, false, 10, 90, true);
+		s1<-broadcastSend("User 1: Question " + values.get(2) + ".", false, true, false, 10, 90, true);
+		s1<-broadcastSend("User 1: Question " + values.get(3) + ".", false, true, false, 10, 90, true);
+		s1<-broadcastSend("User 1: Question " + values.get(4) + ".", false, true, false, 10, 90, true);
+		s1<-broadcastSend("User 1: Question " + values.get(5) + ".", false, true, false, 10, 90, true);
+		s1<-broadcastSend("User 1: Question " + values.get(6) + ".", false, true, false, 10, 90, true);
+		s1<-broadcastSend("User 1: Question " + values.get(7) + ".", false, true, false, 10, 90, true);
+		s1<-broadcastSend("User 1: Question " + values.get(8) + ".", false, true, false, 10, 90, true);
+		s1<-broadcastSend("User 1: Question " + values.get(9) + ".", false, true, false, 10, 90, true);
+		Collections.shuffle(values);
+		s2<-broadcastSend("User 2: Answer " + values.get(0) + ".", false, false, true, 10, 90, true);
+		s2<-broadcastSend("User 2: Answer " + values.get(1) + ".", false, false, true, 10, 90, true);
+		s2<-broadcastSend("User 2: Answer " + values.get(2) + ".", false, false, true, 10, 90, true);
+		s2<-broadcastSend("User 2: Answer " + values.get(3) + ".", false, false, true, 10, 90, true);
+		s2<-broadcastSend("User 2: Answer " + values.get(4) + ".", false, false, true, 10, 90, true);
+		s2<-broadcastSend("User 2: Answer " + values.get(5) + ".", false, false, true, 10, 90, true);
+		s2<-broadcastSend("User 2: Answer " + values.get(6) + ".", false, false, true, 10, 90, true);
+		s2<-broadcastSend("User 2: Answer " + values.get(7) + ".", false, false, true, 10, 90, true);
+		s2<-broadcastSend("User 2: Answer " + values.get(8) + ".", false, false, true, 10, 90, true);
+		s2<-broadcastSend("User 2: Answer " + values.get(9) + ".", false, false, true, 10, 90, true);
+		Collections.shuffle(values);
+		s3<-broadcastSend("User 3: Answer " + values.get(0) + ".", false, false, true, 10, 90, true);
+		s3<-broadcastSend("User 3: Answer " + values.get(1) + ".", false, false, true, 10, 90, true);
+		s3<-broadcastSend("User 3: Answer " + values.get(2) + ".", false, false, true, 10, 90, true);
+		s3<-broadcastSend("User 3: Answer " + values.get(3) + ".", false, false, true, 10, 90, true);
+		s3<-broadcastSend("User 3: Answer " + values.get(4) + ".", false, false, true, 10, 90, true);
+		s3<-broadcastSend("User 3: Answer " + values.get(5) + ".", false, false, true, 10, 90, true);
+		s3<-broadcastSend("User 3: Answer " + values.get(6) + ".", false, false, true, 10, 90, true);
+		s3<-broadcastSend("User 3: Answer " + values.get(7) + ".", false, false, true, 10, 90, true);
+		s3<-broadcastSend("User 3: Answer " + values.get(8) + ".", false, false, true, 10, 90, true);
+		s3<-broadcastSend("User 3: Answer " + values.get(9) + ".", false, false, true, 10, 90, true);
+		Collections.shuffle(values);
+		s4<-broadcastSend("User 4: Answer " + values.get(0) + ".", false, false, true, 10, 90, true);
+		s4<-broadcastSend("User 4: Answer " + values.get(1) + ".", false, false, true, 10, 90, true);
+		s4<-broadcastSend("User 4: Answer " + values.get(2) + ".", false, false, true, 10, 90, true);
+		s4<-broadcastSend("User 4: Answer " + values.get(3) + ".", false, false, true, 10, 90, true);
+		s4<-broadcastSend("User 4: Answer " + values.get(4) + ".", false, false, true, 10, 90, true);
+		s4<-broadcastSend("User 4: Answer " + values.get(5) + ".", false, false, true, 10, 90, true);
+		s4<-broadcastSend("User 4: Answer " + values.get(6) + ".", false, false, true, 10, 90, true);
+		s4<-broadcastSend("User 4: Answer " + values.get(7) + ".", false, false, true, 10, 90, true);
+		s4<-broadcastSend("User 4: Answer " + values.get(8) + ".", false, false, true, 10, 90, true);
+		s4<-broadcastSend("User 4: Answer " + values.get(9) + ".", false, false, true, 10, 90, true);
+		Collections.shuffle(values);
+		s5<-broadcastSend("User 5: Answer " + values.get(0) + ".", false, false, true, 10, 90, true);
+		s5<-broadcastSend("User 5: Answer " + values.get(1) + ".", false, false, true, 10, 90, true);
+		s5<-broadcastSend("User 5: Answer " + values.get(2) + ".", false, false, true, 10, 90, true);
+		s5<-broadcastSend("User 5: Answer " + values.get(3) + ".", false, false, true, 10, 90, true);
+		s5<-broadcastSend("User 5: Answer " + values.get(4) + ".", false, false, true, 10, 90, true);
+		s5<-broadcastSend("User 5: Answer " + values.get(5) + ".", false, false, true, 10, 90, true);
+		s5<-broadcastSend("User 5: Answer " + values.get(6) + ".", false, false, true, 10, 90, true);
+		s5<-broadcastSend("User 5: Answer " + values.get(7) + ".", false, false, true, 10, 90, true);
+		s5<-broadcastSend("User 5: Answer " + values.get(8) + ".", false, false, true, 10, 90, true);
+		s5<-broadcastSend("User 5: Answer " + values.get(9) + ".", false, false, true, 10, 90, true);
+		Collections.shuffle(values);
+		s6<-broadcastSend("User 6: Answer " + values.get(0) + ".", false, false, true, 10, 90, true);
+		s6<-broadcastSend("User 6: Answer " + values.get(1) + ".", false, false, true, 10, 90, true);
+		s6<-broadcastSend("User 6: Answer " + values.get(2) + ".", false, false, true, 10, 90, true);
+		s6<-broadcastSend("User 6: Answer " + values.get(3) + ".", false, false, true, 10, 90, true);
+		s6<-broadcastSend("User 6: Answer " + values.get(4) + ".", false, false, true, 10, 90, true);
+		s6<-broadcastSend("User 6: Answer " + values.get(5) + ".", false, false, true, 10, 90, true);
+		s6<-broadcastSend("User 6: Answer " + values.get(6) + ".", false, false, true, 10, 90, true);
+		s6<-broadcastSend("User 6: Answer " + values.get(7) + ".", false, false, true, 10, 90, true);
+		s6<-broadcastSend("User 6: Answer " + values.get(8) + ".", false, false, true, 10, 90, true);
+		s6<-broadcastSend("User 6: Answer " + values.get(9) + ".", false, false, true, 10, 90, true);
+		Collections.shuffle(values);
+		s7<-broadcastSend("User 7: Answer " + values.get(0) + ".", false, false, true, 10, 90, true);
+		s7<-broadcastSend("User 7: Answer " + values.get(1) + ".", false, false, true, 10, 90, true);
+		s7<-broadcastSend("User 7: Answer " + values.get(2) + ".", false, false, true, 10, 90, true);
+		s7<-broadcastSend("User 7: Answer " + values.get(3) + ".", false, false, true, 10, 90, true);
+		s7<-broadcastSend("User 7: Answer " + values.get(4) + ".", false, false, true, 10, 90, true);
+		s7<-broadcastSend("User 7: Answer " + values.get(5) + ".", false, false, true, 10, 90, true);
+		s7<-broadcastSend("User 7: Answer " + values.get(6) + ".", false, false, true, 10, 90, true);
+		s7<-broadcastSend("User 7: Answer " + values.get(7) + ".", false, false, true, 10, 90, true);
+		s7<-broadcastSend("User 7: Answer " + values.get(8) + ".", false, false, true, 10, 90, true);
+		s7<-broadcastSend("User 7: Answer " + values.get(9) + ".", false, false, true, 10, 90, true);
+		Collections.shuffle(values);
+		s8<-broadcastSend("User 8: Answer " + values.get(0) + ".", false, false, true, 10, 90, true);
+		s8<-broadcastSend("User 8: Answer " + values.get(1) + ".", false, false, true, 10, 90, true);
+		s8<-broadcastSend("User 8: Answer " + values.get(2) + ".", false, false, true, 10, 90, true);
+		s8<-broadcastSend("User 8: Answer " + values.get(3) + ".", false, false, true, 10, 90, true);
+		s8<-broadcastSend("User 8: Answer " + values.get(4) + ".", false, false, true, 10, 90, true);
+		s8<-broadcastSend("User 8: Answer " + values.get(5) + ".", false, false, true, 10, 90, true);
+		s8<-broadcastSend("User 8: Answer " + values.get(6) + ".", false, false, true, 10, 90, true);
+		s8<-broadcastSend("User 8: Answer " + values.get(7) + ".", false, false, true, 10, 90, true);
+		s8<-broadcastSend("User 8: Answer " + values.get(8) + ".", false, false, true, 10, 90, true);
+		s8<-broadcastSend("User 8: Answer " + values.get(9) + ".", false, false, true, 10, 90, true);
+		Collections.shuffle(values);
+		s9<-broadcastSend("User 9: Answer " + values.get(0) + ".", false, false, true, 10, 90, true);
+		s9<-broadcastSend("User 9: Answer " + values.get(1) + ".", false, false, true, 10, 90, true);
+		s9<-broadcastSend("User 9: Answer " + values.get(2) + ".", false, false, true, 10, 90, true);
+		s9<-broadcastSend("User 9: Answer " + values.get(3) + ".", false, false, true, 10, 90, true);
+		s9<-broadcastSend("User 9: Answer " + values.get(4) + ".", false, false, true, 10, 90, true);
+		s9<-broadcastSend("User 9: Answer " + values.get(5) + ".", false, false, true, 10, 90, true);
+		s9<-broadcastSend("User 9: Answer " + values.get(6) + ".", false, false, true, 10, 90, true);
+		s9<-broadcastSend("User 9: Answer " + values.get(7) + ".", false, false, true, 10, 90, true);
+		s9<-broadcastSend("User 9: Answer " + values.get(8) + ".", false, false, true, 10, 90, true);
+		s9<-broadcastSend("User 9: Answer " + values.get(9) + ".", false, false, true, 10, 90, true);
+		Collections.shuffle(values);
+		s10<-broadcastSend("User 10: Answer " + values.get(0) + ".", false, false, true, 10, 90, true);
+		s10<-broadcastSend("User 10: Answer " + values.get(1) + ".", false, false, true, 10, 90, true);
+		s10<-broadcastSend("User 10: Answer " + values.get(2) + ".", false, false, true, 10, 90, true);
+		s10<-broadcastSend("User 10: Answer " + values.get(3) + ".", false, false, true, 10, 90, true);
+		s10<-broadcastSend("User 10: Answer " + values.get(4) + ".", false, false, true, 10, 90, true);
+		s10<-broadcastSend("User 10: Answer " + values.get(5) + ".", false, false, true, 10, 90, true);
+		s10<-broadcastSend("User 10: Answer " + values.get(6) + ".", false, false, true, 10, 90, true);
+		s10<-broadcastSend("User 10: Answer " + values.get(7) + ".", false, false, true, 10, 90, true);
+		s10<-broadcastSend("User 10: Answer " + values.get(8) + ".", false, false, true, 10, 90, true);
+		s10<-broadcastSend("User 10: Answer " + values.get(9) + ".", false, false, true, 10, 90, true);
+	}
+
+	void reply(String replyMsg) 
+	{
+		standardOutput<-println(replyMsg);
+	}
+	
+	void act(String args[])
+	{
+		if(args.length != 10)
+		{
+			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>");
+			return;
+		}
+
+		try
+		{
+			Speaker speaker1 = (Speaker) Speaker.getReferenceByName(args[0]);
+			Speaker speaker2 = (Speaker) Speaker.getReferenceByName(args[1]);
+			Speaker speaker3 = (Speaker) Speaker.getReferenceByName(args[2]);
+			Speaker speaker4 = (Speaker) Speaker.getReferenceByName(args[3]);
+			Speaker speaker5 = (Speaker) Speaker.getReferenceByName(args[4]);
+			Speaker speaker6 = (Speaker) Speaker.getReferenceByName(args[5]);
+			Speaker speaker7 = (Speaker) Speaker.getReferenceByName(args[6]);
+			Speaker speaker8 = (Speaker) Speaker.getReferenceByName(args[7]);
+			Speaker speaker9 = (Speaker) Speaker.getReferenceByName(args[8]);
+			Speaker speaker10 = (Speaker) Speaker.getReferenceByName(args[9]);
+			Date first = new Date();
+			Timestamp start = new Timestamp(first.getTime());
+			standardOutput <- println("Starting time: " + start);
+			Instant begin = Instant.now();
+			chatSession(speaker1, speaker2, speaker3, speaker4, speaker5, speaker6, speaker7, speaker8, speaker9, speaker10) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
+		}
+		catch (Exception e)
+		{
+			standardOutput <- println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>");
+			return;
+		}
+	}
+
+	void trackEndingTime(Instant begin)
+	{
+		// keep track of ending time here
+		Date second = new Date();
+		Timestamp end = new Timestamp(second.getTime());
+
+		// calculate time elapsed
+		Instant endTime = Instant.now();
+		Duration timeDifference = Duration.between(begin, endTime);
+		long timeTaken = timeDifference.toMillis();
+		standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+		standardOutput<-println("Ending time: " + end);
+	}
+}

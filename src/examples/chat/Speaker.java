@@ -280,9 +280,9 @@ break;			case "ANSWER": if (questionTimeStamp.values().size()==number_of_questio
 			}
 }break;			default: if (fifo) {{
 				{
-					// handleFifoCode(speakerName, msg, type)
+					// handleFifoCode(speakerName, msg, type, false)
 					{
-						Object _arguments[] = { speakerName, msg, type };
+						Object _arguments[] = { speakerName, msg, type, false };
 						Message message = new Message( self, self, "handleFifoCode", _arguments, null, null );
 						__messages.add( message );
 					}
@@ -413,34 +413,178 @@ break;							}
 			fifoMessageValues.put(current_user, currentFifoMessages);
 			return isAdded;
 		}
-		public void broadcastReceiveAdvanced(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) throws InterruptedException{
-			switch (type) {
-			case "QUESTION": messageQueue.add(msg);
-Date date = new Date();
-Timestamp current = new Timestamp(date.getTime());
-questionTimeStamp.put(msg, current);
-if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+		public boolean handleFifoCodeAdvanced(String speakerName, String msg, String type, boolean isQuestion) throws InterruptedException{
+			Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
+			Integer current_user = Integer.parseInt(msg.substring(0, 10).replaceAll("[\\D]", ""));
+			if (!valuesAdded.containsKey(current_user)) {{
+				ArrayList vals = new ArrayList();
+				valuesAdded.put(current_user, vals);
+			}
+}			if (!fifoValues.containsKey(current_user)) {{
+				ArrayList vals = new ArrayList();
+				ArrayList msgVals = new ArrayList();
+				fifoValues.put(current_user, vals);
+				fifoMessageValues.put(current_user, msgVals);
+			}
+}			ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
+			ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
+			ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
+			boolean isAdded = false;
+			if ((currentAdded.size()==0&&current_value==1)||(currentAdded.size()>0&&((Integer)currentAdded.get(currentAdded.size()-1)==current_value-1))) {{
+				currentAdded.add(current_value);
+				messageQueue.add(msg);
+				if (isQuestion) {questionTimeStamp.put(msg, null);
+}				int i = -1;
+				for (i = 0; i<currentFifo.size(); i++){
+					if ((Integer)currentFifo.get(i)==current_value+1) {{
+						current_value = (Integer)currentFifo.get(i);
+						String current_message = (String)currentFifoMessages.get(i);
+						currentAdded.add(current_value);
+						if (isQuestion) {questionTimeStamp.put(current_message, null);
+}						messageQueue.add(current_message);
+					}
+}					else {break;}				}
+				while (i>0) {
+					currentFifoMessages.remove(0);
+					currentFifo.remove(0);
+					i--;
+				}
+				isAdded = true;
+			}
+}			else {{
+				if (currentFifo.size()==0) {{
+					currentFifo.add(current_value);
+					currentFifoMessages.add(msg);
+				}
+}				else {{
+					if (current_value<(Integer)currentFifo.get(0)) {{
+						currentFifo.add(0, current_value);
+						currentFifoMessages.add(0, msg);
+					}
+}					else {{
+						int i = -1;
+						boolean added = false;
+						for (i = 0; i<currentFifo.size(); i++){
+							if (current_value<(Integer)currentFifo.get(i)) {{
+								added = true;
+								currentFifo.add(i, current_value);
+								currentFifoMessages.add(i, msg);
+break;							}
+}						}
+						if (!added) {{
+							currentFifo.add(i, current_value);
+							currentFifoMessages.add(i, msg);
+						}
+}					}
+}				}
+}			}
+}			valuesAdded.put(current_user, currentAdded);
+			fifoValues.put(current_user, currentFifo);
+			fifoMessageValues.put(current_user, currentFifoMessages);
+			return isAdded;
+		}
+		public void handleAdvancedStall(String speakerName, int number_of_questions) {
+			if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
 						String chatMessage = (String)answerQueue.remove();
-						messageQueue.add(chatMessage);
+						{
+							// handleFifoCodeAdvanced(speakerName, chatMessage, "ANSWER", false)
+							{
+								Object _arguments[] = { speakerName, chatMessage, "ANSWER", false };
+								Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, null );
+								__messages.add( message );
+							}
+						}
 					}
 				}
 }			}
-}break;			case "ANSWER": if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+}		}
+		public void broadcastReceiveAdvanced(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) throws InterruptedException{
+			switch (type) {
+			case "QUESTION": 			{
+				Token token_2_0 = new Token();
+				Token token_2_1 = new Token();
+				// handleFifoCodeAdvanced(speakerName, msg, type, true)
+				{
+					Object _arguments[] = { speakerName, msg, type, true };
+					Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
+				// handleAdvancedStall(speakerName, number_of_questions)
+				{
+					Object _arguments[] = { speakerName, number_of_questions };
+					Message message = new Message( self, self, "handleAdvancedStall", _arguments, token_2_0, token_2_1 );
+					__messages.add( message );
+				}
+				// printQueueInfo(total_messages)
+				{
+					Object _arguments[] = { total_messages };
+					Message message = new Message( self, self, "printQueueInfo", _arguments, token_2_1, null );
+					__messages.add( message );
+				}
+			}
+break;			case "ANSWER": 			{
+				Token token_2_0 = new Token();
+				// handleAnswerCase(speakerName, msg, number_of_questions)
+				{
+					Object _arguments[] = { speakerName, msg, number_of_questions };
+					Message message = new Message( self, self, "handleAnswerCase", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
+				// printQueueInfo(total_messages)
+				{
+					Object _arguments[] = { total_messages };
+					Message message = new Message( self, self, "printQueueInfo", _arguments, token_2_0, null );
+					__messages.add( message );
+				}
+			}
+break;			default: 			{
+				Token token_2_0 = new Token();
+				// handleFifoCodeAdvanced(speakerName, msg, type, false)
+				{
+					Object _arguments[] = { speakerName, msg, type, false };
+					Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, token_2_0 );
+					__messages.add( message );
+				}
+				// printQueueInfo(total_messages)
+				{
+					Object _arguments[] = { total_messages };
+					Message message = new Message( self, self, "printQueueInfo", _arguments, token_2_0, null );
+					__messages.add( message );
+				}
+			}
+break;			}
+		}
+		public void handleAnswerCase(String speakerName, String msg, int number_of_questions) throws InterruptedException{
+			if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
 						String chatMessage = (String)answerQueue.remove();
-						messageQueue.add(chatMessage);
+						{
+							// handleFifoCodeAdvanced(speakerName, chatMessage, "ANSWER", false)
+							{
+								Object _arguments[] = { speakerName, chatMessage, "ANSWER", false };
+								Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, null );
+								__messages.add( message );
+							}
+						}
 					}
 				}
-}				messageQueue.add(msg);
+}				{
+					// handleFifoCodeAdvanced(speakerName, msg, "ANSWER", false)
+					{
+						Object _arguments[] = { speakerName, msg, "ANSWER", false };
+						Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
 			}
 }			else {{
 				answerQueue.add(msg);
 			}
-}break;			default: messageQueue.add(msg);
-break;			}
+}		}
+		public void printQueueInfo(int total_messages) throws InterruptedException{
 			if (messageQueue.size()==total_messages) {{
 				while (messageQueue.size()>0) {
 					messages.add(messageQueue.remove());

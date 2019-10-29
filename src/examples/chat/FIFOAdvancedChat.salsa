@@ -9,7 +9,7 @@ import java.util.*;
 
 behavior FIFOAdvancedChat
 {
-	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5) 
+	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5, Speaker s6, Speaker s7, Speaker s8, Speaker s9, Speaker s10) 
 	{
 		ArrayList values = new ArrayList();
 		values.add(1);
@@ -23,60 +23,115 @@ behavior FIFOAdvancedChat
 		values.add(9);
 		values.add(10);
 		Collections.shuffle(values);
-		s1<-broadcastSend("User 1: Ordered message " + values.get(0) + ".", true, false, false, 0, 40, true);
-		s1<-broadcastSend("User 1: Ordered message " + values.get(1) + ".", true, false, false, 0, 40, true);
-		s1<-broadcastSend("User 1: Ordered message " + values.get(2) + ".", true, false, false, 0, 40, true);
-		s1<-broadcastSend("User 1: Ordered message " + values.get(3) + ".", true, false, false, 0, 40, true);
-		s1<-broadcastSend("User 1: Ordered message " + values.get(4) + ".", true, false, false, 0, 40, true);
-		s1<-broadcastSend("User 1: Ordered message " + values.get(5) + ".", true, false, false, 0, 40, true);
-		s1<-broadcastSend("User 1: Ordered message " + values.get(6) + ".", true, false, false, 0, 40, true);
-		s1<-broadcastSend("User 1: Ordered message " + values.get(7) + ".", true, false, false, 0, 40, true);
-		s1<-broadcastSend("User 1: Ordered message " + values.get(8) + ".", true, false, false, 0, 40, true);
-		s1<-broadcastSend("User 1: Ordered message " + values.get(9) + ".", true, false, false, 0, 40, true);
+		s1<-broadcastSend("User 1: Ordered message " + values.get(0) + ".", true, false, false, 0, 90, true);
+		s1<-broadcastSend("User 1: Ordered message " + values.get(1) + ".", true, false, false, 0, 90, true);
+		s1<-broadcastSend("User 1: Ordered message " + values.get(2) + ".", true, false, false, 0, 90, true);
+		s1<-broadcastSend("User 1: Ordered message " + values.get(3) + ".", true, false, false, 0, 90, true);
+		s1<-broadcastSend("User 1: Ordered message " + values.get(4) + ".", true, false, false, 0, 90, true);
+		s1<-broadcastSend("User 1: Ordered message " + values.get(5) + ".", true, false, false, 0, 90, true);
+		s1<-broadcastSend("User 1: Ordered message " + values.get(6) + ".", true, false, false, 0, 90, true);
+		s1<-broadcastSend("User 1: Ordered message " + values.get(7) + ".", true, false, false, 0, 90, true);
+		s1<-broadcastSend("User 1: Ordered message " + values.get(8) + ".", true, false, false, 0, 90, true);
+		s1<-broadcastSend("User 1: Ordered message " + values.get(9) + ".", true, false, false, 0, 90, true);
 		Collections.shuffle(values);
-		s2<-broadcastSend("User 2: Ordered message " + values.get(0) + ".", true, false, false, 0, 40, true);
-		s2<-broadcastSend("User 2: Ordered message " + values.get(1) + ".", true, false, false, 0, 40, true);
-		s2<-broadcastSend("User 2: Ordered message " + values.get(2) + ".", true, false, false, 0, 40, true);
-		s2<-broadcastSend("User 2: Ordered message " + values.get(3) + ".", true, false, false, 0, 40, true);
-		s2<-broadcastSend("User 2: Ordered message " + values.get(4) + ".", true, false, false, 0, 40, true);
-		s2<-broadcastSend("User 2: Ordered message " + values.get(5) + ".", true, false, false, 0, 40, true);
-		s2<-broadcastSend("User 2: Ordered message " + values.get(6) + ".", true, false, false, 0, 40, true);
-		s2<-broadcastSend("User 2: Ordered message " + values.get(7) + ".", true, false, false, 0, 40, true);
-		s2<-broadcastSend("User 2: Ordered message " + values.get(8) + ".", true, false, false, 0, 40, true);
-		s2<-broadcastSend("User 2: Ordered message " + values.get(9) + ".", true, false, false, 0, 40, true);
+		s2<-broadcastSend("User 2: Ordered message " + values.get(0) + ".", true, false, false, 0, 90, true);
+		s2<-broadcastSend("User 2: Ordered message " + values.get(1) + ".", true, false, false, 0, 90, true);
+		s2<-broadcastSend("User 2: Ordered message " + values.get(2) + ".", true, false, false, 0, 90, true);
+		s2<-broadcastSend("User 2: Ordered message " + values.get(3) + ".", true, false, false, 0, 90, true);
+		s2<-broadcastSend("User 2: Ordered message " + values.get(4) + ".", true, false, false, 0, 90, true);
+		s2<-broadcastSend("User 2: Ordered message " + values.get(5) + ".", true, false, false, 0, 90, true);
+		s2<-broadcastSend("User 2: Ordered message " + values.get(6) + ".", true, false, false, 0, 90, true);
+		s2<-broadcastSend("User 2: Ordered message " + values.get(7) + ".", true, false, false, 0, 90, true);
+		s2<-broadcastSend("User 2: Ordered message " + values.get(8) + ".", true, false, false, 0, 90, true);
+		s2<-broadcastSend("User 2: Ordered message " + values.get(9) + ".", true, false, false, 0, 90, true);
 		Collections.shuffle(values);
-		s3<-broadcastSend("User 3: Ordered message " + values.get(0) + ".", true, false, false, 0, 40, true);
-		s3<-broadcastSend("User 3: Ordered message " + values.get(1) + ".", true, false, false, 0, 40, true);
-		s3<-broadcastSend("User 3: Ordered message " + values.get(2) + ".", true, false, false, 0, 40, true);
-		s3<-broadcastSend("User 3: Ordered message " + values.get(3) + ".", true, false, false, 0, 40, true);
-		s3<-broadcastSend("User 3: Ordered message " + values.get(4) + ".", true, false, false, 0, 40, true);
-		s3<-broadcastSend("User 3: Ordered message " + values.get(5) + ".", true, false, false, 0, 40, true);
-		s3<-broadcastSend("User 3: Ordered message " + values.get(6) + ".", true, false, false, 0, 40, true);
-		s3<-broadcastSend("User 3: Ordered message " + values.get(7) + ".", true, false, false, 0, 40, true);
-		s3<-broadcastSend("User 3: Ordered message " + values.get(8) + ".", true, false, false, 0, 40, true);
-		s3<-broadcastSend("User 3: Ordered message " + values.get(9) + ".", true, false, false, 0, 40, true);
+		s3<-broadcastSend("User 3: Ordered message " + values.get(0) + ".", true, false, false, 0, 90, true);
+		s3<-broadcastSend("User 3: Ordered message " + values.get(1) + ".", true, false, false, 0, 90, true);
+		s3<-broadcastSend("User 3: Ordered message " + values.get(2) + ".", true, false, false, 0, 90, true);
+		s3<-broadcastSend("User 3: Ordered message " + values.get(3) + ".", true, false, false, 0, 90, true);
+		s3<-broadcastSend("User 3: Ordered message " + values.get(4) + ".", true, false, false, 0, 90, true);
+		s3<-broadcastSend("User 3: Ordered message " + values.get(5) + ".", true, false, false, 0, 90, true);
+		s3<-broadcastSend("User 3: Ordered message " + values.get(6) + ".", true, false, false, 0, 90, true);
+		s3<-broadcastSend("User 3: Ordered message " + values.get(7) + ".", true, false, false, 0, 90, true);
+		s3<-broadcastSend("User 3: Ordered message " + values.get(8) + ".", true, false, false, 0, 90, true);
+		s3<-broadcastSend("User 3: Ordered message " + values.get(9) + ".", true, false, false, 0, 90, true);
 		Collections.shuffle(values);
-		s4<-broadcastSend("User 4: Ordered message " + values.get(0) + ".", true, false, false, 0, 40, true);
-		s4<-broadcastSend("User 4: Ordered message " + values.get(1) + ".", true, false, false, 0, 40, true);
-		s4<-broadcastSend("User 4: Ordered message " + values.get(2) + ".", true, false, false, 0, 40, true);
-		s4<-broadcastSend("User 4: Ordered message " + values.get(3) + ".", true, false, false, 0, 40, true);
-		s4<-broadcastSend("User 4: Ordered message " + values.get(4) + ".", true, false, false, 0, 40, true);
-		s4<-broadcastSend("User 4: Ordered message " + values.get(5) + ".", true, false, false, 0, 40, true);
-		s4<-broadcastSend("User 4: Ordered message " + values.get(6) + ".", true, false, false, 0, 40, true);
-		s4<-broadcastSend("User 4: Ordered message " + values.get(7) + ".", true, false, false, 0, 40, true);
-		s4<-broadcastSend("User 4: Ordered message " + values.get(8) + ".", true, false, false, 0, 40, true);
-		s4<-broadcastSend("User 4: Ordered message " + values.get(9) + ".", true, false, false, 0, 40, true);
+		s4<-broadcastSend("User 4: Ordered message " + values.get(0) + ".", true, false, false, 0, 90, true);
+		s4<-broadcastSend("User 4: Ordered message " + values.get(1) + ".", true, false, false, 0, 90, true);
+		s4<-broadcastSend("User 4: Ordered message " + values.get(2) + ".", true, false, false, 0, 90, true);
+		s4<-broadcastSend("User 4: Ordered message " + values.get(3) + ".", true, false, false, 0, 90, true);
+		s4<-broadcastSend("User 4: Ordered message " + values.get(4) + ".", true, false, false, 0, 90, true);
+		s4<-broadcastSend("User 4: Ordered message " + values.get(5) + ".", true, false, false, 0, 90, true);
+		s4<-broadcastSend("User 4: Ordered message " + values.get(6) + ".", true, false, false, 0, 90, true);
+		s4<-broadcastSend("User 4: Ordered message " + values.get(7) + ".", true, false, false, 0, 90, true);
+		s4<-broadcastSend("User 4: Ordered message " + values.get(8) + ".", true, false, false, 0, 90, true);
+		s4<-broadcastSend("User 4: Ordered message " + values.get(9) + ".", true, false, false, 0, 90, true);
 		Collections.shuffle(values);
-		s5<-broadcastSend("User 5: Ordered message " + values.get(0) + ".", true, false, false, 0, 40, true);
-		s5<-broadcastSend("User 5: Ordered message " + values.get(1) + ".", true, false, false, 0, 40, true);
-		s5<-broadcastSend("User 5: Ordered message " + values.get(2) + ".", true, false, false, 0, 40, true);
-		s5<-broadcastSend("User 5: Ordered message " + values.get(3) + ".", true, false, false, 0, 40, true);
-		s5<-broadcastSend("User 5: Ordered message " + values.get(4) + ".", true, false, false, 0, 40, true);
-		s5<-broadcastSend("User 5: Ordered message " + values.get(5) + ".", true, false, false, 0, 40, true);
-		s5<-broadcastSend("User 5: Ordered message " + values.get(6) + ".", true, false, false, 0, 40, true);
-		s5<-broadcastSend("User 5: Ordered message " + values.get(7) + ".", true, false, false, 0, 40, true);
-		s5<-broadcastSend("User 5: Ordered message " + values.get(8) + ".", true, false, false, 0, 40, true);
-		s5<-broadcastSend("User 5: Ordered message " + values.get(9) + ".", true, false, false, 0, 40, true);
+		s5<-broadcastSend("User 5: Ordered message " + values.get(0) + ".", true, false, false, 0, 90, true);
+		s5<-broadcastSend("User 5: Ordered message " + values.get(1) + ".", true, false, false, 0, 90, true);
+		s5<-broadcastSend("User 5: Ordered message " + values.get(2) + ".", true, false, false, 0, 90, true);
+		s5<-broadcastSend("User 5: Ordered message " + values.get(3) + ".", true, false, false, 0, 90, true);
+		s5<-broadcastSend("User 5: Ordered message " + values.get(4) + ".", true, false, false, 0, 90, true);
+		s5<-broadcastSend("User 5: Ordered message " + values.get(5) + ".", true, false, false, 0, 90, true);
+		s5<-broadcastSend("User 5: Ordered message " + values.get(6) + ".", true, false, false, 0, 90, true);
+		s5<-broadcastSend("User 5: Ordered message " + values.get(7) + ".", true, false, false, 0, 90, true);
+		s5<-broadcastSend("User 5: Ordered message " + values.get(8) + ".", true, false, false, 0, 90, true);
+		s5<-broadcastSend("User 5: Ordered message " + values.get(9) + ".", true, false, false, 0, 90, true);
+		Collections.shuffle(values);
+		s6<-broadcastSend("User 6: Ordered message " + values.get(0) + ".", true, false, false, 0, 90, true);
+		s6<-broadcastSend("User 6: Ordered message " + values.get(1) + ".", true, false, false, 0, 90, true);
+		s6<-broadcastSend("User 6: Ordered message " + values.get(2) + ".", true, false, false, 0, 90, true);
+		s6<-broadcastSend("User 6: Ordered message " + values.get(3) + ".", true, false, false, 0, 90, true);
+		s6<-broadcastSend("User 6: Ordered message " + values.get(4) + ".", true, false, false, 0, 90, true);
+		s6<-broadcastSend("User 6: Ordered message " + values.get(5) + ".", true, false, false, 0, 90, true);
+		s6<-broadcastSend("User 6: Ordered message " + values.get(6) + ".", true, false, false, 0, 90, true);
+		s6<-broadcastSend("User 6: Ordered message " + values.get(7) + ".", true, false, false, 0, 90, true);
+		s6<-broadcastSend("User 6: Ordered message " + values.get(8) + ".", true, false, false, 0, 90, true);
+		s6<-broadcastSend("User 6: Ordered message " + values.get(9) + ".", true, false, false, 0, 90, true);
+		Collections.shuffle(values);
+		s7<-broadcastSend("User 7: Ordered message " + values.get(0) + ".", true, false, false, 0, 90, true);
+		s7<-broadcastSend("User 7: Ordered message " + values.get(1) + ".", true, false, false, 0, 90, true);
+		s7<-broadcastSend("User 7: Ordered message " + values.get(2) + ".", true, false, false, 0, 90, true);
+		s7<-broadcastSend("User 7: Ordered message " + values.get(3) + ".", true, false, false, 0, 90, true);
+		s7<-broadcastSend("User 7: Ordered message " + values.get(4) + ".", true, false, false, 0, 90, true);
+		s7<-broadcastSend("User 7: Ordered message " + values.get(5) + ".", true, false, false, 0, 90, true);
+		s7<-broadcastSend("User 7: Ordered message " + values.get(6) + ".", true, false, false, 0, 90, true);
+		s7<-broadcastSend("User 7: Ordered message " + values.get(7) + ".", true, false, false, 0, 90, true);
+		s7<-broadcastSend("User 7: Ordered message " + values.get(8) + ".", true, false, false, 0, 90, true);
+		s7<-broadcastSend("User 7: Ordered message " + values.get(9) + ".", true, false, false, 0, 90, true);
+		Collections.shuffle(values);
+		s8<-broadcastSend("User 8: Ordered message " + values.get(0) + ".", true, false, false, 0, 90, true);
+		s8<-broadcastSend("User 8: Ordered message " + values.get(1) + ".", true, false, false, 0, 90, true);
+		s8<-broadcastSend("User 8: Ordered message " + values.get(2) + ".", true, false, false, 0, 90, true);
+		s8<-broadcastSend("User 8: Ordered message " + values.get(3) + ".", true, false, false, 0, 90, true);
+		s8<-broadcastSend("User 8: Ordered message " + values.get(4) + ".", true, false, false, 0, 90, true);
+		s8<-broadcastSend("User 8: Ordered message " + values.get(5) + ".", true, false, false, 0, 90, true);
+		s8<-broadcastSend("User 8: Ordered message " + values.get(6) + ".", true, false, false, 0, 90, true);
+		s8<-broadcastSend("User 8: Ordered message " + values.get(7) + ".", true, false, false, 0, 90, true);
+		s8<-broadcastSend("User 8: Ordered message " + values.get(8) + ".", true, false, false, 0, 90, true);
+		s8<-broadcastSend("User 8: Ordered message " + values.get(9) + ".", true, false, false, 0, 90, true);
+		Collections.shuffle(values);
+		s9<-broadcastSend("User 9: Ordered message " + values.get(0) + ".", true, false, false, 0, 90, true);
+		s9<-broadcastSend("User 9: Ordered message " + values.get(1) + ".", true, false, false, 0, 90, true);
+		s9<-broadcastSend("User 9: Ordered message " + values.get(2) + ".", true, false, false, 0, 90, true);
+		s9<-broadcastSend("User 9: Ordered message " + values.get(3) + ".", true, false, false, 0, 90, true);
+		s9<-broadcastSend("User 9: Ordered message " + values.get(4) + ".", true, false, false, 0, 90, true);
+		s9<-broadcastSend("User 9: Ordered message " + values.get(5) + ".", true, false, false, 0, 90, true);
+		s9<-broadcastSend("User 9: Ordered message " + values.get(6) + ".", true, false, false, 0, 90, true);
+		s9<-broadcastSend("User 9: Ordered message " + values.get(7) + ".", true, false, false, 0, 90, true);
+		s9<-broadcastSend("User 9: Ordered message " + values.get(8) + ".", true, false, false, 0, 90, true);
+		s9<-broadcastSend("User 9: Ordered message " + values.get(9) + ".", true, false, false, 0, 90, true);
+		Collections.shuffle(values);
+		s10<-broadcastSend("User 10: Ordered message " + values.get(0) + ".", true, false, false, 0, 90, true);
+		s10<-broadcastSend("User 10: Ordered message " + values.get(1) + ".", true, false, false, 0, 90, true);
+		s10<-broadcastSend("User 10: Ordered message " + values.get(2) + ".", true, false, false, 0, 90, true);
+		s10<-broadcastSend("User 10: Ordered message " + values.get(3) + ".", true, false, false, 0, 90, true);
+		s10<-broadcastSend("User 10: Ordered message " + values.get(4) + ".", true, false, false, 0, 90, true);
+		s10<-broadcastSend("User 10: Ordered message " + values.get(5) + ".", true, false, false, 0, 90, true);
+		s10<-broadcastSend("User 10: Ordered message " + values.get(6) + ".", true, false, false, 0, 90, true);
+		s10<-broadcastSend("User 10: Ordered message " + values.get(7) + ".", true, false, false, 0, 90, true);
+		s10<-broadcastSend("User 10: Ordered message " + values.get(8) + ".", true, false, false, 0, 90, true);
+		s10<-broadcastSend("User 10: Ordered message " + values.get(9) + ".", true, false, false, 0, 90, true);
 	}
 
 	void reply(String replyMsg) 
@@ -86,7 +141,7 @@ behavior FIFOAdvancedChat
 	
 	void act(String args[])
 	{
-		if(args.length != 5)
+		if(args.length != 10)
 		{
 			standardOutput<-println("Usage: java -Duan=myuan examples.chat.Chat <friendUAN1> <friendUAN2>");
 			return;
@@ -99,11 +154,16 @@ behavior FIFOAdvancedChat
 			Speaker speaker3 = (Speaker) Speaker.getReferenceByName(args[2]);
 			Speaker speaker4 = (Speaker) Speaker.getReferenceByName(args[3]);
 			Speaker speaker5 = (Speaker) Speaker.getReferenceByName(args[4]);
+			Speaker speaker6 = (Speaker) Speaker.getReferenceByName(args[5]);
+			Speaker speaker7 = (Speaker) Speaker.getReferenceByName(args[6]);
+			Speaker speaker8 = (Speaker) Speaker.getReferenceByName(args[7]);
+			Speaker speaker9 = (Speaker) Speaker.getReferenceByName(args[8]);
+			Speaker speaker10 = (Speaker) Speaker.getReferenceByName(args[9]);
 			Date first = new Date();
 			Timestamp start = new Timestamp(first.getTime());
 			standardOutput <- println("Starting time: " + start);
 			Instant begin = Instant.now();
-			chatSession(speaker1, speaker2, speaker3, speaker4, speaker5) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
+			chatSession(speaker1, speaker2, speaker3, speaker4, speaker5, speaker6, speaker7, speaker8, speaker9, speaker10) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
 		}
 		catch (Exception e)
 		{

@@ -1,0 +1,22 @@
+Received speaker: uan:\localhost:3030id9 to register with server uan:\localhost:3030id1
+Speaker started with uan: uan://:3030\localhost:3030id9
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Answer 6.; Timestamp: 2019-10-29 05:18:33.545
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Answer 2.; Timestamp: 2019-10-29 05:18:33.914
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Answer 10.; Timestamp: 2019-10-29 05:18:33.916
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Answer 5.; Timestamp: 2019-10-29 05:18:34.041
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Answer 4.; Timestamp: 2019-10-29 05:18:34.043
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Answer 8.; Timestamp: 2019-10-29 05:18:34.044
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Answer 7.; Timestamp: 2019-10-29 05:18:34.149
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Answer 9.; Timestamp: 2019-10-29 05:18:34.192
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Answer 3.; Timestamp: 2019-10-29 05:18:34.193
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Answer 1.; Timestamp: 2019-10-29 05:18:34.195
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 1.; Timestamp: 2019-10-29 05:18:35.341
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 2.; Timestamp: 2019-10-29 05:18:35.854
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 3.; Timestamp: 2019-10-29 05:18:36.062
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 4.; Timestamp: 2019-10-29 05:18:36.266
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 5.; Timestamp: 2019-10-29 05:18:36.467
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 6.; Timestamp: 2019-10-29 05:18:36.669
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 7.; Timestamp: 2019-10-29 05:18:36.87
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 8.; Timestamp: 2019-10-29 05:18:37.073
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 9.; Timestamp: 2019-10-29 05:18:37.277
+[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 10.; Timestamp: 2019-10-29 05:18:37.483

@@ -26,4 +26,4 @@ def graph_results(file_name, title, x_axis, y_axis, out_file, header):
     print(avg)
     print(total)
 
-graph_results("logs/temp", "10x10 FIFO Chat", "Run Number", "Latency", "graphs/10x10FIFOChat.png", "10x10 FIFO Chat")
+graph_results("logs/temp", "10x10 Simple Glitch End Chat", "Run Number", "Latency", "graphs/10x10SimpleGlitchEndChat.png", "10x10 Simple Glitch End Chat")

@@ -35,7 +35,7 @@ behavior Server implements ActorService
 				if(user != null)
 				{
                		User userRef = (User) User.getReferenceByName( user.getUAN());
-                	userRef<-broadcastReceiveAdvanced(task, taskName, text, isUpdate, total_initials, number_of_updates,isFollowup);
+                	userRef<-broadcastReceive(task, taskName, text, isUpdate, total_initials, number_of_updates,isFollowup);
             	}
 			}
 	 	}

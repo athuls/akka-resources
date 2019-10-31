@@ -1,0 +1,188 @@
+module todo;
+//Three speakers chat in a chat session initialized by the actor Chat
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+import java.util.*;
+
+behavior SimpleGlitchAdvancedTodo
+{
+	void chatSession(User s1, User s2, User s3, User s4, User s5, User s6, User s7, User s8, User s9, User s10, TaskList taskList)
+	{
+		// these tasks are created in server..
+		ArrayList values = new ArrayList();
+		values.add(1);
+		values.add(2);
+		values.add(3);
+		values.add(4);
+		values.add(5);
+		values.add(6);
+		values.add(7);
+		values.add(8);
+		values.add(9);
+		values.add(10);
+		Collections.shuffle(values);
+		s1<-addTaskToList(taskList, "User 1: Initial Poll " + values.get(0) + ".", "username1", "u1t1", false, 10, 90, true);
+		s1<-addTaskToList(taskList, "User 1: Initial Poll " + values.get(1) + ".", "username1", "u1t2", false, 10, 90, true);
+		s1<-addTaskToList(taskList, "User 1: Initial Poll " + values.get(2) + ".", "username1", "u1t3", false, 10, 90, true);
+		s1<-addTaskToList(taskList, "User 1: Initial Poll " + values.get(3) + ".", "username1", "u1t4", false, 10, 90, true);
+		s1<-addTaskToList(taskList, "User 1: Initial Poll " + values.get(4) + ".", "username1", "u1t5", false, 10, 90, true);
+		s1<-addTaskToList(taskList, "User 1: Initial Poll " + values.get(5) + ".", "username1", "u1t6", false, 10, 90, true);
+		s1<-addTaskToList(taskList, "User 1: Initial Poll " + values.get(6) + ".", "username1", "u1t7", false, 10, 90, true);
+		s1<-addTaskToList(taskList, "User 1: Initial Poll " + values.get(7) + ".", "username1", "u1t8", false, 10, 90, true);
+		s1<-addTaskToList(taskList, "User 1: Initial Poll " + values.get(8) + ".", "username1", "u1t9", false, 10, 90, true);
+		s1<-addTaskToList(taskList, "User 1: Initial Poll " + values.get(9) + ".", "username1", "u1t10", false, 10, 90, true);
+		Collections.shuffle(values);
+		s2<-addTaskToList(taskList, "User 2: Follow Up Poll " + values.get(0) + ".", "username2", "u2t1", true, 10, 90, true);
+		s2<-addTaskToList(taskList, "User 2: Follow Up Poll " + values.get(1) + ".", "username2", "u2t2", true, 10, 90, true);
+		s2<-addTaskToList(taskList, "User 2: Follow Up Poll " + values.get(2) + ".", "username2", "u2t3", true, 10, 90, true);
+		s2<-addTaskToList(taskList, "User 2: Follow Up Poll " + values.get(3) + ".", "username2", "u2t4", true, 10, 90, true);
+		s2<-addTaskToList(taskList, "User 2: Follow Up Poll " + values.get(4) + ".", "username2", "u2t5", true, 10, 90, true);
+		s2<-addTaskToList(taskList, "User 2: Follow Up Poll " + values.get(5) + ".", "username2", "u2t6", true, 10, 90, true);
+		s2<-addTaskToList(taskList, "User 2: Follow Up Poll " + values.get(6) + ".", "username2", "u2t7", true, 10, 90, true);
+		s2<-addTaskToList(taskList, "User 2: Follow Up Poll " + values.get(7) + ".", "username2", "u2t8", true, 10, 90, true);
+		s2<-addTaskToList(taskList, "User 2: Follow Up Poll " + values.get(8) + ".", "username2", "u2t9", true, 10, 90, true);
+		s2<-addTaskToList(taskList, "User 2: Follow Up Poll " + values.get(9) + ".", "username2", "u2t10", true, 10, 90, true);
+		Collections.shuffle(values);
+		s3<-addTaskToList(taskList, "User 3: Follow Up Poll " + values.get(0) + ".", "username3", "u3t1", true, 10, 90, true);
+		s3<-addTaskToList(taskList, "User 3: Follow Up Poll " + values.get(1) + ".", "username3", "u3t2", true, 10, 90, true);
+		s3<-addTaskToList(taskList, "User 3: Follow Up Poll " + values.get(2) + ".", "username3", "u3t3", true, 10, 90, true);
+		s3<-addTaskToList(taskList, "User 3: Follow Up Poll " + values.get(3) + ".", "username3", "u3t4", true, 10, 90, true);
+		s3<-addTaskToList(taskList, "User 3: Follow Up Poll " + values.get(4) + ".", "username3", "u3t5", true, 10, 90, true);
+		s3<-addTaskToList(taskList, "User 3: Follow Up Poll " + values.get(5) + ".", "username3", "u3t6", true, 10, 90, true);
+		s3<-addTaskToList(taskList, "User 3: Follow Up Poll " + values.get(6) + ".", "username3", "u3t7", true, 10, 90, true);
+		s3<-addTaskToList(taskList, "User 3: Follow Up Poll " + values.get(7) + ".", "username3", "u3t8", true, 10, 90, true);
+		s3<-addTaskToList(taskList, "User 3: Follow Up Poll " + values.get(8) + ".", "username3", "u3t9", true, 10, 90, true);
+		s3<-addTaskToList(taskList, "User 3: Follow Up Poll " + values.get(9) + ".", "username3", "u3t10", true, 10, 90, true);
+		Collections.shuffle(values);
+		s4<-addTaskToList(taskList, "User 4: Follow Up Poll " + values.get(0) + ".", "username4", "u4t1", true, 10, 90, true);
+		s4<-addTaskToList(taskList, "User 4: Follow Up Poll " + values.get(1) + ".", "username4", "u4t2", true, 10, 90, true);
+		s4<-addTaskToList(taskList, "User 4: Follow Up Poll " + values.get(2) + ".", "username4", "u4t3", true, 10, 90, true);
+		s4<-addTaskToList(taskList, "User 4: Follow Up Poll " + values.get(3) + ".", "username4", "u4t4", true, 10, 90, true);
+		s4<-addTaskToList(taskList, "User 4: Follow Up Poll " + values.get(4) + ".", "username4", "u4t5", true, 10, 90, true);
+		s4<-addTaskToList(taskList, "User 4: Follow Up Poll " + values.get(5) + ".", "username4", "u4t6", true, 10, 90, true);
+		s4<-addTaskToList(taskList, "User 4: Follow Up Poll " + values.get(6) + ".", "username4", "u4t7", true, 10, 90, true);
+		s4<-addTaskToList(taskList, "User 4: Follow Up Poll " + values.get(7) + ".", "username4", "u4t8", true, 10, 90, true);
+		s4<-addTaskToList(taskList, "User 4: Follow Up Poll " + values.get(8) + ".", "username4", "u4t9", true, 10, 90, true);
+		s4<-addTaskToList(taskList, "User 4: Follow Up Poll " + values.get(9) + ".", "username4", "u4t10", true, 10, 90, true);
+		Collections.shuffle(values);
+		s5<-addTaskToList(taskList, "User 5: Follow Up Poll " + values.get(0) + ".", "username5", "u5t1", true, 10, 90, true);
+		s5<-addTaskToList(taskList, "User 5: Follow Up Poll " + values.get(1) + ".", "username5", "u5t2", true, 10, 90, true);
+		s5<-addTaskToList(taskList, "User 5: Follow Up Poll " + values.get(2) + ".", "username5", "u5t3", true, 10, 90, true);
+		s5<-addTaskToList(taskList, "User 5: Follow Up Poll " + values.get(3) + ".", "username5", "u5t4", true, 10, 90, true);
+		s5<-addTaskToList(taskList, "User 5: Follow Up Poll " + values.get(4) + ".", "username5", "u5t5", true, 10, 90, true);
+		s5<-addTaskToList(taskList, "User 5: Follow Up Poll " + values.get(5) + ".", "username5", "u5t6", true, 10, 90, true);
+		s5<-addTaskToList(taskList, "User 5: Follow Up Poll " + values.get(6) + ".", "username5", "u5t7", true, 10, 90, true);
+		s5<-addTaskToList(taskList, "User 5: Follow Up Poll " + values.get(7) + ".", "username5", "u5t8", true, 10, 90, true);
+		s5<-addTaskToList(taskList, "User 5: Follow Up Poll " + values.get(8) + ".", "username5", "u5t9", true, 10, 90, true);
+		s5<-addTaskToList(taskList, "User 5: Follow Up Poll " + values.get(9) + ".", "username5", "u5t10", true, 10, 90, true);
+		Collections.shuffle(values);
+		s6<-addTaskToList(taskList, "User 6: Follow Up Poll " + values.get(0) + ".", "username6", "u6t1", true, 10, 90, true);
+		s6<-addTaskToList(taskList, "User 6: Follow Up Poll " + values.get(1) + ".", "username6", "u6t2", true, 10, 90, true);
+		s6<-addTaskToList(taskList, "User 6: Follow Up Poll " + values.get(2) + ".", "username6", "u6t3", true, 10, 90, true);
+		s6<-addTaskToList(taskList, "User 6: Follow Up Poll " + values.get(3) + ".", "username6", "u6t4", true, 10, 90, true);
+		s6<-addTaskToList(taskList, "User 6: Follow Up Poll " + values.get(4) + ".", "username6", "u6t5", true, 10, 90, true);
+		s6<-addTaskToList(taskList, "User 6: Follow Up Poll " + values.get(5) + ".", "username6", "u6t6", true, 10, 90, true);
+		s6<-addTaskToList(taskList, "User 6: Follow Up Poll " + values.get(6) + ".", "username6", "u6t7", true, 10, 90, true);
+		s6<-addTaskToList(taskList, "User 6: Follow Up Poll " + values.get(7) + ".", "username6", "u6t8", true, 10, 90, true);
+		s6<-addTaskToList(taskList, "User 6: Follow Up Poll " + values.get(8) + ".", "username6", "u6t9", true, 10, 90, true);
+		s6<-addTaskToList(taskList, "User 6: Follow Up Poll " + values.get(9) + ".", "username6", "u6t10", true, 10, 90, true);
+		Collections.shuffle(values);
+		s7<-addTaskToList(taskList, "User 7: Follow Up Poll " + values.get(0) + ".", "username7", "u7t1", true, 10, 90, true);
+		s7<-addTaskToList(taskList, "User 7: Follow Up Poll " + values.get(1) + ".", "username7", "u7t2", true, 10, 90, true);
+		s7<-addTaskToList(taskList, "User 7: Follow Up Poll " + values.get(2) + ".", "username7", "u7t3", true, 10, 90, true);
+		s7<-addTaskToList(taskList, "User 7: Follow Up Poll " + values.get(3) + ".", "username7", "u7t4", true, 10, 90, true);
+		s7<-addTaskToList(taskList, "User 7: Follow Up Poll " + values.get(4) + ".", "username7", "u7t5", true, 10, 90, true);
+		s7<-addTaskToList(taskList, "User 7: Follow Up Poll " + values.get(5) + ".", "username7", "u7t6", true, 10, 90, true);
+		s7<-addTaskToList(taskList, "User 7: Follow Up Poll " + values.get(6) + ".", "username7", "u7t7", true, 10, 90, true);
+		s7<-addTaskToList(taskList, "User 7: Follow Up Poll " + values.get(7) + ".", "username7", "u7t8", true, 10, 90, true);
+		s7<-addTaskToList(taskList, "User 7: Follow Up Poll " + values.get(8) + ".", "username7", "u7t9", true, 10, 90, true);
+		s7<-addTaskToList(taskList, "User 7: Follow Up Poll " + values.get(9) + ".", "username7", "u7t10", true, 10, 90, true);
+		Collections.shuffle(values);
+		s8<-addTaskToList(taskList, "User 8: Follow Up Poll " + values.get(0) + ".", "username8", "u8t1", true, 10, 90, true);
+		s8<-addTaskToList(taskList, "User 8: Follow Up Poll " + values.get(1) + ".", "username8", "u8t2", true, 10, 90, true);
+		s8<-addTaskToList(taskList, "User 8: Follow Up Poll " + values.get(2) + ".", "username8", "u8t3", true, 10, 90, true);
+		s8<-addTaskToList(taskList, "User 8: Follow Up Poll " + values.get(3) + ".", "username8", "u8t4", true, 10, 90, true);
+		s8<-addTaskToList(taskList, "User 8: Follow Up Poll " + values.get(4) + ".", "username8", "u8t5", true, 10, 90, true);
+		s8<-addTaskToList(taskList, "User 8: Follow Up Poll " + values.get(5) + ".", "username8", "u8t6", true, 10, 90, true);
+		s8<-addTaskToList(taskList, "User 8: Follow Up Poll " + values.get(6) + ".", "username8", "u8t7", true, 10, 90, true);
+		s8<-addTaskToList(taskList, "User 8: Follow Up Poll " + values.get(7) + ".", "username8", "u8t8", true, 10, 90, true);
+		s8<-addTaskToList(taskList, "User 8: Follow Up Poll " + values.get(8) + ".", "username8", "u8t9", true, 10, 90, true);
+		s8<-addTaskToList(taskList, "User 8: Follow Up Poll " + values.get(9) + ".", "username8", "u8t10", true, 10, 90, true);
+		Collections.shuffle(values);
+		s9<-addTaskToList(taskList, "User 9: Follow Up Poll " + values.get(0) + ".", "username9", "u9t1", true, 10, 90, true);
+		s9<-addTaskToList(taskList, "User 9: Follow Up Poll " + values.get(1) + ".", "username9", "u9t2", true, 10, 90, true);
+		s9<-addTaskToList(taskList, "User 9: Follow Up Poll " + values.get(2) + ".", "username9", "u9t3", true, 10, 90, true);
+		s9<-addTaskToList(taskList, "User 9: Follow Up Poll " + values.get(3) + ".", "username9", "u9t4", true, 10, 90, true);
+		s9<-addTaskToList(taskList, "User 9: Follow Up Poll " + values.get(4) + ".", "username9", "u9t5", true, 10, 90, true);
+		s9<-addTaskToList(taskList, "User 9: Follow Up Poll " + values.get(5) + ".", "username9", "u9t6", true, 10, 90, true);
+		s9<-addTaskToList(taskList, "User 9: Follow Up Poll " + values.get(6) + ".", "username9", "u9t7", true, 10, 90, true);
+		s9<-addTaskToList(taskList, "User 9: Follow Up Poll " + values.get(7) + ".", "username9", "u9t8", true, 10, 90, true);
+		s9<-addTaskToList(taskList, "User 9: Follow Up Poll " + values.get(8) + ".", "username9", "u9t9", true, 10, 90, true);
+		s9<-addTaskToList(taskList, "User 9: Follow Up Poll " + values.get(9) + ".", "username9", "u9t10", true, 10, 90, true);
+		Collections.shuffle(values);
+		s10<-addTaskToList(taskList, "User 10: Follow Up Poll " + values.get(0) + ".", "username10", "u10t1", true, 10, 90, true);
+		s10<-addTaskToList(taskList, "User 10: Follow Up Poll " + values.get(1) + ".", "username10", "u10t2", true, 10, 90, true);
+		s10<-addTaskToList(taskList, "User 10: Follow Up Poll " + values.get(2) + ".", "username10", "u10t3", true, 10, 90, true);
+		s10<-addTaskToList(taskList, "User 10: Follow Up Poll " + values.get(3) + ".", "username10", "u10t4", true, 10, 90, true);
+		s10<-addTaskToList(taskList, "User 10: Follow Up Poll " + values.get(4) + ".", "username10", "u10t5", true, 10, 90, true);
+		s10<-addTaskToList(taskList, "User 10: Follow Up Poll " + values.get(5) + ".", "username10", "u10t6", true, 10, 90, true);
+		s10<-addTaskToList(taskList, "User 10: Follow Up Poll " + values.get(6) + ".", "username10", "u10t7", true, 10, 90, true);
+		s10<-addTaskToList(taskList, "User 10: Follow Up Poll " + values.get(7) + ".", "username10", "u10t8", true, 10, 90, true);
+		s10<-addTaskToList(taskList, "User 10: Follow Up Poll " + values.get(8) + ".", "username10", "u10t9", true, 10, 90, true);
+		s10<-addTaskToList(taskList, "User 10: Follow Up Poll " + values.get(9) + ".", "username10", "u10t10", true, 10, 90, true);
+	}
+
+	void reply(String replyMsg)
+	{
+		standardOutput<-println(replyMsg);
+	}
+
+	void act(String args[])
+	{
+		try 
+		{
+			User user1 =(User) User.getReferenceByName(args[0]);
+            User user2 =(User) User.getReferenceByName(args[1]);
+            User user3 =(User) User.getReferenceByName(args[2]);
+            User user4 =(User) User.getReferenceByName(args[3]);
+            User user5 =(User) User.getReferenceByName(args[4]);
+			User user6 =(User) User.getReferenceByName(args[5]);
+			User user7 =(User) User.getReferenceByName(args[6]);
+			User user8 =(User) User.getReferenceByName(args[7]);
+			User user9 =(User) User.getReferenceByName(args[8]);
+			User user10 =(User) User.getReferenceByName(args[9]);
+            TaskList taskList =(TaskList) TaskList.getReferenceByName(args[10]);
+
+			// keep track of starting time here
+			Date first = new Date();
+			Timestamp start = new Timestamp(first.getTime());
+			standardOutput<-println("Starting time: " + start);
+
+			// use this to calculate time elapsed
+			Instant begin = Instant.now();
+			chatSession(user1, user2,user3, user4, user5, user6, user7, user8, user9, user10, taskList) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
+		}
+		catch (Exception e)
+		{
+			standardOutput<-println("Usage: java todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>");
+			return;
+		} 
+	}
+
+    void trackEndingTime(Instant begin)
+    {
+        // keep track of ending time here
+        Date second = new Date();
+        Timestamp end = new Timestamp(second.getTime());
+
+        // calculate time elapsed
+        Instant endTime = Instant.now();
+        Duration timeDifference = Duration.between(begin, endTime);
+        long timeTaken = timeDifference.toMillis();
+        standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+        standardOutput<-println("Ending time: " + end);
+	}
+}
+

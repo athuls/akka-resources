@@ -245,14 +245,16 @@ public class Speaker extends UniversalActor  implements ActorService {
 					Message message = new Message( self, self, "handleFifoCode", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// handleNormalStall(speakerName, number_of_questions)
+				// handleNormalStall(speakerName, number_of_questions, total_messages)
 				{
-					Object _arguments[] = { speakerName, number_of_questions };
+					Object _arguments[] = { speakerName, number_of_questions, total_messages };
 					Message message = new Message( self, self, "handleNormalStall", _arguments, token_2_0, null );
 					__messages.add( message );
 				}
 			}
-break;			case "ANSWER": if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+break;			case "ANSWER": double number_users = (total_messages+number_of_questions)/number_of_questions;
+double total_questions = number_users*0.2*number_of_questions;
+if (questionTimeStamp.values().size()==total_questions||(isQuestion&&questionTimeStamp.values().size()==(int)(total_questions-number_of_questions))) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
 						String chatMessage = (String)answerQueue.remove();
@@ -304,8 +306,10 @@ break;			case "ANSWER": if (questionTimeStamp.values().size()==number_of_questio
 			}
 }break;			}
 		}
-		public void handleNormalStall(String speakerName, int number_of_questions) {
-			if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+		public void handleNormalStall(String speakerName, int number_of_questions, int total_messages) {
+			double number_users = (total_messages+number_of_questions)/number_of_questions;
+			double total_questions = number_users*0.2*number_of_questions;
+			if (questionTimeStamp.values().size()==total_questions||(isQuestion&&questionTimeStamp.values().size()==(int)(total_questions-number_of_questions))) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
 						String chatMessage = (String)answerQueue.remove();
@@ -483,8 +487,10 @@ break;							}
 			fifoMessageValues.put(current_user, currentFifoMessages);
 			return isAdded;
 		}
-		public void handleAdvancedStall(String speakerName, int number_of_questions) {
-			if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+		public void handleAdvancedStall(String speakerName, int number_of_questions, int total_messages) {
+			double number_users = (total_messages+number_of_questions)/number_of_questions;
+			double total_questions = number_users*0.2*number_of_questions;
+			if (questionTimeStamp.values().size()==total_questions||(isQuestion&&questionTimeStamp.values().size()==(int)(total_questions-number_of_questions))) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
 						String chatMessage = (String)answerQueue.remove();
@@ -511,9 +517,9 @@ break;							}
 					Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// handleAdvancedStall(speakerName, number_of_questions)
+				// handleAdvancedStall(speakerName, number_of_questions, total_messages)
 				{
-					Object _arguments[] = { speakerName, number_of_questions };
+					Object _arguments[] = { speakerName, number_of_questions, total_messages };
 					Message message = new Message( self, self, "handleAdvancedStall", _arguments, token_2_0, token_2_1 );
 					__messages.add( message );
 				}
@@ -526,9 +532,9 @@ break;							}
 			}
 break;			case "ANSWER": 			{
 				Token token_2_0 = new Token();
-				// handleAnswerCase(speakerName, msg, number_of_questions)
+				// handleAnswerCase(speakerName, msg, number_of_questions, total_messages)
 				{
-					Object _arguments[] = { speakerName, msg, number_of_questions };
+					Object _arguments[] = { speakerName, msg, number_of_questions, total_messages };
 					Message message = new Message( self, self, "handleAnswerCase", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
@@ -556,8 +562,10 @@ break;			default: 			{
 			}
 break;			}
 		}
-		public void handleAnswerCase(String speakerName, String msg, int number_of_questions) throws InterruptedException{
-			if (questionTimeStamp.values().size()==number_of_questions||isQuestion) {{
+		public void handleAnswerCase(String speakerName, String msg, int number_of_questions, int total_messages) throws InterruptedException{
+			double number_users = (total_messages+number_of_questions)/number_of_questions;
+			double total_questions = number_users*0.2*number_of_questions;
+			if (questionTimeStamp.values().size()==total_questions||(isQuestion&&questionTimeStamp.values().size()==(int)(total_questions-number_of_questions))) {{
 				if (answerQueue.size()>0) {{
 					while (answerQueue.size()>0) {
 						String chatMessage = (String)answerQueue.remove();

@@ -1,0 +1,495 @@
+module examples.chat;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+import java.util.*;
+
+//Three speakers chat in a chat session initialized by the actor Chat
+
+behavior Causal100Users
+{
+	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5, Speaker s6, Speaker s7, Speaker s8, Speaker s9, Speaker s10,
+	Speaker s11, Speaker s12, Speaker s13, Speaker s14, Speaker s15, Speaker s16, Speaker s17, Speaker s18, Speaker s19, Speaker s20,
+	Speaker s21, Speaker s22, Speaker s23, Speaker s24, Speaker s25, Speaker s26, Speaker s27, Speaker s28, Speaker s29, Speaker s30,
+	Speaker s31, Speaker s32, Speaker s33, Speaker s34, Speaker s35, Speaker s36, Speaker s37, Speaker s38, Speaker s39, Speaker s40,
+	Speaker s41, Speaker s42, Speaker s43, Speaker s44, Speaker s45, Speaker s46, Speaker s47, Speaker s48, Speaker s49, Speaker s50,
+	Speaker s51, Speaker s52, Speaker s53, Speaker s54, Speaker s55, Speaker s56, Speaker s57, Speaker s58, Speaker s59, Speaker s60,
+	Speaker s61, Speaker s62, Speaker s63, Speaker s64, Speaker s65, Speaker s66, Speaker s67, Speaker s68, Speaker s69, Speaker s70,
+	Speaker s71, Speaker s72, Speaker s73, Speaker s74, Speaker s75, Speaker s76, Speaker s77, Speaker s78, Speaker s79, Speaker s80,
+	Speaker s81, Speaker s82, Speaker s83, Speaker s84, Speaker s85, Speaker s86, Speaker s87, Speaker s88, Speaker s89, Speaker s90,
+	Speaker s91, Speaker s92, Speaker s93, Speaker s94, Speaker s95, Speaker s96, Speaker s97, Speaker s98, Speaker s99, Speaker s100,
+	int num_messages) 
+	{
+		ArrayList values = new ArrayList();
+		s1<-setQuestionIdentity();
+		s2<-setQuestionIdentity();
+		s3<-setQuestionIdentity();
+		s4<-setQuestionIdentity();
+		s5<-setQuestionIdentity();
+		s6<-setQuestionIdentity();
+		s7<-setQuestionIdentity();
+		s8<-setQuestionIdentity();
+		s9<-setQuestionIdentity();
+		s10<-setQuestionIdentity();
+		s11<-setQuestionIdentity();
+		s12<-setQuestionIdentity();
+		s13<-setQuestionIdentity();
+		s14<-setQuestionIdentity();
+		s15<-setQuestionIdentity();
+		s16<-setQuestionIdentity();
+		s17<-setQuestionIdentity();
+		s18<-setQuestionIdentity();
+		s19<-setQuestionIdentity();
+		s20<-setQuestionIdentity();
+		for(int i = 1; i <= num_messages; i++)
+			values.add(i);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s1<-broadcastSend("User 1: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s2<-broadcastSend("User 2: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s3<-broadcastSend("User 3: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s4<-broadcastSend("User 4: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s5<-broadcastSend("User 5: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s6<-broadcastSend("User 6: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s7<-broadcastSend("User 7: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s8<-broadcastSend("User 8: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s9<-broadcastSend("User 9: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s10<-broadcastSend("User 10: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s11<-broadcastSend("User 11: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s12<-broadcastSend("User 12: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s13<-broadcastSend("User 13: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s14<-broadcastSend("User 14: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s15<-broadcastSend("User 15: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s16<-broadcastSend("User 16: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s17<-broadcastSend("User 17: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s18<-broadcastSend("User 18: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s19<-broadcastSend("User 19: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s20<-broadcastSend("User 20: Question " + values.get(i - 1) + ".", false, true, false, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s21<-broadcastSend("User 21: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s22<-broadcastSend("User 22: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s23<-broadcastSend("User 23: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s24<-broadcastSend("User 24: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s25<-broadcastSend("User 25: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s26<-broadcastSend("User 26: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s27<-broadcastSend("User 27: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s28<-broadcastSend("User 28: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s29<-broadcastSend("User 29: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s30<-broadcastSend("User 30: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s31<-broadcastSend("User 31: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s32<-broadcastSend("User 32: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s33<-broadcastSend("User 33: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s34<-broadcastSend("User 34: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s35<-broadcastSend("User 35: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s36<-broadcastSend("User 36: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s37<-broadcastSend("User 37: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s38<-broadcastSend("User 38: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s39<-broadcastSend("User 39: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s40<-broadcastSend("User 40: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s41<-broadcastSend("User 41: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s42<-broadcastSend("User 42: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s43<-broadcastSend("User 43: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s44<-broadcastSend("User 44: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s45<-broadcastSend("User 45: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s46<-broadcastSend("User 46: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s47<-broadcastSend("User 47: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s48<-broadcastSend("User 48: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s49<-broadcastSend("User 49: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s50<-broadcastSend("User 50: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s51<-broadcastSend("User 51: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s52<-broadcastSend("User 52: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s53<-broadcastSend("User 53: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s54<-broadcastSend("User 54: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s55<-broadcastSend("User 55: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s56<-broadcastSend("User 56: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s57<-broadcastSend("User 57: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s58<-broadcastSend("User 58: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s59<-broadcastSend("User 59: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s60<-broadcastSend("User 60: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s61<-broadcastSend("User 61: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s62<-broadcastSend("User 62: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s63<-broadcastSend("User 63: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s64<-broadcastSend("User 64: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s65<-broadcastSend("User 65: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s66<-broadcastSend("User 66: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s67<-broadcastSend("User 67: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s68<-broadcastSend("User 68: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s69<-broadcastSend("User 69: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s70<-broadcastSend("User 70: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s71<-broadcastSend("User 71: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s72<-broadcastSend("User 72: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s73<-broadcastSend("User 73: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s74<-broadcastSend("User 74: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s75<-broadcastSend("User 75: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s76<-broadcastSend("User 76: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s77<-broadcastSend("User 77: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s78<-broadcastSend("User 78: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s79<-broadcastSend("User 79: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s80<-broadcastSend("User 80: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s81<-broadcastSend("User 81: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s82<-broadcastSend("User 82: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s83<-broadcastSend("User 83: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s84<-broadcastSend("User 84: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s85<-broadcastSend("User 85: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s86<-broadcastSend("User 86: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s87<-broadcastSend("User 87: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s88<-broadcastSend("User 88: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s89<-broadcastSend("User 89: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s90<-broadcastSend("User 90: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s91<-broadcastSend("User 91: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s92<-broadcastSend("User 92: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s93<-broadcastSend("User 93: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s94<-broadcastSend("User 94: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s95<-broadcastSend("User 95: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s96<-broadcastSend("User 96: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s97<-broadcastSend("User 97: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s98<-broadcastSend("User 98: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s99<-broadcastSend("User 99: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s100<-broadcastSend("User 100: Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 99 * num_messages, true);
+	}
+
+	void reply(String replyMsg) 
+	{
+		standardOutput<-println(replyMsg);
+	}
+	
+	void act(String args[])
+	{
+		try
+		{
+			Speaker speaker1 = (Speaker) Speaker.getReferenceByName(args[0]);
+			Speaker speaker2 = (Speaker) Speaker.getReferenceByName(args[1]);
+			Speaker speaker3 = (Speaker) Speaker.getReferenceByName(args[2]);
+			Speaker speaker4 = (Speaker) Speaker.getReferenceByName(args[3]);
+			Speaker speaker5 = (Speaker) Speaker.getReferenceByName(args[4]);
+			Speaker speaker6 = (Speaker) Speaker.getReferenceByName(args[5]);
+			Speaker speaker7 = (Speaker) Speaker.getReferenceByName(args[6]);
+			Speaker speaker8 = (Speaker) Speaker.getReferenceByName(args[7]);
+			Speaker speaker9 = (Speaker) Speaker.getReferenceByName(args[8]);
+			Speaker speaker10 = (Speaker) Speaker.getReferenceByName(args[9]);
+			Speaker speaker11 = (Speaker) Speaker.getReferenceByName(args[10]);
+			Speaker speaker12 = (Speaker) Speaker.getReferenceByName(args[11]);
+			Speaker speaker13 = (Speaker) Speaker.getReferenceByName(args[12]);
+			Speaker speaker14 = (Speaker) Speaker.getReferenceByName(args[13]);
+			Speaker speaker15 = (Speaker) Speaker.getReferenceByName(args[14]);
+			Speaker speaker16 = (Speaker) Speaker.getReferenceByName(args[15]);
+			Speaker speaker17 = (Speaker) Speaker.getReferenceByName(args[16]);
+			Speaker speaker18 = (Speaker) Speaker.getReferenceByName(args[17]);
+			Speaker speaker19 = (Speaker) Speaker.getReferenceByName(args[18]);
+			Speaker speaker20 = (Speaker) Speaker.getReferenceByName(args[19]);
+			Speaker speaker21 = (Speaker) Speaker.getReferenceByName(args[20]);
+			Speaker speaker22 = (Speaker) Speaker.getReferenceByName(args[21]);
+			Speaker speaker23 = (Speaker) Speaker.getReferenceByName(args[22]);
+			Speaker speaker24 = (Speaker) Speaker.getReferenceByName(args[23]);
+			Speaker speaker25 = (Speaker) Speaker.getReferenceByName(args[24]);
+			Speaker speaker26 = (Speaker) Speaker.getReferenceByName(args[25]);
+			Speaker speaker27 = (Speaker) Speaker.getReferenceByName(args[26]);
+			Speaker speaker28 = (Speaker) Speaker.getReferenceByName(args[27]);
+			Speaker speaker29 = (Speaker) Speaker.getReferenceByName(args[28]);
+			Speaker speaker30 = (Speaker) Speaker.getReferenceByName(args[29]);
+			Speaker speaker31 = (Speaker) Speaker.getReferenceByName(args[30]);
+			Speaker speaker32 = (Speaker) Speaker.getReferenceByName(args[31]);
+			Speaker speaker33 = (Speaker) Speaker.getReferenceByName(args[32]);
+			Speaker speaker34 = (Speaker) Speaker.getReferenceByName(args[33]);
+			Speaker speaker35 = (Speaker) Speaker.getReferenceByName(args[34]);
+			Speaker speaker36 = (Speaker) Speaker.getReferenceByName(args[35]);
+			Speaker speaker37 = (Speaker) Speaker.getReferenceByName(args[36]);
+			Speaker speaker38 = (Speaker) Speaker.getReferenceByName(args[37]);
+			Speaker speaker39 = (Speaker) Speaker.getReferenceByName(args[38]);
+			Speaker speaker40 = (Speaker) Speaker.getReferenceByName(args[39]);
+			Speaker speaker41 = (Speaker) Speaker.getReferenceByName(args[40]);
+			Speaker speaker42 = (Speaker) Speaker.getReferenceByName(args[41]);
+			Speaker speaker43 = (Speaker) Speaker.getReferenceByName(args[42]);
+			Speaker speaker44 = (Speaker) Speaker.getReferenceByName(args[43]);
+			Speaker speaker45 = (Speaker) Speaker.getReferenceByName(args[44]);
+			Speaker speaker46 = (Speaker) Speaker.getReferenceByName(args[45]);
+			Speaker speaker47 = (Speaker) Speaker.getReferenceByName(args[46]);
+			Speaker speaker48 = (Speaker) Speaker.getReferenceByName(args[47]);
+			Speaker speaker49 = (Speaker) Speaker.getReferenceByName(args[48]);
+			Speaker speaker50 = (Speaker) Speaker.getReferenceByName(args[49]);
+			Speaker speaker51 = (Speaker) Speaker.getReferenceByName(args[50]);
+			Speaker speaker52 = (Speaker) Speaker.getReferenceByName(args[51]);
+			Speaker speaker53 = (Speaker) Speaker.getReferenceByName(args[52]);
+			Speaker speaker54 = (Speaker) Speaker.getReferenceByName(args[53]);
+			Speaker speaker55 = (Speaker) Speaker.getReferenceByName(args[54]);
+			Speaker speaker56 = (Speaker) Speaker.getReferenceByName(args[55]);
+			Speaker speaker57 = (Speaker) Speaker.getReferenceByName(args[56]);
+			Speaker speaker58 = (Speaker) Speaker.getReferenceByName(args[57]);
+			Speaker speaker59 = (Speaker) Speaker.getReferenceByName(args[58]);
+			Speaker speaker60 = (Speaker) Speaker.getReferenceByName(args[59]);
+			Speaker speaker61 = (Speaker) Speaker.getReferenceByName(args[60]);
+			Speaker speaker62 = (Speaker) Speaker.getReferenceByName(args[61]);
+			Speaker speaker63 = (Speaker) Speaker.getReferenceByName(args[62]);
+			Speaker speaker64 = (Speaker) Speaker.getReferenceByName(args[63]);
+			Speaker speaker65 = (Speaker) Speaker.getReferenceByName(args[64]);
+			Speaker speaker66 = (Speaker) Speaker.getReferenceByName(args[65]);
+			Speaker speaker67 = (Speaker) Speaker.getReferenceByName(args[66]);
+			Speaker speaker68 = (Speaker) Speaker.getReferenceByName(args[67]);
+			Speaker speaker69 = (Speaker) Speaker.getReferenceByName(args[68]);
+			Speaker speaker70 = (Speaker) Speaker.getReferenceByName(args[69]);
+			Speaker speaker71 = (Speaker) Speaker.getReferenceByName(args[70]);
+			Speaker speaker72 = (Speaker) Speaker.getReferenceByName(args[71]);
+			Speaker speaker73 = (Speaker) Speaker.getReferenceByName(args[72]);
+			Speaker speaker74 = (Speaker) Speaker.getReferenceByName(args[73]);
+			Speaker speaker75 = (Speaker) Speaker.getReferenceByName(args[74]);
+			Speaker speaker76 = (Speaker) Speaker.getReferenceByName(args[75]);
+			Speaker speaker77 = (Speaker) Speaker.getReferenceByName(args[76]);
+			Speaker speaker78 = (Speaker) Speaker.getReferenceByName(args[77]);
+			Speaker speaker79 = (Speaker) Speaker.getReferenceByName(args[78]);
+			Speaker speaker80 = (Speaker) Speaker.getReferenceByName(args[79]);
+			Speaker speaker81 = (Speaker) Speaker.getReferenceByName(args[80]);
+			Speaker speaker82 = (Speaker) Speaker.getReferenceByName(args[81]);
+			Speaker speaker83 = (Speaker) Speaker.getReferenceByName(args[82]);
+			Speaker speaker84 = (Speaker) Speaker.getReferenceByName(args[83]);
+			Speaker speaker85 = (Speaker) Speaker.getReferenceByName(args[84]);
+			Speaker speaker86 = (Speaker) Speaker.getReferenceByName(args[85]);
+			Speaker speaker87 = (Speaker) Speaker.getReferenceByName(args[86]);
+			Speaker speaker88 = (Speaker) Speaker.getReferenceByName(args[87]);
+			Speaker speaker89 = (Speaker) Speaker.getReferenceByName(args[88]);
+			Speaker speaker90 = (Speaker) Speaker.getReferenceByName(args[89]);
+			Speaker speaker91 = (Speaker) Speaker.getReferenceByName(args[90]);
+			Speaker speaker92 = (Speaker) Speaker.getReferenceByName(args[91]);
+			Speaker speaker93 = (Speaker) Speaker.getReferenceByName(args[92]);
+			Speaker speaker94 = (Speaker) Speaker.getReferenceByName(args[93]);
+			Speaker speaker95 = (Speaker) Speaker.getReferenceByName(args[94]);
+			Speaker speaker96 = (Speaker) Speaker.getReferenceByName(args[95]);
+			Speaker speaker97 = (Speaker) Speaker.getReferenceByName(args[96]);
+			Speaker speaker98 = (Speaker) Speaker.getReferenceByName(args[97]);
+			Speaker speaker99 = (Speaker) Speaker.getReferenceByName(args[98]);
+			Speaker speaker100 = (Speaker) Speaker.getReferenceByName(args[99]);
+			int num_messages = Integer.parseInt(args[100]);
+			Date first = new Date();
+			Timestamp start = new Timestamp(first.getTime());
+			standardOutput <- println("Starting time: " + start);
+			Instant begin = Instant.now();
+			chatSession(speaker1, speaker2, speaker3, speaker4, speaker5, speaker6, speaker7, speaker8, speaker9, speaker10, 
+			speaker11, speaker12, speaker13, speaker14, speaker15, speaker16, speaker17, speaker18, speaker19, speaker20, 
+			speaker21, speaker22, speaker23, speaker24, speaker25, speaker26, speaker27, speaker28, speaker29, speaker30, 
+			speaker31, speaker32, speaker33, speaker34, speaker35, speaker36, speaker37, speaker38, speaker39, speaker40, 
+			speaker41, speaker42, speaker43, speaker44, speaker45, speaker46, speaker47, speaker48, speaker49, speaker50, 
+			speaker51, speaker52, speaker53, speaker54, speaker55, speaker56, speaker57, speaker58, speaker59, speaker60, 
+			speaker61, speaker62, speaker63, speaker64, speaker65, speaker66, speaker67, speaker68, speaker69, speaker70, 
+			speaker71, speaker72, speaker73, speaker74, speaker75, speaker76, speaker77, speaker78, speaker79, speaker80, 
+			speaker81, speaker82, speaker83, speaker84, speaker85, speaker86, speaker87, speaker88, speaker89, speaker90, 
+			speaker91, speaker92, speaker93, speaker94, speaker95, speaker96, speaker97, speaker98, speaker99, speaker100,
+			num_messages) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
+		}
+		catch (Exception e)
+		{
+			standardOutput <- println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>");
+			return;
+		}
+	}
+
+	void trackEndingTime(Instant begin)
+	{
+		// keep track of ending time here
+		Date second = new Date();
+		Timestamp end = new Timestamp(second.getTime());
+
+		// calculate time elapsed
+		Instant endTime = Instant.now();
+		Duration timeDifference = Duration.between(begin, endTime);
+		long timeTaken = timeDifference.toMillis();
+		standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+		standardOutput<-println("Ending time: " + end);
+	}
+}

@@ -12,6 +12,7 @@ behavior SimpleGlitchAdvancedChat
 	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5, Speaker s6, Speaker s7, Speaker s8, Speaker s9, Speaker s10) 
 	{
 		s1<-setQuestionIdentity();
+		s2<-setQuestionIdentity();
 		ArrayList values = new ArrayList();
 		values.add(1);
 		values.add(2);
@@ -35,16 +36,16 @@ behavior SimpleGlitchAdvancedChat
 		s1<-broadcastSend("User 1: Poll question " + values.get(8) + ".", false, true, false, 10, 90, true);
 		s1<-broadcastSend("User 1: Poll question " + values.get(9) + ".", false, true, false, 10, 90, true);
 		Collections.shuffle(values);
-		s2<-broadcastSend("User 2: Poll response " + values.get(0) + ".", false, false, true, 10, 90, true);
-		s2<-broadcastSend("User 2: Poll response " + values.get(1) + ".", false, false, true, 10, 90, true);
-		s2<-broadcastSend("User 2: Poll response " + values.get(2) + ".", false, false, true, 10, 90, true);
-		s2<-broadcastSend("User 2: Poll response " + values.get(3) + ".", false, false, true, 10, 90, true);
-		s2<-broadcastSend("User 2: Poll response " + values.get(4) + ".", false, false, true, 10, 90, true);
-		s2<-broadcastSend("User 2: Poll response " + values.get(5) + ".", false, false, true, 10, 90, true);
-		s2<-broadcastSend("User 2: Poll response " + values.get(6) + ".", false, false, true, 10, 90, true);
-		s2<-broadcastSend("User 2: Poll response " + values.get(7) + ".", false, false, true, 10, 90, true);
-		s2<-broadcastSend("User 2: Poll response " + values.get(8) + ".", false, false, true, 10, 90, true);
-		s2<-broadcastSend("User 2: Poll response " + values.get(9) + ".", false, false, true, 10, 90, true);
+		s2<-broadcastSend("User 2: Poll question " + values.get(0) + ".", false, true, false, 10, 90, true);
+		s2<-broadcastSend("User 2: Poll question " + values.get(1) + ".", false, true, false, 10, 90, true);
+		s2<-broadcastSend("User 2: Poll question " + values.get(2) + ".", false, true, false, 10, 90, true);
+		s2<-broadcastSend("User 2: Poll question " + values.get(3) + ".", false, true, false, 10, 90, true);
+		s2<-broadcastSend("User 2: Poll question " + values.get(4) + ".", false, true, false, 10, 90, true);
+		s2<-broadcastSend("User 2: Poll question " + values.get(5) + ".", false, true, false, 10, 90, true);
+		s2<-broadcastSend("User 2: Poll question " + values.get(6) + ".", false, true, false, 10, 90, true);
+		s2<-broadcastSend("User 2: Poll question " + values.get(7) + ".", false, true, false, 10, 90, true);
+		s2<-broadcastSend("User 2: Poll question " + values.get(8) + ".", false, true, false, 10, 90, true);
+		s2<-broadcastSend("User 2: Poll question " + values.get(9) + ".", false, true, false, 10, 90, true);
 		Collections.shuffle(values);
 		s3<-broadcastSend("User 3: Poll response " + values.get(0) + ".", false, false, true, 10, 90, true);
 		s3<-broadcastSend("User 3: Poll response " + values.get(1) + ".", false, false, true, 10, 90, true);

@@ -414,7 +414,7 @@ break;					}
 				}
 			}
 		}
-		public boolean addTaskToList(TaskList taskList, String text, String creator, String name, boolean isFollowup, int number_of_initials, int total_updates) {
+		public boolean addTaskToList(TaskList taskList, String text, String creator, String name, boolean isFollowup, int number_of_initials, int total_updates, boolean fifo) {
 			Date date = new Date();
 			Timestamp current = new Timestamp(date.getTime());
 			String follow_up = "";

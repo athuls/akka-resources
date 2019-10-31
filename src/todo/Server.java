@@ -201,10 +201,10 @@ public class Server extends UniversalActor  implements ActorService {
 					if (user!=null) {{
 						User userRef = (User)User.getReferenceByName(user.getUAN());
 						{
-							// userRef<-broadcastReceiveAdvanced(task, taskName, text, isUpdate, total_initials, number_of_updates, isFollowup)
+							// userRef<-broadcastReceive(task, taskName, text, isUpdate, total_initials, number_of_updates, isFollowup)
 							{
 								Object _arguments[] = { task, taskName, text, isUpdate, total_initials, number_of_updates, isFollowup };
-								Message message = new Message( self, userRef, "broadcastReceiveAdvanced", _arguments, null, null );
+								Message message = new Message( self, userRef, "broadcastReceive", _arguments, null, null );
 								__messages.add( message );
 							}
 						}

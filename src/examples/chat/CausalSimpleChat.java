@@ -278,131 +278,139 @@ public class CausalSimpleChat extends UniversalActor  {
 					__messages.add( message );
 				}
 			}
+			{
+				// s2<-setQuestionIdentity()
+				{
+					Object _arguments[] = {  };
+					Message message = new Message( self, s2, "setQuestionIdentity", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 			ArrayList values = new ArrayList();
 			values.add(1);
 			values.add(2);
 			values.add(3);
 			Collections.shuffle(values);
 			{
-				// s1<-broadcastSend("User 1: Question "+values.get(0)+".", false, true, false, 3, 12, true)
+				// s1<-broadcastSend("User 1: Question "+values.get(0)+".", false, true, false, 6, 12, true)
 				{
-					Object _arguments[] = { "User 1: Question "+values.get(0)+".", false, true, false, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 1: Question "+values.get(0)+".", false, true, false, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-broadcastSend("User 1: Question "+values.get(1)+".", false, true, false, 3, 12, true)
+				// s1<-broadcastSend("User 1: Question "+values.get(1)+".", false, true, false, 6, 12, true)
 				{
-					Object _arguments[] = { "User 1: Question "+values.get(1)+".", false, true, false, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 1: Question "+values.get(1)+".", false, true, false, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s1<-broadcastSend("User 1: Question "+values.get(2)+".", false, true, false, 3, 12, true)
+				// s1<-broadcastSend("User 1: Question "+values.get(2)+".", false, true, false, 6, 12, true)
 				{
-					Object _arguments[] = { "User 1: Question "+values.get(2)+".", false, true, false, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 1: Question "+values.get(2)+".", false, true, false, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s1, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			Collections.shuffle(values);
 			{
-				// s2<-broadcastSend("User 2: Answer "+values.get(0)+".", false, false, true, 3, 12, true)
+				// s2<-broadcastSend("User 2: Question "+values.get(0)+".", false, true, false, 6, 12, true)
 				{
-					Object _arguments[] = { "User 2: Answer "+values.get(0)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 2: Question "+values.get(0)+".", false, true, false, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend("User 2: Answer "+values.get(1)+".", false, false, true, 3, 12, true)
+				// s2<-broadcastSend("User 2: Question "+values.get(1)+".", false, true, false, 6, 12, true)
 				{
-					Object _arguments[] = { "User 2: Answer "+values.get(1)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 2: Question "+values.get(1)+".", false, true, false, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend("User 2: Answer "+values.get(2)+".", false, false, true, 3, 12, true)
+				// s2<-broadcastSend("User 2: Question "+values.get(2)+".", false, true, false, 6, 12, true)
 				{
-					Object _arguments[] = { "User 2: Answer "+values.get(2)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 2: Question "+values.get(2)+".", false, true, false, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			Collections.shuffle(values);
 			{
-				// s3<-broadcastSend("User 3: Answer "+values.get(0)+".", false, false, true, 3, 12, true)
+				// s3<-broadcastSend("User 3: Answer "+values.get(0)+".", false, false, true, 6, 12, true)
 				{
-					Object _arguments[] = { "User 3: Answer "+values.get(0)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 3: Answer "+values.get(0)+".", false, false, true, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend("User 3: Answer "+values.get(1)+".", false, false, true, 3, 12, true)
+				// s3<-broadcastSend("User 3: Answer "+values.get(1)+".", false, false, true, 6, 12, true)
 				{
-					Object _arguments[] = { "User 3: Answer "+values.get(1)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 3: Answer "+values.get(1)+".", false, false, true, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s3<-broadcastSend("User 3: Answer "+values.get(2)+".", false, false, true, 3, 12, true)
+				// s3<-broadcastSend("User 3: Answer "+values.get(2)+".", false, false, true, 6, 12, true)
 				{
-					Object _arguments[] = { "User 3: Answer "+values.get(2)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 3: Answer "+values.get(2)+".", false, false, true, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s3, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			Collections.shuffle(values);
 			{
-				// s4<-broadcastSend("User 4: Answer "+values.get(0)+".", false, false, true, 3, 12, true)
+				// s4<-broadcastSend("User 4: Answer "+values.get(0)+".", false, false, true, 6, 12, true)
 				{
-					Object _arguments[] = { "User 4: Answer "+values.get(0)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 4: Answer "+values.get(0)+".", false, false, true, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend("User 4: Answer "+values.get(1)+".", false, false, true, 3, 12, true)
+				// s4<-broadcastSend("User 4: Answer "+values.get(1)+".", false, false, true, 6, 12, true)
 				{
-					Object _arguments[] = { "User 4: Answer "+values.get(1)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 4: Answer "+values.get(1)+".", false, false, true, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s4<-broadcastSend("User 4: Answer "+values.get(2)+".", false, false, true, 3, 12, true)
+				// s4<-broadcastSend("User 4: Answer "+values.get(2)+".", false, false, true, 6, 12, true)
 				{
-					Object _arguments[] = { "User 4: Answer "+values.get(2)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 4: Answer "+values.get(2)+".", false, false, true, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s4, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			Collections.shuffle(values);
 			{
-				// s5<-broadcastSend("User 5: Answer "+values.get(0)+".", false, false, true, 3, 12, true)
+				// s5<-broadcastSend("User 5: Answer "+values.get(0)+".", false, false, true, 6, 12, true)
 				{
-					Object _arguments[] = { "User 5: Answer "+values.get(0)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 5: Answer "+values.get(0)+".", false, false, true, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend("User 5: Answer "+values.get(1)+".", false, false, true, 3, 12, true)
+				// s5<-broadcastSend("User 5: Answer "+values.get(1)+".", false, false, true, 6, 12, true)
 				{
-					Object _arguments[] = { "User 5: Answer "+values.get(1)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 5: Answer "+values.get(1)+".", false, false, true, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s5<-broadcastSend("User 5: Answer "+values.get(2)+".", false, false, true, 3, 12, true)
+				// s5<-broadcastSend("User 5: Answer "+values.get(2)+".", false, false, true, 6, 12, true)
 				{
-					Object _arguments[] = { "User 5: Answer "+values.get(2)+".", false, false, true, new Integer(3), new Integer(12), true };
+					Object _arguments[] = { "User 5: Answer "+values.get(2)+".", false, false, true, new Integer(6), new Integer(12), true };
 					Message message = new Message( self, s5, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}

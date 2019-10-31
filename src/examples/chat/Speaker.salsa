@@ -59,11 +59,13 @@ behavior Speaker implements ActorService
 		{
 			case "QUESTION":
 				handleFifoCode(speakerName, msg, type, true) @
-				handleNormalStall(speakerName, number_of_questions);
+				handleNormalStall(speakerName, number_of_questions, total_messages);
 				break;
 			case "ANSWER":
 				// check if there has been a question already placed
-				if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
+				double number_users = (total_messages + number_of_questions) / number_of_questions;
+				double total_questions = number_users * 0.2 * number_of_questions;
+				if(questionTimeStamp.values().size() == total_questions || (isQuestion && questionTimeStamp.values().size() == (int)(total_questions - number_of_questions)))
 				{
 					if(answerQueue.size() > 0)
 					{
@@ -103,9 +105,11 @@ behavior Speaker implements ActorService
 		}
 	}
 	
-	void handleNormalStall(String speakerName, int number_of_questions)
+	void handleNormalStall(String speakerName, int number_of_questions, int total_messages)
 	{
-		if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
+		double number_users = (total_messages + number_of_questions)/ number_of_questions;
+		double total_questions = number_users * 0.2 * number_of_questions;
+		if(questionTimeStamp.values().size() == total_questions || (isQuestion && questionTimeStamp.values().size() == (int)(total_questions - number_of_questions)))
 		{
 			if(answerQueue.size() > 0)
 			{
@@ -314,9 +318,11 @@ behavior Speaker implements ActorService
 		return isAdded;
 	}
 	
-	void handleAdvancedStall(String speakerName, int number_of_questions)
+	void handleAdvancedStall(String speakerName, int number_of_questions, int total_messages)
 	{
-		if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
+		double number_users = (total_messages + number_of_questions) / number_of_questions;
+		double total_questions = number_users * 0.2 * number_of_questions;
+		if(questionTimeStamp.values().size() == total_questions || (isQuestion && questionTimeStamp.values().size() == (int)(total_questions - number_of_questions)))
 		{
 			if(answerQueue.size() > 0)
 			{
@@ -339,12 +345,12 @@ behavior Speaker implements ActorService
 		{
 			case "QUESTION":
 				handleFifoCodeAdvanced(speakerName, msg, type, true) @
-				handleAdvancedStall(speakerName, number_of_questions) @
+				handleAdvancedStall(speakerName, number_of_questions, total_messages) @
 				printQueueInfo(total_messages);
 				break;
 			case "ANSWER":
 				// check if there has been a question already placed
-				handleAnswerCase(speakerName, msg, number_of_questions) @
+				handleAnswerCase(speakerName, msg, number_of_questions, total_messages) @
 				printQueueInfo(total_messages);
 				break;
 			default:
@@ -355,9 +361,11 @@ behavior Speaker implements ActorService
 		}
 	}
 
-	void handleAnswerCase(String speakerName, String msg, int number_of_questions) throws InterruptedException
+	void handleAnswerCase(String speakerName, String msg, int number_of_questions, int total_messages) throws InterruptedException
 	{
-		if (questionTimeStamp.values().size() == number_of_questions || isQuestion)
+		double number_users = (total_messages + number_of_questions) / number_of_questions;
+		double total_questions = number_users * 0.2 * number_of_questions;
+		if(questionTimeStamp.values().size() == total_questions || (isQuestion && questionTimeStamp.values().size() == (int)(total_questions - number_of_questions)))
 		{
 			if(answerQueue.size() > 0)
 			{

@@ -278,6 +278,14 @@ public class SimpleGlitchAdvancedChat extends UniversalActor  {
 					__messages.add( message );
 				}
 			}
+			{
+				// s2<-setQuestionIdentity()
+				{
+					Object _arguments[] = {  };
+					Message message = new Message( self, s2, "setQuestionIdentity", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 			ArrayList values = new ArrayList();
 			values.add(1);
 			values.add(2);
@@ -372,81 +380,81 @@ public class SimpleGlitchAdvancedChat extends UniversalActor  {
 			}
 			Collections.shuffle(values);
 			{
-				// s2<-broadcastSend("User 2: Poll response "+values.get(0)+".", false, false, true, 10, 90, true)
+				// s2<-broadcastSend("User 2: Poll question "+values.get(0)+".", false, true, false, 10, 90, true)
 				{
-					Object _arguments[] = { "User 2: Poll response "+values.get(0)+".", false, false, true, new Integer(10), new Integer(90), true };
+					Object _arguments[] = { "User 2: Poll question "+values.get(0)+".", false, true, false, new Integer(10), new Integer(90), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend("User 2: Poll response "+values.get(1)+".", false, false, true, 10, 90, true)
+				// s2<-broadcastSend("User 2: Poll question "+values.get(1)+".", false, true, false, 10, 90, true)
 				{
-					Object _arguments[] = { "User 2: Poll response "+values.get(1)+".", false, false, true, new Integer(10), new Integer(90), true };
+					Object _arguments[] = { "User 2: Poll question "+values.get(1)+".", false, true, false, new Integer(10), new Integer(90), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend("User 2: Poll response "+values.get(2)+".", false, false, true, 10, 90, true)
+				// s2<-broadcastSend("User 2: Poll question "+values.get(2)+".", false, true, false, 10, 90, true)
 				{
-					Object _arguments[] = { "User 2: Poll response "+values.get(2)+".", false, false, true, new Integer(10), new Integer(90), true };
+					Object _arguments[] = { "User 2: Poll question "+values.get(2)+".", false, true, false, new Integer(10), new Integer(90), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend("User 2: Poll response "+values.get(3)+".", false, false, true, 10, 90, true)
+				// s2<-broadcastSend("User 2: Poll question "+values.get(3)+".", false, true, false, 10, 90, true)
 				{
-					Object _arguments[] = { "User 2: Poll response "+values.get(3)+".", false, false, true, new Integer(10), new Integer(90), true };
+					Object _arguments[] = { "User 2: Poll question "+values.get(3)+".", false, true, false, new Integer(10), new Integer(90), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend("User 2: Poll response "+values.get(4)+".", false, false, true, 10, 90, true)
+				// s2<-broadcastSend("User 2: Poll question "+values.get(4)+".", false, true, false, 10, 90, true)
 				{
-					Object _arguments[] = { "User 2: Poll response "+values.get(4)+".", false, false, true, new Integer(10), new Integer(90), true };
+					Object _arguments[] = { "User 2: Poll question "+values.get(4)+".", false, true, false, new Integer(10), new Integer(90), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend("User 2: Poll response "+values.get(5)+".", false, false, true, 10, 90, true)
+				// s2<-broadcastSend("User 2: Poll question "+values.get(5)+".", false, true, false, 10, 90, true)
 				{
-					Object _arguments[] = { "User 2: Poll response "+values.get(5)+".", false, false, true, new Integer(10), new Integer(90), true };
+					Object _arguments[] = { "User 2: Poll question "+values.get(5)+".", false, true, false, new Integer(10), new Integer(90), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend("User 2: Poll response "+values.get(6)+".", false, false, true, 10, 90, true)
+				// s2<-broadcastSend("User 2: Poll question "+values.get(6)+".", false, true, false, 10, 90, true)
 				{
-					Object _arguments[] = { "User 2: Poll response "+values.get(6)+".", false, false, true, new Integer(10), new Integer(90), true };
+					Object _arguments[] = { "User 2: Poll question "+values.get(6)+".", false, true, false, new Integer(10), new Integer(90), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend("User 2: Poll response "+values.get(7)+".", false, false, true, 10, 90, true)
+				// s2<-broadcastSend("User 2: Poll question "+values.get(7)+".", false, true, false, 10, 90, true)
 				{
-					Object _arguments[] = { "User 2: Poll response "+values.get(7)+".", false, false, true, new Integer(10), new Integer(90), true };
+					Object _arguments[] = { "User 2: Poll question "+values.get(7)+".", false, true, false, new Integer(10), new Integer(90), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend("User 2: Poll response "+values.get(8)+".", false, false, true, 10, 90, true)
+				// s2<-broadcastSend("User 2: Poll question "+values.get(8)+".", false, true, false, 10, 90, true)
 				{
-					Object _arguments[] = { "User 2: Poll response "+values.get(8)+".", false, false, true, new Integer(10), new Integer(90), true };
+					Object _arguments[] = { "User 2: Poll question "+values.get(8)+".", false, true, false, new Integer(10), new Integer(90), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			{
-				// s2<-broadcastSend("User 2: Poll response "+values.get(9)+".", false, false, true, 10, 90, true)
+				// s2<-broadcastSend("User 2: Poll question "+values.get(9)+".", false, true, false, 10, 90, true)
 				{
-					Object _arguments[] = { "User 2: Poll response "+values.get(9)+".", false, false, true, new Integer(10), new Integer(90), true };
+					Object _arguments[] = { "User 2: Poll question "+values.get(9)+".", false, true, false, new Integer(10), new Integer(90), true };
 					Message message = new Message( self, s2, "broadcastSend", _arguments, null, null );
 					__messages.add( message );
 				}

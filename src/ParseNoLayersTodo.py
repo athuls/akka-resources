@@ -34,7 +34,12 @@ def conclude_if_ordered():
     three = check_ordering("taskLogs/user3NoConsistencySimple.txt")
     four = check_ordering("taskLogs/user4NoConsistencySimple.txt")
     five = check_ordering("taskLogs/user5NoConsistencySimple.txt")
-    return one and two and three and four and five
+    six = check_ordering("taskLogs/user6NoConsistencySimple.txt")
+    seven = check_ordering("taskLogs/user7NoConsistencySimple.txt")
+    eight = check_ordering("taskLogs/user8NoConsistencySimple.txt")
+    nine = check_ordering("taskLogs/user9NoConsistencySimple.txt")
+    ten = check_ordering("taskLogs/user10NoConsistencySimple.txt")
+    return one and two and three and four and five and six and seven and eight and nine and ten
 
 # this function pulls out the overall runtime - works
 def get_overall_runtime():
@@ -47,6 +52,10 @@ def get_overall_runtime():
 
 # this function returns the maximum time it takes for a message to be received by another user for a given file
 def get_max_file_latency(file_name):
+    file_name_list = ["taskLogs/user1NoConsistencySimple.txt", "taskLogs/user2NoConsistencySimple.txt", "taskLogs/user3NoConsistencySimple.txt", 
+	"taskLogs/user4NoConsistencySimple.txt", "taskLogs/user5NoConsistencySimple.txt", "taskLogs/user6NoConsistencySimple.txt", 
+	"taskLogs/user7NoConsistencySimple.txt", "taskLogs/user8NoConsistencySimple.txt", "taskLogs/user9NoConsistencySimple.txt", 
+	"taskLogs/user10NoConsistencySimple.txt"]
     file_times = dict()
     curr_file = open(file_name, "r")
     for line in curr_file:
@@ -67,8 +76,6 @@ def get_max_file_latency(file_name):
             else:
                 number_two = int(second)
             file_times[tuple(res)] = number_one * 1000 + number_two
-    file_name_list = ["taskLogs/user1NoConsistencySimple.txt", "taskLogs/user2NoConsistencySimple.txt", "taskLogs/user3NoConsistencySimple.txt", 
-	"taskLogs/user4NoConsistencySimple.txt", "taskLogs/user5NoConsistencySimple.txt"]
     max_latency = 0
     for file in file_name_list:
         if file == file_name:

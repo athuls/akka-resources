@@ -224,7 +224,8 @@ behavior User implements ActorService
 			}
 		}
 	}
-	
+
+	/*
 	boolean handleFifoCode(String speakerName, String msg, String type, boolean isQuestion) throws InterruptedException
 	{
 		Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
@@ -325,7 +326,8 @@ behavior User implements ActorService
 		fifoMessageValues.put(current_user, currentFifoMessages);
 		return isAdded;
 	}
-	
+	*/
+
 	String getUserName()
 	{
 		return myName;
@@ -336,7 +338,7 @@ behavior User implements ActorService
 		standardOutput<-println("User started with uan: "+ getUAN().toString());
 	}
 
-	boolean addTaskToList(TaskList taskList, String text, String creator, String name, boolean isFollowup, int number_of_initials, int total_updates)
+	boolean addTaskToList(TaskList taskList, String text, String creator, String name, boolean isFollowup, int number_of_initials, int total_updates, boolean fifo)
 	{
 		// get first timestamp here
 		Date date = new Date();

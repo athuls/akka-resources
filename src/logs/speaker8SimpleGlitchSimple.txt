@@ -1,74 +1,103 @@
 Received speaker: uan:\localhost:3030id9 to register with server uan:\localhost:3030id1
 Speaker started with uan: uan://:3030\localhost:3030id9
-[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 9.; Timestamp: 2019-10-29 05:18:43.673
-[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 10.; Timestamp: 2019-10-29 05:18:44.038
-[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 5.; Timestamp: 2019-10-29 05:18:44.039
-[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 6.; Timestamp: 2019-10-29 05:18:44.041
-[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 2.; Timestamp: 2019-10-29 05:18:44.043
-[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 3.; Timestamp: 2019-10-29 05:18:44.045
-[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 8.; Timestamp: 2019-10-29 05:18:44.048
-[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 1.; Timestamp: 2019-10-29 05:18:44.05
-[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 4.; Timestamp: 2019-10-29 05:18:44.051
-[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 7.; Timestamp: 2019-10-29 05:18:44.053
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Poll question 1.; Timestamp: 2019-10-29 05:18:45.024
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Poll question 2.; Timestamp: 2019-10-29 05:18:45.234
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Poll question 3.; Timestamp: 2019-10-29 05:18:45.435
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Poll question 4.; Timestamp: 2019-10-29 05:18:45.644
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Poll question 5.; Timestamp: 2019-10-29 05:18:45.849
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Poll question 6.; Timestamp: 2019-10-29 05:18:46.055
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Poll question 7.; Timestamp: 2019-10-29 05:18:46.256
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Poll question 8.; Timestamp: 2019-10-29 05:18:46.461
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Poll question 9.; Timestamp: 2019-10-29 05:18:46.664
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Poll question 10.; Timestamp: 2019-10-29 05:18:46.904
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Poll response 1.; Timestamp: 2019-10-29 05:18:47.367
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Poll response 2.; Timestamp: 2019-10-29 05:18:47.568
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Poll response 3.; Timestamp: 2019-10-29 05:18:47.77
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Poll response 4.; Timestamp: 2019-10-29 05:18:47.974
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Poll response 5.; Timestamp: 2019-10-29 05:18:48.179
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Poll response 6.; Timestamp: 2019-10-29 05:18:48.381
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Poll response 7.; Timestamp: 2019-10-29 05:18:48.583
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Poll response 8.; Timestamp: 2019-10-29 05:18:48.783
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Poll response 9.; Timestamp: 2019-10-29 05:18:48.989
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Poll response 10.; Timestamp: 2019-10-29 05:18:49.196
-[Speaker Remote] uan:\localhost:3030id8: ANSWER: User 7: Poll response 1.; Timestamp: 2019-10-29 05:18:49.399
-[Speaker Remote] uan:\localhost:3030id8: ANSWER: User 7: Poll response 2.; Timestamp: 2019-10-29 05:18:49.6
-[Speaker Remote] uan:\localhost:3030id8: ANSWER: User 7: Poll response 3.; Timestamp: 2019-10-29 05:18:49.802
-[Speaker Remote] uan:\localhost:3030id8: ANSWER: User 7: Poll response 4.; Timestamp: 2019-10-29 05:18:50.003
-[Speaker Remote] uan:\localhost:3030id8: ANSWER: User 7: Poll response 5.; Timestamp: 2019-10-29 05:18:50.205
-[Speaker Remote] uan:\localhost:3030id8: ANSWER: User 7: Poll response 6.; Timestamp: 2019-10-29 05:18:50.409
-[Speaker Remote] uan:\localhost:3030id8: ANSWER: User 7: Poll response 7.; Timestamp: 2019-10-29 05:18:50.611
-[Speaker Remote] uan:\localhost:3030id8: ANSWER: User 7: Poll response 8.; Timestamp: 2019-10-29 05:18:50.812
-[Speaker Remote] uan:\localhost:3030id8: ANSWER: User 7: Poll response 9.; Timestamp: 2019-10-29 05:18:51.034
-[Speaker Remote] uan:\localhost:3030id8: ANSWER: User 7: Poll response 10.; Timestamp: 2019-10-29 05:18:51.235
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 2: Poll response 1.; Timestamp: 2019-10-29 05:18:51.441
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 2: Poll response 2.; Timestamp: 2019-10-29 05:18:51.643
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 2: Poll response 3.; Timestamp: 2019-10-29 05:18:51.845
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 2: Poll response 4.; Timestamp: 2019-10-29 05:18:52.046
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 2: Poll response 5.; Timestamp: 2019-10-29 05:18:52.248
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 2: Poll response 6.; Timestamp: 2019-10-29 05:18:52.449
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 2: Poll response 7.; Timestamp: 2019-10-29 05:18:52.663
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 2: Poll response 8.; Timestamp: 2019-10-29 05:18:52.865
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 2: Poll response 9.; Timestamp: 2019-10-29 05:18:53.066
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 2: Poll response 10.; Timestamp: 2019-10-29 05:18:53.268
-[Speaker Remote] uan:\localhost:3030id6: ANSWER: User 5: Poll response 1.; Timestamp: 2019-10-29 05:18:53.475
-[Speaker Remote] uan:\localhost:3030id6: ANSWER: User 5: Poll response 2.; Timestamp: 2019-10-29 05:18:53.682
-[Speaker Remote] uan:\localhost:3030id6: ANSWER: User 5: Poll response 3.; Timestamp: 2019-10-29 05:18:53.885
-[Speaker Remote] uan:\localhost:3030id6: ANSWER: User 5: Poll response 4.; Timestamp: 2019-10-29 05:18:54.087
-[Speaker Remote] uan:\localhost:3030id6: ANSWER: User 5: Poll response 5.; Timestamp: 2019-10-29 05:18:54.289
-[Speaker Remote] uan:\localhost:3030id6: ANSWER: User 5: Poll response 6.; Timestamp: 2019-10-29 05:18:54.492
-[Speaker Remote] uan:\localhost:3030id6: ANSWER: User 5: Poll response 7.; Timestamp: 2019-10-29 05:18:54.704
-[Speaker Remote] uan:\localhost:3030id6: ANSWER: User 5: Poll response 8.; Timestamp: 2019-10-29 05:18:54.907
-[Speaker Remote] uan:\localhost:3030id6: ANSWER: User 5: Poll response 9.; Timestamp: 2019-10-29 05:18:55.108
-[Speaker Remote] uan:\localhost:3030id6: ANSWER: User 5: Poll response 10.; Timestamp: 2019-10-29 05:18:55.31
-[Speaker Remote] uan:\localhost:3030id7: ANSWER: User 6: Poll response 1.; Timestamp: 2019-10-29 05:18:55.513
-[Speaker Remote] uan:\localhost:3030id7: ANSWER: User 6: Poll response 2.; Timestamp: 2019-10-29 05:18:55.715
-[Speaker Remote] uan:\localhost:3030id7: ANSWER: User 6: Poll response 3.; Timestamp: 2019-10-29 05:18:55.915
-[Speaker Remote] uan:\localhost:3030id7: ANSWER: User 6: Poll response 4.; Timestamp: 2019-10-29 05:18:56.116
-[Speaker Remote] uan:\localhost:3030id7: ANSWER: User 6: Poll response 5.; Timestamp: 2019-10-29 05:18:56.319
-[Speaker Remote] uan:\localhost:3030id7: ANSWER: User 6: Poll response 6.; Timestamp: 2019-10-29 05:18:56.521
-[Speaker Remote] uan:\localhost:3030id7: ANSWER: User 6: Poll response 7.; Timestamp: 2019-10-29 05:18:56.723
-[Speaker Remote] uan:\localhost:3030id7: ANSWER: User 6: Poll response 8.; Timestamp: 2019-10-29 05:18:56.926
-[Speaker Remote] uan:\localhost:3030id7: ANSWER: User 6: Poll response 9.; Timestamp: 2019-10-29 05:18:57.127
-[Speaker Remote] uan:\localhost:3030id7: ANSWER: User 6: Poll response 10.; Timestamp: 2019-10-29 05:18:57.328
-[Speaker Remote] uan:\localhost:3030id10: ANSWER: User 9: Poll response 1.; Timestamp: 2019-10-29 05:18:57.533
-[Speaker Remote] uan:\localhost:3030id10: ANSWER: User 9: Poll response 2.; Timestamp: 2019-10-29 05:18:57.736
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 4.; Timestamp: 2019-10-31 18:33:24.061
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 3.; Timestamp: 2019-10-31 18:33:24.371
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 7.; Timestamp: 2019-10-31 18:33:24.39
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 1.; Timestamp: 2019-10-31 18:33:24.421
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 6.; Timestamp: 2019-10-31 18:33:24.422
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 2.; Timestamp: 2019-10-31 18:33:24.423
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 8.; Timestamp: 2019-10-31 18:33:24.425
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 5.; Timestamp: 2019-10-31 18:33:24.426
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 9.; Timestamp: 2019-10-31 18:33:24.428
+[Speaker Local] uan:\localhost:3030id9: ANSWER: User 8: Poll response 10.; Timestamp: 2019-10-31 18:33:24.429
+Overall Timestamp: 2019-10-31 18:33:46.735
+User 2: Poll question 1.
+User 2: Poll question 2.
+User 2: Poll question 3.
+User 2: Poll question 4.
+User 2: Poll question 5.
+User 2: Poll question 6.
+User 2: Poll question 7.
+User 2: Poll question 8.
+User 2: Poll question 9.
+User 2: Poll question 10.
+User 1: Poll question 1.
+User 1: Poll question 2.
+User 1: Poll question 3.
+User 1: Poll question 4.
+User 1: Poll question 5.
+User 1: Poll question 6.
+User 1: Poll question 7.
+User 1: Poll question 8.
+User 1: Poll question 9.
+User 1: Poll question 10.
+User 5: Poll response 1.
+User 5: Poll response 2.
+User 5: Poll response 3.
+User 5: Poll response 4.
+User 5: Poll response 5.
+User 5: Poll response 6.
+User 5: Poll response 7.
+User 5: Poll response 8.
+User 5: Poll response 9.
+User 5: Poll response 10.
+User 6: Poll response 1.
+User 6: Poll response 2.
+User 6: Poll response 3.
+User 6: Poll response 4.
+User 6: Poll response 5.
+User 6: Poll response 6.
+User 6: Poll response 7.
+User 6: Poll response 8.
+User 6: Poll response 9.
+User 6: Poll response 10.
+User 9: Poll response 1.
+User 3: Poll response 1.
+User 3: Poll response 2.
+User 3: Poll response 3.
+User 3: Poll response 4.
+User 3: Poll response 5.
+User 3: Poll response 6.
+User 3: Poll response 7.
+User 3: Poll response 8.
+User 3: Poll response 9.
+User 3: Poll response 10.
+User 4: Poll response 1.
+User 4: Poll response 2.
+User 4: Poll response 3.
+User 4: Poll response 4.
+User 4: Poll response 5.
+User 4: Poll response 6.
+User 4: Poll response 7.
+User 4: Poll response 8.
+User 4: Poll response 9.
+User 4: Poll response 10.
+User 9: Poll response 2.
+User 9: Poll response 3.
+User 10: Poll response 1.
+User 9: Poll response 4.
+User 9: Poll response 5.
+User 9: Poll response 6.
+User 9: Poll response 7.
+User 9: Poll response 8.
+User 9: Poll response 9.
+User 9: Poll response 10.
+User 10: Poll response 2.
+User 10: Poll response 3.
+User 10: Poll response 4.
+User 10: Poll response 5.
+User 10: Poll response 6.
+User 10: Poll response 7.
+User 10: Poll response 8.
+User 10: Poll response 9.
+User 10: Poll response 10.
+User 7: Poll response 1.
+User 7: Poll response 2.
+User 7: Poll response 3.
+User 7: Poll response 4.
+User 7: Poll response 5.
+User 7: Poll response 6.
+User 7: Poll response 7.
+User 7: Poll response 8.
+User 7: Poll response 9.
+User 7: Poll response 10.

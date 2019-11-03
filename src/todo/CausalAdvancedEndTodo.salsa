@@ -10,6 +10,7 @@ behavior CausalAdvancedEndTodo
 {
 	void chatSession(User s1, User s2, User s3, User s4, User s5, User s6, User s7, User s8, User s9, User s10, TaskList taskList)
 	{
+		s1<-setIsLeader();
 		// these tasks are created in server..
 		ArrayList values = new ArrayList();
 		values.add(1);

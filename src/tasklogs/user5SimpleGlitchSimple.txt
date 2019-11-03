@@ -1,19 +1,102 @@
 User started with uan: uan://:3030\localhost:3030id6
 Messaging server
 Finished registering
-[Speaker Local] pinku: Add message: Task name: u5t1Task type: Follow Up Task; Task text: User 5: Follow Poll 1; Timestamp: 2019-10-21 20:35:42.789
-[Speaker Local] pinku: Add message: Task name: u5t2Task type: Follow Up Task; Task text: User 5: Follow Poll 2; Timestamp: 2019-10-21 20:35:43.131
-[Speaker Local] pinku: Add message: Task name: u5t3Task type: Follow Up Task; Task text: User 5: Follow Poll 3; Timestamp: 2019-10-21 20:35:43.143
-Overall Timestamp: 2019-10-21 20:35:46.004
-Task type: Initial Task; Task text: User 1: Initial Poll 1
-Task type: Initial Task; Task text: User 1: Initial Poll 2
-Task type: Initial Task; Task text: User 1: Initial Poll 3
-Task type: Follow Up Task; Task text: User 2: Follow Poll 1
-Task type: Follow Up Task; Task text: User 2: Follow Poll 2
-Task type: Follow Up Task; Task text: User 2: Follow Poll 3
-Task type: Follow Up Task; Task text: User 3: Follow Poll 1
-Task type: Follow Up Task; Task text: User 3: Follow Poll 2
-Task type: Follow Up Task; Task text: User 3: Follow Poll 3
-Task type: Follow Up Task; Task text: User 4: Follow Poll 1
-Task type: Follow Up Task; Task text: User 4: Follow Poll 2
-Task type: Follow Up Task; Task text: User 4: Follow Poll 3
+[Speaker Local] username5: Add message: Task name: u5t1Task type: Follow Up Task; Task text: User 5: Follow Up Poll 9.; Timestamp: 2019-11-03 03:49:56.904
+[Speaker Local] username5: Add message: Task name: u5t2Task type: Follow Up Task; Task text: User 5: Follow Up Poll 10.; Timestamp: 2019-11-03 03:49:57.86
+[Speaker Local] username5: Add message: Task name: u5t3Task type: Follow Up Task; Task text: User 5: Follow Up Poll 7.; Timestamp: 2019-11-03 03:49:58.128
+[Speaker Local] username5: Add message: Task name: u5t4Task type: Follow Up Task; Task text: User 5: Follow Up Poll 6.; Timestamp: 2019-11-03 03:49:58.576
+[Speaker Local] username5: Add message: Task name: u5t5Task type: Follow Up Task; Task text: User 5: Follow Up Poll 2.; Timestamp: 2019-11-03 03:49:58.716
+[Speaker Local] username5: Add message: Task name: u5t6Task type: Follow Up Task; Task text: User 5: Follow Up Poll 1.; Timestamp: 2019-11-03 03:49:58.898
+[Speaker Local] username5: Add message: Task name: u5t7Task type: Follow Up Task; Task text: User 5: Follow Up Poll 3.; Timestamp: 2019-11-03 03:49:58.9
+[Speaker Local] username5: Add message: Task name: u5t8Task type: Follow Up Task; Task text: User 5: Follow Up Poll 4.; Timestamp: 2019-11-03 03:49:58.903
+[Speaker Local] username5: Add message: Task name: u5t9Task type: Follow Up Task; Task text: User 5: Follow Up Poll 8.; Timestamp: 2019-11-03 03:49:58.905
+[Speaker Local] username5: Add message: Task name: u5t10Task type: Follow Up Task; Task text: User 5: Follow Up Poll 5.; Timestamp: 2019-11-03 03:49:58.908
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+8
+8
+8
+8
+8
+80
+80
+80

@@ -270,6 +270,14 @@ public class CausalAdvancedEndTodo extends UniversalActor  {
 		}
 
 		public void chatSession(User s1, User s2, User s3, User s4, User s5, User s6, User s7, User s8, User s9, User s10, TaskList taskList) {
+			{
+				// s1<-setIsLeader()
+				{
+					Object _arguments[] = {  };
+					Message message = new Message( self, s1, "setIsLeader", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 			ArrayList values = new ArrayList();
 			values.add(1);
 			values.add(2);

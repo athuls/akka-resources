@@ -2,14 +2,13 @@
 # there are three tasks in this program: check for latency, check if ordering is maintained, and check the overall runtime
 
 import re
+import sys
 
 # this function is used to check if ordering is maintained or not for a file
 def check_ordering(file_name):
     users_map = dict()
     curr_file = open(file_name, "r")
     for line in curr_file:
-        if len(line) < 50:
-            break
         if "[Speaker Remote]" in line:
             current_number = line[42:91]
             temp = re.findall(r'\d+', current_number) 
@@ -28,18 +27,13 @@ def check_ordering(file_name):
     return True
 
 # this function checks overall ordering - works
-def conclude_if_ordered():
-    one = check_ordering("logs/speaker1FIFOSimple.txt")
-    two = check_ordering("logs/speaker2FIFOSimple.txt")
-    three = check_ordering("logs/speaker3FIFOSimple.txt")
-    four = check_ordering("logs/speaker4FIFOSimple.txt")
-    five = check_ordering("logs/speaker5FIFOSimple.txt")
-    six = check_ordering("logs/speaker6FIFOSimple.txt")
-    seven = check_ordering("logs/speaker7FIFOSimple.txt")
-    eight = check_ordering("logs/speaker8FIFOSimple.txt")
-    nine = check_ordering("logs/speaker9FIFOSimple.txt")
-    ten = check_ordering("logs/speaker10FIFOSimple.txt")
-    return one and two and three and four and five and six and seven and eight and nine and ten
+def conclude_if_ordered(num_users):
+    for i in range(1, num_users + 1):
+        curr = "logs/speaker" + str(i) + "FIFOSimple.txt"
+        ordered = check_ordering(curr)
+        if ordered == False:
+            return False
+    return True
 
 # this function pulls out the overall runtime - works
 def get_overall_runtime():
@@ -51,10 +45,11 @@ def get_overall_runtime():
             return res[0]
 
 # this function returns the maximum time it takes for a message to be received by another user for a given file
-def get_max_file_latency():
-    file_name_list = ["logs/speaker1FIFOSimple.txt", "logs/speaker2FIFOSimple.txt", "logs/speaker3FIFOSimple.txt", 
-	"logs/speaker4FIFOSimple.txt", "logs/speaker5FIFOSimple.txt", "logs/speaker6FIFOSimple.txt", "logs/speaker7FIFOSimple.txt", 
-	"logs/speaker8FIFOSimple.txt", "logs/speaker9FIFOSimple.txt", "logs/speaker10FIFOSimple.txt"]
+def get_max_file_latency(num_users):
+    file_name_list = []
+    for i in range(num_users):
+        curr = "logs/speaker" + str(i + 1) + "FIFOSimple.txt"
+        file_name_list.append(curr)
     starting_time = 0
     for file in file_name_list:
         curr_file = open(file, "r")
@@ -111,9 +106,10 @@ def get_max_file_latency():
     return max_latency
 
 # code to test functionality
+num_users = int(sys.argv[1])
 is_ordered = "No"
-if conclude_if_ordered():
+if conclude_if_ordered(num_users):
     is_ordered = "Yes"
 overall_runtime = get_overall_runtime()
-overall_latency = get_max_file_latency()
+overall_latency = get_max_file_latency(num_users)
 print("Is this ordered: " + str(is_ordered) + "; overall runtime: " + str(overall_runtime) + "; overall latency: " + str(overall_latency))

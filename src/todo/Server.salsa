@@ -24,7 +24,7 @@ behavior Server implements ActorService
 	}
 
     // broadcast( todo.Task java.lang.String java.lang.String java.lang.String int int boolean )
-	void broadcast(Task task, String taskName,String text,String creator, int number_of_updates, int total_initials, boolean isUpdate, boolean isFollowup)
+	void broadcast(Task task, String taskName,String text,String creator, int number_of_updates, int total_initials, boolean isUpdate, boolean isFollowup, boolean fifo)
 	{
 		for(int i = 0; i < registeredUsers.size(); i++) 
 		{
@@ -35,7 +35,7 @@ behavior Server implements ActorService
 				if(user != null)
 				{
                		User userRef = (User) User.getReferenceByName( user.getUAN());
-                	userRef<-broadcastReceive(task, taskName, text, isUpdate, total_initials, number_of_updates,isFollowup);
+                	userRef<-broadcastReceiveAdvanced(task, taskName, text, isUpdate, total_initials, number_of_updates,isFollowup, fifo);
             	}
 			}
 	 	}
@@ -50,16 +50,16 @@ behavior Server implements ActorService
 		return true;
 	}
 
-    boolean addTaskToList(TaskList taskList, Task task,String taskName,String text, String creator, int number_of_updates, int total_initials, boolean isFollowup)
+    boolean addTaskToList(TaskList taskList, Task task,String taskName,String text, String creator, int number_of_updates, int total_initials, boolean isFollowup, boolean fifo)
 	{
-		broadcast(task,taskName,text, creator, number_of_updates, total_initials, false, isFollowup);
+		broadcast(task,taskName,text, creator, number_of_updates, total_initials, false, isFollowup, fifo);
         return true;
     }
 
-    boolean updateTask(Task task,String name,String text, String creator, int number_of_updates, int total_initials)
+    boolean updateTask(Task task,String name,String text, String creator, int number_of_updates, int total_initials, boolean fifo)
 	{
         // Task task, String taskName,String text,String creator, int number_of_updates, int total_initials, boolean isUpdate
-	    broadcast(task, name,text,creator, number_of_updates, total_initials, true, false);
+	    broadcast(task, name,text,creator, number_of_updates, total_initials, true, false, fifo);
         return true;
 	}
 

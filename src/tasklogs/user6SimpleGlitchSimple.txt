@@ -1,0 +1,102 @@
+User started with uan: uan://:3030\localhost:3030id7
+Messaging server
+Finished registering
+[Speaker Local] username6: Add message: Task name: u6t1Task type: Follow Up Task; Task text: User 6: Follow Up Poll 9.; Timestamp: 2019-11-03 03:49:57.554
+[Speaker Local] username6: Add message: Task name: u6t2Task type: Follow Up Task; Task text: User 6: Follow Up Poll 3.; Timestamp: 2019-11-03 03:49:58.212
+[Speaker Local] username6: Add message: Task name: u6t3Task type: Follow Up Task; Task text: User 6: Follow Up Poll 1.; Timestamp: 2019-11-03 03:49:58.523
+[Speaker Local] username6: Add message: Task name: u6t4Task type: Follow Up Task; Task text: User 6: Follow Up Poll 7.; Timestamp: 2019-11-03 03:49:58.803
+[Speaker Local] username6: Add message: Task name: u6t5Task type: Follow Up Task; Task text: User 6: Follow Up Poll 4.; Timestamp: 2019-11-03 03:49:58.96
+[Speaker Local] username6: Add message: Task name: u6t6Task type: Follow Up Task; Task text: User 6: Follow Up Poll 8.; Timestamp: 2019-11-03 03:49:59.183
+[Speaker Local] username6: Add message: Task name: u6t7Task type: Follow Up Task; Task text: User 6: Follow Up Poll 5.; Timestamp: 2019-11-03 03:49:59.188
+[Speaker Local] username6: Add message: Task name: u6t8Task type: Follow Up Task; Task text: User 6: Follow Up Poll 2.; Timestamp: 2019-11-03 03:49:59.191
+[Speaker Local] username6: Add message: Task name: u6t9Task type: Follow Up Task; Task text: User 6: Follow Up Poll 6.; Timestamp: 2019-11-03 03:49:59.196
+[Speaker Local] username6: Add message: Task name: u6t10Task type: Follow Up Task; Task text: User 6: Follow Up Poll 10.; Timestamp: 2019-11-03 03:49:59.678
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+8
+8
+8
+8
+8
+70
+70
+70
+80
+82
+83
+84
+84

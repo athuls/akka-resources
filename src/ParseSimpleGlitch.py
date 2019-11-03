@@ -2,6 +2,7 @@
 # there are four tasks in this program: check for latency, check if ordering is maintained, check the overall runtime, and make sure questions are always first
 
 import re
+import sys
 
 # this function is used to check question ordering in a file
 def check_question_ordering(file_name):
@@ -20,17 +21,13 @@ def check_question_ordering(file_name):
     return True
 
 # makes sure questions are ordered in all files
-def check_all_questions_ordered():
-    one = check_question_ordering("logs/speaker2SimpleGlitchSimple.txt")
-    two = check_question_ordering("logs/speaker3SimpleGlitchSimple.txt")
-    three = check_question_ordering("logs/speaker4SimpleGlitchSimple.txt")
-    four = check_question_ordering("logs/speaker5SimpleGlitchSimple.txt")
-    five = check_question_ordering("logs/speaker6SimpleGlitchSimple.txt")
-    six = check_question_ordering("logs/speaker7SimpleGlitchSimple.txt")
-    seven = check_question_ordering("logs/speaker8SimpleGlitchSimple.txt")
-    eight = check_question_ordering("logs/speaker9SimpleGlitchSimple.txt")
-    nine = check_question_ordering("logs/speaker10SimpleGlitchSimple.txt")
-    return one and two and three and four and five and six and seven and eight and nine
+def check_all_questions_ordered(num_users):
+    for i in range(2, num_users + 1):
+        curr = "logs/speaker" + str(i) + "SimpleGlitchSimple.txt"
+        ordered = check_question_ordering(curr)
+        if ordered == False:
+            return False
+    return True
 
 # this function is used to check if ordering is maintained or not for a file
 def check_ordering(file_name):
@@ -60,18 +57,13 @@ def check_ordering(file_name):
     return True
 
 # this function checks overall ordering - works
-def conclude_if_ordered():
-    one = check_ordering("logs/speaker1SimpleGlitchSimple.txt")
-    two = check_ordering("logs/speaker2SimpleGlitchSimple.txt")
-    three = check_ordering("logs/speaker3SimpleGlitchSimple.txt")
-    four = check_ordering("logs/speaker4SimpleGlitchSimple.txt")
-    five = check_ordering("logs/speaker5SimpleGlitchSimple.txt")
-    six = check_ordering("logs/speaker6SimpleGlitchSimple.txt")
-    seven = check_ordering("logs/speaker7SimpleGlitchSimple.txt")
-    eight = check_ordering("logs/speaker8SimpleGlitchSimple.txt")
-    nine = check_ordering("logs/speaker9SimpleGlitchSimple.txt")
-    ten = check_ordering("logs/speaker10SimpleGlitchSimple.txt")
-    return one and two and three and four and five and six and seven and eight and nine and ten
+def conclude_if_ordered(num_users):
+    for i in range(1, num_users + 1):
+        curr = "logs/speaker" + str(i) + "SimpleGlitchSimple.txt"
+        ordered = check_ordering(curr)
+        if ordered == False:
+            return False
+    return True
 
 # this function pulls out the overall runtime - works
 def get_overall_runtime():
@@ -83,10 +75,11 @@ def get_overall_runtime():
             return res[0]
 
 # this function returns the maximum time it takes for a message to be received by another user for a given file
-def get_overall_latency():
-    file_name_list = ["logs/speaker1SimpleGlitchSimple.txt", "logs/speaker2SimpleGlitchSimple.txt", "logs/speaker3SimpleGlitchSimple.txt", 
-    "logs/speaker4SimpleGlitchSimple.txt", "logs/speaker5SimpleGlitchSimple.txt", "logs/speaker6SimpleGlitchSimple.txt", "logs/speaker7SimpleGlitchSimple.txt",
-	"logs/speaker8SimpleGlitchSimple.txt", "logs/speaker9SimpleGlitchSimple.txt", "logs/speaker10SimpleGlitchSimple.txt"]
+def get_overall_latency(num_users):
+    file_name_list = []
+    for i in range(num_users):
+        curr = "logs/speaker" + str(i + 1) + "SimpleGlitchSimple.txt"
+        file_name_list.append(curr)
     starting_time = 0
     for file in file_name_list:
         curr_file = open(file, "r")
@@ -140,12 +133,13 @@ def get_overall_latency():
     return max_latency
 
 # code to test functionality
+num_users = int(sys.argv[1])
 is_ordered = "No"
-if conclude_if_ordered():
+if conclude_if_ordered(num_users):
     is_ordered = "Yes"
 is_question_ordered = "No"
-if check_all_questions_ordered():
+if check_all_questions_ordered(num_users):
     is_question_ordered = "Yes"
 overall_runtime = get_overall_runtime()
-overall_latency = get_overall_latency()
+overall_latency = get_overall_latency(num_users)
 print("Are the questions first: " + str(is_question_ordered) + "; Is this FIFO ordered: " + str(is_ordered) + "; overall runtime: " + str(overall_runtime) + "; overall latency: " + str(overall_latency))

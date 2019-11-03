@@ -1,0 +1,83 @@
+User started with uan: uan://:3030\localhost:3030id11
+Messaging server
+Finished registering
+[Speaker Local] username10: Add message: Task name: u10t1Task type: Follow Up Task; Task text: User 10: Follow Up Task 4.; Timestamp: 2019-11-02 19:49:26.004
+[Speaker Local] username10: Add message: Task name: u10t2Task type: Follow Up Task; Task text: User 10: Follow Up Task 7.; Timestamp: 2019-11-02 19:49:26.619
+[Speaker Local] username10: Add message: Task name: u10t3Task type: Follow Up Task; Task text: User 10: Follow Up Task 2.; Timestamp: 2019-11-02 19:49:26.982
+[Speaker Local] username10: Add message: Task name: u10t4Task type: Follow Up Task; Task text: User 10: Follow Up Task 9.; Timestamp: 2019-11-02 19:49:27.229
+[Speaker Local] username10: Add message: Task name: u10t5Task type: Follow Up Task; Task text: User 10: Follow Up Task 6.; Timestamp: 2019-11-02 19:49:27.511
+[Speaker Local] username10: Add message: Task name: u10t6Task type: Follow Up Task; Task text: User 10: Follow Up Task 1.; Timestamp: 2019-11-02 19:49:27.669
+[Speaker Local] username10: Add message: Task name: u10t7Task type: Follow Up Task; Task text: User 10: Follow Up Task 5.; Timestamp: 2019-11-02 19:49:27.676
+[Speaker Local] username10: Add message: Task name: u10t8Task type: Follow Up Task; Task text: User 10: Follow Up Task 8.; Timestamp: 2019-11-02 19:49:27.679
+[Speaker Local] username10: Add message: Task name: u10t9Task type: Follow Up Task; Task text: User 10: Follow Up Task 3.; Timestamp: 2019-11-02 19:49:28.514
+[Speaker Local] username10: Add message: Task name: u10t10Task type: Follow Up Task; Task text: User 10: Follow Up Task 10.; Timestamp: 2019-11-02 19:49:28.517
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Initial Task; Task text: User 1: Initial Task 1.; Timestamp: 2019-11-02 19:49:35.579
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Initial Task; Task text: User 1: Initial Task 2.; Timestamp: 2019-11-02 19:49:35.78
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Initial Task; Task text: User 1: Initial Task 3.; Timestamp: 2019-11-02 19:49:35.983
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Initial Task; Task text: User 1: Initial Task 4.; Timestamp: 2019-11-02 19:49:36.184
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Initial Task; Task text: User 1: Initial Task 5.; Timestamp: 2019-11-02 19:49:36.385
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Initial Task; Task text: User 1: Initial Task 6.; Timestamp: 2019-11-02 19:49:36.586
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Initial Task; Task text: User 1: Initial Task 7.; Timestamp: 2019-11-02 19:49:36.789
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Initial Task; Task text: User 1: Initial Task 8.; Timestamp: 2019-11-02 19:49:36.992
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Initial Task; Task text: User 1: Initial Task 9.; Timestamp: 2019-11-02 19:49:37.192
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Initial Task; Task text: User 1: Initial Task 10.; Timestamp: 2019-11-02 19:49:37.443
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 3: Follow Up Task 1.; Timestamp: 2019-11-02 19:49:37.792
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 3: Follow Up Task 2.; Timestamp: 2019-11-02 19:49:37.992
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 3: Follow Up Task 3.; Timestamp: 2019-11-02 19:49:38.193
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 3: Follow Up Task 4.; Timestamp: 2019-11-02 19:49:38.394
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 3: Follow Up Task 5.; Timestamp: 2019-11-02 19:49:38.595
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 3: Follow Up Task 6.; Timestamp: 2019-11-02 19:49:38.796
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 9: Follow Up Task 1.; Timestamp: 2019-11-02 19:49:38.998
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 3: Follow Up Task 7.; Timestamp: 2019-11-02 19:49:39.199
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 3: Follow Up Task 8.; Timestamp: 2019-11-02 19:49:39.4
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 3: Follow Up Task 9.; Timestamp: 2019-11-02 19:49:39.602
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 3: Follow Up Task 10.; Timestamp: 2019-11-02 19:49:39.803
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 4: Follow Up Task 1.; Timestamp: 2019-11-02 19:49:40.008
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 4: Follow Up Task 2.; Timestamp: 2019-11-02 19:49:40.209
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 4: Follow Up Task 3.; Timestamp: 2019-11-02 19:49:40.415
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 4: Follow Up Task 4.; Timestamp: 2019-11-02 19:49:40.616
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 4: Follow Up Task 5.; Timestamp: 2019-11-02 19:49:40.817
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 4: Follow Up Task 6.; Timestamp: 2019-11-02 19:49:41.018
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 4: Follow Up Task 7.; Timestamp: 2019-11-02 19:49:41.218
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 4: Follow Up Task 8.; Timestamp: 2019-11-02 19:49:41.419
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 4: Follow Up Task 9.; Timestamp: 2019-11-02 19:49:41.62
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 4: Follow Up Task 10.; Timestamp: 2019-11-02 19:49:41.823
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 8: Follow Up Task 1.; Timestamp: 2019-11-02 19:49:42.025
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 9: Follow Up Task 2.; Timestamp: 2019-11-02 19:49:42.246
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 9: Follow Up Task 3.; Timestamp: 2019-11-02 19:49:42.447
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 9: Follow Up Task 4.; Timestamp: 2019-11-02 19:49:42.648
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 9: Follow Up Task 5.; Timestamp: 2019-11-02 19:49:42.849
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 9: Follow Up Task 6.; Timestamp: 2019-11-02 19:49:43.049
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 9: Follow Up Task 7.; Timestamp: 2019-11-02 19:49:43.25
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 9: Follow Up Task 8.; Timestamp: 2019-11-02 19:49:43.452
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 9: Follow Up Task 9.; Timestamp: 2019-11-02 19:49:43.656
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 9: Follow Up Task 10.; Timestamp: 2019-11-02 19:49:43.857
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 2: Follow Up Task 1.; Timestamp: 2019-11-02 19:49:44.059
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 2: Follow Up Task 2.; Timestamp: 2019-11-02 19:49:44.265
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 2: Follow Up Task 3.; Timestamp: 2019-11-02 19:49:44.466
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 2: Follow Up Task 4.; Timestamp: 2019-11-02 19:49:44.667
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 2: Follow Up Task 5.; Timestamp: 2019-11-02 19:49:44.869
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 2: Follow Up Task 6.; Timestamp: 2019-11-02 19:49:45.07
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 2: Follow Up Task 7.; Timestamp: 2019-11-02 19:49:45.276
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 2: Follow Up Task 8.; Timestamp: 2019-11-02 19:49:45.478
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 2: Follow Up Task 9.; Timestamp: 2019-11-02 19:49:45.68
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 2: Follow Up Task 10.; Timestamp: 2019-11-02 19:49:45.882
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 8: Follow Up Task 2.; Timestamp: 2019-11-02 19:49:46.083
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 8: Follow Up Task 3.; Timestamp: 2019-11-02 19:49:46.284
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 8: Follow Up Task 4.; Timestamp: 2019-11-02 19:49:46.486
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 8: Follow Up Task 5.; Timestamp: 2019-11-02 19:49:46.689
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 8: Follow Up Task 6.; Timestamp: 2019-11-02 19:49:46.89
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 8: Follow Up Task 7.; Timestamp: 2019-11-02 19:49:47.091
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 8: Follow Up Task 8.; Timestamp: 2019-11-02 19:49:47.291
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 8: Follow Up Task 9.; Timestamp: 2019-11-02 19:49:47.493
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 8: Follow Up Task 10.; Timestamp: 2019-11-02 19:49:47.694
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 6: Follow Up Task 1.; Timestamp: 2019-11-02 19:49:47.895
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 6: Follow Up Task 2.; Timestamp: 2019-11-02 19:49:48.096
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 6: Follow Up Task 3.; Timestamp: 2019-11-02 19:49:48.297
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 6: Follow Up Task 4.; Timestamp: 2019-11-02 19:49:48.498
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 6: Follow Up Task 5.; Timestamp: 2019-11-02 19:49:48.699
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 6: Follow Up Task 6.; Timestamp: 2019-11-02 19:49:48.899
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 6: Follow Up Task 7.; Timestamp: 2019-11-02 19:49:49.1
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 6: Follow Up Task 8.; Timestamp: 2019-11-02 19:49:49.302
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 6: Follow Up Task 9.; Timestamp: 2019-11-02 19:49:49.507
+[Speaker Remote] username10: Add Message: Task name: u1t10Task type: Follow Up Task; Task text: User 6: Follow Up Task 10.; Timestamp: 2019-11-02 19:49:49.71

@@ -193,7 +193,7 @@ public class Server extends UniversalActor  implements ActorService {
 			specifiedTasks = new ArrayList();
 			userIdUANMap = new HashMap();
 		}
-		public void broadcast(Task task, String taskName, String text, String creator, int number_of_updates, int total_initials, boolean isUpdate, boolean isFollowup) {
+		public void broadcast(Task task, String taskName, String text, String creator, int number_of_updates, int total_initials, boolean isUpdate, boolean isFollowup, boolean fifo) {
 			for (int i = 0; i<registeredUsers.size(); i++){
 				String userRefName = (String)registeredUsers.get(i);
 				if (!userRefName.equals(creator)) {{
@@ -201,10 +201,10 @@ public class Server extends UniversalActor  implements ActorService {
 					if (user!=null) {{
 						User userRef = (User)User.getReferenceByName(user.getUAN());
 						{
-							// userRef<-broadcastReceive(task, taskName, text, isUpdate, total_initials, number_of_updates, isFollowup)
+							// userRef<-broadcastReceiveAdvanced(task, taskName, text, isUpdate, total_initials, number_of_updates, isFollowup, fifo)
 							{
-								Object _arguments[] = { task, taskName, text, isUpdate, total_initials, number_of_updates, isFollowup };
-								Message message = new Message( self, userRef, "broadcastReceive", _arguments, null, null );
+								Object _arguments[] = { task, taskName, text, isUpdate, total_initials, number_of_updates, isFollowup, fifo };
+								Message message = new Message( self, userRef, "broadcastReceiveAdvanced", _arguments, null, null );
 								__messages.add( message );
 							}
 						}
@@ -225,22 +225,22 @@ public class Server extends UniversalActor  implements ActorService {
 			userIdUANMap.put(userId, user);
 			return true;
 		}
-		public boolean addTaskToList(TaskList taskList, Task task, String taskName, String text, String creator, int number_of_updates, int total_initials, boolean isFollowup) {
+		public boolean addTaskToList(TaskList taskList, Task task, String taskName, String text, String creator, int number_of_updates, int total_initials, boolean isFollowup, boolean fifo) {
 			{
-				// broadcast(task, taskName, text, creator, number_of_updates, total_initials, false, isFollowup)
+				// broadcast(task, taskName, text, creator, number_of_updates, total_initials, false, isFollowup, fifo)
 				{
-					Object _arguments[] = { task, taskName, text, creator, number_of_updates, total_initials, false, isFollowup };
+					Object _arguments[] = { task, taskName, text, creator, number_of_updates, total_initials, false, isFollowup, fifo };
 					Message message = new Message( self, self, "broadcast", _arguments, null, null );
 					__messages.add( message );
 				}
 			}
 			return true;
 		}
-		public boolean updateTask(Task task, String name, String text, String creator, int number_of_updates, int total_initials) {
+		public boolean updateTask(Task task, String name, String text, String creator, int number_of_updates, int total_initials, boolean fifo) {
 			{
-				// broadcast(task, name, text, creator, number_of_updates, total_initials, true, false)
+				// broadcast(task, name, text, creator, number_of_updates, total_initials, true, false, fifo)
 				{
-					Object _arguments[] = { task, name, text, creator, number_of_updates, total_initials, true, false };
+					Object _arguments[] = { task, name, text, creator, number_of_updates, total_initials, true, false, fifo };
 					Message message = new Message( self, self, "broadcast", _arguments, null, null );
 					__messages.add( message );
 				}

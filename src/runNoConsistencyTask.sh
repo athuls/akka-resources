@@ -15,7 +15,7 @@ java -cp libs/salsa1.1.5.jar:. todo.NoConsistencyAdvancedTodo uan:\\localhost:30
 
 sleep 30s
 
-#python ParseNoLayersTodo.py >> taskLogs/NoConsistencyTasksResults.txt
+python ParseNoLayersTodo.py >> taskLogs/NoConsistencyTasksResults.txt
 
 ps -ef | grep WWCNamingServer | grep -v grep | awk '{print $2}' | xargs kill -9
 ps -ef | grep Chat | grep -v grep | awk '{print $2}' | xargs kill -9

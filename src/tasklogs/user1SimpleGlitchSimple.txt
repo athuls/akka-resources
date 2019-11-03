@@ -1,19 +1,102 @@
 User started with uan: uan://:3030\localhost:3030id2
 Messaging server
 Finished registering
-[Speaker Local] Jason: Add message: Task name: u1t1Task type: Initial Task; Task text: User 1: Initial Poll 1; Timestamp: 2019-10-21 20:35:42.22
-[Speaker Local] Jason: Add message: Task name: u1t2Task type: Initial Task; Task text: User 1: Initial Poll 2; Timestamp: 2019-10-21 20:35:42.555
-[Speaker Local] Jason: Add message: Task name: u1t3Task type: Initial Task; Task text: User 1: Initial Poll 3; Timestamp: 2019-10-21 20:35:42.559
-Overall Timestamp: 2019-10-21 20:35:46.307
-Task type: Follow Up Task; Task text: User 2: Follow Poll 1
-Task type: Follow Up Task; Task text: User 2: Follow Poll 2
-Task type: Follow Up Task; Task text: User 2: Follow Poll 3
-Task type: Follow Up Task; Task text: User 3: Follow Poll 1
-Task type: Follow Up Task; Task text: User 3: Follow Poll 2
-Task type: Follow Up Task; Task text: User 3: Follow Poll 3
-Task type: Follow Up Task; Task text: User 5: Follow Poll 1
-Task type: Follow Up Task; Task text: User 5: Follow Poll 2
-Task type: Follow Up Task; Task text: User 5: Follow Poll 3
-Task type: Follow Up Task; Task text: User 4: Follow Poll 1
-Task type: Follow Up Task; Task text: User 4: Follow Poll 2
-Task type: Follow Up Task; Task text: User 4: Follow Poll 3
+[Speaker Local] username1: Add message: Task name: u1t1Task type: Initial Task; Task text: User 1: Initial Poll 4.; Timestamp: 2019-11-03 03:49:56.509
+[Speaker Local] username1: Add message: Task name: u1t2Task type: Initial Task; Task text: User 1: Initial Poll 8.; Timestamp: 2019-11-03 03:49:56.911
+[Speaker Local] username1: Add message: Task name: u1t3Task type: Initial Task; Task text: User 1: Initial Poll 5.; Timestamp: 2019-11-03 03:49:57.118
+[Speaker Local] username1: Add message: Task name: u1t4Task type: Initial Task; Task text: User 1: Initial Poll 2.; Timestamp: 2019-11-03 03:49:57.503
+[Speaker Local] username1: Add message: Task name: u1t5Task type: Initial Task; Task text: User 1: Initial Poll 10.; Timestamp: 2019-11-03 03:49:58.096
+[Speaker Local] username1: Add message: Task name: u1t6Task type: Initial Task; Task text: User 1: Initial Poll 1.; Timestamp: 2019-11-03 03:49:58.377
+[Speaker Local] username1: Add message: Task name: u1t7Task type: Initial Task; Task text: User 1: Initial Poll 6.; Timestamp: 2019-11-03 03:49:58.489
+[Speaker Local] username1: Add message: Task name: u1t8Task type: Initial Task; Task text: User 1: Initial Poll 7.; Timestamp: 2019-11-03 03:49:58.492
+[Speaker Local] username1: Add message: Task name: u1t9Task type: Initial Task; Task text: User 1: Initial Poll 3.; Timestamp: 2019-11-03 03:49:58.495
+[Speaker Local] username1: Add message: Task name: u1t10Task type: Initial Task; Task text: User 1: Initial Poll 9.; Timestamp: 2019-11-03 03:49:58.498
+0
+0
+0
+1
+1
+1
+1
+2
+2
+2
+2
+3
+3
+4
+4
+4
+4
+4
+5
+6
+12
+12
+12
+13
+13
+13
+13
+14
+14
+14
+15
+15
+15
+15
+15
+15
+15
+15
+17
+17
+17
+17
+17
+17
+17
+17
+17
+17
+21
+21
+21
+21
+21
+21
+21
+25
+26
+28
+29
+29
+29
+29
+30
+35
+39
+43
+43
+43
+43
+43
+43
+50
+50
+54
+55
+58
+60
+60
+60
+60
+65
+70
+70
+70
+80
+82
+83
+84
+84

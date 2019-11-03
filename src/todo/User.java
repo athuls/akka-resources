@@ -39,6 +39,8 @@ import java.util.Iterator;
 import java.util.Queue;
 import java.util.LinkedList;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
 public class User extends UniversalActor  implements ActorService {
 	public static void main(String args[]) {
@@ -202,6 +204,9 @@ public class User extends UniversalActor  implements ActorService {
 		ArrayList initialList = new ArrayList();
 		Queue waitQueue = new LinkedList();
 		Queue messageQueue = new LinkedList();
+		Map fifoValues = new HashMap();
+		Map fifoMessageValues = new HashMap();
+		Map valuesAdded = new HashMap();
 		ArrayList tasks = new ArrayList();
 		void construct(String id, String email, String status){
 			myName = id;
@@ -211,7 +216,175 @@ public class User extends UniversalActor  implements ActorService {
 		public void setIsLeader() {
 			isLeader = true;
 		}
-		public void broadcastReceive(Task task, String taskName, String text, boolean update, int number_of_initials, int total_updates, boolean isFollowup) throws InterruptedException{
+		public boolean handleFifoCode(Task task, String taskName, String text, boolean isFollowup, boolean original) throws InterruptedException{
+			Integer current_value = Integer.parseInt(text.substring(10).replaceAll("[\\D]", ""));
+			Integer current_user = Integer.parseInt(text.substring(0, 10).replaceAll("[\\D]", ""));
+			if (!valuesAdded.containsKey(current_user)) {{
+				ArrayList vals = new ArrayList();
+				valuesAdded.put(current_user, vals);
+			}
+}			if (!fifoValues.containsKey(current_user)) {{
+				ArrayList vals = new ArrayList();
+				ArrayList msgVals = new ArrayList();
+				fifoValues.put(current_user, vals);
+				fifoMessageValues.put(current_user, msgVals);
+			}
+}			ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
+			ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
+			ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
+			boolean isAdded = false;
+			if ((currentAdded.size()==0&&current_value==1)||(currentAdded.size()>0&&((Integer)currentAdded.get(currentAdded.size()-1)==current_value-1))) {{
+				currentAdded.add(current_value);
+				tasks.add(text);
+				Thread.sleep(200);
+				Date date_four = new Date();
+				Timestamp current_four = new Timestamp(date_four.getTime());
+				if (original) {initialList.add(text);
+}				String follow_up = "";
+				if (!isFollowup) {follow_up = "Initial Task";
+}				else {follow_up = "Follow Up Task";
+}				{
+					// standardOutput<-println("[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+taskName+"Task type: "+follow_up+"; Task text: "+text+"; Timestamp: "+current_four)
+					{
+						Object _arguments[] = { "[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+taskName+"Task type: "+follow_up+"; Task text: "+text+"; Timestamp: "+current_four };
+						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+				int i = -1;
+				for (i = 0; i<currentFifo.size(); i++){
+					if ((Integer)currentFifo.get(i)==current_value+1) {{
+						current_value = (Integer)currentFifo.get(i);
+						String current_task_message = (String)currentFifoMessages.get(i);
+						currentAdded.add(current_value);
+						tasks.add(current_task_message);
+						Thread.sleep(200);
+						Date date_five = new Date();
+						Timestamp current_five = new Timestamp(date_five.getTime());
+						follow_up = "";
+						if (!isFollowup) {follow_up = "Initial Task";
+}						else {follow_up = "Follow Up Task";
+}						if (original) {initialList.add(current_task_message);
+}						{
+							// standardOutput<-println("[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+taskName+"Task type: "+follow_up+"; Task text: "+current_task_message+"; Timestamp: "+current_five)
+							{
+								Object _arguments[] = { "[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+taskName+"Task type: "+follow_up+"; Task text: "+current_task_message+"; Timestamp: "+current_five };
+								Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+								__messages.add( message );
+							}
+						}
+					}
+}					else {break;}				}
+				while (i>0) {
+					currentFifoMessages.remove(0);
+					currentFifo.remove(0);
+					i--;
+				}
+				isAdded = true;
+			}
+}			else {{
+				if (currentFifo.size()==0) {{
+					currentFifo.add(current_value);
+					currentFifoMessages.add(text);
+				}
+}				else {{
+					if (current_value<(Integer)currentFifo.get(0)) {{
+						currentFifo.add(0, current_value);
+						currentFifoMessages.add(0, text);
+					}
+}					else {{
+						int i = -1;
+						boolean added = false;
+						for (i = 0; i<currentFifo.size(); i++){
+							if (current_value<(Integer)currentFifo.get(i)) {{
+								added = true;
+								currentFifo.add(i, current_value);
+								currentFifoMessages.add(i, text);
+break;							}
+}						}
+						if (!added) {{
+							currentFifo.add(i, current_value);
+							currentFifoMessages.add(i, text);
+						}
+}					}
+}				}
+}			}
+}			valuesAdded.put(current_user, currentAdded);
+			fifoValues.put(current_user, currentFifo);
+			fifoMessageValues.put(current_user, currentFifoMessages);
+			return isAdded;
+		}
+		public boolean handleFifoCodeAdvanced(Task task, String taskName, String text, boolean isFollowup, boolean original) throws InterruptedException{
+			Integer current_value = Integer.parseInt(text.substring(10).replaceAll("[\\D]", ""));
+			Integer current_user = Integer.parseInt(text.substring(0, 10).replaceAll("[\\D]", ""));
+			if (!valuesAdded.containsKey(current_user)) {{
+				ArrayList vals = new ArrayList();
+				valuesAdded.put(current_user, vals);
+			}
+}			if (!fifoValues.containsKey(current_user)) {{
+				ArrayList vals = new ArrayList();
+				ArrayList msgVals = new ArrayList();
+				fifoValues.put(current_user, vals);
+				fifoMessageValues.put(current_user, msgVals);
+			}
+}			ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
+			ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
+			ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
+			boolean isAdded = false;
+			if ((currentAdded.size()==0&&current_value==1)||(currentAdded.size()>0&&((Integer)currentAdded.get(currentAdded.size()-1)==current_value-1))) {{
+				currentAdded.add(current_value);
+				messageQueue.add(text);
+				if (original) {initialList.add(text);
+}				int i = -1;
+				for (i = 0; i<currentFifo.size(); i++){
+					if ((Integer)currentFifo.get(i)==current_value+1) {{
+						current_value = (Integer)currentFifo.get(i);
+						String current_task_message = (String)currentFifoMessages.get(i);
+						currentAdded.add(current_value);
+						if (original) {initialList.add(current_task_message);
+}						messageQueue.add(current_task_message);
+					}
+}					else {break;}				}
+				while (i>0) {
+					currentFifoMessages.remove(0);
+					currentFifo.remove(0);
+					i--;
+				}
+				isAdded = true;
+			}
+}			else {{
+				if (currentFifo.size()==0) {{
+					currentFifo.add(current_value);
+					currentFifoMessages.add(text);
+				}
+}				else {{
+					if (current_value<(Integer)currentFifo.get(0)) {{
+						currentFifo.add(0, current_value);
+						currentFifoMessages.add(0, text);
+					}
+}					else {{
+						int i = -1;
+						boolean added = false;
+						for (i = 0; i<currentFifo.size(); i++){
+							if (current_value<(Integer)currentFifo.get(i)) {{
+								added = true;
+								currentFifo.add(i, current_value);
+								currentFifoMessages.add(i, text);
+break;							}
+}						}
+						if (!added) {{
+							currentFifo.add(i, current_value);
+							currentFifoMessages.add(i, text);
+						}
+}					}
+}				}
+}			}
+}			valuesAdded.put(current_user, currentAdded);
+			fifoValues.put(current_user, currentFifo);
+			fifoMessageValues.put(current_user, currentFifoMessages);
+			return isAdded;
+		}
+		public void broadcastReceive(Task task, String taskName, String text, boolean update, int number_of_initials, int total_updates, boolean isFollowup, boolean fifo) throws InterruptedException{
 			if (update) {{
 				for (int i = 0; i<tasks.size(); i++){
 					Task storedTask = (Task)tasks.get(i);
@@ -236,68 +409,8 @@ break;					}
 			}
 }			else {{
 				if (number_of_initials==0) {{
-					tasks.add(task);
-					String follow_up = "";
-					if (!isFollowup) {follow_up = "Initial Task";
-}					else {follow_up = "Follow Up Task";
-}					Thread.sleep(200);
-					Date date = new Date();
-					Timestamp current = new Timestamp(date.getTime());
-					{
-						// standardOutput<-println("[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+task.getTaskName()+"Task type: "+follow_up+"; Task text: "+task.getTaskText()+"; Timestamp: "+current)
-						{
-							Object _arguments[] = { "[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+task.getTaskName()+"Task type: "+follow_up+"; Task text: "+task.getTaskText()+"; Timestamp: "+current };
-							Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-							__messages.add( message );
-						}
-					}
-				}
-}				else {{
-					if (isFollowup) {{
-						if (initialList.size()==number_of_initials||isLeader) {{
-							if (waitQueue.size()>0) {{
-								while (waitQueue.size()>0) {
-									Task currentTask = (Task)waitQueue.remove();
-									tasks.add(currentTask);
-									String follow_up_two = "";
-									if (currentTask.getFollowtype()) {follow_up_two = "Follow Up Task";
-}									else {follow_up_two = "Initial Task";
-}									Thread.sleep(200);
-									Date date = new Date();
-									Timestamp current = new Timestamp(date.getTime());
-									{
-										// standardOutput<-println("[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+currentTask.getTaskName()+"Task type: "+follow_up_two+"; Task text: "+currentTask.getTaskText()+"; Timestamp: "+current)
-										{
-											Object _arguments[] = { "[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+currentTask.getTaskName()+"Task type: "+follow_up_two+"; Task text: "+currentTask.getTaskText()+"; Timestamp: "+current };
-											Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-											__messages.add( message );
-										}
-									}
-								}
-							}
-}							tasks.add(task);
-							String follow_up = "";
-							if (!isFollowup) {follow_up = "Initial Task";
-}							else {follow_up = "Follow Up Task";
-}							Thread.sleep(200);
-							Date date_two = new Date();
-							Timestamp current_two = new Timestamp(date_two.getTime());
-							{
-								// standardOutput<-println("[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+task.getTaskName()+"Task type: "+follow_up+"; Task text: "+task.getTaskText()+"; Timestamp: "+current_two)
-								{
-									Object _arguments[] = { "[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+task.getTaskName()+"Task type: "+follow_up+"; Task text: "+task.getTaskText()+"; Timestamp: "+current_two };
-									Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-									__messages.add( message );
-								}
-							}
-						}
-}						else {{
-							waitQueue.add(task);
-						}
-}					}
-}					else {{
+					if (!fifo) {{
 						tasks.add(task);
-						initialList.add(task);
 						String follow_up = "";
 						if (!isFollowup) {follow_up = "Initial Task";
 }						else {follow_up = "Follow Up Task";
@@ -312,65 +425,205 @@ break;					}
 								__messages.add( message );
 							}
 						}
-						if (initialList.size()==number_of_initials||isLeader) {{
+					}
+}					else {					{
+						// handleFifoCode(task, taskName, text, isFollowup, false)
+						{
+							Object _arguments[] = { task, taskName, text, isFollowup, false };
+							Message message = new Message( self, self, "handleFifoCode", _arguments, null, null );
+							__messages.add( message );
+						}
+					}
+}				}
+}				else {{
+					if (isFollowup) {{
+						double number_users = (total_updates+number_of_initials)/number_of_initials;
+						double total_initials = number_users*0.1*number_of_initials;
+						if (initialList.size()==total_initials||(isLeader&&initialList.size()==(int)(total_initials-number_of_initials))) {{
 							if (waitQueue.size()>0) {{
 								while (waitQueue.size()>0) {
-									Task currentTask = (Task)waitQueue.remove();
-									tasks.add(currentTask);
-									String follow_up_two = "";
-									if (currentTask.getFollowtype()) {follow_up_two = "Follow Up Task";
-}									else {follow_up_two = "Initial Task";
-}									Thread.sleep(200);
-									Date date_two = new Date();
-									Timestamp current_two = new Timestamp(date_two.getTime());
+									String currentTaskMessage = (String)waitQueue.remove();
 									{
-										// standardOutput<-println("[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+currentTask.getTaskName()+"Task type: "+follow_up_two+"; Task text: "+currentTask.getTaskText()+"; Timestamp: "+current_two)
+										// handleFifoCode(task, taskName, currentTaskMessage, isFollowup, false)
 										{
-											Object _arguments[] = { "[Speaker Remote] "+myName+": "+"Add Message: "+"Task name: "+currentTask.getTaskName()+"Task type: "+follow_up_two+"; Task text: "+currentTask.getTaskText()+"; Timestamp: "+current_two };
-											Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+											Object _arguments[] = { task, taskName, currentTaskMessage, isFollowup, false };
+											Message message = new Message( self, self, "handleFifoCode", _arguments, null, null );
 											__messages.add( message );
 										}
 									}
 								}
 							}
-}						}
+}							{
+								// handleFifoCode(task, taskName, text, isFollowup, false)
+								{
+									Object _arguments[] = { task, taskName, text, isFollowup, false };
+									Message message = new Message( self, self, "handleFifoCode", _arguments, null, null );
+									__messages.add( message );
+								}
+							}
+						}
+}						else {{
+							waitQueue.add(text);
+						}
 }					}
+}					else {{
+						{
+							Token token_5_0 = new Token();
+							// handleFifoCode(task, taskName, text, isFollowup, true)
+							{
+								Object _arguments[] = { task, taskName, text, isFollowup, true };
+								Message message = new Message( self, self, "handleFifoCode", _arguments, null, token_5_0 );
+								__messages.add( message );
+							}
+							// handleNormalStall(task, taskName, number_of_initials, total_updates)
+							{
+								Object _arguments[] = { task, taskName, number_of_initials, total_updates };
+								Message message = new Message( self, self, "handleNormalStall", _arguments, token_5_0, null );
+								__messages.add( message );
+							}
+						}
+					}
 }				}
 }			}
 }		}
-		public void broadcastReceiveAdvanced(Task task, String taskName, String text, boolean update, int number_of_initials, int total_updates, boolean isFollowup) throws InterruptedException{
+		public void handleNormalStall(Task task, String taskName, int number_of_initials, int total_updates) {
+			double number_users = (total_updates+number_of_initials)/number_of_initials;
+			double total_initials = number_users*0.1*number_of_initials;
+			if (initialList.size()==total_initials||(isLeader&&initialList.size()==(int)(total_initials-number_of_initials))) {{
+				if (waitQueue.size()>0) {{
+					while (waitQueue.size()>0) {
+						String currentTaskMessage = (String)waitQueue.remove();
+						{
+							// handleFifoCode(task, taskName, currentTaskMessage, true, false)
+							{
+								Object _arguments[] = { task, taskName, currentTaskMessage, true, false };
+								Message message = new Message( self, self, "handleFifoCode", _arguments, null, null );
+								__messages.add( message );
+							}
+						}
+					}
+				}
+}			}
+}		}
+		public void broadcastReceiveAdvanced(Task task, String taskName, String text, boolean update, int number_of_initials, int total_updates, boolean isFollowup, boolean fifo) throws InterruptedException{
 			if (number_of_initials==0) {{
-				messageQueue.add(task);
-			}
+				if (!fifo) {{
+					messageQueue.add(task);
+				}
+}				else {{
+					{
+						// handleFifoAdvanced(task, taskName, text, isFollowup, false)
+						{
+							Object _arguments[] = { task, taskName, text, isFollowup, false };
+							Message message = new Message( self, self, "handleFifoAdvanced", _arguments, null, null );
+							__messages.add( message );
+						}
+					}
+				}
+}			}
 }			else {{
 				if (isFollowup) {{
-					if (initialList.size()==number_of_initials||isLeader) {{
-						if (waitQueue.size()>0) {{
-							while (waitQueue.size()>0) {
-								Task currentTask = (Task)waitQueue.remove();
-								messageQueue.add(currentTask);
-							}
+					{
+						Token token_4_0 = new Token();
+						// handleFollowCase(task, taskName, text, number_of_initials, total_updates)
+						{
+							Object _arguments[] = { task, taskName, text, number_of_initials, total_updates };
+							Message message = new Message( self, self, "handleFollowCase", _arguments, null, token_4_0 );
+							__messages.add( message );
 						}
-}						messageQueue.add(task);
+						// printQueueInfo(total_updates)
+						{
+							Object _arguments[] = { total_updates };
+							Message message = new Message( self, self, "printQueueInfo", _arguments, token_4_0, null );
+							__messages.add( message );
+						}
 					}
-}					else {{
-						waitQueue.add(task);
-					}
-}				}
+				}
 }				else {{
-					initialList.add(task);
-					messageQueue.add(task);
-					if (initialList.size()==number_of_initials||isLeader) {{
-						if (waitQueue.size()>0) {{
-							while (waitQueue.size()>0) {
-								Task currentTask = (Task)waitQueue.remove();
-								messageQueue.add(currentTask);
+					{
+						Token token_4_0 = new Token();
+						Token token_4_1 = new Token();
+						// handleFifoCodeAdvanced(task, taskName, text, isFollowup, true)
+						{
+							Object _arguments[] = { task, taskName, text, isFollowup, true };
+							Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, token_4_0 );
+							__messages.add( message );
+						}
+						// handleAdvancedStall(task, taskName, number_of_initials, total_updates)
+						{
+							Object _arguments[] = { task, taskName, number_of_initials, total_updates };
+							Message message = new Message( self, self, "handleAdvancedStall", _arguments, token_4_0, token_4_1 );
+							__messages.add( message );
+						}
+						// printQueueInfo(total_updates)
+						{
+							Object _arguments[] = { total_updates };
+							Message message = new Message( self, self, "printQueueInfo", _arguments, token_4_1, null );
+							__messages.add( message );
+						}
+					}
+				}
+}			}
+}		}
+		public void handleFollowCase(Task task, String taskName, String text, int number_of_initials, int total_updates) {
+			double number_users = (total_updates+number_of_initials)/number_of_initials;
+			double total_initials = number_users*0.1*number_of_initials;
+			if (initialList.size()==total_initials||(isLeader&&initialList.size()==(int)(total_initials-number_of_initials))) {{
+				if (waitQueue.size()>0) {{
+					while (waitQueue.size()>0) {
+						String currentTaskMessage = (String)waitQueue.remove();
+						{
+							// handleFifoCodeAdvanced(task, taskName, currentTaskMessage, true, false)
+							{
+								Object _arguments[] = { task, taskName, currentTaskMessage, true, false };
+								Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, null );
+								__messages.add( message );
 							}
 						}
-}					}
-}				}
+					}
+				}
+}				{
+					// handleFifoCodeAdvanced(task, taskName, text, true, false)
+					{
+						Object _arguments[] = { task, taskName, text, true, false };
+						Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+			}
+}			else {{
+				waitQueue.add(text);
+			}
+}		}
+		public void handleAdvancedStall(Task task, String taskName, int number_of_initials, int total_updates) {
+			double number_users = (total_updates+number_of_initials)/number_of_initials;
+			double total_initials = number_users*0.1*number_of_initials;
+			if (initialList.size()==total_initials||(isLeader&&initialList.size()==(int)(total_initials-number_of_initials))) {{
+				if (waitQueue.size()>0) {{
+					while (waitQueue.size()>0) {
+						String currentTaskMessage = (String)waitQueue.remove();
+						{
+							// handleFifoCodeAdvanced(task, taskName, currentTaskMessage, true, false)
+							{
+								Object _arguments[] = { task, taskName, currentTaskMessage, true, false };
+								Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, null );
+								__messages.add( message );
+							}
+						}
+					}
+				}
 }			}
-}			if (messageQueue.size()==total_updates) {{
+}		}
+		public void printQueueInfo(int total_updates) throws InterruptedException{
+			{
+				// standardOutput<-println(messageQueue.size())
+				{
+					Object _arguments[] = { messageQueue.size() };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			if (messageQueue.size()==total_updates) {{
 				while (messageQueue.size()>0) {
 					tasks.add(messageQueue.remove());
 					Thread.sleep(200);
@@ -429,9 +682,9 @@ break;					}
 					Message message = new Message( self, standardOutput, "println", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// server_ref<-addTaskToList(taskList, task, name, text, myName, total_updates, number_of_initials, isFollowup)
+				// server_ref<-addTaskToList(taskList, task, name, text, myName, total_updates, number_of_initials, isFollowup, fifo)
 				{
-					Object _arguments[] = { taskList, task, name, text, myName, total_updates, number_of_initials, isFollowup };
+					Object _arguments[] = { taskList, task, name, text, myName, total_updates, number_of_initials, isFollowup, fifo };
 					Message message = new Message( self, server_ref, "addTaskToList", _arguments, token_2_0, null );
 					__messages.add( message );
 				}
@@ -449,9 +702,9 @@ break;					}
 					Message message = new Message( self, standardOutput, "println", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
-				// server_ref<-updateTask(task, name, text, myName, total_updates, number_of_initials)
+				// server_ref<-updateTask(task, name, text, myName, total_updates, number_of_initials, true)
 				{
-					Object _arguments[] = { task, name, text, myName, total_updates, number_of_initials };
+					Object _arguments[] = { task, name, text, myName, total_updates, number_of_initials, true };
 					Message message = new Message( self, server_ref, "updateTask", _arguments, token_2_0, null );
 					__messages.add( message );
 				}

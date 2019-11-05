@@ -512,10 +512,17 @@ break;					}
 				}
 }				else {{
 					{
-						// handleFifoAdvanced(task, taskName, text, isFollowup, false)
+						Token token_4_0 = new Token();
+						// handleFifoCodeAdvanced(task, taskName, text, isFollowup, false)
 						{
 							Object _arguments[] = { task, taskName, text, isFollowup, false };
-							Message message = new Message( self, self, "handleFifoAdvanced", _arguments, null, null );
+							Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, token_4_0 );
+							__messages.add( message );
+						}
+						// printQueueInfo(total_updates)
+						{
+							Object _arguments[] = { total_updates };
+							Message message = new Message( self, self, "printQueueInfo", _arguments, token_4_0, null );
 							__messages.add( message );
 						}
 					}
@@ -569,24 +576,18 @@ break;					}
 			double number_users = (total_updates+number_of_initials)/number_of_initials;
 			double total_initials = number_users*0.1*number_of_initials;
 			if (initialList.size()==total_initials||(isLeader&&initialList.size()==(int)(total_initials-number_of_initials))) {{
-				if (waitQueue.size()>0) {{
-					while (waitQueue.size()>0) {
-						String currentTaskMessage = (String)waitQueue.remove();
-						{
-							// handleFifoCodeAdvanced(task, taskName, currentTaskMessage, true, false)
-							{
-								Object _arguments[] = { task, taskName, currentTaskMessage, true, false };
-								Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, null );
-								__messages.add( message );
-							}
-						}
-					}
-				}
-}				{
+				{
+					Token token_3_0 = new Token();
 					// handleFifoCodeAdvanced(task, taskName, text, true, false)
 					{
 						Object _arguments[] = { task, taskName, text, true, false };
-						Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, null );
+						Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, token_3_0 );
+						__messages.add( message );
+					}
+					// handleWait(task, taskName)
+					{
+						Object _arguments[] = { task, taskName };
+						Message message = new Message( self, self, "handleWait", _arguments, token_3_0, null );
 						__messages.add( message );
 					}
 				}
@@ -595,24 +596,34 @@ break;					}
 				waitQueue.add(text);
 			}
 }		}
+		public void handleWait(Task task, String taskName) {
+			if (waitQueue.size()>0) {{
+				while (waitQueue.size()>0) {
+					String currentTaskMessage = (String)waitQueue.remove();
+					{
+						// handleFifoCodeAdvanced(task, taskName, currentTaskMessage, true, false)
+						{
+							Object _arguments[] = { task, taskName, currentTaskMessage, true, false };
+							Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, null );
+							__messages.add( message );
+						}
+					}
+				}
+			}
+}		}
 		public void handleAdvancedStall(Task task, String taskName, int number_of_initials, int total_updates) {
 			double number_users = (total_updates+number_of_initials)/number_of_initials;
 			double total_initials = number_users*0.1*number_of_initials;
 			if (initialList.size()==total_initials||(isLeader&&initialList.size()==(int)(total_initials-number_of_initials))) {{
-				if (waitQueue.size()>0) {{
-					while (waitQueue.size()>0) {
-						String currentTaskMessage = (String)waitQueue.remove();
-						{
-							// handleFifoCodeAdvanced(task, taskName, currentTaskMessage, true, false)
-							{
-								Object _arguments[] = { task, taskName, currentTaskMessage, true, false };
-								Message message = new Message( self, self, "handleFifoCodeAdvanced", _arguments, null, null );
-								__messages.add( message );
-							}
-						}
+				{
+					// handleWait(task, taskName)
+					{
+						Object _arguments[] = { task, taskName };
+						Message message = new Message( self, self, "handleWait", _arguments, null, null );
+						__messages.add( message );
 					}
 				}
-}			}
+			}
 }		}
 		public void printQueueInfo(int total_updates) throws InterruptedException{
 			{
@@ -639,14 +650,11 @@ break;					}
 					}
 				}
 				for (int i = 0; i<tasks.size(); i++){
-					String follow_up = "";
-					Task currentTask = (Task)tasks.get(i);
-					if (currentTask.getFollowtype()) {follow_up = "Follow Up Task";
-}					else {follow_up = "Initial Task";
-}					{
-						// standardOutput<-println("Task type: "+follow_up+"; Task text: "+currentTask.getTaskText())
+					String currentTask = (String)tasks.get(i);
+					{
+						// standardOutput<-println("Task text: "+currentTask)
 						{
-							Object _arguments[] = { "Task type: "+follow_up+"; Task text: "+currentTask.getTaskText() };
+							Object _arguments[] = { "Task text: "+currentTask };
 							Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 							__messages.add( message );
 						}

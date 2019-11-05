@@ -1,46 +1,16 @@
 User started with uan: uan://:3030\localhost:3030id5
 Messaging server
 Finished registering
-[Speaker Local] username4: Add message: Task name: u4t1Task type: Follow Up Task; Task text: User 4: Follow Up Poll 2.; Timestamp: 2019-11-03 03:49:56.898
-[Speaker Local] username4: Add message: Task name: u4t2Task type: Follow Up Task; Task text: User 4: Follow Up Poll 1.; Timestamp: 2019-11-03 03:49:57.458
-[Speaker Local] username4: Add message: Task name: u4t3Task type: Follow Up Task; Task text: User 4: Follow Up Poll 4.; Timestamp: 2019-11-03 03:49:58.08
-[Speaker Local] username4: Add message: Task name: u4t4Task type: Follow Up Task; Task text: User 4: Follow Up Poll 6.; Timestamp: 2019-11-03 03:49:58.585
-[Speaker Local] username4: Add message: Task name: u4t5Task type: Follow Up Task; Task text: User 4: Follow Up Poll 5.; Timestamp: 2019-11-03 03:49:58.718
-[Speaker Local] username4: Add message: Task name: u4t6Task type: Follow Up Task; Task text: User 4: Follow Up Poll 3.; Timestamp: 2019-11-03 03:49:58.921
-[Speaker Local] username4: Add message: Task name: u4t7Task type: Follow Up Task; Task text: User 4: Follow Up Poll 10.; Timestamp: 2019-11-03 03:49:58.924
-[Speaker Local] username4: Add message: Task name: u4t8Task type: Follow Up Task; Task text: User 4: Follow Up Poll 9.; Timestamp: 2019-11-03 03:49:58.931
-[Speaker Local] username4: Add message: Task name: u4t9Task type: Follow Up Task; Task text: User 4: Follow Up Poll 7.; Timestamp: 2019-11-03 03:49:59.137
-[Speaker Local] username4: Add message: Task name: u4t10Task type: Follow Up Task; Task text: User 4: Follow Up Poll 8.; Timestamp: 2019-11-03 03:49:59.14
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
+[Speaker Local] username4: Add message: Task name: u4t1Task type: Follow Up Task; Task text: User 4: Follow Up Poll 2.; Timestamp: 2019-11-04 22:26:12.948
+[Speaker Local] username4: Add message: Task name: u4t2Task type: Follow Up Task; Task text: User 4: Follow Up Poll 9.; Timestamp: 2019-11-04 22:26:13.558
+[Speaker Local] username4: Add message: Task name: u4t3Task type: Follow Up Task; Task text: User 4: Follow Up Poll 7.; Timestamp: 2019-11-04 22:26:13.563
+[Speaker Local] username4: Add message: Task name: u4t4Task type: Follow Up Task; Task text: User 4: Follow Up Poll 8.; Timestamp: 2019-11-04 22:26:13.568
+[Speaker Local] username4: Add message: Task name: u4t5Task type: Follow Up Task; Task text: User 4: Follow Up Poll 10.; Timestamp: 2019-11-04 22:26:14.506
+[Speaker Local] username4: Add message: Task name: u4t6Task type: Follow Up Task; Task text: User 4: Follow Up Poll 1.; Timestamp: 2019-11-04 22:26:14.51
+[Speaker Local] username4: Add message: Task name: u4t7Task type: Follow Up Task; Task text: User 4: Follow Up Poll 4.; Timestamp: 2019-11-04 22:26:14.513
+[Speaker Local] username4: Add message: Task name: u4t8Task type: Follow Up Task; Task text: User 4: Follow Up Poll 6.; Timestamp: 2019-11-04 22:26:14.516
+[Speaker Local] username4: Add message: Task name: u4t9Task type: Follow Up Task; Task text: User 4: Follow Up Poll 5.; Timestamp: 2019-11-04 22:26:14.518
+[Speaker Local] username4: Add message: Task name: u4t10Task type: Follow Up Task; Task text: User 4: Follow Up Poll 3.; Timestamp: 2019-11-04 22:26:14.52
 0
 0
 0
@@ -67,36 +37,158 @@ Finished registering
 0
 2
 2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-2
-8
-8
-8
-8
-8
-70
-70
-70
-80
+3
+3
+6
+21
+21
+21
+21
+21
+21
+21
+21
+21
+21
+21
+23
+23
+23
+23
+23
+23
+25
+25
+25
+25
+25
+25
+35
+37
+37
+37
+37
+37
+37
+37
+38
+38
+38
+38
+44
+44
+44
+45
+47
+47
+48
+48
+52
+61
+61
+61
+62
+62
+71
+71
+74
+75
+79
+81
 82
-83
-84
-84
+82
+82
+86
+88
+90
+Overall Timestamp: 2019-11-04 22:26:46.346
+Task text: User 1: Initial Poll 1.
+Task text: User 1: Initial Poll 2.
+Task text: User 1: Initial Poll 3.
+Task text: User 1: Initial Poll 4.
+Task text: User 1: Initial Poll 5.
+Task text: User 1: Initial Poll 6.
+Task text: User 1: Initial Poll 7.
+Task text: User 1: Initial Poll 8.
+Task text: User 1: Initial Poll 9.
+Task text: User 1: Initial Poll 10.
+Task text: User 2: Follow Up Poll 1.
+Task text: User 2: Follow Up Poll 2.
+Task text: User 2: Follow Up Poll 3.
+Task text: User 2: Follow Up Poll 4.
+Task text: User 2: Follow Up Poll 5.
+Task text: User 2: Follow Up Poll 6.
+Task text: User 2: Follow Up Poll 7.
+Task text: User 2: Follow Up Poll 8.
+Task text: User 2: Follow Up Poll 9.
+Task text: User 2: Follow Up Poll 10.
+Task text: User 3: Follow Up Poll 1.
+Task text: User 10: Follow Up Poll 1.
+Task text: User 10: Follow Up Poll 2.
+Task text: User 9: Follow Up Poll 1.
+Task text: User 9: Follow Up Poll 2.
+Task text: User 8: Follow Up Poll 1.
+Task text: User 8: Follow Up Poll 2.
+Task text: User 8: Follow Up Poll 3.
+Task text: User 8: Follow Up Poll 4.
+Task text: User 8: Follow Up Poll 5.
+Task text: User 8: Follow Up Poll 6.
+Task text: User 8: Follow Up Poll 7.
+Task text: User 8: Follow Up Poll 8.
+Task text: User 8: Follow Up Poll 9.
+Task text: User 8: Follow Up Poll 10.
+Task text: User 10: Follow Up Poll 3.
+Task text: User 10: Follow Up Poll 4.
+Task text: User 5: Follow Up Poll 1.
+Task text: User 10: Follow Up Poll 5.
+Task text: User 10: Follow Up Poll 6.
+Task text: User 10: Follow Up Poll 7.
+Task text: User 10: Follow Up Poll 8.
+Task text: User 10: Follow Up Poll 9.
+Task text: User 10: Follow Up Poll 10.
+Task text: User 9: Follow Up Poll 3.
+Task text: User 6: Follow Up Poll 1.
+Task text: User 6: Follow Up Poll 2.
+Task text: User 7: Follow Up Poll 1.
+Task text: User 7: Follow Up Poll 2.
+Task text: User 7: Follow Up Poll 3.
+Task text: User 7: Follow Up Poll 4.
+Task text: User 7: Follow Up Poll 5.
+Task text: User 5: Follow Up Poll 2.
+Task text: User 5: Follow Up Poll 3.
+Task text: User 5: Follow Up Poll 4.
+Task text: User 5: Follow Up Poll 5.
+Task text: User 5: Follow Up Poll 6.
+Task text: User 5: Follow Up Poll 7.
+Task text: User 5: Follow Up Poll 8.
+Task text: User 5: Follow Up Poll 9.
+Task text: User 5: Follow Up Poll 10.
+Task text: User 7: Follow Up Poll 6.
+Task text: User 3: Follow Up Poll 2.
+Task text: User 3: Follow Up Poll 3.
+Task text: User 3: Follow Up Poll 4.
+Task text: User 3: Follow Up Poll 5.
+Task text: User 3: Follow Up Poll 6.
+Task text: User 3: Follow Up Poll 7.
+Task text: User 3: Follow Up Poll 8.
+Task text: User 3: Follow Up Poll 9.
+Task text: User 3: Follow Up Poll 10.
+Task text: User 7: Follow Up Poll 7.
+Task text: User 7: Follow Up Poll 8.
+Task text: User 7: Follow Up Poll 9.
+Task text: User 7: Follow Up Poll 10.
+Task text: User 9: Follow Up Poll 4.
+Task text: User 9: Follow Up Poll 5.
+Task text: User 9: Follow Up Poll 6.
+Task text: User 9: Follow Up Poll 7.
+Task text: User 9: Follow Up Poll 8.
+Task text: User 9: Follow Up Poll 9.
+Task text: User 9: Follow Up Poll 10.
+Task text: User 6: Follow Up Poll 3.
+Task text: User 6: Follow Up Poll 4.
+Task text: User 6: Follow Up Poll 5.
+Task text: User 6: Follow Up Poll 6.
+Task text: User 6: Follow Up Poll 7.
+Task text: User 6: Follow Up Poll 8.
+Task text: User 6: Follow Up Poll 9.
+Task text: User 6: Follow Up Poll 10.

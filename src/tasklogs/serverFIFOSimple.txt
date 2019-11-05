@@ -1,11 +1,11 @@
 Server started
-Registering User username5user <todo.User:uan://:3030\localhost:3030id6, rmsp://127.0.1.1:54510/UAL/1572708540530/1> 
-Registering User username4user <todo.User:uan://:3030\localhost:3030id5, rmsp://127.0.1.1:54509/UAL/1572708540520/1> 
-Registering User username9user <todo.User:uan://:3030\localhost:3030id10, rmsp://127.0.1.1:54527/UAL/1572708540891/1> 
-Registering User username7user <todo.User:uan://:3030\localhost:3030id8, rmsp://127.0.1.1:54521/UAL/1572708540821/1> 
-Registering User username10user <todo.User:uan://:3030\localhost:3030id11, rmsp://127.0.1.1:54522/UAL/1572708540796/1> 
-Registering User username2user <todo.User:uan://:3030\localhost:3030id3, rmsp://127.0.1.1:54515/UAL/1572708540598/1> 
-Registering User username6user <todo.User:uan://:3030\localhost:3030id7, rmsp://127.0.1.1:54508/UAL/1572708540483/1> 
-Registering User username1user <todo.User:uan://:3030\localhost:3030id2, rmsp://127.0.1.1:54511/UAL/1572708540550/1> 
-Registering User username8user <todo.User:uan://:3030\localhost:3030id9, rmsp://127.0.1.1:54513/UAL/1572708540650/1> 
-Registering User username3user <todo.User:uan://:3030\localhost:3030id4, rmsp://127.0.1.1:54514/UAL/1572708540661/1> 
+Registering User username2user <todo.User:uan://:3030\localhost:3030id3, rmsp://127.0.1.1:56404/UAL/1572883066831/1> 
+Registering User username6user <todo.User:uan://:3030\localhost:3030id7, rmsp://127.0.1.1:56405/UAL/1572883066918/1> 
+Registering User username4user <todo.User:uan://:3030\localhost:3030id5, rmsp://127.0.1.1:56408/UAL/1572883067104/1> 
+Registering User username5user <todo.User:uan://:3030\localhost:3030id6, rmsp://127.0.1.1:56407/UAL/1572883067053/1> 
+Registering User username3user <todo.User:uan://:3030\localhost:3030id4, rmsp://127.0.1.1:56402/UAL/1572883066625/1> 
+Registering User username7user <todo.User:uan://:3030\localhost:3030id8, rmsp://127.0.1.1:56409/UAL/1572883067103/1> 
+Registering User username8user <todo.User:uan://:3030\localhost:3030id9, rmsp://127.0.1.1:56410/UAL/1572883067174/1> 
+Registering User username9user <todo.User:uan://:3030\localhost:3030id10, rmsp://127.0.1.1:56416/UAL/1572883067397/1> 
+Registering User username10user <todo.User:uan://:3030\localhost:3030id11, rmsp://127.0.1.1:56412/UAL/1572883067184/1> 
+Registering User username1user <todo.User:uan://:3030\localhost:3030id2, rmsp://127.0.1.1:56406/UAL/1572883066973/1> 

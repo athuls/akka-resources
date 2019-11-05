@@ -1,26 +1,17 @@
 Received speaker: uan:\localhost:3030id7 to register with server uan:\localhost:3030id1
 Speaker started with uan: uan://:3030\localhost:3030id7
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 5.; Timestamp: 2019-10-31 18:33:23.827
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 1.; Timestamp: 2019-10-31 18:33:24.182
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 2.; Timestamp: 2019-10-31 18:33:24.184
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 3.; Timestamp: 2019-10-31 18:33:24.185
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 10.; Timestamp: 2019-10-31 18:33:24.186
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 8.; Timestamp: 2019-10-31 18:33:24.187
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 9.; Timestamp: 2019-10-31 18:33:24.188
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 4.; Timestamp: 2019-10-31 18:33:24.189
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 6.; Timestamp: 2019-10-31 18:33:24.19
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 7.; Timestamp: 2019-10-31 18:33:24.191
-Overall Timestamp: 2019-10-31 18:33:46.743
+[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 10.; Timestamp: 2019-11-04 15:17:02.978
+[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 9.; Timestamp: 2019-11-04 15:17:03.445
+[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 5.; Timestamp: 2019-11-04 15:17:03.447
+[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 8.; Timestamp: 2019-11-04 15:17:03.448
+[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 4.; Timestamp: 2019-11-04 15:17:03.449
+[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 2.; Timestamp: 2019-11-04 15:17:03.45
+[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 7.; Timestamp: 2019-11-04 15:17:03.451
+[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 3.; Timestamp: 2019-11-04 15:17:03.453
+[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 1.; Timestamp: 2019-11-04 15:17:03.454
+[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Poll response 6.; Timestamp: 2019-11-04 15:17:03.455
+Overall Timestamp: 2019-11-04 15:17:28.048
 User 2: Poll question 1.
-User 2: Poll question 2.
-User 2: Poll question 3.
-User 2: Poll question 4.
-User 2: Poll question 5.
-User 2: Poll question 6.
-User 2: Poll question 7.
-User 2: Poll question 8.
-User 2: Poll question 9.
-User 2: Poll question 10.
 User 1: Poll question 1.
 User 1: Poll question 2.
 User 1: Poll question 3.
@@ -31,37 +22,19 @@ User 1: Poll question 7.
 User 1: Poll question 8.
 User 1: Poll question 9.
 User 1: Poll question 10.
-User 8: Poll response 1.
-User 8: Poll response 2.
-User 8: Poll response 3.
-User 8: Poll response 4.
-User 8: Poll response 5.
-User 8: Poll response 6.
-User 8: Poll response 7.
-User 8: Poll response 8.
-User 8: Poll response 9.
-User 8: Poll response 10.
-User 5: Poll response 1.
-User 5: Poll response 2.
-User 5: Poll response 3.
-User 5: Poll response 4.
-User 5: Poll response 5.
-User 5: Poll response 6.
-User 5: Poll response 7.
-User 5: Poll response 8.
-User 5: Poll response 9.
-User 5: Poll response 10.
-User 9: Poll response 1.
+User 2: Poll question 2.
+User 2: Poll question 3.
+User 2: Poll question 4.
+User 2: Poll question 5.
+User 2: Poll question 6.
+User 2: Poll question 7.
+User 2: Poll question 8.
+User 2: Poll question 9.
+User 2: Poll question 10.
+User 7: Poll response 1.
 User 3: Poll response 1.
 User 3: Poll response 2.
 User 3: Poll response 3.
-User 3: Poll response 4.
-User 3: Poll response 5.
-User 3: Poll response 6.
-User 3: Poll response 7.
-User 3: Poll response 8.
-User 3: Poll response 9.
-User 3: Poll response 10.
 User 4: Poll response 1.
 User 4: Poll response 2.
 User 4: Poll response 3.
@@ -72,16 +45,7 @@ User 4: Poll response 7.
 User 4: Poll response 8.
 User 4: Poll response 9.
 User 4: Poll response 10.
-User 9: Poll response 2.
-User 9: Poll response 3.
 User 10: Poll response 1.
-User 9: Poll response 4.
-User 9: Poll response 5.
-User 9: Poll response 6.
-User 9: Poll response 7.
-User 9: Poll response 8.
-User 9: Poll response 9.
-User 9: Poll response 10.
 User 10: Poll response 2.
 User 10: Poll response 3.
 User 10: Poll response 4.
@@ -91,7 +55,7 @@ User 10: Poll response 7.
 User 10: Poll response 8.
 User 10: Poll response 9.
 User 10: Poll response 10.
-User 7: Poll response 1.
+User 9: Poll response 1.
 User 7: Poll response 2.
 User 7: Poll response 3.
 User 7: Poll response 4.
@@ -101,3 +65,39 @@ User 7: Poll response 7.
 User 7: Poll response 8.
 User 7: Poll response 9.
 User 7: Poll response 10.
+User 3: Poll response 4.
+User 3: Poll response 5.
+User 3: Poll response 6.
+User 3: Poll response 7.
+User 3: Poll response 8.
+User 3: Poll response 9.
+User 3: Poll response 10.
+User 8: Poll response 1.
+User 9: Poll response 2.
+User 9: Poll response 3.
+User 9: Poll response 4.
+User 8: Poll response 2.
+User 8: Poll response 3.
+User 8: Poll response 4.
+User 8: Poll response 5.
+User 8: Poll response 6.
+User 8: Poll response 7.
+User 8: Poll response 8.
+User 8: Poll response 9.
+User 8: Poll response 10.
+User 9: Poll response 5.
+User 9: Poll response 6.
+User 9: Poll response 7.
+User 9: Poll response 8.
+User 9: Poll response 9.
+User 9: Poll response 10.
+User 5: Poll response 1.
+User 5: Poll response 2.
+User 5: Poll response 3.
+User 5: Poll response 4.
+User 5: Poll response 5.
+User 5: Poll response 6.
+User 5: Poll response 7.
+User 5: Poll response 8.
+User 5: Poll response 9.
+User 5: Poll response 10.

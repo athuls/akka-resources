@@ -13,7 +13,7 @@ java -cp libs/salsa1.1.5.jar:. -Duan=uan:\\localhost:3030\id11 todo.User uan:\\l
 java -cp libs/salsa1.1.5.jar:. -Duan=uan:\\localhost:3030\id12 todo.TaskList > ./taskLogs/tasklistFIFOSimple.txt 2>&1 &
 java -cp libs/salsa1.1.5.jar:. todo.FIFOAdvancedTodo uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 uan:\\localhost:3030\id5 uan:\\localhost:3030\id6 uan:\\localhost:3030\id7 uan:\\localhost:3030\id8 uan:\\localhost:3030\id9 uan:\\localhost:3030\id10 uan:\\localhost:3030\id11 uan:\\localhost:3030\id12 > ./taskLogs/simpleFIFOTodo.txt 2>&1 &
 
-sleep 30s
+sleep 40s
 
 python ParseFIFOTodo.py >> taskLogs/FIFOTaskResults.txt
 

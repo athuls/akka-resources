@@ -348,7 +348,8 @@ behavior User implements ActorService
 			}
 			else
 			{
-				handleFifoAdvanced(task, taskName, text, isFollowup, false);
+				handleFifoCodeAdvanced(task, taskName, text, isFollowup, false) @
+				printQueueInfo(total_updates);
 			}
 		}
 		else
@@ -373,19 +374,25 @@ behavior User implements ActorService
 		double total_initials = number_users * 0.1 * number_of_initials;
 		if(initialList.size() == total_initials || (isLeader && initialList.size() == (int)(total_initials - number_of_initials)))
 		{
-			if(waitQueue.size() > 0)
-			{
-				while(waitQueue.size() > 0)
-				{
-					String currentTaskMessage = (String)waitQueue.remove();
-					handleFifoCodeAdvanced(task, taskName, currentTaskMessage, true, false);
-				}
-			}
-			handleFifoCodeAdvanced(task, taskName, text, true, false);
+			
+			handleFifoCodeAdvanced(task, taskName, text, true, false) @
+			handleWait(task, taskName);
 		}
 		else
 		{
 			waitQueue.add(text);
+		}
+	}
+
+	void handleWait(Task task, String taskName)
+	{
+		if(waitQueue.size() > 0)
+		{
+			while(waitQueue.size() > 0)
+			{
+				String currentTaskMessage = (String)waitQueue.remove();
+				handleFifoCodeAdvanced(task, taskName, currentTaskMessage, true, false);
+			}
 		}
 	}
 
@@ -395,14 +402,7 @@ behavior User implements ActorService
 		double total_initials = number_users * 0.1 * number_of_initials;
 		if(initialList.size() == total_initials || (isLeader && initialList.size() == (int)(total_initials - number_of_initials)))
 		{
-			if(waitQueue.size() > 0)
-			{
-				while(waitQueue.size() > 0)
-				{
-					String currentTaskMessage = (String) waitQueue.remove();
-					handleFifoCodeAdvanced(task, taskName, currentTaskMessage, true, false);
-				}
-			}
+			handleWait(task, taskName);
 		}
 	}
 
@@ -420,13 +420,8 @@ behavior User implements ActorService
 			standardOutput<-println("Overall Timestamp: " + current);
 			for(int i = 0; i < tasks.size(); i++)
 			{
-				String follow_up = "";
-				Task currentTask = (Task)tasks.get(i);
-				if(currentTask.getFollowtype())
-					follow_up = "Follow Up Task";
-				else
-					follow_up = "Initial Task";
-				standardOutput<-println("Task type: " + follow_up + "; Task text: " + currentTask.getTaskText());
+				String currentTask = (String)tasks.get(i);
+				standardOutput<-println("Task text: " + currentTask);
 			}
 		}
 	}

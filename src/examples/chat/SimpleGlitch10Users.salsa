@@ -1,0 +1,99 @@
+module examples.chat;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+import java.util.*;
+
+//Three speakers chat in a chat session initialized by the actor Chat
+
+behavior SimpleGlitch10Users
+{
+	void chatSession(Speaker s1, Speaker s2, Speaker s3, Speaker s4, Speaker s5, Speaker s6, Speaker s7, Speaker s8, Speaker s9, Speaker s10, 
+	int num_messages) 
+	{
+		ArrayList values = new ArrayList();
+		s1<-setQuestionIdentity();
+		s2<-setQuestionIdentity();
+		for(int i = 1; i <= num_messages; i++)
+			values.add(i);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s1<-broadcastSend("User 1: Poll Question " + values.get(i - 1) + ".", false, true, false, num_messages, 9 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s2<-broadcastSend("User 2: Poll Question " + values.get(i - 1) + ".", false, true, false, num_messages, 9 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s3<-broadcastSend("User 3: Poll Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 9 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s4<-broadcastSend("User 4: Poll Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 9 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s5<-broadcastSend("User 5: Poll Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 9 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s6<-broadcastSend("User 6: Poll Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 9 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s7<-broadcastSend("User 7: Poll Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 9 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s8<-broadcastSend("User 8: Poll Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 9 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s9<-broadcastSend("User 9: Poll Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 9 * num_messages, true);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s10<-broadcastSend("User 10: Poll Answer " + values.get(i - 1) + ".", false, false, true, num_messages, 9 * num_messages, true);
+	}
+
+	void reply(String replyMsg) 
+	{
+		standardOutput<-println(replyMsg);
+	}
+	
+	void act(String args[])
+	{
+		try
+		{
+			Speaker speaker1 = (Speaker) Speaker.getReferenceByName(args[0]);
+			Speaker speaker2 = (Speaker) Speaker.getReferenceByName(args[1]);
+			Speaker speaker3 = (Speaker) Speaker.getReferenceByName(args[2]);
+			Speaker speaker4 = (Speaker) Speaker.getReferenceByName(args[3]);
+			Speaker speaker5 = (Speaker) Speaker.getReferenceByName(args[4]);
+			Speaker speaker6 = (Speaker) Speaker.getReferenceByName(args[5]);
+			Speaker speaker7 = (Speaker) Speaker.getReferenceByName(args[6]);
+			Speaker speaker8 = (Speaker) Speaker.getReferenceByName(args[7]);
+			Speaker speaker9 = (Speaker) Speaker.getReferenceByName(args[8]);
+			Speaker speaker10 = (Speaker) Speaker.getReferenceByName(args[9]);
+			int num_messages = Integer.parseInt(args[10]);
+			Date first = new Date();
+			Timestamp start = new Timestamp(first.getTime());
+			standardOutput <- println("Starting time: " + start);
+			Instant begin = Instant.now();
+			chatSession(speaker1, speaker2, speaker3, speaker4, speaker5, speaker6, speaker7, speaker8, speaker9, speaker10, 
+			num_messages) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
+		}
+		catch (Exception e)
+		{
+			standardOutput <- println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>");
+			return;
+		}
+	}
+
+	void trackEndingTime(Instant begin)
+	{
+		// keep track of ending time here
+		Date second = new Date();
+		Timestamp end = new Timestamp(second.getTime());
+
+		// calculate time elapsed
+		Instant endTime = Instant.now();
+		Duration timeDifference = Duration.between(begin, endTime);
+		long timeTaken = timeDifference.toMillis();
+		standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+		standardOutput<-println("Ending time: " + end);
+	}
+}

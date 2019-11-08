@@ -94,7 +94,7 @@ behavior Speaker implements ActorService
 				else
 				{
 					messages.add(msg);
-					Thread.sleep(200);
+					Thread.sleep(20);
 
 					// next mark the timestamp
 					Date date_four = new Date();
@@ -149,7 +149,7 @@ behavior Speaker implements ActorService
 		{
 			currentAdded.add(current_value);
 			messages.add(msg);
-			Thread.sleep(200);
+			Thread.sleep(20);
 			
 			// next mark the timestamp
 			Date date_four = new Date();
@@ -166,7 +166,7 @@ behavior Speaker implements ActorService
 					String current_message = (String)currentFifoMessages.get(i);
 					currentAdded.add(current_value);
 					messages.add(current_message);
-					Thread.sleep(200);
+					Thread.sleep(20);
 					Date date_five = new Date();
 					Timestamp current_five = new Timestamp(date_five.getTime());
 					if(isQuestion)
@@ -393,7 +393,7 @@ behavior Speaker implements ActorService
 			while(messageQueue.size() > 0)
 			{
 				messages.add(messageQueue.remove());
-				Thread.sleep(200);
+				Thread.sleep(20);
 			}
 			Date date = new Date();
 			Timestamp current = new Timestamp(date.getTime());

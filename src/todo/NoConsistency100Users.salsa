@@ -1,0 +1,480 @@
+module todo;
+//Three speakers chat in a chat session initialized by the actor Chat
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+import java.util.*;
+
+behavior NoConsistency100Users
+{
+	void chatSession(User s1, User s2, User s3, User s4, User s5, User s6, User s7, User s8, User s9, User s10,
+	User s11, User s12, User s13, User s14, User s15, User s16, User s17, User s18, User s19, User s20,
+	User s21, User s22, User s23, User s24, User s25, User s26, User s27, User s28, User s29, User s30,
+	User s31, User s32, User s33, User s34, User s35, User s36, User s37, User s38, User s39, User s40,
+	User s41, User s42, User s43, User s44, User s45, User s46, User s47, User s48, User s49, User s50,
+	User s51, User s52, User s53, User s54, User s55, User s56, User s57, User s58, User s59, User s60,
+	User s61, User s62, User s63, User s64, User s65, User s66, User s67, User s68, User s69, User s70,
+	User s71, User s72, User s73, User s74, User s75, User s76, User s77, User s78, User s79, User s80,
+	User s81, User s82, User s83, User s84, User s85, User s86, User s87, User s88, User s89, User s90,
+	User s91, User s92, User s93, User s94, User s95, User s96, User s97, User s98, User s99, User s100, 
+	TaskList taskList, int num_messages)
+	{
+		ArrayList values = new ArrayList();
+		for(int i = 1; i <= num_messages; i++)
+			values.add(i);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s1<-addTaskToList(taskList, "User 1: Random Task " + values.get(i - 1) + ".", "username1", "u1t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s2<-addTaskToList(taskList, "User 2: Random Task " + values.get(i - 1) + ".", "username2", "u2t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s3<-addTaskToList(taskList, "User 3: Random Task " + values.get(i - 1) + ".", "username3", "u3t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s4<-addTaskToList(taskList, "User 4: Random Task " + values.get(i - 1) + ".", "username4", "u4t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s5<-addTaskToList(taskList, "User 5: Random Task " + values.get(i - 1) + ".", "username5", "u5t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s6<-addTaskToList(taskList, "User 6: Random Task " + values.get(i - 1) + ".", "username6", "u6t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s7<-addTaskToList(taskList, "User 7: Random Task " + values.get(i - 1) + ".", "username7", "u7t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s8<-addTaskToList(taskList, "User 8: Random Task " + values.get(i - 1) + ".", "username8", "u8t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s9<-addTaskToList(taskList, "User 9: Random Task " + values.get(i - 1) + ".", "username9", "u9t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s10<-addTaskToList(taskList, "User 10: Random Task " + values.get(i - 1) + ".", "username10", "u10t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s11<-addTaskToList(taskList, "User 11: Random Task " + values.get(i - 1) + ".", "username11", "u11t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s12<-addTaskToList(taskList, "User 12: Random Task " + values.get(i - 1) + ".", "username12", "u12t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s13<-addTaskToList(taskList, "User 13: Random Task " + values.get(i - 1) + ".", "username13", "u13t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s14<-addTaskToList(taskList, "User 14: Random Task " + values.get(i - 1) + ".", "username14", "u14t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s15<-addTaskToList(taskList, "User 15: Random Task " + values.get(i - 1) + ".", "username15", "u15t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s16<-addTaskToList(taskList, "User 16: Random Task " + values.get(i - 1) + ".", "username16", "u16t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s17<-addTaskToList(taskList, "User 17: Random Task " + values.get(i - 1) + ".", "username17", "u17t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s18<-addTaskToList(taskList, "User 18: Random Task " + values.get(i - 1) + ".", "username18", "u18t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s19<-addTaskToList(taskList, "User 19: Random Task " + values.get(i - 1) + ".", "username19", "u19t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s20<-addTaskToList(taskList, "User 20: Random Task " + values.get(i - 1) + ".", "username20", "u20t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s21<-addTaskToList(taskList, "User 21: Random Task " + values.get(i - 1) + ".", "username21", "u21t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s22<-addTaskToList(taskList, "User 22: Random Task " + values.get(i - 1) + ".", "username22", "u22t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s23<-addTaskToList(taskList, "User 23: Random Task " + values.get(i - 1) + ".", "username23", "u23t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s24<-addTaskToList(taskList, "User 24: Random Task " + values.get(i - 1) + ".", "username24", "u24t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s25<-addTaskToList(taskList, "User 25: Random Task " + values.get(i - 1) + ".", "username25", "u25t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s26<-addTaskToList(taskList, "User 26: Random Task " + values.get(i - 1) + ".", "username26", "u26t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s27<-addTaskToList(taskList, "User 27: Random Task " + values.get(i - 1) + ".", "username27", "u27t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s28<-addTaskToList(taskList, "User 28: Random Task " + values.get(i - 1) + ".", "username28", "u28t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s29<-addTaskToList(taskList, "User 29: Random Task " + values.get(i - 1) + ".", "username29", "u29t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s30<-addTaskToList(taskList, "User 30: Random Task " + values.get(i - 1) + ".", "username30", "u30t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s31<-addTaskToList(taskList, "User 31: Random Task " + values.get(i - 1) + ".", "username31", "u31t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s32<-addTaskToList(taskList, "User 32: Random Task " + values.get(i - 1) + ".", "username32", "u32t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s33<-addTaskToList(taskList, "User 33: Random Task " + values.get(i - 1) + ".", "username33", "u33t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s34<-addTaskToList(taskList, "User 34: Random Task " + values.get(i - 1) + ".", "username34", "u34t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s35<-addTaskToList(taskList, "User 35: Random Task " + values.get(i - 1) + ".", "username35", "u35t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s36<-addTaskToList(taskList, "User 36: Random Task " + values.get(i - 1) + ".", "username36", "u36t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s37<-addTaskToList(taskList, "User 37: Random Task " + values.get(i - 1) + ".", "username37", "u37t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s38<-addTaskToList(taskList, "User 38: Random Task " + values.get(i - 1) + ".", "username38", "u38t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s39<-addTaskToList(taskList, "User 39: Random Task " + values.get(i - 1) + ".", "username39", "u39t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s40<-addTaskToList(taskList, "User 40: Random Task " + values.get(i - 1) + ".", "username40", "u40t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s41<-addTaskToList(taskList, "User 41: Random Task " + values.get(i - 1) + ".", "username41", "u41t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s42<-addTaskToList(taskList, "User 42: Random Task " + values.get(i - 1) + ".", "username42", "u42t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s43<-addTaskToList(taskList, "User 43: Random Task " + values.get(i - 1) + ".", "username43", "u43t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s44<-addTaskToList(taskList, "User 44: Random Task " + values.get(i - 1) + ".", "username44", "u44t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s45<-addTaskToList(taskList, "User 45: Random Task " + values.get(i - 1) + ".", "username45", "u45t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s46<-addTaskToList(taskList, "User 46: Random Task " + values.get(i - 1) + ".", "username46", "u46t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s47<-addTaskToList(taskList, "User 47: Random Task " + values.get(i - 1) + ".", "username47", "u47t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s48<-addTaskToList(taskList, "User 48: Random Task " + values.get(i - 1) + ".", "username48", "u48t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s49<-addTaskToList(taskList, "User 49: Random Task " + values.get(i - 1) + ".", "username49", "u49t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s50<-addTaskToList(taskList, "User 50: Random Task " + values.get(i - 1) + ".", "username50", "u50t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s51<-addTaskToList(taskList, "User 51: Random Task " + values.get(i - 1) + ".", "username51", "u51t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s52<-addTaskToList(taskList, "User 52: Random Task " + values.get(i - 1) + ".", "username52", "u52t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s53<-addTaskToList(taskList, "User 53: Random Task " + values.get(i - 1) + ".", "username53", "u53t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s54<-addTaskToList(taskList, "User 54: Random Task " + values.get(i - 1) + ".", "username54", "u54t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s55<-addTaskToList(taskList, "User 55: Random Task " + values.get(i - 1) + ".", "username55", "u55t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s56<-addTaskToList(taskList, "User 56: Random Task " + values.get(i - 1) + ".", "username56", "u56t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s57<-addTaskToList(taskList, "User 57: Random Task " + values.get(i - 1) + ".", "username57", "u57t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s58<-addTaskToList(taskList, "User 58: Random Task " + values.get(i - 1) + ".", "username58", "u58t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s59<-addTaskToList(taskList, "User 59: Random Task " + values.get(i - 1) + ".", "username59", "u59t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s60<-addTaskToList(taskList, "User 60: Random Task " + values.get(i - 1) + ".", "username60", "u60t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s61<-addTaskToList(taskList, "User 61: Random Task " + values.get(i - 1) + ".", "username61", "u61t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s62<-addTaskToList(taskList, "User 62: Random Task " + values.get(i - 1) + ".", "username62", "u62t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s63<-addTaskToList(taskList, "User 63: Random Task " + values.get(i - 1) + ".", "username63", "u63t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s64<-addTaskToList(taskList, "User 64: Random Task " + values.get(i - 1) + ".", "username64", "u64t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s65<-addTaskToList(taskList, "User 65: Random Task " + values.get(i - 1) + ".", "username65", "u65t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s66<-addTaskToList(taskList, "User 66: Random Task " + values.get(i - 1) + ".", "username66", "u66t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s67<-addTaskToList(taskList, "User 67: Random Task " + values.get(i - 1) + ".", "username67", "u67t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s68<-addTaskToList(taskList, "User 68: Random Task " + values.get(i - 1) + ".", "username68", "u68t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s69<-addTaskToList(taskList, "User 69: Random Task " + values.get(i - 1) + ".", "username69", "u69t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s70<-addTaskToList(taskList, "User 70: Random Task " + values.get(i - 1) + ".", "username70", "u70t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s71<-addTaskToList(taskList, "User 71: Random Task " + values.get(i - 1) + ".", "username71", "u71t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s72<-addTaskToList(taskList, "User 72: Random Task " + values.get(i - 1) + ".", "username72", "u72t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s73<-addTaskToList(taskList, "User 73: Random Task " + values.get(i - 1) + ".", "username73", "u73t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s74<-addTaskToList(taskList, "User 74: Random Task " + values.get(i - 1) + ".", "username74", "u74t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s75<-addTaskToList(taskList, "User 75: Random Task " + values.get(i - 1) + ".", "username75", "u75t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s76<-addTaskToList(taskList, "User 76: Random Task " + values.get(i - 1) + ".", "username76", "u76t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s77<-addTaskToList(taskList, "User 77: Random Task " + values.get(i - 1) + ".", "username77", "u77t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s78<-addTaskToList(taskList, "User 78: Random Task " + values.get(i - 1) + ".", "username78", "u78t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s79<-addTaskToList(taskList, "User 79: Random Task " + values.get(i - 1) + ".", "username79", "u79t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s80<-addTaskToList(taskList, "User 80: Random Task " + values.get(i - 1) + ".", "username80", "u80t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s81<-addTaskToList(taskList, "User 81: Random Task " + values.get(i - 1) + ".", "username81", "u81t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s82<-addTaskToList(taskList, "User 82: Random Task " + values.get(i - 1) + ".", "username82", "u82t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s83<-addTaskToList(taskList, "User 83: Random Task " + values.get(i - 1) + ".", "username83", "u83t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s84<-addTaskToList(taskList, "User 84: Random Task " + values.get(i - 1) + ".", "username84", "u84t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s85<-addTaskToList(taskList, "User 85: Random Task " + values.get(i - 1) + ".", "username85", "u85t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s86<-addTaskToList(taskList, "User 86: Random Task " + values.get(i - 1) + ".", "username86", "u86t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s87<-addTaskToList(taskList, "User 87: Random Task " + values.get(i - 1) + ".", "username87", "u87t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s88<-addTaskToList(taskList, "User 88: Random Task " + values.get(i - 1) + ".", "username88", "u88t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s89<-addTaskToList(taskList, "User 89: Random Task " + values.get(i - 1) + ".", "username89", "u89t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s90<-addTaskToList(taskList, "User 90: Random Task " + values.get(i - 1) + ".", "username90", "u90t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s91<-addTaskToList(taskList, "User 91: Random Task " + values.get(i - 1) + ".", "username91", "u91t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s92<-addTaskToList(taskList, "User 92: Random Task " + values.get(i - 1) + ".", "username92", "u92t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s93<-addTaskToList(taskList, "User 93: Random Task " + values.get(i - 1) + ".", "username93", "u93t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s94<-addTaskToList(taskList, "User 94: Random Task " + values.get(i - 1) + ".", "username94", "u94t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s95<-addTaskToList(taskList, "User 95: Random Task " + values.get(i - 1) + ".", "username95", "u95t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s96<-addTaskToList(taskList, "User 96: Random Task " + values.get(i - 1) + ".", "username96", "u96t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s97<-addTaskToList(taskList, "User 97: Random Task " + values.get(i - 1) + ".", "username97", "u97t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s98<-addTaskToList(taskList, "User 98: Random Task " + values.get(i - 1) + ".", "username98", "u98t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s99<-addTaskToList(taskList, "User 99: Random Task " + values.get(i - 1) + ".", "username99", "u99t" + i, false, 0, 99 * num_messages, false);
+		Collections.shuffle(values);
+		for(int i = 1; i <= num_messages; i++)
+			s100<-addTaskToList(taskList, "User 100: Random Task " + values.get(i - 1) + ".", "username100", "u100t" + i, false, 0, 99 * num_messages, false);
+	}
+
+	void reply(String replyMsg)
+	{
+		standardOutput<-println(replyMsg);
+	}
+
+	void act(String args[])
+	{
+		try 
+		{
+			User User1 = (User) User.getReferenceByName(args[0]);
+			User User2 = (User) User.getReferenceByName(args[1]);
+			User User3 = (User) User.getReferenceByName(args[2]);
+			User User4 = (User) User.getReferenceByName(args[3]);
+			User User5 = (User) User.getReferenceByName(args[4]);
+			User User6 = (User) User.getReferenceByName(args[5]);
+			User User7 = (User) User.getReferenceByName(args[6]);
+			User User8 = (User) User.getReferenceByName(args[7]);
+			User User9 = (User) User.getReferenceByName(args[8]);
+			User User10 = (User) User.getReferenceByName(args[9]);
+			User User11 = (User) User.getReferenceByName(args[10]);
+			User User12 = (User) User.getReferenceByName(args[11]);
+			User User13 = (User) User.getReferenceByName(args[12]);
+			User User14 = (User) User.getReferenceByName(args[13]);
+			User User15 = (User) User.getReferenceByName(args[14]);
+			User User16 = (User) User.getReferenceByName(args[15]);
+			User User17 = (User) User.getReferenceByName(args[16]);
+			User User18 = (User) User.getReferenceByName(args[17]);
+			User User19 = (User) User.getReferenceByName(args[18]);
+			User User20 = (User) User.getReferenceByName(args[19]);
+			User User21 = (User) User.getReferenceByName(args[20]);
+			User User22 = (User) User.getReferenceByName(args[21]);
+			User User23 = (User) User.getReferenceByName(args[22]);
+			User User24 = (User) User.getReferenceByName(args[23]);
+			User User25 = (User) User.getReferenceByName(args[24]);
+			User User26 = (User) User.getReferenceByName(args[25]);
+			User User27 = (User) User.getReferenceByName(args[26]);
+			User User28 = (User) User.getReferenceByName(args[27]);
+			User User29 = (User) User.getReferenceByName(args[28]);
+			User User30 = (User) User.getReferenceByName(args[29]);
+			User User31 = (User) User.getReferenceByName(args[30]);
+			User User32 = (User) User.getReferenceByName(args[31]);
+			User User33 = (User) User.getReferenceByName(args[32]);
+			User User34 = (User) User.getReferenceByName(args[33]);
+			User User35 = (User) User.getReferenceByName(args[34]);
+			User User36 = (User) User.getReferenceByName(args[35]);
+			User User37 = (User) User.getReferenceByName(args[36]);
+			User User38 = (User) User.getReferenceByName(args[37]);
+			User User39 = (User) User.getReferenceByName(args[38]);
+			User User40 = (User) User.getReferenceByName(args[39]);
+			User User41 = (User) User.getReferenceByName(args[40]);
+			User User42 = (User) User.getReferenceByName(args[41]);
+			User User43 = (User) User.getReferenceByName(args[42]);
+			User User44 = (User) User.getReferenceByName(args[43]);
+			User User45 = (User) User.getReferenceByName(args[44]);
+			User User46 = (User) User.getReferenceByName(args[45]);
+			User User47 = (User) User.getReferenceByName(args[46]);
+			User User48 = (User) User.getReferenceByName(args[47]);
+			User User49 = (User) User.getReferenceByName(args[48]);
+			User User50 = (User) User.getReferenceByName(args[49]);
+			User User51 = (User) User.getReferenceByName(args[50]);
+			User User52 = (User) User.getReferenceByName(args[51]);
+			User User53 = (User) User.getReferenceByName(args[52]);
+			User User54 = (User) User.getReferenceByName(args[53]);
+			User User55 = (User) User.getReferenceByName(args[54]);
+			User User56 = (User) User.getReferenceByName(args[55]);
+			User User57 = (User) User.getReferenceByName(args[56]);
+			User User58 = (User) User.getReferenceByName(args[57]);
+			User User59 = (User) User.getReferenceByName(args[58]);
+			User User60 = (User) User.getReferenceByName(args[59]);
+			User User61 = (User) User.getReferenceByName(args[60]);
+			User User62 = (User) User.getReferenceByName(args[61]);
+			User User63 = (User) User.getReferenceByName(args[62]);
+			User User64 = (User) User.getReferenceByName(args[63]);
+			User User65 = (User) User.getReferenceByName(args[64]);
+			User User66 = (User) User.getReferenceByName(args[65]);
+			User User67 = (User) User.getReferenceByName(args[66]);
+			User User68 = (User) User.getReferenceByName(args[67]);
+			User User69 = (User) User.getReferenceByName(args[68]);
+			User User70 = (User) User.getReferenceByName(args[69]);
+			User User71 = (User) User.getReferenceByName(args[70]);
+			User User72 = (User) User.getReferenceByName(args[71]);
+			User User73 = (User) User.getReferenceByName(args[72]);
+			User User74 = (User) User.getReferenceByName(args[73]);
+			User User75 = (User) User.getReferenceByName(args[74]);
+			User User76 = (User) User.getReferenceByName(args[75]);
+			User User77 = (User) User.getReferenceByName(args[76]);
+			User User78 = (User) User.getReferenceByName(args[77]);
+			User User79 = (User) User.getReferenceByName(args[78]);
+			User User80 = (User) User.getReferenceByName(args[79]);
+			User User81 = (User) User.getReferenceByName(args[80]);
+			User User82 = (User) User.getReferenceByName(args[81]);
+			User User83 = (User) User.getReferenceByName(args[82]);
+			User User84 = (User) User.getReferenceByName(args[83]);
+			User User85 = (User) User.getReferenceByName(args[84]);
+			User User86 = (User) User.getReferenceByName(args[85]);
+			User User87 = (User) User.getReferenceByName(args[86]);
+			User User88 = (User) User.getReferenceByName(args[87]);
+			User User89 = (User) User.getReferenceByName(args[88]);
+			User User90 = (User) User.getReferenceByName(args[89]);
+			User User91 = (User) User.getReferenceByName(args[90]);
+			User User92 = (User) User.getReferenceByName(args[91]);
+			User User93 = (User) User.getReferenceByName(args[92]);
+			User User94 = (User) User.getReferenceByName(args[93]);
+			User User95 = (User) User.getReferenceByName(args[94]);
+			User User96 = (User) User.getReferenceByName(args[95]);
+			User User97 = (User) User.getReferenceByName(args[96]);
+			User User98 = (User) User.getReferenceByName(args[97]);
+			User User99 = (User) User.getReferenceByName(args[98]);
+			User User100 = (User) User.getReferenceByName(args[99]);
+            TaskList taskList =(TaskList) TaskList.getReferenceByName(args[100]);
+			int num_messages = Integer.parseInt(args[101]);
+
+			// keep track of starting time here
+			Date first = new Date();
+			Timestamp start = new Timestamp(first.getTime());
+			standardOutput<-println("Starting time: " + start);
+
+			// use this to calculate time elapsed
+			Instant begin = Instant.now();
+			chatSession(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, 
+			user11, user12, user13, user14, user15, user16, user17, user18, user19, user20, 
+			user21, user22, user23, user24, user25, user26, user27, user28, user29, user30, 
+			user31, user32, user33, user34, user35, user36, user37, user38, user39, user40, 
+			user41, user42, user43, user44, user45, user46, user47, user48, user49, user50, 
+			user51, user52, user53, user54, user55, user56, user57, user58, user59, user60, 
+			user61, user62, user63, user64, user65, user66, user67, user68, user69, user70, 
+			user71, user72, user73, user74, user75, user76, user77, user78, user79, user80, 
+			user81, user82, user83, user84, user85, user86, user87, user88, user89, user90, 
+			user91, user92, user93, user94, user95, user96, user97, user98, user99, user100,
+			taskList, num_messages) @ trackEndingTime(begin) @ standardOutput<-println("Done with user conversation");
+		}
+		catch (Exception e)
+		{
+			standardOutput<-println("Usage: java todo.Chat <userUAN1> <userUAN2> <taskListUAN3> <taskUAN4> <taskUAN5>");
+			return;
+		} 
+	}
+
+    void trackEndingTime(Instant begin)
+    {
+        // keep track of ending time here
+        Date second = new Date();
+        Timestamp end = new Timestamp(second.getTime());
+
+        // calculate time elapsed
+        Instant endTime = Instant.now();
+        Duration timeDifference = Duration.between(begin, endTime);
+        long timeTaken = timeDifference.toMillis();
+        standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+        standardOutput<-println("Ending time: " + end);
+	}
+}
+

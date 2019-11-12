@@ -10,7 +10,7 @@ def check_ordering(file_name):
     curr_file = open(file_name, "r")
     for line in curr_file:
         if "[Speaker Remote]" in line:
-            current_number = line[42:91]
+            current_number = line[25:63]
             temp = re.findall(r'\d+', current_number) 
             res = list(map(int, temp))
             key_user = res[0]
@@ -55,7 +55,7 @@ def get_max_file_latency(num_users):
         curr_file = open(file, "r")
         for line in curr_file:
             if "[Speaker Local]" in line:
-                current_number = line[41:90]
+                current_number = line[20:60]
                 temp = re.findall(r'\d+', current_number) 
                 res = list(map(int, temp))
                 timestamp = line.split()[-1]
@@ -84,7 +84,7 @@ def get_max_file_latency(num_users):
         parse_file = open(file, "r")
         for line in parse_file:
             if "[Speaker Remote]" in line:
-                current_number = line[42:91]
+                current_number = line[25:63]
                 temp = re.findall(r'\d+', current_number) 
                 res = tuple(list(map(int, temp)))
                 timestamp = line.split()[-1]

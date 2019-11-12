@@ -35,7 +35,6 @@ import java.util.Date;
 import java.sql.Timestamp;
 import java.util.Map;
 import java.util.HashMap;
-import examples.chat.ChatMessage.MessageType;
 import java.util.Iterator;
 import java.util.Queue;
 import java.util.LinkedList;
@@ -220,10 +219,50 @@ public class Speaker extends UniversalActor  implements ActorService {
 }			else {if (is_question) {type = "QUESTION";
 }			else {if (is_answer) {type = "ANSWER";
 }}}			{
-				Token token_2_0 = new Token();
-				// standardOutput<-println("[Speaker Local] "+myName+": "+type+": "+msg+"; Timestamp: "+current)
+				// standardOutput<-print("[Speaker Local]: ")
 				{
-					Object _arguments[] = { "[Speaker Local] "+myName+": "+type+": "+msg+"; Timestamp: "+current };
+					Object _arguments[] = { "[Speaker Local]: " };
+					Message message = new Message( self, standardOutput, "print", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// standardOutput<-print(type)
+				{
+					Object _arguments[] = { type };
+					Message message = new Message( self, standardOutput, "print", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// standardOutput<-print(": ")
+				{
+					Object _arguments[] = { ": " };
+					Message message = new Message( self, standardOutput, "print", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// standardOutput<-print(msg)
+				{
+					Object _arguments[] = { msg };
+					Message message = new Message( self, standardOutput, "print", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				// standardOutput<-print("; Timestamp: ")
+				{
+					Object _arguments[] = { "; Timestamp: " };
+					Message message = new Message( self, standardOutput, "print", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			{
+				Token token_2_0 = new Token();
+				// standardOutput<-println(current)
+				{
+					Object _arguments[] = { current };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
@@ -296,9 +335,33 @@ if (questionTimeStamp.values().size()==total_questions||(isQuestion&&questionTim
 				Date date_four = new Date();
 				Timestamp current_four = new Timestamp(date_four.getTime());
 				{
-					// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four)
+					// standardOutput<-print("[Speaker Remote]: STATEMENT: ")
 					{
-						Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four };
+						Object _arguments[] = { "[Speaker Remote]: STATEMENT: " };
+						Message message = new Message( self, standardOutput, "print", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+				{
+					// standardOutput<-print(msg)
+					{
+						Object _arguments[] = { msg };
+						Message message = new Message( self, standardOutput, "print", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+				{
+					// standardOutput<-print("; Timestamp: ")
+					{
+						Object _arguments[] = { "; Timestamp: " };
+						Message message = new Message( self, standardOutput, "print", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+				{
+					// standardOutput<-println(current_four)
+					{
+						Object _arguments[] = { current_four };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 						__messages.add( message );
 					}

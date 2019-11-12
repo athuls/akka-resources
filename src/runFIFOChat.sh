@@ -26,7 +26,7 @@ java -cp .:./libs/kotlin-runtime-1.2.20-dev-331.jar:./libs/salsa1.1.5.jar -Dnodi
 
 sleep 30s
 
-python ParseFIFO.py >> logs/FIFOChatResults.txt
+#python ParseFIFO.py >> logs/FIFOChatResults.txt
 
 ps -ef | grep WWCNamingServer | grep -v grep | awk '{print $2}' | xargs kill -9
 ps -ef | grep Chat | grep -v grep | awk '{print $2}' | xargs kill -9

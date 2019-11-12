@@ -1,102 +1,102 @@
 Received speaker: uan:\localhost:3030id4 to register with server uan:\localhost:3030id1
 Speaker started with uan: uan://:3030\localhost:3030id4
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Random message 8.; Timestamp: 2019-10-29 05:49:33.264
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Random message 7.; Timestamp: 2019-10-29 05:49:33.697
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Random message 6.; Timestamp: 2019-10-29 05:49:33.7
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Random message 2.; Timestamp: 2019-10-29 05:49:33.704
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Random message 9.; Timestamp: 2019-10-29 05:49:33.709
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Random message 3.; Timestamp: 2019-10-29 05:49:33.712
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Random message 1.; Timestamp: 2019-10-29 05:49:33.715
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Random message 5.; Timestamp: 2019-10-29 05:49:33.717
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Random message 4.; Timestamp: 2019-10-29 05:49:33.719
-[Speaker Local] uan:\localhost:3030id4: STATEMENT: User 3: Random message 10.; Timestamp: 2019-10-29 05:49:33.721
-[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random message 10.; Timestamp: 2019-10-29 05:49:34.892
-[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random message 2.; Timestamp: 2019-10-29 05:49:35.095
-[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random message 6.; Timestamp: 2019-10-29 05:49:35.306
-[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random message 4.; Timestamp: 2019-10-29 05:49:35.516
-[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random message 5.; Timestamp: 2019-10-29 05:49:35.723
-[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random message 9.; Timestamp: 2019-10-29 05:49:35.927
-[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random message 7.; Timestamp: 2019-10-29 05:49:36.133
-[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random message 8.; Timestamp: 2019-10-29 05:49:36.341
-[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random message 1.; Timestamp: 2019-10-29 05:49:36.545
-[Speaker Remote] uan:\localhost:3030id3: STATEMENT: User 2: Random message 3.; Timestamp: 2019-10-29 05:49:36.748
-[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random message 9.; Timestamp: 2019-10-29 05:49:36.952
-[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random message 1.; Timestamp: 2019-10-29 05:49:37.155
-[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random message 10.; Timestamp: 2019-10-29 05:49:37.358
-[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random message 5.; Timestamp: 2019-10-29 05:49:37.568
-[Speaker Remote] uan:\localhost:3030id9: STATEMENT: User 8: Random message 2.; Timestamp: 2019-10-29 05:49:37.771
-[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random message 8.; Timestamp: 2019-10-29 05:49:37.973
-[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random message 2.; Timestamp: 2019-10-29 05:49:38.175
-[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random message 4.; Timestamp: 2019-10-29 05:49:38.376
-[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random message 7.; Timestamp: 2019-10-29 05:49:38.576
-[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random message 3.; Timestamp: 2019-10-29 05:49:38.777
-[Speaker Remote] uan:\localhost:3030id2: STATEMENT: User 1: Random message 6.; Timestamp: 2019-10-29 05:49:38.978
-[Speaker Remote] uan:\localhost:3030id9: STATEMENT: User 8: Random message 7.; Timestamp: 2019-10-29 05:49:39.179
-[Speaker Remote] uan:\localhost:3030id9: STATEMENT: User 8: Random message 10.; Timestamp: 2019-10-29 05:49:39.38
-[Speaker Remote] uan:\localhost:3030id9: STATEMENT: User 8: Random message 4.; Timestamp: 2019-10-29 05:49:39.581
-[Speaker Remote] uan:\localhost:3030id9: STATEMENT: User 8: Random message 6.; Timestamp: 2019-10-29 05:49:39.782
-[Speaker Remote] uan:\localhost:3030id9: STATEMENT: User 8: Random message 9.; Timestamp: 2019-10-29 05:49:39.982
-[Speaker Remote] uan:\localhost:3030id9: STATEMENT: User 8: Random message 1.; Timestamp: 2019-10-29 05:49:40.183
-[Speaker Remote] uan:\localhost:3030id9: STATEMENT: User 8: Random message 3.; Timestamp: 2019-10-29 05:49:40.384
-[Speaker Remote] uan:\localhost:3030id10: STATEMENT: User 9: Random message 8.; Timestamp: 2019-10-29 05:49:40.587
-[Speaker Remote] uan:\localhost:3030id9: STATEMENT: User 8: Random message 8.; Timestamp: 2019-10-29 05:49:40.788
-[Speaker Remote] uan:\localhost:3030id10: STATEMENT: User 9: Random message 7.; Timestamp: 2019-10-29 05:49:40.989
-[Speaker Remote] uan:\localhost:3030id9: STATEMENT: User 8: Random message 5.; Timestamp: 2019-10-29 05:49:41.19
-[Speaker Remote] uan:\localhost:3030id10: STATEMENT: User 9: Random message 6.; Timestamp: 2019-10-29 05:49:41.392
-[Speaker Remote] uan:\localhost:3030id10: STATEMENT: User 9: Random message 5.; Timestamp: 2019-10-29 05:49:41.593
-[Speaker Remote] uan:\localhost:3030id10: STATEMENT: User 9: Random message 4.; Timestamp: 2019-10-29 05:49:41.795
-[Speaker Remote] uan:\localhost:3030id10: STATEMENT: User 9: Random message 1.; Timestamp: 2019-10-29 05:49:41.996
-[Speaker Remote] uan:\localhost:3030id10: STATEMENT: User 9: Random message 10.; Timestamp: 2019-10-29 05:49:42.197
-[Speaker Remote] uan:\localhost:3030id10: STATEMENT: User 9: Random message 3.; Timestamp: 2019-10-29 05:49:42.398
-[Speaker Remote] uan:\localhost:3030id11: STATEMENT: User 10: Random message 4.; Timestamp: 2019-10-29 05:49:42.599
-[Speaker Remote] uan:\localhost:3030id11: STATEMENT: User 10: Random message 6.; Timestamp: 2019-10-29 05:49:42.802
-[Speaker Remote] uan:\localhost:3030id10: STATEMENT: User 9: Random message 9.; Timestamp: 2019-10-29 05:49:43.003
-[Speaker Remote] uan:\localhost:3030id10: STATEMENT: User 9: Random message 2.; Timestamp: 2019-10-29 05:49:43.205
-[Speaker Remote] uan:\localhost:3030id11: STATEMENT: User 10: Random message 1.; Timestamp: 2019-10-29 05:49:43.407
-[Speaker Remote] uan:\localhost:3030id11: STATEMENT: User 10: Random message 9.; Timestamp: 2019-10-29 05:49:43.609
-[Speaker Remote] uan:\localhost:3030id11: STATEMENT: User 10: Random message 7.; Timestamp: 2019-10-29 05:49:43.811
-[Speaker Remote] uan:\localhost:3030id11: STATEMENT: User 10: Random message 2.; Timestamp: 2019-10-29 05:49:44.014
-[Speaker Remote] uan:\localhost:3030id11: STATEMENT: User 10: Random message 8.; Timestamp: 2019-10-29 05:49:44.215
-[Speaker Remote] uan:\localhost:3030id11: STATEMENT: User 10: Random message 3.; Timestamp: 2019-10-29 05:49:44.416
-[Speaker Remote] uan:\localhost:3030id11: STATEMENT: User 10: Random message 10.; Timestamp: 2019-10-29 05:49:44.617
-[Speaker Remote] uan:\localhost:3030id8: STATEMENT: User 7: Random message 6.; Timestamp: 2019-10-29 05:49:44.818
-[Speaker Remote] uan:\localhost:3030id8: STATEMENT: User 7: Random message 1.; Timestamp: 2019-10-29 05:49:45.027
-[Speaker Remote] uan:\localhost:3030id11: STATEMENT: User 10: Random message 5.; Timestamp: 2019-10-29 05:49:45.227
-[Speaker Remote] uan:\localhost:3030id8: STATEMENT: User 7: Random message 5.; Timestamp: 2019-10-29 05:49:45.429
-[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Random message 6.; Timestamp: 2019-10-29 05:49:45.631
-[Speaker Remote] uan:\localhost:3030id8: STATEMENT: User 7: Random message 4.; Timestamp: 2019-10-29 05:49:45.833
-[Speaker Remote] uan:\localhost:3030id7: STATEMENT: User 6: Random message 10.; Timestamp: 2019-10-29 05:49:46.034
-[Speaker Remote] uan:\localhost:3030id7: STATEMENT: User 6: Random message 6.; Timestamp: 2019-10-29 05:49:46.236
-[Speaker Remote] uan:\localhost:3030id8: STATEMENT: User 7: Random message 2.; Timestamp: 2019-10-29 05:49:46.437
-[Speaker Remote] uan:\localhost:3030id8: STATEMENT: User 7: Random message 3.; Timestamp: 2019-10-29 05:49:46.638
-[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Random message 1.; Timestamp: 2019-10-29 05:49:46.84
-[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Random message 10.; Timestamp: 2019-10-29 05:49:47.042
-[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Random message 7.; Timestamp: 2019-10-29 05:49:47.242
-[Speaker Remote] uan:\localhost:3030id8: STATEMENT: User 7: Random message 7.; Timestamp: 2019-10-29 05:49:47.443
-[Speaker Remote] uan:\localhost:3030id8: STATEMENT: User 7: Random message 9.; Timestamp: 2019-10-29 05:49:47.645
-[Speaker Remote] uan:\localhost:3030id7: STATEMENT: User 6: Random message 7.; Timestamp: 2019-10-29 05:49:47.846
-[Speaker Remote] uan:\localhost:3030id8: STATEMENT: User 7: Random message 8.; Timestamp: 2019-10-29 05:49:48.047
-[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Random message 2.; Timestamp: 2019-10-29 05:49:48.249
-[Speaker Remote] uan:\localhost:3030id8: STATEMENT: User 7: Random message 10.; Timestamp: 2019-10-29 05:49:48.45
-[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Random message 9.; Timestamp: 2019-10-29 05:49:48.652
-[Speaker Remote] uan:\localhost:3030id7: STATEMENT: User 6: Random message 3.; Timestamp: 2019-10-29 05:49:48.853
-[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random message 1.; Timestamp: 2019-10-29 05:49:49.054
-[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Random message 4.; Timestamp: 2019-10-29 05:49:49.255
-[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random message 2.; Timestamp: 2019-10-29 05:49:49.456
-[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Random message 8.; Timestamp: 2019-10-29 05:49:49.657
-[Speaker Remote] uan:\localhost:3030id7: STATEMENT: User 6: Random message 1.; Timestamp: 2019-10-29 05:49:49.858
-[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random message 7.; Timestamp: 2019-10-29 05:49:50.061
-[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Random message 3.; Timestamp: 2019-10-29 05:49:50.264
-[Speaker Remote] uan:\localhost:3030id5: STATEMENT: User 4: Random message 5.; Timestamp: 2019-10-29 05:49:50.466
-[Speaker Remote] uan:\localhost:3030id7: STATEMENT: User 6: Random message 4.; Timestamp: 2019-10-29 05:49:50.667
-[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random message 5.; Timestamp: 2019-10-29 05:49:50.868
-[Speaker Remote] uan:\localhost:3030id7: STATEMENT: User 6: Random message 5.; Timestamp: 2019-10-29 05:49:51.07
-[Speaker Remote] uan:\localhost:3030id7: STATEMENT: User 6: Random message 2.; Timestamp: 2019-10-29 05:49:51.271
-[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random message 4.; Timestamp: 2019-10-29 05:49:51.472
-[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random message 8.; Timestamp: 2019-10-29 05:49:51.674
-[Speaker Remote] uan:\localhost:3030id7: STATEMENT: User 6: Random message 9.; Timestamp: 2019-10-29 05:49:51.875
-[Speaker Remote] uan:\localhost:3030id7: STATEMENT: User 6: Random message 8.; Timestamp: 2019-10-29 05:49:52.077
-[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random message 6.; Timestamp: 2019-10-29 05:49:52.278
-[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random message 10.; Timestamp: 2019-10-29 05:49:52.48
-[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random message 3.; Timestamp: 2019-10-29 05:49:52.681
-[Speaker Remote] uan:\localhost:3030id6: STATEMENT: User 5: Random message 9.; Timestamp: 2019-10-29 05:49:52.883
+[Speaker Local]: STATEMENT: User 3: Random message 6.; Timestamp: 2019-11-11 20:44:29.742
+[Speaker Local]: STATEMENT: User 3: Random message 2.; Timestamp: 2019-11-11 20:44:29.756
+[Speaker Local]: STATEMENT: User 3: Random message 3.; Timestamp: 2019-11-11 20:44:29.759
+[Speaker Local]: STATEMENT: User 3: Random message 10.; Timestamp: 2019-11-11 20:44:29.764
+[Speaker Local]: STATEMENT: User 3: Random message 1.; Timestamp: 2019-11-11 20:44:29.766
+[Speaker Local]: STATEMENT: User 3: Random message 9.; Timestamp: 2019-11-11 20:44:29.769
+[Speaker Local]: STATEMENT: User 3: Random message 5.; Timestamp: 2019-11-11 20:44:29.772
+[Speaker Local]: STATEMENT: User 3: Random message 4.; Timestamp: 2019-11-11 20:44:29.774
+[Speaker Local]: STATEMENT: User 3: Random message 8.; Timestamp: 2019-11-11 20:44:29.777
+[Speaker Local]: STATEMENT: User 3: Random message 7.; Timestamp: 2019-11-11 20:44:30.118
+[Speaker Remote]: STATEMENT: User 1: Random message 10.; Timestamp: 2019-11-11 20:44:30.758
+[Speaker Remote]: STATEMENT: User 1: Random message 6.; Timestamp: 2019-11-11 20:44:31.054
+[Speaker Remote]: STATEMENT: User 1: Random message 4.; Timestamp: 2019-11-11 20:44:31.394
+[Speaker Remote]: STATEMENT: User 1: Random message 1.; Timestamp: 2019-11-11 20:44:31.596
+[Speaker Remote]: STATEMENT: User 2: Random message 7.; Timestamp: 2019-11-11 20:44:31.805
+[Speaker Remote]: STATEMENT: User 2: Random message 2.; Timestamp: 2019-11-11 20:44:32.009
+[Speaker Remote]: STATEMENT: User 2: Random message 6.; Timestamp: 2019-11-11 20:44:32.213
+[Speaker Remote]: STATEMENT: User 2: Random message 3.; Timestamp: 2019-11-11 20:44:32.422
+[Speaker Remote]: STATEMENT: User 2: Random message 10.; Timestamp: 2019-11-11 20:44:32.632
+[Speaker Remote]: STATEMENT: User 2: Random message 9.; Timestamp: 2019-11-11 20:44:32.838
+[Speaker Remote]: STATEMENT: User 2: Random message 1.; Timestamp: 2019-11-11 20:44:33.039
+[Speaker Remote]: STATEMENT: User 2: Random message 8.; Timestamp: 2019-11-11 20:44:33.241
+[Speaker Remote]: STATEMENT: User 2: Random message 4.; Timestamp: 2019-11-11 20:44:33.445
+[Speaker Remote]: STATEMENT: User 2: Random message 5.; Timestamp: 2019-11-11 20:44:33.649
+[Speaker Remote]: STATEMENT: User 1: Random message 3.; Timestamp: 2019-11-11 20:44:33.852
+[Speaker Remote]: STATEMENT: User 1: Random message 5.; Timestamp: 2019-11-11 20:44:34.07
+[Speaker Remote]: STATEMENT: User 1: Random message 9.; Timestamp: 2019-11-11 20:44:34.273
+[Speaker Remote]: STATEMENT: User 1: Random message 8.; Timestamp: 2019-11-11 20:44:34.475
+[Speaker Remote]: STATEMENT: User 4: Random message 5.; Timestamp: 2019-11-11 20:44:34.678
+[Speaker Remote]: STATEMENT: User 4: Random message 9.; Timestamp: 2019-11-11 20:44:34.881
+[Speaker Remote]: STATEMENT: User 4: Random message 1.; Timestamp: 2019-11-11 20:44:35.084
+[Speaker Remote]: STATEMENT: User 4: Random message 8.; Timestamp: 2019-11-11 20:44:35.286
+[Speaker Remote]: STATEMENT: User 4: Random message 7.; Timestamp: 2019-11-11 20:44:35.489
+[Speaker Remote]: STATEMENT: User 4: Random message 4.; Timestamp: 2019-11-11 20:44:35.691
+[Speaker Remote]: STATEMENT: User 4: Random message 10.; Timestamp: 2019-11-11 20:44:35.892
+[Speaker Remote]: STATEMENT: User 4: Random message 6.; Timestamp: 2019-11-11 20:44:36.094
+[Speaker Remote]: STATEMENT: User 4: Random message 3.; Timestamp: 2019-11-11 20:44:36.296
+[Speaker Remote]: STATEMENT: User 4: Random message 2.; Timestamp: 2019-11-11 20:44:36.497
+[Speaker Remote]: STATEMENT: User 1: Random message 7.; Timestamp: 2019-11-11 20:44:36.699
+[Speaker Remote]: STATEMENT: User 1: Random message 2.; Timestamp: 2019-11-11 20:44:36.9
+[Speaker Remote]: STATEMENT: User 7: Random message 4.; Timestamp: 2019-11-11 20:44:37.101
+[Speaker Remote]: STATEMENT: User 9: Random message 10.; Timestamp: 2019-11-11 20:44:37.302
+[Speaker Remote]: STATEMENT: User 7: Random message 5.; Timestamp: 2019-11-11 20:44:37.505
+[Speaker Remote]: STATEMENT: User 7: Random message 8.; Timestamp: 2019-11-11 20:44:37.71
+[Speaker Remote]: STATEMENT: User 9: Random message 1.; Timestamp: 2019-11-11 20:44:37.913
+[Speaker Remote]: STATEMENT: User 7: Random message 7.; Timestamp: 2019-11-11 20:44:38.115
+[Speaker Remote]: STATEMENT: User 9: Random message 2.; Timestamp: 2019-11-11 20:44:38.317
+[Speaker Remote]: STATEMENT: User 10: Random message 2.; Timestamp: 2019-11-11 20:44:38.519
+[Speaker Remote]: STATEMENT: User 5: Random message 8.; Timestamp: 2019-11-11 20:44:38.722
+[Speaker Remote]: STATEMENT: User 5: Random message 7.; Timestamp: 2019-11-11 20:44:38.924
+[Speaker Remote]: STATEMENT: User 6: Random message 2.; Timestamp: 2019-11-11 20:44:39.125
+[Speaker Remote]: STATEMENT: User 7: Random message 9.; Timestamp: 2019-11-11 20:44:39.327
+[Speaker Remote]: STATEMENT: User 7: Random message 1.; Timestamp: 2019-11-11 20:44:39.53
+[Speaker Remote]: STATEMENT: User 7: Random message 2.; Timestamp: 2019-11-11 20:44:39.732
+[Speaker Remote]: STATEMENT: User 10: Random message 5.; Timestamp: 2019-11-11 20:44:39.933
+[Speaker Remote]: STATEMENT: User 9: Random message 6.; Timestamp: 2019-11-11 20:44:40.135
+[Speaker Remote]: STATEMENT: User 6: Random message 1.; Timestamp: 2019-11-11 20:44:40.337
+[Speaker Remote]: STATEMENT: User 5: Random message 3.; Timestamp: 2019-11-11 20:44:40.539
+[Speaker Remote]: STATEMENT: User 5: Random message 4.; Timestamp: 2019-11-11 20:44:40.74
+[Speaker Remote]: STATEMENT: User 9: Random message 7.; Timestamp: 2019-11-11 20:44:40.941
+[Speaker Remote]: STATEMENT: User 9: Random message 9.; Timestamp: 2019-11-11 20:44:41.143
+[Speaker Remote]: STATEMENT: User 6: Random message 5.; Timestamp: 2019-11-11 20:44:41.344
+[Speaker Remote]: STATEMENT: User 6: Random message 4.; Timestamp: 2019-11-11 20:44:41.546
+[Speaker Remote]: STATEMENT: User 10: Random message 9.; Timestamp: 2019-11-11 20:44:41.747
+[Speaker Remote]: STATEMENT: User 7: Random message 10.; Timestamp: 2019-11-11 20:44:41.948
+[Speaker Remote]: STATEMENT: User 7: Random message 3.; Timestamp: 2019-11-11 20:44:42.15
+[Speaker Remote]: STATEMENT: User 10: Random message 6.; Timestamp: 2019-11-11 20:44:42.351
+[Speaker Remote]: STATEMENT: User 6: Random message 8.; Timestamp: 2019-11-11 20:44:42.553
+[Speaker Remote]: STATEMENT: User 6: Random message 7.; Timestamp: 2019-11-11 20:44:42.755
+[Speaker Remote]: STATEMENT: User 5: Random message 5.; Timestamp: 2019-11-11 20:44:42.957
+[Speaker Remote]: STATEMENT: User 9: Random message 5.; Timestamp: 2019-11-11 20:44:43.159
+[Speaker Remote]: STATEMENT: User 5: Random message 1.; Timestamp: 2019-11-11 20:44:43.36
+[Speaker Remote]: STATEMENT: User 9: Random message 8.; Timestamp: 2019-11-11 20:44:43.562
+[Speaker Remote]: STATEMENT: User 5: Random message 6.; Timestamp: 2019-11-11 20:44:43.764
+[Speaker Remote]: STATEMENT: User 6: Random message 3.; Timestamp: 2019-11-11 20:44:43.966
+[Speaker Remote]: STATEMENT: User 10: Random message 10.; Timestamp: 2019-11-11 20:44:44.167
+[Speaker Remote]: STATEMENT: User 10: Random message 3.; Timestamp: 2019-11-11 20:44:44.369
+[Speaker Remote]: STATEMENT: User 7: Random message 6.; Timestamp: 2019-11-11 20:44:44.57
+[Speaker Remote]: STATEMENT: User 10: Random message 7.; Timestamp: 2019-11-11 20:44:44.771
+[Speaker Remote]: STATEMENT: User 10: Random message 1.; Timestamp: 2019-11-11 20:44:44.973
+[Speaker Remote]: STATEMENT: User 6: Random message 9.; Timestamp: 2019-11-11 20:44:45.175
+[Speaker Remote]: STATEMENT: User 8: Random message 5.; Timestamp: 2019-11-11 20:44:45.376
+[Speaker Remote]: STATEMENT: User 5: Random message 9.; Timestamp: 2019-11-11 20:44:45.577
+[Speaker Remote]: STATEMENT: User 8: Random message 10.; Timestamp: 2019-11-11 20:44:45.78
+[Speaker Remote]: STATEMENT: User 6: Random message 6.; Timestamp: 2019-11-11 20:44:45.982
+[Speaker Remote]: STATEMENT: User 8: Random message 2.; Timestamp: 2019-11-11 20:44:46.185
+[Speaker Remote]: STATEMENT: User 10: Random message 4.; Timestamp: 2019-11-11 20:44:46.386
+[Speaker Remote]: STATEMENT: User 10: Random message 8.; Timestamp: 2019-11-11 20:44:46.587
+[Speaker Remote]: STATEMENT: User 8: Random message 7.; Timestamp: 2019-11-11 20:44:46.789
+[Speaker Remote]: STATEMENT: User 8: Random message 6.; Timestamp: 2019-11-11 20:44:46.993
+[Speaker Remote]: STATEMENT: User 6: Random message 10.; Timestamp: 2019-11-11 20:44:47.195
+[Speaker Remote]: STATEMENT: User 9: Random message 4.; Timestamp: 2019-11-11 20:44:47.396
+[Speaker Remote]: STATEMENT: User 5: Random message 10.; Timestamp: 2019-11-11 20:44:47.597
+[Speaker Remote]: STATEMENT: User 9: Random message 3.; Timestamp: 2019-11-11 20:44:47.799
+[Speaker Remote]: STATEMENT: User 8: Random message 4.; Timestamp: 2019-11-11 20:44:48.0
+[Speaker Remote]: STATEMENT: User 8: Random message 3.; Timestamp: 2019-11-11 20:44:48.201
+[Speaker Remote]: STATEMENT: User 5: Random message 2.; Timestamp: 2019-11-11 20:44:48.402
+[Speaker Remote]: STATEMENT: User 8: Random message 9.; Timestamp: 2019-11-11 20:44:48.602
+[Speaker Remote]: STATEMENT: User 8: Random message 8.; Timestamp: 2019-11-11 20:44:48.805
+[Speaker Remote]: STATEMENT: User 8: Random message 1.; Timestamp: 2019-11-11 20:44:49.007

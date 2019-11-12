@@ -3,7 +3,6 @@ import java.util.Date;
 import java.sql.Timestamp;
 import java.util.Map;
 import java.util.HashMap;
-import examples.chat.ChatMessage.MessageType;
 import java.util.Iterator;
 import java.util.Queue;
 import java.util.LinkedList;
@@ -48,7 +47,12 @@ behavior Speaker implements ActorService
 			type = "QUESTION";
 		else if(is_answer)
 			type = "ANSWER";
-		standardOutput<-println("[Speaker Local] " + myName + ": " + type +": "+ msg + "; Timestamp: " + current) @ 
+		standardOutput<-print("[Speaker Local]: ");
+		standardOutput<-print(type);
+		standardOutput<-print(": ");
+		standardOutput<-print(msg);
+		standardOutput<-print("; Timestamp: ");
+		standardOutput<-println(current) @ 
 		server_ref<-broadcast(myName, msg, type, number_of_questions, total_messages, fifo);
 	}	
 
@@ -94,12 +98,15 @@ behavior Speaker implements ActorService
 				else
 				{
 					messages.add(msg);
-					Thread.sleep(20);
+					Thread.sleep(200);
 
 					// next mark the timestamp
 					Date date_four = new Date();
 					Timestamp current_four = new Timestamp(date_four.getTime());
-					standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_four);
+					standardOutput<-print("[Speaker Remote]: STATEMENT: ");
+					standardOutput<-print(msg);
+					standardOutput<-print("; Timestamp: ");
+					standardOutput<-println(current_four);
 				}
 				break;
 		}
@@ -149,7 +156,7 @@ behavior Speaker implements ActorService
 		{
 			currentAdded.add(current_value);
 			messages.add(msg);
-			Thread.sleep(20);
+			Thread.sleep(200);
 			
 			// next mark the timestamp
 			Date date_four = new Date();
@@ -166,7 +173,7 @@ behavior Speaker implements ActorService
 					String current_message = (String)currentFifoMessages.get(i);
 					currentAdded.add(current_value);
 					messages.add(current_message);
-					Thread.sleep(20);
+					Thread.sleep(200);
 					Date date_five = new Date();
 					Timestamp current_five = new Timestamp(date_five.getTime());
 					if(isQuestion)
@@ -393,7 +400,7 @@ behavior Speaker implements ActorService
 			while(messageQueue.size() > 0)
 			{
 				messages.add(messageQueue.remove());
-				Thread.sleep(20);
+				Thread.sleep(200);
 			}
 			Date date = new Date();
 			Timestamp current = new Timestamp(date.getTime());

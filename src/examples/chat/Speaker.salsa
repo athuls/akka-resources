@@ -38,8 +38,7 @@ behavior Speaker implements ActorService
 	// this also prints out the timestamp at the beginning
 	void broadcastSend(String msg, boolean is_statement, boolean is_question, boolean is_answer, int number_of_questions, int total_messages, boolean fifo) 
 	{
-		Date date = new Date();
-		Timestamp current = new Timestamp(date.getTime());
+		Timestamp current = new Timestamp(System.currentTimeMillis());
 		String type = "";
 		if(is_statement)
 			type = "STATEMENT";
@@ -47,12 +46,7 @@ behavior Speaker implements ActorService
 			type = "QUESTION";
 		else if(is_answer)
 			type = "ANSWER";
-		standardOutput<-print("[Speaker Local]: ");
-		standardOutput<-print(type);
-		standardOutput<-print(": ");
-		standardOutput<-print(msg);
-		standardOutput<-print("; Timestamp: ");
-		standardOutput<-println(current) @ 
+		standardOutput<-println("[Speaker Local]: " + type + ": " + msg + "; Timestamp: " + current) @ 
 		server_ref<-broadcast(myName, msg, type, number_of_questions, total_messages, fifo);
 	}	
 
@@ -98,15 +92,11 @@ behavior Speaker implements ActorService
 				else
 				{
 					messages.add(msg);
-					Thread.sleep(200);
+					Thread.sleep(20);
 
 					// next mark the timestamp
-					Date date_four = new Date();
-					Timestamp current_four = new Timestamp(date_four.getTime());
-					standardOutput<-print("[Speaker Remote]: STATEMENT: ");
-					standardOutput<-print(msg);
-					standardOutput<-print("; Timestamp: ");
-					standardOutput<-println(current_four);
+					Timestamp current_four = new Timestamp(System.currentTimeMillis());
+					standardOutput<-println("[Speaker Remote]: STATEMENT: " + msg + "; Timestamp: " + current_four);
 				}
 				break;
 		}
@@ -156,7 +146,7 @@ behavior Speaker implements ActorService
 		{
 			currentAdded.add(current_value);
 			messages.add(msg);
-			Thread.sleep(200);
+			Thread.sleep(20);
 			
 			// next mark the timestamp
 			Date date_four = new Date();
@@ -173,7 +163,7 @@ behavior Speaker implements ActorService
 					String current_message = (String)currentFifoMessages.get(i);
 					currentAdded.add(current_value);
 					messages.add(current_message);
-					Thread.sleep(200);
+					Thread.sleep(20);
 					Date date_five = new Date();
 					Timestamp current_five = new Timestamp(date_five.getTime());
 					if(isQuestion)
@@ -400,7 +390,7 @@ behavior Speaker implements ActorService
 			while(messageQueue.size() > 0)
 			{
 				messages.add(messageQueue.remove());
-				Thread.sleep(200);
+				Thread.sleep(20);
 			}
 			Date date = new Date();
 			Timestamp current = new Timestamp(date.getTime());
@@ -417,6 +407,7 @@ behavior Speaker implements ActorService
 	{
 		standardOutput<-println("Speaker started with uan: "+ getUAN().toString());
 	}	
+
 
 	// sample starting function - does not serve much use
 	void act(String args[])

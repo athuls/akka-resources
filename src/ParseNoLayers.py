@@ -78,7 +78,6 @@ def get_max_file_latency(num_users):
                         starting_time = curr_time
                 break
         curr_file.close()
-
     max_latency = 0
     for file in file_name_list:
         parse_file = open(file, "r")

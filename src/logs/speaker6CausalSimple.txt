@@ -1,102 +1,1023 @@
-Received speaker: uan:\localhost:3030id7 to register with server uan:\localhost:3030id1
-Speaker started with uan: uan://:3030\localhost:3030id7
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Answer 4.; Timestamp: 2019-10-31 08:45:22.074
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Answer 10.; Timestamp: 2019-10-31 08:45:22.671
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Answer 2.; Timestamp: 2019-10-31 08:45:22.672
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Answer 3.; Timestamp: 2019-10-31 08:45:23.311
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Answer 7.; Timestamp: 2019-10-31 08:45:23.312
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Answer 5.; Timestamp: 2019-10-31 08:45:23.314
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Answer 1.; Timestamp: 2019-10-31 08:45:23.315
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Answer 6.; Timestamp: 2019-10-31 08:45:23.317
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Answer 9.; Timestamp: 2019-10-31 08:45:23.319
-[Speaker Local] uan:\localhost:3030id7: ANSWER: User 6: Answer 8.; Timestamp: 2019-10-31 08:45:23.32
-[Speaker Remote] uan:\localhost:3030id3: QUESTION: User 2: Question 1.; Timestamp: 2019-10-31 08:45:24.4
-[Speaker Remote] uan:\localhost:3030id3: QUESTION: User 2: Question 2.; Timestamp: 2019-10-31 08:45:24.606
-[Speaker Remote] uan:\localhost:3030id3: QUESTION: User 2: Question 3.; Timestamp: 2019-10-31 08:45:24.813
-[Speaker Remote] uan:\localhost:3030id3: QUESTION: User 2: Question 4.; Timestamp: 2019-10-31 08:45:25.014
-[Speaker Remote] uan:\localhost:3030id3: QUESTION: User 2: Question 5.; Timestamp: 2019-10-31 08:45:25.217
-[Speaker Remote] uan:\localhost:3030id3: QUESTION: User 2: Question 6.; Timestamp: 2019-10-31 08:45:25.443
-[Speaker Remote] uan:\localhost:3030id3: QUESTION: User 2: Question 7.; Timestamp: 2019-10-31 08:45:25.644
-[Speaker Remote] uan:\localhost:3030id3: QUESTION: User 2: Question 8.; Timestamp: 2019-10-31 08:45:25.845
-[Speaker Remote] uan:\localhost:3030id3: QUESTION: User 2: Question 9.; Timestamp: 2019-10-31 08:45:26.048
-[Speaker Remote] uan:\localhost:3030id3: QUESTION: User 2: Question 10.; Timestamp: 2019-10-31 08:45:26.303
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 1.; Timestamp: 2019-10-31 08:45:26.519
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 2.; Timestamp: 2019-10-31 08:45:26.728
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 3.; Timestamp: 2019-10-31 08:45:26.937
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 4.; Timestamp: 2019-10-31 08:45:27.141
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 5.; Timestamp: 2019-10-31 08:45:27.342
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 6.; Timestamp: 2019-10-31 08:45:27.545
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 7.; Timestamp: 2019-10-31 08:45:27.745
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 8.; Timestamp: 2019-10-31 08:45:27.946
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 9.; Timestamp: 2019-10-31 08:45:28.147
-[Speaker Remote] uan:\localhost:3030id2: QUESTION: User 1: Question 10.; Timestamp: 2019-10-31 08:45:28.407
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 4: Answer 1.; Timestamp: 2019-10-31 08:45:28.634
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 9: Answer 1.; Timestamp: 2019-10-31 08:45:28.836
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 9: Answer 2.; Timestamp: 2019-10-31 08:45:29.04
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 9: Answer 3.; Timestamp: 2019-10-31 08:45:29.241
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 9: Answer 4.; Timestamp: 2019-10-31 08:45:29.442
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 9: Answer 5.; Timestamp: 2019-10-31 08:45:29.643
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 4: Answer 2.; Timestamp: 2019-10-31 08:45:29.85
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 4: Answer 3.; Timestamp: 2019-10-31 08:45:30.051
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 4: Answer 4.; Timestamp: 2019-10-31 08:45:30.252
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 4: Answer 5.; Timestamp: 2019-10-31 08:45:30.453
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 4: Answer 6.; Timestamp: 2019-10-31 08:45:30.655
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 4: Answer 7.; Timestamp: 2019-10-31 08:45:30.857
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 4: Answer 8.; Timestamp: 2019-10-31 08:45:31.059
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 4: Answer 9.; Timestamp: 2019-10-31 08:45:31.26
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 4: Answer 10.; Timestamp: 2019-10-31 08:45:31.462
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 9: Answer 6.; Timestamp: 2019-10-31 08:45:31.664
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 9: Answer 7.; Timestamp: 2019-10-31 08:45:31.865
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 9: Answer 8.; Timestamp: 2019-10-31 08:45:32.067
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 9: Answer 9.; Timestamp: 2019-10-31 08:45:32.269
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 9: Answer 10.; Timestamp: 2019-10-31 08:45:32.474
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 5: Answer 1.; Timestamp: 2019-10-31 08:45:32.676
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 5: Answer 2.; Timestamp: 2019-10-31 08:45:32.89
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 3: Answer 1.; Timestamp: 2019-10-31 08:45:33.09
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 3: Answer 2.; Timestamp: 2019-10-31 08:45:33.291
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 3: Answer 3.; Timestamp: 2019-10-31 08:45:33.493
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 7: Answer 1.; Timestamp: 2019-10-31 08:45:33.696
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 7: Answer 2.; Timestamp: 2019-10-31 08:45:33.897
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 7: Answer 3.; Timestamp: 2019-10-31 08:45:34.1
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 7: Answer 4.; Timestamp: 2019-10-31 08:45:34.301
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 7: Answer 5.; Timestamp: 2019-10-31 08:45:34.502
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 7: Answer 6.; Timestamp: 2019-10-31 08:45:34.703
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 7: Answer 7.; Timestamp: 2019-10-31 08:45:34.904
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 3: Answer 4.; Timestamp: 2019-10-31 08:45:35.104
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 5: Answer 3.; Timestamp: 2019-10-31 08:45:35.306
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 5: Answer 4.; Timestamp: 2019-10-31 08:45:35.509
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 5: Answer 5.; Timestamp: 2019-10-31 08:45:35.716
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 5: Answer 6.; Timestamp: 2019-10-31 08:45:35.924
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 5: Answer 7.; Timestamp: 2019-10-31 08:45:36.126
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 5: Answer 8.; Timestamp: 2019-10-31 08:45:36.335
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 7: Answer 8.; Timestamp: 2019-10-31 08:45:36.536
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 7: Answer 9.; Timestamp: 2019-10-31 08:45:36.738
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 7: Answer 10.; Timestamp: 2019-10-31 08:45:36.949
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 3: Answer 5.; Timestamp: 2019-10-31 08:45:37.156
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 3: Answer 6.; Timestamp: 2019-10-31 08:45:37.357
-[Speaker Remote] uan:\localhost:3030id3: ANSWER: User 5: Answer 9.; Timestamp: 2019-10-31 08:45:37.559
-[Speaker Remote] uan:\localhost:3030id6: ANSWER: User 5: Answer 10.; Timestamp: 2019-10-31 08:45:37.761
-[Speaker Remote] uan:\localhost:3030id11: ANSWER: User 10: Answer 1.; Timestamp: 2019-10-31 08:45:37.964
-[Speaker Remote] uan:\localhost:3030id11: ANSWER: User 10: Answer 2.; Timestamp: 2019-10-31 08:45:38.165
-[Speaker Remote] uan:\localhost:3030id11: ANSWER: User 10: Answer 3.; Timestamp: 2019-10-31 08:45:38.37
-[Speaker Remote] uan:\localhost:3030id11: ANSWER: User 10: Answer 4.; Timestamp: 2019-10-31 08:45:38.572
-[Speaker Remote] uan:\localhost:3030id11: ANSWER: User 10: Answer 5.; Timestamp: 2019-10-31 08:45:38.773
-[Speaker Remote] uan:\localhost:3030id11: ANSWER: User 10: Answer 6.; Timestamp: 2019-10-31 08:45:38.974
-[Speaker Remote] uan:\localhost:3030id11: ANSWER: User 10: Answer 7.; Timestamp: 2019-10-31 08:45:39.175
-[Speaker Remote] uan:\localhost:3030id11: ANSWER: User 10: Answer 8.; Timestamp: 2019-10-31 08:45:39.376
-[Speaker Remote] uan:\localhost:3030id11: ANSWER: User 10: Answer 9.; Timestamp: 2019-10-31 08:45:39.577
-[Speaker Remote] uan:\localhost:3030id11: ANSWER: User 10: Answer 10.; Timestamp: 2019-10-31 08:45:39.779
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Answer 7.; Timestamp: 2019-10-31 08:45:39.98
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Answer 8.; Timestamp: 2019-10-31 08:45:40.181
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Answer 9.; Timestamp: 2019-10-31 08:45:40.383
-[Speaker Remote] uan:\localhost:3030id4: ANSWER: User 3: Answer 10.; Timestamp: 2019-10-31 08:45:40.584
-[Speaker Remote] uan:\localhost:3030id9: ANSWER: User 8: Answer 1.; Timestamp: 2019-10-31 08:45:40.786
-[Speaker Remote] uan:\localhost:3030id9: ANSWER: User 8: Answer 2.; Timestamp: 2019-10-31 08:45:40.988
-[Speaker Remote] uan:\localhost:3030id9: ANSWER: User 8: Answer 3.; Timestamp: 2019-10-31 08:45:41.189
-[Speaker Remote] uan:\localhost:3030id9: ANSWER: User 8: Answer 4.; Timestamp: 2019-10-31 08:45:41.39
-[Speaker Remote] uan:\localhost:3030id9: ANSWER: User 8: Answer 5.; Timestamp: 2019-10-31 08:45:41.592
-[Speaker Remote] uan:\localhost:3030id9: ANSWER: User 8: Answer 6.; Timestamp: 2019-10-31 08:45:41.793
-[Speaker Remote] uan:\localhost:3030id9: ANSWER: User 8: Answer 7.; Timestamp: 2019-10-31 08:45:41.995
-[Speaker Remote] uan:\localhost:3030id9: ANSWER: User 8: Answer 8.; Timestamp: 2019-10-31 08:45:42.196
-[Speaker Remote] uan:\localhost:3030id9: ANSWER: User 8: Answer 9.; Timestamp: 2019-10-31 08:45:42.398
-[Speaker Remote] uan:\localhost:3030id9: ANSWER: User 8: Answer 10.; Timestamp: 2019-10-31 08:45:42.599
+Received speaker: uan://localhost:3030/id16 to register with server uan://localhost:3030/id1
+Speaker started with uan: uan://localhost:3030/id16
+[Speaker Local]: QUESTION: User 6: Question 845.; Timestamp: 2019-11-13 23:13:42.19
+[Speaker Local]: QUESTION: User 6: Question 932.; Timestamp: 2019-11-13 23:13:45.363
+[Speaker Local]: QUESTION: User 6: Question 675.; Timestamp: 2019-11-13 23:13:45.364
+[Speaker Local]: QUESTION: User 6: Question 129.; Timestamp: 2019-11-13 23:13:45.365
+[Speaker Local]: QUESTION: User 6: Question 794.; Timestamp: 2019-11-13 23:13:45.366
+[Speaker Local]: QUESTION: User 6: Question 244.; Timestamp: 2019-11-13 23:13:45.367
+[Speaker Local]: QUESTION: User 6: Question 613.; Timestamp: 2019-11-13 23:13:45.368
+[Speaker Local]: QUESTION: User 6: Question 591.; Timestamp: 2019-11-13 23:13:45.369
+[Speaker Local]: QUESTION: User 6: Question 633.; Timestamp: 2019-11-13 23:13:45.369
+[Speaker Local]: QUESTION: User 6: Question 550.; Timestamp: 2019-11-13 23:13:45.371
+[Speaker Local]: QUESTION: User 6: Question 208.; Timestamp: 2019-11-13 23:13:45.372
+[Speaker Local]: QUESTION: User 6: Question 134.; Timestamp: 2019-11-13 23:13:45.374
+[Speaker Local]: QUESTION: User 6: Question 167.; Timestamp: 2019-11-13 23:13:45.375
+[Speaker Local]: QUESTION: User 6: Question 77.; Timestamp: 2019-11-13 23:13:45.377
+[Speaker Local]: QUESTION: User 6: Question 949.; Timestamp: 2019-11-13 23:13:45.378
+[Speaker Local]: QUESTION: User 6: Question 947.; Timestamp: 2019-11-13 23:13:45.38
+[Speaker Local]: QUESTION: User 6: Question 112.; Timestamp: 2019-11-13 23:13:45.381
+[Speaker Local]: QUESTION: User 6: Question 264.; Timestamp: 2019-11-13 23:13:45.382
+[Speaker Local]: QUESTION: User 6: Question 673.; Timestamp: 2019-11-13 23:13:45.383
+[Speaker Local]: QUESTION: User 6: Question 228.; Timestamp: 2019-11-13 23:13:45.384
+[Speaker Local]: QUESTION: User 6: Question 574.; Timestamp: 2019-11-13 23:13:45.39
+[Speaker Local]: QUESTION: User 6: Question 752.; Timestamp: 2019-11-13 23:13:45.391
+[Speaker Local]: QUESTION: User 6: Question 358.; Timestamp: 2019-11-13 23:13:45.398
+[Speaker Local]: QUESTION: User 6: Question 58.; Timestamp: 2019-11-13 23:13:45.401
+[Speaker Local]: QUESTION: User 6: Question 939.; Timestamp: 2019-11-13 23:13:45.403
+[Speaker Local]: QUESTION: User 6: Question 515.; Timestamp: 2019-11-13 23:13:45.403
+[Speaker Local]: QUESTION: User 6: Question 826.; Timestamp: 2019-11-13 23:13:45.404
+[Speaker Local]: QUESTION: User 6: Question 226.; Timestamp: 2019-11-13 23:13:45.406
+[Speaker Local]: QUESTION: User 6: Question 607.; Timestamp: 2019-11-13 23:13:45.407
+[Speaker Local]: QUESTION: User 6: Question 922.; Timestamp: 2019-11-13 23:13:51.272
+[Speaker Local]: QUESTION: User 6: Question 535.; Timestamp: 2019-11-13 23:13:51.273
+[Speaker Local]: QUESTION: User 6: Question 918.; Timestamp: 2019-11-13 23:13:51.274
+[Speaker Local]: QUESTION: User 6: Question 644.; Timestamp: 2019-11-13 23:13:51.275
+[Speaker Local]: QUESTION: User 6: Question 136.; Timestamp: 2019-11-13 23:13:51.275
+[Speaker Local]: QUESTION: User 6: Question 69.; Timestamp: 2019-11-13 23:13:51.276
+[Speaker Local]: QUESTION: User 6: Question 57.; Timestamp: 2019-11-13 23:13:51.277
+[Speaker Local]: QUESTION: User 6: Question 389.; Timestamp: 2019-11-13 23:13:51.277
+[Speaker Local]: QUESTION: User 6: Question 917.; Timestamp: 2019-11-13 23:13:51.278
+[Speaker Local]: QUESTION: User 6: Question 817.; Timestamp: 2019-11-13 23:13:51.278
+[Speaker Local]: QUESTION: User 6: Question 967.; Timestamp: 2019-11-13 23:13:51.279
+[Speaker Local]: QUESTION: User 6: Question 785.; Timestamp: 2019-11-13 23:13:51.279
+[Speaker Local]: QUESTION: User 6: Question 774.; Timestamp: 2019-11-13 23:13:51.28
+[Speaker Local]: QUESTION: User 6: Question 485.; Timestamp: 2019-11-13 23:13:51.28
+[Speaker Local]: QUESTION: User 6: Question 824.; Timestamp: 2019-11-13 23:13:51.281
+[Speaker Local]: QUESTION: User 6: Question 815.; Timestamp: 2019-11-13 23:13:51.282
+[Speaker Local]: QUESTION: User 6: Question 14.; Timestamp: 2019-11-13 23:13:51.282
+[Speaker Local]: QUESTION: User 6: Question 537.; Timestamp: 2019-11-13 23:13:51.283
+[Speaker Local]: QUESTION: User 6: Question 984.; Timestamp: 2019-11-13 23:13:51.283
+[Speaker Local]: QUESTION: User 6: Question 889.; Timestamp: 2019-11-13 23:13:51.283
+[Speaker Local]: QUESTION: User 6: Question 374.; Timestamp: 2019-11-13 23:13:51.284
+[Speaker Local]: QUESTION: User 6: Question 714.; Timestamp: 2019-11-13 23:13:51.284
+[Speaker Local]: QUESTION: User 6: Question 813.; Timestamp: 2019-11-13 23:13:51.285
+[Speaker Local]: QUESTION: User 6: Question 731.; Timestamp: 2019-11-13 23:13:51.286
+[Speaker Local]: QUESTION: User 6: Question 214.; Timestamp: 2019-11-13 23:13:51.288
+[Speaker Local]: QUESTION: User 6: Question 8.; Timestamp: 2019-11-13 23:13:51.288
+[Speaker Local]: QUESTION: User 6: Question 634.; Timestamp: 2019-11-13 23:13:51.289
+[Speaker Local]: QUESTION: User 6: Question 107.; Timestamp: 2019-11-13 23:13:51.289
+[Speaker Local]: QUESTION: User 6: Question 394.; Timestamp: 2019-11-13 23:13:51.29
+[Speaker Local]: QUESTION: User 6: Question 364.; Timestamp: 2019-11-13 23:13:51.291
+[Speaker Local]: QUESTION: User 6: Question 197.; Timestamp: 2019-11-13 23:13:51.292
+[Speaker Local]: QUESTION: User 6: Question 921.; Timestamp: 2019-11-13 23:13:51.293
+[Speaker Local]: QUESTION: User 6: Question 454.; Timestamp: 2019-11-13 23:13:51.294
+[Speaker Local]: QUESTION: User 6: Question 749.; Timestamp: 2019-11-13 23:13:51.295
+[Speaker Local]: QUESTION: User 6: Question 85.; Timestamp: 2019-11-13 23:13:51.296
+[Speaker Local]: QUESTION: User 6: Question 132.; Timestamp: 2019-11-13 23:13:51.297
+[Speaker Local]: QUESTION: User 6: Question 423.; Timestamp: 2019-11-13 23:13:51.297
+[Speaker Local]: QUESTION: User 6: Question 457.; Timestamp: 2019-11-13 23:13:51.298
+[Speaker Local]: QUESTION: User 6: Question 448.; Timestamp: 2019-11-13 23:13:51.299
+[Speaker Local]: QUESTION: User 6: Question 656.; Timestamp: 2019-11-13 23:13:51.3
+[Speaker Local]: QUESTION: User 6: Question 545.; Timestamp: 2019-11-13 23:13:51.3
+[Speaker Local]: QUESTION: User 6: Question 955.; Timestamp: 2019-11-13 23:13:51.301
+[Speaker Local]: QUESTION: User 6: Question 668.; Timestamp: 2019-11-13 23:13:51.302
+[Speaker Local]: QUESTION: User 6: Question 430.; Timestamp: 2019-11-13 23:13:51.303
+[Speaker Local]: QUESTION: User 6: Question 92.; Timestamp: 2019-11-13 23:13:51.303
+[Speaker Local]: QUESTION: User 6: Question 623.; Timestamp: 2019-11-13 23:13:51.304
+[Speaker Local]: QUESTION: User 6: Question 335.; Timestamp: 2019-11-13 23:13:59.462
+[Speaker Local]: QUESTION: User 6: Question 194.; Timestamp: 2019-11-13 23:13:59.464
+[Speaker Local]: QUESTION: User 6: Question 147.; Timestamp: 2019-11-13 23:13:59.465
+[Speaker Local]: QUESTION: User 6: Question 198.; Timestamp: 2019-11-13 23:13:59.466
+[Speaker Local]: QUESTION: User 6: Question 305.; Timestamp: 2019-11-13 23:13:59.469
+[Speaker Local]: QUESTION: User 6: Question 792.; Timestamp: 2019-11-13 23:13:59.47
+[Speaker Local]: QUESTION: User 6: Question 954.; Timestamp: 2019-11-13 23:13:59.471
+[Speaker Local]: QUESTION: User 6: Question 196.; Timestamp: 2019-11-13 23:13:59.472
+[Speaker Local]: QUESTION: User 6: Question 473.; Timestamp: 2019-11-13 23:13:59.472
+[Speaker Local]: QUESTION: User 6: Question 237.; Timestamp: 2019-11-13 23:13:59.473
+[Speaker Local]: QUESTION: User 6: Question 401.; Timestamp: 2019-11-13 23:13:59.474
+[Speaker Local]: QUESTION: User 6: Question 902.; Timestamp: 2019-11-13 23:13:59.475
+[Speaker Local]: QUESTION: User 6: Question 578.; Timestamp: 2019-11-13 23:13:59.476
+[Speaker Local]: QUESTION: User 6: Question 428.; Timestamp: 2019-11-13 23:13:59.476
+[Speaker Local]: QUESTION: User 6: Question 269.; Timestamp: 2019-11-13 23:13:59.477
+[Speaker Local]: QUESTION: User 6: Question 502.; Timestamp: 2019-11-13 23:13:59.478
+[Speaker Local]: QUESTION: User 6: Question 570.; Timestamp: 2019-11-13 23:13:59.48
+[Speaker Local]: QUESTION: User 6: Question 632.; Timestamp: 2019-11-13 23:13:59.48
+[Speaker Local]: QUESTION: User 6: Question 65.; Timestamp: 2019-11-13 23:14:00.861
+[Speaker Local]: QUESTION: User 6: Question 929.; Timestamp: 2019-11-13 23:14:01.325
+[Speaker Local]: QUESTION: User 6: Question 510.; Timestamp: 2019-11-13 23:14:01.326
+[Speaker Local]: QUESTION: User 6: Question 327.; Timestamp: 2019-11-13 23:14:01.327
+[Speaker Local]: QUESTION: User 6: Question 791.; Timestamp: 2019-11-13 23:14:01.328
+[Speaker Local]: QUESTION: User 6: Question 392.; Timestamp: 2019-11-13 23:14:01.328
+[Speaker Local]: QUESTION: User 6: Question 135.; Timestamp: 2019-11-13 23:14:01.329
+[Speaker Local]: QUESTION: User 6: Question 312.; Timestamp: 2019-11-13 23:14:01.33
+[Speaker Local]: QUESTION: User 6: Question 157.; Timestamp: 2019-11-13 23:14:01.331
+[Speaker Local]: QUESTION: User 6: Question 353.; Timestamp: 2019-11-13 23:14:01.331
+[Speaker Local]: QUESTION: User 6: Question 649.; Timestamp: 2019-11-13 23:14:01.332
+[Speaker Local]: QUESTION: User 6: Question 985.; Timestamp: 2019-11-13 23:14:01.332
+[Speaker Local]: QUESTION: User 6: Question 905.; Timestamp: 2019-11-13 23:14:01.333
+[Speaker Local]: QUESTION: User 6: Question 866.; Timestamp: 2019-11-13 23:14:01.333
+[Speaker Local]: QUESTION: User 6: Question 275.; Timestamp: 2019-11-13 23:14:01.334
+[Speaker Local]: QUESTION: User 6: Question 385.; Timestamp: 2019-11-13 23:14:01.334
+[Speaker Local]: QUESTION: User 6: Question 331.; Timestamp: 2019-11-13 23:14:01.334
+[Speaker Local]: QUESTION: User 6: Question 883.; Timestamp: 2019-11-13 23:14:01.335
+[Speaker Local]: QUESTION: User 6: Question 342.; Timestamp: 2019-11-13 23:14:01.335
+[Speaker Local]: QUESTION: User 6: Question 598.; Timestamp: 2019-11-13 23:14:01.336
+[Speaker Local]: QUESTION: User 6: Question 284.; Timestamp: 2019-11-13 23:14:01.336
+[Speaker Local]: QUESTION: User 6: Question 302.; Timestamp: 2019-11-13 23:14:01.337
+[Speaker Local]: QUESTION: User 6: Question 555.; Timestamp: 2019-11-13 23:14:01.337
+[Speaker Local]: QUESTION: User 6: Question 336.; Timestamp: 2019-11-13 23:14:01.338
+[Speaker Local]: QUESTION: User 6: Question 247.; Timestamp: 2019-11-13 23:14:01.339
+[Speaker Local]: QUESTION: User 6: Question 402.; Timestamp: 2019-11-13 23:14:01.341
+[Speaker Local]: QUESTION: User 6: Question 341.; Timestamp: 2019-11-13 23:14:01.341
+[Speaker Local]: QUESTION: User 6: Question 997.; Timestamp: 2019-11-13 23:14:01.342
+[Speaker Local]: QUESTION: User 6: Question 732.; Timestamp: 2019-11-13 23:14:01.343
+[Speaker Local]: QUESTION: User 6: Question 271.; Timestamp: 2019-11-13 23:14:01.344
+[Speaker Local]: QUESTION: User 6: Question 407.; Timestamp: 2019-11-13 23:14:01.345
+[Speaker Local]: QUESTION: User 6: Question 530.; Timestamp: 2019-11-13 23:14:01.346
+[Speaker Local]: QUESTION: User 6: Question 292.; Timestamp: 2019-11-13 23:14:01.346
+[Speaker Local]: QUESTION: User 6: Question 760.; Timestamp: 2019-11-13 23:14:01.347
+[Speaker Local]: QUESTION: User 6: Question 672.; Timestamp: 2019-11-13 23:14:01.348
+[Speaker Local]: QUESTION: User 6: Question 338.; Timestamp: 2019-11-13 23:14:01.349
+[Speaker Local]: QUESTION: User 6: Question 447.; Timestamp: 2019-11-13 23:14:01.349
+[Speaker Local]: QUESTION: User 6: Question 177.; Timestamp: 2019-11-13 23:14:01.35
+[Speaker Local]: QUESTION: User 6: Question 722.; Timestamp: 2019-11-13 23:14:01.351
+[Speaker Local]: QUESTION: User 6: Question 46.; Timestamp: 2019-11-13 23:14:01.351
+[Speaker Local]: QUESTION: User 6: Question 240.; Timestamp: 2019-11-13 23:14:01.352
+[Speaker Local]: QUESTION: User 6: Question 771.; Timestamp: 2019-11-13 23:14:01.353
+[Speaker Local]: QUESTION: User 6: Question 456.; Timestamp: 2019-11-13 23:14:01.354
+[Speaker Local]: QUESTION: User 6: Question 808.; Timestamp: 2019-11-13 23:14:01.354
+[Speaker Local]: QUESTION: User 6: Question 710.; Timestamp: 2019-11-13 23:14:01.355
+[Speaker Local]: QUESTION: User 6: Question 390.; Timestamp: 2019-11-13 23:14:01.356
+[Speaker Local]: QUESTION: User 6: Question 279.; Timestamp: 2019-11-13 23:14:01.356
+[Speaker Local]: QUESTION: User 6: Question 937.; Timestamp: 2019-11-13 23:14:03.551
+[Speaker Local]: QUESTION: User 6: Question 378.; Timestamp: 2019-11-13 23:14:03.555
+[Speaker Local]: QUESTION: User 6: Question 659.; Timestamp: 2019-11-13 23:14:03.556
+[Speaker Local]: QUESTION: User 6: Question 928.; Timestamp: 2019-11-13 23:14:03.556
+[Speaker Local]: QUESTION: User 6: Question 325.; Timestamp: 2019-11-13 23:14:03.557
+[Speaker Local]: QUESTION: User 6: Question 486.; Timestamp: 2019-11-13 23:14:03.558
+[Speaker Local]: QUESTION: User 6: Question 653.; Timestamp: 2019-11-13 23:14:03.56
+[Speaker Local]: QUESTION: User 6: Question 858.; Timestamp: 2019-11-13 23:14:03.56
+[Speaker Local]: QUESTION: User 6: Question 306.; Timestamp: 2019-11-13 23:14:03.562
+[Speaker Local]: QUESTION: User 6: Question 317.; Timestamp: 2019-11-13 23:14:03.563
+[Speaker Local]: QUESTION: User 6: Question 990.; Timestamp: 2019-11-13 23:14:03.563
+[Speaker Local]: QUESTION: User 6: Question 993.; Timestamp: 2019-11-13 23:14:03.564
+[Speaker Local]: QUESTION: User 6: Question 186.; Timestamp: 2019-11-13 23:14:03.566
+[Speaker Local]: QUESTION: User 6: Question 347.; Timestamp: 2019-11-13 23:14:03.567
+[Speaker Local]: QUESTION: User 6: Question 616.; Timestamp: 2019-11-13 23:14:03.567
+[Speaker Local]: QUESTION: User 6: Question 875.; Timestamp: 2019-11-13 23:14:03.569
+[Speaker Local]: QUESTION: User 6: Question 216.; Timestamp: 2019-11-13 23:14:03.569
+[Speaker Local]: QUESTION: User 6: Question 664.; Timestamp: 2019-11-13 23:14:03.57
+[Speaker Local]: QUESTION: User 6: Question 910.; Timestamp: 2019-11-13 23:14:03.571
+[Speaker Local]: QUESTION: User 6: Question 118.; Timestamp: 2019-11-13 23:14:03.572
+[Speaker Local]: QUESTION: User 6: Question 501.; Timestamp: 2019-11-13 23:14:03.572
+[Speaker Local]: QUESTION: User 6: Question 165.; Timestamp: 2019-11-13 23:14:03.573
+[Speaker Local]: QUESTION: User 6: Question 942.; Timestamp: 2019-11-13 23:14:03.574
+[Speaker Local]: QUESTION: User 6: Question 91.; Timestamp: 2019-11-13 23:14:03.575
+[Speaker Local]: QUESTION: User 6: Question 308.; Timestamp: 2019-11-13 23:14:03.576
+[Speaker Local]: QUESTION: User 6: Question 248.; Timestamp: 2019-11-13 23:14:03.577
+[Speaker Local]: QUESTION: User 6: Question 99.; Timestamp: 2019-11-13 23:14:03.577
+[Speaker Local]: QUESTION: User 6: Question 468.; Timestamp: 2019-11-13 23:14:03.578
+[Speaker Local]: QUESTION: User 6: Question 150.; Timestamp: 2019-11-13 23:14:03.579
+[Speaker Local]: QUESTION: User 6: Question 701.; Timestamp: 2019-11-13 23:14:03.579
+[Speaker Local]: QUESTION: User 6: Question 662.; Timestamp: 2019-11-13 23:14:03.58
+[Speaker Local]: QUESTION: User 6: Question 36.; Timestamp: 2019-11-13 23:14:03.58
+[Speaker Local]: QUESTION: User 6: Question 996.; Timestamp: 2019-11-13 23:14:03.581
+[Speaker Local]: QUESTION: User 6: Question 592.; Timestamp: 2019-11-13 23:14:03.582
+[Speaker Local]: QUESTION: User 6: Question 110.; Timestamp: 2019-11-13 23:14:03.582
+[Speaker Local]: QUESTION: User 6: Question 211.; Timestamp: 2019-11-13 23:14:03.583
+[Speaker Local]: QUESTION: User 6: Question 200.; Timestamp: 2019-11-13 23:14:03.584
+[Speaker Local]: QUESTION: User 6: Question 70.; Timestamp: 2019-11-13 23:14:03.584
+[Speaker Local]: QUESTION: User 6: Question 696.; Timestamp: 2019-11-13 23:14:03.585
+[Speaker Local]: QUESTION: User 6: Question 13.; Timestamp: 2019-11-13 23:14:03.586
+[Speaker Local]: QUESTION: User 6: Question 896.; Timestamp: 2019-11-13 23:14:03.586
+[Speaker Local]: QUESTION: User 6: Question 962.; Timestamp: 2019-11-13 23:14:03.587
+[Speaker Local]: QUESTION: User 6: Question 120.; Timestamp: 2019-11-13 23:14:03.588
+[Speaker Local]: QUESTION: User 6: Question 377.; Timestamp: 2019-11-13 23:14:03.588
+[Speaker Local]: QUESTION: User 6: Question 493.; Timestamp: 2019-11-13 23:14:03.589
+[Speaker Local]: QUESTION: User 6: Question 840.; Timestamp: 2019-11-13 23:14:11.425
+[Speaker Local]: QUESTION: User 6: Question 517.; Timestamp: 2019-11-13 23:14:11.428
+[Speaker Local]: QUESTION: User 6: Question 25.; Timestamp: 2019-11-13 23:14:11.43
+[Speaker Local]: QUESTION: User 6: Question 831.; Timestamp: 2019-11-13 23:14:11.432
+[Speaker Local]: QUESTION: User 6: Question 877.; Timestamp: 2019-11-13 23:14:11.433
+[Speaker Local]: QUESTION: User 6: Question 128.; Timestamp: 2019-11-13 23:14:11.433
+[Speaker Local]: QUESTION: User 6: Question 843.; Timestamp: 2019-11-13 23:14:11.433
+[Speaker Local]: QUESTION: User 6: Question 604.; Timestamp: 2019-11-13 23:14:11.434
+[Speaker Local]: QUESTION: User 6: Question 175.; Timestamp: 2019-11-13 23:14:11.434
+[Speaker Local]: QUESTION: User 6: Question 576.; Timestamp: 2019-11-13 23:14:11.435
+[Speaker Local]: QUESTION: User 6: Question 449.; Timestamp: 2019-11-13 23:14:11.435
+[Speaker Local]: QUESTION: User 6: Question 414.; Timestamp: 2019-11-13 23:14:11.435
+[Speaker Local]: QUESTION: User 6: Question 406.; Timestamp: 2019-11-13 23:14:11.436
+[Speaker Local]: QUESTION: User 6: Question 458.; Timestamp: 2019-11-13 23:14:11.438
+[Speaker Local]: QUESTION: User 6: Question 797.; Timestamp: 2019-11-13 23:14:11.47
+[Speaker Local]: QUESTION: User 6: Question 287.; Timestamp: 2019-11-13 23:14:11.471
+[Speaker Local]: QUESTION: User 6: Question 156.; Timestamp: 2019-11-13 23:14:11.472
+[Speaker Local]: QUESTION: User 6: Question 521.; Timestamp: 2019-11-13 23:14:11.474
+[Speaker Local]: QUESTION: User 6: Question 215.; Timestamp: 2019-11-13 23:14:11.475
+[Speaker Local]: QUESTION: User 6: Question 596.; Timestamp: 2019-11-13 23:14:11.475
+[Speaker Local]: QUESTION: User 6: Question 289.; Timestamp: 2019-11-13 23:14:11.476
+[Speaker Local]: QUESTION: User 6: Question 412.; Timestamp: 2019-11-13 23:14:11.477
+[Speaker Local]: QUESTION: User 6: Question 5.; Timestamp: 2019-11-13 23:14:11.478
+[Speaker Local]: QUESTION: User 6: Question 446.; Timestamp: 2019-11-13 23:14:11.48
+[Speaker Local]: QUESTION: User 6: Question 880.; Timestamp: 2019-11-13 23:14:11.481
+[Speaker Local]: QUESTION: User 6: Question 7.; Timestamp: 2019-11-13 23:14:11.482
+[Speaker Local]: QUESTION: User 6: Question 707.; Timestamp: 2019-11-13 23:14:11.483
+[Speaker Local]: QUESTION: User 6: Question 895.; Timestamp: 2019-11-13 23:14:11.483
+[Speaker Local]: QUESTION: User 6: Question 202.; Timestamp: 2019-11-13 23:14:11.484
+[Speaker Local]: QUESTION: User 6: Question 79.; Timestamp: 2019-11-13 23:14:11.485
+[Speaker Local]: QUESTION: User 6: Question 624.; Timestamp: 2019-11-13 23:14:11.486
+[Speaker Local]: QUESTION: User 6: Question 365.; Timestamp: 2019-11-13 23:14:11.486
+[Speaker Local]: QUESTION: User 6: Question 946.; Timestamp: 2019-11-13 23:14:11.486
+[Speaker Local]: QUESTION: User 6: Question 300.; Timestamp: 2019-11-13 23:14:11.487
+[Speaker Local]: QUESTION: User 6: Question 983.; Timestamp: 2019-11-13 23:14:11.487
+[Speaker Local]: QUESTION: User 6: Question 759.; Timestamp: 2019-11-13 23:14:11.487
+[Speaker Local]: QUESTION: User 6: Question 713.; Timestamp: 2019-11-13 23:14:11.488
+[Speaker Local]: QUESTION: User 6: Question 712.; Timestamp: 2019-11-13 23:14:11.488
+[Speaker Local]: QUESTION: User 6: Question 957.; Timestamp: 2019-11-13 23:14:11.488
+[Speaker Local]: QUESTION: User 6: Question 784.; Timestamp: 2019-11-13 23:14:11.489
+[Speaker Local]: QUESTION: User 6: Question 960.; Timestamp: 2019-11-13 23:14:11.489
+[Speaker Local]: QUESTION: User 6: Question 56.; Timestamp: 2019-11-13 23:14:11.489
+[Speaker Local]: QUESTION: User 6: Question 297.; Timestamp: 2019-11-13 23:14:11.49
+[Speaker Local]: QUESTION: User 6: Question 999.; Timestamp: 2019-11-13 23:14:11.49
+[Speaker Local]: QUESTION: User 6: Question 683.; Timestamp: 2019-11-13 23:14:11.49
+[Speaker Local]: QUESTION: User 6: Question 838.; Timestamp: 2019-11-13 23:14:11.491
+[Speaker Local]: QUESTION: User 6: Question 926.; Timestamp: 2019-11-13 23:14:11.491
+[Speaker Local]: QUESTION: User 6: Question 948.; Timestamp: 2019-11-13 23:14:11.491
+[Speaker Local]: QUESTION: User 6: Question 832.; Timestamp: 2019-11-13 23:14:11.491
+[Speaker Local]: QUESTION: User 6: Question 420.; Timestamp: 2019-11-13 23:14:11.492
+[Speaker Local]: QUESTION: User 6: Question 608.; Timestamp: 2019-11-13 23:14:11.492
+[Speaker Local]: QUESTION: User 6: Question 370.; Timestamp: 2019-11-13 23:14:11.492
+[Speaker Local]: QUESTION: User 6: Question 191.; Timestamp: 2019-11-13 23:14:11.493
+[Speaker Local]: QUESTION: User 6: Question 886.; Timestamp: 2019-11-13 23:14:11.493
+[Speaker Local]: QUESTION: User 6: Question 987.; Timestamp: 2019-11-13 23:14:11.493
+[Speaker Local]: QUESTION: User 6: Question 148.; Timestamp: 2019-11-13 23:14:11.494
+[Speaker Local]: QUESTION: User 6: Question 106.; Timestamp: 2019-11-13 23:14:11.494
+[Speaker Local]: QUESTION: User 6: Question 405.; Timestamp: 2019-11-13 23:14:11.494
+[Speaker Local]: QUESTION: User 6: Question 363.; Timestamp: 2019-11-13 23:14:11.495
+[Speaker Local]: QUESTION: User 6: Question 660.; Timestamp: 2019-11-13 23:14:11.495
+[Speaker Local]: QUESTION: User 6: Question 379.; Timestamp: 2019-11-13 23:14:11.495
+[Speaker Local]: QUESTION: User 6: Question 525.; Timestamp: 2019-11-13 23:14:11.496
+[Speaker Local]: QUESTION: User 6: Question 461.; Timestamp: 2019-11-13 23:14:11.496
+[Speaker Local]: QUESTION: User 6: Question 413.; Timestamp: 2019-11-13 23:14:11.496
+[Speaker Local]: QUESTION: User 6: Question 410.; Timestamp: 2019-11-13 23:14:11.497
+[Speaker Local]: QUESTION: User 6: Question 976.; Timestamp: 2019-11-13 23:14:11.497
+[Speaker Local]: QUESTION: User 6: Question 9.; Timestamp: 2019-11-13 23:14:11.498
+[Speaker Local]: QUESTION: User 6: Question 83.; Timestamp: 2019-11-13 23:14:11.498
+[Speaker Local]: QUESTION: User 6: Question 827.; Timestamp: 2019-11-13 23:14:11.499
+[Speaker Local]: QUESTION: User 6: Question 93.; Timestamp: 2019-11-13 23:14:16.113
+[Speaker Local]: QUESTION: User 6: Question 72.; Timestamp: 2019-11-13 23:14:16.114
+[Speaker Local]: QUESTION: User 6: Question 30.; Timestamp: 2019-11-13 23:14:16.115
+[Speaker Local]: QUESTION: User 6: Question 246.; Timestamp: 2019-11-13 23:14:16.115
+[Speaker Local]: QUESTION: User 6: Question 104.; Timestamp: 2019-11-13 23:14:16.115
+[Speaker Local]: QUESTION: User 6: Question 602.; Timestamp: 2019-11-13 23:14:16.116
+[Speaker Local]: QUESTION: User 6: Question 27.; Timestamp: 2019-11-13 23:14:16.116
+[Speaker Local]: QUESTION: User 6: Question 916.; Timestamp: 2019-11-13 23:14:16.116
+[Speaker Local]: QUESTION: User 6: Question 153.; Timestamp: 2019-11-13 23:14:16.116
+[Speaker Local]: QUESTION: User 6: Question 859.; Timestamp: 2019-11-13 23:14:16.117
+[Speaker Local]: QUESTION: User 6: Question 219.; Timestamp: 2019-11-13 23:14:16.117
+[Speaker Local]: QUESTION: User 6: Question 754.; Timestamp: 2019-11-13 23:14:16.117
+[Speaker Local]: QUESTION: User 6: Question 582.; Timestamp: 2019-11-13 23:14:16.117
+[Speaker Local]: QUESTION: User 6: Question 462.; Timestamp: 2019-11-13 23:14:16.118
+[Speaker Local]: QUESTION: User 6: Question 332.; Timestamp: 2019-11-13 23:14:16.118
+[Speaker Local]: QUESTION: User 6: Question 625.; Timestamp: 2019-11-13 23:14:16.118
+[Speaker Local]: QUESTION: User 6: Question 894.; Timestamp: 2019-11-13 23:14:16.118
+[Speaker Local]: QUESTION: User 6: Question 209.; Timestamp: 2019-11-13 23:14:16.119
+[Speaker Local]: QUESTION: User 6: Question 560.; Timestamp: 2019-11-13 23:14:16.119
+[Speaker Local]: QUESTION: User 6: Question 103.; Timestamp: 2019-11-13 23:14:16.119
+[Speaker Local]: QUESTION: User 6: Question 368.; Timestamp: 2019-11-13 23:14:16.119
+[Speaker Local]: QUESTION: User 6: Question 181.; Timestamp: 2019-11-13 23:14:16.12
+[Speaker Local]: QUESTION: User 6: Question 299.; Timestamp: 2019-11-13 23:14:16.12
+[Speaker Local]: QUESTION: User 6: Question 488.; Timestamp: 2019-11-13 23:14:16.12
+[Speaker Local]: QUESTION: User 6: Question 32.; Timestamp: 2019-11-13 23:14:16.121
+[Speaker Local]: QUESTION: User 6: Question 850.; Timestamp: 2019-11-13 23:14:16.121
+[Speaker Local]: QUESTION: User 6: Question 283.; Timestamp: 2019-11-13 23:14:16.121
+[Speaker Local]: QUESTION: User 6: Question 23.; Timestamp: 2019-11-13 23:14:16.121
+[Speaker Local]: QUESTION: User 6: Question 75.; Timestamp: 2019-11-13 23:14:16.122
+[Speaker Local]: QUESTION: User 6: Question 569.; Timestamp: 2019-11-13 23:14:16.122
+[Speaker Local]: QUESTION: User 6: Question 935.; Timestamp: 2019-11-13 23:14:16.122
+[Speaker Local]: QUESTION: User 6: Question 818.; Timestamp: 2019-11-13 23:14:16.122
+[Speaker Local]: QUESTION: User 6: Question 376.; Timestamp: 2019-11-13 23:14:16.123
+[Speaker Local]: QUESTION: User 6: Question 804.; Timestamp: 2019-11-13 23:14:16.123
+[Speaker Local]: QUESTION: User 6: Question 690.; Timestamp: 2019-11-13 23:14:16.123
+[Speaker Local]: QUESTION: User 6: Question 295.; Timestamp: 2019-11-13 23:14:16.124
+[Speaker Local]: QUESTION: User 6: Question 936.; Timestamp: 2019-11-13 23:14:16.124
+[Speaker Local]: QUESTION: User 6: Question 162.; Timestamp: 2019-11-13 23:14:16.124
+[Speaker Local]: QUESTION: User 6: Question 509.; Timestamp: 2019-11-13 23:14:16.125
+[Speaker Local]: QUESTION: User 6: Question 344.; Timestamp: 2019-11-13 23:14:16.125
+[Speaker Local]: QUESTION: User 6: Question 557.; Timestamp: 2019-11-13 23:14:16.125
+[Speaker Local]: QUESTION: User 6: Question 541.; Timestamp: 2019-11-13 23:14:16.126
+[Speaker Local]: QUESTION: User 6: Question 719.; Timestamp: 2019-11-13 23:14:16.126
+[Speaker Local]: QUESTION: User 6: Question 805.; Timestamp: 2019-11-13 23:14:16.126
+[Speaker Local]: QUESTION: User 6: Question 677.; Timestamp: 2019-11-13 23:14:16.127
+[Speaker Local]: QUESTION: User 6: Question 927.; Timestamp: 2019-11-13 23:14:16.127
+[Speaker Local]: QUESTION: User 6: Question 796.; Timestamp: 2019-11-13 23:14:16.127
+[Speaker Local]: QUESTION: User 6: Question 682.; Timestamp: 2019-11-13 23:14:16.128
+[Speaker Local]: QUESTION: User 6: Question 746.; Timestamp: 2019-11-13 23:14:16.128
+[Speaker Local]: QUESTION: User 6: Question 139.; Timestamp: 2019-11-13 23:14:16.128
+[Speaker Local]: QUESTION: User 6: Question 678.; Timestamp: 2019-11-13 23:14:16.128
+[Speaker Local]: QUESTION: User 6: Question 589.; Timestamp: 2019-11-13 23:14:16.128
+[Speaker Local]: QUESTION: User 6: Question 425.; Timestamp: 2019-11-13 23:14:16.129
+[Speaker Local]: QUESTION: User 6: Question 43.; Timestamp: 2019-11-13 23:14:16.129
+[Speaker Local]: QUESTION: User 6: Question 547.; Timestamp: 2019-11-13 23:14:16.129
+[Speaker Local]: QUESTION: User 6: Question 218.; Timestamp: 2019-11-13 23:14:16.13
+[Speaker Local]: QUESTION: User 6: Question 788.; Timestamp: 2019-11-13 23:14:16.13
+[Speaker Local]: QUESTION: User 6: Question 105.; Timestamp: 2019-11-13 23:14:16.131
+[Speaker Local]: QUESTION: User 6: Question 558.; Timestamp: 2019-11-13 23:14:16.131
+[Speaker Local]: QUESTION: User 6: Question 95.; Timestamp: 2019-11-13 23:14:16.131
+[Speaker Local]: QUESTION: User 6: Question 294.; Timestamp: 2019-11-13 23:14:16.132
+[Speaker Local]: QUESTION: User 6: Question 614.; Timestamp: 2019-11-13 23:14:16.132
+[Speaker Local]: QUESTION: User 6: Question 59.; Timestamp: 2019-11-13 23:14:16.132
+[Speaker Local]: QUESTION: User 6: Question 709.; Timestamp: 2019-11-13 23:14:16.132
+[Speaker Local]: QUESTION: User 6: Question 626.; Timestamp: 2019-11-13 23:14:16.133
+[Speaker Local]: QUESTION: User 6: Question 654.; Timestamp: 2019-11-13 23:14:16.133
+[Speaker Local]: QUESTION: User 6: Question 141.; Timestamp: 2019-11-13 23:14:16.133
+[Speaker Local]: QUESTION: User 6: Question 243.; Timestamp: 2019-11-13 23:14:16.133
+[Speaker Local]: QUESTION: User 6: Question 869.; Timestamp: 2019-11-13 23:14:16.134
+[Speaker Local]: QUESTION: User 6: Question 795.; Timestamp: 2019-11-13 23:14:16.134
+[Speaker Local]: QUESTION: User 6: Question 239.; Timestamp: 2019-11-13 23:14:16.134
+[Speaker Local]: QUESTION: User 6: Question 144.; Timestamp: 2019-11-13 23:14:16.134
+[Speaker Local]: QUESTION: User 6: Question 863.; Timestamp: 2019-11-13 23:14:16.135
+[Speaker Local]: QUESTION: User 6: Question 930.; Timestamp: 2019-11-13 23:14:16.135
+[Speaker Local]: QUESTION: User 6: Question 140.; Timestamp: 2019-11-13 23:14:16.135
+[Speaker Local]: QUESTION: User 6: Question 635.; Timestamp: 2019-11-13 23:14:16.135
+[Speaker Local]: QUESTION: User 6: Question 351.; Timestamp: 2019-11-13 23:14:16.135
+[Speaker Local]: QUESTION: User 6: Question 11.; Timestamp: 2019-11-13 23:14:16.136
+[Speaker Local]: QUESTION: User 6: Question 941.; Timestamp: 2019-11-13 23:14:16.136
+[Speaker Local]: QUESTION: User 6: Question 640.; Timestamp: 2019-11-13 23:14:16.136
+[Speaker Local]: QUESTION: User 6: Question 124.; Timestamp: 2019-11-13 23:14:16.136
+[Speaker Local]: QUESTION: User 6: Question 681.; Timestamp: 2019-11-13 23:14:16.137
+[Speaker Local]: QUESTION: User 6: Question 431.; Timestamp: 2019-11-13 23:14:16.137
+[Speaker Local]: QUESTION: User 6: Question 772.; Timestamp: 2019-11-13 23:14:16.137
+[Speaker Local]: QUESTION: User 6: Question 265.; Timestamp: 2019-11-13 23:14:16.137
+[Speaker Local]: QUESTION: User 6: Question 393.; Timestamp: 2019-11-13 23:14:16.137
+[Speaker Local]: QUESTION: User 6: Question 972.; Timestamp: 2019-11-13 23:14:16.138
+[Speaker Local]: QUESTION: User 6: Question 615.; Timestamp: 2019-11-13 23:14:16.138
+[Speaker Local]: QUESTION: User 6: Question 750.; Timestamp: 2019-11-13 23:14:16.138
+[Speaker Local]: QUESTION: User 6: Question 426.; Timestamp: 2019-11-13 23:14:16.138
+[Speaker Local]: QUESTION: User 6: Question 519.; Timestamp: 2019-11-13 23:14:16.139
+[Speaker Local]: QUESTION: User 6: Question 695.; Timestamp: 2019-11-13 23:14:16.139
+[Speaker Local]: QUESTION: User 6: Question 51.; Timestamp: 2019-11-13 23:14:16.139
+[Speaker Local]: QUESTION: User 6: Question 291.; Timestamp: 2019-11-13 23:14:16.139
+[Speaker Local]: QUESTION: User 6: Question 892.; Timestamp: 2019-11-13 23:14:16.14
+[Speaker Local]: QUESTION: User 6: Question 477.; Timestamp: 2019-11-13 23:14:16.14
+[Speaker Local]: QUESTION: User 6: Question 142.; Timestamp: 2019-11-13 23:14:16.14
+[Speaker Local]: QUESTION: User 6: Question 173.; Timestamp: 2019-11-13 23:14:16.141
+[Speaker Local]: QUESTION: User 6: Question 767.; Timestamp: 2019-11-13 23:14:16.141
+[Speaker Local]: QUESTION: User 6: Question 568.; Timestamp: 2019-11-13 23:14:16.142
+[Speaker Local]: QUESTION: User 6: Question 807.; Timestamp: 2019-11-13 23:14:16.142
+[Speaker Local]: QUESTION: User 6: Question 356.; Timestamp: 2019-11-13 23:14:16.142
+[Speaker Local]: QUESTION: User 6: Question 205.; Timestamp: 2019-11-13 23:14:16.143
+[Speaker Local]: QUESTION: User 6: Question 87.; Timestamp: 2019-11-13 23:14:16.143
+[Speaker Local]: QUESTION: User 6: Question 965.; Timestamp: 2019-11-13 23:14:16.143
+[Speaker Local]: QUESTION: User 6: Question 780.; Timestamp: 2019-11-13 23:14:16.144
+[Speaker Local]: QUESTION: User 6: Question 478.; Timestamp: 2019-11-13 23:14:16.144
+[Speaker Local]: QUESTION: User 6: Question 768.; Timestamp: 2019-11-13 23:14:16.144
+[Speaker Local]: QUESTION: User 6: Question 671.; Timestamp: 2019-11-13 23:14:16.145
+[Speaker Local]: QUESTION: User 6: Question 334.; Timestamp: 2019-11-13 23:14:16.145
+[Speaker Local]: QUESTION: User 6: Question 619.; Timestamp: 2019-11-13 23:14:24.285
+[Speaker Local]: QUESTION: User 6: Question 739.; Timestamp: 2019-11-13 23:14:24.287
+[Speaker Local]: QUESTION: User 6: Question 979.; Timestamp: 2019-11-13 23:14:24.288
+[Speaker Local]: QUESTION: User 6: Question 773.; Timestamp: 2019-11-13 23:14:24.288
+[Speaker Local]: QUESTION: User 6: Question 434.; Timestamp: 2019-11-13 23:14:24.288
+[Speaker Local]: QUESTION: User 6: Question 96.; Timestamp: 2019-11-13 23:14:24.288
+[Speaker Local]: QUESTION: User 6: Question 819.; Timestamp: 2019-11-13 23:14:24.289
+[Speaker Local]: QUESTION: User 6: Question 933.; Timestamp: 2019-11-13 23:14:24.289
+[Speaker Local]: QUESTION: User 6: Question 490.; Timestamp: 2019-11-13 23:14:24.289
+[Speaker Local]: QUESTION: User 6: Question 657.; Timestamp: 2019-11-13 23:14:24.291
+[Speaker Local]: QUESTION: User 6: Question 39.; Timestamp: 2019-11-13 23:14:24.293
+[Speaker Local]: QUESTION: User 6: Question 463.; Timestamp: 2019-11-13 23:14:24.293
+[Speaker Local]: QUESTION: User 6: Question 261.; Timestamp: 2019-11-13 23:14:24.293
+[Speaker Local]: QUESTION: User 6: Question 573.; Timestamp: 2019-11-13 23:14:24.294
+[Speaker Local]: QUESTION: User 6: Question 482.; Timestamp: 2019-11-13 23:14:24.295
+[Speaker Local]: QUESTION: User 6: Question 931.; Timestamp: 2019-11-13 23:14:24.296
+[Speaker Local]: QUESTION: User 6: Question 830.; Timestamp: 2019-11-13 23:14:24.297
+[Speaker Local]: QUESTION: User 6: Question 856.; Timestamp: 2019-11-13 23:14:24.297
+[Speaker Local]: QUESTION: User 6: Question 12.; Timestamp: 2019-11-13 23:14:24.298
+[Speaker Local]: QUESTION: User 6: Question 621.; Timestamp: 2019-11-13 23:14:24.298
+[Speaker Local]: QUESTION: User 6: Question 958.; Timestamp: 2019-11-13 23:14:24.298
+[Speaker Local]: QUESTION: User 6: Question 549.; Timestamp: 2019-11-13 23:14:24.298
+[Speaker Local]: QUESTION: User 6: Question 266.; Timestamp: 2019-11-13 23:14:24.298
+[Speaker Local]: QUESTION: User 6: Question 421.; Timestamp: 2019-11-13 23:14:24.299
+[Speaker Local]: QUESTION: User 6: Question 1000.; Timestamp: 2019-11-13 23:14:24.299
+[Speaker Local]: QUESTION: User 6: Question 765.; Timestamp: 2019-11-13 23:14:24.299
+[Speaker Local]: QUESTION: User 6: Question 160.; Timestamp: 2019-11-13 23:14:24.299
+[Speaker Local]: QUESTION: User 6: Question 860.; Timestamp: 2019-11-13 23:14:24.299
+[Speaker Local]: QUESTION: User 6: Question 158.; Timestamp: 2019-11-13 23:14:24.3
+[Speaker Local]: QUESTION: User 6: Question 49.; Timestamp: 2019-11-13 23:14:24.3
+[Speaker Local]: QUESTION: User 6: Question 799.; Timestamp: 2019-11-13 23:14:24.3
+[Speaker Local]: QUESTION: User 6: Question 783.; Timestamp: 2019-11-13 23:14:24.3
+[Speaker Local]: QUESTION: User 6: Question 483.; Timestamp: 2019-11-13 23:14:24.3
+[Speaker Local]: QUESTION: User 6: Question 631.; Timestamp: 2019-11-13 23:14:24.301
+[Speaker Local]: QUESTION: User 6: Question 445.; Timestamp: 2019-11-13 23:14:24.301
+[Speaker Local]: QUESTION: User 6: Question 345.; Timestamp: 2019-11-13 23:14:24.301
+[Speaker Local]: QUESTION: User 6: Question 546.; Timestamp: 2019-11-13 23:14:24.301
+[Speaker Local]: QUESTION: User 6: Question 969.; Timestamp: 2019-11-13 23:14:24.301
+[Speaker Local]: QUESTION: User 6: Question 674.; Timestamp: 2019-11-13 23:14:24.302
+[Speaker Local]: QUESTION: User 6: Question 437.; Timestamp: 2019-11-13 23:14:24.302
+[Speaker Local]: QUESTION: User 6: Question 790.; Timestamp: 2019-11-13 23:14:24.302
+[Speaker Local]: QUESTION: User 6: Question 114.; Timestamp: 2019-11-13 23:14:24.302
+[Speaker Local]: QUESTION: User 6: Question 82.; Timestamp: 2019-11-13 23:14:24.302
+[Speaker Local]: QUESTION: User 6: Question 319.; Timestamp: 2019-11-13 23:14:24.303
+[Speaker Local]: QUESTION: User 6: Question 704.; Timestamp: 2019-11-13 23:14:24.303
+[Speaker Local]: QUESTION: User 6: Question 223.; Timestamp: 2019-11-13 23:14:24.303
+[Speaker Local]: QUESTION: User 6: Question 693.; Timestamp: 2019-11-13 23:14:24.303
+[Speaker Local]: QUESTION: User 6: Question 854.; Timestamp: 2019-11-13 23:14:24.303
+[Speaker Local]: QUESTION: User 6: Question 464.; Timestamp: 2019-11-13 23:14:24.303
+[Speaker Local]: QUESTION: User 6: Question 556.; Timestamp: 2019-11-13 23:14:24.304
+[Speaker Local]: QUESTION: User 6: Question 610.; Timestamp: 2019-11-13 23:14:24.304
+[Speaker Local]: QUESTION: User 6: Question 716.; Timestamp: 2019-11-13 23:14:24.304
+[Speaker Local]: QUESTION: User 6: Question 288.; Timestamp: 2019-11-13 23:14:24.304
+[Speaker Local]: QUESTION: User 6: Question 125.; Timestamp: 2019-11-13 23:14:24.304
+[Speaker Local]: QUESTION: User 6: Question 238.; Timestamp: 2019-11-13 23:14:24.305
+[Speaker Local]: QUESTION: User 6: Question 388.; Timestamp: 2019-11-13 23:14:24.305
+[Speaker Local]: QUESTION: User 6: Question 254.; Timestamp: 2019-11-13 23:14:24.305
+[Speaker Local]: QUESTION: User 6: Question 324.; Timestamp: 2019-11-13 23:14:24.305
+[Speaker Local]: QUESTION: User 6: Question 415.; Timestamp: 2019-11-13 23:14:24.305
+[Speaker Local]: QUESTION: User 6: Question 439.; Timestamp: 2019-11-13 23:14:24.305
+[Speaker Local]: QUESTION: User 6: Question 938.; Timestamp: 2019-11-13 23:14:24.306
+[Speaker Local]: QUESTION: User 6: Question 898.; Timestamp: 2019-11-13 23:14:24.307
+[Speaker Local]: QUESTION: User 6: Question 221.; Timestamp: 2019-11-13 23:14:24.307
+[Speaker Local]: QUESTION: User 6: Question 923.; Timestamp: 2019-11-13 23:14:24.308
+[Speaker Local]: QUESTION: User 6: Question 359.; Timestamp: 2019-11-13 23:14:24.308
+[Speaker Local]: QUESTION: User 6: Question 212.; Timestamp: 2019-11-13 23:14:24.308
+[Speaker Local]: QUESTION: User 6: Question 620.; Timestamp: 2019-11-13 23:14:24.308
+[Speaker Local]: QUESTION: User 6: Question 403.; Timestamp: 2019-11-13 23:14:24.31
+[Speaker Local]: QUESTION: User 6: Question 64.; Timestamp: 2019-11-13 23:14:24.311
+[Speaker Local]: QUESTION: User 6: Question 503.; Timestamp: 2019-11-13 23:14:24.312
+[Speaker Local]: QUESTION: User 6: Question 293.; Timestamp: 2019-11-13 23:14:24.312
+[Speaker Local]: QUESTION: User 6: Question 472.; Timestamp: 2019-11-13 23:14:24.312
+[Speaker Local]: QUESTION: User 6: Question 891.; Timestamp: 2019-11-13 23:14:24.313
+[Speaker Local]: QUESTION: User 6: Question 21.; Timestamp: 2019-11-13 23:14:24.313
+[Speaker Local]: QUESTION: User 6: Question 661.; Timestamp: 2019-11-13 23:14:24.314
+[Speaker Local]: QUESTION: User 6: Question 904.; Timestamp: 2019-11-13 23:14:24.314
+[Speaker Local]: QUESTION: User 6: Question 847.; Timestamp: 2019-11-13 23:14:24.314
+[Speaker Local]: QUESTION: User 6: Question 529.; Timestamp: 2019-11-13 23:14:24.314
+[Speaker Local]: QUESTION: User 6: Question 133.; Timestamp: 2019-11-13 23:14:24.315
+[Speaker Local]: QUESTION: User 6: Question 270.; Timestamp: 2019-11-13 23:14:24.315
+[Speaker Local]: QUESTION: User 6: Question 642.; Timestamp: 2019-11-13 23:14:24.315
+[Speaker Local]: QUESTION: User 6: Question 444.; Timestamp: 2019-11-13 23:14:24.317
+[Speaker Local]: QUESTION: User 6: Question 798.; Timestamp: 2019-11-13 23:14:24.318
+[Speaker Local]: QUESTION: User 6: Question 991.; Timestamp: 2019-11-13 23:14:24.318
+[Speaker Local]: QUESTION: User 6: Question 373.; Timestamp: 2019-11-13 23:14:24.318
+[Speaker Local]: QUESTION: User 6: Question 761.; Timestamp: 2019-11-13 23:14:24.318
+[Speaker Local]: QUESTION: User 6: Question 629.; Timestamp: 2019-11-13 23:14:24.319
+[Speaker Local]: QUESTION: User 6: Question 130.; Timestamp: 2019-11-13 23:14:24.319
+[Speaker Local]: QUESTION: User 6: Question 723.; Timestamp: 2019-11-13 23:14:24.319
+[Speaker Local]: QUESTION: User 6: Question 531.; Timestamp: 2019-11-13 23:14:24.319
+[Speaker Local]: QUESTION: User 6: Question 727.; Timestamp: 2019-11-13 23:14:24.32
+[Speaker Local]: QUESTION: User 6: Question 769.; Timestamp: 2019-11-13 23:14:24.32
+[Speaker Local]: QUESTION: User 6: Question 440.; Timestamp: 2019-11-13 23:14:24.32
+[Speaker Local]: QUESTION: User 6: Question 912.; Timestamp: 2019-11-13 23:14:24.321
+[Speaker Local]: QUESTION: User 6: Question 418.; Timestamp: 2019-11-13 23:14:24.322
+[Speaker Local]: QUESTION: User 6: Question 189.; Timestamp: 2019-11-13 23:14:24.322
+[Speaker Local]: QUESTION: User 6: Question 15.; Timestamp: 2019-11-13 23:14:24.322
+[Speaker Local]: QUESTION: User 6: Question 581.; Timestamp: 2019-11-13 23:14:24.322
+[Speaker Local]: QUESTION: User 6: Question 968.; Timestamp: 2019-11-13 23:14:24.322
+[Speaker Local]: QUESTION: User 6: Question 326.; Timestamp: 2019-11-13 23:14:24.323
+[Speaker Local]: QUESTION: User 6: Question 725.; Timestamp: 2019-11-13 23:14:24.323
+[Speaker Local]: QUESTION: User 6: Question 491.; Timestamp: 2019-11-13 23:14:24.323
+[Speaker Local]: QUESTION: User 6: Question 548.; Timestamp: 2019-11-13 23:14:24.323
+[Speaker Local]: QUESTION: User 6: Question 700.; Timestamp: 2019-11-13 23:14:24.324
+[Speaker Local]: QUESTION: User 6: Question 6.; Timestamp: 2019-11-13 23:14:24.324
+[Speaker Local]: QUESTION: User 6: Question 122.; Timestamp: 2019-11-13 23:14:24.324
+[Speaker Local]: QUESTION: User 6: Question 878.; Timestamp: 2019-11-13 23:14:24.636
+[Speaker Local]: QUESTION: User 6: Question 506.; Timestamp: 2019-11-13 23:14:24.637
+[Speaker Local]: QUESTION: User 6: Question 586.; Timestamp: 2019-11-13 23:14:24.637
+[Speaker Local]: QUESTION: User 6: Question 646.; Timestamp: 2019-11-13 23:14:24.637
+[Speaker Local]: QUESTION: User 6: Question 31.; Timestamp: 2019-11-13 23:14:24.638
+[Speaker Local]: QUESTION: User 6: Question 416.; Timestamp: 2019-11-13 23:14:24.638
+[Speaker Local]: QUESTION: User 6: Question 117.; Timestamp: 2019-11-13 23:14:24.638
+[Speaker Local]: QUESTION: User 6: Question 108.; Timestamp: 2019-11-13 23:14:24.638
+[Speaker Local]: QUESTION: User 6: Question 971.; Timestamp: 2019-11-13 23:14:24.639
+[Speaker Local]: QUESTION: User 6: Question 391.; Timestamp: 2019-11-13 23:14:24.639
+[Speaker Local]: QUESTION: User 6: Question 836.; Timestamp: 2019-11-13 23:14:24.639
+[Speaker Local]: QUESTION: User 6: Question 777.; Timestamp: 2019-11-13 23:14:24.639
+[Speaker Local]: QUESTION: User 6: Question 562.; Timestamp: 2019-11-13 23:14:24.64
+[Speaker Local]: QUESTION: User 6: Question 667.; Timestamp: 2019-11-13 23:14:24.64
+[Speaker Local]: QUESTION: User 6: Question 554.; Timestamp: 2019-11-13 23:14:24.64
+[Speaker Local]: QUESTION: User 6: Question 54.; Timestamp: 2019-11-13 23:14:24.64
+[Speaker Local]: QUESTION: User 6: Question 460.; Timestamp: 2019-11-13 23:14:24.64
+[Speaker Local]: QUESTION: User 6: Question 648.; Timestamp: 2019-11-13 23:14:24.641
+[Speaker Local]: QUESTION: User 6: Question 823.; Timestamp: 2019-11-13 23:14:24.642
+[Speaker Local]: QUESTION: User 6: Question 10.; Timestamp: 2019-11-13 23:14:24.642
+[Speaker Local]: QUESTION: User 6: Question 908.; Timestamp: 2019-11-13 23:14:24.642
+[Speaker Local]: QUESTION: User 6: Question 465.; Timestamp: 2019-11-13 23:14:24.643
+[Speaker Local]: QUESTION: User 6: Question 466.; Timestamp: 2019-11-13 23:14:24.643
+[Speaker Local]: QUESTION: User 6: Question 252.; Timestamp: 2019-11-13 23:14:24.643
+[Speaker Local]: QUESTION: User 6: Question 810.; Timestamp: 2019-11-13 23:14:24.643
+[Speaker Local]: QUESTION: User 6: Question 489.; Timestamp: 2019-11-13 23:14:24.643
+[Speaker Local]: QUESTION: User 6: Question 164.; Timestamp: 2019-11-13 23:14:24.643
+[Speaker Local]: QUESTION: User 6: Question 494.; Timestamp: 2019-11-13 23:14:24.644
+[Speaker Local]: QUESTION: User 6: Question 480.; Timestamp: 2019-11-13 23:14:24.644
+[Speaker Local]: QUESTION: User 6: Question 303.; Timestamp: 2019-11-13 23:14:24.644
+[Speaker Local]: QUESTION: User 6: Question 781.; Timestamp: 2019-11-13 23:14:24.644
+[Speaker Local]: QUESTION: User 6: Question 230.; Timestamp: 2019-11-13 23:14:24.644
+[Speaker Local]: QUESTION: User 6: Question 343.; Timestamp: 2019-11-13 23:14:24.645
+[Speaker Local]: QUESTION: User 6: Question 399.; Timestamp: 2019-11-13 23:14:24.645
+[Speaker Local]: QUESTION: User 6: Question 475.; Timestamp: 2019-11-13 23:14:24.645
+[Speaker Local]: QUESTION: User 6: Question 559.; Timestamp: 2019-11-13 23:14:24.645
+[Speaker Local]: QUESTION: User 6: Question 514.; Timestamp: 2019-11-13 23:14:24.645
+[Speaker Local]: QUESTION: User 6: Question 155.; Timestamp: 2019-11-13 23:14:24.646
+[Speaker Local]: QUESTION: User 6: Question 184.; Timestamp: 2019-11-13 23:14:24.646
+[Speaker Local]: QUESTION: User 6: Question 756.; Timestamp: 2019-11-13 23:14:24.646
+[Speaker Local]: QUESTION: User 6: Question 340.; Timestamp: 2019-11-13 23:14:24.647
+[Speaker Local]: QUESTION: User 6: Question 870.; Timestamp: 2019-11-13 23:14:24.648
+[Speaker Local]: QUESTION: User 6: Question 911.; Timestamp: 2019-11-13 23:14:24.649
+[Speaker Local]: QUESTION: User 6: Question 126.; Timestamp: 2019-11-13 23:14:24.649
+[Speaker Local]: QUESTION: User 6: Question 381.; Timestamp: 2019-11-13 23:14:24.65
+[Speaker Local]: QUESTION: User 6: Question 44.; Timestamp: 2019-11-13 23:14:24.651
+[Speaker Local]: QUESTION: User 6: Question 180.; Timestamp: 2019-11-13 23:14:24.651
+[Speaker Local]: QUESTION: User 6: Question 417.; Timestamp: 2019-11-13 23:14:24.652
+[Speaker Local]: QUESTION: User 6: Question 897.; Timestamp: 2019-11-13 23:14:24.652
+[Speaker Local]: QUESTION: User 6: Question 277.; Timestamp: 2019-11-13 23:14:24.652
+[Speaker Local]: QUESTION: User 6: Question 658.; Timestamp: 2019-11-13 23:14:24.653
+[Speaker Local]: QUESTION: User 6: Question 533.; Timestamp: 2019-11-13 23:14:24.653
+[Speaker Local]: QUESTION: User 6: Question 782.; Timestamp: 2019-11-13 23:14:24.653
+[Speaker Local]: QUESTION: User 6: Question 16.; Timestamp: 2019-11-13 23:14:24.653
+[Speaker Local]: QUESTION: User 6: Question 339.; Timestamp: 2019-11-13 23:14:24.653
+[Speaker Local]: QUESTION: User 6: Question 149.; Timestamp: 2019-11-13 23:14:24.654
+[Speaker Local]: QUESTION: User 6: Question 52.; Timestamp: 2019-11-13 23:14:24.654
+[Speaker Local]: QUESTION: User 6: Question 179.; Timestamp: 2019-11-13 23:14:24.654
+[Speaker Local]: QUESTION: User 6: Question 584.; Timestamp: 2019-11-13 23:14:24.654
+[Speaker Local]: QUESTION: User 6: Question 821.; Timestamp: 2019-11-13 23:14:24.655
+[Speaker Local]: QUESTION: User 6: Question 829.; Timestamp: 2019-11-13 23:14:24.655
+[Speaker Local]: QUESTION: User 6: Question 583.; Timestamp: 2019-11-13 23:14:24.655
+[Speaker Local]: QUESTION: User 6: Question 113.; Timestamp: 2019-11-13 23:14:24.656
+[Speaker Local]: QUESTION: User 6: Question 536.; Timestamp: 2019-11-13 23:14:24.656
+[Speaker Local]: QUESTION: User 6: Question 601.; Timestamp: 2019-11-13 23:14:24.656
+[Speaker Local]: QUESTION: User 6: Question 17.; Timestamp: 2019-11-13 23:14:24.656
+[Speaker Local]: QUESTION: User 6: Question 309.; Timestamp: 2019-11-13 23:14:24.656
+[Speaker Local]: QUESTION: User 6: Question 842.; Timestamp: 2019-11-13 23:14:24.656
+[Speaker Local]: QUESTION: User 6: Question 258.; Timestamp: 2019-11-13 23:14:24.656
+[Speaker Local]: QUESTION: User 6: Question 505.; Timestamp: 2019-11-13 23:14:24.657
+[Speaker Local]: QUESTION: User 6: Question 730.; Timestamp: 2019-11-13 23:14:24.657
+[Speaker Local]: QUESTION: User 6: Question 811.; Timestamp: 2019-11-13 23:14:24.657
+[Speaker Local]: QUESTION: User 6: Question 168.; Timestamp: 2019-11-13 23:14:24.657
+[Speaker Local]: QUESTION: User 6: Question 323.; Timestamp: 2019-11-13 23:14:24.657
+[Speaker Local]: QUESTION: User 6: Question 98.; Timestamp: 2019-11-13 23:14:24.657
+[Speaker Local]: QUESTION: User 6: Question 652.; Timestamp: 2019-11-13 23:14:24.657
+[Speaker Local]: QUESTION: User 6: Question 352.; Timestamp: 2019-11-13 23:14:24.658
+[Speaker Local]: QUESTION: User 6: Question 846.; Timestamp: 2019-11-13 23:14:24.658
+[Speaker Local]: QUESTION: User 6: Question 978.; Timestamp: 2019-11-13 23:14:24.658
+[Speaker Local]: QUESTION: User 6: Question 643.; Timestamp: 2019-11-13 23:14:24.658
+[Speaker Local]: QUESTION: User 6: Question 206.; Timestamp: 2019-11-13 23:14:24.658
+[Speaker Local]: QUESTION: User 6: Question 734.; Timestamp: 2019-11-13 23:14:24.658
+[Speaker Local]: QUESTION: User 6: Question 507.; Timestamp: 2019-11-13 23:14:24.658
+[Speaker Local]: QUESTION: User 6: Question 692.; Timestamp: 2019-11-13 23:14:24.659
+[Speaker Local]: QUESTION: User 6: Question 992.; Timestamp: 2019-11-13 23:14:24.659
+[Speaker Local]: QUESTION: User 6: Question 22.; Timestamp: 2019-11-13 23:14:24.659
+[Speaker Local]: QUESTION: User 6: Question 689.; Timestamp: 2019-11-13 23:14:24.659
+[Speaker Local]: QUESTION: User 6: Question 853.; Timestamp: 2019-11-13 23:14:24.659
+[Speaker Local]: QUESTION: User 6: Question 868.; Timestamp: 2019-11-13 23:14:24.659
+[Speaker Local]: QUESTION: User 6: Question 694.; Timestamp: 2019-11-13 23:14:24.659
+[Speaker Local]: QUESTION: User 6: Question 770.; Timestamp: 2019-11-13 23:14:24.66
+[Speaker Local]: QUESTION: User 6: Question 337.; Timestamp: 2019-11-13 23:14:24.66
+[Speaker Local]: QUESTION: User 6: Question 78.; Timestamp: 2019-11-13 23:14:24.66
+[Speaker Local]: QUESTION: User 6: Question 301.; Timestamp: 2019-11-13 23:14:24.66
+[Speaker Local]: QUESTION: User 6: Question 48.; Timestamp: 2019-11-13 23:14:24.66
+[Speaker Local]: QUESTION: User 6: Question 844.; Timestamp: 2019-11-13 23:14:24.66
+[Speaker Local]: QUESTION: User 6: Question 73.; Timestamp: 2019-11-13 23:14:24.661
+[Speaker Local]: QUESTION: User 6: Question 256.; Timestamp: 2019-11-13 23:14:24.661
+[Speaker Local]: QUESTION: User 6: Question 451.; Timestamp: 2019-11-13 23:14:24.662
+[Speaker Local]: QUESTION: User 6: Question 524.; Timestamp: 2019-11-13 23:14:24.662
+[Speaker Local]: QUESTION: User 6: Question 42.; Timestamp: 2019-11-13 23:14:24.662
+[Speaker Local]: QUESTION: User 6: Question 102.; Timestamp: 2019-11-13 23:14:24.662
+[Speaker Local]: QUESTION: User 6: Question 825.; Timestamp: 2019-11-13 23:14:24.662
+[Speaker Local]: QUESTION: User 6: Question 145.; Timestamp: 2019-11-13 23:14:24.663
+[Speaker Local]: QUESTION: User 6: Question 424.; Timestamp: 2019-11-13 23:14:24.663
+[Speaker Local]: QUESTION: User 6: Question 564.; Timestamp: 2019-11-13 23:14:46.503
+[Speaker Local]: QUESTION: User 6: Question 651.; Timestamp: 2019-11-13 23:14:46.503
+[Speaker Local]: QUESTION: User 6: Question 496.; Timestamp: 2019-11-13 23:14:46.51
+[Speaker Local]: QUESTION: User 6: Question 951.; Timestamp: 2019-11-13 23:14:46.51
+[Speaker Local]: QUESTION: User 6: Question 511.; Timestamp: 2019-11-13 23:14:46.512
+[Speaker Local]: QUESTION: User 6: Question 563.; Timestamp: 2019-11-13 23:14:46.513
+[Speaker Local]: QUESTION: User 6: Question 396.; Timestamp: 2019-11-13 23:14:46.513
+[Speaker Local]: QUESTION: User 6: Question 606.; Timestamp: 2019-11-13 23:14:46.513
+[Speaker Local]: QUESTION: User 6: Question 888.; Timestamp: 2019-11-13 23:14:46.513
+[Speaker Local]: QUESTION: User 6: Question 74.; Timestamp: 2019-11-13 23:14:46.514
+[Speaker Local]: QUESTION: User 6: Question 348.; Timestamp: 2019-11-13 23:14:46.514
+[Speaker Local]: QUESTION: User 6: Question 386.; Timestamp: 2019-11-13 23:14:46.514
+[Speaker Local]: QUESTION: User 6: Question 879.; Timestamp: 2019-11-13 23:14:46.514
+[Speaker Local]: QUESTION: User 6: Question 185.; Timestamp: 2019-11-13 23:14:46.514
+[Speaker Local]: QUESTION: User 6: Question 802.; Timestamp: 2019-11-13 23:14:46.514
+[Speaker Local]: QUESTION: User 6: Question 571.; Timestamp: 2019-11-13 23:14:46.515
+[Speaker Local]: QUESTION: User 6: Question 453.; Timestamp: 2019-11-13 23:14:46.517
+[Speaker Local]: QUESTION: User 6: Question 609.; Timestamp: 2019-11-13 23:14:46.518
+[Speaker Local]: QUESTION: User 6: Question 137.; Timestamp: 2019-11-13 23:14:46.52
+[Speaker Local]: QUESTION: User 6: Question 404.; Timestamp: 2019-11-13 23:14:46.521
+[Speaker Local]: QUESTION: User 6: Question 250.; Timestamp: 2019-11-13 23:14:46.521
+[Speaker Local]: QUESTION: User 6: Question 255.; Timestamp: 2019-11-13 23:14:46.521
+[Speaker Local]: QUESTION: User 6: Question 109.; Timestamp: 2019-11-13 23:14:46.521
+[Speaker Local]: QUESTION: User 6: Question 622.; Timestamp: 2019-11-13 23:14:46.521
+[Speaker Local]: QUESTION: User 6: Question 146.; Timestamp: 2019-11-13 23:14:46.521
+[Speaker Local]: QUESTION: User 6: Question 841.; Timestamp: 2019-11-13 23:14:46.522
+[Speaker Local]: QUESTION: User 6: Question 357.; Timestamp: 2019-11-13 23:14:46.522
+[Speaker Local]: QUESTION: User 6: Question 728.; Timestamp: 2019-11-13 23:14:46.522
+[Speaker Local]: QUESTION: User 6: Question 998.; Timestamp: 2019-11-13 23:14:46.728
+[Speaker Local]: QUESTION: User 6: Question 864.; Timestamp: 2019-11-13 23:14:52.012
+[Speaker Local]: QUESTION: User 6: Question 876.; Timestamp: 2019-11-13 23:14:52.014
+[Speaker Local]: QUESTION: User 6: Question 901.; Timestamp: 2019-11-13 23:14:52.015
+[Speaker Local]: QUESTION: User 6: Question 328.; Timestamp: 2019-11-13 23:14:52.015
+[Speaker Local]: QUESTION: User 6: Question 801.; Timestamp: 2019-11-13 23:14:52.015
+[Speaker Local]: QUESTION: User 6: Question 520.; Timestamp: 2019-11-13 23:14:52.015
+[Speaker Local]: QUESTION: User 6: Question 169.; Timestamp: 2019-11-13 23:14:52.016
+[Speaker Local]: QUESTION: User 6: Question 375.; Timestamp: 2019-11-13 23:14:52.016
+[Speaker Local]: QUESTION: User 6: Question 839.; Timestamp: 2019-11-13 23:14:52.016
+[Speaker Local]: QUESTION: User 6: Question 1.; Timestamp: 2019-11-13 23:14:52.016
+[Speaker Local]: QUESTION: User 6: Question 800.; Timestamp: 2019-11-13 23:14:52.016
+[Speaker Local]: QUESTION: User 6: Question 595.; Timestamp: 2019-11-13 23:14:52.016
+[Speaker Local]: QUESTION: User 6: Question 62.; Timestamp: 2019-11-13 23:14:52.017
+[Speaker Local]: QUESTION: User 6: Question 691.; Timestamp: 2019-11-13 23:14:52.017
+[Speaker Local]: QUESTION: User 6: Question 273.; Timestamp: 2019-11-13 23:14:52.017
+[Speaker Local]: QUESTION: User 6: Question 210.; Timestamp: 2019-11-13 23:14:52.017
+[Speaker Local]: QUESTION: User 6: Question 121.; Timestamp: 2019-11-13 23:14:52.017
+[Speaker Local]: QUESTION: User 6: Question 307.; Timestamp: 2019-11-13 23:14:52.017
+[Speaker Local]: QUESTION: User 6: Question 848.; Timestamp: 2019-11-13 23:14:52.018
+[Speaker Local]: QUESTION: User 6: Question 68.; Timestamp: 2019-11-13 23:14:52.018
+[Speaker Local]: QUESTION: User 6: Question 852.; Timestamp: 2019-11-13 23:14:52.018
+[Speaker Local]: QUESTION: User 6: Question 697.; Timestamp: 2019-11-13 23:14:52.018
+[Speaker Local]: QUESTION: User 6: Question 55.; Timestamp: 2019-11-13 23:14:52.018
+[Speaker Local]: QUESTION: User 6: Question 100.; Timestamp: 2019-11-13 23:14:52.018
+[Speaker Local]: QUESTION: User 6: Question 994.; Timestamp: 2019-11-13 23:14:52.019
+[Speaker Local]: QUESTION: User 6: Question 127.; Timestamp: 2019-11-13 23:14:52.019
+[Speaker Local]: QUESTION: User 6: Question 943.; Timestamp: 2019-11-13 23:14:52.019
+[Speaker Local]: QUESTION: User 6: Question 290.; Timestamp: 2019-11-13 23:14:52.019
+[Speaker Local]: QUESTION: User 6: Question 251.; Timestamp: 2019-11-13 23:14:52.019
+[Speaker Local]: QUESTION: User 6: Question 34.; Timestamp: 2019-11-13 23:14:52.02
+[Speaker Local]: QUESTION: User 6: Question 304.; Timestamp: 2019-11-13 23:14:52.02
+[Speaker Local]: QUESTION: User 6: Question 944.; Timestamp: 2019-11-13 23:14:52.02
+[Speaker Local]: QUESTION: User 6: Question 577.; Timestamp: 2019-11-13 23:14:52.02
+[Speaker Local]: QUESTION: User 6: Question 718.; Timestamp: 2019-11-13 23:14:52.02
+[Speaker Local]: QUESTION: User 6: Question 950.; Timestamp: 2019-11-13 23:14:52.02
+[Speaker Local]: QUESTION: User 6: Question 698.; Timestamp: 2019-11-13 23:14:52.021
+[Speaker Local]: QUESTION: User 6: Question 645.; Timestamp: 2019-11-13 23:14:52.021
+[Speaker Local]: QUESTION: User 6: Question 398.; Timestamp: 2019-11-13 23:14:52.021
+[Speaker Local]: QUESTION: User 6: Question 190.; Timestamp: 2019-11-13 23:14:52.021
+[Speaker Local]: QUESTION: User 6: Question 680.; Timestamp: 2019-11-13 23:14:52.021
+[Speaker Local]: QUESTION: User 6: Question 86.; Timestamp: 2019-11-13 23:14:52.022
+[Speaker Local]: QUESTION: User 6: Question 272.; Timestamp: 2019-11-13 23:14:52.022
+[Speaker Local]: QUESTION: User 6: Question 828.; Timestamp: 2019-11-13 23:14:52.022
+[Speaker Local]: QUESTION: User 6: Question 924.; Timestamp: 2019-11-13 23:14:52.022
+[Speaker Local]: QUESTION: User 6: Question 566.; Timestamp: 2019-11-13 23:14:52.022
+[Speaker Local]: QUESTION: User 6: Question 588.; Timestamp: 2019-11-13 23:14:52.022
+[Speaker Local]: QUESTION: User 6: Question 213.; Timestamp: 2019-11-13 23:14:52.022
+[Speaker Local]: QUESTION: User 6: Question 452.; Timestamp: 2019-11-13 23:14:52.022
+[Speaker Local]: QUESTION: User 6: Question 67.; Timestamp: 2019-11-13 23:14:52.023
+[Speaker Local]: QUESTION: User 6: Question 758.; Timestamp: 2019-11-13 23:14:52.023
+[Speaker Local]: QUESTION: User 6: Question 686.; Timestamp: 2019-11-13 23:14:52.023
+[Speaker Local]: QUESTION: User 6: Question 920.; Timestamp: 2019-11-13 23:14:52.023
+[Speaker Local]: QUESTION: User 6: Question 553.; Timestamp: 2019-11-13 23:14:52.023
+[Speaker Local]: QUESTION: User 6: Question 40.; Timestamp: 2019-11-13 23:14:52.023
+[Speaker Local]: QUESTION: User 6: Question 367.; Timestamp: 2019-11-13 23:14:52.023
+[Speaker Local]: QUESTION: User 6: Question 735.; Timestamp: 2019-11-13 23:14:52.024
+[Speaker Local]: QUESTION: User 6: Question 637.; Timestamp: 2019-11-13 23:14:52.024
+[Speaker Local]: QUESTION: User 6: Question 903.; Timestamp: 2019-11-13 23:14:52.024
+[Speaker Local]: QUESTION: User 6: Question 528.; Timestamp: 2019-11-13 23:14:52.024
+[Speaker Local]: QUESTION: User 6: Question 469.; Timestamp: 2019-11-13 23:14:52.024
+[Speaker Local]: QUESTION: User 6: Question 973.; Timestamp: 2019-11-13 23:14:52.024
+[Speaker Local]: QUESTION: User 6: Question 225.; Timestamp: 2019-11-13 23:14:52.024
+[Speaker Local]: QUESTION: User 6: Question 909.; Timestamp: 2019-11-13 23:14:52.025
+[Speaker Local]: QUESTION: User 6: Question 913.; Timestamp: 2019-11-13 23:14:52.025
+[Speaker Local]: QUESTION: User 6: Question 315.; Timestamp: 2019-11-13 23:14:52.025
+[Speaker Local]: QUESTION: User 6: Question 679.; Timestamp: 2019-11-13 23:14:52.025
+[Speaker Local]: QUESTION: User 6: Question 183.; Timestamp: 2019-11-13 23:14:52.025
+[Speaker Local]: QUESTION: User 6: Question 119.; Timestamp: 2019-11-13 23:14:52.025
+[Speaker Local]: QUESTION: User 6: Question 684.; Timestamp: 2019-11-13 23:14:52.026
+[Speaker Local]: QUESTION: User 6: Question 159.; Timestamp: 2019-11-13 23:14:52.026
+[Speaker Local]: QUESTION: User 6: Question 116.; Timestamp: 2019-11-13 23:14:52.026
+[Speaker Local]: QUESTION: User 6: Question 443.; Timestamp: 2019-11-13 23:14:52.026
+[Speaker Local]: QUESTION: User 6: Question 687.; Timestamp: 2019-11-13 23:14:52.026
+[Speaker Local]: QUESTION: User 6: Question 638.; Timestamp: 2019-11-13 23:14:52.026
+[Speaker Local]: QUESTION: User 6: Question 81.; Timestamp: 2019-11-13 23:14:52.026
+[Speaker Local]: QUESTION: User 6: Question 201.; Timestamp: 2019-11-13 23:14:52.026
+[Speaker Local]: QUESTION: User 6: Question 733.; Timestamp: 2019-11-13 23:14:52.027
+[Speaker Local]: QUESTION: User 6: Question 516.; Timestamp: 2019-11-13 23:14:52.027
+[Speaker Local]: QUESTION: User 6: Question 80.; Timestamp: 2019-11-13 23:14:52.027
+[Speaker Local]: QUESTION: User 6: Question 47.; Timestamp: 2019-11-13 23:14:52.027
+[Speaker Local]: QUESTION: User 6: Question 627.; Timestamp: 2019-11-13 23:14:52.027
+[Speaker Local]: QUESTION: User 6: Question 899.; Timestamp: 2019-11-13 23:14:52.027
+[Speaker Local]: QUESTION: User 6: Question 115.; Timestamp: 2019-11-13 23:14:52.027
+[Speaker Local]: QUESTION: User 6: Question 835.; Timestamp: 2019-11-13 23:14:52.027
+[Speaker Local]: QUESTION: User 6: Question 532.; Timestamp: 2019-11-13 23:14:52.028
+[Speaker Local]: QUESTION: User 6: Question 820.; Timestamp: 2019-11-13 23:14:52.028
+[Speaker Local]: QUESTION: User 6: Question 676.; Timestamp: 2019-11-13 23:14:52.028
+[Speaker Local]: QUESTION: User 6: Question 655.; Timestamp: 2019-11-13 23:14:52.028
+[Speaker Local]: QUESTION: User 6: Question 455.; Timestamp: 2019-11-13 23:14:52.028
+[Speaker Local]: QUESTION: User 6: Question 590.; Timestamp: 2019-11-13 23:14:52.028
+[Speaker Local]: QUESTION: User 6: Question 322.; Timestamp: 2019-11-13 23:14:52.029
+[Speaker Local]: QUESTION: User 6: Question 822.; Timestamp: 2019-11-13 23:14:52.029
+[Speaker Local]: QUESTION: User 6: Question 587.; Timestamp: 2019-11-13 23:14:52.029
+[Speaker Local]: QUESTION: User 6: Question 534.; Timestamp: 2019-11-13 23:14:52.029
+[Speaker Local]: QUESTION: User 6: Question 441.; Timestamp: 2019-11-13 23:14:52.03
+[Speaker Local]: QUESTION: User 6: Question 982.; Timestamp: 2019-11-13 23:14:52.03
+[Speaker Local]: QUESTION: User 6: Question 711.; Timestamp: 2019-11-13 23:14:52.031
+[Speaker Local]: QUESTION: User 6: Question 744.; Timestamp: 2019-11-13 23:14:52.031
+[Speaker Local]: QUESTION: User 6: Question 380.; Timestamp: 2019-11-13 23:14:52.033
+[Speaker Local]: QUESTION: User 6: Question 974.; Timestamp: 2019-11-13 23:14:52.033
+[Speaker Local]: QUESTION: User 6: Question 89.; Timestamp: 2019-11-13 23:14:52.033
+[Speaker Local]: QUESTION: User 6: Question 650.; Timestamp: 2019-11-13 23:14:52.034
+[Speaker Local]: QUESTION: User 6: Question 193.; Timestamp: 2019-11-13 23:14:52.034
+[Speaker Local]: QUESTION: User 6: Question 641.; Timestamp: 2019-11-13 23:14:52.034
+[Speaker Local]: QUESTION: User 6: Question 612.; Timestamp: 2019-11-13 23:14:52.034
+[Speaker Local]: QUESTION: User 6: Question 450.; Timestamp: 2019-11-13 23:14:52.034
+[Speaker Local]: QUESTION: User 6: Question 435.; Timestamp: 2019-11-13 23:14:52.034
+[Speaker Local]: QUESTION: User 6: Question 945.; Timestamp: 2019-11-13 23:14:52.035
+[Speaker Local]: QUESTION: User 6: Question 369.; Timestamp: 2019-11-13 23:14:52.035
+[Speaker Local]: QUESTION: User 6: Question 743.; Timestamp: 2019-11-13 23:14:52.035
+[Speaker Local]: QUESTION: User 6: Question 236.; Timestamp: 2019-11-13 23:14:52.035
+[Speaker Local]: QUESTION: User 6: Question 474.; Timestamp: 2019-11-13 23:14:52.542
+[Speaker Local]: QUESTION: User 6: Question 471.; Timestamp: 2019-11-13 23:15:00.062
+[Speaker Local]: QUESTION: User 6: Question 500.; Timestamp: 2019-11-13 23:15:00.063
+[Speaker Local]: QUESTION: User 6: Question 593.; Timestamp: 2019-11-13 23:15:00.063
+[Speaker Local]: QUESTION: User 6: Question 18.; Timestamp: 2019-11-13 23:15:00.063
+[Speaker Local]: QUESTION: User 6: Question 738.; Timestamp: 2019-11-13 23:15:00.063
+[Speaker Local]: QUESTION: User 6: Question 409.; Timestamp: 2019-11-13 23:15:00.063
+[Speaker Local]: QUESTION: User 6: Question 61.; Timestamp: 2019-11-13 23:15:00.063
+[Speaker Local]: QUESTION: User 6: Question 90.; Timestamp: 2019-11-13 23:15:00.064
+[Speaker Local]: QUESTION: User 6: Question 605.; Timestamp: 2019-11-13 23:15:00.064
+[Speaker Local]: QUESTION: User 6: Question 282.; Timestamp: 2019-11-13 23:15:00.064
+[Speaker Local]: QUESTION: User 6: Question 278.; Timestamp: 2019-11-13 23:15:00.064
+[Speaker Local]: QUESTION: User 6: Question 851.; Timestamp: 2019-11-13 23:15:00.064
+[Speaker Local]: QUESTION: User 6: Question 975.; Timestamp: 2019-11-13 23:15:00.586
+[Speaker Local]: QUESTION: User 6: Question 195.; Timestamp: 2019-11-13 23:15:01.763
+[Speaker Local]: QUESTION: User 6: Question 600.; Timestamp: 2019-11-13 23:15:01.763
+[Speaker Local]: QUESTION: User 6: Question 174.; Timestamp: 2019-11-13 23:15:01.763
+[Speaker Local]: QUESTION: User 6: Question 748.; Timestamp: 2019-11-13 23:15:01.764
+[Speaker Local]: QUESTION: User 6: Question 33.; Timestamp: 2019-11-13 23:15:01.764
+[Speaker Local]: QUESTION: User 6: Question 311.; Timestamp: 2019-11-13 23:15:01.764
+[Speaker Local]: QUESTION: User 6: Question 227.; Timestamp: 2019-11-13 23:15:01.764
+[Speaker Local]: QUESTION: User 6: Question 688.; Timestamp: 2019-11-13 23:15:01.764
+[Speaker Local]: QUESTION: User 6: Question 176.; Timestamp: 2019-11-13 23:15:01.764
+[Speaker Local]: QUESTION: User 6: Question 964.; Timestamp: 2019-11-13 23:15:01.764
+[Speaker Local]: QUESTION: User 6: Question 395.; Timestamp: 2019-11-13 23:15:01.764
+[Speaker Local]: QUESTION: User 6: Question 371.; Timestamp: 2019-11-13 23:15:01.765
+[Speaker Local]: QUESTION: User 6: Question 262.; Timestamp: 2019-11-13 23:15:01.765
+[Speaker Local]: QUESTION: User 6: Question 366.; Timestamp: 2019-11-13 23:15:01.765
+[Speaker Local]: QUESTION: User 6: Question 432.; Timestamp: 2019-11-13 23:15:01.765
+[Speaker Local]: QUESTION: User 6: Question 241.; Timestamp: 2019-11-13 23:15:01.765
+[Speaker Local]: QUESTION: User 6: Question 101.; Timestamp: 2019-11-13 23:15:01.765
+[Speaker Local]: QUESTION: User 6: Question 757.; Timestamp: 2019-11-13 23:15:01.765
+[Speaker Local]: QUESTION: User 6: Question 665.; Timestamp: 2019-11-13 23:15:01.765
+[Speaker Local]: QUESTION: User 6: Question 736.; Timestamp: 2019-11-13 23:15:01.765
+[Speaker Local]: QUESTION: User 6: Question 26.; Timestamp: 2019-11-13 23:15:01.766
+[Speaker Local]: QUESTION: User 6: Question 192.; Timestamp: 2019-11-13 23:15:01.766
+[Speaker Local]: QUESTION: User 6: Question 138.; Timestamp: 2019-11-13 23:15:01.766
+[Speaker Local]: QUESTION: User 6: Question 178.; Timestamp: 2019-11-13 23:15:01.766
+[Speaker Local]: QUESTION: User 6: Question 383.; Timestamp: 2019-11-13 23:15:01.766
+[Speaker Local]: QUESTION: User 6: Question 729.; Timestamp: 2019-11-13 23:15:01.766
+[Speaker Local]: QUESTION: User 6: Question 187.; Timestamp: 2019-11-13 23:15:01.766
+[Speaker Local]: QUESTION: User 6: Question 66.; Timestamp: 2019-11-13 23:15:01.766
+[Speaker Local]: QUESTION: User 6: Question 267.; Timestamp: 2019-11-13 23:15:01.767
+[Speaker Local]: QUESTION: User 6: Question 470.; Timestamp: 2019-11-13 23:15:01.767
+[Speaker Local]: QUESTION: User 6: Question 786.; Timestamp: 2019-11-13 23:15:01.767
+[Speaker Local]: QUESTION: User 6: Question 599.; Timestamp: 2019-11-13 23:15:01.767
+[Speaker Local]: QUESTION: User 6: Question 751.; Timestamp: 2019-11-13 23:15:01.767
+[Speaker Local]: QUESTION: User 6: Question 567.; Timestamp: 2019-11-13 23:15:01.767
+[Speaker Local]: QUESTION: User 6: Question 313.; Timestamp: 2019-11-13 23:15:01.767
+[Speaker Local]: QUESTION: User 6: Question 2.; Timestamp: 2019-11-13 23:15:01.767
+[Speaker Local]: QUESTION: User 6: Question 281.; Timestamp: 2019-11-13 23:15:01.767
+[Speaker Local]: QUESTION: User 6: Question 318.; Timestamp: 2019-11-13 23:15:01.768
+[Speaker Local]: QUESTION: User 6: Question 171.; Timestamp: 2019-11-13 23:15:01.768
+[Speaker Local]: QUESTION: User 6: Question 166.; Timestamp: 2019-11-13 23:15:01.768
+[Speaker Local]: QUESTION: User 6: Question 467.; Timestamp: 2019-11-13 23:15:01.768
+[Speaker Local]: QUESTION: User 6: Question 143.; Timestamp: 2019-11-13 23:15:01.768
+[Speaker Local]: QUESTION: User 6: Question 907.; Timestamp: 2019-11-13 23:15:01.768
+[Speaker Local]: QUESTION: User 6: Question 705.; Timestamp: 2019-11-13 23:15:01.768
+[Speaker Local]: QUESTION: User 6: Question 572.; Timestamp: 2019-11-13 23:15:01.768
+[Speaker Local]: QUESTION: User 6: Question 234.; Timestamp: 2019-11-13 23:15:01.768
+[Speaker Local]: QUESTION: User 6: Question 861.; Timestamp: 2019-11-13 23:15:01.769
+[Speaker Local]: QUESTION: User 6: Question 885.; Timestamp: 2019-11-13 23:15:01.769
+[Speaker Local]: QUESTION: User 6: Question 597.; Timestamp: 2019-11-13 23:15:01.769
+[Speaker Local]: QUESTION: User 6: Question 411.; Timestamp: 2019-11-13 23:15:01.769
+[Speaker Local]: QUESTION: User 6: Question 217.; Timestamp: 2019-11-13 23:15:01.769
+[Speaker Local]: QUESTION: User 6: Question 775.; Timestamp: 2019-11-13 23:15:01.769
+[Speaker Local]: QUESTION: User 6: Question 260.; Timestamp: 2019-11-13 23:15:01.769
+[Speaker Local]: QUESTION: User 6: Question 479.; Timestamp: 2019-11-13 23:15:01.769
+[Speaker Local]: QUESTION: User 6: Question 350.; Timestamp: 2019-11-13 23:15:01.77
+[Speaker Local]: QUESTION: User 6: Question 329.; Timestamp: 2019-11-13 23:15:01.77
+[Speaker Local]: QUESTION: User 6: Question 45.; Timestamp: 2019-11-13 23:15:01.77
+[Speaker Local]: QUESTION: User 6: Question 182.; Timestamp: 2019-11-13 23:15:01.77
+[Speaker Local]: QUESTION: User 6: Question 231.; Timestamp: 2019-11-13 23:15:01.771
+[Speaker Local]: QUESTION: User 6: Question 285.; Timestamp: 2019-11-13 23:15:01.772
+[Speaker Local]: QUESTION: User 6: Question 436.; Timestamp: 2019-11-13 23:15:01.773
+[Speaker Local]: QUESTION: User 6: Question 408.; Timestamp: 2019-11-13 23:15:01.774
+[Speaker Local]: QUESTION: User 6: Question 523.; Timestamp: 2019-11-13 23:15:01.774
+[Speaker Local]: QUESTION: User 6: Question 766.; Timestamp: 2019-11-13 23:15:01.777
+[Speaker Local]: QUESTION: User 6: Question 499.; Timestamp: 2019-11-13 23:15:01.779
+[Speaker Local]: QUESTION: User 6: Question 422.; Timestamp: 2019-11-13 23:15:01.779
+[Speaker Local]: QUESTION: User 6: Question 387.; Timestamp: 2019-11-13 23:15:01.779
+[Speaker Local]: QUESTION: User 6: Question 442.; Timestamp: 2019-11-13 23:15:01.779
+[Speaker Local]: QUESTION: User 6: Question 764.; Timestamp: 2019-11-13 23:15:01.779
+[Speaker Local]: QUESTION: User 6: Question 579.; Timestamp: 2019-11-13 23:15:01.779
+[Speaker Local]: QUESTION: User 6: Question 953.; Timestamp: 2019-11-13 23:15:01.78
+[Speaker Local]: QUESTION: User 6: Question 919.; Timestamp: 2019-11-13 23:15:01.78
+[Speaker Local]: QUESTION: User 6: Question 708.; Timestamp: 2019-11-13 23:15:01.78
+[Speaker Local]: QUESTION: User 6: Question 487.; Timestamp: 2019-11-13 23:15:01.78
+[Speaker Local]: QUESTION: User 6: Question 961.; Timestamp: 2019-11-13 23:15:01.78
+[Speaker Local]: QUESTION: User 6: Question 512.; Timestamp: 2019-11-13 23:15:01.78
+[Speaker Local]: QUESTION: User 6: Question 310.; Timestamp: 2019-11-13 23:15:01.78
+[Speaker Local]: QUESTION: User 6: Question 703.; Timestamp: 2019-11-13 23:15:01.78
+[Speaker Local]: QUESTION: User 6: Question 495.; Timestamp: 2019-11-13 23:15:01.781
+[Speaker Local]: QUESTION: User 6: Question 755.; Timestamp: 2019-11-13 23:15:01.781
+[Speaker Local]: QUESTION: User 6: Question 887.; Timestamp: 2019-11-13 23:15:01.781
+[Speaker Local]: QUESTION: User 6: Question 747.; Timestamp: 2019-11-13 23:15:01.781
+[Speaker Local]: QUESTION: User 6: Question 188.; Timestamp: 2019-11-13 23:15:01.781
+[Speaker Local]: QUESTION: User 6: Question 959.; Timestamp: 2019-11-13 23:15:01.781
+[Speaker Local]: QUESTION: User 6: Question 220.; Timestamp: 2019-11-13 23:15:01.781
+[Speaker Local]: QUESTION: User 6: Question 224.; Timestamp: 2019-11-13 23:15:01.782
+[Speaker Local]: QUESTION: User 6: Question 280.; Timestamp: 2019-11-13 23:15:01.782
+[Speaker Local]: QUESTION: User 6: Question 603.; Timestamp: 2019-11-13 23:15:01.782
+[Speaker Local]: QUESTION: User 6: Question 111.; Timestamp: 2019-11-13 23:15:01.782
+[Speaker Local]: QUESTION: User 6: Question 789.; Timestamp: 2019-11-13 23:15:01.782
+[Speaker Local]: QUESTION: User 6: Question 242.; Timestamp: 2019-11-13 23:15:01.782
+[Speaker Local]: QUESTION: User 6: Question 484.; Timestamp: 2019-11-13 23:15:01.782
+[Speaker Local]: QUESTION: User 6: Question 249.; Timestamp: 2019-11-13 23:15:01.783
+[Speaker Local]: QUESTION: User 6: Question 915.; Timestamp: 2019-11-13 23:15:01.783
+[Speaker Local]: QUESTION: User 6: Question 890.; Timestamp: 2019-11-13 23:15:01.783
+[Speaker Local]: QUESTION: User 6: Question 834.; Timestamp: 2019-11-13 23:15:01.783
+[Speaker Local]: QUESTION: User 6: Question 245.; Timestamp: 2019-11-13 23:15:01.783
+[Speaker Local]: QUESTION: User 6: Question 580.; Timestamp: 2019-11-13 23:15:01.783
+[Speaker Local]: QUESTION: User 6: Question 881.; Timestamp: 2019-11-13 23:15:01.783
+[Speaker Local]: QUESTION: User 6: Question 518.; Timestamp: 2019-11-13 23:15:03.406
+[Speaker Local]: QUESTION: User 6: Question 720.; Timestamp: 2019-11-13 23:15:03.688
+[Speaker Local]: QUESTION: User 6: Question 900.; Timestamp: 2019-11-13 23:15:03.689
+[Speaker Local]: QUESTION: User 6: Question 865.; Timestamp: 2019-11-13 23:15:03.689
+[Speaker Local]: QUESTION: User 6: Question 666.; Timestamp: 2019-11-13 23:15:03.69
+[Speaker Local]: QUESTION: User 6: Question 257.; Timestamp: 2019-11-13 23:15:03.69
+[Speaker Local]: QUESTION: User 6: Question 970.; Timestamp: 2019-11-13 23:15:03.69
+[Speaker Local]: QUESTION: User 6: Question 29.; Timestamp: 2019-11-13 23:15:03.69
+[Speaker Local]: QUESTION: User 6: Question 539.; Timestamp: 2019-11-13 23:15:03.69
+[Speaker Local]: QUESTION: User 6: Question 152.; Timestamp: 2019-11-13 23:15:03.69
+[Speaker Local]: QUESTION: User 6: Question 594.; Timestamp: 2019-11-13 23:15:03.691
+[Speaker Local]: QUESTION: User 6: Question 316.; Timestamp: 2019-11-13 23:15:03.691
+[Speaker Local]: QUESTION: User 6: Question 235.; Timestamp: 2019-11-13 23:15:03.692
+[Speaker Local]: QUESTION: User 6: Question 561.; Timestamp: 2019-11-13 23:15:03.692
+[Speaker Local]: QUESTION: User 6: Question 963.; Timestamp: 2019-11-13 23:15:03.693
+[Speaker Local]: QUESTION: User 6: Question 778.; Timestamp: 2019-11-13 23:15:03.693
+[Speaker Local]: QUESTION: User 6: Question 382.; Timestamp: 2019-11-13 23:15:03.694
+[Speaker Local]: QUESTION: User 6: Question 151.; Timestamp: 2019-11-13 23:15:03.695
+[Speaker Local]: QUESTION: User 6: Question 296.; Timestamp: 2019-11-13 23:15:03.696
+[Speaker Local]: QUESTION: User 6: Question 793.; Timestamp: 2019-11-13 23:15:03.697
+[Speaker Local]: QUESTION: User 6: Question 966.; Timestamp: 2019-11-13 23:15:03.697
+[Speaker Local]: QUESTION: User 6: Question 170.; Timestamp: 2019-11-13 23:15:03.697
+[Speaker Local]: QUESTION: User 6: Question 952.; Timestamp: 2019-11-13 23:15:03.697
+[Speaker Local]: QUESTION: User 6: Question 715.; Timestamp: 2019-11-13 23:15:03.697
+[Speaker Local]: QUESTION: User 6: Question 419.; Timestamp: 2019-11-13 23:15:03.697
+[Speaker Local]: QUESTION: User 6: Question 154.; Timestamp: 2019-11-13 23:15:03.697
+[Speaker Local]: QUESTION: User 6: Question 360.; Timestamp: 2019-11-13 23:15:03.697
+[Speaker Local]: QUESTION: User 6: Question 862.; Timestamp: 2019-11-13 23:15:03.698
+[Speaker Local]: QUESTION: User 6: Question 914.; Timestamp: 2019-11-13 23:15:03.698
+[Speaker Local]: QUESTION: User 6: Question 172.; Timestamp: 2019-11-13 23:15:03.698
+[Speaker Local]: QUESTION: User 6: Question 38.; Timestamp: 2019-11-13 23:15:03.698
+[Speaker Local]: QUESTION: User 6: Question 361.; Timestamp: 2019-11-13 23:15:03.698
+[Speaker Local]: QUESTION: User 6: Question 522.; Timestamp: 2019-11-13 23:15:03.698
+[Speaker Local]: QUESTION: User 6: Question 543.; Timestamp: 2019-11-13 23:15:03.698
+[Speaker Local]: QUESTION: User 6: Question 726.; Timestamp: 2019-11-13 23:15:03.699
+[Speaker Local]: QUESTION: User 6: Question 542.; Timestamp: 2019-11-13 23:15:03.699
+[Speaker Local]: QUESTION: User 6: Question 19.; Timestamp: 2019-11-13 23:15:03.699
+[Speaker Local]: QUESTION: User 6: Question 76.; Timestamp: 2019-11-13 23:15:03.699
+[Speaker Local]: QUESTION: User 6: Question 741.; Timestamp: 2019-11-13 23:15:03.699
+[Speaker Local]: QUESTION: User 6: Question 362.; Timestamp: 2019-11-13 23:15:03.699
+[Speaker Local]: QUESTION: User 6: Question 314.; Timestamp: 2019-11-13 23:15:03.7
+[Speaker Local]: QUESTION: User 6: Question 24.; Timestamp: 2019-11-13 23:15:03.7
+[Speaker Local]: QUESTION: User 6: Question 3.; Timestamp: 2019-11-13 23:15:03.7
+[Speaker Local]: QUESTION: User 6: Question 433.; Timestamp: 2019-11-13 23:15:03.7
+[Speaker Local]: QUESTION: User 6: Question 803.; Timestamp: 2019-11-13 23:15:03.7
+[Speaker Local]: QUESTION: User 6: Question 163.; Timestamp: 2019-11-13 23:15:03.7
+[Speaker Local]: QUESTION: User 6: Question 630.; Timestamp: 2019-11-13 23:15:03.7
+[Speaker Local]: QUESTION: User 6: Question 872.; Timestamp: 2019-11-13 23:15:03.7
+[Speaker Local]: QUESTION: User 6: Question 199.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 71.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 699.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 527.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 438.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 333.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 84.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 940.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 274.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 855.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 812.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 618.; Timestamp: 2019-11-13 23:15:03.701
+[Speaker Local]: QUESTION: User 6: Question 806.; Timestamp: 2019-11-13 23:15:03.704
+[Speaker Local]: QUESTION: User 6: Question 20.; Timestamp: 2019-11-13 23:15:03.704
+[Speaker Local]: QUESTION: User 6: Question 763.; Timestamp: 2019-11-13 23:15:03.704
+[Speaker Local]: QUESTION: User 6: Question 779.; Timestamp: 2019-11-13 23:15:03.704
+[Speaker Local]: QUESTION: User 6: Question 849.; Timestamp: 2019-11-13 23:15:03.705
+[Speaker Local]: QUESTION: User 6: Question 286.; Timestamp: 2019-11-13 23:15:03.705
+[Speaker Local]: QUESTION: User 6: Question 814.; Timestamp: 2019-11-13 23:15:03.705
+[Speaker Local]: QUESTION: User 6: Question 762.; Timestamp: 2019-11-13 23:15:03.705
+[Speaker Local]: QUESTION: User 6: Question 504.; Timestamp: 2019-11-13 23:15:03.705
+[Speaker Local]: QUESTION: User 6: Question 355.; Timestamp: 2019-11-13 23:15:03.705
+[Speaker Local]: QUESTION: User 6: Question 204.; Timestamp: 2019-11-13 23:15:03.706
+[Speaker Local]: QUESTION: User 6: Question 161.; Timestamp: 2019-11-13 23:15:03.706
+[Speaker Local]: QUESTION: User 6: Question 354.; Timestamp: 2019-11-13 23:15:03.706
+[Speaker Local]: QUESTION: User 6: Question 540.; Timestamp: 2019-11-13 23:15:03.706
+[Speaker Local]: QUESTION: User 6: Question 253.; Timestamp: 2019-11-13 23:15:03.706
+[Speaker Local]: QUESTION: User 6: Question 330.; Timestamp: 2019-11-13 23:15:03.707
+[Speaker Local]: QUESTION: User 6: Question 874.; Timestamp: 2019-11-13 23:15:03.707
+[Speaker Local]: QUESTION: User 6: Question 222.; Timestamp: 2019-11-13 23:15:03.707
+[Speaker Local]: QUESTION: User 6: Question 298.; Timestamp: 2019-11-13 23:15:03.707
+[Speaker Local]: QUESTION: User 6: Question 685.; Timestamp: 2019-11-13 23:15:03.707
+[Speaker Local]: QUESTION: User 6: Question 628.; Timestamp: 2019-11-13 23:15:03.707
+[Speaker Local]: QUESTION: User 6: Question 551.; Timestamp: 2019-11-13 23:15:03.708
+[Speaker Local]: QUESTION: User 6: Question 476.; Timestamp: 2019-11-13 23:15:03.708
+[Speaker Local]: QUESTION: User 6: Question 893.; Timestamp: 2019-11-13 23:15:03.708
+[Speaker Local]: QUESTION: User 6: Question 37.; Timestamp: 2019-11-13 23:15:03.708
+[Speaker Local]: QUESTION: User 6: Question 60.; Timestamp: 2019-11-13 23:15:03.708
+[Speaker Local]: QUESTION: User 6: Question 575.; Timestamp: 2019-11-13 23:15:03.708
+[Speaker Local]: QUESTION: User 6: Question 384.; Timestamp: 2019-11-13 23:15:03.709
+[Speaker Local]: QUESTION: User 6: Question 538.; Timestamp: 2019-11-13 23:15:03.709
+[Speaker Local]: QUESTION: User 6: Question 229.; Timestamp: 2019-11-13 23:15:03.709
+[Speaker Local]: QUESTION: User 6: Question 809.; Timestamp: 2019-11-13 23:15:03.709
+[Speaker Local]: QUESTION: User 6: Question 833.; Timestamp: 2019-11-13 23:15:03.709
+[Speaker Local]: QUESTION: User 6: Question 639.; Timestamp: 2019-11-13 23:15:03.709
+[Speaker Local]: QUESTION: User 6: Question 956.; Timestamp: 2019-11-13 23:15:03.71
+[Speaker Local]: QUESTION: User 6: Question 884.; Timestamp: 2019-11-13 23:15:03.71
+[Speaker Local]: QUESTION: User 6: Question 724.; Timestamp: 2019-11-13 23:15:03.71
+[Speaker Local]: QUESTION: User 6: Question 508.; Timestamp: 2019-11-13 23:15:03.71
+[Speaker Local]: QUESTION: User 6: Question 28.; Timestamp: 2019-11-13 23:15:03.71
+[Speaker Local]: QUESTION: User 6: Question 97.; Timestamp: 2019-11-13 23:15:03.71
+[Speaker Local]: QUESTION: User 6: Question 320.; Timestamp: 2019-11-13 23:15:04.037
+[Speaker Local]: QUESTION: User 6: Question 986.; Timestamp: 2019-11-13 23:15:04.595
+[Speaker Local]: QUESTION: User 6: Question 816.; Timestamp: 2019-11-13 23:15:04.596
+[Speaker Local]: QUESTION: User 6: Question 636.; Timestamp: 2019-11-13 23:15:04.597
+[Speaker Local]: QUESTION: User 6: Question 492.; Timestamp: 2019-11-13 23:15:04.597
+[Speaker Local]: QUESTION: User 6: Question 263.; Timestamp: 2019-11-13 23:15:04.597
+[Speaker Local]: QUESTION: User 6: Question 276.; Timestamp: 2019-11-13 23:15:04.597
+[Speaker Local]: QUESTION: User 6: Question 4.; Timestamp: 2019-11-13 23:15:04.597
+[Speaker Local]: QUESTION: User 6: Question 981.; Timestamp: 2019-11-13 23:15:04.597
+[Speaker Local]: QUESTION: User 6: Question 742.; Timestamp: 2019-11-13 23:15:04.598
+[Speaker Local]: QUESTION: User 6: Question 123.; Timestamp: 2019-11-13 23:15:04.598
+[Speaker Local]: QUESTION: User 6: Question 346.; Timestamp: 2019-11-13 23:15:04.598
+[Speaker Local]: QUESTION: User 6: Question 203.; Timestamp: 2019-11-13 23:15:04.598
+[Speaker Local]: QUESTION: User 6: Question 429.; Timestamp: 2019-11-13 23:15:04.598
+[Speaker Local]: QUESTION: User 6: Question 837.; Timestamp: 2019-11-13 23:15:04.598
+[Speaker Local]: QUESTION: User 6: Question 481.; Timestamp: 2019-11-13 23:15:04.599
+[Speaker Local]: QUESTION: User 6: Question 934.; Timestamp: 2019-11-13 23:15:04.599
+[Speaker Local]: QUESTION: User 6: Question 882.; Timestamp: 2019-11-13 23:15:04.599
+[Speaker Local]: QUESTION: User 6: Question 513.; Timestamp: 2019-11-13 23:15:04.599
+[Speaker Local]: QUESTION: User 6: Question 745.; Timestamp: 2019-11-13 23:15:04.599
+[Speaker Local]: QUESTION: User 6: Question 706.; Timestamp: 2019-11-13 23:15:04.599
+[Speaker Local]: QUESTION: User 6: Question 776.; Timestamp: 2019-11-13 23:15:04.599
+[Speaker Local]: QUESTION: User 6: Question 397.; Timestamp: 2019-11-13 23:15:04.6
+[Speaker Local]: QUESTION: User 6: Question 740.; Timestamp: 2019-11-13 23:15:04.6
+[Speaker Local]: QUESTION: User 6: Question 41.; Timestamp: 2019-11-13 23:15:04.6
+[Speaker Local]: QUESTION: User 6: Question 989.; Timestamp: 2019-11-13 23:15:04.6
+[Speaker Local]: QUESTION: User 6: Question 53.; Timestamp: 2019-11-13 23:15:04.6
+[Speaker Local]: QUESTION: User 6: Question 977.; Timestamp: 2019-11-13 23:15:04.6
+[Speaker Local]: QUESTION: User 6: Question 259.; Timestamp: 2019-11-13 23:15:04.601
+[Speaker Local]: QUESTION: User 6: Question 617.; Timestamp: 2019-11-13 23:15:04.601
+[Speaker Local]: QUESTION: User 6: Question 427.; Timestamp: 2019-11-13 23:15:04.601
+[Speaker Local]: QUESTION: User 6: Question 372.; Timestamp: 2019-11-13 23:15:04.601
+[Speaker Local]: QUESTION: User 6: Question 497.; Timestamp: 2019-11-13 23:15:04.601
+[Speaker Local]: QUESTION: User 6: Question 995.; Timestamp: 2019-11-13 23:15:04.601
+[Speaker Local]: QUESTION: User 6: Question 670.; Timestamp: 2019-11-13 23:15:04.601
+[Speaker Local]: QUESTION: User 6: Question 207.; Timestamp: 2019-11-13 23:15:04.602
+[Speaker Local]: QUESTION: User 6: Question 647.; Timestamp: 2019-11-13 23:15:04.602
+[Speaker Local]: QUESTION: User 6: Question 565.; Timestamp: 2019-11-13 23:15:04.603
+[Speaker Local]: QUESTION: User 6: Question 232.; Timestamp: 2019-11-13 23:15:04.603
+[Speaker Local]: QUESTION: User 6: Question 871.; Timestamp: 2019-11-13 23:15:04.603
+[Speaker Local]: QUESTION: User 6: Question 94.; Timestamp: 2019-11-13 23:15:04.603
+[Speaker Local]: QUESTION: User 6: Question 585.; Timestamp: 2019-11-13 23:15:04.603
+[Speaker Local]: QUESTION: User 6: Question 867.; Timestamp: 2019-11-13 23:15:04.605
+[Speaker Local]: QUESTION: User 6: Question 702.; Timestamp: 2019-11-13 23:15:04.605
+[Speaker Local]: QUESTION: User 6: Question 321.; Timestamp: 2019-11-13 23:15:04.606
+[Speaker Local]: QUESTION: User 6: Question 35.; Timestamp: 2019-11-13 23:15:04.606
+[Speaker Local]: QUESTION: User 6: Question 753.; Timestamp: 2019-11-13 23:15:04.606
+[Speaker Local]: QUESTION: User 6: Question 717.; Timestamp: 2019-11-13 23:15:04.607
+[Speaker Local]: QUESTION: User 6: Question 669.; Timestamp: 2019-11-13 23:15:04.607
+[Speaker Local]: QUESTION: User 6: Question 233.; Timestamp: 2019-11-13 23:15:04.609
+[Speaker Local]: QUESTION: User 6: Question 268.; Timestamp: 2019-11-13 23:15:04.609
+[Speaker Local]: QUESTION: User 6: Question 980.; Timestamp: 2019-11-13 23:15:04.609
+[Speaker Local]: QUESTION: User 6: Question 544.; Timestamp: 2019-11-13 23:15:04.609
+[Speaker Local]: QUESTION: User 6: Question 552.; Timestamp: 2019-11-13 23:15:04.61
+[Speaker Local]: QUESTION: User 6: Question 988.; Timestamp: 2019-11-13 23:15:04.61
+[Speaker Local]: QUESTION: User 6: Question 906.; Timestamp: 2019-11-13 23:15:04.61
+[Speaker Local]: QUESTION: User 6: Question 131.; Timestamp: 2019-11-13 23:15:04.61
+[Speaker Local]: QUESTION: User 6: Question 498.; Timestamp: 2019-11-13 23:15:04.61
+[Speaker Local]: QUESTION: User 6: Question 526.; Timestamp: 2019-11-13 23:15:04.61
+[Speaker Local]: QUESTION: User 6: Question 611.; Timestamp: 2019-11-13 23:15:04.61
+[Speaker Local]: QUESTION: User 6: Question 925.; Timestamp: 2019-11-13 23:15:04.611
+[Speaker Local]: QUESTION: User 6: Question 663.; Timestamp: 2019-11-13 23:15:04.611
+[Speaker Local]: QUESTION: User 6: Question 721.; Timestamp: 2019-11-13 23:15:04.611
+[Speaker Local]: QUESTION: User 6: Question 459.; Timestamp: 2019-11-13 23:15:04.611
+[Speaker Local]: QUESTION: User 6: Question 63.; Timestamp: 2019-11-13 23:15:04.611
+[Speaker Local]: QUESTION: User 6: Question 787.; Timestamp: 2019-11-13 23:15:04.611
+[Speaker Local]: QUESTION: User 6: Question 873.; Timestamp: 2019-11-13 23:15:04.611
+[Speaker Local]: QUESTION: User 6: Question 857.; Timestamp: 2019-11-13 23:15:04.612
+[Speaker Local]: QUESTION: User 6: Question 737.; Timestamp: 2019-11-13 23:15:04.612
+[Speaker Local]: QUESTION: User 6: Question 400.; Timestamp: 2019-11-13 23:15:04.612
+[Speaker Local]: QUESTION: User 6: Question 88.; Timestamp: 2019-11-13 23:15:04.612
+[Speaker Local]: QUESTION: User 6: Question 50.; Timestamp: 2019-11-13 23:15:04.612
+[Speaker Local]: QUESTION: User 6: Question 349.; Timestamp: 2019-11-13 23:15:04.612
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f638318cd88, pid=10290, tid=0x00007f635a940700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_191-b12) (build 1.8.0_191-8u191-b12-2ubuntu0.18.04.1-b12)
+# Java VM: OpenJDK 64-Bit Server VM (25.191-b12 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.so+0x97cd88]
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# An error report file with more information is saved as:
+# /mnt/c/Users/ksank/akka-resources/src/hs_err_pid10290.log
+#
+# Compiler replay data is saved as:
+# /mnt/c/Users/ksank/akka-resources/src/replay_pid10290.log
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#

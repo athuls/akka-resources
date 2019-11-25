@@ -59,7 +59,7 @@ def check_ordering(file_name):
 # this function checks overall ordering - works
 def conclude_if_ordered(num_users):
     for i in range(1, num_users + 1):
-        curr = "logs/speaker" + str(i) + "SimpleGlitchSimple.txt"
+        curr = "logs/speaker" + str(i) + "NoConsistencySimple.txt"
         ordered = check_ordering(curr)
         if ordered == False:
             return False
@@ -78,7 +78,8 @@ def get_overall_runtime():
 def get_overall_latency(num_users):
     file_name_list = []
     for i in range(num_users):
-        curr = "logs/speaker" + str(i + 1) + "SimpleGlitchSimple.txt"
+        #curr = "logs/speaker" + str(i + 1) + "SimpleGlitchSimple.txt"
+        curr = "logs/speaker" + str(i + 1) + "NoConsistencySimple.txt"
         file_name_list.append(curr)
     starting_time = 0
     for file in file_name_list:
@@ -138,8 +139,8 @@ is_ordered = "No"
 if conclude_if_ordered(num_users):
     is_ordered = "Yes"
 is_question_ordered = "No"
-if check_all_questions_ordered(num_users):
-    is_question_ordered = "Yes"
+#if check_all_questions_ordered(num_users):
+#    is_question_ordered = "Yes"
 overall_runtime = get_overall_runtime()
 overall_latency = get_overall_latency(num_users)
 print("Are the questions first: " + str(is_question_ordered) + "; Is this FIFO ordered: " + str(is_ordered) + "; overall runtime: " + str(overall_runtime) + "; overall latency: " + str(overall_latency))

@@ -1,13 +1,13 @@
-Starting time: 2019-11-04 15:17:01.864
-salsa.naming.MalformedUANException: Exception from inside salsa.language: Malformed UAN : uan://:3030\localhost:3030id6
+Starting time: 2019-11-13 01:41:51.888
+salsa.naming.MalformedUANException: Exception from inside salsa.language: Malformed UAN : uan://:3030\localhost:3030id4
 	at salsa.naming.UAN.<init>(UAN.java:32)
 	at gc.serverGC.SLocalPRID.notifyInvAcq(SLocalPRID.java:413)
 	at gc.serverGC.SLocalPRID.snapshotFinalize(SLocalPRID.java:290)
 	at gc.serverGC.SLocalPRID.collect(SLocalPRID.java:142)
 	at salsa.language.RunTime$1.run(RunTime.java:66)
 	at java.lang.Thread.run(Thread.java:748)
-Time taken to run this in milliseconds: 1519
-Ending time: 2019-11-04 15:17:03.702
+Time taken to run this in milliseconds: 1403
+Ending time: 2019-11-13 01:41:53.933
 Done with chat conversation
 salsa.naming.MalformedUANException: Exception from inside salsa.language: Malformed UAN : uan://:3030\localhost:3030id9
 	at salsa.naming.UAN.<init>(UAN.java:32)

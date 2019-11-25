@@ -212,57 +212,16 @@ public class Speaker extends UniversalActor  implements ActorService {
 			isQuestion = true;
 		}
 		public void broadcastSend(String msg, boolean is_statement, boolean is_question, boolean is_answer, int number_of_questions, int total_messages, boolean fifo) {
-			Date date = new Date();
-			Timestamp current = new Timestamp(date.getTime());
+			Timestamp current = new Timestamp(System.currentTimeMillis());
 			String type = "";
 			if (is_statement) {type = "STATEMENT";
 }			else {if (is_question) {type = "QUESTION";
 }			else {if (is_answer) {type = "ANSWER";
 }}}			{
-				// standardOutput<-print("[Speaker Local]: ")
-				{
-					Object _arguments[] = { "[Speaker Local]: " };
-					Message message = new Message( self, standardOutput, "print", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// standardOutput<-print(type)
-				{
-					Object _arguments[] = { type };
-					Message message = new Message( self, standardOutput, "print", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// standardOutput<-print(": ")
-				{
-					Object _arguments[] = { ": " };
-					Message message = new Message( self, standardOutput, "print", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// standardOutput<-print(msg)
-				{
-					Object _arguments[] = { msg };
-					Message message = new Message( self, standardOutput, "print", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
-				// standardOutput<-print("; Timestamp: ")
-				{
-					Object _arguments[] = { "; Timestamp: " };
-					Message message = new Message( self, standardOutput, "print", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
-			{
 				Token token_2_0 = new Token();
-				// standardOutput<-println(current)
+				// standardOutput<-println("[Speaker Local]: "+type+": "+msg+"; Timestamp: "+current)
 				{
-					Object _arguments[] = { current };
+					Object _arguments[] = { "[Speaker Local]: "+type+": "+msg+"; Timestamp: "+current };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
@@ -331,37 +290,12 @@ if (questionTimeStamp.values().size()==total_questions||(isQuestion&&questionTim
 			}
 }			else {{
 				messages.add(msg);
-				Thread.sleep(200);
-				Date date_four = new Date();
-				Timestamp current_four = new Timestamp(date_four.getTime());
+				Thread.sleep(20);
+				Timestamp current_four = new Timestamp(System.currentTimeMillis());
 				{
-					// standardOutput<-print("[Speaker Remote]: STATEMENT: ")
+					// standardOutput<-println("[Speaker Remote]: STATEMENT: "+msg+"; Timestamp: "+current_four)
 					{
-						Object _arguments[] = { "[Speaker Remote]: STATEMENT: " };
-						Message message = new Message( self, standardOutput, "print", _arguments, null, null );
-						__messages.add( message );
-					}
-				}
-				{
-					// standardOutput<-print(msg)
-					{
-						Object _arguments[] = { msg };
-						Message message = new Message( self, standardOutput, "print", _arguments, null, null );
-						__messages.add( message );
-					}
-				}
-				{
-					// standardOutput<-print("; Timestamp: ")
-					{
-						Object _arguments[] = { "; Timestamp: " };
-						Message message = new Message( self, standardOutput, "print", _arguments, null, null );
-						__messages.add( message );
-					}
-				}
-				{
-					// standardOutput<-println(current_four)
-					{
-						Object _arguments[] = { current_four };
+						Object _arguments[] = { "[Speaker Remote]: STATEMENT: "+msg+"; Timestamp: "+current_four };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 						__messages.add( message );
 					}
@@ -408,7 +342,7 @@ if (questionTimeStamp.values().size()==total_questions||(isQuestion&&questionTim
 			if ((currentAdded.size()==0&&current_value==1)||(currentAdded.size()>0&&((Integer)currentAdded.get(currentAdded.size()-1)==current_value-1))) {{
 				currentAdded.add(current_value);
 				messages.add(msg);
-				Thread.sleep(200);
+				Thread.sleep(20);
 				Date date_four = new Date();
 				Timestamp current_four = new Timestamp(date_four.getTime());
 				if (isQuestion) {questionTimeStamp.put(msg, current_four);
@@ -427,7 +361,7 @@ if (questionTimeStamp.values().size()==total_questions||(isQuestion&&questionTim
 						String current_message = (String)currentFifoMessages.get(i);
 						currentAdded.add(current_value);
 						messages.add(current_message);
-						Thread.sleep(200);
+						Thread.sleep(20);
 						Date date_five = new Date();
 						Timestamp current_five = new Timestamp(date_five.getTime());
 						if (isQuestion) {questionTimeStamp.put(current_message, current_five);
@@ -659,7 +593,7 @@ break;			}
 			if (messageQueue.size()==total_messages) {{
 				while (messageQueue.size()>0) {
 					messages.add(messageQueue.remove());
-					Thread.sleep(200);
+					Thread.sleep(20);
 				}
 				Date date = new Date();
 				Timestamp current = new Timestamp(date.getTime());

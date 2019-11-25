@@ -209,3 +209,130 @@ Is this ordered: Yes; overall runtime: 1529; overall latency: 21243
 Is this ordered: Yes; overall runtime: 1443; overall latency: 20954
 Is this ordered: Yes; overall runtime: 1371; overall latency: 20969
 Is this ordered: Yes; overall runtime: 1590; overall latency: 20999
+
+Round Four: 10x10 with 20 ms
+============================
+Is this ordered: Yes; overall runtime: 1493; overall latency: 6322
+Is this ordered: Yes; overall runtime: 2247; overall latency: 6626
+Is this ordered: Yes; overall runtime: 1820; overall latency: 5539
+Is this ordered: Yes; overall runtime: 1041; overall latency: 4741
+Is this ordered: Yes; overall runtime: 1057; overall latency: 4707
+Is this ordered: Yes; overall runtime: 1030; overall latency: 5095
+Is this ordered: Yes; overall runtime: 1068; overall latency: 5080
+Is this ordered: Yes; overall runtime: 1153; overall latency: 5614
+Is this ordered: Yes; overall runtime: 1421; overall latency: 5296
+Is this ordered: Yes; overall runtime: 1397; overall latency: 5862
+Is this ordered: Yes; overall runtime: 1095; overall latency: 4921
+Is this ordered: Yes; overall runtime: 1139; overall latency: 4854
+Is this ordered: Yes; overall runtime: 1476; overall latency: 5077
+Is this ordered: Yes; overall runtime: 1511; overall latency: 6723
+Is this ordered: Yes; overall runtime: 1062; overall latency: 5063
+Is this ordered: Yes; overall runtime: 1108; overall latency: 5017
+Is this ordered: Yes; overall runtime: 1140; overall latency: 4906
+Is this ordered: Yes; overall runtime: 879; overall latency: 4928
+Is this ordered: Yes; overall runtime: 1102; overall latency: 5064
+Is this ordered: Yes; overall runtime: 1107; overall latency: 5329
+
+Round Five: 10x100 FINAL
+========================
+Is this ordered: Yes; overall runtime: 4944; overall latency: 55840
+Is this ordered: Yes; overall runtime: 4665; overall latency: 54929
+Is this ordered: Yes; overall runtime: 5693; overall latency: 54194
+Is this ordered: Yes; overall runtime: 3313; overall latency: 56666
+Is this ordered: Yes; overall runtime: 3201; overall latency: 51248
+Is this ordered: Yes; overall runtime: 4595; overall latency: 48205
+Is this ordered: Yes; overall runtime: 3498; overall latency: 56438
+Is this ordered: Yes; overall runtime: 3209; overall latency: 51893
+Is this ordered: Yes; overall runtime: 3235; overall latency: 49831
+Is this ordered: Yes; overall runtime: 5376; overall latency: 51315
+
+FINAL SCALABILITY SINGLE MACHINE RESULTS (IGNORE ALL ABOVE)
+===========================================================
+Round One: 10x100 FINAL
+=======================
+Is this ordered: Yes; overall runtime: 280; overall latency: 4987
+Is this ordered: Yes; overall runtime: 205; overall latency: 5199
+Is this ordered: Yes; overall runtime: 277; overall latency: 5245
+Is this ordered: Yes; overall runtime: 308; overall latency: 5097
+Is this ordered: Yes; overall runtime: 251; overall latency: 5262
+Is this ordered: Yes; overall runtime: 287; overall latency: 5285
+Is this ordered: Yes; overall runtime: 266; overall latency: 5010
+Is this ordered: Yes; overall runtime: 320; overall latency: 5185
+Is this ordered: Yes; overall runtime: 221; overall latency: 5245
+Is this ordered: Yes; overall runtime: 257; overall latency: 4981
+
+Round Two: 10x1000 FINAL
+========================
+Is this ordered: Yes; overall runtime: 1059; overall latency: 34963
+Is this ordered: Yes; overall runtime: 1054; overall latency: 32374
+Is this ordered: Yes; overall runtime: 1034; overall latency: 32233
+Is this ordered: Yes; overall runtime: 1175; overall latency: 33429
+Is this ordered: Yes; overall runtime: 1109; overall latency: 32231
+Is this ordered: Yes; overall runtime: 1024; overall latency: 33951
+Is this ordered: Yes; overall runtime: 1142; overall latency: 32623
+Is this ordered: Yes; overall runtime: 1141; overall latency: 32581
+Is this ordered: Yes; overall runtime: 1253; overall latency: 32470
+Is this ordered: Yes; overall runtime: 1055; overall latency: 31657
+
+Round Three: 10x10000 FINAL
+===========================
+Is this ordered: Yes; overall runtime: 5333; overall latency: 339228
+Is this ordered: Yes; overall runtime: 5614; overall latency: 327781
+Is this ordered: Yes; overall runtime: 6195; overall latency: 332076
+Is this ordered: Yes; overall runtime: 5463; overall latency: 338339
+Is this ordered: Yes; overall runtime: 4803; overall latency: 339087
+Is this ordered: Yes; overall runtime: 5136; overall latency: 337914
+Is this ordered: Yes; overall runtime: 5404; overall latency: 339482
+Is this ordered: Yes; overall runtime: 4851; overall latency: 337090
+Is this ordered: Yes; overall runtime: 4543; overall latency: 334162
+Is this ordered: Yes; overall runtime: 5258; overall latency: 345579
+
+Round Four: 100x10 FINAL
+========================
+Is this ordered: Yes; overall runtime: 364; overall latency: 22379
+Is this ordered: Yes; overall runtime: 484; overall latency: 22114
+Is this ordered: Yes; overall runtime: 488; overall latency: 23270
+Is this ordered: Yes; overall runtime: 510; overall latency: 22850
+Is this ordered: Yes; overall runtime: 380; overall latency: 22222
+Is this ordered: Yes; overall runtime: 393; overall latency: 23170
+Is this ordered: Yes; overall runtime: 424; overall latency: 23584
+Is this ordered: Yes; overall runtime: 401; overall latency: 22588
+Is this ordered: Yes; overall runtime: 428; overall latency: 23410
+Is this ordered: Yes; overall runtime: 455; overall latency: 22005
+
+Round Five: 100x100 FINAL
+=========================
+Is this ordered: Yes; overall runtime: 1211; overall latency: 189448
+Is this ordered: Yes; overall runtime: 1191; overall latency: 187537
+Is this ordered: Yes; overall runtime: 1244; overall latency: 199226
+Is this ordered: Yes; overall runtime: 1242; overall latency: 196741
+Is this ordered: Yes; overall runtime: 1354; overall latency: 196223
+Is this ordered: Yes; overall runtime: 1152; overall latency: 192364
+Is this ordered: Yes; overall runtime: 1257; overall latency: 194787
+Is this ordered: Yes; overall runtime: 1141; overall latency: 198009
+Is this ordered: Yes; overall runtime: 1253; overall latency: 192383
+Is this ordered: Yes; overall runtime: 1172; overall latency: 195668
+
+Round Six: 100x1000 FINAL
+=========================
+Is this ordered: Yes; overall runtime: 5851; overall latency: 3110862
+Is this ordered: Yes; overall runtime: 5955; overall latency: 2981225
+Is this ordered: Yes; overall runtime: 5837; overall latency: 3018227
+
+Round Seven: 1000x1 FINAL
+=========================
+Is this ordered: Yes; overall runtime: 1019; overall latency: 190820
+Is this ordered: Yes; overall runtime: 797; overall latency: 190978
+Is this ordered: Yes; overall runtime: 951; overall latency: 191162
+Is this ordered: Yes; overall runtime: 724; overall latency: 190692
+Is this ordered: Yes; overall runtime: 847; overall latency: 190191
+
+Round Eight: 1000x10 FINAL
+==========================
+Is this ordered: Yes; overall runtime: 1617; overall latency: 2873102
+Is this ordered: Yes; overall runtime: 1640; overall latency: 2820863
+Is this ordered: Yes; overall runtime: 1629; overall latency: 2844593
+
+Round Nine: 1000x100 FINAL
+==========================
+- could not measure as over five hours of runtime

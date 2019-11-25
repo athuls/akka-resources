@@ -1,0 +1,4 @@
+Starting time: 2019-11-16 02:03:37.713
+Time taken to run this in milliseconds: 69616
+Ending time: 2019-11-16 02:04:47.625
+Done with chat conversation

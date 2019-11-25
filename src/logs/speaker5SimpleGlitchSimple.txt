@@ -1,103 +1,102 @@
-Received speaker: uan:\localhost:3030id6 to register with server uan:\localhost:3030id1
-Speaker started with uan: uan://:3030\localhost:3030id6
-[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Poll response 5.; Timestamp: 2019-11-04 15:17:02.731
-[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Poll response 2.; Timestamp: 2019-11-04 15:17:03.243
-[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Poll response 8.; Timestamp: 2019-11-04 15:17:03.244
-[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Poll response 3.; Timestamp: 2019-11-04 15:17:03.245
-[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Poll response 9.; Timestamp: 2019-11-04 15:17:03.246
-[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Poll response 7.; Timestamp: 2019-11-04 15:17:03.248
-[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Poll response 6.; Timestamp: 2019-11-04 15:17:03.249
-[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Poll response 4.; Timestamp: 2019-11-04 15:17:03.251
-[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Poll response 1.; Timestamp: 2019-11-04 15:17:03.252
-[Speaker Local] uan:\localhost:3030id6: ANSWER: User 5: Poll response 10.; Timestamp: 2019-11-04 15:17:03.253
-Overall Timestamp: 2019-11-04 15:17:27.942
-User 2: Poll question 1.
-User 1: Poll question 1.
-User 1: Poll question 2.
-User 1: Poll question 3.
-User 1: Poll question 4.
-User 1: Poll question 5.
-User 1: Poll question 6.
-User 1: Poll question 7.
-User 1: Poll question 8.
-User 1: Poll question 9.
-User 1: Poll question 10.
-User 2: Poll question 2.
-User 2: Poll question 3.
-User 2: Poll question 4.
-User 2: Poll question 5.
-User 2: Poll question 6.
-User 2: Poll question 7.
-User 2: Poll question 8.
-User 2: Poll question 9.
-User 2: Poll question 10.
-User 7: Poll response 1.
-User 3: Poll response 1.
-User 3: Poll response 2.
-User 3: Poll response 3.
-User 4: Poll response 1.
-User 4: Poll response 2.
-User 4: Poll response 3.
-User 4: Poll response 4.
-User 4: Poll response 5.
-User 4: Poll response 6.
-User 4: Poll response 7.
-User 4: Poll response 8.
-User 4: Poll response 9.
-User 4: Poll response 10.
-User 10: Poll response 1.
-User 10: Poll response 2.
-User 10: Poll response 3.
-User 10: Poll response 4.
-User 10: Poll response 5.
-User 10: Poll response 6.
-User 10: Poll response 7.
-User 10: Poll response 8.
-User 10: Poll response 9.
-User 10: Poll response 10.
-User 9: Poll response 1.
-User 7: Poll response 2.
-User 7: Poll response 3.
-User 7: Poll response 4.
-User 7: Poll response 5.
-User 7: Poll response 6.
-User 7: Poll response 7.
-User 7: Poll response 8.
-User 7: Poll response 9.
-User 7: Poll response 10.
-User 3: Poll response 4.
-User 3: Poll response 5.
-User 3: Poll response 6.
-User 3: Poll response 7.
-User 3: Poll response 8.
-User 3: Poll response 9.
-User 3: Poll response 10.
-User 6: Poll response 1.
-User 6: Poll response 2.
-User 6: Poll response 3.
-User 6: Poll response 4.
-User 6: Poll response 5.
-User 6: Poll response 6.
-User 6: Poll response 7.
-User 6: Poll response 8.
-User 6: Poll response 9.
-User 6: Poll response 10.
-User 8: Poll response 1.
-User 9: Poll response 2.
-User 9: Poll response 3.
-User 9: Poll response 4.
-User 8: Poll response 2.
-User 8: Poll response 3.
-User 8: Poll response 4.
-User 8: Poll response 5.
-User 8: Poll response 6.
-User 8: Poll response 7.
-User 8: Poll response 8.
-User 8: Poll response 9.
-User 8: Poll response 10.
-User 9: Poll response 5.
-User 9: Poll response 6.
-User 9: Poll response 7.
-User 9: Poll response 8.
-User 9: Poll response 9.
-User 9: Poll response 10.
+Received speaker: uan://localhost:3030/id15 to register with server uan://localhost:3030/id1
+Speaker started with uan: uan://localhost:3030/id15
+[Speaker Local]: QUESTION: User 5: Poll Question 44.; Timestamp: 2019-11-13 04:58:35.596
+[Speaker Local]: QUESTION: User 5: Poll Question 42.; Timestamp: 2019-11-13 04:58:38.215
+[Speaker Local]: QUESTION: User 5: Poll Question 33.; Timestamp: 2019-11-13 04:58:38.217
+[Speaker Local]: QUESTION: User 5: Poll Question 71.; Timestamp: 2019-11-13 04:58:38.218
+[Speaker Local]: QUESTION: User 5: Poll Question 30.; Timestamp: 2019-11-13 04:58:38.219
+[Speaker Local]: QUESTION: User 5: Poll Question 37.; Timestamp: 2019-11-13 04:58:38.221
+[Speaker Local]: QUESTION: User 5: Poll Question 14.; Timestamp: 2019-11-13 04:58:38.223
+[Speaker Local]: QUESTION: User 5: Poll Question 96.; Timestamp: 2019-11-13 04:58:38.23
+[Speaker Local]: QUESTION: User 5: Poll Question 55.; Timestamp: 2019-11-13 04:58:38.232
+[Speaker Local]: QUESTION: User 5: Poll Question 6.; Timestamp: 2019-11-13 04:58:38.234
+[Speaker Local]: QUESTION: User 5: Poll Question 83.; Timestamp: 2019-11-13 04:58:38.235
+[Speaker Local]: QUESTION: User 5: Poll Question 2.; Timestamp: 2019-11-13 04:58:38.237
+[Speaker Local]: QUESTION: User 5: Poll Question 22.; Timestamp: 2019-11-13 04:58:38.24
+[Speaker Local]: QUESTION: User 5: Poll Question 59.; Timestamp: 2019-11-13 04:58:38.247
+[Speaker Local]: QUESTION: User 5: Poll Question 16.; Timestamp: 2019-11-13 04:58:38.25
+[Speaker Local]: QUESTION: User 5: Poll Question 41.; Timestamp: 2019-11-13 04:58:38.252
+[Speaker Local]: QUESTION: User 5: Poll Question 77.; Timestamp: 2019-11-13 04:58:38.254
+[Speaker Local]: QUESTION: User 5: Poll Question 66.; Timestamp: 2019-11-13 04:58:38.256
+[Speaker Local]: QUESTION: User 5: Poll Question 93.; Timestamp: 2019-11-13 04:58:38.257
+[Speaker Local]: QUESTION: User 5: Poll Question 27.; Timestamp: 2019-11-13 04:58:38.258
+[Speaker Local]: QUESTION: User 5: Poll Question 35.; Timestamp: 2019-11-13 04:58:38.261
+[Speaker Local]: QUESTION: User 5: Poll Question 85.; Timestamp: 2019-11-13 04:58:38.769
+[Speaker Local]: QUESTION: User 5: Poll Question 91.; Timestamp: 2019-11-13 04:58:39.345
+[Speaker Local]: QUESTION: User 5: Poll Question 84.; Timestamp: 2019-11-13 04:58:39.347
+[Speaker Local]: QUESTION: User 5: Poll Question 26.; Timestamp: 2019-11-13 04:58:39.348
+[Speaker Local]: QUESTION: User 5: Poll Question 47.; Timestamp: 2019-11-13 04:58:39.349
+[Speaker Local]: QUESTION: User 5: Poll Question 64.; Timestamp: 2019-11-13 04:58:44.556
+[Speaker Local]: QUESTION: User 5: Poll Question 43.; Timestamp: 2019-11-13 04:58:44.557
+[Speaker Local]: QUESTION: User 5: Poll Question 39.; Timestamp: 2019-11-13 04:58:44.558
+[Speaker Local]: QUESTION: User 5: Poll Question 18.; Timestamp: 2019-11-13 04:58:44.559
+[Speaker Local]: QUESTION: User 5: Poll Question 63.; Timestamp: 2019-11-13 04:58:44.56
+[Speaker Local]: QUESTION: User 5: Poll Question 34.; Timestamp: 2019-11-13 04:58:44.56
+[Speaker Local]: QUESTION: User 5: Poll Question 11.; Timestamp: 2019-11-13 04:58:44.561
+[Speaker Local]: QUESTION: User 5: Poll Question 32.; Timestamp: 2019-11-13 04:58:44.561
+[Speaker Local]: QUESTION: User 5: Poll Question 36.; Timestamp: 2019-11-13 04:58:44.562
+[Speaker Local]: QUESTION: User 5: Poll Question 38.; Timestamp: 2019-11-13 04:58:44.566
+[Speaker Local]: QUESTION: User 5: Poll Question 29.; Timestamp: 2019-11-13 04:58:51.703
+[Speaker Local]: QUESTION: User 5: Poll Question 53.; Timestamp: 2019-11-13 04:58:53.259
+[Speaker Local]: QUESTION: User 5: Poll Question 69.; Timestamp: 2019-11-13 04:58:53.261
+[Speaker Local]: QUESTION: User 5: Poll Question 95.; Timestamp: 2019-11-13 04:58:53.261
+[Speaker Local]: QUESTION: User 5: Poll Question 72.; Timestamp: 2019-11-13 04:58:53.262
+[Speaker Local]: QUESTION: User 5: Poll Question 12.; Timestamp: 2019-11-13 04:58:53.263
+[Speaker Local]: QUESTION: User 5: Poll Question 28.; Timestamp: 2019-11-13 04:58:53.263
+[Speaker Local]: QUESTION: User 5: Poll Question 24.; Timestamp: 2019-11-13 04:58:53.264
+[Speaker Local]: QUESTION: User 5: Poll Question 3.; Timestamp: 2019-11-13 04:58:53.265
+[Speaker Local]: QUESTION: User 5: Poll Question 25.; Timestamp: 2019-11-13 04:58:53.266
+[Speaker Local]: QUESTION: User 5: Poll Question 74.; Timestamp: 2019-11-13 04:58:53.267
+[Speaker Local]: QUESTION: User 5: Poll Question 94.; Timestamp: 2019-11-13 04:58:53.268
+[Speaker Local]: QUESTION: User 5: Poll Question 9.; Timestamp: 2019-11-13 04:58:53.269
+[Speaker Local]: QUESTION: User 5: Poll Question 4.; Timestamp: 2019-11-13 04:58:53.274
+[Speaker Local]: QUESTION: User 5: Poll Question 97.; Timestamp: 2019-11-13 04:58:53.276
+[Speaker Local]: QUESTION: User 5: Poll Question 80.; Timestamp: 2019-11-13 04:58:53.277
+[Speaker Local]: QUESTION: User 5: Poll Question 50.; Timestamp: 2019-11-13 04:58:53.278
+[Speaker Local]: QUESTION: User 5: Poll Question 48.; Timestamp: 2019-11-13 04:58:53.278
+[Speaker Local]: QUESTION: User 5: Poll Question 5.; Timestamp: 2019-11-13 04:58:53.279
+[Speaker Local]: QUESTION: User 5: Poll Question 51.; Timestamp: 2019-11-13 04:58:53.279
+[Speaker Local]: QUESTION: User 5: Poll Question 92.; Timestamp: 2019-11-13 04:58:53.28
+[Speaker Local]: QUESTION: User 5: Poll Question 17.; Timestamp: 2019-11-13 04:58:53.28
+[Speaker Local]: QUESTION: User 5: Poll Question 8.; Timestamp: 2019-11-13 04:58:53.281
+[Speaker Local]: QUESTION: User 5: Poll Question 75.; Timestamp: 2019-11-13 04:58:53.281
+[Speaker Local]: QUESTION: User 5: Poll Question 45.; Timestamp: 2019-11-13 04:58:53.282
+[Speaker Local]: QUESTION: User 5: Poll Question 58.; Timestamp: 2019-11-13 04:58:53.282
+[Speaker Local]: QUESTION: User 5: Poll Question 99.; Timestamp: 2019-11-13 04:58:53.283
+[Speaker Local]: QUESTION: User 5: Poll Question 82.; Timestamp: 2019-11-13 04:58:53.285
+[Speaker Local]: QUESTION: User 5: Poll Question 90.; Timestamp: 2019-11-13 04:58:53.285
+[Speaker Local]: QUESTION: User 5: Poll Question 40.; Timestamp: 2019-11-13 04:58:53.286
+[Speaker Local]: QUESTION: User 5: Poll Question 52.; Timestamp: 2019-11-13 04:58:53.286
+[Speaker Local]: QUESTION: User 5: Poll Question 56.; Timestamp: 2019-11-13 04:58:53.287
+[Speaker Local]: QUESTION: User 5: Poll Question 1.; Timestamp: 2019-11-13 04:58:53.287
+[Speaker Local]: QUESTION: User 5: Poll Question 65.; Timestamp: 2019-11-13 04:58:53.287
+[Speaker Local]: QUESTION: User 5: Poll Question 46.; Timestamp: 2019-11-13 04:58:53.288
+[Speaker Local]: QUESTION: User 5: Poll Question 57.; Timestamp: 2019-11-13 04:58:53.288
+[Speaker Local]: QUESTION: User 5: Poll Question 67.; Timestamp: 2019-11-13 04:58:53.289
+[Speaker Local]: QUESTION: User 5: Poll Question 68.; Timestamp: 2019-11-13 04:58:53.292
+[Speaker Local]: QUESTION: User 5: Poll Question 98.; Timestamp: 2019-11-13 04:58:53.294
+[Speaker Local]: QUESTION: User 5: Poll Question 23.; Timestamp: 2019-11-13 04:58:53.295
+[Speaker Local]: QUESTION: User 5: Poll Question 49.; Timestamp: 2019-11-13 04:58:53.296
+[Speaker Local]: QUESTION: User 5: Poll Question 13.; Timestamp: 2019-11-13 04:58:53.296
+[Speaker Local]: QUESTION: User 5: Poll Question 78.; Timestamp: 2019-11-13 04:58:53.297
+[Speaker Local]: QUESTION: User 5: Poll Question 89.; Timestamp: 2019-11-13 04:58:53.297
+[Speaker Local]: QUESTION: User 5: Poll Question 62.; Timestamp: 2019-11-13 04:58:53.298
+[Speaker Local]: QUESTION: User 5: Poll Question 60.; Timestamp: 2019-11-13 04:58:53.298
+[Speaker Local]: QUESTION: User 5: Poll Question 73.; Timestamp: 2019-11-13 04:58:53.298
+[Speaker Local]: QUESTION: User 5: Poll Question 10.; Timestamp: 2019-11-13 04:58:53.299
+[Speaker Local]: QUESTION: User 5: Poll Question 7.; Timestamp: 2019-11-13 04:58:53.299
+[Speaker Local]: QUESTION: User 5: Poll Question 15.; Timestamp: 2019-11-13 04:58:53.3
+[Speaker Local]: QUESTION: User 5: Poll Question 54.; Timestamp: 2019-11-13 04:58:53.3
+[Speaker Local]: QUESTION: User 5: Poll Question 19.; Timestamp: 2019-11-13 04:58:57.955
+[Speaker Local]: QUESTION: User 5: Poll Question 21.; Timestamp: 2019-11-13 04:58:57.959
+[Speaker Local]: QUESTION: User 5: Poll Question 86.; Timestamp: 2019-11-13 04:58:57.96
+[Speaker Local]: QUESTION: User 5: Poll Question 81.; Timestamp: 2019-11-13 04:58:57.963
+[Speaker Local]: QUESTION: User 5: Poll Question 87.; Timestamp: 2019-11-13 04:58:57.967
+[Speaker Local]: QUESTION: User 5: Poll Question 31.; Timestamp: 2019-11-13 04:58:57.968
+[Speaker Local]: QUESTION: User 5: Poll Question 76.; Timestamp: 2019-11-13 04:58:57.97
+[Speaker Local]: QUESTION: User 5: Poll Question 88.; Timestamp: 2019-11-13 04:58:57.971
+[Speaker Local]: QUESTION: User 5: Poll Question 100.; Timestamp: 2019-11-13 04:58:57.971
+[Speaker Local]: QUESTION: User 5: Poll Question 61.; Timestamp: 2019-11-13 04:58:57.971
+[Speaker Local]: QUESTION: User 5: Poll Question 70.; Timestamp: 2019-11-13 04:58:57.972
+[Speaker Local]: QUESTION: User 5: Poll Question 79.; Timestamp: 2019-11-13 04:58:57.972
+[Speaker Local]: QUESTION: User 5: Poll Question 20.; Timestamp: 2019-11-13 04:58:57.972

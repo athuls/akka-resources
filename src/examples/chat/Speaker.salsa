@@ -3,10 +3,15 @@ import java.util.Date;
 import java.sql.Timestamp;
 import java.util.Map;
 import java.util.HashMap;
+import examples.chat.ChatMessage.MessageType;
 import java.util.Iterator;
 import java.util.Queue;
 import java.util.LinkedList;
 import java.util.ArrayList;
+import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.File;
+import java.util.*;
 
 // simple user class - this maintains an overall user implementation
 behavior Speaker implements ActorService
@@ -21,11 +26,15 @@ behavior Speaker implements ActorService
 	Map fifoValues = new HashMap();
 	Map fifoMessageValues = new HashMap();
 	Map valuesAdded = new HashMap();
+	File logFile;
+    boolean logToFileOption = false;
+    PrintWriter printWriter = null;
 
 	Speaker(String name, String serverRef)
 	{
 		myName = name;
 		server_ref = (Server) Server.getReferenceByName(serverRef);
+		server_ref<-registerUser(myName);
 	}
 
 	// function used to set the identity of this user as someone questioning
@@ -38,7 +47,8 @@ behavior Speaker implements ActorService
 	// this also prints out the timestamp at the beginning
 	void broadcastSend(String msg, boolean is_statement, boolean is_question, boolean is_answer, int number_of_questions, int total_messages, boolean fifo) 
 	{
-		Timestamp current = new Timestamp(System.currentTimeMillis());
+		Date date = new Date();
+		Timestamp current = new Timestamp(date.getTime());
 		String type = "";
 		if(is_statement)
 			type = "STATEMENT";
@@ -46,7 +56,11 @@ behavior Speaker implements ActorService
 			type = "QUESTION";
 		else if(is_answer)
 			type = "ANSWER";
-		standardOutput<-println("[Speaker Local]: " + type + ": " + msg + "; Timestamp: " + current) @ 
+
+            printWriter.println ("[Speaker Local] " + myName + ": " + type +": "+ msg + "; Timestamp: " + current);
+            printWriter.flush();
+
+		standardOutput<-println("[Speaker Local] " + myName + ": " + type +": "+ msg + "; Timestamp: " + current) @ 
 		server_ref<-broadcast(myName, msg, type, number_of_questions, total_messages, fifo);
 	}	
 
@@ -95,13 +109,19 @@ behavior Speaker implements ActorService
 					Thread.sleep(20);
 
 					// next mark the timestamp
-					Timestamp current_four = new Timestamp(System.currentTimeMillis());
-					standardOutput<-println("[Speaker Remote]: STATEMENT: " + msg + "; Timestamp: " + current_four);
+					Date date_four = new Date();
+					Timestamp current_four = new Timestamp(date_four.getTime());
+
+                        printWriter.println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_four);
+                        printWriter.flush();
+
+					standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_four);
 				}
 				break;
 		}
 	}
-	
+
+	// code for stalling when hitting a question
 	void handleNormalStall(String speakerName, int number_of_questions, int total_messages)
 	{
 		double number_users = (total_messages + number_of_questions)/ number_of_questions;
@@ -121,7 +141,7 @@ behavior Speaker implements ActorService
 			}
 		}
 	}
-	
+	// main function which is used to handle all of the fifo code
 	boolean handleFifoCode(String speakerName, String msg, String type, boolean isQuestion) throws InterruptedException
 	{
 		Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
@@ -153,6 +173,10 @@ behavior Speaker implements ActorService
 			Timestamp current_four = new Timestamp(date_four.getTime());
 			if(isQuestion)
 				questionTimeStamp.put(msg, current_four);
+
+                printWriter.println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_four);
+                printWriter.flush();
+
 			standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ msg + "; Timestamp: " + current_four);
 			int i = -1;
 			for(i = 0; i < currentFifo.size(); i++)
@@ -168,6 +192,10 @@ behavior Speaker implements ActorService
 					Timestamp current_five = new Timestamp(date_five.getTime());
 					if(isQuestion)
 						questionTimeStamp.put(current_message, current_five);
+
+                        printWriter.println("[Speaker Remote] " + speakerName + ": " + type +": "+ current_message + "; Timestamp: " + current_five);
+                        printWriter.flush();
+
 					standardOutput<-println("[Speaker Remote] " + speakerName + ": " + type +": "+ current_message + "; Timestamp: " + current_five);
 				}
 				else
@@ -394,20 +422,53 @@ behavior Speaker implements ActorService
 			}
 			Date date = new Date();
 			Timestamp current = new Timestamp(date.getTime());
+
+                printWriter.println("Overall Timestamp: " + current);
+                printWriter.flush();
+
 			standardOutput<-println("Overall Timestamp: " + current);
 			for(int i = 0; i < messages.size(); i++)
 			{
+
+                    printWriter.println(messages.get(i));
+                    printWriter.flush();
+
 				standardOutput<-println(messages.get(i));
 			}
 		}
 	}
+
+	 Speaker(String name,String speakerName, String serverRef, String logDirectory,boolean logToFile,String userPaddedString)
+    {
+
+        myName = name;
+        server_ref = (Server) Server.getReferenceByName(serverRef);
+        server_ref<-registerUser(myName);
+        String fileSeparator = System.getProperty("file.separator");
+        // create the file here
+        standardOutput<-println(" file name : " + logDirectory+fileSeparator+speakerName+userPaddedString+".txt");
+        if (logToFile) {
+        try{
+            logFile=new File(logDirectory+fileSeparator+speakerName+userPaddedString+".txt");
+            logFile.createNewFile();
+            } catch (Exception e){
+                standardOutput<-println("exception creation file with name : " + "logs"+fileSeparator+speakerName+".txt");
+            }
+         }
+         logToFileOption=logToFile;
+
+           try{
+           printWriter = new PrintWriter (new FileWriter(logFile, true),true);
+            } catch (Exception e){
+             standardOutput<-println("exception creating print writer file with name : " + "logs"+fileSeparator+myName+".txt");
+             }
+    }
 
 	// print function to indicate a user is starting
 	void whereAmI() 
 	{
 		standardOutput<-println("Speaker started with uan: "+ getUAN().toString());
 	}	
-
 
 	// sample starting function - does not serve much use
 	void act(String args[])

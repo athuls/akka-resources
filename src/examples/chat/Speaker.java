@@ -35,10 +35,15 @@ import java.util.Date;
 import java.sql.Timestamp;
 import java.util.Map;
 import java.util.HashMap;
+import examples.chat.ChatMessage.MessageType;
 import java.util.Iterator;
 import java.util.Queue;
 import java.util.LinkedList;
 import java.util.ArrayList;
+import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.File;
+import java.util.*;
 
 public class Speaker extends UniversalActor  implements ActorService {
 	public static void main(String args[]) {
@@ -106,6 +111,12 @@ public class Speaker extends UniversalActor  implements ActorService {
 
 	public UniversalActor construct (String name, String serverRef) {
 		Object[] __arguments = { name, serverRef };
+		this.send( new Message(this, this, "construct", __arguments, null, null) );
+		return this;
+	}
+
+	public UniversalActor construct (String name, String speakerName, String serverRef, String logDirectory, boolean logToFile, String userPaddedString) {
+		Object[] __arguments = { name, speakerName, serverRef, logDirectory, new Boolean(logToFile), userPaddedString };
 		this.send( new Message(this, this, "construct", __arguments, null, null) );
 		return this;
 	}
@@ -204,24 +215,38 @@ public class Speaker extends UniversalActor  implements ActorService {
 		Map fifoValues = new HashMap();
 		Map fifoMessageValues = new HashMap();
 		Map valuesAdded = new HashMap();
+		File logFile;
+		boolean logToFileOption = false;
+		PrintWriter printWriter = null;
 		void construct(String name, String serverRef){
 			myName = name;
 			server_ref = (Server)Server.getReferenceByName(serverRef);
+						{
+				// server_ref<-registerUser(myName)
+				{
+					Object _arguments[] = { myName };
+					Message message = new Message( self, server_ref, "registerUser", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
 		}
 		public void setQuestionIdentity() {
 			isQuestion = true;
 		}
 		public void broadcastSend(String msg, boolean is_statement, boolean is_question, boolean is_answer, int number_of_questions, int total_messages, boolean fifo) {
-			Timestamp current = new Timestamp(System.currentTimeMillis());
+			Date date = new Date();
+			Timestamp current = new Timestamp(date.getTime());
 			String type = "";
 			if (is_statement) {type = "STATEMENT";
 }			else {if (is_question) {type = "QUESTION";
 }			else {if (is_answer) {type = "ANSWER";
-}}}			{
+}}}			printWriter.println("[Speaker Local] "+myName+": "+type+": "+msg+"; Timestamp: "+current);
+			printWriter.flush();
+			{
 				Token token_2_0 = new Token();
-				// standardOutput<-println("[Speaker Local]: "+type+": "+msg+"; Timestamp: "+current)
+				// standardOutput<-println("[Speaker Local] "+myName+": "+type+": "+msg+"; Timestamp: "+current)
 				{
-					Object _arguments[] = { "[Speaker Local]: "+type+": "+msg+"; Timestamp: "+current };
+					Object _arguments[] = { "[Speaker Local] "+myName+": "+type+": "+msg+"; Timestamp: "+current };
 					Message message = new Message( self, standardOutput, "println", _arguments, null, token_2_0 );
 					__messages.add( message );
 				}
@@ -291,11 +316,14 @@ if (questionTimeStamp.values().size()==total_questions||(isQuestion&&questionTim
 }			else {{
 				messages.add(msg);
 				Thread.sleep(20);
-				Timestamp current_four = new Timestamp(System.currentTimeMillis());
+				Date date_four = new Date();
+				Timestamp current_four = new Timestamp(date_four.getTime());
+				printWriter.println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four);
+				printWriter.flush();
 				{
-					// standardOutput<-println("[Speaker Remote]: STATEMENT: "+msg+"; Timestamp: "+current_four)
+					// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four)
 					{
-						Object _arguments[] = { "[Speaker Remote]: STATEMENT: "+msg+"; Timestamp: "+current_four };
+						Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four };
 						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
 						__messages.add( message );
 					}
@@ -346,7 +374,9 @@ if (questionTimeStamp.values().size()==total_questions||(isQuestion&&questionTim
 				Date date_four = new Date();
 				Timestamp current_four = new Timestamp(date_four.getTime());
 				if (isQuestion) {questionTimeStamp.put(msg, current_four);
-}				{
+}				printWriter.println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four);
+				printWriter.flush();
+				{
 					// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four)
 					{
 						Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+msg+"; Timestamp: "+current_four };
@@ -365,7 +395,9 @@ if (questionTimeStamp.values().size()==total_questions||(isQuestion&&questionTim
 						Date date_five = new Date();
 						Timestamp current_five = new Timestamp(date_five.getTime());
 						if (isQuestion) {questionTimeStamp.put(current_message, current_five);
-}						{
+}						printWriter.println("[Speaker Remote] "+speakerName+": "+type+": "+current_message+"; Timestamp: "+current_five);
+						printWriter.flush();
+						{
 							// standardOutput<-println("[Speaker Remote] "+speakerName+": "+type+": "+current_message+"; Timestamp: "+current_five)
 							{
 								Object _arguments[] = { "[Speaker Remote] "+speakerName+": "+type+": "+current_message+"; Timestamp: "+current_five };
@@ -597,6 +629,8 @@ break;			}
 				}
 				Date date = new Date();
 				Timestamp current = new Timestamp(date.getTime());
+				printWriter.println("Overall Timestamp: "+current);
+				printWriter.flush();
 				{
 					// standardOutput<-println("Overall Timestamp: "+current)
 					{
@@ -606,6 +640,8 @@ break;			}
 					}
 				}
 				for (int i = 0; i<messages.size(); i++){
+					printWriter.println(messages.get(i));
+					printWriter.flush();
 					{
 						// standardOutput<-println(messages.get(i))
 						{
@@ -617,6 +653,59 @@ break;			}
 				}
 			}
 }		}
+		void construct(String name, String speakerName, String serverRef, String logDirectory, boolean logToFile, String userPaddedString){
+			myName = name;
+			server_ref = (Server)Server.getReferenceByName(serverRef);
+						{
+				// server_ref<-registerUser(myName)
+				{
+					Object _arguments[] = { myName };
+					Message message = new Message( self, server_ref, "registerUser", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			String fileSeparator = System.getProperty("file.separator");
+						{
+				// standardOutput<-println(" file name : "+logDirectory+fileSeparator+speakerName+userPaddedString+".txt")
+				{
+					Object _arguments[] = { " file name : "+logDirectory+fileSeparator+speakerName+userPaddedString+".txt" };
+					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+					__messages.add( message );
+				}
+			}
+			if (logToFile) {{
+				try {
+					logFile = new File(logDirectory+fileSeparator+speakerName+userPaddedString+".txt");
+					logFile.createNewFile();
+				}
+				catch (Exception e) {
+					{
+						// standardOutput<-println("exception creation file with name : "+"logs"+fileSeparator+speakerName+".txt")
+						{
+							Object _arguments[] = { "exception creation file with name : "+"logs"+fileSeparator+speakerName+".txt" };
+							Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+							__messages.add( message );
+						}
+					}
+				}
+
+			}
+}			logToFileOption = logToFile;
+						try {
+				printWriter = new PrintWriter(new FileWriter(logFile, true), true);
+			}
+			catch (Exception e) {
+				{
+					// standardOutput<-println("exception creating print writer file with name : "+"logs"+fileSeparator+myName+".txt")
+					{
+						Object _arguments[] = { "exception creating print writer file with name : "+"logs"+fileSeparator+myName+".txt" };
+						Message message = new Message( self, standardOutput, "println", _arguments, null, null );
+						__messages.add( message );
+					}
+				}
+			}
+
+		}
 		public void whereAmI() {
 			{
 				// standardOutput<-println("Speaker started with uan: "+getUAN().toString())

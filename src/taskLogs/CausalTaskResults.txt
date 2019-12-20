@@ -1,0 +1,79 @@
+Round One: 10x100 FINAL
+=======================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 474; overall latency: 5859
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 488; overall latency: 5701
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 475; overall latency: 5833
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 414; overall latency: 6152
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 410; overall latency: 5663
+
+Round Two: 10x1000 FINAL
+========================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 1991; overall latency: 36807
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2126; overall latency: 35971
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2225; overall latency: 35379
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2243; overall latency: 36227
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2116; overall latency: 35099
+
+Round Three: 10x10000 FINAL
+===========================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 9384; overall latency: 350442
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 8902; overall latency: 346822
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 9422; overall latency: 344008
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 8598; overall latency: 345667
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 9213; overall latency: 341631
+
+Round Four: 100x10 FINAL
+========================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 450; overall latency: 21290
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 417; overall latency: 20736
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 468; overall latency: 21046
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 414; overall latency: 21012
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 413; overall latency: 21761
+
+Round Five: 100x100 FINAL
+=========================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2310; overall latency: 188229
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2161; overall latency: 186450
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 1862; overall latency: 183725
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2024; overall latency: 182559
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 1900; overall latency: 186710
+
+Round Six: 100x1000 FINAL
+=========================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 9180; overall latency: 3163209
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 10257; overall latency: 3170056
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 10797; overall latency: 3164112
+
+Round Seven: 1000x1 FINAL
+=========================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 908; overall latency: 217576
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 776; overall latency: 218034
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 756; overall latency: 234442
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 919; overall latency: 225264
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 776; overall latency: 229339
+
+Round Eight: 1000x10 FINAL
+==========================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2558; overall latency: 2684293
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2558; overall latency: 2745882
+
+==========================================================================================================
+Round One: 20x100 FINAL
+=======================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 780; overall latency: 15026
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 781; overall latency: 14010
+
+Round Two: 50x100 FINAL
+=======================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 1530; overall latency: 63857
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 1524; overall latency: 68108
+
+Round Three: 100x10 FINAL
+=========================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 624; overall latency: 23467
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 621; overall latency: 23734
+
+Round Four: 100x100 FINAL
+=========================
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2329; overall latency: 322903
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2576; overall latency: 333502

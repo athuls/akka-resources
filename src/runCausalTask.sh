@@ -11,11 +11,11 @@ java -cp libs/salsa1.1.5.jar:. -Duan=uan:\\localhost:3030\id9 todo.User uan:\\lo
 java -cp libs/salsa1.1.5.jar:. -Duan=uan:\\localhost:3030\id10 todo.User uan:\\localhost:3030\id1 username9 > ./taskLogs/user9CausalSimple.txt 2>&1 &
 java -cp libs/salsa1.1.5.jar:. -Duan=uan:\\localhost:3030\id11 todo.User uan:\\localhost:3030\id1 username10 > ./taskLogs/user10CausalSimple.txt 2>&1 &
 java -cp libs/salsa1.1.5.jar:. -Duan=uan:\\localhost:3030\id12 todo.TaskList > ./taskLogs/tasklistCausalSimple.txt 2>&1 &
-java -cp libs/salsa1.1.5.jar:. todo.CausalAdvancedEndTodo uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 uan:\\localhost:3030\id5 uan:\\localhost:3030\id6 uan:\\localhost:3030\id7 uan:\\localhost:3030\id8 uan:\\localhost:3030\id9 uan:\\localhost:3030\id10 uan:\\localhost:3030\id11 uan:\\localhost:3030\id12 > ./taskLogs/simpleCausalTodo.txt 2>&1 &
+java -cp libs/salsa1.1.5.jar:. todo.CausalAdvancedTodo uan:\\localhost:3030\id2 uan:\\localhost:3030\id3 uan:\\localhost:3030\id4 uan:\\localhost:3030\id5 uan:\\localhost:3030\id6 uan:\\localhost:3030\id7 uan:\\localhost:3030\id8 uan:\\localhost:3030\id9 uan:\\localhost:3030\id10 uan:\\localhost:3030\id11 uan:\\localhost:3030\id12 > ./taskLogs/simpleCausalTodo.txt 2>&1 &
 
-sleep 30s
+sleep 60s
 
-python parseCausalTodo.py >> taskLogs/CausalTaskResults.txt
+#python parseCausalTodo.py >> taskLogs/CausalTaskResults.txt
 
 ps -ef | grep WWCNamingServer | grep -v grep | awk '{print $2}' | xargs kill -9
 ps -ef | grep Chat | grep -v grep | awk '{print $2}' | xargs kill -9

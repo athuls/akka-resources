@@ -8,6 +8,7 @@ import java.util.*;
 
 behavior NoConsistency100Users
 {
+	/*
 	void chatSession(User s1, User s2, User s3, User s4, User s5, User s6, User s7, User s8, User s9, User s10,
 	User s11, User s12, User s13, User s14, User s15, User s16, User s17, User s18, User s19, User s20,
 	User s21, User s22, User s23, User s24, User s25, User s26, User s27, User s28, User s29, User s30,
@@ -476,5 +477,6 @@ behavior NoConsistency100Users
         standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
         standardOutput<-println("Ending time: " + end);
 	}
+*/
 }
 

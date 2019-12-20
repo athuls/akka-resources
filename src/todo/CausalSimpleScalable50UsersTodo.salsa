@@ -1,0 +1,136 @@
+module todo;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+import java.util.*;
+import java.io.PrintWriter;
+import java.io.File;
+import java.io.PrintWriter;
+import java.io.File;
+
+//Three users chat in a chat session initialized by the actor Chat
+
+behavior CausalSimpleScalable50UsersTodo implements ActorService
+{
+	void todoSession(ArrayList users,ArrayList userNames, int num_users,int num_messages, String server_ref,String logDirectory,TaskList taskList)
+	{
+		Server server = (Server) Server.getReferenceByName(server_ref);
+		ArrayList values = new ArrayList();
+
+    for(int i = 1; i <= num_messages; i++)
+                        values.add(i);
+                    Collections.shuffle(values);
+
+
+	for(int i = 0; i < 10; i++) {
+		    User registeredUser = (User) users.get(i);
+		    registeredUser<-setIsLeader();
+		}
+
+		for(int i = 0; i < 10; i++) {
+            User registeredUser = (User) users.get(i);
+            ArrayList taskNames = new ArrayList();
+             for(int j = 1; j <= num_messages; j++){
+                int index = ((i) > (num_messages - 1) ? (num_messages - 1): (i ));
+                String taskname="u"+i+"t"+j;
+                taskNames.add(taskname);
+                String taskMessage =" ";
+                boolean isFollowUp=false;
+                //"User 1: Initial Task 1"
+
+                int userIndex = i+1;
+
+                taskMessage = "User" + userIndex + ": Initial Task " + values.get(j-1) + ".";
+                registeredUser<-addTaskToList(taskList,taskMessage,(String) userNames.get(i),
+                    taskname,isFollowUp,num_messages, (num_users - 1) * num_messages,true);
+                }
+              //  int userIndex = i+1;
+                Collections.shuffle(values);
+              //  Task updateTask = new Task("User" + userIndex +": Ordered Task "+userIndex,(String) userNames.get(i),(String) taskNames.get(0), false);
+              //  registeredUser<-updateTask(updateTask, "User" + userIndex +": Ordered Task "+num_messages+1,taskNames.get(0), 0, 12);
+        }
+
+        for(int i = 10; i < users.size(); i++) {
+            User registeredUser = (User) users.get(i);
+             for(int j = 1; j <= num_messages; j++){
+                int index = ((i) > (num_messages - 1) ? (num_messages - 1): (i ));
+                String taskname="u"+i+"t"+j;
+                String taskMessage =" ";
+                boolean isFollowUp=true;
+                //"User 1: Initial Task 1"
+
+                taskMessage = "User" + (i+1) + ": Follow Up Task " + values.get(j-1) + ".";
+
+                //	s1<-addTaskToList(taskList, "User 1: Initial Task " + values.get(0) + ".", "username1", "u1t1", false, 10, 90, true);
+
+
+                registeredUser<-addTaskToList(taskList,taskMessage,(String) userNames.get(i),
+                    taskname,isFollowUp,num_messages, (num_users - 1) * num_messages,true);
+                }
+                Collections.shuffle(values);
+        }
+	}
+
+	void reply(String replyMsg)
+	{
+		standardOutput<-println(replyMsg);
+	}
+
+	void act(String args[])
+	{
+
+		try
+		{
+
+		    String serverRef = args[0];
+		    String logDirectory=args[1];
+		    int num_users = Integer.parseInt(args[2]);
+		    int num_messages = Integer.parseInt(args[3]);
+		    TaskList taskList =(TaskList) TaskList.getReferenceByName(args[4]);
+		    String userPaddedString = args[5];
+		    String nameServerHost = args[6];
+
+		    Server server = (Server) Server.getReferenceByName(serverRef);
+		    ArrayList users = new ArrayList();
+		    ArrayList userNames = new ArrayList();
+
+			Date first = new Date();
+			Timestamp start = new Timestamp(first.getTime());
+			String fileSeparator = System.getProperty("file.separator");
+			// first create the users and register them.
+			for(int i = 1; i <= num_users; i++)
+            {
+                    int usrId = 10 +i;
+                    String id = "uan://"+nameServerHost+":3030/id"+usrId;
+                    String userName = "user"+i;
+                    userNames.add(userName);
+                    User user = (User) User.getReferenceByName(id);
+                    users.add(user);
+            }
+
+			standardOutput <- println("Starting time: " + start);
+			Instant begin = Instant.now();
+			todoSession(users,userNames,num_users, num_messages,serverRef,logDirectory,taskList) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
+		}
+		catch (Exception e)
+		{
+			standardOutput <- println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>");
+			return;
+		}
+	}
+
+	void trackEndingTime(Instant begin)
+	{
+		// keep track of ending time here
+		Date second = new Date();
+		Timestamp end = new Timestamp(second.getTime());
+
+		// calculate time elapsed
+		Instant endTime = Instant.now();
+		Duration timeDifference = Duration.between(begin, endTime);
+		long timeTaken = timeDifference.toMillis();
+		standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+		standardOutput<-println("Ending time: " + end);
+	}
+}

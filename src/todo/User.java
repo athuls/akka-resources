@@ -626,14 +626,6 @@ break;					}
 			}
 }		}
 		public void printQueueInfo(int total_updates) throws InterruptedException{
-			{
-				// standardOutput<-println(messageQueue.size())
-				{
-					Object _arguments[] = { messageQueue.size() };
-					Message message = new Message( self, standardOutput, "println", _arguments, null, null );
-					__messages.add( message );
-				}
-			}
 			if (messageQueue.size()==total_updates) {{
 				while (messageQueue.size()>0) {
 					tasks.add(messageQueue.remove());

@@ -1,3 +1,2 @@
-Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 372; overall latency: 33864
-Are the questions first: Yes; Is this FIFO ordered: No; overall runtime: 356; overall latency: 37522
-Are the questions first: Yes; Is this FIFO ordered: No; overall runtime: 428; overall latency: 35840
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 3092; overall latency: 451598
+Are the questions first: Yes; Is this FIFO ordered: Yes; overall runtime: 2736; overall latency: 460255

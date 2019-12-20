@@ -1,0 +1,916 @@
+module todo;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
+import java.sql.Timestamp;
+import java.util.*;
+import java.io.PrintWriter;
+import java.io.File;
+import java.io.PrintWriter;
+import java.io.File;
+
+//Three users chat in a chat session initialized by the actor Chat
+
+behavior FIFOSimpleScalableTodo100to100 implements ActorService
+{
+	void todoSession(ArrayList users,ArrayList userNames, int num_users,int num_messages, String server_ref,String logDirectory,TaskList taskList)
+	{
+		Server server = (Server) Server.getReferenceByName(server_ref);
+		ArrayList values = new ArrayList();
+
+		for(int i = 1; i <= num_messages; i++)
+			values.add(i);
+		Collections.shuffle(values);
+
+		        User user1= (User) users.get(0);
+        		User user2 = (User) users.get(1);
+        		User user3 = (User) users.get(2);
+        		User user4 = (User) users.get(3);
+        		User user5 = (User) users.get(4);
+        		User user6 = (User) users.get(5);
+        		User user7 = (User) users.get(6);
+        		User user8 = (User) users.get(7);
+        		User user9 = (User) users.get(8);
+        		User user10 = (User) users.get(9);
+        		User user11 = (User) users.get(10);
+        		User user12 = (User) users.get(11);
+        		User user13 = (User) users.get(12);
+        		User user14 = (User) users.get(13);
+        		User user15 = (User) users.get(14);
+        		User user16 = (User) users.get(15);
+        		User user17 = (User) users.get(16);
+        		User user18 = (User) users.get(17);
+        		User user19 = (User) users.get(18);
+        		User user20 = (User) users.get(19);
+        		User user21 = (User) users.get(20);
+        		User user22 = (User) users.get(21);
+        		User user23 = (User) users.get(22);
+        		User user24 = (User) users.get(23);
+        		User user25 = (User) users.get(24);
+        		User user26 = (User) users.get(25);
+        		User user27 = (User) users.get(26);
+        		User user28 = (User) users.get(27);
+        		User user29 = (User) users.get(28);
+        		User user30 = (User) users.get(29);
+        		User user31 = (User) users.get(30);
+        		User user32 = (User) users.get(31);
+        		User user33 = (User) users.get(32);
+        		User user34 = (User) users.get(33);
+        		User user35 = (User) users.get(34);
+        		User user36 = (User) users.get(35);
+        		User user37 = (User) users.get(36);
+        		User user38 = (User) users.get(37);
+        		User user39 = (User) users.get(38);
+        		User user40 = (User) users.get(39);
+        		User user41 = (User) users.get(40);
+        		User user42 = (User) users.get(41);
+        		User user43 = (User) users.get(42);
+        		User user44 = (User) users.get(43);
+        		User user45 = (User) users.get(44);
+        		User user46 = (User) users.get(45);
+        		User user47 = (User) users.get(46);
+        		User user48 = (User) users.get(47);
+        		User user49 = (User) users.get(48);
+        		User user50 = (User) users.get(49);
+        		User user51 = (User) users.get(50);
+        		User user52 = (User) users.get(51);
+        		User user53 = (User) users.get(52);
+        		User user54 = (User) users.get(53);
+        		User user55 = (User) users.get(54);
+        		User user56 = (User) users.get(55);
+        		User user57 = (User) users.get(56);
+        		User user58 = (User) users.get(57);
+        		User user59 = (User) users.get(58);
+        		User user60 = (User) users.get(59);
+        		User user61 = (User) users.get(60);
+        		User user62 = (User) users.get(61);
+        		User user63 = (User) users.get(62);
+        		User user64 = (User) users.get(63);
+        		User user65 = (User) users.get(64);
+        		User user66 = (User) users.get(65);
+        		User user67 = (User) users.get(66);
+        		User user68 = (User) users.get(67);
+        		User user69 = (User) users.get(68);
+        		User user70 = (User) users.get(69);
+        		User user71 = (User) users.get(70);
+        		User user72 = (User) users.get(71);
+        		User user73 = (User) users.get(72);
+        		User user74 = (User) users.get(73);
+        		User user75 = (User) users.get(74);
+        		User user76 = (User) users.get(75);
+        		User user77 = (User) users.get(76);
+        		User user78 = (User) users.get(77);
+        		User user79 = (User) users.get(78);
+        		User user80 = (User) users.get(79);
+        		User user81 = (User) users.get(80);
+        		User user82 = (User) users.get(81);
+        		User user83 = (User) users.get(82);
+        		User user84 = (User) users.get(83);
+        		User user85 = (User) users.get(84);
+        		User user86 = (User) users.get(85);
+        		User user87 = (User) users.get(86);
+        		User user88 = (User) users.get(87);
+        		User user89 = (User) users.get(88);
+        		User user90 = (User) users.get(89);
+        		User user91 = (User) users.get(90);
+        		User user92 = (User) users.get(91);
+        		User user93 = (User) users.get(92);
+        		User user94 = (User) users.get(93);
+        		User user95 = (User) users.get(94);
+        		User user96 = (User) users.get(95);
+        		User user97 = (User) users.get(96);
+        		User user98 = (User) users.get(97);
+        		User user99 = (User) users.get(98);
+        		User user100 = (User) users.get(99);
+
+        		 for(int j = 1; j <= num_messages; j++){
+                    String taskname="u1t"+j;
+                    
+                    user1<-addTaskToList(taskList,"User 1: Ordered Task " + values.get(j-1) + ".",
+                               (String) userNames.get(0),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                    }
+
+                    for(int j = 1; j <= num_messages; j++){
+                    String taskname="u2t"+j;
+                    
+                    user2<-addTaskToList(taskList,"User 2: Ordered Task " + values.get(j-1) + ".",
+                               (String) userNames.get(1),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                    }
+
+        		     for(int j = 1; j <= num_messages; j++){
+                        String taskname="u3t"+j;
+                        
+                        user3<-addTaskToList(taskList,"User 3: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(2),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u4t"+j;
+                        
+                        user4<-addTaskToList(taskList,"User 4: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(3),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                       for(int j = 1; j <= num_messages; j++){
+                       String taskname="u5t"+j;
+                       
+                       user5<-addTaskToList(taskList,"User 5: Ordered Task " + values.get(j-1) + ".",
+                                  (String) userNames.get(4),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                       }
+
+                    for(int j = 1; j <= num_messages; j++){
+                      String taskname="u6t"+j;
+                      
+                      user6<-addTaskToList(taskList,"User 6: Ordered Task " + values.get(j-1) + ".",
+                                 (String) userNames.get(5),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                      }
+
+                       for(int j = 1; j <= num_messages; j++){
+                        String taskname="u7t"+j;
+                        
+                        user7<-addTaskToList(taskList,"User 7: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(6),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                         for(int j = 1; j <= num_messages; j++){
+                            String taskname="u8t"+j;
+                            
+                            user8<-addTaskToList(taskList,"User 8: Ordered Task " + values.get(j-1) + ".",
+                                       (String) userNames.get(7),taskname,false,0,(num_users - 1) * num_messages,true);
+                            }
+
+                         for(int j = 1; j <= num_messages; j++){
+                        String taskname="u9t"+j;
+                        
+                        user9<-addTaskToList(taskList,"User 9: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(8),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u10t"+j;
+                        
+                        user10<-addTaskToList(taskList,"User 10: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(9),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u11t"+j;
+                        
+                        user11<-addTaskToList(taskList,"User 11: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(10),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u12t"+j;
+                        
+                        user12<-addTaskToList(taskList,"User 12: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(11),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u13t"+j;
+                        
+                        user13<-addTaskToList(taskList,"User 13: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(12),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u14t"+j;
+                        
+                        user14<-addTaskToList(taskList,"User 14: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(13),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u15t"+j;
+                        
+                        user15<-addTaskToList(taskList,"User 15: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(14),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u16t"+j;
+                        
+                        user16<-addTaskToList(taskList,"User 16: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(15),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u17t"+j;
+                        
+                        user17<-addTaskToList(taskList,"User 17: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(16),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u18t"+j;
+                        
+                        user18<-addTaskToList(taskList,"User 18: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(17),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u19t"+j;
+                        
+                        user19<-addTaskToList(taskList,"User 19: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(18),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u20t"+j;
+                        
+                        user20<-addTaskToList(taskList,"User 20: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(19),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u21t"+j;
+                        user21<-addTaskToList(taskList,"User 21: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(20),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u22t"+j;
+                        user22<-addTaskToList(taskList,"User 22: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(21),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u23t"+j;
+                        user23<-addTaskToList(taskList,"User 23: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(22),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u24t"+j;
+                        user24<-addTaskToList(taskList,"User 24: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(23),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u25t"+j;
+                        user25<-addTaskToList(taskList,"User 25: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(24),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u26t"+j;
+                        user26<-addTaskToList(taskList,"User 26: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(25),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u27t"+j;
+                        user27<-addTaskToList(taskList,"User 27: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(26),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u28t"+j;
+                        user28<-addTaskToList(taskList,"User 28: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(27),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u29t"+j;
+                        user29<-addTaskToList(taskList,"User 29: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(28),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u30t"+j;
+                        user30<-addTaskToList(taskList,"User 30: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(29),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u31t"+j;
+                        user31<-addTaskToList(taskList,"User 31: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(30),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u32t"+j;
+                        user32<-addTaskToList(taskList,"User 32: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(31),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u33t"+j;
+                        user33<-addTaskToList(taskList,"User 33: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(32),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u34t"+j;
+                        user34<-addTaskToList(taskList,"User 34: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(33),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u35t"+j;
+                        user35<-addTaskToList(taskList,"User 35: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(34),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u36t"+j;
+                        user36<-addTaskToList(taskList,"User 36: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(35),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u37t"+j;
+                        user37<-addTaskToList(taskList,"User 37: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(36),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u38t"+j;
+                        user38<-addTaskToList(taskList,"User 38: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(37),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u39t"+j;
+                        user39<-addTaskToList(taskList,"User 39: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(38),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u40t"+j;
+                        user40<-addTaskToList(taskList,"User 40: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(39),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u41t"+j;
+                        user41<-addTaskToList(taskList,"User 41: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(40),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u42t"+j;
+                        user42<-addTaskToList(taskList,"User 42: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(41),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u43t"+j;
+                        user43<-addTaskToList(taskList,"User 43: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(42),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u44t"+j;
+                        user44<-addTaskToList(taskList,"User 44: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(43),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u45t"+j;
+                        user45<-addTaskToList(taskList,"User 45: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(44),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u46t"+j;
+                        user46<-addTaskToList(taskList,"User 46: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(45),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u47t"+j;
+                        user47<-addTaskToList(taskList,"User 47: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(46),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u48t"+j;
+                        user48<-addTaskToList(taskList,"User 48: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(47),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u49t"+j;
+                        user49<-addTaskToList(taskList,"User 49: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(48),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u50t"+j;
+                        user50<-addTaskToList(taskList,"User 50: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(49),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u51t"+j;
+                        user51<-addTaskToList(taskList,"User 51: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(50),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u52t"+j;
+                        user52<-addTaskToList(taskList,"User 52: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(51),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u53t"+j;
+                        user53<-addTaskToList(taskList,"User 53: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(52),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u54t"+j;
+                        user54<-addTaskToList(taskList,"User 54: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(53),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u55t"+j;
+                        user55<-addTaskToList(taskList,"User 55: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(54),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u56t"+j;
+                        user56<-addTaskToList(taskList,"User 56: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(55),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u57t"+j;
+                        user57<-addTaskToList(taskList,"User 57: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(56),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                        String taskname="u58t"+j;
+                        user58<-addTaskToList(taskList,"User 58: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(57),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                         for(int j = 1; j <= num_messages; j++){
+                          String taskname="u59t"+j;
+                          user59<-addTaskToList(taskList,"User 59: Ordered Task " + values.get(j-1) + ".",
+                                    (String) userNames.get(58),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                         }
+
+                          for(int j = 1; j <= num_messages; j++){
+                           String taskname="u60t"+j;
+                           user60<-addTaskToList(taskList,"User 60: Ordered Task " + values.get(j-1) + ".",
+                                     (String) userNames.get(59),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                          }
+
+                          for(int j = 1; j <= num_messages; j++){
+                             String taskname="u61t"+j;
+                             user61<-addTaskToList(taskList,"User 61: Ordered Task " + values.get(j-1) + ".",
+                                       (String) userNames.get(60),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                            }
+
+                            for(int j = 1; j <= num_messages; j++){
+                             String taskname="u62t"+j;
+                             user62<-addTaskToList(taskList,"User 62: Ordered Task " + values.get(j-1) + ".",
+                                       (String) userNames.get(61),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                            }
+
+                             for(int j = 1; j <= num_messages; j++){
+                             String taskname="u63t"+j;
+                             user63<-addTaskToList(taskList,"User 63: Ordered Task " + values.get(j-1) + ".",
+                                       (String) userNames.get(62),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                            }
+
+                            for(int j = 1; j <= num_messages; j++){
+                             String taskname="u64t"+j;
+                             user64<-addTaskToList(taskList,"User 64: Ordered Task " + values.get(j-1) + ".",
+                                       (String) userNames.get(63),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                            }
+
+                            for(int j = 1; j <= num_messages; j++){
+                             String taskname="u65t"+j;
+                             user65<-addTaskToList(taskList,"User 65: Ordered Task " + values.get(j-1) + ".",
+                                       (String) userNames.get(64),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                            }
+
+                             for(int j = 1; j <= num_messages; j++){
+                             String taskname="u66t"+j;
+                             user66<-addTaskToList(taskList,"User 66: Ordered Task " + values.get(j-1) + ".",
+                                       (String) userNames.get(65),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                            }
+
+                            for(int j = 1; j <= num_messages; j++){
+                              String taskname="u67t"+j;
+                              user67<-addTaskToList(taskList,"User 67: Ordered Task " + values.get(j-1) + ".",
+                                        (String) userNames.get(66),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                             }
+
+                             for(int j = 1; j <= num_messages; j++){
+                              String taskname="u68t"+j;
+                              user68<-addTaskToList(taskList,"User 68: Ordered Task " + values.get(j-1) + ".",
+                                        (String) userNames.get(67),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                             }
+
+                             for(int j = 1; j <= num_messages; j++){
+                              String taskname="u69t"+j;
+                              user69<-addTaskToList(taskList,"User 69: Ordered Task " + values.get(j-1) + ".",
+                                        (String) userNames.get(68),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                             }
+
+                             for(int j = 1; j <= num_messages; j++){
+                           String taskname="u70t"+j;
+                           user70<-addTaskToList(taskList,"User 70: Ordered Task " + values.get(j-1) + ".",
+                                     (String) userNames.get(69),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                          }
+
+                          for(int j = 1; j <= num_messages; j++){
+                         String taskname="u71t"+j;
+                         user71<-addTaskToList(taskList,"User 71: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(70),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                         for(int j = 1; j <= num_messages; j++){
+                         String taskname="u72t"+j;
+                         user72<-addTaskToList(taskList,"User 72: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(71),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u73t"+j;
+                         user73<-addTaskToList(taskList,"User 73: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(72),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u74t"+j;
+                         user74<-addTaskToList(taskList,"User 74: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(73),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                         for(int j = 1; j <= num_messages; j++){
+                         String taskname="u75t"+j;
+                         user75<-addTaskToList(taskList,"User 75: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(74),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u76t"+j;
+                         user76<-addTaskToList(taskList,"User 76: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(75),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u77t"+j;
+                         user77<-addTaskToList(taskList,"User 77: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(76),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u78t"+j;
+                         user78<-addTaskToList(taskList,"User 78: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(77),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u79t"+j;
+                         user79<-addTaskToList(taskList,"User 79: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(78),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                         for(int j = 1; j <= num_messages; j++){
+                         String taskname="u80t"+j;
+                         user80<-addTaskToList(taskList,"User 80: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(79),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u81t"+j;
+                         user81<-addTaskToList(taskList,"User 81: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(80),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u82t"+j;
+                         user82<-addTaskToList(taskList,"User 82: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(81),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+                        
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u83t"+j;
+                         user83<-addTaskToList(taskList,"User 83: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(82),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+                        
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u84t"+j;
+                         user84<-addTaskToList(taskList,"User 84: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(83),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+                        
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u85t"+j;
+                         user85<-addTaskToList(taskList,"User 85: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(84),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+                        
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u86t"+j;
+                         user86<-addTaskToList(taskList,"User 86: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(85),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+                        
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u87t"+j;
+                         user87<-addTaskToList(taskList,"User 87: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(86),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+                        
+                        for(int j = 1; j <= num_messages; j++){
+                         String taskname="u88t"+j;
+                         user88<-addTaskToList(taskList,"User 88: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(87),taskname,false,0,(num_users - 1) * num_messages,true);
+
+                        }
+                        
+                         for(int j = 1; j <= num_messages; j++){
+                          String taskname="u89t"+j;
+                          user89<-addTaskToList(taskList,"User 89: Ordered Task " + values.get(j-1) + ".",
+                                    (String) userNames.get(88),taskname,false,0,(num_users - 1) * num_messages,true);
+ 
+                         }
+                         
+                         for(int j = 1; j <= num_messages; j++){
+                           String taskname="u90t"+j;
+                           user90<-addTaskToList(taskList,"User 90: Ordered Task " + values.get(j-1) + ".",
+                                     (String) userNames.get(89),taskname,false,0,(num_users - 1) * num_messages,true);
+    
+                          }
+                          
+                          for(int j = 1; j <= num_messages; j++){
+                         String taskname="u91t"+j;
+                         user91<-addTaskToList(taskList,"User 91: Ordered Task " + values.get(j-1) + ".",
+                                   (String) userNames.get(90),taskname,false,0,(num_users - 1) * num_messages,true);  
+                         }
+                         
+                         for(int j = 1; j <= num_messages; j++){
+                          String taskname="u92t"+j;
+                          user92<-addTaskToList(taskList,"User 92: Ordered Task " + values.get(j-1) + ".",
+                                    (String) userNames.get(91),taskname,false,0,(num_users - 1) * num_messages,true);  
+                          }
+                          
+                          for(int j = 1; j <= num_messages; j++){
+                            String taskname="u93t"+j;
+                            user93<-addTaskToList(taskList,"User 93: Ordered Task " + values.get(j-1) + ".",
+                                      (String) userNames.get(92),taskname,false,0,(num_users - 1) * num_messages,true);  
+                            }
+                            
+                            for(int j = 1; j <= num_messages; j++){
+                            String taskname="u94t"+j;
+                            user94<-addTaskToList(taskList,"User 94: Ordered Task " + values.get(j-1) + ".",
+                                      (String) userNames.get(93),taskname,false,0,(num_users - 1) * num_messages,true);  
+                            }
+                            
+                            for(int j = 1; j <= num_messages; j++){
+                            String taskname="u95t"+j;
+                            user95<-addTaskToList(taskList,"User 95: Ordered Task " + values.get(j-1) + ".",
+                                      (String) userNames.get(94),taskname,false,0,(num_users - 1) * num_messages,true);  
+                            }
+                            
+                            for(int j = 1; j <= num_messages; j++){
+                            String taskname="u96t"+j;
+                            user96<-addTaskToList(taskList,"User 96: Ordered Task " + values.get(j-1) + ".",
+                                      (String) userNames.get(95),taskname,false,0,(num_users - 1) * num_messages,true);  
+                            }
+                            
+                            for(int j = 1; j <= num_messages; j++){
+                            String taskname="u97t"+j;
+                            user97<-addTaskToList(taskList,"User 97: Ordered Task " + values.get(j-1) + ".",
+                                      (String) userNames.get(96),taskname,false,0,(num_users - 1) * num_messages,true);  
+                            }
+                            
+                            for(int j = 1; j <= num_messages; j++){
+                            String taskname="u98t"+j;
+                            user98<-addTaskToList(taskList,"User 98: Ordered Task " + values.get(j-1) + ".",
+                                      (String) userNames.get(97),taskname,false,0,(num_users - 1) * num_messages,true);  
+                            }
+                            
+                            for(int j = 1; j <= num_messages; j++){
+                            String taskname="u99t"+j;
+                            user99<-addTaskToList(taskList,"User 99: Ordered Task " + values.get(j-1) + ".",
+                                      (String) userNames.get(98),taskname,false,0,(num_users - 1) * num_messages,true);  
+                            }
+                            
+                            for(int j = 1; j <= num_messages; j++){
+                            String taskname="u100t"+j;
+                            user100<-addTaskToList(taskList,"User 100: Ordered Task " + values.get(j-1) + ".",
+                                      (String) userNames.get(99),taskname,false,0,(num_users - 1) * num_messages,true);  
+                            }
+
+
+      /*  for(int i = 0; i < users.size(); i++) {
+            User registeredUser = (User) users.get(i);
+            ArrayList taskNames = new ArrayList();
+            for(int j = 1; j <= num_messages; j++){
+                int index = ((i) > (num_messages - 1) ? (num_messages - 1): (i ));
+                String taskname="u"+i+"t"+j;
+                
+                registeredUser<-addTaskToList(taskList,"User" + i + ": Random task " + values.get(j-1) + ".",
+                           (String) userNames.get(i),taskname,false,0,(num_users - 1) * num_messages,true);
+                           int userIndex = i+1;
+
+                }
+                Collections.shuffle(values);
+                int userIndex = i+1;
+               // s1<-updateTask(s1t1, "User 1: Ordered Task 3","u1t1", 0, 12);
+
+           //    Task updateTask = new Task("User" + userIndex +": Ordered Task "+userIndex,(String) userNames.get(i),(String) taskNames.get(0), false);
+           //    registeredUser<-updateTask(updateTask, "User" + userIndex +": Ordered Task "+num_messages+1,taskNames.get(0), 0, (num_users - 1) * num_messages);
+        } */
+	}
+
+	void reply(String replyMsg)
+	{
+		standardOutput<-println(replyMsg);
+	}
+
+	void act(String args[])
+	{
+
+		try
+		{
+
+		    String serverRef = args[0];
+		    String logDirectory=args[1];
+		    int num_users = Integer.parseInt(args[2]);
+		    int num_messages = Integer.parseInt(args[3]);
+		    TaskList taskList =(TaskList) TaskList.getReferenceByName(args[4]);
+		    String userPaddedString = args[5];
+
+		    Server server = (Server) Server.getReferenceByName(serverRef);
+		    ArrayList users = new ArrayList();
+		    ArrayList userNames = new ArrayList();
+
+			Date first = new Date();
+			Timestamp start = new Timestamp(first.getTime());
+			String fileSeparator = System.getProperty("file.separator");
+			// first create the users and register them.
+			for(int i = 1; i <= num_users; i++)
+            {
+                    int usrId = 10 +i;
+                    String id = "uan://localhost:3030/id"+usrId;
+                    String userName = "user"+i;
+                    userNames.add(userName);
+                    User user = (User) User.getReferenceByName(id);
+                    users.add(user);
+            }
+			standardOutput <- println("Starting time: " + start);
+			Instant begin = Instant.now();
+			todoSession(users,userNames,num_users, num_messages,serverRef,logDirectory,taskList) @ trackEndingTime(begin) @ standardOutput<-println("Done with chat conversation");
+		}
+		catch (Exception e)
+		{
+			standardOutput <- println("Usage: java examples.chat.Chat <friendUAN1> <friendUAN2> <friendUAN3>");
+			return;
+		}
+	}
+
+	void trackEndingTime(Instant begin)
+	{
+		// keep track of ending time here
+		Date second = new Date();
+		Timestamp end = new Timestamp(second.getTime());
+
+		// calculate time elapsed
+		Instant endTime = Instant.now();
+		Duration timeDifference = Duration.between(begin, endTime);
+	    long timeTaken = timeDifference.toMillis();
+		standardOutput <- println("Time taken to run this in milliseconds: " + timeTaken);
+		standardOutput<-println("Ending time: " + end);
+	}
+}

@@ -1,0 +1,79 @@
+Round One: 10x100 FINAL
+=======================
+Is this ordered: No; overall runtime: 533; overall latency: 5216
+Is this ordered: No; overall runtime: 469; overall latency: 4802
+Is this ordered: No; overall runtime: 510; overall latency: 5122
+Is this ordered: No; overall runtime: 473; overall latency: 5288
+Is this ordered: No; overall runtime: 485; overall latency: 5087
+
+Round Two: 10x1000 FINAL
+========================
+Is this ordered: No; overall runtime: 2260; overall latency: 31119
+Is this ordered: No; overall runtime: 2054; overall latency: 31162
+Is this ordered: No; overall runtime: 2246; overall latency: 30894
+Is this ordered: No; overall runtime: 2154; overall latency: 31056
+Is this ordered: No; overall runtime: 2218; overall latency: 30930
+
+Round Three: 10x10000 FINAL
+===========================
+Is this ordered: No; overall runtime: 9535; overall latency: 317199
+Is this ordered: No; overall runtime: 10986; overall latency: 319124
+Is this ordered: No; overall runtime: 10268; overall latency: 315614
+Is this ordered: No; overall runtime: 10178; overall latency: 318706
+Is this ordered: No; overall runtime: 10345; overall latency: 316443
+
+Round Four: 100x10 FINAL
+========================
+Is this ordered: No; overall runtime: 477; overall latency: 21195
+Is this ordered: No; overall runtime: 538; overall latency: 21640
+Is this ordered: No; overall runtime: 461; overall latency: 21055
+Is this ordered: No; overall runtime: 514; overall latency: 22096
+Is this ordered: No; overall runtime: 472; overall latency: 22246
+
+Round Five: 100x100 FINAL
+=========================
+Is this ordered: No; overall runtime: 2437; overall latency: 216372
+Is this ordered: No; overall runtime: 2487; overall latency: 219001
+Is this ordered: No; overall runtime: 2107; overall latency: 222145
+Is this ordered: No; overall runtime: 2235; overall latency: 218754
+Is this ordered: No; overall runtime: 2391; overall latency: 221134
+
+Round Six: 100x1000 FINAL
+=========================
+Is this ordered: No; overall runtime: 9532; overall latency: 3709857
+Is this ordered: No; overall runtime: 10306; overall latency: 3725031
+Is this ordered: No; overall runtime: 11187; overall latency: 3711640
+
+Round Seven: 1000x1 FINAL
+=========================
+Is this ordered: Yes; overall runtime: 1102; overall latency: 211662
+Is this ordered: Yes; overall runtime: 867; overall latency: 207645
+Is this ordered: Yes; overall runtime: 1001; overall latency: 217327
+Is this ordered: Yes; overall runtime: 1002; overall latency: 219670
+Is this ordered: Yes; overall runtime: 1070; overall latency: 210445
+
+Round Eight: 1000x10 FINAL
+==========================
+Is this ordered: No; overall runtime: 2579; overall latency: 3741256
+Is this ordered: No; overall runtime: 2579; overall latency: 3813422
+
+=====================================================================
+Round One: 20x100 FINAL
+=======================
+Is this ordered: No; overall runtime: 4707; overall latency: 13374
+Is this ordered: No; overall runtime: 4432; overall latency: 11378
+
+Round Two: 50x100 FINAL
+=======================
+Is this ordered: No; overall runtime: 1367; overall latency: 57665
+Is this ordered: No; overall runtime: 1534; overall latency: 58470
+
+Round Three: 100x10 FINAL
+=========================
+Is this ordered: No; overall runtime: 655; overall latency: 22589
+Is this ordered: No; overall runtime: 657; overall latency: 22633
+
+Round Four: 100x100 FINAL
+=========================
+Is this ordered: No; overall runtime: 5724; overall latency: 291256
+Is this ordered: No; overall runtime: 2804; overall latency: 303265

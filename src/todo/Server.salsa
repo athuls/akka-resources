@@ -35,7 +35,8 @@ behavior Server implements ActorService
 				if(user != null)
 				{
                		User userRef = (User) User.getReferenceByName( user.getUAN());
-                	userRef<-broadcastReceiveAdvanced(task, taskName, text, isUpdate, total_initials, number_of_updates,isFollowup, fifo);
+                	//userRef<-broadcastReceiveAdvanced(task, taskName, text, isUpdate, total_initials, number_of_updates,isFollowup, fifo); - this is for single glitch
+					userRef<-broadcastReceive(task, taskName, text, isUpdate, total_initials, number_of_updates,isFollowup, fifo);
             	}
 			}
 	 	}
@@ -44,6 +45,7 @@ behavior Server implements ActorService
 	boolean registerUser(String userId, String email, String status,User user)
 	{
 		// Check any condition for registration if required
+		// userIdUANMap may be not be necessary and could be simplified to match chat
 		standardOutput<-println("Registering User " + userId +"user" + user);
 		registeredUsers.add(userId);
 		userIdUANMap.put(userId,user);

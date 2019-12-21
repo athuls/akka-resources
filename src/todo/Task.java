@@ -11,6 +11,7 @@ public class Task implements Serializable
 	private String taskName = "";
 	private boolean followUpType;
 
+	// with tasks, it is initial and follow up task
 	Task(String text, String creator, String name, boolean isFollowup)
 	{
 	    taskText = text;

@@ -106,7 +106,7 @@ behavior Speaker implements ActorService
 				else
 				{
 					messages.add(msg);
-					Thread.sleep(20);
+					Thread.sleep(2);
 
 					// next mark the timestamp
 					Date date_four = new Date();
@@ -122,6 +122,7 @@ behavior Speaker implements ActorService
 	}
 
 	// code for stalling when hitting a question
+	// users sending questions do not send answers
 	void handleNormalStall(String speakerName, int number_of_questions, int total_messages)
 	{
 		double number_users = (total_messages + number_of_questions)/ number_of_questions;
@@ -158,6 +159,8 @@ behavior Speaker implements ActorService
 			fifoValues.put(current_user, vals);
 			fifoMessageValues.put(current_user, msgVals);
 		}
+		// currentAdded keeps track of what is in the final values added for current user
+		// fifoValues is used to add stuff that gets inserted out of order and is then parsed when appropriate - stuff reaches a value that is 1 less than what is in fifoValues
 		ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
 		ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
 		ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
@@ -166,7 +169,7 @@ behavior Speaker implements ActorService
 		{
 			currentAdded.add(current_value);
 			messages.add(msg);
-			Thread.sleep(20);
+			Thread.sleep(2);
 			
 			// next mark the timestamp
 			Date date_four = new Date();
@@ -187,7 +190,7 @@ behavior Speaker implements ActorService
 					String current_message = (String)currentFifoMessages.get(i);
 					currentAdded.add(current_value);
 					messages.add(current_message);
-					Thread.sleep(20);
+					Thread.sleep(2);
 					Date date_five = new Date();
 					Timestamp current_five = new Timestamp(date_five.getTime());
 					if(isQuestion)
@@ -251,6 +254,7 @@ behavior Speaker implements ActorService
 		return isAdded;
 	}
 	
+	// only difference here and original fifocode is that messageQueue is used instead of immediate processsing
 	boolean handleFifoCodeAdvanced(String speakerName, String msg, String type, boolean isQuestion) throws InterruptedException
 	{
 		Integer current_value = Integer.parseInt(msg.substring(10).replaceAll("[\\D]", ""));
@@ -267,6 +271,8 @@ behavior Speaker implements ActorService
 			fifoValues.put(current_user, vals);
 			fifoMessageValues.put(current_user, msgVals);
 		}
+		// currentAdded keeps track of what is in the final values added for current user
+		// fifoValues is used to add stuff that gets inserted out of order and is then parsed when appropriate - stuff reaches a value that is 1 less than what is in fifoValues
 		ArrayList currentAdded = (ArrayList)valuesAdded.get(current_user);
 		ArrayList currentFifo = (ArrayList)fifoValues.get(current_user);
 		ArrayList currentFifoMessages = (ArrayList)fifoMessageValues.get(current_user);
@@ -342,7 +348,7 @@ behavior Speaker implements ActorService
 		fifoMessageValues.put(current_user, currentFifoMessages);
 		return isAdded;
 	}
-	
+	// only difference between regular and this is calling advancedFifoCode
 	void handleAdvancedStall(String speakerName, int number_of_questions, int total_messages)
 	{
 		double number_users = (total_messages + number_of_questions) / number_of_questions;
@@ -364,6 +370,7 @@ behavior Speaker implements ActorService
 	}
 
 	// this function handles messages by their type and takes into account levels after causal consistency
+	// main difference is only messageQueue is used instead and printQueueInfo needs to be called to print everything out at once
 	void broadcastReceiveAdvanced(String speakerName, String msg, String type, int number_of_questions, int total_messages, boolean fifo) throws InterruptedException
 	{
 		switch (type)
@@ -386,6 +393,7 @@ behavior Speaker implements ActorService
 		}
 	}
 
+	// same difference as normal stall
 	void handleAnswerCase(String speakerName, String msg, int number_of_questions, int total_messages) throws InterruptedException
 	{
 		double number_users = (total_messages + number_of_questions) / number_of_questions;
@@ -418,7 +426,7 @@ behavior Speaker implements ActorService
 			while(messageQueue.size() > 0)
 			{
 				messages.add(messageQueue.remove());
-				Thread.sleep(20);
+				Thread.sleep(2);
 			}
 			Date date = new Date();
 			Timestamp current = new Timestamp(date.getTime());

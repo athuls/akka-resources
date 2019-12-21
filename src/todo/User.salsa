@@ -39,7 +39,7 @@ behavior User implements ActorService
 	{
 		isLeader = true;		
 	}
-	
+	// update was not implemented here due to lack of time
 	boolean handleFifoCode(Task task, String taskName, String text, boolean isFollowup, boolean original) throws InterruptedException
 	{
 		Integer current_value = Integer.parseInt(text.substring(10).replaceAll("[\\D]", ""));
@@ -64,7 +64,7 @@ behavior User implements ActorService
 		{
 			currentAdded.add(current_value);
 			tasks.add(text);
-			Thread.sleep(200);
+			Thread.sleep(2);
 			
 			// next mark the timestamp
 			Date date_four = new Date();
@@ -86,7 +86,7 @@ behavior User implements ActorService
 					String current_task_message = (String)currentFifoMessages.get(i);
 					currentAdded.add(current_value);
 					tasks.add(current_task_message);
-					Thread.sleep(200);
+					Thread.sleep(2);
 					Date date_five = new Date();
 					Timestamp current_five = new Timestamp(date_five.getTime());
 					follow_up = "";
@@ -259,7 +259,7 @@ behavior User implements ActorService
 						follow_up = "Initial Task";
 					else
 						follow_up = "Follow Up Task";
-					Thread.sleep(200);
+					Thread.sleep(2);
 					Date date = new Date();
 					Timestamp current = new Timestamp(date.getTime());
 					standardOutput<-println("[Speaker Remote] " + myName + ": " + "Upd Message: " + "Task name: " + taskName + "Task type: " + follow_up + "; Task text: " + text + "; Timestamp: " + current);
@@ -279,7 +279,7 @@ behavior User implements ActorService
 						follow_up = "Initial Task";
 					else
 						follow_up = "Follow Up Task";
-					Thread.sleep(200);
+					Thread.sleep(2);
 					Date date = new Date();
 					Timestamp current = new Timestamp(date.getTime());
 					standardOutput<-println("[Speaker Remote] " + myName + ": " + "Add Message: " + "Task name: " + task.getTaskName() + "Task type: " + follow_up + "; Task text: " + task.getTaskText() + "; Timestamp: " + current);
@@ -292,7 +292,7 @@ behavior User implements ActorService
 				if(isFollowup)
 				{
 					double number_users = (total_updates + number_of_initials)/number_of_initials;
-					double total_initials = number_users * 0.1 * number_of_initials;
+					double total_initials = number_users * 0.2 * number_of_initials;
 					if(initialList.size() == total_initials || (isLeader && initialList.size() == (int)(total_initials - number_of_initials)))
 					{
 						if(waitQueue.size() > 0)
@@ -413,7 +413,7 @@ behavior User implements ActorService
 			while(messageQueue.size() > 0)
 			{
 				tasks.add(messageQueue.remove());
-				Thread.sleep(200);
+				Thread.sleep(2);
 			}
 			Date date = new Date();
 			Timestamp current = new Timestamp(date.getTime());

@@ -10,7 +10,7 @@ java -Xmx1024m -cp .:./libs/salsa1.1.5.jar -Dnodie -Dnogc examples.chat.Scalable
 
 sleep 10s
 
-java -Xmx4096m -cp .:./libs/salsa1.1.5.jar -Dnodie -Dnogc examples.chat.FIFOScalableChat uan://localhost:3030/id1 /home/rohankasivis/akka-resources-11-02-19/src/logs 100 100 1 200 localhost > ./logs/simpleFIFO.txt 2>&1 &
+java -Xmx4096m -cp .:./libs/salsa1.1.5.jar -Dnodie -Dnogc examples.chat.FIFOScalableChat uan://localhost:3030/id1 /home/rohankasivis/akka-resources-11-02-19/src/logs 100 1000 1 200 localhost > ./logs/simpleFIFO.txt 2>&1 &
 
 sleep 80s
 
